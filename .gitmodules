@@ -1,0 +1,3 @@
+[submodule "sudokukiller.koplugin/common"]
+	path = sudokukiller.koplugin/common
+	url = https://github.com/t2ym5u/sudoku-common.git

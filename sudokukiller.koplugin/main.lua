@@ -1,26 +1,20 @@
--- Add the plugin's own directory to package.path so that local modules
--- (board, board_widget, screen) can be loaded with a plain require().
 local _dir = debug.getinfo(1, "S").source:sub(2):match("(.*[/\\])") or "./"
-package.path = _dir .. "?.lua;" .. package.path
+package.path = _dir .. "?.lua;" .. _dir .. "common/?.lua;" .. package.path
 
-local DataStorage = require("datastorage")
-local LuaSettings = require("luasettings")
-local UIManager = require("ui/uimanager")
+local DataStorage     = require("datastorage")
+local LuaSettings     = require("luasettings")
+local UIManager       = require("ui/uimanager")
 local WidgetContainer = require("ui/widget/container/widgetcontainer")
-local _ = require("gettext")
+local _               = require("gettext")
 
-local board_module = require("board")
+local board_module       = require("board")
 local KillerSudokuBoard  = board_module.KillerSudokuBoard
 local DEFAULT_DIFFICULTY = board_module.DEFAULT_DIFFICULTY
 
 local KillerSudokuScreen = require("screen")
 
--- ---------------------------------------------------------------------------
--- KillerSudoku — KOReader plugin entry point
--- ---------------------------------------------------------------------------
-
 local KillerSudoku = WidgetContainer:extend{
-    name = "killer_sudoku",
+    name        = "killer_sudoku",
     is_doc_only = false,
 }
 
@@ -40,11 +34,9 @@ end
 
 function KillerSudoku:addToMainMenu(menu_items)
     menu_items.killer_sudoku = {
-        text = _("Killer Sudoku"),
+        text         = _("Killer Sudoku"),
         sorting_hint = "tools",
-        callback = function()
-            self:showGame()
-        end,
+        callback     = function() self:showGame() end,
     }
 end
 
@@ -61,20 +53,16 @@ function KillerSudoku:getBoard()
 end
 
 function KillerSudoku:saveState()
-    if not self.board then
-        return
-    end
+    if not self.board then return end
     self:ensureSettings()
     self.settings:saveSetting("state", self.board:serialize())
     self.settings:flush()
 end
 
 function KillerSudoku:showGame()
-    if self.screen then
-        return
-    end
+    if self.screen then return end
     self.screen = KillerSudokuScreen:new{
-        board = self:getBoard(),
+        board  = self:getBoard(),
         plugin = self,
     }
     UIManager:show(self.screen)
