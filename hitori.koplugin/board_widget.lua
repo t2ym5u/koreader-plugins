@@ -33,16 +33,17 @@ function HitoriBoardWidget:init()
     self.cols = n
     self.rows = n
     GridWidgetBase.init(self)
+end
 
-    self.onCellTap = function(row, col)
-        if self.onCellAction then
-            self.onCellAction(row, col, false)
-        end
+function HitoriBoardWidget:onCellTap(row, col)
+    if self.onCellAction then
+        self.onCellAction(row, col, false)
     end
-    self.onCellHold = function(row, col)
-        if self.onCellAction then
-            self.onCellAction(row, col, true)
-        end
+end
+
+function HitoriBoardWidget:onCellHold(row, col)
+    if self.onCellAction then
+        self.onCellAction(row, col, true)
     end
 end
 

@@ -42,9 +42,10 @@ function KenKenBoardWidget:init()
     local label_sz = math.max(7, math.floor(cell * 0.28))
     self.cage_label_face = Font:getFace("smallinfofont", label_sz)
 
-    self.onCellTap = function(row, col)
-        if self.onCellSelected then self.onCellSelected(row, col) end
-    end
+end
+
+function KenKenBoardWidget:onCellTap(row, col)
+    if self.onCellSelected then self.onCellSelected(row, col) end
 end
 
 -- ---------------------------------------------------------------------------

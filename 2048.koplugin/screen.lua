@@ -1,3 +1,12 @@
+local _dir = debug.getinfo(1, "S").source:sub(2):match("(.*[/\\])") or "./"
+local function lrequire(name)
+    local key = _dir .. name
+    if not package.loaded[key] then
+        package.loaded[key] = assert(loadfile(_dir .. name .. ".lua"))()
+    end
+    return package.loaded[key]
+end
+
 local ButtonTable     = require("ui/widget/buttontable")
 local Device          = require("device")
 local FrameContainer  = require("ui/widget/container/framecontainer")
@@ -11,8 +20,8 @@ local _               = require("gettext")
 local T               = require("ffi/util").template
 
 local ScreenBase         = require("screen_base")
-local Game2048Board      = require("board")
-local Game2048BoardWidget = require("board_widget")
+local Game2048Board      = lrequire("board")
+local Game2048BoardWidget = lrequire("board_widget")
 
 local DeviceScreen = Device.screen
 
@@ -80,10 +89,13 @@ function Game2048Screen:buildLayout()
         self.board_widget,
     }
 
-    -- Arrow buttons (alternative to swipe)
+    -- Arrow buttons (alternative to swipe) — use full portrait width for spacing
+    local arrow_width = is_landscape
+        and math.max(math.floor(sw * 0.45), 160)
+        or  math.floor(sw * 0.95)
     local arrow_buttons = ButtonTable:new{
         shrink_unneeded_width = true,
-        width   = button_width,
+        width   = arrow_width,
         buttons = {
             {
                 { text = "\xE2\x86\x90", callback = function() self:onSlide("left")  end },
@@ -106,7 +118,7 @@ function Game2048Screen:buildLayout()
         self.layout = HorizontalGroup:new{
             align  = "center",
             board_frame,
-            HorizontalSpan:new{ width = Size.span.horizontal_large },
+            HorizontalSpan:new{ width = Size.span.horizontal_default },
             right_panel,
         }
     else
@@ -193,8 +205,6 @@ function Game2048Screen:updateStatus(msg)
     local status
     if msg then
         status = msg
-    elseif self.board.game_over then
-        status = T(_("Game over! Score: %1"), self.board.score)
     else
         local best = self.plugin:getSetting("best_score", 0)
         if self.board.score > best then
@@ -202,8 +212,12 @@ function Game2048Screen:updateStatus(msg)
             best = self.board.score
         end
         local max_tile = self.board:getMaxTile()
-        status = T(_("Score: %1 \xC2\xB7 Best: %2 \xC2\xB7 Max: %3"),
-            self.board.score, best, max_tile)
+        if self.board.game_over then
+            status = T(_("Game over \xC2\xB7 Score: %1 \xC2\xB7 Best: %2"), self.board.score, best)
+        else
+            status = T(_("Score: %1 \xC2\xB7 Best: %2 \xC2\xB7 Max: %3"),
+                self.board.score, best, max_tile)
+        end
     end
     ScreenBase.updateStatus(self, status)
 end

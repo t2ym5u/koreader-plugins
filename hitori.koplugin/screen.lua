@@ -1,3 +1,12 @@
+local _dir = debug.getinfo(1, "S").source:sub(2):match("(.*[/\\])") or "./"
+local function lrequire(name)
+    local key = _dir .. name
+    if not package.loaded[key] then
+        package.loaded[key] = assert(loadfile(_dir .. name .. ".lua"))()
+    end
+    return package.loaded[key]
+end
+
 local ButtonTable     = require("ui/widget/buttontable")
 local Device          = require("device")
 local FrameContainer  = require("ui/widget/container/framecontainer")
@@ -12,8 +21,8 @@ local T               = require("ffi/util").template
 
 local ScreenBase         = require("screen_base")
 local MenuHelper         = require("menu_helper")
-local HitoriBoard        = require("board")
-local HitoriBoardWidget  = require("board_widget")
+local HitoriBoard        = lrequire("board")
+local HitoriBoardWidget  = lrequire("board_widget")
 
 local DeviceScreen = Device.screen
 
@@ -66,9 +75,9 @@ function HitoriScreen:buildLayout()
     }
 
     local board_frame_size  = self.board_widget.size + (Size.padding.large + Size.margin.default) * 2
-    local right_panel_width = sw - board_frame_size - Size.span.horizontal_large
+    local right_panel_width = sw - board_frame_size - Size.span.horizontal_default
     local button_width = is_landscape
-        and math.max(right_panel_width - Size.span.horizontal_large, 100)
+        and math.max(right_panel_width - Size.span.horizontal_default, 100)
         or  math.floor(sw * 0.9)
 
     local top_buttons = ButtonTable:new{
@@ -118,7 +127,7 @@ function HitoriScreen:buildLayout()
         self.layout = HorizontalGroup:new{
             align = "center",
             board_frame,
-            HorizontalSpan:new{ width = Size.span.horizontal_large },
+            HorizontalSpan:new{ width = Size.span.horizontal_default },
             right_panel,
         }
     else

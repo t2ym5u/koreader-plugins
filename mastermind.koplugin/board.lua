@@ -34,7 +34,11 @@ function MastermindBoard:new(opts)
     o.code_len        = tonumber(opts.code_len)       or DEFAULT_CODE_LEN
     o.num_symbols     = tonumber(opts.num_symbols)    or DEFAULT_NUM_SYMBOLS
     o.max_attempts    = tonumber(opts.max_attempts)   or DEFAULT_MAX_ATTEMPTS
-    o.allow_duplicates = (opts.allow_duplicates ~= nil) and opts.allow_duplicates or DEFAULT_ALLOW_DUPES
+    if opts.allow_duplicates ~= nil then
+        o.allow_duplicates = opts.allow_duplicates
+    else
+        o.allow_duplicates = DEFAULT_ALLOW_DUPES
+    end
     o.secret   = nil
     o.guesses  = {}
     o.feedback = {}
