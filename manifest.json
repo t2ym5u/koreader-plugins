@@ -1,0 +1,213 @@
+{
+  "schema_version": 1,
+  "updated": "2026-06-08",
+  "repo": "t2ym5u/koreader-plugins",
+  "branch": "master",
+  "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/koreader-plugins/master/",
+  "common": {
+    "version": "1.0.0",
+    "dir": "game-common",
+    "files": [
+      "grid_utils.lua",
+      "grid_widget_base.lua",
+      "menu_helper.lua",
+      "plugin_base.lua",
+      "score_tracker.lua",
+      "screen_base.lua",
+      "settings_dialog.lua",
+      "timer.lua",
+      "undo_stack.lua"
+    ]
+  },
+  "plugins": [
+    {
+      "id": "2048",
+      "dir": "2048.koplugin",
+      "fullname": "2048",
+      "description": "Slide tiles to merge them. Reach the 2048 tile!",
+      "version": "1.0.0",
+      "files": ["_meta.lua", "board.lua", "board_widget.lua", "main.lua", "screen.lua"],
+      "has_common": true
+    },
+    {
+      "id": "battleship",
+      "dir": "battleship.koplugin",
+      "fullname": "Battleship Puzzle",
+      "description": "Solitaire Bimaru: deduce the fleet from row and column clues.",
+      "version": "1.0.0",
+      "files": ["_meta.lua", "board.lua", "board_widget.lua", "main.lua", "screen.lua"],
+      "has_common": true
+    },
+    {
+      "id": "boggle",
+      "dir": "boggle.koplugin",
+      "fullname": "Boggle",
+      "description": "Find words by connecting adjacent letters on the grid.",
+      "version": "1.0.0",
+      "files": ["_meta.lua", "board.lua", "board_widget.lua", "main.lua", "screen.lua", "words_en.lua", "words_fr.lua"],
+      "has_common": true
+    },
+    {
+      "id": "crossword",
+      "dir": "crossword.koplugin",
+      "fullname": "Crossword",
+      "description": "Classic crossword puzzles. Fill the grid from the across and down clues.",
+      "version": "1.0.0",
+      "files": ["_meta.lua", "board.lua", "board_widget.lua", "main.lua", "puzzles.lua", "screen.lua"],
+      "has_common": true
+    },
+    {
+      "id": "fifteen",
+      "dir": "fifteen.koplugin",
+      "fullname": "Fifteen Puzzle",
+      "description": "Sliding tile puzzle. Arrange the numbered tiles in order.",
+      "version": "1.0.0",
+      "files": ["_meta.lua", "board.lua", "board_widget.lua", "main.lua", "screen.lua"],
+      "has_common": true
+    },
+    {
+      "id": "futoshiki",
+      "dir": "futoshiki.koplugin",
+      "fullname": "Futoshiki",
+      "description": "Fill the grid with digits satisfying row, column and inequality constraints.",
+      "version": "1.0.0",
+      "files": ["_meta.lua", "board.lua", "board_widget.lua", "main.lua", "screen.lua"],
+      "has_common": true
+    },
+    {
+      "id": "hangman",
+      "dir": "hangman.koplugin",
+      "fullname": "Hangman",
+      "description": "Classic word-guessing game. Reveal the word before the hangman is drawn.",
+      "version": "1.0.0",
+      "files": ["_meta.lua", "board.lua", "board_widget.lua", "main.lua", "screen.lua"],
+      "has_common": true
+    },
+    {
+      "id": "hitori",
+      "dir": "hitori.koplugin",
+      "fullname": "Hitori",
+      "description": "Blacken cells so no number repeats in any row or column.",
+      "version": "1.0.0",
+      "files": ["_meta.lua", "board.lua", "board_widget.lua", "main.lua", "screen.lua"],
+      "has_common": true
+    },
+    {
+      "id": "kakuro",
+      "dir": "kakuro.koplugin",
+      "fullname": "Kakuro",
+      "description": "Fill white cells with digits 1-9 so each run sums to its clue.",
+      "version": "1.0.0",
+      "files": ["_meta.lua", "board.lua", "board_widget.lua", "main.lua", "screen.lua"],
+      "has_common": true
+    },
+    {
+      "id": "kenken",
+      "dir": "kenken.koplugin",
+      "fullname": "KenKen",
+      "description": "Fill the grid with digits satisfying row, column and cage arithmetic constraints.",
+      "version": "1.0.0",
+      "files": ["_meta.lua", "board.lua", "board_widget.lua", "main.lua", "screen.lua"],
+      "has_common": true
+    },
+    {
+      "id": "lightup",
+      "dir": "lightup.koplugin",
+      "fullname": "Light Up",
+      "description": "Akari: place light bulbs to illuminate every white cell without conflicts.",
+      "version": "1.0.0",
+      "files": ["_meta.lua", "board.lua", "board_widget.lua", "main.lua", "screen.lua"],
+      "has_common": true
+    },
+    {
+      "id": "mastermind",
+      "dir": "mastermind.koplugin",
+      "fullname": "Mastermind",
+      "description": "Deduce the secret code from black and white peg feedback.",
+      "version": "1.0.0",
+      "files": ["_meta.lua", "board.lua", "board_widget.lua", "main.lua", "screen.lua"],
+      "has_common": true
+    },
+    {
+      "id": "minesweeper",
+      "dir": "minesweeper.koplugin",
+      "fullname": "Minesweeper",
+      "description": "Classic mine-sweeping game. Reveal all safe cells without triggering a mine.",
+      "version": "1.0.0",
+      "files": ["_meta.lua", "board.lua", "board_widget.lua", "main.lua", "screen.lua"],
+      "has_common": true
+    },
+    {
+      "id": "nonogram",
+      "dir": "nonogram.koplugin",
+      "fullname": "Nonogram",
+      "description": "Fill cells by row and column clues to reveal the hidden picture.",
+      "version": "1.0.0",
+      "files": ["_meta.lua", "board.lua", "board_widget.lua", "main.lua", "screen.lua"],
+      "has_common": true
+    },
+    {
+      "id": "numberlink",
+      "dir": "numberlink.koplugin",
+      "fullname": "Numberlink",
+      "description": "Connect each pair of matching numbers with a path covering every cell.",
+      "version": "1.0.0",
+      "files": ["_meta.lua", "board.lua", "board_widget.lua", "main.lua", "screen.lua"],
+      "has_common": true
+    },
+    {
+      "id": "nurikabe",
+      "dir": "nurikabe.koplugin",
+      "fullname": "Nurikabe",
+      "description": "Paint the river: connect islands of numbered white cells.",
+      "version": "1.0.0",
+      "files": ["_meta.lua", "board.lua", "board_widget.lua", "main.lua", "screen.lua"],
+      "has_common": true
+    },
+    {
+      "id": "slitherlink",
+      "dir": "slitherlink.koplugin",
+      "fullname": "Slitherlink",
+      "description": "Draw a single closed loop along grid edges matching the numbered clues.",
+      "version": "1.0.0",
+      "files": ["_meta.lua", "board.lua", "board_widget.lua", "main.lua", "screen.lua"],
+      "has_common": true
+    },
+    {
+      "id": "sokoban",
+      "dir": "sokoban.koplugin",
+      "fullname": "Sokoban",
+      "description": "Push all crates onto their targets. You can push but not pull.",
+      "version": "1.0.0",
+      "files": ["_meta.lua", "board.lua", "board_widget.lua", "levels.lua", "main.lua", "screen.lua"],
+      "has_common": true
+    },
+    {
+      "id": "startmenu",
+      "dir": "startmenu.koplugin",
+      "fullname": "Startup Menu",
+      "description": "Shows a choice screen on KOReader startup: read or launch a game.",
+      "version": "1.0.0",
+      "files": ["_meta.lua", "main.lua"],
+      "has_common": false
+    },
+    {
+      "id": "tents",
+      "dir": "tents.koplugin",
+      "fullname": "Tents and Trees",
+      "description": "Logic puzzle: pair each tree with an adjacent tent, no touching tents.",
+      "version": "1.0.0",
+      "files": ["_meta.lua", "board.lua", "board_widget.lua", "main.lua", "screen.lua"],
+      "has_common": true
+    },
+    {
+      "id": "wordle",
+      "dir": "wordle.koplugin",
+      "fullname": "Wordle",
+      "description": "Guess the hidden word in 6 tries. Letter hints guide each attempt.",
+      "version": "1.0.0",
+      "files": ["_meta.lua", "board.lua", "board_widget.lua", "main.lua", "screen.lua", "words_fr.lua"],
+      "has_common": true
+    }
+  ]
+}
