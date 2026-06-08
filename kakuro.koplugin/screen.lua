@@ -1,3 +1,12 @@
+local _dir = debug.getinfo(1, "S").source:sub(2):match("(.*[/\\])") or "./"
+local function lrequire(name)
+    local key = _dir .. name
+    if not package.loaded[key] then
+        package.loaded[key] = assert(loadfile(_dir .. name .. ".lua"))()
+    end
+    return package.loaded[key]
+end
+
 local Blitbuffer      = require("ffi/blitbuffer")
 local ButtonTable     = require("ui/widget/buttontable")
 local Device          = require("device")
@@ -17,8 +26,8 @@ local VerticalSpan    = require("ui/widget/verticalspan")
 local _               = require("gettext")
 local T               = require("ffi/util").template
 
-local KakuroBoard       = require("board")
-local KakuroBoardWidget = require("board_widget")
+local KakuroBoard       = lrequire("board")
+local KakuroBoardWidget = lrequire("board_widget")
 
 local DeviceScreen = Device.screen
 
@@ -99,9 +108,9 @@ function KakuroScreen:buildLayout()
     }
 
     local board_frame_size  = self.board_widget.size + (Size.padding.large + Size.margin.default) * 2
-    local right_panel_width = sw - board_frame_size - Size.span.horizontal_large
+    local right_panel_width = sw - board_frame_size - Size.span.horizontal_default
     local button_width = is_landscape
-        and math.max(right_panel_width - Size.span.horizontal_large, 100)
+        and math.max(right_panel_width - Size.span.horizontal_default, 100)
         or  math.floor(sw * 0.9)
     local keypad_width = is_landscape and button_width or math.floor(sw * 0.75)
 
@@ -169,7 +178,7 @@ function KakuroScreen:buildLayout()
         self.layout = HorizontalGroup:new{
             align = "center",
             board_frame,
-            HorizontalSpan:new{ width = Size.span.horizontal_large },
+            HorizontalSpan:new{ width = Size.span.horizontal_default },
             right_panel,
         }
     else

@@ -106,7 +106,7 @@ function MastermindBoardWidget:paintTo(bb, x, y)
 
             -- Determine symbol value
             local sym = 0
-            if i < active_row or active_row == nil then
+            if active_row == nil or i < active_row then
                 -- submitted or past game
                 if board.guesses[i] then
                     sym = board.guesses[i][j] or 0

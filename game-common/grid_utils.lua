@@ -6,8 +6,8 @@ local M = {}
 
 -- 2D table of zeros (or any numeric default).
 function M.emptyGrid(cols, rows, default)
-    rows    = rows    or cols
-    default = default or 0
+    rows = rows or cols
+    if default == nil then default = 0 end  -- preserve false as false
     local grid = {}
     for r = 1, rows do
         grid[r] = {}

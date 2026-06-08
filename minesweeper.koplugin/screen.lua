@@ -1,3 +1,12 @@
+local _dir = debug.getinfo(1, "S").source:sub(2):match("(.*[/\\])") or "./"
+local function lrequire(name)
+    local key = _dir .. name
+    if not package.loaded[key] then
+        package.loaded[key] = assert(loadfile(_dir .. name .. ".lua"))()
+    end
+    return package.loaded[key]
+end
+
 local ButtonTable     = require("ui/widget/buttontable")
 local Device          = require("device")
 local FrameContainer  = require("ui/widget/container/framecontainer")
@@ -12,8 +21,8 @@ local T               = require("ffi/util").template
 
 local ScreenBase          = require("screen_base")
 local MenuHelper          = require("menu_helper")
-local MinesweeperBoard    = require("board")
-local MinesweeperBoardWidget = require("board_widget")
+local MinesweeperBoard    = lrequire("board")
+local MinesweeperBoardWidget = lrequire("board_widget")
 
 local DeviceScreen = Device.screen
 
@@ -124,7 +133,7 @@ function MinesweeperScreen:buildLayout()
         self.layout = HorizontalGroup:new{
             align  = "center",
             board_frame,
-            HorizontalSpan:new{ width = Size.span.horizontal_large },
+            HorizontalSpan:new{ width = Size.span.horizontal_default },
             right_panel,
         }
     else

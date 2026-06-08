@@ -84,7 +84,7 @@ end
 
 function ScreenBase:closeScreen()
     if self.plugin then
-        self.plugin:saveState(self:serializeState and self:serializeState() or nil)
+        self.plugin:saveState(self.serializeState and self:serializeState() or nil)
         self.plugin:onScreenClosed()
     end
     UIManager:close(self)

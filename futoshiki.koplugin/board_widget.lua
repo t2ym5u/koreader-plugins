@@ -1,4 +1,5 @@
 local Blitbuffer = require("ffi/blitbuffer")
+local Font       = require("ui/font")
 local Geom       = require("ui/geometry")
 local RenderText = require("ui/rendertext")
 local Size       = require("ui/size")
@@ -23,12 +24,11 @@ function FutoshikiBoardWidget:init()
     -- inequality symbols so we reduce size_ratio slightly.
     self.size_ratio = 0.78
     GridWidgetBase.init(self)
+end
 
-    -- Forward tap events to the caller
-    self.onCellTap = function(row, col)
-        if self.onCellSelected then
-            self.onCellSelected(row, col)
-        end
+function FutoshikiBoardWidget:onCellTap(row, col)
+    if self.onCellSelected then
+        self.onCellSelected(row, col)
     end
 end
 
@@ -156,7 +156,7 @@ function FutoshikiBoardWidget:paintTo(bb, x, y)
     -- Inequality constraints
     -- -----------------------------------------------------------------------
     local sym_size  = math.max(8, math.floor(cell * 0.22))
-    local sym_face  = require("ui/font").getFace("cfont", sym_size)
+    local sym_face  = Font:getFace("cfont", sym_size)
 
     for _, con in ipairs(self.board.constraints) do
         local r1, c1, r2, c2 = con.r1, con.c1, con.r2, con.c2
@@ -167,28 +167,21 @@ function FutoshikiBoardWidget:paintTo(bb, x, y)
 
         if r1 == r2 then
             -- Horizontal constraint: (r,c1) and (r,c2=c1+1)
-            -- Draw in the right edge of cell (r,c1) / left edge of cell (r,c2)
-            local mid_x = x + math.floor(c1 * cell)  -- the vertical grid line
+            local mid_x = x + math.floor(c1 * cell)
             local mid_y = y + math.floor((r1 - 0.5) * cell)
             local sm    = RenderText:sizeUtf8Text(0, 200, sym_face, sym, true, false)
-            local sw2   = sm.x
-            local sh    = sm.y_bottom - sm.y_top
-            local sx    = mid_x - math.floor(sw2 / 2)
-            local sbase = mid_y + math.floor(sh / 2) - sm.y_bottom
+            local sx    = mid_x - math.floor(sm.x / 2)
+            local sbase = mid_y + math.floor((sm.y_top - sm.y_bottom) / 2)
             RenderText:renderUtf8Text(bb, sx, sbase, sym_face, sym, true, false, C_INEQ)
         else
             -- Vertical constraint: (r1,c) and (r2=r1+1,c)
-            -- Draw in the bottom edge of cell (r1,c) / top edge of cell (r2,c)
-            -- For vertical constraints, "<" means (r1,c) < (r2,c), so we draw a
-            -- rotated symbol. We use "v" for less (pointing down) and "^" for greater.
-            local vsym  = con.less and "v" or "^"
+            -- "^" = top cell is smaller (con.less=true), "v" = bottom cell is smaller.
+            local vsym  = con.less and "^" or "v"
             local mid_x = x + math.floor((c1 - 0.5) * cell)
-            local mid_y = y + math.floor(r1 * cell)  -- the horizontal grid line
+            local mid_y = y + math.floor(r1 * cell)
             local sm    = RenderText:sizeUtf8Text(0, 200, sym_face, vsym, true, false)
-            local sw2   = sm.x
-            local sh    = sm.y_bottom - sm.y_top
-            local sx    = mid_x - math.floor(sw2 / 2)
-            local sbase = mid_y - math.floor(sh / 2)
+            local sx    = mid_x - math.floor(sm.x / 2)
+            local sbase = mid_y + math.floor((sm.y_top - sm.y_bottom) / 2)
             RenderText:renderUtf8Text(bb, sx, sbase, sym_face, vsym, true, false, C_INEQ)
         end
     end
