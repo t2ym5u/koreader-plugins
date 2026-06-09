@@ -1,15 +1,17 @@
 local _dir = debug.getinfo(1, "S").source:sub(2):match("(.*[/\\])") or "./"
--- Parent of "pluginmanager.koplugin/" is the KOReader plugins root.
 local _plugins_dir = _dir:match("^(.*)/[^/]+/$") or (_dir .. "..")
 
 local ButtonDialog    = require("ui/widget/buttondialog")
 local ConfirmBox      = require("ui/widget/confirmbox")
+local DataStorage     = require("datastorage")
 local InfoMessage     = require("ui/widget/infomessage")
+local LuaSettings     = require("luasettings")
 local UIManager       = require("ui/uimanager")
 local WidgetContainer = require("ui/widget/container/widgetcontainer")
 local _               = require("gettext")
 
-local MANIFEST_URL = "https://raw.githubusercontent.com/t2ym5u/koreader-plugins/master/manifest.json"
+local MANIFEST_URL   = "https://raw.githubusercontent.com/t2ym5u/koreader-plugins/master/manifest.json"
+local AUTO_CHECK_TTL = 86400  -- re-check automatically at most once every 24 h
 
 -- ---------------------------------------------------------------------------
 -- PluginManager
@@ -18,9 +20,39 @@ local MANIFEST_URL = "https://raw.githubusercontent.com/t2ym5u/koreader-plugins/
 local PluginManager = WidgetContainer:extend{
     name        = "pluginmanager",
     is_doc_only = false,
-    -- _manifest   : table parsed from manifest.json after first fetch
-    -- _last_check : timestamp of last successful manifest fetch
 }
+
+-- ---------------------------------------------------------------------------
+-- Settings / manifest cache
+-- ---------------------------------------------------------------------------
+
+function PluginManager:ensureSettings()
+    if not self.settings then
+        self.settings = LuaSettings:open(
+            DataStorage:getSettingsDir() .. "/pluginmanager.lua"
+        )
+    end
+end
+
+function PluginManager:saveManifestCache(json_str)
+    self:ensureSettings()
+    self.settings:saveSetting("manifest_json", json_str)
+    self.settings:saveSetting("last_check",    os.time())
+    self.settings:flush()
+    self._last_check = os.time()
+end
+
+function PluginManager:loadCachedManifest()
+    self:ensureSettings()
+    local json_str   = self.settings:readSetting("manifest_json")
+    local last_check = self.settings:readSetting("last_check")
+    if not json_str then return end
+    local manifest = parse_json(json_str)
+    if manifest and manifest.plugins then
+        self._manifest   = manifest
+        self._last_check = last_check or 0
+    end
+end
 
 -- ---------------------------------------------------------------------------
 -- Network
@@ -48,13 +80,19 @@ end
 -- JSON  (rapidjson is bundled with KOReader)
 -- ---------------------------------------------------------------------------
 
-local function parse_json(str)
+-- NOTE: parse_json is referenced in loadCachedManifest above, so define it
+-- as a module-level upvalue before PluginManager:loadCachedManifest is called.
+-- We declare it here and assign below to keep the forward reference working.
+parse_json = nil  -- luacheck: ignore (intentional forward declaration)
+
+local function _parse_json(str)
     local ok, json = pcall(require, "rapidjson")
     if not ok then return nil, _("rapidjson not available") end
     local ok2, data = pcall(json.decode, str)
     if ok2 then return data end
     return nil, _("JSON parse error")
 end
+parse_json = _parse_json
 
 -- ---------------------------------------------------------------------------
 -- Version comparison
@@ -112,7 +150,6 @@ local function write_file(path, content)
     return true
 end
 
--- Recursively delete a path. Only operates inside _plugins_dir for safety.
 local function rm_rf(path)
     if not path:find(_plugins_dir, 1, true) then return end
     local lfs = get_lfs()
@@ -131,7 +168,6 @@ local function rm_rf(path)
     end
 end
 
--- Extract name / fullname / version from a _meta.lua by pattern, not by loading.
 local function read_meta(path)
     local f = io.open(path, "r")
     if not f then return nil end
@@ -170,7 +206,7 @@ function PluginManager:scanInstalled()
 end
 
 -- ---------------------------------------------------------------------------
--- Manifest fetch
+-- Manifest fetch  (manual, called from menu)
 -- ---------------------------------------------------------------------------
 
 function PluginManager:fetchManifest()
@@ -194,10 +230,9 @@ function PluginManager:fetchManifest()
             })
             return
         end
-        self._manifest   = manifest
-        self._last_check = os.time()
+        self._manifest = manifest
+        self:saveManifestCache(body)
 
-        -- Quick summary
         local installed = self:scanInstalled()
         local n_update, n_new = 0, 0
         for _, p in ipairs(manifest.plugins) do
@@ -212,15 +247,45 @@ function PluginManager:fetchManifest()
         if n_update > 0 then parts[#parts+1] = string.format(_("%d update(s) available"), n_update) end
         if n_new    > 0 then parts[#parts+1] = string.format(_("%d new plugin(s)"), n_new) end
         if #parts   == 0 then parts[#parts+1] = _("All installed plugins are up to date.") end
-        UIManager:show(InfoMessage:new{
-            text    = table.concat(parts, "\n"),
-            timeout = 4,
-        })
+        UIManager:show(InfoMessage:new{ text = table.concat(parts, "\n"), timeout = 4 })
     end)
 end
 
 -- ---------------------------------------------------------------------------
--- Install / update
+-- Silent background check  (auto, called from init)
+-- ---------------------------------------------------------------------------
+
+function PluginManager:_silentCheck()
+    -- Only run if already connected; never prompt the user.
+    local ok, NetworkMgr = pcall(require, "ui/network/manager")
+    if ok and NetworkMgr and not NetworkMgr:isConnected() then return end
+
+    local body = fetch_url(MANIFEST_URL)
+    if not body then return end
+    local manifest = parse_json(body)
+    if not manifest or not manifest.plugins then return end
+
+    self._manifest = manifest
+    self:saveManifestCache(body)
+
+    local installed = self:scanInstalled()
+    local n_update  = 0
+    for _, p in ipairs(manifest.plugins) do
+        local inst = installed[p.id]
+        if inst and is_newer(inst.version, p.version) then
+            n_update = n_update + 1
+        end
+    end
+    if n_update > 0 then
+        UIManager:show(InfoMessage:new{
+            text    = string.format(_("Plugin Manager: %d update(s) available."), n_update),
+            timeout = 5,
+        })
+    end
+end
+
+-- ---------------------------------------------------------------------------
+-- Install helpers
 -- ---------------------------------------------------------------------------
 
 function PluginManager:ensureCommon(manifest)
@@ -249,19 +314,17 @@ end
 function PluginManager:installPlugin(plugin_info, manifest)
     local plugin_dir = _plugins_dir .. "/" .. plugin_info.dir
     mkdir_p(plugin_dir)
-
     local base = manifest.raw_base_url .. plugin_info.dir .. "/"
     for _, fname in ipairs(plugin_info.files) do
         local body, err = fetch_url(base .. fname)
         if not body then
-            return false, string.format(_("Download failed: %s — %s"), fname, err)
+            return false, string.format(_("Download failed: %s \u{2014} %s"), fname, err)
         end
         local ok, werr = write_file(plugin_dir .. "/" .. fname, body)
         if not ok then
-            return false, string.format(_("Write failed: %s — %s"), fname, werr)
+            return false, string.format(_("Write failed: %s \u{2014} %s"), fname, werr)
         end
     end
-
     if plugin_info.has_common then
         local common_path = plugin_dir .. "/common"
         local lfs  = get_lfs()
@@ -288,6 +351,7 @@ function PluginManager:installPlugin(plugin_info, manifest)
     return true
 end
 
+-- Install / update a single plugin with UI feedback.
 function PluginManager:_doInstall(plugin_info, manifest)
     local msg = InfoMessage:new{
         text = string.format(_("Installing %s\u{2026}"), plugin_info.fullname),
@@ -324,12 +388,51 @@ function PluginManager:_doInstall(plugin_info, manifest)
 end
 
 -- ---------------------------------------------------------------------------
+-- Update all
+-- ---------------------------------------------------------------------------
+
+function PluginManager:_doUpdateAll(plugins_to_update, manifest)
+    local total = #plugins_to_update
+    local msg   = InfoMessage:new{
+        text = string.format(_("Updating %d plugins\u{2026}"), total),
+    }
+    UIManager:show(msg)
+    UIManager:scheduleIn(0.2, function()
+        UIManager:close(msg)
+        -- Ensure game-common once before the loop.
+        if manifest.common then self:ensureCommon(manifest) end
+        local failed = {}
+        for _, p in ipairs(plugins_to_update) do
+            local ok, err = self:installPlugin(p, manifest)
+            if not ok then
+                failed[#failed + 1] = p.fullname .. ": " .. (err or "?")
+            end
+        end
+        if #failed > 0 then
+            UIManager:show(InfoMessage:new{
+                text    = string.format(_("%d/%d updated. Failures:\n"),
+                              total - #failed, total)
+                          .. table.concat(failed, "\n"),
+                timeout = 8,
+            })
+        else
+            UIManager:show(InfoMessage:new{
+                text    = string.format(
+                    _("%d plugins updated.\nRestart KOReader to activate changes."),
+                    total
+                ),
+                timeout = 6,
+            })
+        end
+    end)
+end
+
+-- ---------------------------------------------------------------------------
 -- Remove
 -- ---------------------------------------------------------------------------
 
 function PluginManager:_doRemove(fullname, plugin_dir)
-    local path = _plugins_dir .. "/" .. plugin_dir
-    rm_rf(path)
+    rm_rf(_plugins_dir .. "/" .. plugin_dir)
     UIManager:show(InfoMessage:new{
         text    = string.format(
             _("%s removed.\nRestart KOReader to complete uninstallation."),
@@ -340,10 +443,9 @@ function PluginManager:_doRemove(fullname, plugin_dir)
 end
 
 -- ---------------------------------------------------------------------------
--- Per-plugin action dialogs
+-- Per-plugin dialogs
 -- ---------------------------------------------------------------------------
 
--- Dialog for an installed plugin: Update (if newer exists) + Remove.
 function PluginManager:showInstalledDialog(plugin_info, inst_info, has_update)
     local dlg
     local buttons = {}
@@ -351,7 +453,7 @@ function PluginManager:showInstalledDialog(plugin_info, inst_info, has_update)
     if has_update then
         local pref = plugin_info
         buttons[#buttons + 1] = {{
-            text = string.format(_("Update to v%s"), plugin_info.version),
+            text     = string.format(_("Update to v%s"), plugin_info.version),
             callback = function()
                 UIManager:close(dlg)
                 self:_doInstall(pref, self._manifest)
@@ -359,18 +461,36 @@ function PluginManager:showInstalledDialog(plugin_info, inst_info, has_update)
         }}
     end
 
-    local iref = inst_info
+    -- Reinstall (force, even when up to date)
     local pref = plugin_info
     buttons[#buttons + 1] = {{
-        text = _("Remove"),
+        text     = has_update and _("Reinstall current") or _("Reinstall"),
+        callback = function()
+            UIManager:close(dlg)
+            -- install with the installed version, not the manifest version
+            local current = {
+                id         = pref.id,
+                dir        = pref.dir,
+                fullname   = inst_info.fullname,
+                version    = inst_info.version,
+                files      = pref.files,
+                has_common = pref.has_common,
+            }
+            self:_doInstall(current, self._manifest)
+        end,
+    }}
+
+    local iref = inst_info
+    buttons[#buttons + 1] = {{
+        text     = _("Remove"),
         callback = function()
             UIManager:close(dlg)
             UIManager:show(ConfirmBox:new{
-                text       = string.format(
+                text        = string.format(
                     _("Remove %s?\nAll plugin files will be deleted."),
                     iref.fullname
                 ),
-                ok_text    = _("Remove"),
+                ok_text     = _("Remove"),
                 ok_callback = function()
                     self:_doRemove(iref.fullname, iref.dir)
                 end,
@@ -383,22 +503,30 @@ function PluginManager:showInstalledDialog(plugin_info, inst_info, has_update)
         callback = function() UIManager:close(dlg) end,
     }}
 
-    local title = string.format("%s  v%s", inst_info.fullname, inst_info.version)
+    -- Title: name + version arrow + description
+    local title = inst_info.fullname .. "  v" .. inst_info.version
     if has_update then
-        title = title .. string.format("  \u{2192}  v%s", plugin_info.version)
+        title = title .. "  \u{2192}  v" .. plugin_info.version
     end
+    if plugin_info.description and plugin_info.description ~= "" then
+        title = title .. "\n" .. plugin_info.description
+    end
+
     dlg = ButtonDialog:new{ title = title, buttons = buttons }
     UIManager:show(dlg)
 end
 
--- Dialog for a not-yet-installed plugin: Install.
 function PluginManager:showAvailableDialog(plugin_info)
     local dlg
+    local title = plugin_info.fullname .. "  v" .. plugin_info.version
+    if plugin_info.description and plugin_info.description ~= "" then
+        title = title .. "\n" .. plugin_info.description
+    end
     dlg = ButtonDialog:new{
-        title   = string.format("%s  v%s", plugin_info.fullname, plugin_info.version),
+        title   = title,
         buttons = {
             {{
-                text = _("Install"),
+                text     = _("Install"),
                 callback = function()
                     UIManager:close(dlg)
                     self:_doInstall(plugin_info, self._manifest)
@@ -413,19 +541,39 @@ function PluginManager:showAvailableDialog(plugin_info)
     UIManager:show(dlg)
 end
 
+-- Dialog for a plugin installed locally but absent from the manifest.
+function PluginManager:showLocalOnlyDialog(inst_info)
+    local iref = inst_info
+    UIManager:show(ConfirmBox:new{
+        text        = string.format(
+            _("Remove %s?\nThis plugin is not in the repository.\nAll its files will be deleted."),
+            iref.fullname
+        ),
+        ok_text     = _("Remove"),
+        ok_callback = function()
+            self:_doRemove(iref.fullname, iref.dir)
+        end,
+    })
+end
+
 -- ---------------------------------------------------------------------------
 -- Dynamic menu
 -- ---------------------------------------------------------------------------
 
 function PluginManager:buildMenuItems()
     local installed = self:scanInstalled()
-    local items = {}
+    local items     = {}
 
-    -- Refresh / fetch button
+    -- ── Fetch / refresh button ───────────────────────────────────────────
     local fetch_label
     if self._last_check then
         local age_min = math.floor((os.time() - self._last_check) / 60)
-        fetch_label = string.format(_("Refresh list (last: %d min ago)"), age_min)
+        if age_min < 60 then
+            fetch_label = string.format(_("Refresh list (last: %d min ago)"), age_min)
+        else
+            local age_h = math.floor(age_min / 60)
+            fetch_label = string.format(_("Refresh list (last: %dh ago)"), age_h)
+        end
     else
         fetch_label = _("Fetch plugin list")
     end
@@ -434,107 +582,8 @@ function PluginManager:buildMenuItems()
         callback = function() self:fetchManifest() end,
     }
 
-    if self._manifest then
-        -- Build two buckets: installed (known in manifest) and available.
-        local installed_entries = {}
-        local available_entries = {}
-        local known_ids = {}
-
-        for _, p in ipairs(self._manifest.plugins) do
-            known_ids[p.id] = true
-            local inst = installed[p.id]
-            if inst then
-                installed_entries[#installed_entries + 1] = {
-                    plugin     = p,
-                    inst       = inst,
-                    has_update = is_newer(inst.version, p.version),
-                }
-            else
-                available_entries[#available_entries + 1] = p
-            end
-        end
-
-        -- Plugins installed locally but not in the manifest.
-        local local_only = {}
-        for id, inst in pairs(installed) do
-            if not known_ids[id] then
-                local_only[#local_only + 1] = inst
-            end
-        end
-
-        -- Sort alphabetically.
-        local cmp = function(a, b)
-            return (a.plugin and a.plugin.fullname or a.fullname or "")
-                 < (b.plugin and b.plugin.fullname or b.fullname or "")
-        end
-        table.sort(installed_entries, cmp)
-        table.sort(available_entries, function(a, b) return a.fullname < b.fullname end)
-        table.sort(local_only,        function(a, b) return a.fullname < b.fullname end)
-
-        -- Section: Installed (from manifest)
-        if #installed_entries > 0 then
-            items[#items + 1] = {
-                text    = string.format(_("\u{2014} Installed (%d) \u{2014}"), #installed_entries),
-                enabled = false,
-            }
-            for _, e in ipairs(installed_entries) do
-                local entry = e
-                local label = entry.inst.fullname .. "  v" .. entry.inst.version
-                if entry.has_update then
-                    label = label .. "  \u{2192}  v" .. entry.plugin.version
-                end
-                items[#items + 1] = {
-                    text     = label,
-                    callback = function()
-                        self:showInstalledDialog(entry.plugin, entry.inst, entry.has_update)
-                    end,
-                }
-            end
-        end
-
-        -- Section: Local-only (not in manifest)
-        if #local_only > 0 then
-            items[#items + 1] = {
-                text    = _("\u{2014} Installed (not in repo) \u{2014}"),
-                enabled = false,
-            }
-            for _, inst in ipairs(local_only) do
-                local iref = inst
-                items[#items + 1] = {
-                    text     = iref.fullname .. "  v" .. iref.version,
-                    callback = function()
-                        UIManager:show(ConfirmBox:new{
-                            text       = string.format(
-                                _("Remove %s?\nAll plugin files will be deleted."),
-                                iref.fullname
-                            ),
-                            ok_text    = _("Remove"),
-                            ok_callback = function()
-                                self:_doRemove(iref.fullname, iref.dir)
-                            end,
-                        })
-                    end,
-                }
-            end
-        end
-
-        -- Section: Available to install
-        if #available_entries > 0 then
-            items[#items + 1] = {
-                text    = string.format(_("\u{2014} Available (%d) \u{2014}"), #available_entries),
-                enabled = false,
-            }
-            for _, p in ipairs(available_entries) do
-                local pref = p
-                items[#items + 1] = {
-                    text     = pref.fullname .. "  v" .. pref.version,
-                    callback = function() self:showAvailableDialog(pref) end,
-                }
-            end
-        end
-
-    else
-        -- Manifest not yet fetched: show only locally-installed plugins.
+    if not self._manifest then
+        -- ── Offline view: only locally-installed plugins ─────────────────
         local local_entries = {}
         for _, inst in pairs(installed) do
             local_entries[#local_entries + 1] = inst
@@ -550,24 +599,109 @@ function PluginManager:buildMenuItems()
                 local iref = inst
                 items[#items + 1] = {
                     text     = iref.fullname .. "  v" .. iref.version,
-                    callback = function()
-                        UIManager:show(ConfirmBox:new{
-                            text       = string.format(
-                                _("Remove %s?\nAll plugin files will be deleted."),
-                                iref.fullname
-                            ),
-                            ok_text    = _("Remove"),
-                            ok_callback = function()
-                                self:_doRemove(iref.fullname, iref.dir)
-                            end,
-                        })
-                    end,
+                    callback = function() self:showLocalOnlyDialog(iref) end,
                 }
             end
         else
             items[#items + 1] = {
                 text    = _("No plugins installed yet."),
                 enabled = false,
+            }
+        end
+        return items
+    end
+
+    -- ── With manifest: compute update/new counts ─────────────────────────
+    local installed_entries = {}
+    local available_entries = {}
+    local known_ids         = {}
+    local updates_list      = {}  -- plugins that need an update
+
+    for _, p in ipairs(self._manifest.plugins) do
+        known_ids[p.id] = true
+        local inst = installed[p.id]
+        if inst then
+            local has_update = is_newer(inst.version, p.version)
+            installed_entries[#installed_entries + 1] = {
+                plugin     = p,
+                inst       = inst,
+                has_update = has_update,
+            }
+            if has_update then updates_list[#updates_list + 1] = p end
+        else
+            available_entries[#available_entries + 1] = p
+        end
+    end
+
+    local local_only = {}
+    for id, inst in pairs(installed) do
+        if not known_ids[id] then
+            local_only[#local_only + 1] = inst
+        end
+    end
+
+    table.sort(installed_entries, function(a, b)
+        return a.inst.fullname < b.inst.fullname
+    end)
+    table.sort(available_entries, function(a, b) return a.fullname < b.fullname end)
+    table.sort(local_only,        function(a, b) return a.fullname < b.fullname end)
+
+    -- ── "Update all" button (only when there is something to update) ──────
+    if #updates_list > 0 then
+        local ulist = updates_list
+        items[#items + 1] = {
+            text     = string.format(_("Update all (%d)"), #ulist),
+            callback = function() self:_doUpdateAll(ulist, self._manifest) end,
+        }
+    end
+
+    -- ── Installed (from manifest) ─────────────────────────────────────────
+    if #installed_entries > 0 then
+        items[#items + 1] = {
+            text    = string.format(_("\u{2014} Installed (%d) \u{2014}"), #installed_entries),
+            enabled = false,
+        }
+        for _, e in ipairs(installed_entries) do
+            local entry = e
+            local label = entry.inst.fullname .. "  v" .. entry.inst.version
+            if entry.has_update then
+                label = label .. "  \u{2192}  v" .. entry.plugin.version
+            end
+            items[#items + 1] = {
+                text     = label,
+                callback = function()
+                    self:showInstalledDialog(entry.plugin, entry.inst, entry.has_update)
+                end,
+            }
+        end
+    end
+
+    -- ── Installed locally but not in the manifest ─────────────────────────
+    if #local_only > 0 then
+        items[#items + 1] = {
+            text    = string.format(_("\u{2014} Installed, not in repo (%d) \u{2014}"), #local_only),
+            enabled = false,
+        }
+        for _, inst in ipairs(local_only) do
+            local iref = inst
+            items[#items + 1] = {
+                text     = iref.fullname .. "  v" .. iref.version,
+                callback = function() self:showLocalOnlyDialog(iref) end,
+            }
+        end
+    end
+
+    -- ── Available to install ──────────────────────────────────────────────
+    if #available_entries > 0 then
+        items[#items + 1] = {
+            text    = string.format(_("\u{2014} Available (%d) \u{2014}"), #available_entries),
+            enabled = false,
+        }
+        for _, p in ipairs(available_entries) do
+            local pref = p
+            items[#items + 1] = {
+                text     = pref.fullname .. "  v" .. pref.version,
+                callback = function() self:showAvailableDialog(pref) end,
             }
         end
     end
@@ -581,13 +715,23 @@ end
 
 function PluginManager:init()
     self.ui.menu:registerToMainMenu(self)
+    self:loadCachedManifest()
+
+    -- Automatic background check: only if a previous fetch exists and the
+    -- cached data is stale, and only when already connected (no user prompt).
+    if self._last_check then
+        local age = os.time() - self._last_check
+        if age > AUTO_CHECK_TTL then
+            UIManager:scheduleIn(30, function() self:_silentCheck() end)
+        end
+    end
 end
 
 function PluginManager:addToMainMenu(menu_items)
     menu_items.pluginmanager = {
-        text                 = _("Plugin Manager"),
-        sorting_hint         = "tools",
-        sub_item_table_func  = function() return self:buildMenuItems() end,
+        text                = _("Plugin Manager"),
+        sorting_hint        = "tools",
+        sub_item_table_func = function() return self:buildMenuItems() end,
     }
 end
 

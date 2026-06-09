@@ -147,7 +147,7 @@
       "id": "kakuro",
       "dir": "kakuro.koplugin",
       "fullname": "Kakuro",
-      "description": "Fill white cells with digits 1-9 so each run sums to its clue.",
+      "description": "Fill white cells with digits 1–9 so each run sums to its clue.",
       "version": "1.0.0",
       "files": [
         "_meta.lua",
@@ -304,7 +304,7 @@
         "_meta.lua",
         "main.lua"
       ],
-      "has_common": false
+      "has_common": true
     },
     {
       "id": "tents",
@@ -334,52 +334,6 @@
         "main.lua",
         "screen.lua",
         "words_fr.lua"
-      ],
-      "has_common": true
-    },
-    {
-      "id": "dames",
-      "dir": "dames.koplugin",
-      "fullname": "Dames",
-      "description": "Jeu de dames 8×8 avec IA (règles françaises ou anglaises, 1 ou 2 joueurs).",
-      "version": "1.0.0",
-      "files": [
-        "_meta.lua",
-        "board.lua",
-        "board_widget.lua",
-        "main.lua",
-        "screen.lua"
-      ],
-      "has_common": true
-    },
-    {
-      "id": "echecs",
-      "dir": "echecs.koplugin",
-      "fullname": "Échecs",
-      "description": "Jeu d'échecs complet avec IA minimax (1 ou 2 joueurs, 3 niveaux).",
-      "version": "1.0.0",
-      "files": [
-        "_meta.lua",
-        "board.lua",
-        "board_widget.lua",
-        "main.lua",
-        "screen.lua"
-      ],
-      "has_common": true
-    },
-    {
-      "id": "coursdechecs",
-      "dir": "coursdechecs.koplugin",
-      "fullname": "Cours d'échecs",
-      "description": "30 puzzles d'échecs : mats, tactiques et finales pour progresser.",
-      "version": "1.0.0",
-      "files": [
-        "_meta.lua",
-        "board.lua",
-        "board_widget.lua",
-        "lessons.lua",
-        "main.lua",
-        "screen.lua"
       ],
       "has_common": true
     }
