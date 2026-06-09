@@ -1,0 +1,36 @@
+name: Update manifest.json
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - '**.koplugin/_meta.lua'
+      - '**.koplugin/*.lua'
+      - 'game-common/*.lua'
+      - '.github/scripts/update_manifest.py'
+
+jobs:
+  update-manifest:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Regenerate manifest.json
+        run: python3 .github/scripts/update_manifest.py
+
+      - name: Commit manifest.json if changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add manifest.json
+          git diff --staged --quiet && echo "manifest unchanged" || \
+            git commit -m "chore: regenerate manifest.json [skip ci]"
+          git push
