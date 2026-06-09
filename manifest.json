@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-06-08",
+  "updated": "2026-06-09",
   "repo": "t2ym5u/koreader-plugins",
   "branch": "master",
   "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/koreader-plugins/master/",
@@ -26,7 +26,13 @@
       "fullname": "2048",
       "description": "Slide tiles to merge them. Reach the 2048 tile!",
       "version": "1.0.0",
-      "files": ["_meta.lua", "board.lua", "board_widget.lua", "main.lua", "screen.lua"],
+      "files": [
+        "_meta.lua",
+        "board.lua",
+        "board_widget.lua",
+        "main.lua",
+        "screen.lua"
+      ],
       "has_common": true
     },
     {
@@ -35,7 +41,13 @@
       "fullname": "Battleship Puzzle",
       "description": "Solitaire Bimaru: deduce the fleet from row and column clues.",
       "version": "1.0.0",
-      "files": ["_meta.lua", "board.lua", "board_widget.lua", "main.lua", "screen.lua"],
+      "files": [
+        "_meta.lua",
+        "board.lua",
+        "board_widget.lua",
+        "main.lua",
+        "screen.lua"
+      ],
       "has_common": true
     },
     {
@@ -44,7 +56,15 @@
       "fullname": "Boggle",
       "description": "Find words by connecting adjacent letters on the grid.",
       "version": "1.0.0",
-      "files": ["_meta.lua", "board.lua", "board_widget.lua", "main.lua", "screen.lua", "words_en.lua", "words_fr.lua"],
+      "files": [
+        "_meta.lua",
+        "board.lua",
+        "board_widget.lua",
+        "main.lua",
+        "screen.lua",
+        "words_en.lua",
+        "words_fr.lua"
+      ],
       "has_common": true
     },
     {
@@ -53,7 +73,14 @@
       "fullname": "Crossword",
       "description": "Classic crossword puzzles. Fill the grid from the across and down clues.",
       "version": "1.0.0",
-      "files": ["_meta.lua", "board.lua", "board_widget.lua", "main.lua", "puzzles.lua", "screen.lua"],
+      "files": [
+        "_meta.lua",
+        "board.lua",
+        "board_widget.lua",
+        "main.lua",
+        "puzzles.lua",
+        "screen.lua"
+      ],
       "has_common": true
     },
     {
@@ -62,7 +89,13 @@
       "fullname": "Fifteen Puzzle",
       "description": "Sliding tile puzzle. Arrange the numbered tiles in order.",
       "version": "1.0.0",
-      "files": ["_meta.lua", "board.lua", "board_widget.lua", "main.lua", "screen.lua"],
+      "files": [
+        "_meta.lua",
+        "board.lua",
+        "board_widget.lua",
+        "main.lua",
+        "screen.lua"
+      ],
       "has_common": true
     },
     {
@@ -71,7 +104,13 @@
       "fullname": "Futoshiki",
       "description": "Fill the grid with digits satisfying row, column and inequality constraints.",
       "version": "1.0.0",
-      "files": ["_meta.lua", "board.lua", "board_widget.lua", "main.lua", "screen.lua"],
+      "files": [
+        "_meta.lua",
+        "board.lua",
+        "board_widget.lua",
+        "main.lua",
+        "screen.lua"
+      ],
       "has_common": true
     },
     {
@@ -80,7 +119,13 @@
       "fullname": "Hangman",
       "description": "Classic word-guessing game. Reveal the word before the hangman is drawn.",
       "version": "1.0.0",
-      "files": ["_meta.lua", "board.lua", "board_widget.lua", "main.lua", "screen.lua"],
+      "files": [
+        "_meta.lua",
+        "board.lua",
+        "board_widget.lua",
+        "main.lua",
+        "screen.lua"
+      ],
       "has_common": true
     },
     {
@@ -89,7 +134,13 @@
       "fullname": "Hitori",
       "description": "Blacken cells so no number repeats in any row or column.",
       "version": "1.0.0",
-      "files": ["_meta.lua", "board.lua", "board_widget.lua", "main.lua", "screen.lua"],
+      "files": [
+        "_meta.lua",
+        "board.lua",
+        "board_widget.lua",
+        "main.lua",
+        "screen.lua"
+      ],
       "has_common": true
     },
     {
@@ -98,7 +149,13 @@
       "fullname": "Kakuro",
       "description": "Fill white cells with digits 1-9 so each run sums to its clue.",
       "version": "1.0.0",
-      "files": ["_meta.lua", "board.lua", "board_widget.lua", "main.lua", "screen.lua"],
+      "files": [
+        "_meta.lua",
+        "board.lua",
+        "board_widget.lua",
+        "main.lua",
+        "screen.lua"
+      ],
       "has_common": true
     },
     {
@@ -107,7 +164,13 @@
       "fullname": "KenKen",
       "description": "Fill the grid with digits satisfying row, column and cage arithmetic constraints.",
       "version": "1.0.0",
-      "files": ["_meta.lua", "board.lua", "board_widget.lua", "main.lua", "screen.lua"],
+      "files": [
+        "_meta.lua",
+        "board.lua",
+        "board_widget.lua",
+        "main.lua",
+        "screen.lua"
+      ],
       "has_common": true
     },
     {
@@ -116,7 +179,13 @@
       "fullname": "Light Up",
       "description": "Akari: place light bulbs to illuminate every white cell without conflicts.",
       "version": "1.0.0",
-      "files": ["_meta.lua", "board.lua", "board_widget.lua", "main.lua", "screen.lua"],
+      "files": [
+        "_meta.lua",
+        "board.lua",
+        "board_widget.lua",
+        "main.lua",
+        "screen.lua"
+      ],
       "has_common": true
     },
     {
@@ -125,7 +194,13 @@
       "fullname": "Mastermind",
       "description": "Deduce the secret code from black and white peg feedback.",
       "version": "1.0.0",
-      "files": ["_meta.lua", "board.lua", "board_widget.lua", "main.lua", "screen.lua"],
+      "files": [
+        "_meta.lua",
+        "board.lua",
+        "board_widget.lua",
+        "main.lua",
+        "screen.lua"
+      ],
       "has_common": true
     },
     {
@@ -134,7 +209,13 @@
       "fullname": "Minesweeper",
       "description": "Classic mine-sweeping game. Reveal all safe cells without triggering a mine.",
       "version": "1.0.0",
-      "files": ["_meta.lua", "board.lua", "board_widget.lua", "main.lua", "screen.lua"],
+      "files": [
+        "_meta.lua",
+        "board.lua",
+        "board_widget.lua",
+        "main.lua",
+        "screen.lua"
+      ],
       "has_common": true
     },
     {
@@ -143,7 +224,13 @@
       "fullname": "Nonogram",
       "description": "Fill cells by row and column clues to reveal the hidden picture.",
       "version": "1.0.0",
-      "files": ["_meta.lua", "board.lua", "board_widget.lua", "main.lua", "screen.lua"],
+      "files": [
+        "_meta.lua",
+        "board.lua",
+        "board_widget.lua",
+        "main.lua",
+        "screen.lua"
+      ],
       "has_common": true
     },
     {
@@ -152,7 +239,13 @@
       "fullname": "Numberlink",
       "description": "Connect each pair of matching numbers with a path covering every cell.",
       "version": "1.0.0",
-      "files": ["_meta.lua", "board.lua", "board_widget.lua", "main.lua", "screen.lua"],
+      "files": [
+        "_meta.lua",
+        "board.lua",
+        "board_widget.lua",
+        "main.lua",
+        "screen.lua"
+      ],
       "has_common": true
     },
     {
@@ -161,7 +254,13 @@
       "fullname": "Nurikabe",
       "description": "Paint the river: connect islands of numbered white cells.",
       "version": "1.0.0",
-      "files": ["_meta.lua", "board.lua", "board_widget.lua", "main.lua", "screen.lua"],
+      "files": [
+        "_meta.lua",
+        "board.lua",
+        "board_widget.lua",
+        "main.lua",
+        "screen.lua"
+      ],
       "has_common": true
     },
     {
@@ -170,7 +269,13 @@
       "fullname": "Slitherlink",
       "description": "Draw a single closed loop along grid edges matching the numbered clues.",
       "version": "1.0.0",
-      "files": ["_meta.lua", "board.lua", "board_widget.lua", "main.lua", "screen.lua"],
+      "files": [
+        "_meta.lua",
+        "board.lua",
+        "board_widget.lua",
+        "main.lua",
+        "screen.lua"
+      ],
       "has_common": true
     },
     {
@@ -179,7 +284,14 @@
       "fullname": "Sokoban",
       "description": "Push all crates onto their targets. You can push but not pull.",
       "version": "1.0.0",
-      "files": ["_meta.lua", "board.lua", "board_widget.lua", "levels.lua", "main.lua", "screen.lua"],
+      "files": [
+        "_meta.lua",
+        "board.lua",
+        "board_widget.lua",
+        "levels.lua",
+        "main.lua",
+        "screen.lua"
+      ],
       "has_common": true
     },
     {
@@ -188,7 +300,10 @@
       "fullname": "Startup Menu",
       "description": "Shows a choice screen on KOReader startup: read or launch a game.",
       "version": "1.0.0",
-      "files": ["_meta.lua", "main.lua"],
+      "files": [
+        "_meta.lua",
+        "main.lua"
+      ],
       "has_common": false
     },
     {
@@ -197,7 +312,13 @@
       "fullname": "Tents and Trees",
       "description": "Logic puzzle: pair each tree with an adjacent tent, no touching tents.",
       "version": "1.0.0",
-      "files": ["_meta.lua", "board.lua", "board_widget.lua", "main.lua", "screen.lua"],
+      "files": [
+        "_meta.lua",
+        "board.lua",
+        "board_widget.lua",
+        "main.lua",
+        "screen.lua"
+      ],
       "has_common": true
     },
     {
@@ -206,7 +327,60 @@
       "fullname": "Wordle",
       "description": "Guess the hidden word in 6 tries. Letter hints guide each attempt.",
       "version": "1.0.0",
-      "files": ["_meta.lua", "board.lua", "board_widget.lua", "main.lua", "screen.lua", "words_fr.lua"],
+      "files": [
+        "_meta.lua",
+        "board.lua",
+        "board_widget.lua",
+        "main.lua",
+        "screen.lua",
+        "words_fr.lua"
+      ],
+      "has_common": true
+    },
+    {
+      "id": "dames",
+      "dir": "dames.koplugin",
+      "fullname": "Dames",
+      "description": "Jeu de dames 8×8 avec IA (règles françaises ou anglaises, 1 ou 2 joueurs).",
+      "version": "1.0.0",
+      "files": [
+        "_meta.lua",
+        "board.lua",
+        "board_widget.lua",
+        "main.lua",
+        "screen.lua"
+      ],
+      "has_common": true
+    },
+    {
+      "id": "echecs",
+      "dir": "echecs.koplugin",
+      "fullname": "Échecs",
+      "description": "Jeu d'échecs complet avec IA minimax (1 ou 2 joueurs, 3 niveaux).",
+      "version": "1.0.0",
+      "files": [
+        "_meta.lua",
+        "board.lua",
+        "board_widget.lua",
+        "main.lua",
+        "screen.lua"
+      ],
+      "has_common": true
+    },
+    {
+      "id": "coursdechecs",
+      "dir": "coursdechecs.koplugin",
+      "fullname": "Cours d'échecs",
+      "description": "30 puzzles d'échecs : mats, tactiques et finales pour progresser.",
+      "version": "1.0.0",
+      "files": [
+        "_meta.lua",
+        "board.lua",
+        "board_widget.lua",
+        "lessons.lua",
+        "main.lua",
+        "screen.lua"
+      ],
       "has_common": true
     }
   ]
