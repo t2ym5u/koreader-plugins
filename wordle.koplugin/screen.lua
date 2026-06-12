@@ -30,6 +30,20 @@ local DeviceScreen = Device.screen
 -- WordleScreen
 -- ---------------------------------------------------------------------------
 
+local GAME_RULES = _([[
+Wordle — Rules
+
+Guess the secret 5-letter word in 6 attempts.
+
+After each guess:
+• Green tile — the letter is in the correct position.
+• Yellow tile — the letter is in the word but in the wrong position.
+• Grey tile — the letter is not in the word.
+
+Use the on-screen keyboard to enter letters. Press ↵ to submit a guess, ⌫ to delete.
+The keyboard shows the status of each letter used so far.
+]])
+
 local WordleScreen = ScreenBase:extend{}
 
 -- Keyboard rows
@@ -70,6 +84,7 @@ function WordleScreen:buildLayout()
             { text = _("New"), callback = function() self:onNewGame() end },
             { id = "lang_btn", text = self:_langLabel(),
               callback = function() self:openLangMenu() end },
+            self:makeRulesButtonConfig(GAME_RULES),
             self:makeCloseButtonConfig(),
         }},
     }

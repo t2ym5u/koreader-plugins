@@ -60,10 +60,10 @@ end
 -- ---------------------------------------------------------------------------
 
 local ArrowwordsBoardWidget = InputContainer:extend{
-    board      = nil,
-    max_width  = 200,
-    max_height = 200,
-    onCellTap  = nil,
+    board           = nil,
+    max_width       = 200,
+    max_height      = 200,
+    cellTapHandler  = nil,
 }
 
 function ArrowwordsBoardWidget:init()
@@ -100,7 +100,7 @@ function ArrowwordsBoardWidget:onCellTap(ges)
     local r = math.floor(ly / self.cell) + 1
     local n = self.board.n
     if r >= 1 and r <= n and c >= 1 and c <= n then
-        if self.onCellTap then self.onCellTap(r, c) end
+        if self.cellTapHandler then self.cellTapHandler(r, c) end
     end
     return true
 end

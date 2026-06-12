@@ -35,6 +35,21 @@ local DeviceScreen = Device.screen
 
 local GRID_SIZES = { 5, 7, 9, 10 }
 
+local GAME_RULES = _([[
+Number Link — Rules
+
+Connect each pair of matching numbers with a continuous path.
+
+Rules:
+• Draw a path from each number to its matching partner.
+• Paths move horizontally or vertically — no diagonal moves.
+• Paths cannot cross or share cells with one another.
+• Every cell in the grid must be covered by exactly one path.
+
+Tap a numbered cell to start a path, then tap adjacent cells to extend it.
+]])
+
+
 local NumberlinkScreen = ScreenBase:extend{}
 
 function NumberlinkScreen:init()
@@ -87,7 +102,8 @@ function NumberlinkScreen:buildLayout()
                   callback = function() self:openDifficultyMenu() end },
                 { id = "reveal_button", text = self:getRevealButtonText(),
                   callback = function() self:toggleSolution() end },
-                self:makeCloseButtonConfig(),
+                self:makeRulesButtonConfig(GAME_RULES),
+            self:makeCloseButtonConfig(),
             },
         },
     }

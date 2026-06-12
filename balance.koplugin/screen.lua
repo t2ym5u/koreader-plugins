@@ -29,6 +29,22 @@ local BalanceBoardWidget = lrequire("board_widget")
 
 local DeviceScreen = Device.screen
 
+local GAME_RULES = _([[
+Balance Puzzle — Rules
+
+One ball in the set is either heavier or lighter than all the others. Use a balance scale to find it in as few weighings as possible.
+
+Each weighing:
+• Assign balls to the left pan, the right pan, or leave them aside.
+• Tap Weigh to see which side is heavier, or if they balance.
+• Use the results to narrow down which ball is the odd one.
+
+When you have identified the odd ball and whether it is heavier or lighter, tap Guess to submit your answer.
+
+The puzzle is won when you correctly identify the odd ball within the allowed number of weighings.
+]])
+
+
 local BalanceScreen = ScreenBase:extend{}
 
 function BalanceScreen:init()
@@ -65,6 +81,7 @@ function BalanceScreen:buildLayout()
             { text = _("New"),    callback = function() self:onNewGame() end },
             { id = "preset_btn", text = self:getPresetButtonText(),
               callback = function() self:openPresetMenu() end },
+            self:makeRulesButtonConfig(GAME_RULES),
             self:makeCloseButtonConfig(),
         }},
     }

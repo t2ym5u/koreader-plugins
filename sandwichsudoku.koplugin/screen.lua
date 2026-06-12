@@ -40,6 +40,17 @@ local function digitToChar(d)
     return d <= 9 and tostring(d) or string.char(55 + d)
 end
 
+local GAME_RULES = _([[
+Sandwich Sudoku — Rules
+
+Standard Sudoku rules apply:
+• Fill the 9×9 grid with 1–9; each row, column, and 3×3 box must contain each digit exactly once.
+
+Sandwich constraint:
+• Each row and column has a clue number on the outside.
+• That clue equals the sum of all digits sandwiched between the 1 and the 9 in that row or column.
+• The 1 and 9 themselves are not included in the sum.]])
+
 local SandwichSudokuScreen = BaseScreen:extend{}
 
 function SandwichSudokuScreen:buildLayout()
@@ -87,6 +98,7 @@ function SandwichSudokuScreen:buildLayout()
                   callback = function() self:openDifficultyMenu() end },
                 { id = "show_result",     text = _("Show result"),
                   callback = function() self:toggleSolution() end },
+                self:makeRulesButtonConfig(GAME_RULES),
                 { text = _("Close"),      callback = function()
                     self:onClose()
                     UIManager:close(self)

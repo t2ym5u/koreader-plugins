@@ -30,6 +30,16 @@ local DeviceScreen = Device.screen
 -- AnagramScreen
 -- ---------------------------------------------------------------------------
 
+local GAME_RULES = _([[
+Anagram — Rules
+
+Rearrange the scrambled letters to form a valid word.
+
+All letters must be used exactly once.
+Tap a scrambled letter to add it to your answer, or tap a letter in the answer to return it to the scramble.
+Submit your answer when you think you have the right word.
+]])
+
 local AnagramScreen = ScreenBase:extend{}
 
 function AnagramScreen:init()
@@ -64,6 +74,7 @@ function AnagramScreen:buildLayout()
               callback = function() self:openLangMenu() end },
             { text = _("Submit"), callback = function() self:onSubmit() end },
             { text = _("Clear"),  callback = function() self:onClear() end },
+            self:makeRulesButtonConfig(GAME_RULES),
             self:makeCloseButtonConfig(),
         }},
     }

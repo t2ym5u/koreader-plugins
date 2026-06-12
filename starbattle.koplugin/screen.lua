@@ -26,6 +26,19 @@ local StarBattleBoardWidget = lrequire("board_widget")
 
 local DeviceScreen = Device.screen
 
+local GAME_RULES = _([[
+Star Battle — Rules
+
+Place exactly N stars in the grid so that each row, each column, and each bold outlined region contains exactly N stars.
+
+Non-adjacency rule:
+• No two stars may be placed in adjacent cells — including diagonally adjacent cells.
+
+Tap a cell to cycle through: star → empty marker (·) → blank.
+The empty marker helps you note cells that cannot contain a star.
+]])
+
+
 local StarBattleScreen = ScreenBase:extend{}
 
 function StarBattleScreen:init()
@@ -80,6 +93,7 @@ function StarBattleScreen:buildLayout()
               callback = function() self:openSizeMenu() end },
             { text = _("Undo"),     callback = function() self:onUndo() end },
             { text = _("Reveal"),   callback = function() self:onReveal() end },
+            self:makeRulesButtonConfig(GAME_RULES),
             self:makeCloseButtonConfig(),
         }},
     }

@@ -32,6 +32,21 @@ local DeviceScreen = Device.screen
 -- WordSearchScreen
 -- ---------------------------------------------------------------------------
 
+local GAME_RULES = _([[
+Word Search — Rules
+
+Find all the hidden words in the letter grid.
+
+Words may be hidden in any direction:
+• Horizontally (left→right or right→left)
+• Vertically (top→bottom or bottom→top)
+• Diagonally (all four diagonal directions)
+
+Tap the first letter of a word, then tap the last letter to mark it found.
+Found words are crossed off the word list.
+Solve the puzzle by finding every word in the list.
+]])
+
 local WordSearchScreen = ScreenBase:extend{}
 
 function WordSearchScreen:init()
@@ -64,6 +79,7 @@ function WordSearchScreen:buildLayout()
             { text = _("New"),  callback = function() self:onNewGame() end },
             { id = "lang_btn", text = self:_langLabel(),
               callback = function() self:openLangMenu() end },
+            self:makeRulesButtonConfig(GAME_RULES),
             self:makeCloseButtonConfig(),
         }},
     }

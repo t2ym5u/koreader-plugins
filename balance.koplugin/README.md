@@ -2,6 +2,15 @@
 
 > Deduce the odd ball using a balance scale in as few weighings as possible.
 
+
+## Screenshot
+
+*(Screenshot to be added.)*
+
+## Rules
+
+One ball in a set is heavier or lighter than the rest. Use a balance scale to identify it in as few weighings as possible. Assign balls to the left or right pan, weigh, and deduce which is the odd ball — and whether it is heavier or lighter.
+
 ## Rules
 
 - One ball among the set is either heavier or lighter than the rest.
@@ -20,6 +29,7 @@
 | Submit your guess | Tap **Guess** |
 | New game | Tap **New** |
 | Change difficulty | Tap difficulty button |
+| Show rules | Tap **Rules** |
 
 ## Settings
 

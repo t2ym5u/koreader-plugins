@@ -26,6 +26,18 @@ local SuguruBoardWidget   = lrequire("board_widget")
 
 local DeviceScreen = Device.screen
 
+local GAME_RULES = _([[
+Suguru — Rules
+
+Fill every cell of the grid with a number so that:
+
+1. Each outlined group of N cells contains every number from 1 to N exactly once.
+2. No two cells containing the same number may touch each other — not even diagonally.
+
+Given clue numbers are fixed. Use the group sizes and adjacency rules to deduce the remaining numbers.
+]])
+
+
 local SuguruScreen = ScreenBase:extend{}
 
 function SuguruScreen:init()
@@ -76,6 +88,7 @@ function SuguruScreen:buildLayout()
               callback = function() self:openSizeMenu() end },
             { id = "diff_button", text = self:getDiffButtonText(),
               callback = function() self:openDifficultyMenu() end },
+            self:makeRulesButtonConfig(GAME_RULES),
             self:makeCloseButtonConfig(),
         }},
     }

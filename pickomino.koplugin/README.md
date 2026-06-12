@@ -2,6 +2,15 @@
 
 > Roll dice, collect worm tiles, and maximise your worm count before the rounds run out.
 
+
+## Screenshot
+
+*(Screenshot to be added.)*
+
+## Rules
+
+Roll dice to collect worm tiles. Each turn: roll all dice, set aside at least one face value, re-roll the rest, repeat. Your total (must include at least one worm ⚕) claims the matching tile. Fail to score and you lose your top tile. Most worms wins!
+
 ## Rules
 
 - Each turn, roll all 8 dice and keep at least one face value (all dice showing that face are kept).
@@ -20,6 +29,7 @@
 | Stop and claim a tile | Tap **Stop** |
 | New game | Tap **New** |
 | Change round count | Tap the rounds button |
+| Show rules | Tap **Rules** |
 
 ## Scoring
 

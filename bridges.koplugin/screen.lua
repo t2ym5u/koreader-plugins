@@ -35,6 +35,22 @@ local DeviceScreen = Device.screen
 
 local GRID_SIZES = { 7, 9, 11 }
 
+local GAME_RULES = _([[
+Bridges (Hashi) — Rules
+
+Connect all islands with bridges so the entire network is linked.
+
+Rules:
+• Each island shows a number — exactly that many bridge segments must connect to it.
+• Bridges run horizontally or vertically between islands.
+• Up to two bridges may connect any pair of islands.
+• Bridges cannot cross each other.
+• All islands must form one connected network.
+
+Tap between two islands to draw a bridge. Tap again for a double bridge. Tap a third time to remove it.
+]])
+
+
 local BridgesScreen = ScreenBase:extend{}
 
 function BridgesScreen:init()
@@ -83,7 +99,8 @@ function BridgesScreen:buildLayout()
                 { id = "diff_button", text = self:getDiffButtonText(),
                   callback = function() self:openDifficultyMenu() end },
                 { text = _("Check"), callback = function() self:onCheck() end },
-                self:makeCloseButtonConfig(),
+                self:makeRulesButtonConfig(GAME_RULES),
+            self:makeCloseButtonConfig(),
             },
         },
     }

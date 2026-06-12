@@ -32,6 +32,19 @@ local GRID_SIZES = { 4, 5, 6, 7 }
 -- FutoshikiScreen
 -- ---------------------------------------------------------------------------
 
+local GAME_RULES = _([[
+Futoshiki — Rules
+
+Fill the N×N grid with numbers 1 to N so that each row and each column contains each number exactly once.
+
+Inequality constraint:
+• Greater-than (>) and less-than (<) signs appear between some adjacent cells.
+• The numbers placed in those cells must satisfy the inequality shown.
+
+Tap a cell to select it, then tap a digit button to fill it in. Undo is available.
+]])
+
+
 local FutoshikiScreen = ScreenBase:extend{}
 
 -- ---------------------------------------------------------------------------
@@ -96,7 +109,8 @@ function FutoshikiScreen:buildLayout()
                   callback = function() self:openDifficultyMenu() end },
                 { id = "show_button",   text = self:getShowButtonText(),
                   callback = function() self:toggleSolution() end },
-                self:makeCloseButtonConfig(),
+                self:makeRulesButtonConfig(GAME_RULES),
+            self:makeCloseButtonConfig(),
             },
         },
     }

@@ -2,6 +2,15 @@
 
 > Move all disks from the first peg to the third, never placing a larger disk on a smaller one.
 
+
+## Screenshot
+
+*(Screenshot to be added.)*
+
+## Rules
+
+Move all disks from the first peg to the last. Only one disk at a time. A larger disk may never rest on top of a smaller disk. The minimum solution for N disks takes 2ᴺ − 1 moves.
+
 ## Rules
 
 - Three pegs and a stack of disks of different sizes, all starting on the left peg.
@@ -19,6 +28,7 @@
 | Deselect | Tap the same peg again |
 | New game | Tap **New** |
 | Change disk count | Tap the disk-count button |
+| Show rules | Tap **Rules** |
 
 ## Settings
 

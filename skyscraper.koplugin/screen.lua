@@ -32,6 +32,21 @@ local GRID_SIZES = { 4, 5 }
 -- SkyscraperScreen
 -- ---------------------------------------------------------------------------
 
+local GAME_RULES = _([[
+Skyscraper — Rules
+
+Place building heights 1 to N in each row and column (one of each, like Sudoku).
+
+Visibility clues:
+• Numbers on the edges show how many buildings are visible when looking along that row or column from that side.
+• A taller building blocks all shorter buildings behind it.
+• A clue of 1 means the tallest building (height N) is closest to that edge.
+• A clue of N means all buildings are visible (heights must be in increasing order from that edge).
+
+Tap a cell to select it, then tap a digit to enter a height.
+]])
+
+
 local SkyscraperScreen = ScreenBase:extend{}
 
 -- ---------------------------------------------------------------------------
@@ -92,6 +107,7 @@ function SkyscraperScreen:buildLayout()
               callback = function() self:openGridMenu() end },
             { id = "diff_button",     text = self:getDiffButtonText(),
               callback = function() self:openDifficultyMenu() end },
+            self:makeRulesButtonConfig(GAME_RULES),
             self:makeCloseButtonConfig(),
         }},
     }

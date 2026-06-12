@@ -35,6 +35,24 @@ local DeviceScreen = Device.screen
 -- EchecsScreen
 -- ---------------------------------------------------------------------------
 
+local GAME_RULES = _([[
+Chess — Rules
+
+Standard chess between two players.
+
+Pieces move as follows:
+• King — one square in any direction; cannot move into check.
+• Queen — any number of squares in any direction.
+• Rook — any number of squares horizontally or vertically.
+• Bishop — any number of squares diagonally.
+• Knight — L-shape (2 squares then 1 square); the only piece that can jump over others.
+• Pawn — moves forward one square (two on its first move); captures diagonally.
+
+Special moves: castling, en passant, pawn promotion.
+Win by delivering checkmate — putting the opponent's king in check with no escape.
+]])
+
+
 local EchecsScreen = ScreenBase:extend{}
 
 -- ---------------------------------------------------------------------------
@@ -47,8 +65,10 @@ function EchecsScreen:init()
     if not self.board:load(state) then
         self.board:reset()
     end
+    -- Flip board when human plays black (so white is always at the bottom by default)
+    local pc = self.plugin:getSetting("player_color", "w")
+    self._flipped = (self.plugin:getSetting("players", 1) == 1 and pc == "b")
     ScreenBase.init(self)
-    -- If AI plays first (1-player mode, human is black), trigger AI on new game
     if self.board.status == "playing" and self:_isAITurn() then
         self:triggerAI()
     end
@@ -76,6 +96,7 @@ function EchecsScreen:buildLayout()
 
     self.board_widget = EchecsBoardWidget:new{
         board        = board,
+        flipped      = self._flipped or false,
         onCellAction = function(r, c) self:onCellTap(r, c) end,
     }
 
@@ -106,7 +127,9 @@ function EchecsScreen:buildLayout()
                   text = self:_diffLabel(),
                   callback = function() self:openDifficultyMenu() end },
                 { text = _("Annuler"),    callback = function() self:onUndo() end },
-                self:makeCloseButtonConfig(),
+                { text = _("Retourner"), callback = function() self:onFlipBoard() end },
+                self:makeRulesButtonConfig(GAME_RULES),
+            self:makeCloseButtonConfig(),
             },
         },
     }
@@ -168,6 +191,10 @@ function EchecsScreen:onCellTap(r, c)
     self:updateStatus()
 
     if result == "move" then
+        -- Propagate last move highlight to widget
+        if self.board.last_move and self.board_widget then
+            self.board_widget.last_move = self.board.last_move
+        end
         self.plugin:saveState(self:serializeState())
         if self.board.status ~= "playing" then
             self:onGameEnd()
@@ -266,6 +293,18 @@ function EchecsScreen:onNewGame()
 end
 
 -- ---------------------------------------------------------------------------
+-- Flip board
+-- ---------------------------------------------------------------------------
+
+function EchecsScreen:onFlipBoard()
+    self._flipped = not (self._flipped or false)
+    if self.board_widget then
+        self.board_widget.flipped = self._flipped
+        self.board_widget:refresh()
+    end
+end
+
+-- ---------------------------------------------------------------------------
 -- Undo
 -- ---------------------------------------------------------------------------
 
@@ -346,9 +385,10 @@ function EchecsScreen:openColorMenu()
         current_id = pc,
         on_select  = function(id)
             self.plugin:saveSetting("player_color", id)
+            -- Auto-flip board: black player should see black at bottom
+            self._flipped = (id == "b")
             self:updateStatus()
             UIManager:setDirty(self, function() return "ui", self.dimen end)
-            -- If it's now the AI's turn, trigger
             if self:_isAITurn() and self.board.status == "playing" then
                 self:triggerAI()
             end

@@ -2,6 +2,15 @@
 
 A Light Up (Akari) plugin for [KOReader](https://github.com/koreader/koreader).
 
+
+## Screenshot
+
+*(Screenshot to be added.)*
+
+## Rules
+
+Place light bulbs so every white cell is illuminated. Bulbs shine in four directions until blocked. Numbered black cells indicate exactly how many orthogonally adjacent bulbs are required. No two bulbs may illuminate each other.
+
 ## Concept
 
 Light Up (Japanese: Akari, "light") is a binary-determination logic puzzle.
@@ -12,7 +21,7 @@ Place light bulbs in white cells of a grid so that:
 2. No two bulbs illuminate each other.
 3. Black cells with a digit must have exactly that many bulbs in adjacent cells.
 
-## Planned Features
+## Features
 
 - **Multiple grid sizes** — 7×7, 10×10, 14×14
 - **Three difficulty levels** — Easy, Medium, Hard
@@ -36,6 +45,7 @@ Place light bulbs in white cells of a grid so that:
 | New game | Tap **New game** |
 | Change grid size | Tap **Grid** |
 | Change difficulty | Tap **Diff** |
+| Show rules | Tap **Rules** |
 
 ## Why e-ink friendly?
 

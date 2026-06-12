@@ -20,6 +20,7 @@ local InputContainer  = require("ui/widget/container/inputcontainer")
 local Menu            = require("ui/widget/menu")
 local Size            = require("ui/size")
 local TextWidget      = require("ui/widget/textwidget")
+local TextViewer      = require("ui/widget/textviewer")
 local UIManager       = require("ui/uimanager")
 local VerticalGroup   = require("ui/widget/verticalgroup")
 local VerticalSpan    = require("ui/widget/verticalspan")
@@ -41,6 +42,29 @@ local DIFFICULTY_LABELS = {
 -- ---------------------------------------------------------------------------
 -- KakuroScreen
 -- ---------------------------------------------------------------------------
+
+local GAME_RULES = _([[
+Kakuro — Rules
+
+Fill the white cells with digits 1–9 so that each "run" sums to its clue value.
+
+Rules:
+• Across runs fill cells going right; down runs fill cells going down.
+• Each run's digits must sum exactly to the clue shown in the adjacent black triangle.
+• No digit may be repeated within a single run.
+• Black cells are walls; clue cells show the across clue (bottom-left triangle) and the down clue (top-right triangle).
+
+Tap a white cell to select it, then tap a digit button to enter a value.
+]])
+
+local function showRules()
+    UIManager:show(TextViewer:new{
+        title  = _("Rules"),
+        text   = GAME_RULES,
+        width  = math.floor(DeviceScreen:getWidth() * 0.9),
+        height = math.floor(DeviceScreen:getHeight() * 0.9),
+    })
+end
 
 local KakuroScreen = InputContainer:extend{}
 
@@ -125,6 +149,7 @@ function KakuroScreen:buildLayout()
                   callback = function() self:openDifficultyMenu() end },
                 { id = "show_result",     text = _("Show result"),
                   callback = function() self:toggleSolution() end },
+                { text = _("Rules"),  callback = showRules },
                 { text = _("Close"),      callback = function() self:onClose() end },
             },
         },

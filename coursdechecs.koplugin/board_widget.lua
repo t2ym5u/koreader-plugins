@@ -1,36 +1,24 @@
+-- ---------------------------------------------------------------------------
+-- CoursBoardWidget — renders the 8×8 board for the chess lessons plugin.
+-- Uses chess_pieces.lua for pixel-art piece rendering.
+-- Supports flipping via the `flipped` field.
+-- ---------------------------------------------------------------------------
+
 local Blitbuffer = require("ffi/blitbuffer")
 local Font       = require("ui/font")
 local Geom       = require("ui/geometry")
 local RenderText = require("ui/rendertext")
-local UIManager  = require("ui/uimanager")
 
 local gwb            = require("grid_widget_base")
 local GridWidgetBase = gwb.GridWidgetBase
-local drawLine       = gwb.drawLine
+local ChessPieces    = require("chess_pieces")
 
--- Square colors (e-ink friendly)
-local C_LIGHT_SQ = Blitbuffer.COLOR_GRAY_E   -- light squares (r+c even)
-local C_DARK_SQ  = Blitbuffer.COLOR_GRAY_9   -- dark squares (r+c odd)
-local C_SEL      = Blitbuffer.COLOR_GRAY_D   -- selected square highlight
-local C_DOT      = Blitbuffer.COLOR_GRAY_4   -- valid-move dot
-local C_LINE     = Blitbuffer.COLOR_BLACK    -- grid lines
-
--- French piece letter abbreviations
--- P=pion, T=tour, C=cavalier, F=fou, D=dame, R=roi
-local PIECE_LETTER = {
-    [1]  = "P",  -- W_PAWN
-    [2]  = "T",  -- W_ROOK
-    [3]  = "C",  -- W_KNIGHT
-    [4]  = "F",  -- W_BISHOP
-    [5]  = "D",  -- W_QUEEN
-    [6]  = "R",  -- W_KING
-    [7]  = "P",  -- B_PAWN
-    [8]  = "T",  -- B_ROOK
-    [9]  = "C",  -- B_KNIGHT
-    [10] = "F",  -- B_BISHOP
-    [11] = "D",  -- B_QUEEN
-    [12] = "R",  -- B_KING
-}
+local C_LIGHT_SQ = Blitbuffer.COLOR_GRAY_E
+local C_DARK_SQ  = Blitbuffer.COLOR_GRAY_9
+local C_SEL      = Blitbuffer.COLOR_GRAY_C
+local C_LASTMOV  = Blitbuffer.COLOR_GRAY_B
+local C_DOT      = Blitbuffer.COLOR_GRAY_3
+local C_LINE     = Blitbuffer.COLOR_BLACK
 
 -- ---------------------------------------------------------------------------
 -- CoursBoardWidget
@@ -40,128 +28,125 @@ local CoursBoardWidget = GridWidgetBase:extend{
     board        = nil,
     size_ratio   = 0.80,
     onCellAction = nil,
+    cols         = 8,
+    rows         = 8,
+    -- last_move: {fr,fc,tr,tc} or nil
+    last_move    = nil,
+    -- flipped: true → black's perspective
+    flipped      = false,
 }
 
 function CoursBoardWidget:init()
-    self.cols = 8
-    self.rows = 8
     GridWidgetBase.init(self)
+    local cell_min   = math.min(self.cell_w, self.cell_h)
+    local label_size = math.max(6, math.floor(cell_min * 0.22))
+    self.label_face  = Font:getFace("smallinfofont", label_size)
 end
 
-function CoursBoardWidget:onCellTap(row, col)
-    if self.onCellAction then self.onCellAction(row, col) end
+function CoursBoardWidget:onCellTap(v_row, v_col)
+    local br = self.flipped and (9 - v_row) or v_row
+    local bc = self.flipped and (9 - v_col) or v_col
+    if self.onCellAction then self.onCellAction(br, bc) end
 end
+
+-- ---------------------------------------------------------------------------
+-- Rendering
+-- ---------------------------------------------------------------------------
 
 function CoursBoardWidget:paintTo(bb, x, y)
-    -- Update paint_rect for gesture hit-testing
     self.paint_rect = Geom:new{ x = x, y = y, w = self.dimen.w, h = self.dimen.h }
 
     local board = self.board
     local n     = 8
     local cw    = self.cell_w
     local ch    = self.cell_h
+    local flip  = self.flipped
+    local S     = self.size
 
-    -- Draw background squares
-    for r = 1, n do
-        for c = 1, n do
-            local cx  = x + math.floor((c - 1) * cw)
-            local cy  = y + math.floor((r - 1) * ch)
-            local cew = math.ceil(cw)
-            local ceh = math.ceil(ch)
-            -- Light square when (r+c) is even; dark when odd
-            local dark = (r + c) % 2 == 1
-            bb:paintRect(cx, cy, cew, ceh, dark and C_DARK_SQ or C_LIGHT_SQ)
-        end
-    end
-
-    -- Draw selected square highlight
+    -- Selected square and valid targets
+    local sel_r, sel_c
     if board.selected then
-        local sr = board.selected[1]
-        local sc = board.selected[2]
-        local sx = x + math.floor((sc - 1) * cw)
-        local sy = y + math.floor((sr - 1) * ch)
-        bb:paintRect(sx, sy, math.ceil(cw), math.ceil(ch), C_SEL)
+        sel_r = board.selected[1]
+        sel_c = board.selected[2]
     end
-
-    -- Build valid-move target set for the selected piece
     local move_targets = {}
-    if board.selected then
-        local sr, sc = board.selected[1], board.selected[2]
-        local moves = board:getMovesForSquare(sr, sc)
+    if sel_r then
+        local moves = board:getMovesForSquare(sel_r, sel_c)
         for _, m in ipairs(moves) do
             move_targets[m.tr * 10 + m.tc] = true
         end
     end
 
-    local face = self.number_face
+    -- Last move
+    local lm         = self.last_move
+    local lm_key_fr  = lm and (lm.fr * 10 + lm.fc) or nil
+    local lm_key_to  = lm and (lm.tr * 10 + lm.tc) or nil
 
-    -- Draw pieces and valid-move dots
-    for r = 1, n do
-        for c = 1, n do
-            local v = board.sq[r][c]
+    for v_row = 1, n do
+        for v_col = 1, n do
+            local br  = flip and (9 - v_row) or v_row
+            local bc  = flip and (9 - v_col) or v_col
+            local px  = x + math.floor((v_col - 1) * cw)
+            local py  = y + math.floor((v_row - 1) * ch)
+            local pcw = math.ceil(cw)
+            local pch = math.ceil(ch)
+            local key = br * 10 + bc
 
-            -- Draw piece
+            -- Background
+            local dark = (br + bc) % 2 == 1
+            local bg
+            if sel_r and br == sel_r and bc == sel_c then
+                bg = C_SEL
+            elseif lm and (key == lm_key_fr or key == lm_key_to) then
+                bg = C_LASTMOV
+            else
+                bg = dark and C_DARK_SQ or C_LIGHT_SQ
+            end
+            bb:paintRect(px, py, pcw, pch, bg)
+
+            -- Piece
+            local v = board.sq[br][bc]
             if v ~= 0 then
-                local cx  = x + math.floor((c - 1) * cw)
-                local cy  = y + math.floor((r - 1) * ch)
-                local cew = math.ceil(cw)
-                local ceh = math.ceil(ch)
-                local pad = math.max(3, math.floor(math.min(cew, ceh) * 0.12))
-                local pw  = cew - 2 * pad
-                local ph  = ceh - 2 * pad
-
-                local fill, border, letter_color
-                if v <= 6 then
-                    -- White piece
-                    fill         = Blitbuffer.COLOR_WHITE
-                    border       = Blitbuffer.COLOR_BLACK
-                    letter_color = Blitbuffer.COLOR_BLACK
-                else
-                    -- Black piece
-                    fill         = Blitbuffer.COLOR_BLACK
-                    border       = Blitbuffer.COLOR_GRAY_4
-                    letter_color = Blitbuffer.COLOR_WHITE
-                end
-
-                -- Piece body
-                bb:paintRect(cx + pad, cy + pad, pw, ph, fill)
-
-                -- Border (4 sides, 1-pixel thick minimum)
-                local bw = math.max(1, math.floor(math.min(cew, ceh) * 0.05))
-                bb:paintRect(cx + pad,           cy + pad,           pw, bw, border)
-                bb:paintRect(cx + pad,           cy + pad + ph - bw, pw, bw, border)
-                bb:paintRect(cx + pad,           cy + pad,           bw, ph, border)
-                bb:paintRect(cx + pad + pw - bw, cy + pad,           bw, ph, border)
-
-                -- Piece letter
-                local letter = PIECE_LETTER[v]
-                if letter and face then
-                    local m  = RenderText:sizeUtf8Text(0, pw - 2, face, letter, true, false)
-                    local tx = cx + math.floor((cew - m.x) / 2)
-                    local ty = cy + math.floor((ceh - (m.y_bottom - m.y_top)) / 2) - m.y_top
-                    RenderText:renderUtf8Text(bb, tx, ty, face, letter, true, false, letter_color)
-                end
+                ChessPieces.drawPiece(bb, px, py, pcw, pch, v)
             end
 
-            -- Draw valid-move dot (small square at cell center)
-            if move_targets[r * 10 + c] then
-                local cx  = x + math.floor((c - 1) * cw)
-                local cy  = y + math.floor((r - 1) * ch)
-                local dot = math.max(3, math.floor(math.min(cw, ch) * 0.15))
-                local mx  = cx + math.floor(cw / 2) - math.floor(dot / 2)
-                local my  = cy + math.floor(ch / 2) - math.floor(dot / 2)
-                bb:paintRect(mx, my, dot, dot, C_DOT)
+            -- Valid-move dot
+            if move_targets[key] then
+                local dot = math.max(3, math.floor(math.min(cw, ch) * 0.18))
+                bb:paintRect(px + math.floor(cw / 2) - math.floor(dot / 2),
+                             py + math.floor(ch / 2) - math.floor(dot / 2),
+                             dot, dot, C_DOT)
             end
         end
     end
 
-    -- Draw grid lines (thin interior, thick border)
-    local thin  = 1
+    -- Grid lines
     local thick = math.max(2, math.floor(math.min(cw, ch) * 0.06))
     for i = 0, n do
-        local lw = (i == 0 or i == n) and thick or thin
-        drawLine(bb, x + math.floor(i * cw), y, lw, self.dimen.h, C_LINE)
-        drawLine(bb, x, y + math.floor(i * ch), self.dimen.w, lw, C_LINE)
+        local lw    = (i == 0 or i == n) and thick or 1
+        local color = (i == 0 or i == n) and C_LINE or Blitbuffer.COLOR_GRAY_9
+        bb:paintRect(x + math.floor(i * cw), y,  lw, S, color)
+        bb:paintRect(x, y + math.floor(i * ch),  S, lw, color)
+    end
+
+    -- Rank / file labels
+    local file_letters = {"a","b","c","d","e","f","g","h"}
+    local label_face   = self.label_face
+    for i = 1, n do
+        local board_row  = flip and i or (9 - i)
+        local rank_label = tostring(board_row)
+        local lx  = x + math.floor((i - 1) * cw) + 2
+        local ly  = y + math.floor((i - 1) * ch) + 2
+        local m1  = RenderText:sizeUtf8Text(0, 20, label_face, rank_label, true, false)
+        RenderText:renderUtf8Text(bb, lx, ly + (m1.y_bottom or 0), label_face, rank_label,
+            true, false, Blitbuffer.COLOR_GRAY_5)
+
+        local board_col  = flip and (9 - i) or i
+        local file_label = file_letters[board_col] or ""
+        local lx2 = x + math.floor((i - 1) * cw) + math.floor(cw / 2)
+        local m2  = RenderText:sizeUtf8Text(0, 20, label_face, file_label, true, false)
+        RenderText:renderUtf8Text(bb, lx2 - math.floor(m2.x / 2),
+            y + S - 3, label_face, file_label, true, false, Blitbuffer.COLOR_GRAY_5)
     end
 end
 

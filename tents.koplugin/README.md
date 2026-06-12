@@ -2,6 +2,15 @@
 
 A Tents and Trees plugin for [KOReader](https://github.com/koreader/koreader).
 
+
+## Screenshot
+
+*(Screenshot to be added.)*
+
+## Rules
+
+Place tents adjacent to trees: each tree pairs with exactly one orthogonally adjacent tent; each tent pairs with one tree. No two tents may touch (even diagonally). Row and column clue counts must be satisfied.
+
 ## Concept
 
 Place tents in the grid so that:
@@ -13,7 +22,7 @@ Place tents in the grid so that:
 
 Tree positions and row/column clues are given; deduce where every tent goes.
 
-## Planned Features
+## Features
 
 - **Multiple grid sizes** — 6×6, 8×8, 10×10, 12×12
 - **Three difficulty levels** — Easy, Medium, Hard
@@ -37,6 +46,7 @@ Tree positions and row/column clues are given; deduce where every tent goes.
 | New game | Tap **New game** |
 | Change grid size | Tap **Grid** |
 | Change difficulty | Tap **Diff** |
+| Show rules | Tap **Rules** |
 
 ## Why e-ink friendly?
 

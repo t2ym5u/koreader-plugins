@@ -29,6 +29,20 @@ local SIZES     = board_module.SIZES
 
 local DeviceScreen = Device.screen
 
+local GAME_RULES = _([[
+Cave Puzzle — Rules
+
+Shade some cells black to reveal a "cave" of connected white cells.
+
+Rules:
+• All white (unshaded) cells must form one single orthogonally connected group.
+• Black cells must not be completely surrounded by white cells (no black cell can be enclosed in the cave).
+• Numbered white cells show exactly how many white cells are visible from that position in all four orthogonal directions (including itself), until blocked by a black cell or the grid edge.
+
+Tap a cell to shade it black. Tap again to unshade.
+]])
+
+
 local CaveScreen = ScreenBase:extend{}
 
 -- ---------------------------------------------------------------------------
@@ -82,6 +96,7 @@ function CaveScreen:buildLayout()
               callback = function() self:openSizeMenu() end },
             { id = "diff_button",  text = self:getDiffButtonText(),
               callback = function() self:openDifficultyMenu() end },
+            self:makeRulesButtonConfig(GAME_RULES),
             self:makeCloseButtonConfig(),
         }},
     }

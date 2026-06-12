@@ -2,12 +2,21 @@
 
 A 15-Puzzle (Sliding Puzzle) plugin for [KOReader](https://github.com/koreader/koreader).
 
+
+## Screenshot
+
+*(Screenshot to be added.)*
+
+## Rules
+
+Slide numbered tiles (1–15) in a 4×4 grid into the empty space to arrange them in order from top-left to bottom-right, with the empty space in the bottom-right corner. Only tiles adjacent to the empty space can move.
+
 ## Concept
 
 The classic sliding puzzle: arrange 15 numbered tiles in a 4×4 grid by sliding
 them into the single empty space. Solve it in as few moves as possible.
 
-## Planned Features
+## Features
 
 - **Grid sizes** — 3×3 (8-puzzle), 4×4 (classic 15-puzzle), 5×5 (24-puzzle)
 - **Scramble guarantee** — only solvable configurations are generated
@@ -25,6 +34,7 @@ them into the single empty space. Solve it in as few moves as possible.
 | Request a hint | Tap **Hint** |
 | New game | Tap **New game** |
 | Change grid size | Tap **Grid** |
+| Show rules | Tap **Rules** |
 
 ## Why e-ink friendly?
 

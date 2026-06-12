@@ -41,6 +41,15 @@ local function digitToChar(d)
     return d <= 9 and tostring(d) or string.char(55 + d)
 end
 
+local GAME_RULES = _([[
+Windoku (Windows Sudoku) — Rules
+
+Standard Sudoku rules apply:
+• Fill the 9×9 grid with 1–9; each row, column, and 3×3 box must contain each digit exactly once.
+
+Window constraint:
+• Four additional 3×3 "windows" (one in each quadrant of the grid) must also each contain every digit from 1 to 9 exactly once.]])
+
 local WindokuScreen = BaseScreen:extend{}
 
 function WindokuScreen:buildLayout()
@@ -88,6 +97,7 @@ function WindokuScreen:buildLayout()
                   callback = function() self:openDifficultyMenu() end },
                 { id = "show_result",     text = _("Show result"),
                   callback = function() self:toggleSolution() end },
+                self:makeRulesButtonConfig(GAME_RULES),
                 { text = _("Close"),      callback = function()
                     self:onClose()
                     UIManager:close(self)

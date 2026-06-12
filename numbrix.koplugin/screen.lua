@@ -28,6 +28,20 @@ local DeviceScreen = Device.screen
 
 local GRID_SIZES = { 5, 6 }
 
+local GAME_RULES = _([[
+Numbrix — Rules
+
+Fill the grid with consecutive numbers 1 to N² so that each pair of consecutive numbers occupies orthogonally adjacent cells.
+
+Rules:
+• Numbers must be placed in every cell of the grid.
+• Consecutive numbers (k and k+1) must be in cells that share a side — diagonal adjacency is not allowed.
+• Some numbers are given as clues; the rest must be deduced.
+
+The result is a single "snake" path that visits every cell exactly once.
+]])
+
+
 local NumbrixScreen = ScreenBase:extend{}
 
 function NumbrixScreen:init()
@@ -79,6 +93,7 @@ function NumbrixScreen:buildLayout()
               callback = function() self:openSizeMenu() end },
             { id = "diff_button",   text = self:getDiffButtonText(),
               callback = function() self:openDifficultyMenu() end },
+            self:makeRulesButtonConfig(GAME_RULES),
             self:makeCloseButtonConfig(),
         }},
     }

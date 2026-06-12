@@ -29,6 +29,18 @@ local DeviceScreen = Device.screen
 -- Game2048Screen
 -- ---------------------------------------------------------------------------
 
+local GAME_RULES = _([[
+2048 — Rules
+
+Slide all tiles in one direction at a time (up, down, left, right).
+When two tiles with the same number collide, they merge into one tile with their combined value.
+After each move, a new tile (2 or 4) appears in a random empty cell.
+Goal: create a tile with the value 2048.
+The game ends when no more moves are possible.
+
+Score: the value of each newly merged tile is added to your score.
+]])
+
 local Game2048Screen = ScreenBase:extend{}
 
 -- ---------------------------------------------------------------------------
@@ -70,6 +82,7 @@ function Game2048Screen:buildLayout()
               callback = function() self:onCycleSize() end },
             { id = "undo_btn",  text = _("Undo"),
               callback = function() self:onUndo() end },
+            self:makeRulesButtonConfig(GAME_RULES),
             self:makeCloseButtonConfig(),
         }},
     }
