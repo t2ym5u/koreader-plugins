@@ -134,10 +134,13 @@ function ScreenBase:showRules(text)
     })
 end
 
-function ScreenBase:makeRulesButtonConfig(text)
+function ScreenBase:makeRulesButtonConfig(en_text, fr_text)
     return {
         text     = _("Rules"),
-        callback = function() self:showRules(text) end,
+        callback = function()
+            local lang = (G_reader_settings and G_reader_settings:readSetting("language") or "en"):sub(1, 2)
+            self:showRules((lang == "fr" and fr_text) or en_text)
+        end,
     }
 end
 
