@@ -29,7 +29,7 @@ local SIZES     = board_module.SIZES
 
 local DeviceScreen = Device.screen
 
-local GAME_RULES = _([[
+local GAME_RULES_EN = _([[
 Cave Puzzle — Rules
 
 Shade some cells black to reveal a "cave" of connected white cells.
@@ -42,6 +42,18 @@ Rules:
 Tap a cell to shade it black. Tap again to unshade.
 ]])
 
+local GAME_RULES_FR = [[
+Grotte — Règles
+
+Noircissez certaines cases pour révéler une "grotte" de cases blanches connectées.
+
+Règles :
+• Toutes les cases blanches (non noircies) doivent former un seul groupe orthogonalement connecté.
+• Les cases noires ne doivent pas être complètement entourées par des cases blanches (aucune case noire ne peut être enfermée dans la grotte).
+• Les cases blanches numérotées indiquent exactement combien de cases blanches sont visibles depuis cette position dans les quatre directions orthogonales (elle-même incluse), jusqu'à être bloquée par une case noire ou le bord de la grille.
+
+Appuyez sur une case pour la noircir. Appuyez à nouveau pour la dénoircir.
+]]
 
 local CaveScreen = ScreenBase:extend{}
 
@@ -96,7 +108,7 @@ function CaveScreen:buildLayout()
               callback = function() self:openSizeMenu() end },
             { id = "diff_button",  text = self:getDiffButtonText(),
               callback = function() self:openDifficultyMenu() end },
-            self:makeRulesButtonConfig(GAME_RULES),
+            self:makeRulesButtonConfig(GAME_RULES_EN, GAME_RULES_FR),
             self:makeCloseButtonConfig(),
         }},
     }

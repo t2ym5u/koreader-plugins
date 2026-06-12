@@ -34,7 +34,7 @@ local DeviceScreen = Device.screen
 -- P4Screen
 -- ---------------------------------------------------------------------------
 
-local GAME_RULES = _([[
+local GAME_RULES_EN = _([[
 Connect Four (Puissance 4) — Rules
 
 Two players alternate dropping coloured pieces into the grid.
@@ -46,6 +46,17 @@ Rules:
 • If the entire board fills with no winner, the game is a draw.
 ]])
 
+local GAME_RULES_FR = [[
+Puissance 4 — Règles
+
+Deux joueurs font tomber alternativement des pions colorés dans la grille.
+
+Règles :
+• Appuyez sur une colonne pour y faire tomber votre pion — il tombe dans la case vide la plus basse.
+• Le premier joueur à aligner quatre pions gagne.
+• L'alignement peut être horizontal, vertical ou diagonal.
+• Si toute la grille est remplie sans gagnant, la partie est nulle.
+]]
 
 local P4Screen = ScreenBase:extend{}
 
@@ -129,7 +140,7 @@ function P4Screen:buildLayout()
             { text = self:_diffLabel(),
               id   = "diff_btn",
               callback = function() self:openDifficultyMenu() end },
-            self:makeRulesButtonConfig(GAME_RULES),
+            self:makeRulesButtonConfig(GAME_RULES_EN, GAME_RULES_FR),
             self:makeCloseButtonConfig(),
         }},
     }

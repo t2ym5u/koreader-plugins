@@ -41,7 +41,7 @@ local function digitToChar(d)
     return d <= 9 and tostring(d) or string.char(55 + d)
 end
 
-local GAME_RULES = _([[
+local GAME_RULES_EN = _([[
 Sudoku-X — Rules
 
 Standard Sudoku rules apply:
@@ -49,6 +49,16 @@ Standard Sudoku rules apply:
 
 Diagonal constraint:
 • Each of the two main diagonals (top-left to bottom-right, and top-right to bottom-left) must also contain every digit from 1 to 9 exactly once.]])
+
+local GAME_RULES_FR = [[
+Sudoku X — Règles
+
+Les règles du Sudoku classique s'appliquent :
+• Remplissez la grille 9×9 avec les chiffres 1 à 9 ; chaque ligne, colonne et carré 3×3 doit contenir chaque chiffre exactement une fois.
+
+Contrainte diagonale :
+• Chacune des deux diagonales principales (haut-gauche vers bas-droit, et haut-droit vers bas-gauche) doit aussi contenir tous les chiffres de 1 à 9 exactement une fois.
+]]
 
 local SudokuXScreen = BaseScreen:extend{}
 
@@ -97,7 +107,7 @@ function SudokuXScreen:buildLayout()
                   callback = function() self:openDifficultyMenu() end },
                 { id = "show_result",     text = _("Show result"),
                   callback = function() self:toggleSolution() end },
-                self:makeRulesButtonConfig(GAME_RULES),
+                self:makeRulesButtonConfig(GAME_RULES_EN, GAME_RULES_FR),
                 { text = _("Close"),      callback = function()
                     self:onClose()
                     UIManager:close(self)

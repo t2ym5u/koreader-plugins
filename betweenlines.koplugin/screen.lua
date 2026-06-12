@@ -40,7 +40,7 @@ local function digitToChar(d)
     return d <= 9 and tostring(d) or string.char(55 + d)
 end
 
-local GAME_RULES = _([[
+local GAME_RULES_EN = _([[
 Between Lines Sudoku — Rules
 
 Standard Sudoku rules apply:
@@ -49,6 +49,17 @@ Standard Sudoku rules apply:
 Between-lines constraint:
 • Lines connect two circle endpoints on the grid.
 • Every digit placed on a line must be strictly between (numerically) the values of the two endpoint circles.]])
+
+local GAME_RULES_FR = [[
+Sudoku Entre-Lignes — Règles
+
+Les règles du Sudoku classique s'appliquent :
+• Remplissez la grille 9×9 avec les chiffres 1 à 9 ; chaque ligne, colonne et carré 3×3 doit contenir chaque chiffre exactement une fois.
+
+Contrainte entre-lignes :
+• Des lignes relient deux cercles extrémités sur la grille.
+• Chaque chiffre placé sur une ligne doit être strictement compris (numériquement) entre les valeurs des deux cercles extrémités.
+]]
 
 local BetweenLinesScreen = BaseScreen:extend{}
 
@@ -97,7 +108,7 @@ function BetweenLinesScreen:buildLayout()
                   callback = function() self:openDifficultyMenu() end },
                 { id = "show_result",     text = _("Show result"),
                   callback = function() self:toggleSolution() end },
-                self:makeRulesButtonConfig(GAME_RULES),
+                self:makeRulesButtonConfig(GAME_RULES_EN, GAME_RULES_FR),
                 { text = _("Close"),      callback = function()
                     self:onClose()
                     UIManager:close(self)

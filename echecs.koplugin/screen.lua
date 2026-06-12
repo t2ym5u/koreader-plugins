@@ -35,7 +35,7 @@ local DeviceScreen = Device.screen
 -- EchecsScreen
 -- ---------------------------------------------------------------------------
 
-local GAME_RULES = _([[
+local GAME_RULES_EN = _([[
 Chess — Rules
 
 Standard chess between two players.
@@ -52,6 +52,22 @@ Special moves: castling, en passant, pawn promotion.
 Win by delivering checkmate — putting the opponent's king in check with no escape.
 ]])
 
+local GAME_RULES_FR = [[
+Échecs — Règles
+
+Partie d'échecs standard entre deux joueurs.
+
+Chaque pièce se déplace ainsi :
+• Roi — une case dans n'importe quelle direction ; ne peut pas se mettre en échec.
+• Dame — autant de cases que souhaité dans n'importe quelle direction.
+• Tour — autant de cases que souhaité horizontalement ou verticalement.
+• Fou — autant de cases que souhaité en diagonale.
+• Cavalier — en forme de "L" (2 cases puis 1 case) ; la seule pièce pouvant sauter.
+• Pion — avance d'une case (deux lors du premier déplacement) ; capture en diagonale.
+
+Coups spéciaux : roque, prise en passant, promotion du pion.
+Gagnez en mettant le roi adverse en échec et mat.
+]]
 
 local EchecsScreen = ScreenBase:extend{}
 
@@ -128,7 +144,7 @@ function EchecsScreen:buildLayout()
                   callback = function() self:openDifficultyMenu() end },
                 { text = _("Annuler"),    callback = function() self:onUndo() end },
                 { text = _("Retourner"), callback = function() self:onFlipBoard() end },
-                self:makeRulesButtonConfig(GAME_RULES),
+                self:makeRulesButtonConfig(GAME_RULES_EN, GAME_RULES_FR),
             self:makeCloseButtonConfig(),
             },
         },

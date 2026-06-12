@@ -30,7 +30,7 @@ local DeviceScreen = Device.screen
 -- BattleshipScreen
 -- ---------------------------------------------------------------------------
 
-local GAME_RULES = _([[
+local GAME_RULES_EN = _([[
 Battleship (Bimaru) — Rules
 
 Find the hidden fleet in the grid using the row and column clues.
@@ -41,6 +41,18 @@ Ships are placed horizontally or vertically and cannot touch each other, even di
 
 Tap a cell to toggle it between water and ship. Long-press to mark it as definite water.
 ]])
+
+local GAME_RULES_FR = [[
+Bataille Navale (Bimaru) — Règles
+
+Trouvez la flotte cachée dans la grille à l'aide des indices de lignes et de colonnes.
+
+La flotte comprend des navires de différentes longueurs.
+Les indices de lignes et de colonnes indiquent le nombre total de segments de navires dans chaque ligne.
+Les navires sont placés horizontalement ou verticalement et ne peuvent pas se toucher, même en diagonale.
+
+Appuyez sur une case pour la basculer entre eau et navire. Appui long pour marquer une case comme eau certaine.
+]]
 
 local BattleshipScreen = ScreenBase:extend{}
 
@@ -77,7 +89,7 @@ function BattleshipScreen:buildLayout()
               callback = function() self:openSizeMenu() end },
             { id = "diff_btn",  text = self:_diffLabel(),
               callback = function() self:openDiffMenu() end },
-            self:makeRulesButtonConfig(GAME_RULES),
+            self:makeRulesButtonConfig(GAME_RULES_EN, GAME_RULES_FR),
             self:makeCloseButtonConfig(),
         }},
     }

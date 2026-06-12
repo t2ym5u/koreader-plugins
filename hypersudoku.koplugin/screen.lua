@@ -41,7 +41,7 @@ local function digitToChar(d)
     return d <= 9 and tostring(d) or string.char(55 + d)
 end
 
-local GAME_RULES = _([[
+local GAME_RULES_EN = _([[
 Hyper Sudoku — Rules
 
 Standard Sudoku rules apply:
@@ -51,6 +51,18 @@ Extra constraint:
 • Four additional 3×3 regions (one in each quadrant, overlapping the standard boxes) must also each contain every digit from 1 to 9 exactly once.
 
 These extra regions are usually highlighted with a different background.]])
+
+local GAME_RULES_FR = [[
+Hyper Sudoku — Règles
+
+Les règles du Sudoku classique s'appliquent :
+• Remplissez la grille 9×9 avec les chiffres 1 à 9 ; chaque ligne, colonne et carré 3×3 doit contenir chaque chiffre exactement une fois.
+
+Contrainte supplémentaire :
+• Quatre régions 3×3 supplémentaires (une dans chaque quadrant, en chevauchement avec les carrés standard) doivent aussi chacune contenir tous les chiffres de 1 à 9 exactement une fois.
+
+Ces régions supplémentaires sont généralement mises en évidence avec un fond différent.
+]]
 
 local HyperSudokuScreen = BaseScreen:extend{}
 
@@ -99,7 +111,7 @@ function HyperSudokuScreen:buildLayout()
                   callback = function() self:openDifficultyMenu() end },
                 { id = "show_result",     text = _("Show result"),
                   callback = function() self:toggleSolution() end },
-                self:makeRulesButtonConfig(GAME_RULES),
+                self:makeRulesButtonConfig(GAME_RULES_EN, GAME_RULES_FR),
                 { text = _("Close"),      callback = function()
                     self:onClose()
                     UIManager:close(self)

@@ -30,7 +30,7 @@ local DeviceScreen = Device.screen
 -- FifteenScreen
 -- ---------------------------------------------------------------------------
 
-local GAME_RULES = _([[
+local GAME_RULES_EN = _([[
 Fifteen Puzzle — Rules
 
 Arrange the numbered tiles in order by sliding them into the empty space.
@@ -41,6 +41,16 @@ Goal: arrange tiles 1, 2, 3 … in order from top-left to bottom-right, with the
 
 The puzzle is always solvable.
 ]])
+
+local GAME_RULES_FR = [[
+Taquin — Règles
+
+Glissez les tuiles numérotées (1 à 15) dans l'espace vide pour les ranger dans l'ordre, de gauche à droite et de haut en bas, avec l'espace vide en bas à droite.
+
+Appuyez sur une tuile adjacente à l'espace vide pour la faire glisser. Seules les tuiles directement à côté de l'espace vide peuvent bouger.
+
+Le puzzle est toujours soluble.
+]]
 
 local FifteenScreen = ScreenBase:extend{}
 
@@ -74,7 +84,7 @@ function FifteenScreen:buildLayout()
             { text = _("New"),  callback = function() self:onNewGame() end },
             { id = "grid_btn", text = self:_gridLabel(),
               callback = function() self:openGridMenu() end },
-            self:makeRulesButtonConfig(GAME_RULES),
+            self:makeRulesButtonConfig(GAME_RULES_EN, GAME_RULES_FR),
             self:makeCloseButtonConfig(),
         }},
     }

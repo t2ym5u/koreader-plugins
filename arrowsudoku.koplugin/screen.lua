@@ -40,7 +40,7 @@ local function digitToChar(d)
     return d <= 9 and tostring(d) or string.char(55 + d)
 end
 
-local GAME_RULES = _([[
+local GAME_RULES_EN = _([[
 Arrow Sudoku — Rules
 
 Standard Sudoku rules apply:
@@ -49,6 +49,17 @@ Standard Sudoku rules apply:
 Arrow constraint:
 • Digits along each arrow (starting from the cell next to the circle) must sum to the digit inside the circle.
 • Digits on the arrow may repeat.]])
+
+local GAME_RULES_FR = [[
+Sudoku Fléché — Règles
+
+Les règles du Sudoku classique s'appliquent :
+• Remplissez la grille avec les chiffres 1 à 9 ; chaque ligne, colonne et carré 3×3 doit contenir chaque chiffre exactement une fois.
+
+Contrainte des flèches :
+• Les chiffres placés sur une flèche (à partir de la case suivant le cercle) doivent sommer au chiffre inscrit dans le cercle.
+• Les chiffres sur une flèche peuvent se répéter.
+]]
 
 local ArrowSudokuScreen = BaseScreen:extend{}
 
@@ -97,7 +108,7 @@ function ArrowSudokuScreen:buildLayout()
                   callback = function() self:openDifficultyMenu() end },
                 { id = "show_result",     text = _("Show result"),
                   callback = function() self:toggleSolution() end },
-                self:makeRulesButtonConfig(GAME_RULES),
+                self:makeRulesButtonConfig(GAME_RULES_EN, GAME_RULES_FR),
                 { text = _("Close"),      callback = function()
                     self:onClose()
                     UIManager:close(self)

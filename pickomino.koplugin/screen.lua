@@ -25,7 +25,7 @@ local PicominoBoardWidget  = lrequire("board_widget")
 
 local DeviceScreen = Device.screen
 
-local GAME_RULES = _([[
+local GAME_RULES_EN = _([[
 Pickomino (Heckmeck) — Rules
 
 Collect worm tiles by rolling dice to reach their values.
@@ -43,6 +43,23 @@ On each turn:
 The player with the most worm symbols on their collected tiles wins!
 ]])
 
+local GAME_RULES_FR = [[
+Pickomino (Heckmeck) — Règles
+
+Récoltez des tuiles "vers" en lançant des dés pour atteindre leurs valeurs.
+
+À chaque tour :
+1. Lancez les 8 dés.
+2. Mettez de côté tous les dés affichant une valeur de face de votre choix.
+3. Relancez les dés restants et mettez de côté une nouvelle valeur de face (différente des précédentes).
+4. Répétez jusqu'à décider de vous arrêter, ou jusqu'à ne plus pouvoir mettre de côté une nouvelle valeur.
+5. Votre score est la somme de tous les dés mis de côté.
+   • Votre total doit inclure au moins une face "ver" (⚕).
+   • Réclamez la tuile dont la valeur correspond à votre total (ou la plus proche inférieure disponible).
+6. Si votre total n'inclut pas de face ver, ou si aucune tuile n'est disponible, vous perdez votre tuile du dessus.
+
+Le joueur ayant le plus de symboles vers sur ses tuiles gagne !
+]]
 
 local PickominoScreen = ScreenBase:extend{}
 
@@ -79,7 +96,7 @@ function PickominoScreen:buildLayout()
             { text = _("New"),   callback = function() self:onNewGame() end },
             { text = _("Roll"),  callback = function() self:onRoll() end },
             { text = _("Stop"),  callback = function() self:onStop() end },
-            self:makeRulesButtonConfig(GAME_RULES),
+            self:makeRulesButtonConfig(GAME_RULES_EN, GAME_RULES_FR),
             self:makeCloseButtonConfig(),
         }},
     }

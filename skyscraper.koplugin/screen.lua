@@ -32,7 +32,7 @@ local GRID_SIZES = { 4, 5 }
 -- SkyscraperScreen
 -- ---------------------------------------------------------------------------
 
-local GAME_RULES = _([[
+local GAME_RULES_EN = _([[
 Skyscraper — Rules
 
 Place building heights 1 to N in each row and column (one of each, like Sudoku).
@@ -46,6 +46,19 @@ Visibility clues:
 Tap a cell to select it, then tap a digit to enter a height.
 ]])
 
+local GAME_RULES_FR = [[
+Gratte-Ciel — Règles
+
+Placez des hauteurs de bâtiments de 1 à N dans chaque ligne et colonne (une de chaque, comme au Sudoku).
+
+Indices de visibilité :
+• Les nombres sur les bords indiquent combien de bâtiments sont visibles en regardant depuis ce côté.
+• Un bâtiment plus grand cache tous les bâtiments plus petits derrière lui.
+• Un indice de 1 signifie que le bâtiment le plus grand (hauteur N) est le plus proche de ce bord.
+• Un indice de N signifie que tous les bâtiments sont visibles (les hauteurs doivent être en ordre croissant depuis ce bord).
+
+Appuyez sur une case pour la sélectionner, puis sur un chiffre pour entrer une hauteur.
+]]
 
 local SkyscraperScreen = ScreenBase:extend{}
 
@@ -107,7 +120,7 @@ function SkyscraperScreen:buildLayout()
               callback = function() self:openGridMenu() end },
             { id = "diff_button",     text = self:getDiffButtonText(),
               callback = function() self:openDifficultyMenu() end },
-            self:makeRulesButtonConfig(GAME_RULES),
+            self:makeRulesButtonConfig(GAME_RULES_EN, GAME_RULES_FR),
             self:makeCloseButtonConfig(),
         }},
     }

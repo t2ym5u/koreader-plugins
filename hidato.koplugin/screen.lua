@@ -32,7 +32,7 @@ local GRID_SIZES = { 5, 6 }
 -- HidatoScreen
 -- ---------------------------------------------------------------------------
 
-local GAME_RULES = _([[
+local GAME_RULES_EN = _([[
 Hidato — Rules
 
 Fill every empty cell of the grid with a number so that the sequence 1 to N is connected.
@@ -45,6 +45,18 @@ Starting from 1, you should be able to trace a connected path through every numb
 Given numbers are fixed; deduce where all others go.
 ]])
 
+local GAME_RULES_FR = [[
+Hidato — Règles
+
+Remplissez chaque case vide de la grille avec un numéro de sorte que la séquence 1 à N soit connectée.
+
+Règles :
+• Les numéros 1 à N remplissent la grille (certains sont donnés comme indices).
+• Chaque paire de numéros consécutifs (k et k+1) doit occuper des cases orthogonalement ou diagonalement adjacentes.
+
+En partant de 1, vous devez pouvoir tracer un chemin connecté à travers tous les numéros dans l'ordre jusqu'à N.
+Les numéros donnés sont fixes ; déduisez où vont tous les autres.
+]]
 
 local HidatoScreen = ScreenBase:extend{}
 
@@ -107,7 +119,7 @@ function HidatoScreen:buildLayout()
               callback = function() self:openSizeMenu() end },
             { id = "diff_button",    text = self:getDiffButtonText(),
               callback = function() self:openDifficultyMenu() end },
-            self:makeRulesButtonConfig(GAME_RULES),
+            self:makeRulesButtonConfig(GAME_RULES_EN, GAME_RULES_FR),
             self:makeCloseButtonConfig(),
         }},
     }

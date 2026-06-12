@@ -30,7 +30,7 @@ local DeviceScreen = Device.screen
 -- HangmanScreen
 -- ---------------------------------------------------------------------------
 
-local GAME_RULES = _([[
+local GAME_RULES_EN = _([[
 Hangman — Rules
 
 Guess the hidden word one letter at a time before the stick figure is complete.
@@ -41,6 +41,18 @@ Tap a letter on the keyboard to guess it.
 Correctly guessed letters are revealed in the word.
 The game ends when you complete the word or the hangman is fully drawn.
 ]])
+
+local GAME_RULES_FR = [[
+Pendu — Règles
+
+Devinez le mot caché lettre par lettre avant que le pendu ne soit complet.
+
+Chaque lettre incorrecte ajoute une partie du corps au dessin du pendu.
+Vous avez un nombre limité d'erreurs (généralement 6 à 7).
+Appuyez sur une lettre du clavier pour la proposer.
+Les lettres correctement devinées s'affichent dans le mot.
+La partie se termine quand vous complétez le mot ou quand le pendu est entièrement dessiné.
+]]
 
 local HangmanScreen = ScreenBase:extend{}
 
@@ -85,7 +97,7 @@ function HangmanScreen:buildLayout()
               callback = function() self:openLangMenu() end },
             { id = "diff_btn",  text = self:_diffLabel(),
               callback = function() self:openDiffMenu() end },
-            self:makeRulesButtonConfig(GAME_RULES),
+            self:makeRulesButtonConfig(GAME_RULES_EN, GAME_RULES_FR),
             self:makeCloseButtonConfig(),
         }},
     }

@@ -26,7 +26,7 @@ local ColorNonogramBoardWidget  = lrequire("board_widget")
 
 local DeviceScreen = Device.screen
 
-local GAME_RULES = _([[
+local GAME_RULES_EN = _([[
 Colour Nonogram — Rules
 
 Fill cells with colours to match the clues for each row and column.
@@ -40,6 +40,19 @@ Rules:
 Tap a cell to cycle through available colours. Mark cells as empty with a long-press.
 ]])
 
+local GAME_RULES_FR = [[
+Nonogramme Couleur — Règles
+
+Colorez les cases pour correspondre aux indices de chaque ligne et colonne.
+
+Règles :
+• Chaque indice indique un nombre et une couleur — autant de cases consécutives de cette couleur doivent être remplies dans cette ligne ou colonne.
+• Plusieurs indices signifient plusieurs séquences, dans l'ordre de haut en bas ou de gauche à droite.
+• Deux séquences de couleurs différentes peuvent être directement adjacentes (sans case vide entre elles).
+• Deux séquences de la même couleur doivent avoir au moins une case vide entre elles.
+
+Appuyez sur une case pour faire défiler les couleurs disponibles. Appui long pour marquer une case vide.
+]]
 
 local ColorNonogramScreen = ScreenBase:extend{}
 
@@ -89,7 +102,7 @@ function ColorNonogramScreen:buildLayout()
               callback = function() self:openSizeMenu() end },
             { id = "diff_button", text = self:getDiffButtonText(),
               callback = function() self:openDifficultyMenu() end },
-            self:makeRulesButtonConfig(GAME_RULES),
+            self:makeRulesButtonConfig(GAME_RULES_EN, GAME_RULES_FR),
             self:makeCloseButtonConfig(),
         }},
     }

@@ -28,7 +28,7 @@ local DeviceScreen = Device.screen
 
 local DISK_SIZES = { 3, 4, 5 }
 
-local GAME_RULES = _([[
+local GAME_RULES_EN = _([[
 Tower of Hanoi — Rules
 
 Move all disks from the first peg to the last peg.
@@ -40,6 +40,19 @@ Rules:
 
 The minimum number of moves to solve n disks is 2ⁿ − 1.
 ]])
+
+local GAME_RULES_FR = [[
+Tours de Hanoï — Règles
+
+Déplacez tous les disques de la première tige vers la dernière.
+
+Règles :
+• Un seul disque peut être déplacé à la fois.
+• Chaque déplacement consiste à prendre le disque supérieur d'une tige et à le placer sur le dessus d'une autre tige.
+• Un disque plus grand ne peut jamais être posé sur un disque plus petit.
+
+Le nombre minimum de déplacements pour résoudre n disques est 2ⁿ − 1.
+]]
 
 local HanoiScreen = ScreenBase:extend{}
 
@@ -77,7 +90,7 @@ function HanoiScreen:buildLayout()
             { text = _("New"),    callback = function() self:onNewGame() end },
             { id = "size_btn",    text = self:getSizeButtonText(),
               callback = function() self:openSizeMenu() end },
-            self:makeRulesButtonConfig(GAME_RULES),
+            self:makeRulesButtonConfig(GAME_RULES_EN, GAME_RULES_FR),
             self:makeCloseButtonConfig(),
         }},
     }

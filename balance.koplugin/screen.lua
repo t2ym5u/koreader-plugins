@@ -29,7 +29,7 @@ local BalanceBoardWidget = lrequire("board_widget")
 
 local DeviceScreen = Device.screen
 
-local GAME_RULES = _([[
+local GAME_RULES_EN = _([[
 Balance Puzzle — Rules
 
 One ball in the set is either heavier or lighter than all the others. Use a balance scale to find it in as few weighings as possible.
@@ -44,6 +44,20 @@ When you have identified the odd ball and whether it is heavier or lighter, tap 
 The puzzle is won when you correctly identify the odd ball within the allowed number of weighings.
 ]])
 
+local GAME_RULES_FR = [[
+Jeu de Balance — Règles
+
+Une bille parmi l'ensemble est soit plus lourde soit plus légère que toutes les autres. Utilisez la balance pour l'identifier en un minimum de pesées.
+
+Chaque pesée :
+• Placez des billes sur le plateau gauche, le plateau droit ou laissez-les de côté.
+• Appuyez sur Peser pour voir quel côté est plus lourd, ou si les deux côtés sont égaux.
+• Utilisez les résultats pour déterminer quelle bille est la bille anormale.
+
+Quand vous avez identifié la bille anormale et si elle est plus lourde ou plus légère, appuyez sur Deviner pour soumettre votre réponse.
+
+Le puzzle est résolu quand vous identifiez correctement la bille anormale dans le nombre de pesées imparti.
+]]
 
 local BalanceScreen = ScreenBase:extend{}
 
@@ -81,7 +95,7 @@ function BalanceScreen:buildLayout()
             { text = _("New"),    callback = function() self:onNewGame() end },
             { id = "preset_btn", text = self:getPresetButtonText(),
               callback = function() self:openPresetMenu() end },
-            self:makeRulesButtonConfig(GAME_RULES),
+            self:makeRulesButtonConfig(GAME_RULES_EN, GAME_RULES_FR),
             self:makeCloseButtonConfig(),
         }},
     }

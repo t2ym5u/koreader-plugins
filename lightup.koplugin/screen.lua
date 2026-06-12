@@ -30,7 +30,7 @@ local DeviceScreen = Device.screen
 -- LightUpScreen
 -- ---------------------------------------------------------------------------
 
-local GAME_RULES = _([[
+local GAME_RULES_EN = _([[
 Light Up (Akari) — Rules
 
 Place light bulbs so that every white cell is illuminated.
@@ -43,6 +43,20 @@ Rules:
 
 Solve the puzzle when every white cell is lit and no bulb illuminates another.
 ]])
+
+local GAME_RULES_FR = [[
+Illumination (Akari) — Règles
+
+Placez des ampoules de façon à ce que toutes les cases blanches soient éclairées.
+
+Règles :
+• Les ampoules éclairent horizontalement et verticalement jusqu'à être bloquées par une case noire ou le bord de la grille.
+• Deux ampoules ne peuvent pas s'éclairer mutuellement (elles ne peuvent pas être sur la même ligne ou colonne sans case noire entre elles).
+• Les cases noires portant un chiffre indiquent exactement combien d'ampoules doivent être placées dans les quatre cases orthogonalement adjacentes.
+• Les cases noires sans chiffre n'ont aucune contrainte sur les ampoules adjacentes.
+
+Résolvez le puzzle quand toutes les cases blanches sont éclairées et qu'aucune ampoule n'en éclaire une autre.
+]]
 
 local LightUpScreen = ScreenBase:extend{}
 
@@ -79,7 +93,7 @@ function LightUpScreen:buildLayout()
               callback = function() self:openSizeMenu() end },
             { id = "diff_btn",  text = self:_diffLabel(),
               callback = function() self:openDiffMenu() end },
-            self:makeRulesButtonConfig(GAME_RULES),
+            self:makeRulesButtonConfig(GAME_RULES_EN, GAME_RULES_FR),
             self:makeCloseButtonConfig(),
         }},
     }

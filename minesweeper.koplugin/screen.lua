@@ -30,7 +30,7 @@ local DeviceScreen = Device.screen
 -- MinesweeperScreen
 -- ---------------------------------------------------------------------------
 
-local GAME_RULES = _([[
+local GAME_RULES_EN = _([[
 Minesweeper — Rules
 
 Uncover all safe cells without detonating a mine.
@@ -42,6 +42,19 @@ The first tap is always safe — mines are placed after it.
 
 Win by uncovering every non-mine cell.
 ]])
+
+local GAME_RULES_FR = [[
+Démineur — Règles
+
+Découvrez toutes les cases sûres sans faire exploser une mine.
+
+Chaque case découverte affiche le nombre de mines parmi ses 8 cases voisines.
+Une case affichant 0 est sûre et révèle automatiquement ses voisines.
+Appui long (ou mode Drapeau) pour marquer une mine suspectée.
+Le premier appui est toujours sûr — les mines sont placées après.
+
+Gagnez en découvrant toutes les cases sans mine.
+]]
 
 local MinesweeperScreen = ScreenBase:extend{}
 
@@ -86,7 +99,7 @@ function MinesweeperScreen:buildLayout()
               callback = function() self:openPresetMenu() end },
             { id = "flag_button",   text = self:getFlagButtonText(),
               callback = function() self:toggleFlagMode() end },
-            self:makeRulesButtonConfig(GAME_RULES),
+            self:makeRulesButtonConfig(GAME_RULES_EN, GAME_RULES_FR),
             self:makeCloseButtonConfig(),
         }},
     }

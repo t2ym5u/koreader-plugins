@@ -35,7 +35,7 @@ local DeviceScreen = Device.screen
 
 local GRID_SIZES = TapaBoard.SIZES
 
-local GAME_RULES = _([[
+local GAME_RULES_EN = _([[
 Tapa — Rules
 
 Shade some cells black to form a single connected group.
@@ -50,6 +50,20 @@ Rules:
 Tap a cell to shade it. Tap again to unshade.
 ]])
 
+local GAME_RULES_FR = [[
+Tapa — Règles
+
+Noircissez certaines cases pour former un seul groupe connecté.
+
+Règles :
+• Les cases indices numérotées (jamais noircies) décrivent les séquences consécutives de cases noires dans leurs 8 cases entourant.
+  - Un seul nombre signifie une séquence de cette longueur.
+  - Plusieurs nombres signifient plusieurs séquences séparées, disposées dans le sens des aiguilles d'une montre autour de la case (le point de départ est libre).
+• Toutes les cases noircies doivent former un seul groupe orthogonalement connecté.
+• Aucun carré 2×2 ne peut être entièrement noirci.
+
+Appuyez sur une case pour la noircir. Appuyez à nouveau pour la dénoircir.
+]]
 
 local TapaScreen = ScreenBase:extend{}
 
@@ -103,7 +117,7 @@ function TapaScreen:buildLayout()
                   callback = function() self:openDifficultyMenu() end },
                 { id   = "reveal_button", text = self:getRevealButtonText(),
                   callback = function() self:onToggleReveal() end },
-                self:makeRulesButtonConfig(GAME_RULES),
+                self:makeRulesButtonConfig(GAME_RULES_EN, GAME_RULES_FR),
             self:makeCloseButtonConfig(),
             },
         },

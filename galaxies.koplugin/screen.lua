@@ -26,7 +26,7 @@ local GalaxiesBoardWidget   = lrequire("board_widget")
 
 local DeviceScreen = Device.screen
 
-local GAME_RULES = _([[
+local GAME_RULES_EN = _([[
 Galaxies (Tentai Show) — Rules
 
 Divide the grid into regions, one region per galaxy symbol.
@@ -39,6 +39,18 @@ Rules:
 The puzzle is solved when all cells are assigned to a galaxy and each region has perfect 180° symmetry around its symbol.
 ]])
 
+local GAME_RULES_FR = [[
+Galaxies (Tentai Show) — Règles
+
+Divisez la grille en régions, une région par symbole de galaxie.
+
+Règles :
+• Chaque région doit être symétrique par rotation à 180° autour de son symbole de galaxie.
+• Chaque case appartient à exactement une région.
+• Les symboles de galaxie peuvent être centrés sur une case, sur le milieu d'un bord, ou sur un sommet (coin de quatre cases).
+
+Le puzzle est résolu quand toutes les cases sont attribuées à une galaxie et que chaque région présente une symétrie parfaite à 180° autour de son symbole.
+]]
 
 local GalaxiesScreen = ScreenBase:extend{}
 
@@ -87,7 +99,7 @@ function GalaxiesScreen:buildLayout()
               callback = function() self:openSizeMenu() end },
             { text = _("Reveal"),
               callback = function() self:onReveal() end },
-            self:makeRulesButtonConfig(GAME_RULES),
+            self:makeRulesButtonConfig(GAME_RULES_EN, GAME_RULES_FR),
             self:makeCloseButtonConfig(),
         }},
     }

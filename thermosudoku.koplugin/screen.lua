@@ -41,7 +41,7 @@ local function digitToChar(d)
     return d <= 9 and tostring(d) or string.char(55 + d)
 end
 
-local GAME_RULES = _([[
+local GAME_RULES_EN = _([[
 Thermo Sudoku — Rules
 
 Standard Sudoku rules apply:
@@ -50,6 +50,17 @@ Standard Sudoku rules apply:
 Thermometer constraint:
 • Thermometers are drawn on the grid, each starting from a bulb.
 • Digits along a thermometer must strictly increase from the bulb to the tip.]])
+
+local GAME_RULES_FR = [[
+Thermo Sudoku — Règles
+
+Les règles du Sudoku classique s'appliquent :
+• Remplissez la grille 9×9 avec les chiffres 1 à 9 ; chaque ligne, colonne et carré 3×3 doit contenir chaque chiffre exactement une fois.
+
+Contrainte des thermomètres :
+• Des thermomètres sont dessinés sur la grille, chacun commençant par un bulbe.
+• Les chiffres le long d'un thermomètre doivent être strictement croissants du bulbe vers l'extrémité.
+]]
 
 local ThermoSudokuScreen = BaseScreen:extend{}
 
@@ -98,7 +109,7 @@ function ThermoSudokuScreen:buildLayout()
                   callback = function() self:openDifficultyMenu() end },
                 { id = "show_result",     text = _("Show result"),
                   callback = function() self:toggleSolution() end },
-                self:makeRulesButtonConfig(GAME_RULES),
+                self:makeRulesButtonConfig(GAME_RULES_EN, GAME_RULES_FR),
                 { text = _("Close"),      callback = function()
                     self:onClose()
                     UIManager:close(self)

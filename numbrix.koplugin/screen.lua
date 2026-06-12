@@ -28,7 +28,7 @@ local DeviceScreen = Device.screen
 
 local GRID_SIZES = { 5, 6 }
 
-local GAME_RULES = _([[
+local GAME_RULES_EN = _([[
 Numbrix — Rules
 
 Fill the grid with consecutive numbers 1 to N² so that each pair of consecutive numbers occupies orthogonally adjacent cells.
@@ -41,6 +41,18 @@ Rules:
 The result is a single "snake" path that visits every cell exactly once.
 ]])
 
+local GAME_RULES_FR = [[
+Numbrix — Règles
+
+Remplissez la grille avec les nombres consécutifs de 1 à N² de sorte que chaque paire de nombres consécutifs occupe des cases orthogonalement adjacentes.
+
+Règles :
+• Les nombres doivent être placés dans chaque case de la grille.
+• Les nombres consécutifs (k et k+1) doivent être dans des cases partageant un côté — l'adjacence en diagonale n'est pas autorisée.
+• Certains nombres sont donnés comme indices ; les autres doivent être déduits.
+
+Le résultat est un chemin "serpent" unique visitant chaque case exactement une fois.
+]]
 
 local NumbrixScreen = ScreenBase:extend{}
 
@@ -93,7 +105,7 @@ function NumbrixScreen:buildLayout()
               callback = function() self:openSizeMenu() end },
             { id = "diff_button",   text = self:getDiffButtonText(),
               callback = function() self:openDifficultyMenu() end },
-            self:makeRulesButtonConfig(GAME_RULES),
+            self:makeRulesButtonConfig(GAME_RULES_EN, GAME_RULES_FR),
             self:makeCloseButtonConfig(),
         }},
     }
