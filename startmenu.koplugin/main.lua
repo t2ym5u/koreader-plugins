@@ -49,10 +49,10 @@ local function scanGamePlugins()
     if not ok then return {} end
 
     local games   = {}
-    local ok2, iter = pcall(lfs.dir, _plugins_dir)
-    if not ok2 then return {} end
+    local ok2, iter, dir_obj = pcall(lfs.dir, _plugins_dir)
+    if not ok2 or not iter then return {} end
 
-    for entry in iter do
+    for entry in iter, dir_obj do
         if entry:match("%.koplugin$") then
             local meta_path = _plugins_dir .. "/" .. entry .. "/_meta.lua"
             local f = io.open(meta_path, "r")
