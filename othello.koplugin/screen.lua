@@ -37,7 +37,7 @@ local DIFF_DEPTH = { easy = 2, medium = 4, hard = 6 }
 -- OthelloScreen
 -- ---------------------------------------------------------------------------
 
-local GAME_RULES = _([[
+local GAME_RULES_EN = _([[
 Othello (Reversi) — Rules
 
 Two players alternate placing discs on the board.
@@ -52,6 +52,20 @@ Rules:
 The player with the most discs of their colour at the end wins.
 ]])
 
+local GAME_RULES_FR = [[
+Othello (Reversi) — Règles
+
+Les deux joueurs placent alternativement des pions sur le plateau.
+
+Quand vous placez un pion, toute ligne droite (horizontale, verticale ou diagonale) de pions adverses encadrée entre votre nouveau pion et un de vos pions existants est retournée à votre couleur.
+
+Règles :
+• Vous devez retourner au moins un pion adverse par coup.
+• Si vous n'avez aucun coup valide, votre tour est passé.
+• La partie se termine quand le plateau est plein ou qu'aucun joueur ne peut jouer.
+
+Le joueur ayant le plus de pions de sa couleur à la fin gagne.
+]]
 
 local OthelloScreen = ScreenBase:extend{}
 
@@ -124,7 +138,7 @@ function OthelloScreen:buildLayout()
             { text = self:_getDiffButtonText(),
               callback = function() self:openDifficultyMenu() end,
               id = "diff_btn" },
-            self:makeRulesButtonConfig(GAME_RULES),
+            self:makeRulesButtonConfig(GAME_RULES_EN, GAME_RULES_FR),
             self:makeCloseButtonConfig(),
         }},
     }

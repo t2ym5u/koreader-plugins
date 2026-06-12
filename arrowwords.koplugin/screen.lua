@@ -41,7 +41,7 @@ local KEY_ROWS = {
 -- ArrowwordsScreen
 -- ---------------------------------------------------------------------------
 
-local GAME_RULES = _([[
+local GAME_RULES_EN = _([[
 Arrowwords — Rules
 
 Fill in the crossword grid where clues are placed inside the cells themselves.
@@ -50,6 +50,12 @@ Each clue cell contains a short clue and an arrow pointing in the direction of t
 The answer is entered in the cells the arrow points to.
 Letters at crossing cells must satisfy both the across and down words.
 ]])
+
+local GAME_RULES_FR = [[
+Mots Fléchés — Règles
+
+Remplissez la grille avec des mots dont les définitions se trouvent directement dans les cases, accompagnées d'une flèche indiquant la direction de la réponse. Les lettres aux intersections doivent satisfaire tous les mots qui les traversent. Résolvez toutes les définitions pour compléter la grille.
+]]
 
 local ArrowwordsScreen = ScreenBase:extend{}
 
@@ -86,7 +92,7 @@ function ArrowwordsScreen:buildLayout()
               callback = function() end },
             { text = "\xe2\x96\xb6", callback = function() self:onNextPuzzle() end },
             { text = _("Clear"), callback = function() self:onClear() end },
-            self:makeRulesButtonConfig(GAME_RULES),
+            self:makeRulesButtonConfig(GAME_RULES_EN, GAME_RULES_FR),
             self:makeCloseButtonConfig(),
         }},
     }

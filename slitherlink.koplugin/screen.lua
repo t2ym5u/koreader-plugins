@@ -35,7 +35,7 @@ local DeviceScreen = Device.screen
 
 local GRID_SIZES = { 5, 10, 15, 20 }
 
-local GAME_RULES = _([[
+local GAME_RULES_EN = _([[
 Slitherlink — Rules
 
 Draw a single closed loop along the grid lines.
@@ -48,6 +48,18 @@ Rules:
 Tap a grid edge to toggle it between drawn and not drawn.
 ]])
 
+local GAME_RULES_FR = [[
+Slitherlink — Règles
+
+Tracez une boucle fermée unique le long des lignes de la grille.
+
+Règles :
+• Chaque chiffre à l'intérieur d'une case (0, 1, 2 ou 3) indique exactement combien de ses quatre côtés font partie de la boucle.
+• Les cases sans chiffre n'ont aucune contrainte.
+• La boucle doit être une courbe fermée continue unique — elle ne peut pas se ramifier ni se croiser, et il ne peut pas y avoir d'extrémités libres.
+
+Appuyez sur un bord de grille pour basculer entre tracé et non tracé.
+]]
 
 local SlitherlinkScreen = ScreenBase:extend{}
 
@@ -101,7 +113,7 @@ function SlitherlinkScreen:buildLayout()
                   callback = function() self:openDifficultyMenu() end },
                 { id = "reveal_button", text = self:getRevealButtonText(),
                   callback = function() self:toggleSolution() end },
-                self:makeRulesButtonConfig(GAME_RULES),
+                self:makeRulesButtonConfig(GAME_RULES_EN, GAME_RULES_FR),
             self:makeCloseButtonConfig(),
             },
         },

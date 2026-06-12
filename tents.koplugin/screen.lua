@@ -30,7 +30,7 @@ local DeviceScreen = Device.screen
 -- TentsScreen
 -- ---------------------------------------------------------------------------
 
-local GAME_RULES = _([[
+local GAME_RULES_EN = _([[
 Tents and Trees — Rules
 
 Place tents in the grid so every tree has exactly one tent.
@@ -43,6 +43,20 @@ Rules:
 
 Empty cells without trees or tents are grass.
 ]])
+
+local GAME_RULES_FR = [[
+Tentes et Arbres — Règles
+
+Placez des tentes dans la grille de sorte que chaque arbre soit associé à exactement une tente.
+
+Règles :
+• Chaque arbre doit être associé à exactement une tente dans une case orthogonalement adjacente (pas en diagonale).
+• Chaque tente est associée à exactement un arbre.
+• Deux tentes ne peuvent pas être adjacentes — même en diagonale.
+• Le nombre de tentes dans chaque ligne et colonne doit correspondre à l'indice de cette ligne ou colonne.
+
+Les cases vides sans arbre ni tente sont de l'herbe.
+]]
 
 local TentsScreen = ScreenBase:extend{}
 
@@ -80,7 +94,7 @@ function TentsScreen:buildLayout()
               callback = function() self:openSizeMenu() end },
             { id = "diff_btn",  text = self:_diffLabel(),
               callback = function() self:openDiffMenu() end },
-            self:makeRulesButtonConfig(GAME_RULES),
+            self:makeRulesButtonConfig(GAME_RULES_EN, GAME_RULES_FR),
             self:makeCloseButtonConfig(),
         }},
     }

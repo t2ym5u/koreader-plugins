@@ -45,7 +45,7 @@ local CAT_LABEL = {
 -- CoursEchecsScreen
 -- ---------------------------------------------------------------------------
 
-local GAME_RULES = _([[
+local GAME_RULES_EN = _([[
 Chess Lessons — How to play
 
 Work through guided chess exercises to learn and practise the game.
@@ -61,6 +61,21 @@ Topics covered include:
 Complete all exercises in a lesson to advance to the next one.
 ]])
 
+local GAME_RULES_FR = [[
+Cours d'Échecs — Comment jouer
+
+Progressez à travers des exercices d'échecs guidés pour apprendre et pratiquer le jeu.
+
+Chaque leçon présente une position sur l'échiquier et un objectif. Effectuez les bons coups pour avancer dans la leçon. Les coups incorrects sont refusés — lisez les instructions et réfléchissez.
+
+Thèmes abordés :
+• Mouvements et règles des pièces
+• Tactiques : clouage, fourchette, attaque découverte
+• Schémas de mat
+• Principes d'ouverture
+
+Complétez tous les exercices d'une leçon pour passer à la suivante.
+]]
 
 local CoursEchecsScreen = ScreenBase:extend{}
 
@@ -148,7 +163,7 @@ function CoursEchecsScreen:buildLayout()
             { text = _("Suivant"),     callback = function() self:onNext()           end },
             { text = _("Catégories"), callback = function() self:openCategoryMenu() end },
             { text = _("Retourner"),  callback = function() self:onFlipBoard()      end },
-            self:makeRulesButtonConfig(GAME_RULES),
+            self:makeRulesButtonConfig(GAME_RULES_EN, GAME_RULES_FR),
             self:makeCloseButtonConfig(),
         }},
     }

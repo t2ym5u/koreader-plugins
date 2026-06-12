@@ -32,7 +32,7 @@ local DeviceScreen = Device.screen
 -- WordSearchScreen
 -- ---------------------------------------------------------------------------
 
-local GAME_RULES = _([[
+local GAME_RULES_EN = _([[
 Word Search — Rules
 
 Find all the hidden words in the letter grid.
@@ -46,6 +46,21 @@ Tap the first letter of a word, then tap the last letter to mark it found.
 Found words are crossed off the word list.
 Solve the puzzle by finding every word in the list.
 ]])
+
+local GAME_RULES_FR = [[
+Mots Cachés — Règles
+
+Trouvez tous les mots cachés dans la grille de lettres.
+
+Les mots peuvent être cachés dans n'importe quelle direction :
+• Horizontalement (gauche→droite ou droite→gauche)
+• Verticalement (haut→bas ou bas→haut)
+• En diagonale (les quatre directions diagonales)
+
+Appuyez sur la première lettre d'un mot, puis sur la dernière pour le marquer comme trouvé.
+Les mots trouvés sont barrés dans la liste.
+Résolvez le puzzle en trouvant tous les mots de la liste.
+]]
 
 local WordSearchScreen = ScreenBase:extend{}
 
@@ -79,7 +94,7 @@ function WordSearchScreen:buildLayout()
             { text = _("New"),  callback = function() self:onNewGame() end },
             { id = "lang_btn", text = self:_langLabel(),
               callback = function() self:openLangMenu() end },
-            self:makeRulesButtonConfig(GAME_RULES),
+            self:makeRulesButtonConfig(GAME_RULES_EN, GAME_RULES_FR),
             self:makeCloseButtonConfig(),
         }},
     }

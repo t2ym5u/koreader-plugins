@@ -43,7 +43,7 @@ local GRID_LABELS = {
 -- MemoryScreen
 -- ---------------------------------------------------------------------------
 
-local GAME_RULES = _([[
+local GAME_RULES_EN = _([[
 Memory (Concentration) — Rules
 
 Find all matching pairs of face-down cards by flipping two at a time.
@@ -58,6 +58,20 @@ Remember the positions of cards you have seen to find matches more quickly.
 The game is won when all pairs have been matched.
 ]])
 
+local GAME_RULES_FR = [[
+Mémoire (Concentration) — Règles
+
+Trouvez toutes les paires de cartes face cachée en en retournant deux à la fois.
+
+À votre tour :
+1. Appuyez sur une carte face cachée pour la retourner.
+2. Appuyez sur une deuxième carte face cachée.
+3. Si les deux cartes correspondent, elles restent face visible.
+4. Si elles ne correspondent pas, les deux cartes se retournent face cachée après une courte pause.
+
+Mémorisez la position des cartes que vous avez vues pour trouver les paires plus rapidement.
+La partie est gagnée quand toutes les paires ont été trouvées.
+]]
 
 local MemoryScreen = ScreenBase:extend{}
 
@@ -123,7 +137,7 @@ function MemoryScreen:buildLayout()
             { text = self:_getPlayersButtonText(),
               callback = function() self:openPlayersMenu() end,
               id = "players_btn" },
-            self:makeRulesButtonConfig(GAME_RULES),
+            self:makeRulesButtonConfig(GAME_RULES_EN, GAME_RULES_FR),
             self:makeCloseButtonConfig(),
         }},
     }

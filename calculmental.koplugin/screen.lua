@@ -78,7 +78,7 @@ end
 -- CalcScreen
 -- ---------------------------------------------------------------------------
 
-local GAME_RULES = _([[
+local GAME_RULES_EN = _([[
 Mental Arithmetic — Rules
 
 Solve arithmetic exercises as quickly and accurately as possible.
@@ -94,6 +94,21 @@ Operations include:
 Score points for speed and accuracy. Difficulty increases as you progress.
 ]])
 
+local GAME_RULES_FR = [[
+Calcul Mental — Règles
+
+Résolvez des exercices d'arithmétique aussi vite et précisément que possible.
+
+Un calcul est affiché avec une valeur manquante. Appuyez sur la bonne réponse parmi les choix proposés, ou saisissez-la au clavier.
+
+Les opérations comprennent :
+• Addition (+)
+• Soustraction (−)
+• Multiplication (×)
+• Division (÷)
+
+Marquez des points pour la rapidité et la précision. La difficulté augmente avec vos progrès.
+]]
 
 local CalcScreen = ScreenBase:extend{}
 
@@ -151,7 +166,7 @@ function CalcScreen:buildLayout()
             { text = self:_getDiffButtonText(),
               callback = function() self:openDifficultyMenu() end,
               id = "diff_btn" },
-            self:makeRulesButtonConfig(GAME_RULES),
+            self:makeRulesButtonConfig(GAME_RULES_EN, GAME_RULES_FR),
             self:makeCloseButtonConfig(),
         }},
     }

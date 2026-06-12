@@ -32,7 +32,7 @@ local GRID_SIZES = { 6, 8, 10 }
 -- ShikakuScreen
 -- ---------------------------------------------------------------------------
 
-local GAME_RULES = _([[
+local GAME_RULES_EN = _([[
 Shikaku — Rules
 
 Divide the entire grid into non-overlapping rectangles.
@@ -45,6 +45,18 @@ Rules:
 Tap a cell to start drawing a rectangle, then tap another cell to set the opposite corner.
 ]])
 
+local GAME_RULES_FR = [[
+Shikaku — Règles
+
+Divisez toute la grille en rectangles non superposés.
+
+Règles :
+• Chaque case numérotée appartient à exactement un rectangle.
+• L'aire de ce rectangle (largeur × hauteur) est égale au nombre qu'il contient.
+• Chaque case de la grille doit appartenir à exactement un rectangle.
+
+Appuyez sur une case pour commencer à dessiner un rectangle, puis appuyez sur une autre case pour définir le coin opposé.
+]]
 
 local ShikakuScreen = ScreenBase:extend{}
 
@@ -98,7 +110,7 @@ function ShikakuScreen:buildLayout()
               callback = function() self:openGridMenu() end },
             { id = "diff_button",    text = self:getDiffButtonText(),
               callback = function() self:openDifficultyMenu() end },
-            self:makeRulesButtonConfig(GAME_RULES),
+            self:makeRulesButtonConfig(GAME_RULES_EN, GAME_RULES_FR),
             self:makeCloseButtonConfig(),
         }},
     }

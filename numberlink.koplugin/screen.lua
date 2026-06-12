@@ -35,7 +35,7 @@ local DeviceScreen = Device.screen
 
 local GRID_SIZES = { 5, 7, 9, 10 }
 
-local GAME_RULES = _([[
+local GAME_RULES_EN = _([[
 Number Link — Rules
 
 Connect each pair of matching numbers with a continuous path.
@@ -49,6 +49,19 @@ Rules:
 Tap a numbered cell to start a path, then tap adjacent cells to extend it.
 ]])
 
+local GAME_RULES_FR = [[
+Number Link — Règles
+
+Reliez chaque paire de chiffres identiques par un chemin continu.
+
+Règles :
+• Tracez un chemin depuis chaque chiffre jusqu'à son homologue de même valeur.
+• Les chemins se déplacent horizontalement ou verticalement — pas en diagonale.
+• Les chemins ne peuvent pas se croiser ni partager des cases.
+• Chaque case de la grille doit être couverte par exactement un chemin.
+
+Appuyez sur une case numérotée pour commencer un chemin, puis appuyez sur les cases adjacentes pour l'étendre.
+]]
 
 local NumberlinkScreen = ScreenBase:extend{}
 
@@ -102,7 +115,7 @@ function NumberlinkScreen:buildLayout()
                   callback = function() self:openDifficultyMenu() end },
                 { id = "reveal_button", text = self:getRevealButtonText(),
                   callback = function() self:toggleSolution() end },
-                self:makeRulesButtonConfig(GAME_RULES),
+                self:makeRulesButtonConfig(GAME_RULES_EN, GAME_RULES_FR),
             self:makeCloseButtonConfig(),
             },
         },

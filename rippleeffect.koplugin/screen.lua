@@ -26,7 +26,7 @@ local RippleEffectBoardWidget  = lrequire("board_widget")
 
 local DeviceScreen = Device.screen
 
-local GAME_RULES = _([[
+local GAME_RULES_EN = _([[
 Ripple Effect — Rules
 
 Fill every cell so that each outlined region contains the numbers 1 to N (where N is the region size) exactly once.
@@ -38,6 +38,17 @@ Distance constraint:
 Tap a cell to select it, then tap a digit to fill it in.
 ]])
 
+local GAME_RULES_FR = [[
+Effet de Vague — Règles
+
+Remplissez chaque case de sorte que chaque région délimitée de taille N contienne les nombres de 1 à N exactement une fois.
+
+Contrainte de distance :
+• Si le même nombre apparaît deux fois dans la même ligne ou colonne, ces deux cases doivent être séparées d'au moins ce nombre de cases.
+  Exemple : deux cases contenant toutes les deux le chiffre 3 doivent avoir au moins 3 cases entre elles dans la même ligne ou colonne.
+
+Appuyez sur une case pour la sélectionner, puis sur un chiffre pour le placer.
+]]
 
 local RippleEffectScreen = ScreenBase:extend{}
 
@@ -88,7 +99,7 @@ function RippleEffectScreen:buildLayout()
             { id = "diff_button",   text = self:getDiffButtonText(),
               callback = function() self:openDifficultyMenu() end },
             { text = _("Undo"),     callback = function() self:onUndo() end },
-            self:makeRulesButtonConfig(GAME_RULES),
+            self:makeRulesButtonConfig(GAME_RULES_EN, GAME_RULES_FR),
             self:makeCloseButtonConfig(),
         }},
     }

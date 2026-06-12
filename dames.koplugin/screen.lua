@@ -33,7 +33,7 @@ local DIFF_DEPTH = { easy = 2, medium = 4, hard = 6 }
 -- DamesScreen
 -- ---------------------------------------------------------------------------
 
-local GAME_RULES = _([[
+local GAME_RULES_EN = _([[
 Draughts (Checkers) — Rules
 
 Two players take turns moving pieces diagonally on the dark squares.
@@ -50,6 +50,22 @@ Kings:
 Win by capturing all opponent pieces, or by leaving them unable to move.
 ]])
 
+local GAME_RULES_FR = [[
+Jeu de Dames — Règles
+
+Deux joueurs déplacent leurs pions en diagonale sur les cases sombres.
+
+Déplacements :
+• Les pions ordinaires se déplacent d'une case en diagonale vers l'avant.
+• Prise : sautez en diagonale par-dessus un pion adverse vers une case vide derrière lui. Le pion capturé est retiré.
+• Les prises multiples en un seul tour sont obligatoires si disponibles.
+
+Dames :
+• Un pion atteignant la rangée du fond devient une Dame.
+• Les Dames peuvent se déplacer et capturer en diagonale dans les deux directions.
+
+Gagnez en capturant tous les pions adverses, ou en les laissant sans mouvement possible.
+]]
 
 local DamesScreen = ScreenBase:extend{}
 
@@ -119,7 +135,7 @@ function DamesScreen:buildLayout()
             { text = self:getStyleButtonText(),
                                       callback = function() self:openStyleMenu()      end,
                                       id = "style_btn" },
-            self:makeRulesButtonConfig(GAME_RULES),
+            self:makeRulesButtonConfig(GAME_RULES_EN, GAME_RULES_FR),
             self:makeCloseButtonConfig(),
         }},
     }

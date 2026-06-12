@@ -57,10 +57,26 @@ Rules:
 Tap a white cell to select it, then tap a digit button to enter a value.
 ]])
 
+local GAME_RULES_FR = [[
+Kakuro — Règles
+
+Remplissez les cases blanches avec des chiffres de 1 à 9 de sorte que chaque "séquence" soit égale à son indice.
+
+Règles :
+• Une séquence "horizontale" remplit des cases vers la droite ; une séquence "verticale" remplit des cases vers le bas.
+• Les chiffres d'une séquence doivent sommer exactement à la valeur de l'indice dans le triangle noir adjacent.
+• Un chiffre ne peut pas être répété au sein d'une même séquence.
+• Les cases noires sont des murs ; les cases indices affichent l'indice horizontal (triangle bas-gauche) et l'indice vertical (triangle haut-droit).
+
+Appuyez sur une case blanche pour la sélectionner, puis sur un bouton chiffre pour entrer une valeur.
+]]
+
 local function showRules()
+    local lang = (G_reader_settings and G_reader_settings:readSetting("language") or "en"):sub(1, 2)
+    local text = (lang == "fr") and GAME_RULES_FR or GAME_RULES
     UIManager:show(TextViewer:new{
         title  = _("Rules"),
-        text   = GAME_RULES,
+        text   = text,
         width  = math.floor(DeviceScreen:getWidth() * 0.9),
         height = math.floor(DeviceScreen:getHeight() * 0.9),
     })
