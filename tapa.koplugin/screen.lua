@@ -35,6 +35,22 @@ local DeviceScreen = Device.screen
 
 local GRID_SIZES = TapaBoard.SIZES
 
+local GAME_RULES = _([[
+Tapa — Rules
+
+Shade some cells black to form a single connected group.
+
+Rules:
+• Numbered clue cells (which are never shaded) describe the consecutive shaded runs in their 8 surrounding cells.
+  - A single number means one run of that length.
+  - Multiple numbers mean multiple separate runs, arranged clockwise around the cell (starting point is flexible).
+• All shaded cells must form one orthogonally connected group.
+• No 2×2 area may be entirely shaded.
+
+Tap a cell to shade it. Tap again to unshade.
+]])
+
+
 local TapaScreen = ScreenBase:extend{}
 
 function TapaScreen:init()
@@ -87,7 +103,8 @@ function TapaScreen:buildLayout()
                   callback = function() self:openDifficultyMenu() end },
                 { id   = "reveal_button", text = self:getRevealButtonText(),
                   callback = function() self:onToggleReveal() end },
-                self:makeCloseButtonConfig(),
+                self:makeRulesButtonConfig(GAME_RULES),
+            self:makeCloseButtonConfig(),
             },
         },
     }

@@ -35,6 +35,20 @@ local DeviceScreen = Device.screen
 
 local GRID_SIZES = { 5, 10, 15, 20 }
 
+local GAME_RULES = _([[
+Slitherlink — Rules
+
+Draw a single closed loop along the grid lines.
+
+Rules:
+• Each number inside a cell (0, 1, 2, or 3) shows exactly how many of its four sides are part of the loop.
+• Cells without a number have no constraint.
+• The loop must be a single continuous closed curve — it cannot branch or cross itself, and there can be no loose ends.
+
+Tap a grid edge to toggle it between drawn and not drawn.
+]])
+
+
 local SlitherlinkScreen = ScreenBase:extend{}
 
 function SlitherlinkScreen:init()
@@ -87,7 +101,8 @@ function SlitherlinkScreen:buildLayout()
                   callback = function() self:openDifficultyMenu() end },
                 { id = "reveal_button", text = self:getRevealButtonText(),
                   callback = function() self:toggleSolution() end },
-                self:makeCloseButtonConfig(),
+                self:makeRulesButtonConfig(GAME_RULES),
+            self:makeCloseButtonConfig(),
             },
         },
     }

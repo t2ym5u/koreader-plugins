@@ -37,6 +37,17 @@ local KEY_ROWS = {
 -- CryptogramScreen
 -- ---------------------------------------------------------------------------
 
+local GAME_RULES = _([[
+Cryptogram — Rules
+
+Decode the encrypted message by cracking the letter substitution cipher.
+
+Each letter has been replaced by another letter.
+The same substitution is used consistently throughout the message.
+Tap a cipher letter to select it, then tap the keyboard to type your guess for the real letter.
+Use logic and common word patterns to deduce the full message.
+]])
+
 local CryptogramScreen = ScreenBase:extend{}
 
 function CryptogramScreen:init()
@@ -70,6 +81,7 @@ function CryptogramScreen:buildLayout()
             { id = "lang_btn", text = self:_langLabel(),
               callback = function() self:openLangMenu() end },
             { text = _("Clear"), callback = function() self:onClearAll() end },
+            self:makeRulesButtonConfig(GAME_RULES),
             self:makeCloseButtonConfig(),
         }},
     }

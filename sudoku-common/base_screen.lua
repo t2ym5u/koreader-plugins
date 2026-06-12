@@ -5,6 +5,7 @@ local Font           = require("ui/font")
 local Geom           = require("ui/geometry")
 local InfoMessage    = require("ui/widget/infomessage")
 local InputContainer = require("ui/widget/container/inputcontainer")
+local TextViewer     = require("ui/widget/textviewer")
 local TextWidget     = require("ui/widget/textwidget")
 local UIManager      = require("ui/uimanager")
 local _              = require("gettext")
@@ -215,6 +216,26 @@ function BaseScreen:onUndo()
     self.plugin:saveState()
     self:updateUndoButton()
     self:updateDigitButtons()
+end
+
+-- ---------------------------------------------------------------------------
+-- Rules dialog (for use in ButtonTable rows)
+-- ---------------------------------------------------------------------------
+
+function BaseScreen:showRules(text)
+    UIManager:show(TextViewer:new{
+        title  = _("Rules"),
+        text   = text,
+        width  = math.floor(DeviceScreen:getWidth() * 0.9),
+        height = math.floor(DeviceScreen:getHeight() * 0.9),
+    })
+end
+
+function BaseScreen:makeRulesButtonConfig(text)
+    return {
+        text     = _("Rules"),
+        callback = function() self:showRules(text) end,
+    }
 end
 
 return {

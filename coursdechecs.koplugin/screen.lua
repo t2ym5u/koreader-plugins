@@ -1,3 +1,7 @@
+-- ---------------------------------------------------------------------------
+-- CoursEchecsScreen — lesson/puzzle screen for the chess course plugin
+-- ---------------------------------------------------------------------------
+
 local _dir = debug.getinfo(1, "S").source:sub(2):match("(.*[/\\])") or "./"
 local function lrequire(name)
     local key = _dir .. name
@@ -20,23 +24,43 @@ local VerticalGroup   = require("ui/widget/verticalgroup")
 local VerticalSpan    = require("ui/widget/verticalspan")
 local _               = require("gettext")
 
-local ScreenBase        = require("screen_base")
-local ChessBoard        = lrequire("board")
-local CoursBoardWidget  = lrequire("board_widget")
+local MenuHelper       = require("menu_helper")
+local ScreenBase       = require("screen_base")
+local ChessBoard       = lrequire("board")
+local CoursBoardWidget = lrequire("board_widget")
 
 local DeviceScreen = Device.screen
 
--- Category display labels
+-- Category display labels (keep in sync with lessons.lua)
 local CAT_LABEL = {
     mat1     = _("Mat en 1"),
     mat2     = _("Mat en 2"),
+    mat3     = _("Mat en 3"),
     tactique = _("Tactique"),
     finale   = _("Finale"),
+    ouverture = _("Ouverture"),
 }
 
 -- ---------------------------------------------------------------------------
 -- CoursEchecsScreen
 -- ---------------------------------------------------------------------------
+
+local GAME_RULES = _([[
+Chess Lessons — How to play
+
+Work through guided chess exercises to learn and practise the game.
+
+Each lesson presents a board position and an objective. Make the correct moves to progress through the lesson. Wrong moves are rejected — read the instructions and think carefully.
+
+Topics covered include:
+• Piece movements and rules
+• Tactics: pins, forks, discovered attacks
+• Checkmate patterns
+• Opening principles
+
+Complete all exercises in a lesson to advance to the next one.
+]])
+
 
 local CoursEchecsScreen = ScreenBase:extend{}
 
@@ -47,9 +71,10 @@ local CoursEchecsScreen = ScreenBase:extend{}
 function CoursEchecsScreen:init()
     local state = self.plugin:loadState()
     self.lesson_idx = (state and state.lesson_idx) or 1
+    self._flipped   = false
     self.board = ChessBoard:new()
     self:loadLesson(self.lesson_idx)
-    ScreenBase.init(self)  -- calls buildLayout()
+    ScreenBase.init(self)
 end
 
 function CoursEchecsScreen:serializeState()
@@ -65,6 +90,8 @@ function CoursEchecsScreen:loadLesson(idx)
     self.move_count       = 0
     self.solved           = false
     self.board:loadFEN(lesson.fen)
+    -- Auto-flip: show the side to move at the bottom
+    self._flipped = (self.board.turn == "black")
 end
 
 -- ---------------------------------------------------------------------------
@@ -76,15 +103,14 @@ function CoursEchecsScreen:buildLayout()
     local lessons = lrequire("lessons")
     local lesson  = self.current_lesson
 
-    -- Board widget
     self.board_widget = CoursBoardWidget:new{
         board        = board,
+        flipped      = self._flipped,
         onCellAction = function(r, c) self:onCellAction(r, c) end,
     }
 
     local is_landscape = self:isLandscape()
     local sw = DeviceScreen:getWidth()
-    local sh = DeviceScreen:getHeight()
 
     local board_frame = FrameContainer:new{
         padding = Size.padding.default,
@@ -103,7 +129,7 @@ function CoursEchecsScreen:buildLayout()
         button_width = math.floor(sw * 0.92)
     end
 
-    -- Lesson header: "N/30 · Category · Title"
+    -- Lesson header
     local cat   = lesson and (CAT_LABEL[lesson.category] or lesson.category) or ""
     local title = lesson and lesson.title or ""
     local header_text = string.format("%d/%d · %s · %s",
@@ -113,26 +139,29 @@ function CoursEchecsScreen:buildLayout()
         face = Font:getFace("smallinfofont"),
     }
 
-    -- Navigation row: Préc | Suivant | Indice | Solution | Close
+    -- Navigation row
     local nav_buttons = ButtonTable:new{
         width                 = button_width,
         shrink_unneeded_width = true,
         buttons = {{
-            { text = _("Préc"),     callback = function() self:onPrev()         end },
-            { text = _("Suivant"),  callback = function() self:onNext()         end },
-            { text = _("Indice"),   callback = function() self:onHint()         end },
-            { text = _("Solution"), callback = function() self:onShowSolution() end },
+            { text = _("Préc"),        callback = function() self:onPrev()           end },
+            { text = _("Suivant"),     callback = function() self:onNext()           end },
+            { text = _("Catégories"), callback = function() self:openCategoryMenu() end },
+            { text = _("Retourner"),  callback = function() self:onFlipBoard()      end },
+            self:makeRulesButtonConfig(GAME_RULES),
             self:makeCloseButtonConfig(),
         }},
     }
 
-    -- Action row: Reset
+    -- Action row
     local action_buttons = ButtonTable:new{
         width                 = button_width,
         shrink_unneeded_width = true,
         buttons = {{
-            { text = _("Réinitialiser"), callback = function() self:onReset() end },
-            { text = _("Annuler"),       callback = function() self:onUndo()  end },
+            { text = _("Indice"),        callback = function() self:onHint()         end },
+            { text = _("Solution"),      callback = function() self:onShowSolution() end },
+            { text = _("Réinitialiser"), callback = function() self:onReset()        end },
+            { text = _("Annuler"),       callback = function() self:onUndo()         end },
         }},
     }
 
@@ -178,6 +207,18 @@ function CoursEchecsScreen:buildLayout()
 end
 
 -- ---------------------------------------------------------------------------
+-- Flip board
+-- ---------------------------------------------------------------------------
+
+function CoursEchecsScreen:onFlipBoard()
+    self._flipped = not self._flipped
+    if self.board_widget then
+        self.board_widget.flipped = self._flipped
+        self.board_widget:refresh()
+    end
+end
+
+-- ---------------------------------------------------------------------------
 -- Navigation
 -- ---------------------------------------------------------------------------
 
@@ -210,13 +251,90 @@ end
 
 function CoursEchecsScreen:onUndo()
     if self.board:undoMove() then
-        if self.move_count > 0 then
-            self.move_count = self.move_count - 1
-        end
+        if self.move_count > 0 then self.move_count = self.move_count - 1 end
         self.solved = false
+        if self.board_widget then self.board_widget.last_move = self.board.last_move end
         self.board_widget:refresh()
         self:updateStatus()
     end
+end
+
+-- ---------------------------------------------------------------------------
+-- Category selector
+-- ---------------------------------------------------------------------------
+
+function CoursEchecsScreen:openCategoryMenu()
+    local lessons = lrequire("lessons")
+
+    -- Build list of categories in order (preserving first occurrence)
+    local cat_order  = {}
+    local cat_seen   = {}
+    local cat_first  = {}  -- first lesson index per category
+    for i, lesson in ipairs(lessons) do
+        local c = lesson.category
+        if not cat_seen[c] then
+            cat_seen[c]  = true
+            cat_order[#cat_order + 1] = c
+            cat_first[c] = i
+        end
+    end
+
+    -- Count lessons per category
+    local cat_count = {}
+    for _, lesson in ipairs(lessons) do
+        cat_count[lesson.category] = (cat_count[lesson.category] or 0) + 1
+    end
+
+    -- Build picker items
+    local items = {}
+    for _, c in ipairs(cat_order) do
+        local label = CAT_LABEL[c] or c
+        items[#items + 1] = {
+            id   = c,
+            text = string.format("%s (%d)", label, cat_count[c] or 0),
+        }
+    end
+
+    local current_cat = self.current_lesson and self.current_lesson.category
+    MenuHelper.openPickerMenu{
+        title      = _("Choisir une catégorie"),
+        items      = items,
+        current_id = current_cat,
+        on_select  = function(cat_id)
+            -- Jump to list of puzzles in that category
+            self:openPuzzleList(cat_id)
+        end,
+        parent = self,
+    }
+end
+
+function CoursEchecsScreen:openPuzzleList(category)
+    local lessons = lrequire("lessons")
+    local items   = {}
+    for i, lesson in ipairs(lessons) do
+        if lesson.category == category then
+            local solved_mark = ""  -- could add a checkmark later
+            items[#items + 1] = {
+                id   = i,
+                text = string.format("%d. %s%s", i, lesson.title, solved_mark),
+            }
+        end
+    end
+
+    local cat_label = CAT_LABEL[category] or category
+    MenuHelper.openPickerMenu{
+        title      = cat_label,
+        items      = items,
+        current_id = self.lesson_idx,
+        on_select  = function(idx)
+            self.lesson_idx = idx
+            self:loadLesson(idx)
+            self.plugin:saveState(self:serializeState())
+            self:buildLayout()
+            UIManager:setDirty(self, function() return "ui", self.dimen end)
+        end,
+        parent = self,
+    }
 end
 
 -- ---------------------------------------------------------------------------
@@ -229,27 +347,28 @@ function CoursEchecsScreen:onCellAction(r, c)
     if not lesson then return end
 
     local result = self.board:tapCell(r, c)
-    self.board_widget:refresh()
+    if self.board_widget then
+        self.board_widget.last_move = self.board.last_move
+        self.board_widget:refresh()
+    end
 
     if result == "move" then
-        -- Check whether the move matches the expected solution move
-        local expected = lesson.solution and lesson.solution[self.move_count + 1]
-        if expected and self:checkSolutionProgress() then
+        if self:checkSolutionProgress() then
             self.move_count = self.move_count + 1
-
-            -- If the next solution step is an opponent reply (even index), apply it automatically
-            local reply = lesson.solution[self.move_count + 1]
-            local is_opponent_reply = (self.move_count % 2 == 1) and reply ~= nil
+            local reply              = lesson.solution and lesson.solution[self.move_count + 1]
+            local is_opponent_reply  = (self.move_count % 2 == 1) and reply ~= nil
 
             if self.move_count >= #lesson.solution then
                 self.solved = true
                 self:updateStatus(_("Bravo ! Vous avez trouvé la solution."))
             elseif is_opponent_reply then
-                -- Apply opponent's forced reply after a short delay
                 UIManager:scheduleIn(0.5, function()
                     self.board:makeMove(reply.fr, reply.fc, reply.tr, reply.tc)
                     self.move_count = self.move_count + 1
-                    self.board_widget:refresh()
+                    if self.board_widget then
+                        self.board_widget.last_move = self.board.last_move
+                        self.board_widget:refresh()
+                    end
                     if self.move_count >= #lesson.solution then
                         self.solved = true
                         self:updateStatus(_("Bravo ! Puzzle résolu."))
@@ -261,18 +380,19 @@ function CoursEchecsScreen:onCellAction(r, c)
                 self:updateStatus(_("Bon coup ! Continuez..."))
             end
         else
-            -- Wrong move: undo immediately
             self.board:undoMove()
-            self.board_widget:refresh()
+            if self.board_widget then
+                self.board_widget.last_move = self.board.last_move
+                self.board_widget:refresh()
+            end
             self:updateStatus(_("Ce n'est pas la bonne solution. Essayez encore."))
         end
     elseif result == "select" or result == "deselect" then
         self:updateStatus()
     end
-    -- "invalid": do nothing
 end
 
--- Check if the last move on the board matches the expected solution move.
+-- Check if the last move on the board matches the expected solution step.
 function CoursEchecsScreen:checkSolutionProgress()
     local lesson   = self.current_lesson
     local expected = lesson.solution and lesson.solution[self.move_count + 1]
@@ -290,29 +410,32 @@ end
 function CoursEchecsScreen:onHint()
     local lesson = self.current_lesson
     if lesson and lesson.hint then
-        self:updateStatus(_("Indice: ") .. lesson.hint)
+        self:updateStatus(_("Indice : ") .. lesson.hint)
     end
 end
 
 -- ---------------------------------------------------------------------------
--- Show solution
+-- Show solution (animated)
 -- ---------------------------------------------------------------------------
 
 function CoursEchecsScreen:onShowSolution()
     self.showing_solution = true
-    self:loadLesson(self.lesson_idx)  -- reset board to initial FEN
+    self:loadLesson(self.lesson_idx)
     local lesson = self.current_lesson
     if not lesson or not lesson.solution then return end
 
     local function playNext(idx)
         if idx > #lesson.solution then
-            self.board_widget:refresh()
+            if self.board_widget then self.board_widget:refresh() end
             self:updateStatus(_("Solution affichée. Appuyez sur Suivant pour continuer."))
             return
         end
         local m = lesson.solution[idx]
         self.board:makeMove(m.fr, m.fc, m.tr, m.tc)
-        self.board_widget:refresh()
+        if self.board_widget then
+            self.board_widget.last_move = self.board.last_move
+            self.board_widget:refresh()
+        end
         UIManager:scheduleIn(0.8, function() playNext(idx + 1) end)
     end
     playNext(1)
@@ -331,8 +454,8 @@ function CoursEchecsScreen:updateStatus(msg)
     local lesson  = self.current_lesson
     local lessons = lrequire("lessons")
     local board   = self.board
-
     local status
+
     if self.solved then
         status = _("Puzzle résolu ! Appuyez sur Suivant.")
     elseif board.status == "checkmate" then
@@ -342,12 +465,12 @@ function CoursEchecsScreen:updateStatus(msg)
         status = _("Pat — partie nulle.")
     elseif board.status == "check" then
         local turn = (board.turn == "white") and _("Blancs") or _("Noirs")
-        status = turn .. " " .. _("sont en échec.")
+        status = turn .. " " .. _("sont en échec — continuez la solution.")
     else
         if lesson then
             local cat = CAT_LABEL[lesson.category] or lesson.category
-            status = string.format("%d/%d · %s · %s",
-                self.lesson_idx, #lessons, cat, lesson.desc)
+            local side = (board.turn == "white") and _("Blancs jouent") or _("Noirs jouent")
+            status = string.format("%d/%d · %s · %s", self.lesson_idx, #lessons, cat, side)
         else
             local turn = (board.turn == "white") and _("Blancs") or _("Noirs")
             status = turn .. " " .. _("jouent.")

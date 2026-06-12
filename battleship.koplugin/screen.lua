@@ -30,6 +30,18 @@ local DeviceScreen = Device.screen
 -- BattleshipScreen
 -- ---------------------------------------------------------------------------
 
+local GAME_RULES = _([[
+Battleship (Bimaru) — Rules
+
+Find the hidden fleet in the grid using the row and column clues.
+
+The fleet consists of ships of various lengths (carrier, battleship, destroyer, submarine, etc.).
+Row and column clues show the total number of ship segments in each line.
+Ships are placed horizontally or vertically and cannot touch each other, even diagonally.
+
+Tap a cell to toggle it between water and ship. Long-press to mark it as definite water.
+]])
+
 local BattleshipScreen = ScreenBase:extend{}
 
 function BattleshipScreen:init()
@@ -65,6 +77,7 @@ function BattleshipScreen:buildLayout()
               callback = function() self:openSizeMenu() end },
             { id = "diff_btn",  text = self:_diffLabel(),
               callback = function() self:openDiffMenu() end },
+            self:makeRulesButtonConfig(GAME_RULES),
             self:makeCloseButtonConfig(),
         }},
     }

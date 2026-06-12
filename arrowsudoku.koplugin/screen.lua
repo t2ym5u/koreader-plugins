@@ -40,6 +40,16 @@ local function digitToChar(d)
     return d <= 9 and tostring(d) or string.char(55 + d)
 end
 
+local GAME_RULES = _([[
+Arrow Sudoku — Rules
+
+Standard Sudoku rules apply:
+• Fill the grid with 1–9; each row, column, and 3×3 box must contain each digit exactly once.
+
+Arrow constraint:
+• Digits along each arrow (starting from the cell next to the circle) must sum to the digit inside the circle.
+• Digits on the arrow may repeat.]])
+
 local ArrowSudokuScreen = BaseScreen:extend{}
 
 function ArrowSudokuScreen:buildLayout()
@@ -87,6 +97,7 @@ function ArrowSudokuScreen:buildLayout()
                   callback = function() self:openDifficultyMenu() end },
                 { id = "show_result",     text = _("Show result"),
                   callback = function() self:toggleSolution() end },
+                self:makeRulesButtonConfig(GAME_RULES),
                 { text = _("Close"),      callback = function()
                     self:onClose()
                     UIManager:close(self)

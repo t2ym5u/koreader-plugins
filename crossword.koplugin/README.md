@@ -2,13 +2,22 @@
 
 A Crossword puzzle plugin for [KOReader](https://github.com/koreader/koreader).
 
+
+## Screenshot
+
+*(Screenshot to be added.)*
+
+## Rules
+
+Fill the white squares with letters to answer the across and down clues. Letters at intersecting cells must satisfy both words. Tap a cell to select it; tap again to toggle between across and down direction.
+
 ## Concept
 
 Classic crossword puzzles: fill the white squares with letters to form words
 that match the across and down clues. Clues are shown in a scrollable list
 alongside the grid.
 
-## Planned Features
+## Features
 
 - **Multiple languages** — puzzle packs for EN, FR, DE
 - **Grid navigation** — tap a cell to select it; tap a clue to jump to its first cell
@@ -32,6 +41,7 @@ alongside the grid.
 | Erase a letter | Tap **⌫** |
 | Check / Reveal | Tap **Check** or **Reveal** menu |
 | New puzzle | Tap **New puzzle** |
+| Show rules | Tap **Rules** |
 
 ## Why e-ink friendly?
 

@@ -33,6 +33,20 @@ local MAX_DIGIT    = 9
 -- FillominoScreen
 -- ---------------------------------------------------------------------------
 
+local GAME_RULES = _([[
+Fillomino — Rules
+
+Fill every cell of the grid with a number so that each group of orthogonally connected cells sharing the same number contains exactly that many cells.
+
+Rules:
+• Given clue numbers are fixed and cannot be changed.
+• Any two groups of the same number must not touch each other orthogonally (they may touch diagonally).
+• There is no limit on how many groups of any given number can exist.
+
+Example: a group of cells all containing 3 must consist of exactly 3 orthogonally connected cells.
+]])
+
+
 local FillominoScreen = ScreenBase:extend{}
 
 function FillominoScreen:init()
@@ -88,6 +102,7 @@ function FillominoScreen:buildLayout()
               callback = function() self:openGridMenu() end },
             { id = "diff_button",   text = self:getDiffButtonText(),
               callback = function() self:openDifficultyMenu() end },
+            self:makeRulesButtonConfig(GAME_RULES),
             self:makeCloseButtonConfig(),
         }},
     }

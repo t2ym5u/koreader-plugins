@@ -26,6 +26,19 @@ local RippleEffectBoardWidget  = lrequire("board_widget")
 
 local DeviceScreen = Device.screen
 
+local GAME_RULES = _([[
+Ripple Effect — Rules
+
+Fill every cell so that each outlined region contains the numbers 1 to N (where N is the region size) exactly once.
+
+Distance constraint:
+• If the same number appears twice in the same row or column, those two cells must be at least that number of cells apart.
+  Example: two cells both containing 3 must have at least 3 cells (not counting themselves) between them.
+
+Tap a cell to select it, then tap a digit to fill it in.
+]])
+
+
 local RippleEffectScreen = ScreenBase:extend{}
 
 function RippleEffectScreen:init()
@@ -75,6 +88,7 @@ function RippleEffectScreen:buildLayout()
             { id = "diff_button",   text = self:getDiffButtonText(),
               callback = function() self:openDifficultyMenu() end },
             { text = _("Undo"),     callback = function() self:onUndo() end },
+            self:makeRulesButtonConfig(GAME_RULES),
             self:makeCloseButtonConfig(),
         }},
     }

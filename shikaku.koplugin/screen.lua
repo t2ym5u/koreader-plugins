@@ -32,6 +32,20 @@ local GRID_SIZES = { 6, 8, 10 }
 -- ShikakuScreen
 -- ---------------------------------------------------------------------------
 
+local GAME_RULES = _([[
+Shikaku — Rules
+
+Divide the entire grid into non-overlapping rectangles.
+
+Rules:
+• Each numbered cell belongs to exactly one rectangle.
+• The area of that rectangle (width × height) equals the number it contains.
+• Every cell of the grid must belong to exactly one rectangle.
+
+Tap a cell to start drawing a rectangle, then tap another cell to set the opposite corner.
+]])
+
+
 local ShikakuScreen = ScreenBase:extend{}
 
 function ShikakuScreen:init()
@@ -84,6 +98,7 @@ function ShikakuScreen:buildLayout()
               callback = function() self:openGridMenu() end },
             { id = "diff_button",    text = self:getDiffButtonText(),
               callback = function() self:openDifficultyMenu() end },
+            self:makeRulesButtonConfig(GAME_RULES),
             self:makeCloseButtonConfig(),
         }},
     }

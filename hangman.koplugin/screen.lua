@@ -30,6 +30,18 @@ local DeviceScreen = Device.screen
 -- HangmanScreen
 -- ---------------------------------------------------------------------------
 
+local GAME_RULES = _([[
+Hangman — Rules
+
+Guess the hidden word one letter at a time before the stick figure is complete.
+
+Each wrong letter guess adds a body part to the hangman drawing.
+You have a limited number of wrong guesses (usually 6–7).
+Tap a letter on the keyboard to guess it.
+Correctly guessed letters are revealed in the word.
+The game ends when you complete the word or the hangman is fully drawn.
+]])
+
 local HangmanScreen = ScreenBase:extend{}
 
 local ALPHABET = {
@@ -73,6 +85,7 @@ function HangmanScreen:buildLayout()
               callback = function() self:openLangMenu() end },
             { id = "diff_btn",  text = self:_diffLabel(),
               callback = function() self:openDiffMenu() end },
+            self:makeRulesButtonConfig(GAME_RULES),
             self:makeCloseButtonConfig(),
         }},
     }

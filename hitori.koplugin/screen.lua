@@ -32,6 +32,19 @@ local GRID_SIZES = { 5, 7 }
 -- HitoriScreen
 -- ---------------------------------------------------------------------------
 
+local GAME_RULES = _([[
+Hitori — Rules
+
+Shade some cells black so that the remaining white cells satisfy three rules:
+
+1. No row or column contains the same number more than once among white cells.
+2. No two black cells touch each other orthogonally (diagonal touching is allowed).
+3. All white cells form one single orthogonally connected group.
+
+Tap a cell to shade it black. Tap again to unshade. The puzzle is solved when all three rules are met.
+]])
+
+
 local HitoriScreen = ScreenBase:extend{}
 
 -- ---------------------------------------------------------------------------
@@ -92,7 +105,8 @@ function HitoriScreen:buildLayout()
                   callback = function() self:openDifficultyMenu() end },
                 { id = "reveal_button",  text = self:getRevealButtonText(),
                   callback = function() self:toggleSolution() end },
-                self:makeCloseButtonConfig(),
+                self:makeRulesButtonConfig(GAME_RULES),
+            self:makeCloseButtonConfig(),
             },
         },
     }

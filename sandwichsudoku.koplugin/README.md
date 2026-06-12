@@ -1,32 +1,46 @@
-# Sandwich Sudoku — KOReader Plugin
+# sandwichsudoku.koplugin
 
-> Standard 9×9 Sudoku where clue numbers outside the grid show the sum of the digits sandwiched between 1 and 9 in each row and column.
+A Sandwich Sudoku plugin for [KOReader](https://github.com/koreader/koreader).
+
+## Screenshot
+
+*(Screenshot to be added.)*
 
 ## Rules
 
-- Standard 9×9 Sudoku: each row, column, and 3×3 box contains digits 1–9 exactly once.
-- A clue number beside each row/column gives the sum of all digits that appear strictly between 1 and 9 in that row or column.
-- The clue applies only to digits between the positions of 1 and 9; 1 and 9 themselves are not included in the sum.
-- Conflicts are only flagged once an entire row or column is fully filled and the sandwich sum is wrong.
+Standard 9×9 Sudoku rules plus **sandwich clues**: each row/column clue shows the sum of all digits sandwiched between the 1 and the 9 in that line. The 1 and 9 themselves are not included in the sum.
 
-## How to Play
+## Features
 
-1. Tap a cell to select it.
-2. Tap a digit button to fill it in.
-3. Use **Note** mode to pencil in candidates.
-4. **Check** highlights errors in red.
-5. **New game** generates a fresh puzzle with automatically computed sandwich clues.
+- **Three difficulty levels** — Easy, Medium, Hard
+- **Sandwich clue display** — row and column clues shown at grid edges
+- **Note mode** — pencil in candidate digits
+- **Check** — highlights incorrect cells and sandwich sums
+- **Reveal solution** — shows the full solution
+- **Undo** — step back through your moves
+- **Auto-save** — game state saved and restored on next launch
 
-## Sandwich Constraint
+## Installation
 
-The row and column clues are shown at the edges of the grid. A clue of 0 means 1 and 9 are adjacent (nothing sandwiched). A clue of 35 means all of 2–8 are between them.
+1. Download `sandwichsudoku.koplugin.zip` from the [latest release](../../releases/latest).
+2. Extract into the `plugins/` folder of your KOReader data directory.
+3. Restart KOReader.
+4. Open the menu → **Tools** → **Sandwich Sudoku**.
 
-Example row: `4 7 2 **1** 5 3 6 **9** 8` — the sandwich sum is 5 + 3 + 6 = 14 (the cells strictly between 1 and 9).
+## Controls
 
-When a full row or column is filled and its sandwich sum is wrong, all cells from position of 1 to position of 9 (inclusive) are highlighted in red.
+| Action | How |
+|--------|-----|
+| Select a cell | Tap it |
+| Enter a digit | Tap the digit button |
+| Erase a cell | Tap **Erase** |
+| Toggle note mode | Tap **Note: Off / On** |
+| Undo last move | Tap **Undo** |
+| Check progress | Tap **Check** |
+| New game | Tap **New game** |
+| Change difficulty | Tap **Diff** |
+| Show rules | Tap **Rules** |
 
-## Settings
+## License
 
-| Setting | Options | Default |
-|---------|---------|---------|
-| Difficulty | Easy / Medium / Hard | Medium |
+GPL-3.0 — see [LICENSE](LICENSE).

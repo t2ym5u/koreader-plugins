@@ -25,6 +25,25 @@ local PicominoBoardWidget  = lrequire("board_widget")
 
 local DeviceScreen = Device.screen
 
+local GAME_RULES = _([[
+Pickomino (Heckmeck) — Rules
+
+Collect worm tiles by rolling dice to reach their values.
+
+On each turn:
+1. Roll all 8 dice.
+2. Set aside all dice showing one face value of your choice.
+3. Re-roll the remaining dice and set aside another face value (must be new).
+4. Repeat until you decide to stop, or until no new face value can be set aside.
+5. Your score is the sum of all set-aside dice.
+   • Your total must include at least one worm (⚕) face.
+   • Claim the worm tile whose value matches your total (or the nearest lower available tile).
+6. If your total has no worm, or no tile is claimable, you lose your top tile.
+
+The player with the most worm symbols on their collected tiles wins!
+]])
+
+
 local PickominoScreen = ScreenBase:extend{}
 
 function PickominoScreen:init()
@@ -60,6 +79,7 @@ function PickominoScreen:buildLayout()
             { text = _("New"),   callback = function() self:onNewGame() end },
             { text = _("Roll"),  callback = function() self:onRoll() end },
             { text = _("Stop"),  callback = function() self:onStop() end },
+            self:makeRulesButtonConfig(GAME_RULES),
             self:makeCloseButtonConfig(),
         }},
     }

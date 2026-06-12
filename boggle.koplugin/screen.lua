@@ -32,6 +32,21 @@ local DeviceScreen = Device.screen
 -- BoggleScreen
 -- ---------------------------------------------------------------------------
 
+local GAME_RULES = _([[
+Boggle — Rules
+
+Find as many words as possible by connecting adjacent letters in the 4×4 grid.
+
+Rules:
+• Letters must be adjacent (horizontally, vertically, or diagonally).
+• Each letter in the grid may only be used once per word.
+• Minimum word length: 3 letters.
+• Longer words score more points.
+
+Tap letters in sequence to build a word, then tap Submit to score it.
+The timer counts down — find as many words as you can before it runs out!
+]])
+
 local BoggleScreen = ScreenBase:extend{}
 
 function BoggleScreen:init()
@@ -67,6 +82,7 @@ function BoggleScreen:buildLayout()
             { id = "lang_btn", text = self:_langLabel(),
               callback = function() self:openLangMenu() end },
             { text = _("Done"),   callback = function() self:onEndGame() end },
+            self:makeRulesButtonConfig(GAME_RULES),
             self:makeCloseButtonConfig(),
         }},
     }

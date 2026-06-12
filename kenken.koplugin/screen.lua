@@ -32,6 +32,21 @@ local GRID_SIZES = { 3, 4, 5, 6, 8 }
 -- KenKenScreen
 -- ---------------------------------------------------------------------------
 
+local GAME_RULES = _([[
+KenKen — Rules
+
+Fill the N×N grid with numbers 1 to N so that each row and each column contains each number exactly once (like Sudoku).
+
+Cage constraint:
+• Cells are grouped into "cages" labelled with a target number and an arithmetic operation (+, −, ×, ÷).
+• The numbers in a cage must produce the target value when the operation is applied.
+• For subtraction and division, the operands may be in either order.
+• Numbers may repeat within a cage, as long as rows and columns remain valid.
+
+Tap a cell to select it, then tap a digit to fill it in.
+]])
+
+
 local KenKenScreen = ScreenBase:extend{}
 
 -- ---------------------------------------------------------------------------
@@ -95,6 +110,7 @@ function KenKenScreen:buildLayout()
               callback = function() self:openDifficultyMenu() end },
             { id = "show_button",    text = self:getShowButtonText(),
               callback = function() self:toggleSolution() end },
+            self:makeRulesButtonConfig(GAME_RULES),
             self:makeCloseButtonConfig(),
         }},
     }

@@ -33,6 +33,24 @@ local DIFF_DEPTH = { easy = 2, medium = 4, hard = 6 }
 -- DamesScreen
 -- ---------------------------------------------------------------------------
 
+local GAME_RULES = _([[
+Draughts (Checkers) — Rules
+
+Two players take turns moving pieces diagonally on the dark squares.
+
+Movement:
+• Ordinary pieces move diagonally forward one square.
+• Captures: jump diagonally over an opponent's piece to an empty square behind it. The captured piece is removed.
+• Multiple jumps in one turn are mandatory if available.
+
+Kings:
+• A piece that reaches the far row becomes a King.
+• Kings can move and capture diagonally in both directions.
+
+Win by capturing all opponent pieces, or by leaving them unable to move.
+]])
+
+
 local DamesScreen = ScreenBase:extend{}
 
 -- ---------------------------------------------------------------------------
@@ -101,6 +119,7 @@ function DamesScreen:buildLayout()
             { text = self:getStyleButtonText(),
                                       callback = function() self:openStyleMenu()      end,
                                       id = "style_btn" },
+            self:makeRulesButtonConfig(GAME_RULES),
             self:makeCloseButtonConfig(),
         }},
     }

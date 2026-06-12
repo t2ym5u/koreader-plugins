@@ -41,6 +41,16 @@ local KEY_ROWS = {
 -- ArrowwordsScreen
 -- ---------------------------------------------------------------------------
 
+local GAME_RULES = _([[
+Arrowwords — Rules
+
+Fill in the crossword grid where clues are placed inside the cells themselves.
+
+Each clue cell contains a short clue and an arrow pointing in the direction of the answer.
+The answer is entered in the cells the arrow points to.
+Letters at crossing cells must satisfy both the across and down words.
+]])
+
 local ArrowwordsScreen = ScreenBase:extend{}
 
 function ArrowwordsScreen:init()
@@ -76,6 +86,7 @@ function ArrowwordsScreen:buildLayout()
               callback = function() end },
             { text = "\xe2\x96\xb6", callback = function() self:onNextPuzzle() end },
             { text = _("Clear"), callback = function() self:onClear() end },
+            self:makeRulesButtonConfig(GAME_RULES),
             self:makeCloseButtonConfig(),
         }},
     }
@@ -95,7 +106,7 @@ function ArrowwordsScreen:buildLayout()
         board      = self.board,
         max_width  = board_max,
         max_height = board_max,
-        onCellTap  = function(r, c) self:onCellTap(r, c) end,
+        cellTapHandler = function(r, c) self:onCellTap(r, c) end,
     }
 
     local board_frame = FrameContainer:new{

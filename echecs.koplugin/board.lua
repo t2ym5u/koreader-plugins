@@ -95,6 +95,28 @@ local PST_KING_MG = {
     { 20, 20,  0,  0,  0,  0, 20, 20},
     { 20, 30, 10,  0,  0, 10, 30, 20},
 }
+-- Queen: active but not too early
+local PST_QUEEN = {
+    {-20,-10,-10, -5, -5,-10,-10,-20},
+    {-10,  0,  0,  0,  0,  0,  0,-10},
+    {-10,  0,  5,  5,  5,  5,  0,-10},
+    { -5,  0,  5,  5,  5,  5,  0, -5},
+    {  0,  0,  5,  5,  5,  5,  0, -5},
+    {-10,  5,  5,  5,  5,  5,  0,-10},
+    {-10,  0,  5,  0,  0,  0,  0,-10},
+    {-20,-10,-10, -5, -5,-10,-10,-20},
+}
+-- King endgame: centralize
+local PST_KING_EG = {
+    {-50,-40,-30,-20,-20,-30,-40,-50},
+    {-30,-20,-10,  0,  0,-10,-20,-30},
+    {-30,-10, 20, 30, 30, 20,-10,-30},
+    {-30,-10, 30, 40, 40, 30,-10,-30},
+    {-30,-10, 30, 40, 40, 30,-10,-30},
+    {-30,-10, 20, 30, 30, 20,-10,-30},
+    {-30,-30,  0,  0,  0,  0,-30,-30},
+    {-50,-30,-30,-30,-30,-30,-30,-50},
+}
 
 -- ---------------------------------------------------------------------------
 -- Helpers
@@ -862,24 +884,39 @@ function ChessBoard:load(data)
 end
 
 -- ---------------------------------------------------------------------------
--- AI — minimax alpha-beta
+-- AI — alpha-beta + quiescence search + killer moves + improved evaluation
 -- ---------------------------------------------------------------------------
 
-local function pstBonus(piece, r, c)
+-- True when queens are off the board or total minor/major material is low
+local function isEndgame(sq)
+    local mat_w, mat_b = 0, 0
+    local has_wq, has_bq = false, false
+    for r = 1, 8 do
+        for c = 1, 8 do
+            local p = sq[r][c]
+            if p == 5  then has_wq = true end
+            if p == 11 then has_bq = true end
+            if p >= 1 and p <= 5  then mat_w = mat_w + MAT[p]       end  -- white non-king
+            if p >= 7 and p <= 11 then mat_b = mat_b - MAT[p]       end  -- black non-king (MAT<0)
+        end
+    end
+    return (not has_wq and not has_bq) or (mat_w < 1300 and mat_b < 1300)
+end
+
+local function pstBonus(piece, r, c, eg)
     if piece == 0 then return 0 end
-    local pt = pieceType(piece)
-    local is_w = isWhite(piece)
-    -- Map to white's perspective row index (rank 1 = index 1, rank 8 = index 8)
-    -- White's rank 1 is r=8, rank 8 is r=1
+    local pt    = pieceType(piece)
+    local is_w  = isWhite(piece)
     local row_idx = is_w and (9 - r) or r
     local sign    = is_w and 1 or -1
 
     local pst
-    if pt == 1 then     pst = PST_PAWN
+    if     pt == 1 then pst = PST_PAWN
+    elseif pt == 2 then pst = PST_ROOK
     elseif pt == 3 then pst = PST_KNIGHT
     elseif pt == 4 then pst = PST_BISHOP
-    elseif pt == 2 then pst = PST_ROOK
-    elseif pt == 6 then pst = PST_KING_MG
+    elseif pt == 5 then pst = PST_QUEEN
+    elseif pt == 6 then pst = eg and PST_KING_EG or PST_KING_MG
     else return 0 end
 
     local row = pst[row_idx]
@@ -888,101 +925,190 @@ local function pstBonus(piece, r, c)
 end
 
 function ChessBoard:_evaluate()
+    local sq  = self.sq
+    local eg  = isEndgame(sq)
     local score = 0
+    local wb, bb = 0, 0
     for r = 1, 8 do
         for c = 1, 8 do
-            local p = self.sq[r][c]
+            local p = sq[r][c]
             if p ~= 0 then
-                score = score + MAT[p] + pstBonus(p, r, c)
+                score = score + MAT[p] + pstBonus(p, r, c, eg)
+                if p == 4  then wb = wb + 1 end   -- white bishop
+                if p == 10 then bb = bb + 1 end   -- black bishop
             end
         end
     end
+    if wb >= 2 then score = score + 30 end   -- bishop pair bonus
+    if bb >= 2 then score = score - 30 end
     return score
 end
 
--- Move ordering: captures first (by MVV-LVA heuristic), then others
-local function moveOrderScore(move, sq)
-    if move.special == "ep" then return 50 end
-    if not move.capture then return 0 end
-    local victim  = sq[move.tr][move.tc]
-    local attacker = sq[move.fr][move.fc]
-    if victim == 0 then return 0 end
-    -- MVV-LVA: high value victim, low value attacker = best
-    return 100 + (MAT[victim] and math.abs(MAT[victim]) or 0)
-              - (MAT[attacker] and math.abs(MAT[attacker]) or 0)
+-- Move ordering: promotions > captures (MVV-LVA) > killers > quiet
+local function moveScore(move, sq, killers)
+    if move.special == "promo"  then return 9000 end
+    if move.capture or move.special == "ep" then
+        local v = math.abs(MAT[sq[move.tr][move.tc]] or 0)
+        local a = math.abs(MAT[sq[move.fr][move.fc]] or 0)
+        return 1000 + v * 10 - a
+    end
+    if killers then
+        local k1, k2 = killers[1], killers[2]
+        if k1 and k1.fr==move.fr and k1.fc==move.fc
+              and k1.tr==move.tr and k1.tc==move.tc then return 900 end
+        if k2 and k2.fr==move.fr and k2.fc==move.fc
+              and k2.tr==move.tr and k2.tc==move.tc then return 899 end
+    end
+    return 0
 end
 
-local function sortMoves(moves, sq)
+local function sortMoves(moves, sq, killers)
     table.sort(moves, function(a, b)
-        return moveOrderScore(a, sq) > moveOrderScore(b, sq)
+        return moveScore(a, sq, killers) > moveScore(b, sq, killers)
     end)
-    return moves
+end
+
+-- Two killer slots per depth level (reset each root search)
+local ai_killers = {}
+
+local function storeKiller(depth, move)
+    if move.capture or move.special then return end   -- only quiet moves
+    if not ai_killers[depth] then ai_killers[depth] = {} end
+    local k = ai_killers[depth]
+    if k[1] and k[1].fr==move.fr and k[1].fc==move.fc
+           and k[1].tr==move.tr and k[1].tc==move.tc then return end
+    k[2] = k[1]
+    k[1] = move
+end
+
+-- Quiescence search: resolve captures/promotions before evaluating statically.
+-- Prevents the horizon effect (e.g. "winning" a queen on move N then losing the
+-- king on move N+1 being invisible at depth 0).
+function ChessBoard:_quiescence(alpha, beta)
+    local maximizing = (self.turn == "w")
+    local stand_pat  = self:_evaluate()
+
+    if maximizing then
+        if stand_pat >= beta  then return beta  end
+        if stand_pat > alpha  then alpha = stand_pat end
+    else
+        if stand_pat <= alpha then return alpha end
+        if stand_pat < beta   then beta  = stand_pat end
+    end
+
+    local pseudo = self:_genPseudoMoves(self.turn)
+    local caps = {}
+    for _, m in ipairs(pseudo) do
+        if (m.capture or m.special == "ep" or m.special == "promo")
+                and self:_isMoveLegal(m) then
+            caps[#caps + 1] = m
+        end
+    end
+    sortMoves(caps, self.sq, nil)
+
+    if maximizing then
+        for _, m in ipairs(caps) do
+            local saved = self:_applyMove(m)
+            local score = self:_quiescence(alpha, beta)
+            self:_undoMove(saved)
+            if score >= beta then return beta  end
+            if score > alpha then alpha = score end
+        end
+        return alpha
+    else
+        for _, m in ipairs(caps) do
+            local saved = self:_applyMove(m)
+            local score = self:_quiescence(alpha, beta)
+            self:_undoMove(saved)
+            if score <= alpha then return alpha end
+            if score < beta   then beta  = score end
+        end
+        return beta
+    end
 end
 
 function ChessBoard:_alphaBeta(depth, alpha, beta, maximizing)
     if depth == 0 then
-        return self:_evaluate(), nil
+        return self:_quiescence(alpha, beta), nil
     end
 
     local legal = self:getLegalMoves()
     if #legal == 0 then
         if self:isInCheck(self.turn) then
-            -- Checkmate: bad for the side to move
             return (maximizing and -30000 or 30000), nil
         end
-        return 0, nil  -- Stalemate
+        return 0, nil  -- stalemate
     end
-
-    -- 50-move draw
     if self.halfmove >= 100 then return 0, nil end
 
-    sortMoves(legal, self.sq)
+    sortMoves(legal, self.sq, ai_killers[depth])
 
     local best_move = nil
     if maximizing then
         local best_val = -math.huge
         for _, m in ipairs(legal) do
             local saved = self:_applyMove(m)
-            local val = self:_alphaBeta(depth - 1, alpha, beta, false)
+            local val   = self:_alphaBeta(depth - 1, alpha, beta, false)
             self:_undoMove(saved)
-            if val > best_val then
-                best_val = val
-                best_move = m
-            end
-            if val > alpha then alpha = val end
-            if beta <= alpha then break end
+            if val > best_val then best_val = val; best_move = m end
+            if val > alpha    then alpha = val end
+            if beta <= alpha  then storeKiller(depth, m); break end
         end
         return best_val, best_move
     else
         local best_val = math.huge
         for _, m in ipairs(legal) do
             local saved = self:_applyMove(m)
-            local val = self:_alphaBeta(depth - 1, alpha, beta, true)
+            local val   = self:_alphaBeta(depth - 1, alpha, beta, true)
             self:_undoMove(saved)
-            if val < best_val then
-                best_val = val
-                best_move = m
-            end
-            if val < beta then beta = val end
-            if beta <= alpha then break end
+            if val < best_val then best_val = val; best_move = m end
+            if val < beta     then beta = val end
+            if beta <= alpha  then storeKiller(depth, m); break end
         end
         return best_val, best_move
     end
 end
 
 function ChessBoard:getAIMove(depth)
-    depth = depth or 2
+    depth = depth or 3
     if self.status ~= "playing" then return nil end
 
-    -- White maximizes, black minimizes
-    local maximizing = (self.turn == "w")
-    local _, best_move = self:_alphaBeta(depth, -math.huge, math.huge, maximizing)
+    ai_killers = {}  -- reset killer table for this search
 
-    if best_move and best_move.special == "promo" then
-        -- AI always promotes to queen
-        best_move.promo_piece = (self.turn == "w") and ChessBoard.W_QUEEN or ChessBoard.B_QUEEN
+    local maximizing = (self.turn == "w")
+    local legal = self:getLegalMoves()
+    if #legal == 0 then return nil end
+
+    sortMoves(legal, self.sq, nil)
+
+    -- Evaluate every root move; collect all moves tied at the best score so
+    -- that equal lines are chosen randomly (adds variety without weakening play).
+    local best_val   = maximizing and -math.huge or math.huge
+    local best_moves = {}
+
+    for _, m in ipairs(legal) do
+        local saved = self:_applyMove(m)
+        local val   = self:_alphaBeta(depth - 1, -math.huge, math.huge, not maximizing)
+        self:_undoMove(saved)
+        if maximizing then
+            if val > best_val then
+                best_val = val; best_moves = { m }
+            elseif val == best_val then
+                best_moves[#best_moves + 1] = m
+            end
+        else
+            if val < best_val then
+                best_val = val; best_moves = { m }
+            elseif val == best_val then
+                best_moves[#best_moves + 1] = m
+            end
+        end
     end
 
+    local best_move = best_moves[math.random(#best_moves)]
+    if best_move and best_move.special == "promo" then
+        best_move.promo_piece = (self.turn == "w") and ChessBoard.W_QUEEN or ChessBoard.B_QUEEN
+    end
     return best_move
 end
 

@@ -1,31 +1,46 @@
-# Thermo Sudoku — KOReader Plugin
+# thermosudoku.koplugin
 
-> Standard 9×9 Sudoku where thermometer-shaped lines are drawn on the grid — digits must strictly increase from the bulb (round end) to the tip.
+A Thermo Sudoku plugin for [KOReader](https://github.com/koreader/koreader).
+
+## Screenshot
+
+*(Screenshot to be added.)*
 
 ## Rules
 
-- Standard 9×9 Sudoku: each row, column, and 3×3 box contains digits 1–9 exactly once.
-- For every thermometer drawn on the grid, the values along it must be strictly increasing from the bulb (filled circle) toward the tip.
-- If any two adjacent filled cells on a thermometer violate the increasing order, both are highlighted as conflicts.
+Standard 9×9 Sudoku rules plus **thermometer constraints**: digits along each thermometer must strictly increase from the bulb toward the tip.
 
-## How to Play
+## Features
 
-1. Tap a cell to select it.
-2. Tap a digit button to fill it in.
-3. Use **Note** mode to pencil in candidates.
-4. **Check** highlights errors in red.
-5. **New game** generates a fresh puzzle with randomly placed thermometers.
+- **Three difficulty levels** — Easy, Medium, Hard
+- **Thermometer display** — bulbs and tubes clearly shown on the grid
+- **Note mode** — pencil in candidate digits
+- **Check** — highlights cells violating thermometer constraints
+- **Reveal solution** — shows the full solution
+- **Undo** — step back through your moves
+- **Auto-save** — game state saved and restored on next launch
 
-## Thermometer Constraint
+## Installation
 
-Each puzzle contains 5 or more thermometers. A thermometer is a sequence of cells shown with a round bulb at one end and a line (tube) leading to the tip. The digit in each cell must be greater than the digit in the previous cell along the thermometer, starting from the bulb.
+1. Download `thermosudoku.koplugin.zip` from the [latest release](../../releases/latest).
+2. Extract into the `plugins/` folder of your KOReader data directory.
+3. Restart KOReader.
+4. Open the menu → **Tools** → **Thermo Sudoku**.
 
-Example: a thermometer with bulb value 2 might continue with 4, 7 — each step strictly larger.
+## Controls
 
-Empty cells along a thermometer are ignored for conflict detection; only consecutive filled cells are compared.
+| Action | How |
+|--------|-----|
+| Select a cell | Tap it |
+| Enter a digit | Tap the digit button |
+| Erase a cell | Tap **Erase** |
+| Toggle note mode | Tap **Note: Off / On** |
+| Undo last move | Tap **Undo** |
+| Check progress | Tap **Check** |
+| New game | Tap **New game** |
+| Change difficulty | Tap **Diff** |
+| Show rules | Tap **Rules** |
 
-## Settings
+## License
 
-| Setting | Options | Default |
-|---------|---------|---------|
-| Difficulty | Easy / Medium / Hard | Medium |
+GPL-3.0 — see [LICENSE](LICENSE).

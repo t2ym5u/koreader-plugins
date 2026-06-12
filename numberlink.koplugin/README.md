@@ -2,13 +2,22 @@
 
 A Numberlink plugin for [KOReader](https://github.com/koreader/koreader).
 
+
+## Screenshot
+
+*(Screenshot to be added.)*
+
+## Rules
+
+Connect matching number pairs with continuous horizontal/vertical paths. Paths cannot cross or share cells. Every cell of the grid must be covered by exactly one path.
+
 ## Concept
 
 Connect each pair of matching numbers on the grid with a continuous path.
 Paths may not cross or branch, and every cell in the grid must be covered
 by exactly one path.
 
-## Planned Features
+## Features
 
 - **Multiple grid sizes** — 5×5, 7×7, 9×9, 10×10
 - **Three difficulty levels** — Easy (fewer pairs), Medium, Hard
@@ -32,6 +41,7 @@ by exactly one path.
 | New game | Tap **New game** |
 | Change grid size | Tap **Grid** |
 | Change difficulty | Tap **Diff** |
+| Show rules | Tap **Rules** |
 
 ## Why e-ink friendly?
 

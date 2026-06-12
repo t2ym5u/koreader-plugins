@@ -30,6 +30,20 @@ local DeviceScreen = Device.screen
 -- TentsScreen
 -- ---------------------------------------------------------------------------
 
+local GAME_RULES = _([[
+Tents and Trees — Rules
+
+Place tents in the grid so every tree has exactly one tent.
+
+Rules:
+• Each tree must be paired with exactly one tent in an orthogonally adjacent cell (not diagonal).
+• Each tent is paired with exactly one tree.
+• No two tents may be adjacent — even diagonally.
+• The number of tents in each row and column must match the clue for that line.
+
+Empty cells without trees or tents are grass.
+]])
+
 local TentsScreen = ScreenBase:extend{}
 
 function TentsScreen:init()
@@ -66,6 +80,7 @@ function TentsScreen:buildLayout()
               callback = function() self:openSizeMenu() end },
             { id = "diff_btn",  text = self:_diffLabel(),
               callback = function() self:openDiffMenu() end },
+            self:makeRulesButtonConfig(GAME_RULES),
             self:makeCloseButtonConfig(),
         }},
     }

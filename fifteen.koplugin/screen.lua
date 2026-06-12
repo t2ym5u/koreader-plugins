@@ -30,6 +30,18 @@ local DeviceScreen = Device.screen
 -- FifteenScreen
 -- ---------------------------------------------------------------------------
 
+local GAME_RULES = _([[
+Fifteen Puzzle — Rules
+
+Arrange the numbered tiles in order by sliding them into the empty space.
+
+Tap a tile adjacent to the empty space to slide it in.
+Only tiles directly next to the empty space can move.
+Goal: arrange tiles 1, 2, 3 … in order from top-left to bottom-right, with the empty space in the bottom-right corner.
+
+The puzzle is always solvable.
+]])
+
 local FifteenScreen = ScreenBase:extend{}
 
 function FifteenScreen:init()
@@ -62,6 +74,7 @@ function FifteenScreen:buildLayout()
             { text = _("New"),  callback = function() self:onNewGame() end },
             { id = "grid_btn", text = self:_gridLabel(),
               callback = function() self:openGridMenu() end },
+            self:makeRulesButtonConfig(GAME_RULES),
             self:makeCloseButtonConfig(),
         }},
     }

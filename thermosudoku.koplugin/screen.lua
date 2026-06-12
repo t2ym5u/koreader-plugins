@@ -41,6 +41,16 @@ local function digitToChar(d)
     return d <= 9 and tostring(d) or string.char(55 + d)
 end
 
+local GAME_RULES = _([[
+Thermo Sudoku — Rules
+
+Standard Sudoku rules apply:
+• Fill the 9×9 grid with 1–9; each row, column, and 3×3 box must contain each digit exactly once.
+
+Thermometer constraint:
+• Thermometers are drawn on the grid, each starting from a bulb.
+• Digits along a thermometer must strictly increase from the bulb to the tip.]])
+
 local ThermoSudokuScreen = BaseScreen:extend{}
 
 function ThermoSudokuScreen:buildLayout()
@@ -88,6 +98,7 @@ function ThermoSudokuScreen:buildLayout()
                   callback = function() self:openDifficultyMenu() end },
                 { id = "show_result",     text = _("Show result"),
                   callback = function() self:toggleSolution() end },
+                self:makeRulesButtonConfig(GAME_RULES),
                 { text = _("Close"),      callback = function()
                     self:onClose()
                     UIManager:close(self)
