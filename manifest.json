@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-06-12",
+  "updated": "2026-06-13",
   "repo": "t2ym5u/koreader-plugins",
   "branch": "master",
   "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/koreader-plugins/master/",
@@ -64,6 +64,20 @@
         "screen.lua",
         "words_en.lua",
         "words_fr.lua"
+      ],
+      "has_common": true
+    },
+    {
+      "id": "calculmental",
+      "dir": "calculmental.koplugin",
+      "fullname": "Calcul Mental",
+      "description": "Entraînez vos réflexes arithmétiques.",
+      "version": "1.0.0",
+      "files": [
+        "_meta.lua",
+        "board.lua",
+        "main.lua",
+        "screen.lua"
       ],
       "has_common": true
     },
@@ -193,6 +207,21 @@
       "dir": "mastermind.koplugin",
       "fullname": "Mastermind",
       "description": "Deduce the secret code from black and white peg feedback.",
+      "version": "1.0.0",
+      "files": [
+        "_meta.lua",
+        "board.lua",
+        "board_widget.lua",
+        "main.lua",
+        "screen.lua"
+      ],
+      "has_common": true
+    },
+    {
+      "id": "memory",
+      "dir": "memory.koplugin",
+      "fullname": "Mémoire",
+      "description": "Jeu de mémoire — trouvez les paires de cartes.",
       "version": "1.0.0",
       "files": [
         "_meta.lua",
