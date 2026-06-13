@@ -234,9 +234,18 @@ function FillominoBoard:generate(difficulty)
 
     -- Attempt to generate a valid solution (retry if adjacency check fails)
     local solution
+    local ok = false
     for attempt = 1, 30 do
         solution = generateSolution(n)
-        if checkAdjacency(solution, n) then break end
+        if checkAdjacency(solution, n) then ok = true; break end
+    end
+    if not ok then
+        -- Fallback: one single region covering the whole grid (trivially satisfies adjacency)
+        solution = emptyGrid(n)
+        local total = n * n
+        for r = 1, n do
+            for c = 1, n do solution[r][c] = total end
+        end
     end
 
     local puzzle = createPuzzle(solution, n, self.difficulty)

@@ -68,6 +68,8 @@ function GridWidgetBase:init()
     self.size      = math.floor(min_dim * (self.size_ratio or 0.82))
     self.cell_w    = self.size / cols
     self.cell_h    = self.size / rows
+    self.cell_w_px = math.ceil(self.size / cols)
+    self.cell_h_px = math.ceil(self.size / rows)
 
     self.dimen      = Geom:new{ w = self.size, h = self.size }
     self.paint_rect = Geom:new{ x = 0, y = 0, w = self.size, h = self.size }
@@ -91,47 +93,48 @@ function GridWidgetBase:init()
 end
 
 -- Auto-size number and note fonts to fit within a single cell.
+-- Uses binary search to minimise Font:getFace() calls (O(log n) vs O(n)).
 function GridWidgetBase:_initFonts()
     local cell_w = self.cell_w
     local cell_h = self.cell_h
+    local min_cell = math.min(cell_w, cell_h)
 
-    -- Main number font: fits in the full cell
-    local num_padding = math.max(2, math.floor(math.min(cell_w, cell_h) / 9))
-    local num_safety  = math.max(1, math.floor(math.min(cell_w, cell_h) / 20))
+    local function bsearchFont(font_name, lo, hi, max_w, max_h)
+        local best = lo
+        while lo <= hi do
+            local mid = math.floor((lo + hi) / 2)
+            local face = Font:getFace(font_name, mid)
+            local m    = RenderText:sizeUtf8Text(0, max_w, face, "8", true, false)
+            if m.x <= max_w and (m.y_bottom - m.y_top) <= max_h then
+                best = mid
+                lo   = mid + 1
+            else
+                hi   = mid - 1
+            end
+        end
+        return best
+    end
+
+    -- Main number font: fits in the full cell (keep same -2 safety margin)
+    local num_padding = math.max(2, math.floor(min_cell / 9))
+    local num_safety  = math.max(1, math.floor(min_cell / 20))
     local max_nw = math.max(1, math.floor(cell_w - 2 * num_padding - num_safety))
     local max_nh = math.max(1, math.floor(cell_h - 2 * num_padding - num_safety))
-    local num_size = math.max(10, math.floor(math.min(cell_w, cell_h) * 0.6))
-    while num_size > 10 do
-        local face = Font:getFace("cfont", num_size)
-        local m    = RenderText:sizeUtf8Text(0, max_nw, face, "8", true, false)
-        local h    = m.y_bottom - m.y_top
-        if m.x <= max_nw and h <= max_nh then
-            num_size = math.max(10, num_size - 2)
-            break
-        end
-        num_size = num_size - 1
-    end
+    local num_hi = math.max(10, math.floor(min_cell * 0.6))
+    local num_size = math.max(10, bsearchFont("cfont", 10, num_hi, max_nw, max_nh) - 2)
     self.number_face    = Font:getFace("cfont", num_size)
     self.number_padding = num_padding
 
-    -- Small note font: fits in a cell quarter (for candidate annotations)
+    -- Small note font: fits in a cell third (for candidate annotations)
     local mini_w = cell_w / 3
     local mini_h = cell_h / 3
-    local note_padding = math.max(1, math.floor(math.min(mini_w, mini_h) / 8))
-    local note_safety  = math.max(1, math.floor(math.min(mini_w, mini_h) / 18))
+    local min_mini = math.min(mini_w, mini_h)
+    local note_padding = math.max(1, math.floor(min_mini / 8))
+    local note_safety  = math.max(1, math.floor(min_mini / 18))
     local max_mw = math.max(1, math.floor(mini_w - 2 * note_padding - note_safety))
     local max_mh = math.max(1, math.floor(mini_h - 2 * note_padding - note_safety))
-    local note_size = math.max(8, math.floor(math.min(mini_w, mini_h) * 0.6))
-    while note_size > 8 do
-        local face = Font:getFace("smallinfofont", note_size)
-        local m    = RenderText:sizeUtf8Text(0, max_mw, face, "8", true, false)
-        local h    = m.y_bottom - m.y_top
-        if m.x <= max_mw and h <= max_mh then
-            note_size = math.max(8, note_size - 1)
-            break
-        end
-        note_size = note_size - 1
-    end
+    local note_hi = math.max(8, math.floor(min_mini * 0.6))
+    local note_size = math.max(8, bsearchFont("smallinfofont", 8, note_hi, max_mw, max_mh) - 1)
     self.note_face    = Font:getFace("smallinfofont", note_size)
     self.note_padding = note_padding
 end
@@ -158,8 +161,8 @@ function GridWidgetBase:getCellRect(row, col)
     return {
         x = rect.x + math.floor((col - 1) * self.cell_w),
         y = rect.y + math.floor((row - 1) * self.cell_h),
-        w = math.ceil(self.cell_w),
-        h = math.ceil(self.cell_h),
+        w = self.cell_w_px,
+        h = self.cell_h_px,
     }
 end
 
@@ -188,9 +191,14 @@ end
 -- ---------------------------------------------------------------------------
 
 function GridWidgetBase:refresh()
-    local rect = self.paint_rect
+    local geom = self._dirty_geom
+    if not geom then
+        local rect = self.paint_rect
+        geom = Geom:new{ x = rect.x, y = rect.y, w = rect.w, h = rect.h }
+        self._dirty_geom = geom
+    end
     UIManager:setDirty(self, function()
-        return "ui", Geom:new{ x = rect.x, y = rect.y, w = rect.w, h = rect.h }
+        return "ui", geom
     end)
 end
 
