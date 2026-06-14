@@ -188,20 +188,21 @@ function PluginManager:scanInstalled()
     local lfs = get_lfs()
     if not lfs then return {} end
     local installed = {}
-    local ok, iter = pcall(lfs.dir, _plugins_dir)
-    if not ok then return {} end
-    for entry in iter do
-        if entry:match("%.koplugin$") and entry ~= "pluginmanager.koplugin" then
-            local meta = read_meta(_plugins_dir .. "/" .. entry .. "/_meta.lua")
-            if meta and meta.name then
-                installed[meta.name] = {
-                    version  = meta.version or "?",
-                    fullname = meta.fullname or meta.name,
-                    dir      = entry,
-                }
+    local ok = pcall(function()
+        for entry in lfs.dir(_plugins_dir) do
+            if entry:match("%.koplugin$") and entry ~= "pluginmanager.koplugin" then
+                local meta = read_meta(_plugins_dir .. "/" .. entry .. "/_meta.lua")
+                if meta and meta.name then
+                    installed[meta.name] = {
+                        version  = meta.version or "?",
+                        fullname = meta.fullname or meta.name,
+                        dir      = entry,
+                    }
+                end
             end
         end
-    end
+    end)
+    if not ok then return {} end
     return installed
 end
 
