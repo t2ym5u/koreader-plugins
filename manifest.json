@@ -52,23 +52,6 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/battleship.koplugin/master/"
     },
     {
-      "id": "boggleparty",
-      "dir": "boggleparty.koplugin",
-      "fullname": "Boggle Party",
-      "description": "Display a Boggle grid for table play — everyone plays on paper, then reveal solutions.",
-      "version": "1.0.0",
-      "files": [
-        "_meta.lua",
-        "board.lua",
-        "board_widget.lua",
-        "main.lua",
-        "screen.lua",
-        "words_en.lua",
-        "words_fr.lua"
-      ],
-      "has_common": true
-    },
-    {
       "id": "boggle",
       "dir": "boggle.koplugin",
       "fullname": "Boggle",
@@ -85,6 +68,20 @@
       ],
       "has_common": true,
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/boggle.koplugin/master/"
+    },
+    {
+      "id": "boggleparty",
+      "dir": "boggleparty.koplugin",
+      "fullname": "Boggle Party",
+      "description": "Display a Boggle grid for table play — everyone plays on paper, then reveal solutions.",
+      "version": "1.0.0",
+      "files": [
+        "_meta.lua",
+        "board_widget.lua",
+        "main.lua",
+        "screen.lua"
+      ],
+      "has_common": false
     },
     {
       "id": "calculmental",
