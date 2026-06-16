@@ -217,7 +217,8 @@
         "words_en.lua",
         "words_fr.lua"
       ],
-      "has_common": true
+      "has_common": true,
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/chiffreslettres.koplugin/master/"
     },
     {
       "id": "colornonogram",
@@ -687,7 +688,8 @@
         "screen.lua",
         "words.lua"
       ],
-      "has_common": true
+      "has_common": true,
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/pictionary.koplugin/master/"
     },
     {
       "id": "pluginmanager",
@@ -727,7 +729,8 @@
         "main.lua",
         "screen.lua"
       ],
-      "has_common": true
+      "has_common": true,
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/quiz.koplugin/master/"
     },
     {
       "id": "rippleeffect",
@@ -921,7 +924,8 @@
         "main.lua",
         "screen.lua"
       ],
-      "has_common": true
+      "has_common": true,
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/tabou.koplugin/master/"
     },
     {
       "id": "tapa",
