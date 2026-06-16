@@ -36,6 +36,66 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/2048.koplugin/master/"
     },
     {
+      "id": "anagram",
+      "dir": "anagram.koplugin",
+      "fullname": "Anagram",
+      "description": "Rearrange letters to find words",
+      "version": "1.0.0",
+      "files": [
+        "_meta.lua",
+        "board.lua",
+        "board_widget.lua",
+        "main.lua",
+        "screen.lua"
+      ],
+      "has_common": true
+    },
+    {
+      "id": "arrowsudoku",
+      "dir": "arrowsudoku.koplugin",
+      "fullname": "Arrow Sudoku",
+      "description": "Sudoku with arrow sum constraints",
+      "version": "1.0.0",
+      "files": [
+        "_meta.lua",
+        "board.lua",
+        "board_widget.lua",
+        "main.lua",
+        "screen.lua"
+      ],
+      "has_common": true
+    },
+    {
+      "id": "arrowwords",
+      "dir": "arrowwords.koplugin",
+      "fullname": "Mots fléchés",
+      "description": "Arrow crossword puzzle",
+      "version": "1.0.0",
+      "files": [
+        "_meta.lua",
+        "board.lua",
+        "board_widget.lua",
+        "main.lua",
+        "screen.lua"
+      ],
+      "has_common": true
+    },
+    {
+      "id": "balance",
+      "dir": "balance.koplugin",
+      "fullname": "Balance",
+      "description": "Logical weighing puzzle",
+      "version": "1.0.0",
+      "files": [
+        "_meta.lua",
+        "board.lua",
+        "board_widget.lua",
+        "main.lua",
+        "screen.lua"
+      ],
+      "has_common": true
+    },
+    {
       "id": "battleship",
       "dir": "battleship.koplugin",
       "fullname": "Battleship Puzzle",
@@ -50,6 +110,21 @@
       ],
       "has_common": true,
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/battleship.koplugin/master/"
+    },
+    {
+      "id": "betweenlines",
+      "dir": "betweenlines.koplugin",
+      "fullname": "Between Lines Sudoku",
+      "description": "Sudoku with between-lines constraints",
+      "version": "1.0.0",
+      "files": [
+        "_meta.lua",
+        "board.lua",
+        "board_widget.lua",
+        "main.lua",
+        "screen.lua"
+      ],
+      "has_common": true
     },
     {
       "id": "boggle",
@@ -84,6 +159,21 @@
       "has_common": false
     },
     {
+      "id": "bridges",
+      "dir": "bridges.koplugin",
+      "fullname": "Bridges",
+      "description": "Connect islands with the right number of bridges",
+      "version": "1.0.0",
+      "files": [
+        "_meta.lua",
+        "board.lua",
+        "board_widget.lua",
+        "main.lua",
+        "screen.lua"
+      ],
+      "has_common": true
+    },
+    {
       "id": "calculmental",
       "dir": "calculmental.koplugin",
       "fullname": "Calcul Mental",
@@ -99,6 +189,21 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/calculmental.koplugin/master/"
     },
     {
+      "id": "cave",
+      "dir": "cave.koplugin",
+      "fullname": "Cave",
+      "description": "Find the cave hidden inside the grid",
+      "version": "1.0.0",
+      "files": [
+        "_meta.lua",
+        "board.lua",
+        "board_widget.lua",
+        "main.lua",
+        "screen.lua"
+      ],
+      "has_common": true
+    },
+    {
       "id": "chiffreslettres",
       "dir": "chiffreslettres.koplugin",
       "fullname": "Chiffres et Lettres",
@@ -108,9 +213,47 @@
         "_meta.lua",
         "board.lua",
         "main.lua",
+        "screen.lua",
+        "words_en.lua",
+        "words_fr.lua"
+      ],
+      "has_common": true
+    },
+    {
+      "id": "colornonogram",
+      "dir": "colornonogram.koplugin",
+      "fullname": "Color Nonogram",
+      "description": "Colored picross / nonogram",
+      "version": "1.0.0",
+      "files": [
+        "_meta.lua",
+        "board.lua",
+        "board_widget.lua",
+        "main.lua",
         "screen.lua"
       ],
-      "has_common": false
+      "has_common": true
+    },
+    {
+      "id": "coursdechecs",
+      "dir": "coursdechecs.koplugin",
+      "fullname": "Cours d'échecs",
+      "description": "Puzzles et leçons d'échecs",
+      "version": "1.0.0",
+      "files": [
+        "_meta.lua",
+        "board.lua",
+        "board_widget.lua",
+        "lessons.lua",
+        "lessons_finale.lua",
+        "lessons_mat1.lua",
+        "lessons_mat2.lua",
+        "lessons_mat3.lua",
+        "lessons_tactique.lua",
+        "main.lua",
+        "screen.lua"
+      ],
+      "has_common": true
     },
     {
       "id": "crossword",
@@ -130,6 +273,51 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/crossword.koplugin/master/"
     },
     {
+      "id": "cryptogram",
+      "dir": "cryptogram.koplugin",
+      "fullname": "Cryptogram",
+      "description": "Substitution cipher word puzzle",
+      "version": "1.0.0",
+      "files": [
+        "_meta.lua",
+        "board.lua",
+        "board_widget.lua",
+        "main.lua",
+        "screen.lua"
+      ],
+      "has_common": true
+    },
+    {
+      "id": "dames",
+      "dir": "dames.koplugin",
+      "fullname": "Dames",
+      "description": "Jeu de dames 8x8",
+      "version": "1.0.0",
+      "files": [
+        "_meta.lua",
+        "board.lua",
+        "board_widget.lua",
+        "main.lua",
+        "screen.lua"
+      ],
+      "has_common": true
+    },
+    {
+      "id": "echecs",
+      "dir": "echecs.koplugin",
+      "fullname": "Échecs",
+      "description": "Jeu d'échecs avec IA",
+      "version": "1.0.0",
+      "files": [
+        "_meta.lua",
+        "board.lua",
+        "board_widget.lua",
+        "main.lua",
+        "screen.lua"
+      ],
+      "has_common": true
+    },
+    {
       "id": "fifteen",
       "dir": "fifteen.koplugin",
       "fullname": "Fifteen Puzzle",
@@ -144,6 +332,21 @@
       ],
       "has_common": true,
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/fifteen.koplugin/master/"
+    },
+    {
+      "id": "fillomino",
+      "dir": "fillomino.koplugin",
+      "fullname": "Fillomino",
+      "description": "Fill regions with matching numbers",
+      "version": "1.0.0",
+      "files": [
+        "_meta.lua",
+        "board.lua",
+        "board_widget.lua",
+        "main.lua",
+        "screen.lua"
+      ],
+      "has_common": true
     },
     {
       "id": "futoshiki",
@@ -162,6 +365,36 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/futoshiki.koplugin/master/"
     },
     {
+      "id": "galaxies",
+      "dir": "galaxies.koplugin",
+      "fullname": "Galaxies",
+      "description": "Divide the grid into rotationally symmetric galaxies",
+      "version": "1.0.0",
+      "files": [
+        "_meta.lua",
+        "board.lua",
+        "board_widget.lua",
+        "main.lua",
+        "screen.lua"
+      ],
+      "has_common": true
+    },
+    {
+      "id": "gomoku",
+      "dir": "gomoku.koplugin",
+      "fullname": "Gomoku",
+      "description": "Gomoku — 5 pions en ligne sur 15\\xC3\\xB715.",
+      "version": "1.0.0",
+      "files": [
+        "_meta.lua",
+        "board.lua",
+        "board_widget.lua",
+        "main.lua",
+        "screen.lua"
+      ],
+      "has_common": true
+    },
+    {
       "id": "hangman",
       "dir": "hangman.koplugin",
       "fullname": "Hangman",
@@ -178,6 +411,36 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/hangman.koplugin/master/"
     },
     {
+      "id": "hanoi",
+      "dir": "hanoi.koplugin",
+      "fullname": "Towers of Hanoi",
+      "description": "Move disks between pegs",
+      "version": "1.0.0",
+      "files": [
+        "_meta.lua",
+        "board.lua",
+        "board_widget.lua",
+        "main.lua",
+        "screen.lua"
+      ],
+      "has_common": true
+    },
+    {
+      "id": "hidato",
+      "dir": "hidato.koplugin",
+      "fullname": "Hidato",
+      "description": "Connect numbers 1-N on a grid",
+      "version": "1.0.0",
+      "files": [
+        "_meta.lua",
+        "board.lua",
+        "board_widget.lua",
+        "main.lua",
+        "screen.lua"
+      ],
+      "has_common": true
+    },
+    {
       "id": "hitori",
       "dir": "hitori.koplugin",
       "fullname": "Hitori",
@@ -192,6 +455,21 @@
       ],
       "has_common": true,
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/hitori.koplugin/master/"
+    },
+    {
+      "id": "hypersudoku",
+      "dir": "hypersudoku.koplugin",
+      "fullname": "Hyper Sudoku",
+      "description": "Sudoku with 4 extra inner regions",
+      "version": "1.0.0",
+      "files": [
+        "_meta.lua",
+        "board.lua",
+        "board_widget.lua",
+        "main.lua",
+        "screen.lua"
+      ],
+      "has_common": true
     },
     {
       "id": "kakuro",
@@ -258,6 +536,21 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/mastermind.koplugin/master/"
     },
     {
+      "id": "masyu",
+      "dir": "masyu.koplugin",
+      "fullname": "Masyu",
+      "description": "Draw a loop through black and white pearls",
+      "version": "1.0.0",
+      "files": [
+        "_meta.lua",
+        "board.lua",
+        "board_widget.lua",
+        "main.lua",
+        "screen.lua"
+      ],
+      "has_common": true
+    },
+    {
       "id": "memory",
       "dir": "memory.koplugin",
       "fullname": "Mémoire",
@@ -322,6 +615,21 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/numberlink.koplugin/master/"
     },
     {
+      "id": "numbrix",
+      "dir": "numbrix.koplugin",
+      "fullname": "Numbrix",
+      "description": "Snake-like number path puzzle",
+      "version": "1.0.0",
+      "files": [
+        "_meta.lua",
+        "board.lua",
+        "board_widget.lua",
+        "main.lua",
+        "screen.lua"
+      ],
+      "has_common": true
+    },
+    {
       "id": "nurikabe",
       "dir": "nurikabe.koplugin",
       "fullname": "Nurikabe",
@@ -338,6 +646,36 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/nurikabe.koplugin/master/"
     },
     {
+      "id": "othello",
+      "dir": "othello.koplugin",
+      "fullname": "Othello",
+      "description": "Othello/Reversi 8x8 avec IA.",
+      "version": "1.0.0",
+      "files": [
+        "_meta.lua",
+        "board.lua",
+        "board_widget.lua",
+        "main.lua",
+        "screen.lua"
+      ],
+      "has_common": true
+    },
+    {
+      "id": "pickomino",
+      "dir": "pickomino.koplugin",
+      "fullname": "Pickomino",
+      "description": "Combinatorial dice and tile logic game",
+      "version": "1.0.0",
+      "files": [
+        "_meta.lua",
+        "board.lua",
+        "board_widget.lua",
+        "main.lua",
+        "screen.lua"
+      ],
+      "has_common": true
+    },
+    {
       "id": "pictionary",
       "dir": "pictionary.koplugin",
       "fullname": "Pictionary Party",
@@ -349,7 +687,34 @@
         "screen.lua",
         "words.lua"
       ],
+      "has_common": true
+    },
+    {
+      "id": "pluginmanager",
+      "dir": "pluginmanager.koplugin",
+      "fullname": "Plugin Manager",
+      "description": "Check for updates and install game plugins from the koreader-plugins repository.",
+      "version": "1.0.0",
+      "files": [
+        "_meta.lua",
+        "main.lua"
+      ],
       "has_common": false
+    },
+    {
+      "id": "puissance4",
+      "dir": "puissance4.koplugin",
+      "fullname": "Puissance 4",
+      "description": "Connect Four — alignez 4 pièces avec IA.",
+      "version": "1.0.0",
+      "files": [
+        "_meta.lua",
+        "board.lua",
+        "board_widget.lua",
+        "main.lua",
+        "screen.lua"
+      ],
+      "has_common": true
     },
     {
       "id": "quiz",
@@ -362,7 +727,67 @@
         "main.lua",
         "screen.lua"
       ],
-      "has_common": false
+      "has_common": true
+    },
+    {
+      "id": "rippleeffect",
+      "dir": "rippleeffect.koplugin",
+      "fullname": "Ripple Effect",
+      "description": "Fill rooms so each number appears once per row/col",
+      "version": "1.0.0",
+      "files": [
+        "_meta.lua",
+        "board.lua",
+        "board_widget.lua",
+        "main.lua",
+        "screen.lua"
+      ],
+      "has_common": true
+    },
+    {
+      "id": "sandwichsudoku",
+      "dir": "sandwichsudoku.koplugin",
+      "fullname": "Sandwich Sudoku",
+      "description": "Sudoku with sandwich sum clues",
+      "version": "1.0.0",
+      "files": [
+        "_meta.lua",
+        "board.lua",
+        "board_widget.lua",
+        "main.lua",
+        "screen.lua"
+      ],
+      "has_common": true
+    },
+    {
+      "id": "shikaku",
+      "dir": "shikaku.koplugin",
+      "fullname": "Shikaku",
+      "description": "Divide the grid into rectangles",
+      "version": "1.0.0",
+      "files": [
+        "_meta.lua",
+        "board.lua",
+        "board_widget.lua",
+        "main.lua",
+        "screen.lua"
+      ],
+      "has_common": true
+    },
+    {
+      "id": "skyscraper",
+      "dir": "skyscraper.koplugin",
+      "fullname": "Skyscraper",
+      "description": "Place buildings by skyline clues",
+      "version": "1.0.0",
+      "files": [
+        "_meta.lua",
+        "board.lua",
+        "board_widget.lua",
+        "main.lua",
+        "screen.lua"
+      ],
+      "has_common": true
     },
     {
       "id": "slitherlink",
@@ -398,6 +823,21 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/sokoban.koplugin/master/"
     },
     {
+      "id": "starbattle",
+      "dir": "starbattle.koplugin",
+      "fullname": "Star Battle",
+      "description": "Place stars with one per row/col/region",
+      "version": "1.0.0",
+      "files": [
+        "_meta.lua",
+        "board.lua",
+        "board_widget.lua",
+        "main.lua",
+        "screen.lua"
+      ],
+      "has_common": true
+    },
+    {
       "id": "startmenu",
       "dir": "startmenu.koplugin",
       "fullname": "Startup Menu",
@@ -411,6 +851,66 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/startmenu.koplugin/master/"
     },
     {
+      "id": "sudoku",
+      "dir": "sudoku.koplugin",
+      "fullname": "",
+      "description": "",
+      "version": "1.0.0",
+      "files": [
+        "_meta.lua",
+        "board.lua",
+        "board_widget.lua",
+        "main.lua",
+        "screen.lua"
+      ],
+      "has_common": true
+    },
+    {
+      "id": "sudokukiller",
+      "dir": "sudokukiller.koplugin",
+      "fullname": "",
+      "description": "",
+      "version": "1.0.0",
+      "files": [
+        "_meta.lua",
+        "board.lua",
+        "board_widget.lua",
+        "main.lua",
+        "screen.lua"
+      ],
+      "has_common": true
+    },
+    {
+      "id": "sudokux",
+      "dir": "sudokux.koplugin",
+      "fullname": "Sudoku X",
+      "description": "Sudoku with diagonal constraints",
+      "version": "1.0.0",
+      "files": [
+        "_meta.lua",
+        "board.lua",
+        "board_widget.lua",
+        "main.lua",
+        "screen.lua"
+      ],
+      "has_common": true
+    },
+    {
+      "id": "suguru",
+      "dir": "suguru.koplugin",
+      "fullname": "Suguru",
+      "description": "Fill regions with non-repeating numbers",
+      "version": "1.0.0",
+      "files": [
+        "_meta.lua",
+        "board.lua",
+        "board_widget.lua",
+        "main.lua",
+        "screen.lua"
+      ],
+      "has_common": true
+    },
+    {
       "id": "tabou",
       "dir": "tabou.koplugin",
       "fullname": "Tabou Party",
@@ -421,7 +921,37 @@
         "main.lua",
         "screen.lua"
       ],
-      "has_common": false
+      "has_common": true
+    },
+    {
+      "id": "tapa",
+      "dir": "tapa.koplugin",
+      "fullname": "Tapa",
+      "description": "Shade cells to form a connected wall",
+      "version": "1.0.0",
+      "files": [
+        "_meta.lua",
+        "board.lua",
+        "board_widget.lua",
+        "main.lua",
+        "screen.lua"
+      ],
+      "has_common": true
+    },
+    {
+      "id": "tatami",
+      "dir": "tatami.koplugin",
+      "fullname": "Tatami",
+      "description": "Fill the grid with 1x2 dominoes",
+      "version": "1.0.0",
+      "files": [
+        "_meta.lua",
+        "board.lua",
+        "board_widget.lua",
+        "main.lua",
+        "screen.lua"
+      ],
+      "has_common": true
     },
     {
       "id": "tents",
@@ -440,6 +970,36 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/tents.koplugin/master/"
     },
     {
+      "id": "thermosudoku",
+      "dir": "thermosudoku.koplugin",
+      "fullname": "Thermo Sudoku",
+      "description": "Sudoku with thermometer constraints",
+      "version": "1.0.0",
+      "files": [
+        "_meta.lua",
+        "board.lua",
+        "board_widget.lua",
+        "main.lua",
+        "screen.lua"
+      ],
+      "has_common": true
+    },
+    {
+      "id": "windoku",
+      "dir": "windoku.koplugin",
+      "fullname": "Windoku",
+      "description": "Sudoku with 4 windowed inner regions",
+      "version": "1.0.0",
+      "files": [
+        "_meta.lua",
+        "board.lua",
+        "board_widget.lua",
+        "main.lua",
+        "screen.lua"
+      ],
+      "has_common": true
+    },
+    {
       "id": "wordle",
       "dir": "wordle.koplugin",
       "fullname": "Wordle",
@@ -455,6 +1015,21 @@
       ],
       "has_common": true,
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/wordle.koplugin/master/"
+    },
+    {
+      "id": "wordsearch",
+      "dir": "wordsearch.koplugin",
+      "fullname": "Word Search",
+      "description": "Find hidden words in a letter grid",
+      "version": "1.0.0",
+      "files": [
+        "_meta.lua",
+        "board.lua",
+        "board_widget.lua",
+        "main.lua",
+        "screen.lua"
+      ],
+      "has_common": true
     }
   ]
 }
