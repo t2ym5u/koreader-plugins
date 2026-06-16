@@ -20,62 +20,6 @@
   },
   "plugins": [
     {
-      "id": "tabou",
-      "dir": "tabou.koplugin",
-      "fullname": "Tabou Party",
-      "description": "Describe words without saying the forbidden ones — team buzzer party game.",
-      "version": "1.0.0",
-      "files": [
-        "_meta.lua",
-        "main.lua",
-        "screen.lua"
-      ],
-      "has_common": true
-    },
-    {
-      "id": "quiz",
-      "dir": "quiz.koplugin",
-      "fullname": "Quiz Party",
-      "description": "General knowledge quiz — everyone writes their answer, then reveal.",
-      "version": "1.0.0",
-      "files": [
-        "_meta.lua",
-        "main.lua",
-        "screen.lua"
-      ],
-      "has_common": true
-    },
-    {
-      "id": "pictionary",
-      "dir": "pictionary.koplugin",
-      "fullname": "Pictionary Party",
-      "description": "Draw words against the clock — team-based party game.",
-      "version": "1.0.0",
-      "files": [
-        "_meta.lua",
-        "main.lua",
-        "screen.lua",
-        "words.lua"
-      ],
-      "has_common": true
-    },
-    {
-      "id": "chiffreslettres",
-      "dir": "chiffreslettres.koplugin",
-      "fullname": "Chiffres et Lettres",
-      "description": "Draw letters and find the longest word; draw numbers and hit the target.",
-      "version": "1.0.0",
-      "files": [
-        "_meta.lua",
-        "board.lua",
-        "main.lua",
-        "screen.lua",
-        "words_en.lua",
-        "words_fr.lua"
-      ],
-      "has_common": true
-    },
-    {
       "id": "2048",
       "dir": "2048.koplugin",
       "fullname": "2048",
@@ -153,6 +97,20 @@
       ],
       "has_common": true,
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/calculmental.koplugin/master/"
+    },
+    {
+      "id": "chiffreslettres",
+      "dir": "chiffreslettres.koplugin",
+      "fullname": "Chiffres et Lettres",
+      "description": "Draw letters and find the longest word; draw numbers and hit the target.",
+      "version": "1.0.0",
+      "files": [
+        "_meta.lua",
+        "board.lua",
+        "main.lua",
+        "screen.lua"
+      ],
+      "has_common": false
     },
     {
       "id": "crossword",
@@ -380,6 +338,33 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/nurikabe.koplugin/master/"
     },
     {
+      "id": "pictionary",
+      "dir": "pictionary.koplugin",
+      "fullname": "Pictionary Party",
+      "description": "Draw words against the clock — team-based party game.",
+      "version": "1.0.0",
+      "files": [
+        "_meta.lua",
+        "main.lua",
+        "screen.lua",
+        "words.lua"
+      ],
+      "has_common": false
+    },
+    {
+      "id": "quiz",
+      "dir": "quiz.koplugin",
+      "fullname": "Quiz Party",
+      "description": "General knowledge quiz — everyone writes their answer, then reveal.",
+      "version": "1.0.0",
+      "files": [
+        "_meta.lua",
+        "main.lua",
+        "screen.lua"
+      ],
+      "has_common": false
+    },
+    {
       "id": "slitherlink",
       "dir": "slitherlink.koplugin",
       "fullname": "Slitherlink",
@@ -424,6 +409,19 @@
       ],
       "has_common": true,
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/startmenu.koplugin/master/"
+    },
+    {
+      "id": "tabou",
+      "dir": "tabou.koplugin",
+      "fullname": "Tabou Party",
+      "description": "Describe words without saying the forbidden ones — team buzzer party game.",
+      "version": "1.0.0",
+      "files": [
+        "_meta.lua",
+        "main.lua",
+        "screen.lua"
+      ],
+      "has_common": false
     },
     {
       "id": "tents",
