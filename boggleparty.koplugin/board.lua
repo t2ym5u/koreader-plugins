@@ -1,1 +1,0 @@
-../boggle.koplugin/board.lua

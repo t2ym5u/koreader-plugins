@@ -1,1 +1,0 @@
-../boggle.koplugin/words_fr.lua
