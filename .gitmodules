@@ -1,3 +1,279 @@
 [submodule "sudokukiller.koplugin/common"]
 	path = sudokukiller.koplugin/common
 	url = https://github.com/t2ym5u/sudoku-common.git
+[submodule "2048.koplugin"]
+	path = 2048.koplugin
+	url = https://github.com/t2ym5u/2048.koplugin.git
+	branch = main
+[submodule "_skeleton.koplugin"]
+	path = _skeleton.koplugin
+	url = https://github.com/t2ym5u/_skeleton.koplugin.git
+	branch = main
+[submodule "anagram.koplugin"]
+	path = anagram.koplugin
+	url = https://github.com/t2ym5u/anagram.koplugin.git
+	branch = main
+[submodule "arrowsudoku.koplugin"]
+	path = arrowsudoku.koplugin
+	url = https://github.com/t2ym5u/arrowsudoku.koplugin.git
+	branch = main
+[submodule "arrowwords.koplugin"]
+	path = arrowwords.koplugin
+	url = https://github.com/t2ym5u/arrowwords.koplugin.git
+	branch = main
+[submodule "balance.koplugin"]
+	path = balance.koplugin
+	url = https://github.com/t2ym5u/balance.koplugin.git
+	branch = main
+[submodule "battleship.koplugin"]
+	path = battleship.koplugin
+	url = https://github.com/t2ym5u/battleship.koplugin.git
+	branch = main
+[submodule "betweenlines.koplugin"]
+	path = betweenlines.koplugin
+	url = https://github.com/t2ym5u/betweenlines.koplugin.git
+	branch = main
+[submodule "boggle.koplugin"]
+	path = boggle.koplugin
+	url = https://github.com/t2ym5u/boggle.koplugin.git
+	branch = main
+[submodule "boggleparty.koplugin"]
+	path = boggleparty.koplugin
+	url = https://github.com/t2ym5u/boggleparty.koplugin.git
+	branch = master
+[submodule "bridges.koplugin"]
+	path = bridges.koplugin
+	url = https://github.com/t2ym5u/bridges.koplugin.git
+	branch = main
+[submodule "calculmental.koplugin"]
+	path = calculmental.koplugin
+	url = https://github.com/t2ym5u/calculmental.koplugin.git
+	branch = main
+[submodule "cave.koplugin"]
+	path = cave.koplugin
+	url = https://github.com/t2ym5u/cave.koplugin.git
+	branch = main
+[submodule "chiffreslettres.koplugin"]
+	path = chiffreslettres.koplugin
+	url = https://github.com/t2ym5u/chiffreslettres.koplugin.git
+	branch = master
+[submodule "colornonogram.koplugin"]
+	path = colornonogram.koplugin
+	url = https://github.com/t2ym5u/colornonogram.koplugin.git
+	branch = main
+[submodule "coursdechecs.koplugin"]
+	path = coursdechecs.koplugin
+	url = https://github.com/t2ym5u/coursdechecs.koplugin.git
+	branch = main
+[submodule "crossword.koplugin"]
+	path = crossword.koplugin
+	url = https://github.com/t2ym5u/crossword.koplugin.git
+	branch = main
+[submodule "cryptogram.koplugin"]
+	path = cryptogram.koplugin
+	url = https://github.com/t2ym5u/cryptogram.koplugin.git
+	branch = main
+[submodule "dames.koplugin"]
+	path = dames.koplugin
+	url = https://github.com/t2ym5u/dames.koplugin.git
+	branch = main
+[submodule "echecs.koplugin"]
+	path = echecs.koplugin
+	url = https://github.com/t2ym5u/echecs.koplugin.git
+	branch = main
+[submodule "fifteen.koplugin"]
+	path = fifteen.koplugin
+	url = https://github.com/t2ym5u/fifteen.koplugin.git
+	branch = main
+[submodule "fillomino.koplugin"]
+	path = fillomino.koplugin
+	url = https://github.com/t2ym5u/fillomino.koplugin.git
+	branch = main
+[submodule "futoshiki.koplugin"]
+	path = futoshiki.koplugin
+	url = https://github.com/t2ym5u/futoshiki.koplugin.git
+	branch = main
+[submodule "galaxies.koplugin"]
+	path = galaxies.koplugin
+	url = https://github.com/t2ym5u/galaxies.koplugin.git
+	branch = main
+[submodule "game-common"]
+	path = game-common
+	url = https://github.com/t2ym5u/game-common.git
+	branch = main
+[submodule "gomoku.koplugin"]
+	path = gomoku.koplugin
+	url = https://github.com/t2ym5u/gomoku.koplugin.git
+	branch = main
+[submodule "hangman.koplugin"]
+	path = hangman.koplugin
+	url = https://github.com/t2ym5u/hangman.koplugin.git
+	branch = main
+[submodule "hanoi.koplugin"]
+	path = hanoi.koplugin
+	url = https://github.com/t2ym5u/hanoi.koplugin.git
+	branch = main
+[submodule "hidato.koplugin"]
+	path = hidato.koplugin
+	url = https://github.com/t2ym5u/hidato.koplugin.git
+	branch = main
+[submodule "hitori.koplugin"]
+	path = hitori.koplugin
+	url = https://github.com/t2ym5u/hitori.koplugin.git
+	branch = main
+[submodule "hypersudoku.koplugin"]
+	path = hypersudoku.koplugin
+	url = https://github.com/t2ym5u/hypersudoku.koplugin.git
+	branch = main
+[submodule "kakuro.koplugin"]
+	path = kakuro.koplugin
+	url = https://github.com/t2ym5u/kakuro.koplugin.git
+	branch = main
+[submodule "kenken.koplugin"]
+	path = kenken.koplugin
+	url = https://github.com/t2ym5u/kenken.koplugin.git
+	branch = main
+[submodule "lightup.koplugin"]
+	path = lightup.koplugin
+	url = https://github.com/t2ym5u/lightup.koplugin.git
+	branch = main
+[submodule "mastermind.koplugin"]
+	path = mastermind.koplugin
+	url = https://github.com/t2ym5u/mastermind.koplugin.git
+	branch = main
+[submodule "masyu.koplugin"]
+	path = masyu.koplugin
+	url = https://github.com/t2ym5u/masyu.koplugin.git
+	branch = main
+[submodule "memory.koplugin"]
+	path = memory.koplugin
+	url = https://github.com/t2ym5u/memory.koplugin.git
+	branch = main
+[submodule "minesweeper.koplugin"]
+	path = minesweeper.koplugin
+	url = https://github.com/t2ym5u/minesweeper.koplugin.git
+	branch = main
+[submodule "nonogram.koplugin"]
+	path = nonogram.koplugin
+	url = https://github.com/t2ym5u/nonogram.koplugin.git
+	branch = main
+[submodule "numberlink.koplugin"]
+	path = numberlink.koplugin
+	url = https://github.com/t2ym5u/numberlink.koplugin.git
+	branch = main
+[submodule "numbrix.koplugin"]
+	path = numbrix.koplugin
+	url = https://github.com/t2ym5u/numbrix.koplugin.git
+	branch = main
+[submodule "nurikabe.koplugin"]
+	path = nurikabe.koplugin
+	url = https://github.com/t2ym5u/nurikabe.koplugin.git
+	branch = main
+[submodule "othello.koplugin"]
+	path = othello.koplugin
+	url = https://github.com/t2ym5u/othello.koplugin.git
+	branch = main
+[submodule "pickomino.koplugin"]
+	path = pickomino.koplugin
+	url = https://github.com/t2ym5u/pickomino.koplugin.git
+	branch = main
+[submodule "pictionary.koplugin"]
+	path = pictionary.koplugin
+	url = https://github.com/t2ym5u/pictionary.koplugin.git
+	branch = master
+[submodule "pluginmanager.koplugin"]
+	path = pluginmanager.koplugin
+	url = https://github.com/t2ym5u/pluginmanager.koplugin.git
+	branch = main
+[submodule "puissance4.koplugin"]
+	path = puissance4.koplugin
+	url = https://github.com/t2ym5u/puissance4.koplugin.git
+	branch = main
+[submodule "quiz.koplugin"]
+	path = quiz.koplugin
+	url = https://github.com/t2ym5u/quiz.koplugin.git
+	branch = master
+[submodule "rippleeffect.koplugin"]
+	path = rippleeffect.koplugin
+	url = https://github.com/t2ym5u/rippleeffect.koplugin.git
+	branch = main
+[submodule "sandwichsudoku.koplugin"]
+	path = sandwichsudoku.koplugin
+	url = https://github.com/t2ym5u/sandwichsudoku.koplugin.git
+	branch = main
+[submodule "shikaku.koplugin"]
+	path = shikaku.koplugin
+	url = https://github.com/t2ym5u/shikaku.koplugin.git
+	branch = main
+[submodule "skyscraper.koplugin"]
+	path = skyscraper.koplugin
+	url = https://github.com/t2ym5u/skyscraper.koplugin.git
+	branch = main
+[submodule "slitherlink.koplugin"]
+	path = slitherlink.koplugin
+	url = https://github.com/t2ym5u/slitherlink.koplugin.git
+	branch = main
+[submodule "sokoban.koplugin"]
+	path = sokoban.koplugin
+	url = https://github.com/t2ym5u/sokoban.koplugin.git
+	branch = main
+[submodule "starbattle.koplugin"]
+	path = starbattle.koplugin
+	url = https://github.com/t2ym5u/starbattle.koplugin.git
+	branch = main
+[submodule "startmenu.koplugin"]
+	path = startmenu.koplugin
+	url = https://github.com/t2ym5u/startmenu.koplugin.git
+	branch = main
+[submodule "sudoku-common"]
+	path = sudoku-common
+	url = https://github.com/t2ym5u/sudoku-common.git
+	branch = master
+[submodule "sudokux.koplugin"]
+	path = sudokux.koplugin
+	url = https://github.com/t2ym5u/sudokux.koplugin.git
+	branch = main
+[submodule "suguru.koplugin"]
+	path = suguru.koplugin
+	url = https://github.com/t2ym5u/suguru.koplugin.git
+	branch = main
+[submodule "tabou.koplugin"]
+	path = tabou.koplugin
+	url = https://github.com/t2ym5u/tabou.koplugin.git
+	branch = master
+[submodule "tapa.koplugin"]
+	path = tapa.koplugin
+	url = https://github.com/t2ym5u/tapa.koplugin.git
+	branch = main
+[submodule "tatami.koplugin"]
+	path = tatami.koplugin
+	url = https://github.com/t2ym5u/tatami.koplugin.git
+	branch = main
+[submodule "tents.koplugin"]
+	path = tents.koplugin
+	url = https://github.com/t2ym5u/tents.koplugin.git
+	branch = main
+[submodule "thermosudoku.koplugin"]
+	path = thermosudoku.koplugin
+	url = https://github.com/t2ym5u/thermosudoku.koplugin.git
+	branch = main
+[submodule "windoku.koplugin"]
+	path = windoku.koplugin
+	url = https://github.com/t2ym5u/windoku.koplugin.git
+	branch = main
+[submodule "wordle.koplugin"]
+	path = wordle.koplugin
+	url = https://github.com/t2ym5u/wordle.koplugin.git
+	branch = main
+[submodule "wordsearch.koplugin"]
+	path = wordsearch.koplugin
+	url = https://github.com/t2ym5u/wordsearch.koplugin.git
+	branch = main
+[submodule "sudoku.koplugin"]
+	path = sudoku.koplugin
+	url = https://github.com/t2ym5u/sudoku.koplugin.git
+	branch = main
+[submodule "sudokukiller.koplugin"]
+	path = sudokukiller.koplugin
+	url = https://github.com/t2ym5u/sudokukiller.koplugin.git
+	branch = master
