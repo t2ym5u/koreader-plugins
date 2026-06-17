@@ -1,2 +1,2 @@
-sudoku.koplugin
-sudokukiller.koplugin
+dist/
+game-common/.version
