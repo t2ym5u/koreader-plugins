@@ -310,7 +310,11 @@
         "board.lua",
         "board_widget.lua",
         "main.lua",
-        "screen.lua"
+        "screen.lua",
+        "pieces_img/wman.png",
+        "pieces_img/bman.png",
+        "pieces_img/wking.png",
+        "pieces_img/bking.png"
       ],
       "has_common": true,
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/dames.koplugin/master/"
