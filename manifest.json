@@ -321,6 +321,18 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/dames.koplugin/master/"
     },
     {
+      "id": "dashboard",
+      "dir": "dashboard.koplugin",
+      "fullname": "Dashboard",
+      "description": "Tableau de bord : livre en cours, derniers jeux, statistiques.",
+      "version": "1.1.0",
+      "files": [
+        "_meta.lua",
+        "main.lua"
+      ],
+      "has_common": false
+    },
+    {
       "id": "echecs",
       "dir": "echecs.koplugin",
       "fullname": "Échecs",
