@@ -69,18 +69,7 @@ while IFS='|' read -r plugin_dir has_common common_files_str plugin_files_str; d
   WORK="$TMPDIR/$plugin_dir"
   mkdir -p "$WORK"
 
-  # Copy plugin source files
-  for fname in $plugin_files_str; do
-    src_file="$plugin_src/$fname"
-    if [ ! -f "$src_file" ]; then
-      echo "Warning: $plugin_dir/$fname not found" >&2
-      continue
-    fi
-    mkdir -p "$WORK/$(dirname "$fname")"
-    cp "$src_file" "$WORK/$fname"
-  done
-
-  # Copy only the manifest-listed common files into plugin/common/
+  # Copy game-common files first (plugin files may override them)
   if [ "$has_common" = "1" ]; then
     mkdir -p "$WORK/common"
     for fname in $common_files_str; do
@@ -94,6 +83,17 @@ while IFS='|' read -r plugin_dir has_common common_files_str plugin_files_str; d
       fi
     done
   fi
+
+  # Copy plugin source files (may override game-common files in common/)
+  for fname in $plugin_files_str; do
+    src_file="$plugin_src/$fname"
+    if [ ! -f "$src_file" ]; then
+      echo "Warning: $plugin_dir/$fname not found" >&2
+      continue
+    fi
+    mkdir -p "$WORK/$(dirname "$fname")"
+    cp "$src_file" "$WORK/$fname"
+  done
 
   # Individual plugin zip: plugin_dir/ + game-common/ side by side
   INSTALL_DIR="$TMPDIR/install_$plugin_dir"
