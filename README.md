@@ -87,6 +87,18 @@ A collection of game and utility plugins for [KOReader](https://koreader.rocks/)
 
 ---
 
+## 🌍 Language support
+
+All plugins auto-detect the KOReader display language:
+
+- **French** (`fr`) — buttons, menus, status messages, and rules dialogs displayed in French.
+- **English** (default) — used for any other language setting.
+
+The translation table lives in `game-common/i18n.lua`. To add German, Spanish, or any
+other language, add a `de`, `es`, … key to entries in that file — no plugin code needs to change.
+
+---
+
 ## 📦 Installation
 
 ### Via Plugin Manager (recommended)
