@@ -277,3 +277,7 @@
 	path = sudokukiller.koplugin
 	url = https://github.com/t2ym5u/sudokukiller.koplugin.git
 	branch = master
+[submodule "dashboard.koplugin"]
+	path = dashboard.koplugin
+	url = https://github.com/t2ym5u/dashboard.koplugin.git
+	branch = main
