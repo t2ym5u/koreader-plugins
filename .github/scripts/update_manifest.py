@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
 """Regenerate manifest.json from the current state of the repository.
 
-Only plugins whose _meta.lua is tracked by git are included — this ensures
-the manifest reflects what is actually published on GitHub, both locally and
-in CI. Stubs and plugins from separate repositories (even if present as
-local directories) are therefore automatically excluded.
+Plugins are included when their _meta.lua is either:
+  - Directly tracked by git in the parent repo (e.g. opdsdir, dashboard), or
+  - Inside a registered git submodule (plugin lives in its own repo).
+
+Stubs (no version field) and infrastructure plugins (NON_PLUGIN_IDS) are
+always excluded.
 
 Run from any directory; the script locates the repo root via its own path.
 Preserves fields not managed here (schema_version, repo, branch,
@@ -28,13 +30,28 @@ FIELD_ORDER = ["id", "dir", "fullname", "description", "version", "files", "has_
 
 
 def is_git_tracked(path: Path) -> bool:
-    """Return True if `path` is tracked by git."""
+    """Return True if `path` is directly tracked by the parent git repo."""
     result = subprocess.run(
         ["git", "ls-files", "--error-unmatch", str(path)],
         capture_output=True,
         cwd=ROOT,
     )
     return result.returncode == 0
+
+
+def is_git_submodule(plugin_dir: Path) -> bool:
+    """Return True if `plugin_dir` is a checked-out git submodule.
+
+    Git submodules contain a `.git` file (not a directory) that points to
+    the real git dir inside the parent's .git/modules/.
+    """
+    git_entry = plugin_dir / ".git"
+    return git_entry.is_file()
+
+
+def is_publishable(plugin_dir: Path, meta_path: Path) -> bool:
+    """Return True if this plugin should appear in the manifest."""
+    return is_git_tracked(meta_path) or is_git_submodule(plugin_dir)
 
 
 def read_meta(meta_path: Path) -> dict:
@@ -143,6 +160,16 @@ def main() -> int:
     if skipped:
         for msg in skipped:
             print("SKIP:", msg, file=sys.stderr)
+
+    # Preserve existing entries for plugins not found locally (unchecked-out
+    # submodules). Without `submodules: true` in the CI checkout, submodule
+    # directories are empty so their _meta.lua is unreadable — keep the last
+    # known manifest entry instead of silently dropping them.
+    found_ids = {p["id"] for p in plugins}
+    for old_entry in current.get("plugins", []):
+        if old_entry["id"] not in found_ids:
+            plugins.append(old_entry)
+    plugins.sort(key=lambda p: p.get("id", ""))
 
     current["updated"] = date.today().isoformat()
     current["plugins"] = plugins

@@ -1,0 +1,95 @@
+name: Release plugins
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - manifest.json
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Detect version changes
+        run: |
+          python3 - <<'EOF'
+          import json, subprocess, os, sys
+
+          def get_manifest(ref):
+              r = subprocess.run(
+                  ["git", "show", f"{ref}:manifest.json"],
+                  capture_output=True, text=True,
+              )
+              if r.returncode != 0:
+                  return {}
+              return {p["id"]: p for p in json.loads(r.stdout).get("plugins", [])}
+
+          current  = get_manifest("HEAD")
+          previous = get_manifest("HEAD~1")
+
+          changed = []
+          for pid, entry in current.items():
+              prev = previous.get(pid)
+              if prev is None or prev.get("version") != entry.get("version"):
+                  if os.path.exists(f"dist/{pid}.zip"):
+                      changed.append(entry)
+                      prev_ver = prev.get("version", "?") if prev is not None else "(new)"
+                      print(f"  bump: {pid}  {prev_ver} → {entry['version']}")
+                  else:
+                      print(f"  skip: {pid} — no dist/{pid}.zip", file=sys.stderr)
+
+          with open("/tmp/changed.json", "w") as f:
+              json.dump(changed, f)
+          print(f"{len(changed)} plugin(s) to release")
+          EOF
+
+      - name: Create GitHub Releases
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python3 - <<'EOF'
+          import json, subprocess, sys
+
+          with open("/tmp/changed.json") as f:
+              changed = json.load(f)
+
+          errors = 0
+          for entry in changed:
+              pid      = entry["id"]
+              version  = entry["version"]
+              fullname = entry.get("fullname", pid)
+              desc     = entry.get("description", "")
+              tag      = f"{pid}-v{version}"
+              zip_path = f"dist/{pid}.zip"
+
+              r = subprocess.run(["gh", "release", "view", tag], capture_output=True)
+              if r.returncode == 0:
+                  print(f"skip {tag}: release already exists")
+                  continue
+
+              notes = (
+                  f"Extract `{pid}.koplugin/` into your KOReader `plugins/` folder."
+                  + (f"\n\n{desc}" if desc else "")
+              )
+              r = subprocess.run([
+                  "gh", "release", "create", tag,
+                  "--title", f"{fullname} v{version}",
+                  "--notes", notes,
+                  zip_path,
+              ])
+              if r.returncode == 0:
+                  print(f"created {tag}")
+              else:
+                  print(f"ERROR creating {tag}", file=sys.stderr)
+                  errors += 1
+
+          sys.exit(errors)
+          EOF

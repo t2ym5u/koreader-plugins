@@ -7,6 +7,7 @@ on:
       - '_meta.lua'
       - '*.lua'
       - 'common/*.lua'
+  workflow_dispatch:
 
 jobs:
   release:
@@ -23,26 +24,26 @@ jobs:
           version=$(grep -oP 'version\s*=\s*"\K[^"]+' _meta.lua)
           echo "version=$version" >> "$GITHUB_OUTPUT"
 
-      - name: Skip if release already exists
+      - name: Check if release already exists
         id: check
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           if gh release view "v${{ steps.meta.outputs.version }}" &>/dev/null; then
-            echo "exists=true" >> "$GITHUB_OUTPUT"
+            echo "release_exists=true" >> "$GITHUB_OUTPUT"
           else
-            echo "exists=false" >> "$GITHUB_OUTPUT"
+            echo "release_exists=false" >> "$GITHUB_OUTPUT"
           fi
 
       - name: Checkout game-common
-        if: steps.check.outputs.exists == 'false'
+        if: steps.check.outputs.release_exists == 'false'
         uses: actions/checkout@v4
         with:
           repository: t2ym5u/game-common
           path: _game_common
 
       - name: Build ZIP
-        if: steps.check.outputs.exists == 'false'
+        if: steps.check.outputs.release_exists == 'false'
         run: |
           PLUGIN="${GITHUB_REPOSITORY##*/}"
           PLUGIN_DIR="/tmp/${PLUGIN}"
@@ -50,10 +51,8 @@ jobs:
           rsync -a --exclude='.git' --exclude='.github' --exclude='common' \
             . "${PLUGIN_DIR}/"
           if [ -f "common/base_board.lua" ]; then
-            # Sudoku plugin: bundle sudoku-common (already in common/)
             cp common/*.lua "${PLUGIN_DIR}/common/"
           else
-            # Regular plugin: bundle game-common
             cp -r _game_common/. "${PLUGIN_DIR}/common/"
           fi
           cd /tmp
@@ -62,7 +61,7 @@ jobs:
           echo "PLUGIN=${PLUGIN}" >> "$GITHUB_ENV"
 
       - name: Create release
-        if: steps.check.outputs.exists == 'false'
+        if: steps.check.outputs.release_exists == 'false'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
