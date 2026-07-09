@@ -95,6 +95,17 @@ while IFS='|' read -r plugin_dir has_common common_files_str plugin_files_str; d
     cp "$src_file" "$WORK/$fname"
   done
 
+  # Copy plugin-specific common files not provided by game-common at all
+  # (e.g. sudoku-common: base_board.lua, base_screen.lua, puzzle_generator.lua…)
+  if [ -d "$plugin_src/common" ]; then
+    for f in "$plugin_src/common/"*.lua; do
+      [ -f "$f" ] || continue
+      bname=$(basename "$f")
+      [ -f "$COMMON_SRC/$bname" ] && continue   # exists in game-common, skip
+      cp "$f" "$WORK/common/$bname"
+    done
+  fi
+
   # Individual plugin zip: plugin_dir/ + game-common/ side by side
   INSTALL_DIR="$TMPDIR/install_$plugin_dir"
   mkdir -p "$INSTALL_DIR"
@@ -107,6 +118,7 @@ while IFS='|' read -r plugin_dir has_common common_files_str plugin_files_str; d
   fi
 
   zip_name="${plugin_dir%.koplugin}.zip"
+  rm -f "$DIST_DIR/$zip_name"   # ensure no stale entries from previous builds
   (cd "$INSTALL_DIR" && zip -r "$DIST_DIR/$zip_name" . -x "*.DS_Store" -q)
 
   cp -r "$WORK" "$BUNDLE_DIR/$plugin_dir"
@@ -117,6 +129,7 @@ done <<< "$PARSED"
 
 # Full bundle (only when no filter)
 if [ -z "$FILTER" ]; then
+  rm -f "$DIST_DIR/koreader-games-full.zip"
   (cd "$BUNDLE_DIR" && zip -r "$DIST_DIR/koreader-games-full.zip" . -x "*.DS_Store" -q)
   echo "  Built: koreader-games-full.zip"
 fi
