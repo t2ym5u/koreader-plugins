@@ -982,11 +982,12 @@
       "dir": "tabou.koplugin",
       "fullname": "Tabou Party",
       "description": "Describe words without saying the forbidden ones — team buzzer party game.",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "files": [
         "_meta.lua",
         "main.lua",
-        "screen.lua"
+        "screen.lua",
+        "tabou_cards_fr.json"
       ],
       "has_common": true,
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/tabou.koplugin/master/"
