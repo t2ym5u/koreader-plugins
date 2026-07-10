@@ -1,11 +1,12 @@
 {
   "schema_version": 1,
-  "updated": "2026-07-08",
+  "updated": "2026-07-10",
   "repo": "t2ym5u/koreader-plugins",
   "common": {
     "version": "1.0.0",
     "dir": "game-common",
     "files": [
+      "daily_seed.lua",
       "grid_utils.lua",
       "grid_widget_base.lua",
       "i18n.lua",
@@ -14,6 +15,7 @@
       "score_tracker.lua",
       "screen_base.lua",
       "settings_dialog.lua",
+      "stats_exporter.lua",
       "timer.lua",
       "undo_stack.lua"
     ],
@@ -131,6 +133,21 @@
       ],
       "has_common": true,
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/betweenlines.koplugin/master/"
+    },
+    {
+      "id": "binairo",
+      "dir": "binairo.koplugin",
+      "fullname": "Binairo",
+      "description": "Binary grid puzzle — fill rows and columns with equal 0s and 1s, no three in a row.",
+      "version": "1.0.0",
+      "files": [
+        "_meta.lua",
+        "main.lua",
+        "board.lua",
+        "board_widget.lua",
+        "screen.lua"
+      ],
+      "has_common": true
     },
     {
       "id": "boggle",
@@ -325,7 +342,7 @@
       "dir": "dashboard.koplugin",
       "fullname": "Dashboard",
       "description": "Tableau de bord : livre en cours, derniers jeux, statistiques.",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "files": [
         "_meta.lua",
         "main.lua"
@@ -982,12 +999,13 @@
       "dir": "tabou.koplugin",
       "fullname": "Tabou Party",
       "description": "Describe words without saying the forbidden ones — team buzzer party game.",
-      "version": "1.2.0",
+      "version": "1.3.0",
       "files": [
         "_meta.lua",
         "main.lua",
         "screen.lua",
-        "tabou_cards_fr.json"
+        "tabou_cards_fr.json",
+        "tabou_cards.json"
       ],
       "has_common": true,
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/tabou.koplugin/master/"
