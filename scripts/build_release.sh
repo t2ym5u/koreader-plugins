@@ -15,7 +15,7 @@
 
 set -euo pipefail
 
-SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+SCRIPT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 DIST_DIR="$SCRIPT_DIR/dist"
 COMMON_SRC="$SCRIPT_DIR/game-common"
 MANIFEST="$SCRIPT_DIR/manifest.json"
