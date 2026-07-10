@@ -124,9 +124,9 @@ def main() -> int:
         if not meta_path.exists():
             continue
 
-        # Only include plugins whose _meta.lua is tracked by git.
-        # This filters out untracked stubs and plugins from separate repos.
-        if not is_git_tracked(meta_path):
+        # Only include plugins whose _meta.lua is tracked by git (directly in
+        # the parent repo) or lives inside a checked-out git submodule.
+        if not is_publishable(koplugin_dir, meta_path):
             skipped.append(f"{koplugin_dir.name}: _meta.lua not tracked by git")
             continue
 
