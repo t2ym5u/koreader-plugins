@@ -138,16 +138,16 @@
       "id": "binairo",
       "dir": "binairo.koplugin",
       "fullname": "Binairo",
-      "description": "Binary grid puzzle — fill rows and columns with equal 0s and 1s, no three in a row.",
+      "description": "Binary grid puzzle — fill each row and column with equal 0s and 1s, no three in a row.",
       "version": "1.0.0",
       "files": [
         "_meta.lua",
-        "main.lua",
         "board.lua",
         "board_widget.lua",
+        "main.lua",
         "screen.lua"
       ],
-      "has_common": true
+      "has_common": false
     },
     {
       "id": "boggle",
