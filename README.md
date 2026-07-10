@@ -6,7 +6,7 @@ A collection of game and utility plugins for [KOReader](https://koreader.rocks/)
 
 ---
 
-## 🎮 Games (64 plugins)
+## 🎮 Games (65 plugins)
 
 | Plugin | Description |
 |---|---|
@@ -14,6 +14,7 @@ A collection of game and utility plugins for [KOReader](https://koreader.rocks/)
 | [Anagram](https://github.com/t2ym5u/anagram.koplugin) | Find all anagrams of a random word |
 | [Arrow Sudoku](https://github.com/t2ym5u/arrowsudoku.koplugin) | Sudoku with arrow constraints |
 | [Battleship Puzzle](https://github.com/t2ym5u/battleship.koplugin) | Locate hidden ships on a grid |
+| Binairo | Binary grid puzzle — fill rows and columns with equal 0s and 1s, no three in a row |
 | [Between Lines Sudoku](https://github.com/t2ym5u/betweenlines.koplugin) | Sudoku with between-lines constraints |
 | [Boggle](https://github.com/t2ym5u/boggle.koplugin) | Find words in a letter grid |
 | [Boggle Party](https://github.com/t2ym5u/boggleparty.koplugin) | Multiplayer Boggle |
