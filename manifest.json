@@ -27,7 +27,7 @@
       "dir": "2048.koplugin",
       "fullname": "2048",
       "description": "Slide tiles to merge them. Reach the 2048 tile!",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -39,11 +39,71 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/2048.koplugin/master/"
     },
     {
+      "id": "Dames",
+      "dir": "dames.koplugin",
+      "fullname": "Dames",
+      "description": "",
+      "version": "1.1.0",
+      "files": [
+        "_meta.lua",
+        "board.lua",
+        "board_widget.lua",
+        "main.lua",
+        "screen.lua"
+      ],
+      "has_common": true
+    },
+    {
+      "id": "Gomoku",
+      "dir": "gomoku.koplugin",
+      "fullname": "Gomoku",
+      "description": "",
+      "version": "1.1.0",
+      "files": [
+        "_meta.lua",
+        "board.lua",
+        "board_widget.lua",
+        "main.lua",
+        "screen.lua"
+      ],
+      "has_common": true
+    },
+    {
+      "id": "Othello",
+      "dir": "othello.koplugin",
+      "fullname": "Othello",
+      "description": "",
+      "version": "1.1.0",
+      "files": [
+        "_meta.lua",
+        "board.lua",
+        "board_widget.lua",
+        "main.lua",
+        "screen.lua"
+      ],
+      "has_common": true
+    },
+    {
+      "id": "Puissance 4",
+      "dir": "puissance4.koplugin",
+      "fullname": "Puissance 4",
+      "description": "",
+      "version": "1.1.0",
+      "files": [
+        "_meta.lua",
+        "board.lua",
+        "board_widget.lua",
+        "main.lua",
+        "screen.lua"
+      ],
+      "has_common": true
+    },
+    {
       "id": "anagram",
       "dir": "anagram.koplugin",
       "fullname": "Anagram",
       "description": "Rearrange letters to find words",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -75,7 +135,7 @@
       "dir": "arrowwords.koplugin",
       "fullname": "Mots fléchés",
       "description": "Arrow crossword puzzle",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -107,7 +167,7 @@
       "dir": "battleship.koplugin",
       "fullname": "Battleship Puzzle",
       "description": "Solitaire Bimaru: deduce the fleet from row and column clues.",
-      "version": "1.1.0",
+      "version": "1.1.2",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -154,7 +214,7 @@
       "dir": "boggle.koplugin",
       "fullname": "Boggle",
       "description": "Find words by connecting adjacent letters on the grid.",
-      "version": "1.1.0",
+      "version": "1.1.2",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -175,9 +235,12 @@
       "version": "1.1.0",
       "files": [
         "_meta.lua",
+        "board.lua",
         "board_widget.lua",
         "main.lua",
-        "screen.lua"
+        "screen.lua",
+        "words_en.lua",
+        "words_fr.lua"
       ],
       "has_common": false,
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/boggleparty.koplugin/master/"
@@ -243,7 +306,7 @@
         "words_en.lua",
         "words_fr.lua"
       ],
-      "has_common": true,
+      "has_common": false,
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/chiffreslettres.koplugin/master/"
     },
     {
@@ -289,7 +352,7 @@
       "dir": "crossword.koplugin",
       "fullname": "Crossword",
       "description": "Classic crossword puzzles. Fill the grid from the across and down clues.",
-      "version": "1.1.0",
+      "version": "1.1.2",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -306,7 +369,7 @@
       "dir": "cryptogram.koplugin",
       "fullname": "Cryptogram",
       "description": "Substitution cipher word puzzle",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -370,7 +433,7 @@
       "dir": "fifteen.koplugin",
       "fullname": "Fifteen Puzzle",
       "description": "Sliding tile puzzle. Arrange the numbered tiles in order.",
-      "version": "1.1.0",
+      "version": "1.1.2",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -558,11 +621,26 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/kenken.koplugin/master/"
     },
     {
+      "id": "killer_sudoku",
+      "dir": "sudokukiller.koplugin",
+      "fullname": "killer_sudoku",
+      "description": "Play touch-friendly Killer Sudoku puzzles with caged sums, resume later, and reveal the solution when needed.",
+      "version": "1.1.0",
+      "files": [
+        "_meta.lua",
+        "board.lua",
+        "board_widget.lua",
+        "main.lua",
+        "screen.lua"
+      ],
+      "has_common": true
+    },
+    {
       "id": "lightup",
       "dir": "lightup.koplugin",
       "fullname": "Light Up",
       "description": "Akari: place light bulbs to illuminate every white cell without conflicts.",
-      "version": "1.1.0",
+      "version": "1.1.2",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -626,7 +704,7 @@
       "dir": "minesweeper.koplugin",
       "fullname": "Minesweeper",
       "description": "Classic mine-sweeping game. Reveal all safe cells without triggering a mine.",
-      "version": "1.1.0",
+      "version": "1.1.2",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -758,7 +836,7 @@
         "screen.lua",
         "words.lua"
       ],
-      "has_common": true,
+      "has_common": false,
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/pictionary.koplugin/master/"
     },
     {
@@ -801,7 +879,7 @@
         "main.lua",
         "screen.lua"
       ],
-      "has_common": true,
+      "has_common": false,
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/quiz.koplugin/master/"
     },
     {
@@ -889,7 +967,7 @@
       "dir": "sokoban.koplugin",
       "fullname": "Sokoban",
       "description": "Push all crates onto their targets. You can push but not pull.",
-      "version": "1.1.0",
+      "version": "1.1.2",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -934,7 +1012,7 @@
       "id": "sudoku",
       "dir": "sudoku.koplugin",
       "fullname": "",
-      "description": "",
+      "description": "Play touch-friendly Sudoku puzzles, resume later, and reveal the solution when needed.",
       "version": "2.1.0",
       "files": [
         "_meta.lua",
@@ -1004,10 +1082,9 @@
         "_meta.lua",
         "main.lua",
         "screen.lua",
-        "tabou_cards_fr.json",
-        "tabou_cards.json"
+        "tabou_cards_fr.lua"
       ],
-      "has_common": true,
+      "has_common": false,
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/tabou.koplugin/master/"
     },
     {
@@ -1047,7 +1124,7 @@
       "dir": "tents.koplugin",
       "fullname": "Tents and Trees",
       "description": "Logic puzzle: pair each tree with an adjacent tent, no touching tents.",
-      "version": "1.1.0",
+      "version": "1.1.2",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -1112,7 +1189,7 @@
       "dir": "wordsearch.koplugin",
       "fullname": "Word Search",
       "description": "Find hidden words in a letter grid",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "files": [
         "_meta.lua",
         "board.lua",
