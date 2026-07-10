@@ -4,7 +4,7 @@
 
 set -euo pipefail
 
-ROOT="$(cd "$(dirname "$0")" && pwd)"
+ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 DRY="${1:-}"
 
 failed=()
@@ -169,7 +169,7 @@ if [[ "$DRY" != "--dry-run" && ${#bumped[@]} -gt 0 ]]; then
     echo ""
     echo "Rebuilding manifest and dist..."
     python3 "$ROOT/.github/scripts/update_manifest.py"
-    bash "$ROOT/build_release.sh"
+    bash "$ROOT/scripts/build_release.sh"
     git -C "$ROOT" add manifest.json dist/
     git -C "$ROOT" commit -m "chore: regenerate manifest + rebuild dist after version bump"
 fi
