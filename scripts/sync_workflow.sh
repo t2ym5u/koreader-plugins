@@ -6,7 +6,7 @@
 
 set -euo pipefail
 
-ROOT="$(cd "$(dirname "$0")" && pwd)"
+ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 TEMPLATE="$ROOT/.github/workflows/release-plugin.yml"
 DRY="${1:-}"
 
