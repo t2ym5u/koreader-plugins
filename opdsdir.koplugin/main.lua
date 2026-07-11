@@ -42,8 +42,12 @@ end
 function OpdsDirPlugin:init()
     local ok, OPDSBrowser = pcall(require, "plugins/opds.koplugin/opdsbrowser")
     if not ok then
-        logger.warn("opdsdir: opdsbrowser not found, skipping patch:", OPDSBrowser)
-        return
+        OPDSBrowser = package.loaded["plugins/opds.koplugin/opdsbrowser"]
+            or package.loaded["opdsbrowser"]
+        if not OPDSBrowser then
+            logger.warn("opdsdir: opdsbrowser not found, skipping patch")
+            return
+        end
     end
 
     -- 1. Prioritise per-catalog download_dir over the global setting
