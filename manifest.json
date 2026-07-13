@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-07-11",
+  "updated": "2026-07-13",
   "repo": "t2ym5u/koreader-plugins",
   "common": {
     "version": "1.0.0",
@@ -27,7 +27,7 @@
       "dir": "2048.koplugin",
       "fullname": "2048",
       "description": "Slide tiles to merge them. Reach the 2048 tile!",
-      "version": "1.1.1",
+      "version": "1.1.2",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -119,7 +119,7 @@
       "dir": "arrowsudoku.koplugin",
       "fullname": "Arrow Sudoku",
       "description": "Sudoku with arrow sum constraints",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -135,7 +135,7 @@
       "dir": "arrowwords.koplugin",
       "fullname": "Mots fléchés",
       "description": "Arrow crossword puzzle",
-      "version": "1.1.1",
+      "version": "1.1.2",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -167,7 +167,7 @@
       "dir": "battleship.koplugin",
       "fullname": "Battleship Puzzle",
       "description": "Solitaire Bimaru: deduce the fleet from row and column clues.",
-      "version": "1.1.3",
+      "version": "1.1.4",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -214,7 +214,7 @@
       "dir": "boggle.koplugin",
       "fullname": "Boggle",
       "description": "Find words by connecting adjacent letters on the grid.",
-      "version": "1.1.3",
+      "version": "1.1.4",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -232,7 +232,7 @@
       "dir": "boggleparty.koplugin",
       "fullname": "Boggle Party",
       "description": "Display a Boggle grid for table play — everyone plays on paper, then reveal solutions.",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -352,7 +352,7 @@
       "dir": "crossword.koplugin",
       "fullname": "Crossword",
       "description": "Classic crossword puzzles. Fill the grid from the across and down clues.",
-      "version": "1.1.3",
+      "version": "1.1.4",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -369,7 +369,7 @@
       "dir": "cryptogram.koplugin",
       "fullname": "Cryptogram",
       "description": "Substitution cipher word puzzle",
-      "version": "1.1.1",
+      "version": "1.1.2",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -433,7 +433,7 @@
       "dir": "fifteen.koplugin",
       "fullname": "Fifteen Puzzle",
       "description": "Sliding tile puzzle. Arrange the numbered tiles in order.",
-      "version": "1.1.3",
+      "version": "1.1.4",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -529,7 +529,7 @@
       "dir": "hanoi.koplugin",
       "fullname": "Towers of Hanoi",
       "description": "Move disks between pegs",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -577,7 +577,7 @@
       "dir": "hypersudoku.koplugin",
       "fullname": "Hyper Sudoku",
       "description": "Sudoku with 4 extra inner regions",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -609,7 +609,7 @@
       "dir": "kenken.koplugin",
       "fullname": "KenKen",
       "description": "Fill the grid with digits satisfying row, column and cage arithmetic constraints.",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -625,7 +625,7 @@
       "dir": "sudokukiller.koplugin",
       "fullname": "killer_sudoku",
       "description": "Play touch-friendly Killer Sudoku puzzles with caged sums, resume later, and reveal the solution when needed.",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -640,7 +640,7 @@
       "dir": "lightup.koplugin",
       "fullname": "Light Up",
       "description": "Akari: place light bulbs to illuminate every white cell without conflicts.",
-      "version": "1.1.3",
+      "version": "1.1.4",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -903,7 +903,7 @@
       "dir": "sandwichsudoku.koplugin",
       "fullname": "Sandwich Sudoku",
       "description": "Sudoku with sandwich sum clues",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -967,7 +967,7 @@
       "dir": "sokoban.koplugin",
       "fullname": "Sokoban",
       "description": "Push all crates onto their targets. You can push but not pull.",
-      "version": "1.1.3",
+      "version": "1.1.4",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -1013,7 +1013,7 @@
       "dir": "sudoku.koplugin",
       "fullname": "Sudoku",
       "description": "Play touch-friendly Sudoku puzzles, resume later, and reveal the solution when needed.",
-      "version": "2.1.0",
+      "version": "2.2.0",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -1045,7 +1045,7 @@
       "dir": "sudokux.koplugin",
       "fullname": "Sudoku X",
       "description": "Sudoku with diagonal constraints",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -1124,7 +1124,7 @@
       "dir": "tents.koplugin",
       "fullname": "Tents and Trees",
       "description": "Logic puzzle: pair each tree with an adjacent tent, no touching tents.",
-      "version": "1.1.3",
+      "version": "1.1.4",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -1140,7 +1140,7 @@
       "dir": "thermosudoku.koplugin",
       "fullname": "Thermo Sudoku",
       "description": "Sudoku with thermometer constraints",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -1189,7 +1189,7 @@
       "dir": "wordsearch.koplugin",
       "fullname": "Word Search",
       "description": "Find hidden words in a letter grid",
-      "version": "1.1.1",
+      "version": "1.1.2",
       "files": [
         "_meta.lua",
         "board.lua",
