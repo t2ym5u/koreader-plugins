@@ -278,3 +278,6 @@
 	path = dashboard.koplugin
 	url = https://github.com/t2ym5u/dashboard.koplugin.git
 	branch = main
+[submodule "binairo.koplugin"]
+	path = binairo.koplugin
+	url = https://github.com/t2ym5u/binairo.koplugin.git
