@@ -165,7 +165,7 @@ echo ""
 if [[ "$DRY" != "--dry-run" && ${#bumped[@]} -gt 0 ]]; then
     echo "Updating parent repo submodule references..."
     git -C "$ROOT" add $(git -C "$ROOT" submodule status | awk '{print $2}')
-    git -C "$ROOT" commit -m "chore: bump all plugin versions to 1.0.1 / 2.0.1"
+    git -C "$ROOT" commit -m "chore: bump plugin versions across the fleet (${#bumped[@]} plugins)"
     echo ""
     echo "Rebuilding manifest and dist..."
     python3 "$ROOT/.github/scripts/update_manifest.py"
