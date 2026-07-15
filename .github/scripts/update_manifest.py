@@ -5,8 +5,10 @@ Plugins are included when their _meta.lua is either:
   - Directly tracked by git in the parent repo (e.g. opdsdir, dashboard), or
   - Inside a registered git submodule (plugin lives in its own repo).
 
-Stubs (no version field) and infrastructure plugins (NON_PLUGIN_IDS) are
-always excluded.
+Stubs (no version field) are always excluded. pluginmanager is included
+like any other plugin: PluginManager's own install flow self-updates by
+comparing its installed version against its manifest entry, so that entry
+must track its real version too.
 
 Run from any directory; the script locates the repo root via its own path.
 Preserves fields not managed here (schema_version, repo, branch,
@@ -21,9 +23,6 @@ from datetime import date
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent.parent
-
-# Plugin IDs that are infrastructure, not distributable game plugins.
-NON_PLUGIN_IDS = {"pluginmanager"}
 
 # Field order in each plugin entry.
 FIELD_ORDER = ["id", "dir", "fullname", "description", "version", "files", "has_common"]
@@ -140,8 +139,6 @@ def main() -> int:
             continue
         if not meta.get("version"):
             # Stub without version — intentionally omitted.
-            continue
-        if plugin_id in NON_PLUGIN_IDS:
             continue
 
         files      = list_plugin_files(koplugin_dir)
