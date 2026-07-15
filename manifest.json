@@ -3,7 +3,7 @@
   "updated": "2026-07-15",
   "repo": "t2ym5u/koreader-plugins",
   "common": {
-    "version": "1.0.0",
+    "version": "1.2.1",
     "dir": "game-common",
     "files": [
       "daily_seed.lua",
@@ -65,9 +65,14 @@
         "board.lua",
         "board_widget.lua",
         "main.lua",
-        "screen.lua"
+        "screen.lua",
+        "common/base_board.lua",
+        "common/base_board_widget.lua",
+        "common/base_screen.lua",
+        "common/puzzle_generator.lua",
+        "common/sudoku_grid_utils.lua"
       ],
-      "has_common": true,
+      "has_common": false,
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/arrowsudoku.koplugin/main/"
     },
     {
@@ -129,9 +134,14 @@
         "board.lua",
         "board_widget.lua",
         "main.lua",
-        "screen.lua"
+        "screen.lua",
+        "common/base_board.lua",
+        "common/base_board_widget.lua",
+        "common/base_screen.lua",
+        "common/grid_utils.lua",
+        "common/puzzle_generator.lua"
       ],
-      "has_common": true,
+      "has_common": false,
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/betweenlines.koplugin/main/"
     },
     {
@@ -271,7 +281,7 @@
       "dir": "coursdechecs.koplugin",
       "fullname": "Cours d'échecs",
       "description": "Puzzles et leçons d'échecs",
-      "version": "1.1.1",
+      "version": "1.2.0",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -281,6 +291,7 @@
         "lessons_mat1.lua",
         "lessons_mat2.lua",
         "lessons_mat3.lua",
+        "lessons_ouverture.lua",
         "lessons_tactique.lua",
         "main.lua",
         "screen.lua"
@@ -535,9 +546,14 @@
         "board.lua",
         "board_widget.lua",
         "main.lua",
-        "screen.lua"
+        "screen.lua",
+        "common/base_board.lua",
+        "common/base_board_widget.lua",
+        "common/base_screen.lua",
+        "common/puzzle_generator.lua",
+        "common/sudoku_grid_utils.lua"
       ],
-      "has_common": true,
+      "has_common": false,
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/hypersudoku.koplugin/main/"
     },
     {
@@ -583,9 +599,14 @@
         "board.lua",
         "board_widget.lua",
         "main.lua",
-        "screen.lua"
+        "screen.lua",
+        "common/base_board.lua",
+        "common/base_board_widget.lua",
+        "common/base_screen.lua",
+        "common/puzzle_generator.lua",
+        "common/sudoku_grid_utils.lua"
       ],
-      "has_common": true,
+      "has_common": false,
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/sudokukiller.koplugin/master/"
     },
     {
@@ -797,7 +818,7 @@
       "dir": "pluginmanager.koplugin",
       "fullname": "Plugin Manager",
       "description": "Check for updates and install game plugins from the koreader-plugins repository.",
-      "version": "1.1.7",
+      "version": "1.1.8",
       "files": [
         "_meta.lua",
         "main.lua"
@@ -863,9 +884,14 @@
         "board.lua",
         "board_widget.lua",
         "main.lua",
-        "screen.lua"
+        "screen.lua",
+        "common/base_board.lua",
+        "common/base_board_widget.lua",
+        "common/base_screen.lua",
+        "common/puzzle_generator.lua",
+        "common/sudoku_grid_utils.lua"
       ],
-      "has_common": true,
+      "has_common": false,
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/sandwichsudoku.koplugin/main/"
     },
     {
@@ -973,9 +999,14 @@
         "board.lua",
         "board_widget.lua",
         "main.lua",
-        "screen.lua"
+        "screen.lua",
+        "common/base_board.lua",
+        "common/base_board_widget.lua",
+        "common/base_screen.lua",
+        "common/puzzle_generator.lua",
+        "common/sudoku_grid_utils.lua"
       ],
-      "has_common": true,
+      "has_common": false,
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/sudoku.koplugin/main/"
     },
     {
@@ -989,9 +1020,14 @@
         "board.lua",
         "board_widget.lua",
         "main.lua",
-        "screen.lua"
+        "screen.lua",
+        "common/base_board.lua",
+        "common/base_board_widget.lua",
+        "common/base_screen.lua",
+        "common/puzzle_generator.lua",
+        "common/sudoku_grid_utils.lua"
       ],
-      "has_common": true,
+      "has_common": false,
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/sudokux.koplugin/main/"
     },
     {
@@ -1084,9 +1120,14 @@
         "board.lua",
         "board_widget.lua",
         "main.lua",
-        "screen.lua"
+        "screen.lua",
+        "common/base_board.lua",
+        "common/base_board_widget.lua",
+        "common/base_screen.lua",
+        "common/puzzle_generator.lua",
+        "common/sudoku_grid_utils.lua"
       ],
-      "has_common": true,
+      "has_common": false,
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/thermosudoku.koplugin/main/"
     },
     {
@@ -1100,9 +1141,14 @@
         "board.lua",
         "board_widget.lua",
         "main.lua",
-        "screen.lua"
+        "screen.lua",
+        "common/base_board.lua",
+        "common/base_board_widget.lua",
+        "common/base_screen.lua",
+        "common/puzzle_generator.lua",
+        "common/sudoku_grid_utils.lua"
       ],
-      "has_common": true,
+      "has_common": false,
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/windoku.koplugin/main/"
     },
     {
