@@ -351,6 +351,20 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/dashboard.koplugin/main/"
     },
     {
+      "id": "doubleornothing",
+      "dir": "doubleornothing.koplugin",
+      "fullname": "Double or Nothing Party",
+      "description": "Quiz where each team can bank their points or double the pot on a harder question.",
+      "version": "1.0.0",
+      "files": [
+        "_meta.lua",
+        "main.lua",
+        "screen.lua"
+      ],
+      "has_common": true,
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/doubleornothing.koplugin/main/"
+    },
+    {
       "id": "echecs",
       "dir": "echecs.koplugin",
       "fullname": "Échecs",
@@ -812,10 +826,11 @@
       "dir": "quiz.koplugin",
       "fullname": "Quiz Party",
       "description": "General knowledge quiz — everyone writes their answer, then reveal.",
-      "version": "1.1.1",
+      "version": "1.2.0",
       "files": [
         "_meta.lua",
         "main.lua",
+        "quiz_questions_fr.lua",
         "screen.lua"
       ],
       "has_common": true,

@@ -281,3 +281,7 @@
 [submodule "binairo.koplugin"]
 	path = binairo.koplugin
 	url = https://github.com/t2ym5u/binairo.koplugin.git
+[submodule "doubleornothing.koplugin"]
+	path = doubleornothing.koplugin
+	url = https://github.com/t2ym5u/doubleornothing.koplugin.git
+	branch = main
