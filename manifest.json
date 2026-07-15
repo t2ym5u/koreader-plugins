@@ -19,7 +19,7 @@
       "timer.lua",
       "undo_stack.lua"
     ],
-    "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/game-common/master/"
+    "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/game-common/main/"
   },
   "plugins": [
     {
@@ -36,7 +36,7 @@
         "screen.lua"
       ],
       "has_common": true,
-      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/2048.koplugin/master/"
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/2048.koplugin/main/"
     },
     {
       "id": "anagram",
@@ -52,7 +52,7 @@
         "screen.lua"
       ],
       "has_common": true,
-      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/anagram.koplugin/master/"
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/anagram.koplugin/main/"
     },
     {
       "id": "arrowsudoku",
@@ -68,7 +68,7 @@
         "screen.lua"
       ],
       "has_common": true,
-      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/arrowsudoku.koplugin/master/"
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/arrowsudoku.koplugin/main/"
     },
     {
       "id": "arrowwords",
@@ -84,7 +84,7 @@
         "screen.lua"
       ],
       "has_common": true,
-      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/arrowwords.koplugin/master/"
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/arrowwords.koplugin/main/"
     },
     {
       "id": "balance",
@@ -100,7 +100,7 @@
         "screen.lua"
       ],
       "has_common": true,
-      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/balance.koplugin/master/"
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/balance.koplugin/main/"
     },
     {
       "id": "battleship",
@@ -116,7 +116,7 @@
         "screen.lua"
       ],
       "has_common": true,
-      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/battleship.koplugin/master/"
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/battleship.koplugin/main/"
     },
     {
       "id": "betweenlines",
@@ -132,7 +132,7 @@
         "screen.lua"
       ],
       "has_common": true,
-      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/betweenlines.koplugin/master/"
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/betweenlines.koplugin/main/"
     },
     {
       "id": "binairo",
@@ -148,7 +148,7 @@
         "screen.lua"
       ],
       "has_common": true,
-      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/binairo.koplugin/master/"
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/binairo.koplugin/main/"
     },
     {
       "id": "boggle",
@@ -166,7 +166,7 @@
         "words_fr.lua"
       ],
       "has_common": true,
-      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/boggle.koplugin/master/"
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/boggle.koplugin/main/"
     },
     {
       "id": "boggleparty",
@@ -200,7 +200,7 @@
         "screen.lua"
       ],
       "has_common": true,
-      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/bridges.koplugin/master/"
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/bridges.koplugin/main/"
     },
     {
       "id": "calculmental",
@@ -215,7 +215,7 @@
         "screen.lua"
       ],
       "has_common": true,
-      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/calculmental.koplugin/master/"
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/calculmental.koplugin/main/"
     },
     {
       "id": "cave",
@@ -231,7 +231,7 @@
         "screen.lua"
       ],
       "has_common": true,
-      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/cave.koplugin/master/"
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/cave.koplugin/main/"
     },
     {
       "id": "chiffreslettres",
@@ -264,7 +264,7 @@
         "screen.lua"
       ],
       "has_common": true,
-      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/colornonogram.koplugin/master/"
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/colornonogram.koplugin/main/"
     },
     {
       "id": "coursdechecs",
@@ -286,7 +286,7 @@
         "screen.lua"
       ],
       "has_common": true,
-      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/coursdechecs.koplugin/master/"
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/coursdechecs.koplugin/main/"
     },
     {
       "id": "crossword",
@@ -303,7 +303,7 @@
         "screen.lua"
       ],
       "has_common": true,
-      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/crossword.koplugin/master/"
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/crossword.koplugin/main/"
     },
     {
       "id": "cryptogram",
@@ -319,7 +319,7 @@
         "screen.lua"
       ],
       "has_common": true,
-      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/cryptogram.koplugin/master/"
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/cryptogram.koplugin/main/"
     },
     {
       "id": "dames",
@@ -335,7 +335,7 @@
         "screen.lua"
       ],
       "has_common": true,
-      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/dames.koplugin/master/"
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/dames.koplugin/main/"
     },
     {
       "id": "dashboard",
@@ -348,7 +348,7 @@
         "main.lua"
       ],
       "has_common": true,
-      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/dashboard.koplugin/master/"
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/dashboard.koplugin/main/"
     },
     {
       "id": "echecs",
@@ -364,7 +364,7 @@
         "screen.lua"
       ],
       "has_common": true,
-      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/echecs.koplugin/master/"
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/echecs.koplugin/main/"
     },
     {
       "id": "fifteen",
@@ -380,7 +380,7 @@
         "screen.lua"
       ],
       "has_common": true,
-      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/fifteen.koplugin/master/"
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/fifteen.koplugin/main/"
     },
     {
       "id": "fillomino",
@@ -396,7 +396,7 @@
         "screen.lua"
       ],
       "has_common": true,
-      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/fillomino.koplugin/master/"
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/fillomino.koplugin/main/"
     },
     {
       "id": "futoshiki",
@@ -412,7 +412,7 @@
         "screen.lua"
       ],
       "has_common": true,
-      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/futoshiki.koplugin/master/"
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/futoshiki.koplugin/main/"
     },
     {
       "id": "galaxies",
@@ -428,7 +428,7 @@
         "screen.lua"
       ],
       "has_common": true,
-      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/galaxies.koplugin/master/"
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/galaxies.koplugin/main/"
     },
     {
       "id": "gomoku",
@@ -444,7 +444,7 @@
         "screen.lua"
       ],
       "has_common": true,
-      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/gomoku.koplugin/master/"
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/gomoku.koplugin/main/"
     },
     {
       "id": "hangman",
@@ -460,7 +460,7 @@
         "screen.lua"
       ],
       "has_common": true,
-      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/hangman.koplugin/master/"
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/hangman.koplugin/main/"
     },
     {
       "id": "hanoi",
@@ -476,7 +476,7 @@
         "screen.lua"
       ],
       "has_common": true,
-      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/hanoi.koplugin/master/"
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/hanoi.koplugin/main/"
     },
     {
       "id": "hidato",
@@ -492,7 +492,7 @@
         "screen.lua"
       ],
       "has_common": true,
-      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/hidato.koplugin/master/"
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/hidato.koplugin/main/"
     },
     {
       "id": "hitori",
@@ -508,7 +508,7 @@
         "screen.lua"
       ],
       "has_common": true,
-      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/hitori.koplugin/master/"
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/hitori.koplugin/main/"
     },
     {
       "id": "hypersudoku",
@@ -524,7 +524,7 @@
         "screen.lua"
       ],
       "has_common": true,
-      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/hypersudoku.koplugin/master/"
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/hypersudoku.koplugin/main/"
     },
     {
       "id": "kakuro",
@@ -540,7 +540,7 @@
         "screen.lua"
       ],
       "has_common": true,
-      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/kakuro.koplugin/master/"
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/kakuro.koplugin/main/"
     },
     {
       "id": "kenken",
@@ -556,7 +556,7 @@
         "screen.lua"
       ],
       "has_common": true,
-      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/kenken.koplugin/master/"
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/kenken.koplugin/main/"
     },
     {
       "id": "killer_sudoku",
@@ -588,7 +588,7 @@
         "screen.lua"
       ],
       "has_common": true,
-      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/lightup.koplugin/master/"
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/lightup.koplugin/main/"
     },
     {
       "id": "mastermind",
@@ -604,7 +604,7 @@
         "screen.lua"
       ],
       "has_common": true,
-      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/mastermind.koplugin/master/"
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/mastermind.koplugin/main/"
     },
     {
       "id": "masyu",
@@ -620,7 +620,7 @@
         "screen.lua"
       ],
       "has_common": true,
-      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/masyu.koplugin/master/"
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/masyu.koplugin/main/"
     },
     {
       "id": "memory",
@@ -636,7 +636,7 @@
         "screen.lua"
       ],
       "has_common": true,
-      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/memory.koplugin/master/"
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/memory.koplugin/main/"
     },
     {
       "id": "minesweeper",
@@ -652,7 +652,7 @@
         "screen.lua"
       ],
       "has_common": true,
-      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/minesweeper.koplugin/master/"
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/minesweeper.koplugin/main/"
     },
     {
       "id": "nonogram",
@@ -668,7 +668,7 @@
         "screen.lua"
       ],
       "has_common": true,
-      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/nonogram.koplugin/master/"
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/nonogram.koplugin/main/"
     },
     {
       "id": "numberlink",
@@ -684,7 +684,7 @@
         "screen.lua"
       ],
       "has_common": true,
-      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/numberlink.koplugin/master/"
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/numberlink.koplugin/main/"
     },
     {
       "id": "numbrix",
@@ -700,7 +700,7 @@
         "screen.lua"
       ],
       "has_common": true,
-      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/numbrix.koplugin/master/"
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/numbrix.koplugin/main/"
     },
     {
       "id": "nurikabe",
@@ -716,7 +716,7 @@
         "screen.lua"
       ],
       "has_common": true,
-      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/nurikabe.koplugin/master/"
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/nurikabe.koplugin/main/"
     },
     {
       "id": "opdsdir",
@@ -745,7 +745,7 @@
         "screen.lua"
       ],
       "has_common": true,
-      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/othello.koplugin/master/"
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/othello.koplugin/main/"
     },
     {
       "id": "pickomino",
@@ -761,7 +761,7 @@
         "screen.lua"
       ],
       "has_common": true,
-      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/pickomino.koplugin/master/"
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/pickomino.koplugin/main/"
     },
     {
       "id": "pictionary",
@@ -789,7 +789,7 @@
         "main.lua"
       ],
       "has_common": true,
-      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/pluginmanager.koplugin/master/"
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/pluginmanager.koplugin/main/"
     },
     {
       "id": "puissance4",
@@ -805,7 +805,7 @@
         "screen.lua"
       ],
       "has_common": true,
-      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/puissance4.koplugin/master/"
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/puissance4.koplugin/main/"
     },
     {
       "id": "quiz",
@@ -835,7 +835,7 @@
         "screen.lua"
       ],
       "has_common": true,
-      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/rippleeffect.koplugin/master/"
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/rippleeffect.koplugin/main/"
     },
     {
       "id": "sandwichsudoku",
@@ -851,7 +851,7 @@
         "screen.lua"
       ],
       "has_common": true,
-      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/sandwichsudoku.koplugin/master/"
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/sandwichsudoku.koplugin/main/"
     },
     {
       "id": "shikaku",
@@ -867,7 +867,7 @@
         "screen.lua"
       ],
       "has_common": true,
-      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/shikaku.koplugin/master/"
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/shikaku.koplugin/main/"
     },
     {
       "id": "skyscraper",
@@ -883,7 +883,7 @@
         "screen.lua"
       ],
       "has_common": true,
-      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/skyscraper.koplugin/master/"
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/skyscraper.koplugin/main/"
     },
     {
       "id": "slitherlink",
@@ -899,7 +899,7 @@
         "screen.lua"
       ],
       "has_common": true,
-      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/slitherlink.koplugin/master/"
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/slitherlink.koplugin/main/"
     },
     {
       "id": "sokoban",
@@ -916,7 +916,7 @@
         "screen.lua"
       ],
       "has_common": true,
-      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/sokoban.koplugin/master/"
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/sokoban.koplugin/main/"
     },
     {
       "id": "starbattle",
@@ -932,7 +932,7 @@
         "screen.lua"
       ],
       "has_common": true,
-      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/starbattle.koplugin/master/"
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/starbattle.koplugin/main/"
     },
     {
       "id": "startmenu",
@@ -945,7 +945,7 @@
         "main.lua"
       ],
       "has_common": true,
-      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/startmenu.koplugin/master/"
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/startmenu.koplugin/main/"
     },
     {
       "id": "sudoku",
@@ -961,7 +961,7 @@
         "screen.lua"
       ],
       "has_common": true,
-      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/sudoku.koplugin/master/"
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/sudoku.koplugin/main/"
     },
     {
       "id": "sudokux",
@@ -977,7 +977,7 @@
         "screen.lua"
       ],
       "has_common": true,
-      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/sudokux.koplugin/master/"
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/sudokux.koplugin/main/"
     },
     {
       "id": "suguru",
@@ -993,7 +993,7 @@
         "screen.lua"
       ],
       "has_common": true,
-      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/suguru.koplugin/master/"
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/suguru.koplugin/main/"
     },
     {
       "id": "taboo",
@@ -1024,7 +1024,7 @@
         "screen.lua"
       ],
       "has_common": true,
-      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/tapa.koplugin/master/"
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/tapa.koplugin/main/"
     },
     {
       "id": "tatami",
@@ -1040,7 +1040,7 @@
         "screen.lua"
       ],
       "has_common": true,
-      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/tatami.koplugin/master/"
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/tatami.koplugin/main/"
     },
     {
       "id": "tents",
@@ -1056,7 +1056,7 @@
         "screen.lua"
       ],
       "has_common": true,
-      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/tents.koplugin/master/"
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/tents.koplugin/main/"
     },
     {
       "id": "thermosudoku",
@@ -1072,7 +1072,7 @@
         "screen.lua"
       ],
       "has_common": true,
-      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/thermosudoku.koplugin/master/"
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/thermosudoku.koplugin/main/"
     },
     {
       "id": "windoku",
@@ -1088,7 +1088,7 @@
         "screen.lua"
       ],
       "has_common": true,
-      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/windoku.koplugin/master/"
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/windoku.koplugin/main/"
     },
     {
       "id": "wordle",
@@ -1105,7 +1105,7 @@
         "words_fr.lua"
       ],
       "has_common": true,
-      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/wordle.koplugin/master/"
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/wordle.koplugin/main/"
     },
     {
       "id": "wordsearch",
@@ -1121,7 +1121,7 @@
         "screen.lua"
       ],
       "has_common": true,
-      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/wordsearch.koplugin/master/"
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/wordsearch.koplugin/main/"
     }
   ]
 }
