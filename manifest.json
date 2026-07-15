@@ -139,7 +139,7 @@
       "dir": "binairo.koplugin",
       "fullname": "Binairo",
       "description": "Binary grid puzzle — fill each row and column with equal 0s and 1s, no three in a row.",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -155,7 +155,7 @@
       "dir": "boggle.koplugin",
       "fullname": "Boggle",
       "description": "Find words by connecting adjacent letters on the grid.",
-      "version": "1.1.5",
+      "version": "1.1.6",
       "files": [
         "_meta.lua",
         "board.lua",
