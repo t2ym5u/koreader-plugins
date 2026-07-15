@@ -66,7 +66,7 @@ A collection of game and utility plugins for [KOReader](https://koreader.rocks/)
 | [Sudoku Killer](https://github.com/t2ym5u/sudokukiller.koplugin) | Sudoku with cage sum constraints |
 | [Sudoku X](https://github.com/t2ym5u/sudokux.koplugin) | Sudoku with diagonal constraints |
 | [Suguru](https://github.com/t2ym5u/suguru.koplugin) | Fill cages with non-repeating digits |
-| [Tabou Party](https://github.com/t2ym5u/tabou.koplugin) | Multiplayer taboo word game |
+| [Taboo Party](https://github.com/t2ym5u/taboo.koplugin) | Multiplayer taboo word game |
 | [Tapa](https://github.com/t2ym5u/tapa.koplugin) | Paint cells to form a connected wall |
 | [Tatami](https://github.com/t2ym5u/tatami.koplugin) | Fill grid with alternating numbers |
 | [Tents and Trees](https://github.com/t2ym5u/tents.koplugin) | Match each tent to a tree |
