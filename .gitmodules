@@ -234,9 +234,9 @@
 	path = suguru.koplugin
 	url = https://github.com/t2ym5u/suguru.koplugin.git
 	branch = main
-[submodule "tabou.koplugin"]
-	path = tabou.koplugin
-	url = https://github.com/t2ym5u/tabou.koplugin.git
+[submodule "taboo.koplugin"]
+	path = taboo.koplugin
+	url = https://github.com/t2ym5u/taboo.koplugin.git
 	branch = master
 [submodule "tapa.koplugin"]
 	path = tapa.koplugin
