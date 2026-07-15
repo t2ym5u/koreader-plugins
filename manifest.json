@@ -1000,7 +1000,7 @@
       "dir": "taboo.koplugin",
       "fullname": "Taboo Party",
       "description": "Describe words without saying the forbidden ones — team buzzer party game.",
-      "version": "1.4.0",
+      "version": "1.5.0",
       "files": [
         "_meta.lua",
         "main.lua",
