@@ -12,7 +12,8 @@ must track its real version too.
 
 Run from any directory; the script locates the repo root via its own path.
 Preserves fields not managed here (schema_version, repo, branch,
-raw_base_url, common) and updates: plugins[], updated.
+raw_base_url) and updates: plugins[], updated, common.version (derived
+from game-common's own git tag, see game_common_version()).
 """
 
 import json
@@ -88,9 +89,72 @@ def list_plugin_files(plugin_dir: Path) -> list[str]:
     return files
 
 
-def has_common_dep(plugin_dir: Path) -> bool:
+# Files that only ever appear in the sudoku-common family's vendored copy
+# (base_board.lua, base_screen.lua, puzzle_generator.lua, ...) — never part
+# of game-common. Their presence is what distinguishes the two families.
+SUDOKU_COMMON_MARKERS = {"base_board.lua", "base_screen.lua", "puzzle_generator.lua", "base_board_widget.lua"}
+
+
+def common_family(plugin_dir: Path) -> str | None:
+    """Identify which shared-code family a plugin's common/ dir belongs to.
+
+    Two mutually exclusive families exist in this repo (see the
+    project-sudoku-common-architecture memory):
+    - "game-common": ScreenBase-based games/tools. common/ holds a vendored
+      copy of some subset of the generic shared library (screen_base.lua,
+      i18n.lua, ...) that PluginManager fetches once into a single shared
+      game-common/ dir on-device. Some plugins (e.g. dashboard) only vendor
+      a single file like i18n.lua, with no screen_base.lua at all.
+    - "sudoku-common": BaseScreen-based sudoku variants. common/base_screen.lua
+      (plus base_board.lua, puzzle_generator.lua, ...) is a plugin-specific,
+      already-diverged copy — NOT interchangeable with game-common's files.
+      These must ship as regular per-plugin files, not via the has_common
+      shared-fetch mechanism (which only knows about game-common and would
+      silently install the wrong files, crashing the plugin at runtime).
+    Returns None if the plugin has no common/ dir at all.
+    """
     common = plugin_dir / "common"
-    return common.is_symlink() or common.is_dir()
+    if not common.is_dir():
+        return None
+    names = {f.name for f in common.iterdir() if f.is_file()}
+    if names & SUDOKU_COMMON_MARKERS:
+        return "sudoku-common"
+    if names:
+        return "game-common"
+    return None
+
+
+def list_vendored_common_files(plugin_dir: Path) -> list[str]:
+    """List common/*.lua files (as 'common/<name>.lua') for a plugin that
+    vendors its own shared code (sudoku-common family), so they ship as
+    regular downloadable files instead of via the has_common mechanism."""
+    common = plugin_dir / "common"
+    files = []
+    for f in sorted(common.iterdir()):
+        if f.is_file() and f.suffix == ".lua" and not f.name.startswith("test_"):
+            files.append(f"common/{f.name}")
+    return files
+
+
+def game_common_version(root: Path) -> str | None:
+    """Derive game-common's shared-lib version from its own git tags.
+
+    Bumping manifest.json's common.version by hand is exactly what let it
+    drift stale at "1.0.0" while game-common moved on to v1.2.0+ (adding
+    buildTitleBar) — PluginManager's version-gated fetch (main.lua's
+    ensureCommon) never re-downloaded the updated files. Deriving it from
+    `git describe` each run keeps it truthful automatically.
+    """
+    gc_dir = root / "game-common"
+    if not (gc_dir / ".git").exists():
+        return None
+    result = subprocess.run(
+        ["git", "describe", "--tags"],
+        capture_output=True, cwd=gc_dir, text=True,
+    )
+    if result.returncode != 0:
+        return None
+    return result.stdout.strip().lstrip("v")
 
 
 def ordered_entry(entry: dict) -> dict:
@@ -141,8 +205,13 @@ def main() -> int:
             # Stub without version — intentionally omitted.
             continue
 
-        files      = list_plugin_files(koplugin_dir)
-        has_common = has_common_dep(koplugin_dir)
+        files  = list_plugin_files(koplugin_dir)
+        family = common_family(koplugin_dir)
+        if family == "sudoku-common":
+            has_common = False
+            files = files + list_vendored_common_files(koplugin_dir)
+        else:
+            has_common = family == "game-common"
 
         entry = dict(existing.get(plugin_id, {}))
         entry.update({
@@ -169,6 +238,11 @@ def main() -> int:
         if old_entry["id"] not in found_ids:
             plugins.append(old_entry)
     plugins.sort(key=lambda p: p.get("id", ""))
+
+    gc_version = game_common_version(ROOT)
+    if gc_version and current.get("common", {}).get("version") != gc_version:
+        print(f"common.version: {current.get('common', {}).get('version')} -> {gc_version}")
+        current.setdefault("common", {})["version"] = gc_version
 
     current["updated"] = date.today().isoformat()
     current["plugins"] = plugins
