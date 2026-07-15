@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-07-13",
+  "updated": "2026-07-15",
   "repo": "t2ym5u/koreader-plugins",
   "common": {
     "version": "1.0.0",
@@ -37,66 +37,6 @@
       ],
       "has_common": true,
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/2048.koplugin/master/"
-    },
-    {
-      "id": "Dames",
-      "dir": "dames.koplugin",
-      "fullname": "Dames",
-      "description": "",
-      "version": "1.1.0",
-      "files": [
-        "_meta.lua",
-        "board.lua",
-        "board_widget.lua",
-        "main.lua",
-        "screen.lua"
-      ],
-      "has_common": true
-    },
-    {
-      "id": "Gomoku",
-      "dir": "gomoku.koplugin",
-      "fullname": "Gomoku",
-      "description": "",
-      "version": "1.1.0",
-      "files": [
-        "_meta.lua",
-        "board.lua",
-        "board_widget.lua",
-        "main.lua",
-        "screen.lua"
-      ],
-      "has_common": true
-    },
-    {
-      "id": "Othello",
-      "dir": "othello.koplugin",
-      "fullname": "Othello",
-      "description": "",
-      "version": "1.1.0",
-      "files": [
-        "_meta.lua",
-        "board.lua",
-        "board_widget.lua",
-        "main.lua",
-        "screen.lua"
-      ],
-      "has_common": true
-    },
-    {
-      "id": "Puissance 4",
-      "dir": "puissance4.koplugin",
-      "fullname": "Puissance 4",
-      "description": "",
-      "version": "1.1.0",
-      "files": [
-        "_meta.lua",
-        "board.lua",
-        "board_widget.lua",
-        "main.lua",
-        "screen.lua"
-      ],
-      "has_common": true
     },
     {
       "id": "anagram",
@@ -207,7 +147,8 @@
         "main.lua",
         "screen.lua"
       ],
-      "has_common": false
+      "has_common": false,
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/koreader-plugins/master/binairo.koplugin/"
     },
     {
       "id": "boggle",
@@ -391,11 +332,7 @@
         "board.lua",
         "board_widget.lua",
         "main.lua",
-        "screen.lua",
-        "pieces_img/wman.png",
-        "pieces_img/bman.png",
-        "pieces_img/wking.png",
-        "pieces_img/bking.png"
+        "screen.lua"
       ],
       "has_common": true,
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/dames.koplugin/master/"
@@ -410,7 +347,8 @@
         "_meta.lua",
         "main.lua"
       ],
-      "has_common": false
+      "has_common": false,
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/dashboard.koplugin/master/"
     },
     {
       "id": "echecs",
@@ -623,7 +561,7 @@
     {
       "id": "killer_sudoku",
       "dir": "sudokukiller.koplugin",
-      "fullname": "killer_sudoku",
+      "fullname": "Killer Sudoku",
       "description": "Play touch-friendly Killer Sudoku puzzles with caged sums, resume later, and reveal the solution when needed.",
       "version": "1.2.0",
       "files": [
@@ -633,7 +571,8 @@
         "main.lua",
         "screen.lua"
       ],
-      "has_common": true
+      "has_common": true,
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/sudokukiller.koplugin/master/"
     },
     {
       "id": "lightup",
@@ -1023,22 +962,6 @@
       ],
       "has_common": true,
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/sudoku.koplugin/master/"
-    },
-    {
-      "id": "sudokukiller",
-      "dir": "sudokukiller.koplugin",
-      "fullname": "Killer Sudoku",
-      "description": "",
-      "version": "1.1.0",
-      "files": [
-        "_meta.lua",
-        "board.lua",
-        "board_widget.lua",
-        "main.lua",
-        "screen.lua"
-      ],
-      "has_common": true,
-      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/sudokukiller.koplugin/master/"
     },
     {
       "id": "sudokux",

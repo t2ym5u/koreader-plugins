@@ -63,9 +63,11 @@ def read_meta(meta_path: Path) -> dict:
         return m.group(1) if m else None
 
     return {
-        "name":        get(r'name\s*=\s*"([^"]+)"'),
+        # (?<!\w) keeps this from matching "name" inside "fullname".
+        "name":        get(r'(?<!\w)name\s*=\s*"([^"]+)"'),
         "version":     get(r'version\s*=\s*"([^"]+)"'),
-        "fullname":    get(r'fullname\s*=\s*_\("([^"]+)"\)'),
+        "fullname":    (get(r'fullname\s*=\s*_\("([^"]+)"\)')
+                     or get(r'fullname\s*=\s*_\(\[\[([^\]]+)\]\]\)')),
         "description": (get(r'description\s*=\s*_\("([^"]+)"\)')
                      or get(r'description\s*=\s*_\(\[\[([^\]]+)\]\]\)')),
     }
