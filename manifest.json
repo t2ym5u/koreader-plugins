@@ -148,7 +148,7 @@
         "screen.lua"
       ],
       "has_common": true,
-      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/koreader-plugins/master/binairo.koplugin/"
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/binairo.koplugin/master/"
     },
     {
       "id": "boggle",
