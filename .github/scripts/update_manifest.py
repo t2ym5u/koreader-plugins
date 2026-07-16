@@ -12,8 +12,10 @@ must track its real version too.
 
 Run from any directory; the script locates the repo root via its own path.
 Preserves fields not managed here (schema_version, repo, branch,
-raw_base_url) and updates: plugins[], updated, common.version (derived
-from game-common's own git tag, see game_common_version()).
+raw_base_url) and updates: plugins[], updated, and each shared library's
+version (common.version from game-common, sudoku_common.version from
+sudoku-common — both derived from that library's own git tag, see
+shared_lib_version()).
 """
 
 import json
@@ -26,7 +28,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent.parent
 
 # Field order in each plugin entry.
-FIELD_ORDER = ["id", "dir", "fullname", "description", "version", "files", "has_common"]
+FIELD_ORDER = ["id", "dir", "fullname", "description", "version", "files", "common_lib"]
 
 
 def is_git_tracked(path: Path) -> bool:
@@ -126,8 +128,8 @@ def common_family(plugin_dir: Path) -> str | None:
 
 def list_vendored_common_files(plugin_dir: Path) -> list[str]:
     """List common/*.lua files (as 'common/<name>.lua') for a plugin that
-    vendors its own shared code (sudoku-common family), so they ship as
-    regular downloadable files instead of via the has_common mechanism."""
+    vendors its own shared code, so they ship as regular downloadable files
+    instead of via the shared-library mechanism."""
     common = plugin_dir / "common"
     files = []
     for f in sorted(common.iterdir()):
@@ -136,21 +138,45 @@ def list_vendored_common_files(plugin_dir: Path) -> list[str]:
     return files
 
 
-def game_common_version(root: Path) -> str | None:
-    """Derive game-common's shared-lib version from its own git tags.
+def matches_canonical(plugin_dir: Path, canonical_dir: Path) -> bool:
+    """True if this plugin's common/*.lua is safe to serve from the shared
+    library instead of vendoring: every file it has also exists in
+    canonical_dir with byte-identical content, and it has no uniquely-named
+    file of its own.
 
-    Bumping manifest.json's common.version by hand is exactly what let it
-    drift stale at "1.0.0" while game-common moved on to v1.2.0+ (adding
-    buildTitleBar) — PluginManager's version-gated fetch (main.lua's
-    ensureCommon) never re-downloaded the updated files. Deriving it from
-    `git describe` each run keeps it truthful automatically.
+    Several sudoku-family plugins have deliberately diverged from
+    sudoku-common (a hand-optimized puzzle_generator.lua for large grids, a
+    renamed grid_utils.lua, a refactored base_screen.lua — see the
+    project-sudoku-common-architecture memory). Pointing those at the shared
+    library would silently replace their real behavior with the generic
+    version, so they must keep shipping their own vendored files instead.
     """
-    gc_dir = root / "game-common"
-    if not (gc_dir / ".git").exists():
+    common = plugin_dir / "common"
+    if not canonical_dir.is_dir():
+        return False
+    for f in common.iterdir():
+        if not (f.is_file() and f.suffix == ".lua"):
+            continue
+        ref = canonical_dir / f.name
+        if not ref.is_file() or f.read_bytes() != ref.read_bytes():
+            return False
+    return True
+
+
+def shared_lib_version(lib_dir: Path) -> str | None:
+    """Derive a shared library's version from its own git tags.
+
+    Bumping manifest.json's version fields by hand is exactly what let
+    common.version drift stale at "1.0.0" while game-common moved on to
+    v1.2.0+ (adding buildTitleBar) — PluginManager's version-gated fetch
+    (main.lua's ensureCommon) never re-downloaded the updated files. Deriving
+    it from `git describe` each run keeps it truthful automatically.
+    """
+    if not (lib_dir / ".git").exists():
         return None
     result = subprocess.run(
         ["git", "describe", "--tags"],
-        capture_output=True, cwd=gc_dir, text=True,
+        capture_output=True, cwd=lib_dir, text=True,
     )
     if result.returncode != 0:
         return None
@@ -207,13 +233,17 @@ def main() -> int:
 
         files  = list_plugin_files(koplugin_dir)
         family = common_family(koplugin_dir)
-        if family == "sudoku-common":
-            has_common = False
-            files = files + list_vendored_common_files(koplugin_dir)
-        else:
-            has_common = family == "game-common"
+        common_lib = None
+        if family == "game-common":
+            common_lib = "common"
+        elif family == "sudoku-common":
+            if matches_canonical(koplugin_dir, ROOT / "sudoku-common"):
+                common_lib = "sudoku_common"
+            else:
+                files = files + list_vendored_common_files(koplugin_dir)
 
         entry = dict(existing.get(plugin_id, {}))
+        entry.pop("has_common", None)
         entry.update({
             "id":          plugin_id,
             "dir":         koplugin_dir.name,
@@ -221,8 +251,11 @@ def main() -> int:
             "description": meta["description"] or entry.get("description", ""),
             "version":     meta["version"],
             "files":       files,
-            "has_common":  has_common,
         })
+        if common_lib:
+            entry["common_lib"] = common_lib
+        else:
+            entry.pop("common_lib", None)
         plugins.append(ordered_entry(entry))
 
     if skipped:
@@ -239,10 +272,11 @@ def main() -> int:
             plugins.append(old_entry)
     plugins.sort(key=lambda p: p.get("id", ""))
 
-    gc_version = game_common_version(ROOT)
-    if gc_version and current.get("common", {}).get("version") != gc_version:
-        print(f"common.version: {current.get('common', {}).get('version')} -> {gc_version}")
-        current.setdefault("common", {})["version"] = gc_version
+    for lib_key, dir_name in (("common", "game-common"), ("sudoku_common", "sudoku-common")):
+        version = shared_lib_version(ROOT / dir_name)
+        if version and current.get(lib_key, {}).get("version") != version:
+            print(f"{lib_key}.version: {current.get(lib_key, {}).get('version')} -> {version}")
+            current.setdefault(lib_key, {})["version"] = version
 
     current["updated"] = date.today().isoformat()
     current["plugins"] = plugins

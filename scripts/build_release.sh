@@ -9,40 +9,44 @@
 #   <plugin>.koplugin/        ← drop into KOReader plugins/ folder
 #     common/                 ← real directory, no symlink needed
 #     *.lua
-#   game-common/              ← shared library, useful when installing several plugins
+#   game-common/, sudoku-common/  ← shared libraries, useful when installing several plugins
 #
-# The full bundle extracts game-common/ once alongside all plugins.
+# The full bundle extracts each shared library once alongside all plugins.
+# Two mutually-incompatible shared-code families exist (see the
+# project-sudoku-common-architecture memory) — manifest.json's top-level
+# "common" (game-common) and "sudoku_common" (sudoku-common) sections, each
+# plugin naming the one it needs via its "common_lib" field. A plugin with a
+# common/ dir but no common_lib has genuinely diverged from its family's
+# shared code and vendors its own files instead (already listed in its
+# "files" array as "common/<name>.lua" by update_manifest.py).
 
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 DIST_DIR="$SCRIPT_DIR/dist"
-COMMON_SRC="$SCRIPT_DIR/game-common"
 MANIFEST="$SCRIPT_DIR/manifest.json"
 FILTER="${1:-}"
 
 if [ ! -f "$MANIFEST" ]; then
   echo "Error: manifest.json not found" >&2; exit 1
 fi
-if [ ! -d "$COMMON_SRC" ]; then
-  echo "Error: game-common/ not found" >&2; exit 1
-fi
 
 mkdir -p "$DIST_DIR"
 
-# Parse manifest: emit lines  plugin_dir|has_common|common_files|plugin_files
-# common_files: space-separated list from manifest.common.files
-# plugin_files: space-separated list from plugin.files
+# Parse manifest: emit a header line per shared lib, then one line per plugin.
+#   LIB|<lib_key>|<dir>|<space-separated files>
+#   PLUGIN|<plugin_dir>|<common_lib or empty>|<space-separated files>
 PARSED=$(python3 - "$MANIFEST" "$FILTER" <<'PYEOF'
 import json, sys
 manifest = json.load(open(sys.argv[1]))
 filt = sys.argv[2]
-common_files = " ".join(manifest.get("common", {}).get("files", []))
+for lib_key in ("common", "sudoku_common"):
+    spec = manifest.get(lib_key)
+    if spec:
+        print(f'LIB|{lib_key}|{spec["dir"]}|{" ".join(spec["files"])}')
 for p in manifest["plugins"]:
     if not filt or p["id"] == filt or p["dir"] == filt:
-        has_c = "1" if p.get("has_common") else "0"
-        pfiles = " ".join(p["files"])
-        print(f'{p["dir"]}|{has_c}|{common_files}|{pfiles}')
+        print(f'PLUGIN|{p["dir"]}|{p.get("common_lib", "")}|{" ".join(p["files"])}')
 PYEOF
 )
 
@@ -53,13 +57,26 @@ fi
 TMPDIR=$(mktemp -d)
 trap 'rm -rf "$TMPDIR"' EXIT
 
-# Build full bundle's game-common once (only the files listed in manifest)
 BUNDLE_DIR="$TMPDIR/bundle"
-BUNDLE_COMMON="$BUNDLE_DIR/game-common"
-mkdir -p "$BUNDLE_COMMON"
+mkdir -p "$BUNDLE_DIR"
+
+# Resolve each shared lib's source dir + file list up front (associative
+# arrays keyed by lib_key, e.g. "common" -> "game-common").
+declare -A LIB_SRC LIB_FILES
+while IFS='|' read -r kind a b c; do
+  [ "$kind" = "LIB" ] || continue
+  lib_key="$a" lib_dir="$b" lib_files="$c"
+  src="$SCRIPT_DIR/$lib_dir"
+  if [ ! -d "$src" ]; then
+    echo "Error: $lib_dir/ not found (needed by common_lib=$lib_key)" >&2; exit 1
+  fi
+  LIB_SRC["$lib_key"]="$src"
+  LIB_FILES["$lib_key"]="$lib_files"
+done <<< "$PARSED"
 
 built=0
-while IFS='|' read -r plugin_dir has_common common_files_str plugin_files_str; do
+while IFS='|' read -r kind plugin_dir common_lib plugin_files_str; do
+  [ "$kind" = "PLUGIN" ] || continue
   plugin_src="$SCRIPT_DIR/$plugin_dir"
   if [ ! -d "$plugin_src" ]; then
     echo "Warning: $plugin_dir not found, skipping" >&2
@@ -69,22 +86,26 @@ while IFS='|' read -r plugin_dir has_common common_files_str plugin_files_str; d
   WORK="$TMPDIR/$plugin_dir"
   mkdir -p "$WORK"
 
-  # Copy game-common files first (plugin files may override them)
-  if [ "$has_common" = "1" ]; then
+  # Copy the plugin's shared-library files first (plugin files may override).
+  if [ -n "$common_lib" ]; then
+    lib_src="${LIB_SRC[$common_lib]}"
+    lib_dir_name="$(basename "$lib_src")"
     mkdir -p "$WORK/common"
-    for fname in $common_files_str; do
-      src_file="$COMMON_SRC/$fname"
+    for fname in ${LIB_FILES[$common_lib]}; do
+      src_file="$lib_src/$fname"
       if [ -f "$src_file" ]; then
         cp "$src_file" "$WORK/common/$fname"
-        # Populate bundle's game-common lazily
-        [ -f "$BUNDLE_COMMON/$fname" ] || cp "$src_file" "$BUNDLE_COMMON/$fname"
+        mkdir -p "$BUNDLE_DIR/$lib_dir_name"
+        [ -f "$BUNDLE_DIR/$lib_dir_name/$fname" ] || cp "$src_file" "$BUNDLE_DIR/$lib_dir_name/$fname"
       else
-        echo "Warning: game-common/$fname not found" >&2
+        echo "Warning: $lib_dir_name/$fname not found" >&2
       fi
     done
   fi
 
-  # Copy plugin source files (may override game-common files in common/)
+  # Copy plugin source files (may override shared-lib files in common/;
+  # this also covers plugins that vendor their own diverged common/*.lua,
+  # since update_manifest.py already listed those as common/<name>.lua here).
   for fname in $plugin_files_str; do
     src_file="$plugin_src/$fname"
     if [ ! -f "$src_file" ]; then
@@ -95,25 +116,16 @@ while IFS='|' read -r plugin_dir has_common common_files_str plugin_files_str; d
     cp "$src_file" "$WORK/$fname"
   done
 
-  # Copy plugin-specific common files not provided by game-common at all
-  # (e.g. sudoku-common: base_board.lua, base_screen.lua, puzzle_generator.lua…)
-  if [ -d "$plugin_src/common" ]; then
-    for f in "$plugin_src/common/"*.lua; do
-      [ -f "$f" ] || continue
-      bname=$(basename "$f")
-      [ -f "$COMMON_SRC/$bname" ] && continue   # exists in game-common, skip
-      cp "$f" "$WORK/common/$bname"
-    done
-  fi
-
-  # Individual plugin zip: plugin_dir/ + game-common/ side by side
+  # Individual plugin zip: plugin_dir/ + its shared lib dir side by side.
   INSTALL_DIR="$TMPDIR/install_$plugin_dir"
   mkdir -p "$INSTALL_DIR"
   cp -r "$WORK" "$INSTALL_DIR/$plugin_dir"
-  if [ "$has_common" = "1" ]; then
-    mkdir -p "$INSTALL_DIR/game-common"
-    for fname in $common_files_str; do
-      [ -f "$COMMON_SRC/$fname" ] && cp "$COMMON_SRC/$fname" "$INSTALL_DIR/game-common/$fname"
+  if [ -n "$common_lib" ]; then
+    lib_src="${LIB_SRC[$common_lib]}"
+    lib_dir_name="$(basename "$lib_src")"
+    mkdir -p "$INSTALL_DIR/$lib_dir_name"
+    for fname in ${LIB_FILES[$common_lib]}; do
+      [ -f "$lib_src/$fname" ] && cp "$lib_src/$fname" "$INSTALL_DIR/$lib_dir_name/$fname"
     done
   fi
 
