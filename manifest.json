@@ -31,7 +31,7 @@
       "puzzle_generator.lua",
       "sudoku_grid_utils.lua"
     ],
-    "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/sudoku-common/main/"
+    "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/sudoku-common/master/"
   },
   "plugins": [
     {
