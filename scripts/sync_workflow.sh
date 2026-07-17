@@ -1,14 +1,16 @@
 #!/usr/bin/env bash
 # Sync the release workflow template to every plugin submodule.
 # Usage:
-#   ./sync_workflow.sh            # sync all submodules
-#   ./sync_workflow.sh --dry-run  # preview without pushing
+#   ./sync_workflow.sh                    # sync all submodules
+#   ./sync_workflow.sh --dry-run          # preview without pushing
+#   COMMIT_MSG="..." ./sync_workflow.sh   # override the commit message
 
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 TEMPLATE="$ROOT/.github/workflows/release-plugin.yml"
 DRY="${1:-}"
+COMMIT_MSG="${COMMIT_MSG:-ci: sync release workflow template}"
 
 if [ ! -f "$TEMPLATE" ]; then
   echo "Error: template not found: $TEMPLATE" >&2; exit 1
@@ -46,7 +48,7 @@ sync_plugin() {
 
   git -C "$full" add .github/workflows/release.yml
   if ! git -C "$full" diff --cached --quiet; then
-    git -C "$full" commit -m "ci: add GHCR package publishing to release workflow"
+    git -C "$full" commit -m "$COMMIT_MSG"
     git -C "$full" push origin "HEAD:${branch}" && synced+=("$dir") || failed+=("$dir (push failed)")
   else
     skipped+=("$dir (no change after copy)")
