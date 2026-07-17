@@ -149,6 +149,9 @@ echo ""
 
 while IFS= read -r dir; do
     [[ "$dir" == "game-common" || "$dir" == "sudoku-common" ]] && continue
+    # Template/skeleton dirs (leading underscore) are excluded from the
+    # manifest by update_manifest.py and must never get a real release.
+    [[ "$dir" == _* ]] && { skipped+=("$dir (template dir)"); continue; }
     bump_plugin "$dir"
 done < <(git -C "$ROOT" submodule status | awk '{print $2}')
 
