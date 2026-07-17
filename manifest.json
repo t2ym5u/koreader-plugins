@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-07-16",
+  "updated": "2026-07-17",
   "repo": "t2ym5u/koreader-plugins",
   "common": {
     "version": "1.2.1",
@@ -817,7 +817,7 @@
       "dir": "pluginmanager.koplugin",
       "fullname": "Plugin Manager",
       "description": "Check for updates and install game plugins from the koreader-plugins repository.",
-      "version": "1.1.9",
+      "version": "1.1.10",
       "files": [
         "_meta.lua",
         "main.lua"
