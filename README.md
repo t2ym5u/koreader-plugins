@@ -29,9 +29,23 @@ Or install the [Plugin Manager](dist/pluginmanager.zip) to browse and update plu
 |---|---|
 | `scripts/build_release.sh` | Build distributable zips from `manifest.json` |
 | `scripts/bump_versions.sh` | Bump versions in all submodules, tag and push |
+| `scripts/check_shared_libs.sh` | Check whether game-common/sudoku-common have drifted past `manifest.json` |
 | `scripts/link_plugins.sh` | Symlink plugins into a local KOReader install for development |
 | `scripts/sync_workflow.sh` | Sync the CI workflow template to all submodules |
 | `scripts/trigger_packages.sh` | Trigger GHCR package publishing on all plugin repos |
+
+## Keeping shared libraries fresh
+
+`game-common` and `sudoku-common` are consumed by most plugins (see
+`common_lib` in `manifest.json`), but nothing rebuilds a plugin's zip
+automatically when only the shared library changes — release CI (both
+per-plugin and this monorepo's) only fires on a plugin's own version bump.
+After tagging a new `game-common`/`sudoku-common` release, run:
+
+```bash
+./scripts/check_shared_libs.sh   # reports drift, exit 1 if any found
+./scripts/bump_versions.sh       # if drift was found, cascade a fresh release
+```
 
 ## Language support
 
