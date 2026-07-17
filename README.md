@@ -2,7 +2,7 @@
 
 > ⚠️ **Stability notice** — Tested on **Kobo** devices running KOReader. Other devices (Kindle, PocketBook, Android) may work but are untested.
 
-A collection of 65 game and utility plugins for [KOReader](https://koreader.rocks/).
+A collection of 75 game and utility plugins for [KOReader](https://koreader.rocks/).
 
 **→ Full documentation: [docs/README.md](docs/README.md)**
 
@@ -30,7 +30,9 @@ Or install the [Plugin Manager](dist/pluginmanager.zip) to browse and update plu
 | `scripts/build_release.sh` | Build distributable zips from `manifest.json` |
 | `scripts/bump_versions.sh` | Bump versions in all submodules, tag and push |
 | `scripts/check_shared_libs.sh` | Check whether game-common/sudoku-common have drifted past `manifest.json` |
+| `scripts/check_sudoku_common_drift.sh` | Diff each sudoku-variant's vendored `common/*.lua` against `sudoku-common/` canonical |
 | `scripts/link_plugins.sh` | Symlink plugins into a local KOReader install for development |
+| `scripts/new_plugin.sh` | Onboard a new plugin: create its GitHub repo, register the submodule, wire up CI |
 | `scripts/sync_workflow.sh` | Sync the CI workflow template to all submodules |
 | `scripts/trigger_packages.sh` | Trigger GHCR package publishing on all plugin repos |
 
