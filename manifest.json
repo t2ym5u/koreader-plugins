@@ -3,9 +3,22 @@
   "updated": "2026-07-17",
   "repo": "t2ym5u/koreader-plugins",
   "common": {
-    "version": "1.2.1",
+    "version": "1.2.2",
     "dir": "game-common",
     "files": [
+      "chess_pieces.lua",
+      "chess_pieces_img/bb.png",
+      "chess_pieces_img/bk.png",
+      "chess_pieces_img/bn.png",
+      "chess_pieces_img/bp.png",
+      "chess_pieces_img/bq.png",
+      "chess_pieces_img/br.png",
+      "chess_pieces_img/wb.png",
+      "chess_pieces_img/wk.png",
+      "chess_pieces_img/wn.png",
+      "chess_pieces_img/wp.png",
+      "chess_pieces_img/wq.png",
+      "chess_pieces_img/wr.png",
       "daily_seed.lua",
       "grid_utils.lua",
       "grid_widget_base.lua",
@@ -817,7 +830,7 @@
       "dir": "pluginmanager.koplugin",
       "fullname": "Plugin Manager",
       "description": "Check for updates and install game plugins from the koreader-plugins repository.",
-      "version": "1.1.12",
+      "version": "1.1.13",
       "files": [
         "_meta.lua",
         "main.lua"
