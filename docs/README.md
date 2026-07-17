@@ -6,13 +6,14 @@ A collection of game and utility plugins for [KOReader](https://koreader.rocks/)
 
 ---
 
-## 🎮 Games (67 plugins)
+## 🎮 Games (71 plugins)
 
 | Plugin | Description |
 |---|---|
 | [2048](https://github.com/t2ym5u/2048.koplugin) | Slide tiles to merge them. Reach the 2048 tile! |
 | [Anagram](https://github.com/t2ym5u/anagram.koplugin) | Find all anagrams of a random word |
 | [Arrow Sudoku](https://github.com/t2ym5u/arrowsudoku.koplugin) | Sudoku with arrow constraints |
+| [Backgammon](https://github.com/t2ym5u/backgammon.koplugin) | Classic 2-player dice and checker race game |
 | [Battleship Puzzle](https://github.com/t2ym5u/battleship.koplugin) | Locate hidden ships on a grid |
 | Binairo | Binary grid puzzle — fill rows and columns with equal 0s and 1s, no three in a row |
 | [Between Lines Sudoku](https://github.com/t2ym5u/betweenlines.koplugin) | Sudoku with between-lines constraints |
@@ -34,6 +35,7 @@ A collection of game and utility plugins for [KOReader](https://koreader.rocks/)
 | [Fillomino](https://github.com/t2ym5u/fillomino.koplugin) | Fill regions with matching numbers |
 | [Futoshiki](https://github.com/t2ym5u/futoshiki.koplugin) | Inequality-constrained Latin square |
 | [Galaxies](https://github.com/t2ym5u/galaxies.koplugin) | Divide a grid into symmetric galaxies |
+| [Go](https://github.com/t2ym5u/go.koplugin) | Classic territory and capture board game |
 | [Gomoku](https://github.com/t2ym5u/gomoku.koplugin) | Five in a row |
 | [Hangman](https://github.com/t2ym5u/hangman.koplugin) | Classic word guessing game |
 | [Towers of Hanoi](https://github.com/t2ym5u/hanoi.koplugin) | Move a stack of discs |
@@ -62,6 +64,7 @@ A collection of game and utility plugins for [KOReader](https://koreader.rocks/)
 | [Shikaku](https://github.com/t2ym5u/shikaku.koplugin) | Divide grid into rectangles |
 | [Skyscraper](https://github.com/t2ym5u/skyscraper.koplugin) | Place buildings so visibility clues are satisfied |
 | [Slitherlink](https://github.com/t2ym5u/slitherlink.koplugin) | Draw a single loop around clue numbers |
+| [Solitaire](https://github.com/t2ym5u/solitaire.koplugin) | Classic Klondike solitaire card game |
 | [Sokoban](https://github.com/t2ym5u/sokoban.koplugin) | Push boxes to their targets |
 | [Star Battle](https://github.com/t2ym5u/starbattle.koplugin) | Place stars so no two are adjacent |
 | [Sudoku](https://github.com/t2ym5u/sudoku.koplugin) | Classic 9×9 Sudoku |
@@ -74,6 +77,7 @@ A collection of game and utility plugins for [KOReader](https://koreader.rocks/)
 | [Tents and Trees](https://github.com/t2ym5u/tents.koplugin) | Match each tent to a tree |
 | [Thermo Sudoku](https://github.com/t2ym5u/thermosudoku.koplugin) | Sudoku with thermometer constraints |
 | [Windoku](https://github.com/t2ym5u/windoku.koplugin) | Sudoku with four extra windows |
+| [Word Ladder](https://github.com/t2ym5u/wordladder.koplugin) | Change one word into another, one letter at a time |
 | [Wordle](https://github.com/t2ym5u/wordle.koplugin) | Guess the 5-letter word in 6 tries |
 | [Word Search](https://github.com/t2ym5u/wordsearch.koplugin) | Find hidden words in a letter grid |
 | [Balance](https://github.com/t2ym5u/balance.koplugin) | Balance weights on a scale |
