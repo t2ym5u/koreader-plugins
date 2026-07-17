@@ -289,3 +289,19 @@
 	path = dice.koplugin
 	url = https://github.com/t2ym5u/dice.koplugin.git
 	branch = main
+[submodule "backgammon.koplugin"]
+	path = backgammon.koplugin
+	url = https://github.com/t2ym5u/backgammon.koplugin.git
+	branch = main
+[submodule "go.koplugin"]
+	path = go.koplugin
+	url = https://github.com/t2ym5u/go.koplugin.git
+	branch = main
+[submodule "solitaire.koplugin"]
+	path = solitaire.koplugin
+	url = https://github.com/t2ym5u/solitaire.koplugin.git
+	branch = main
+[submodule "wordladder.koplugin"]
+	path = wordladder.koplugin
+	url = https://github.com/t2ym5u/wordladder.koplugin.git
+	branch = main

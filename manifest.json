@@ -3,7 +3,7 @@
   "updated": "2026-07-17",
   "repo": "t2ym5u/koreader-plugins",
   "common": {
-    "version": "1.2.4",
+    "version": "1.2.3-2-g0d038ce",
     "dir": "game-common",
     "files": [
       "daily_seed.lua",
@@ -97,6 +97,22 @@
       ],
       "common_lib": "common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/arrowwords.koplugin/main/"
+    },
+    {
+      "id": "backgammon",
+      "dir": "backgammon.koplugin",
+      "fullname": "Backgammon",
+      "description": "Classic 2-player dice and checker race game.",
+      "version": "1.0.0",
+      "files": [
+        "_meta.lua",
+        "board.lua",
+        "board_widget.lua",
+        "main.lua",
+        "screen.lua"
+      ],
+      "common_lib": "common",
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/backgammon.koplugin/main/"
     },
     {
       "id": "balance",
@@ -293,18 +309,6 @@
         "board.lua",
         "board_widget.lua",
         "chess_pieces.lua",
-        "chess_pieces_img/bb.png",
-        "chess_pieces_img/bk.png",
-        "chess_pieces_img/bn.png",
-        "chess_pieces_img/bp.png",
-        "chess_pieces_img/bq.png",
-        "chess_pieces_img/br.png",
-        "chess_pieces_img/wb.png",
-        "chess_pieces_img/wk.png",
-        "chess_pieces_img/wn.png",
-        "chess_pieces_img/wp.png",
-        "chess_pieces_img/wq.png",
-        "chess_pieces_img/wr.png",
         "lessons.lua",
         "lessons_finale.lua",
         "lessons_mat1.lua",
@@ -421,18 +425,6 @@
         "board.lua",
         "board_widget.lua",
         "chess_pieces.lua",
-        "chess_pieces_img/bb.png",
-        "chess_pieces_img/bk.png",
-        "chess_pieces_img/bn.png",
-        "chess_pieces_img/bp.png",
-        "chess_pieces_img/bq.png",
-        "chess_pieces_img/br.png",
-        "chess_pieces_img/wb.png",
-        "chess_pieces_img/wk.png",
-        "chess_pieces_img/wn.png",
-        "chess_pieces_img/wp.png",
-        "chess_pieces_img/wq.png",
-        "chess_pieces_img/wr.png",
         "main.lua",
         "screen.lua"
       ],
@@ -502,6 +494,22 @@
       ],
       "common_lib": "common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/galaxies.koplugin/main/"
+    },
+    {
+      "id": "go",
+      "dir": "go.koplugin",
+      "fullname": "Go",
+      "description": "Classic territory and capture board game.",
+      "version": "1.0.0",
+      "files": [
+        "_meta.lua",
+        "board.lua",
+        "board_widget.lua",
+        "main.lua",
+        "screen.lua"
+      ],
+      "common_lib": "common",
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/go.koplugin/main/"
     },
     {
       "id": "gomoku",
@@ -995,6 +1003,22 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/sokoban.koplugin/main/"
     },
     {
+      "id": "solitaire",
+      "dir": "solitaire.koplugin",
+      "fullname": "Solitaire",
+      "description": "Classic Klondike solitaire card game.",
+      "version": "1.0.0",
+      "files": [
+        "_meta.lua",
+        "board.lua",
+        "board_widget.lua",
+        "main.lua",
+        "screen.lua"
+      ],
+      "common_lib": "common",
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/solitaire.koplugin/main/"
+    },
+    {
       "id": "starbattle",
       "dir": "starbattle.koplugin",
       "fullname": "Star Battle",
@@ -1033,6 +1057,7 @@
         "_meta.lua",
         "board.lua",
         "board_widget.lua",
+        "daily_seed.lua",
         "main.lua",
         "screen.lua",
         "common/base_board.lua",
@@ -1165,14 +1190,27 @@
         "board.lua",
         "board_widget.lua",
         "main.lua",
-        "screen.lua",
-        "common/base_board.lua",
-        "common/base_board_widget.lua",
-        "common/base_screen.lua",
-        "common/puzzle_generator.lua",
-        "common/sudoku_grid_utils.lua"
+        "screen.lua"
       ],
+      "common_lib": "sudoku_common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/windoku.koplugin/main/"
+    },
+    {
+      "id": "wordladder",
+      "dir": "wordladder.koplugin",
+      "fullname": "Word Ladder",
+      "description": "Change one word into another, one letter at a time.",
+      "version": "1.0.0",
+      "files": [
+        "_meta.lua",
+        "board.lua",
+        "board_widget.lua",
+        "main.lua",
+        "screen.lua",
+        "words_en.lua"
+      ],
+      "common_lib": "common",
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/wordladder.koplugin/main/"
     },
     {
       "id": "wordle",
