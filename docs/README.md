@@ -6,7 +6,7 @@ A collection of game and utility plugins for [KOReader](https://koreader.rocks/)
 
 ---
 
-## 🎮 Games (66 plugins)
+## 🎮 Games (67 plugins)
 
 | Plugin | Description |
 |---|---|
@@ -27,6 +27,7 @@ A collection of game and utility plugins for [KOReader](https://koreader.rocks/)
 | [Crossword](https://github.com/t2ym5u/crossword.koplugin) | Crossword puzzles |
 | [Cryptogram](https://github.com/t2ym5u/cryptogram.koplugin) | Decode encrypted quotes |
 | [Dames](https://github.com/t2ym5u/dames.koplugin) | Draughts / Checkers |
+| [Dice](https://github.com/t2ym5u/dice.koplugin) | Roll virtual dice with a configurable number of faces and dice |
 | [Double or Nothing Party](https://github.com/t2ym5u/doubleornothing.koplugin) | Bank your points or double the pot on a harder question |
 | [Échecs](https://github.com/t2ym5u/echecs.koplugin) | Chess |
 | [Fifteen Puzzle](https://github.com/t2ym5u/fifteen.koplugin) | Classic 15-tile sliding puzzle |

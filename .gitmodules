@@ -285,3 +285,7 @@
 	path = doubleornothing.koplugin
 	url = https://github.com/t2ym5u/doubleornothing.koplugin.git
 	branch = main
+[submodule "dice.koplugin"]
+	path = dice.koplugin
+	url = https://github.com/t2ym5u/dice.koplugin.git
+	branch = main
