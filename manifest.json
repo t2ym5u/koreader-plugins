@@ -3,7 +3,7 @@
   "updated": "2026-07-17",
   "repo": "t2ym5u/koreader-plugins",
   "common": {
-    "version": "1.2.3",
+    "version": "1.2.4",
     "dir": "game-common",
     "files": [
       "daily_seed.lua",
@@ -379,6 +379,22 @@
       ],
       "common_lib": "common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/dashboard.koplugin/main/"
+    },
+    {
+      "id": "dice",
+      "dir": "dice.koplugin",
+      "fullname": "Dice",
+      "description": "Roll virtual dice with a configurable number of faces and dice.",
+      "version": "1.0.0",
+      "files": [
+        "_meta.lua",
+        "board.lua",
+        "board_widget.lua",
+        "main.lua",
+        "screen.lua"
+      ],
+      "common_lib": "common",
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/dice.koplugin/main/"
     },
     {
       "id": "doubleornothing",
