@@ -892,7 +892,7 @@
       "dir": "pluginmanager.koplugin",
       "fullname": "Plugin Manager",
       "description": "Check for updates and install game plugins from the koreader-plugins repository.",
-      "version": "1.1.14",
+      "version": "1.1.15",
       "files": [
         "_meta.lua",
         "main.lua"
@@ -1132,9 +1132,6 @@
     {
       "id": "taboo",
       "dir": "taboo.koplugin",
-      "renamed_from": [
-        "tabou"
-      ],
       "fullname": "Taboo Party",
       "description": "Describe words without saying the forbidden ones — team buzzer party game.",
       "version": "1.5.2",
@@ -1145,6 +1142,9 @@
         "taboo_cards_fr.lua"
       ],
       "common_lib": "common",
+      "renamed_from": [
+        "tabou"
+      ],
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/taboo.koplugin/master/"
     },
     {
