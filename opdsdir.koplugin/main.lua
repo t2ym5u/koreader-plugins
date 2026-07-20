@@ -1,3 +1,14 @@
+local _dir = debug.getinfo(1, "S").source:sub(2):match("(.*[/\\])") or "./"
+package.path = _dir .. "?.lua;" .. package.path
+
+local function lrequire(name)
+    local key = _dir .. name
+    if not package.loaded[key] then
+        package.loaded[key] = assert(loadfile(_dir .. name .. ".lua"))()
+    end
+    return package.loaded[key]
+end
+
 local ButtonDialog      = require("ui/widget/buttondialog")
 local ConfirmBox        = require("ui/widget/confirmbox")
 local InputDialog       = require("ui/widget/inputdialog")
@@ -5,7 +16,9 @@ local NetworkMgr        = require("ui/network/manager")
 local UIManager         = require("ui/uimanager")
 local WidgetContainer   = require("ui/widget/container/widgetcontainer")
 local logger            = require("logger")
-local _                 = require("gettext")
+local _                 = require("i18n")
+
+require("i18n").extend(lrequire("i18n_fr"))
 
 local OpdsDirPlugin = WidgetContainer:extend{
     name        = "opdsdir",
