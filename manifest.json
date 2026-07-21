@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated": "2026-07-17",
+  "updated": "2026-07-21",
   "repo": "t2ym5u/koreader-plugins",
   "common": {
-    "version": "1.2.3-4-ga231c34",
+    "version": "1.2.3-5-g46cc102",
     "dir": "game-common",
     "files": [
       "daily_seed.lua",
@@ -39,7 +39,7 @@
       "dir": "2048.koplugin",
       "fullname": "2048",
       "description": "Slide tiles to merge them. Reach the 2048 tile!",
-      "version": "1.1.4",
+      "version": "1.1.5",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -56,14 +56,16 @@
       "dir": "anagram.koplugin",
       "fullname": "Anagram",
       "description": "Rearrange letters to find words",
-      "version": "1.2.2",
+      "version": "1.3.1",
       "files": [
         "_meta.lua",
         "board.lua",
         "board_widget.lua",
         "i18n_fr.lua",
         "main.lua",
-        "screen.lua"
+        "screen.lua",
+        "words_en.lua",
+        "words_fr.lua"
       ],
       "common_lib": "common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/anagram.koplugin/main/"
@@ -73,11 +75,13 @@
       "dir": "arrowsudoku.koplugin",
       "fullname": "Arrow Sudoku",
       "description": "Sudoku with arrow sum constraints",
-      "version": "1.2.5",
+      "version": "1.2.6",
       "files": [
         "_meta.lua",
         "board.lua",
         "board_widget.lua",
+        "i18n.lua",
+        "i18n_fr.lua",
         "main.lua",
         "screen.lua"
       ],
@@ -89,11 +93,12 @@
       "dir": "arrowwords.koplugin",
       "fullname": "Mots fléchés",
       "description": "Arrow crossword puzzle",
-      "version": "1.1.4",
+      "version": "1.2.1",
       "files": [
         "_meta.lua",
         "board.lua",
         "board_widget.lua",
+        "i18n_fr.lua",
         "main.lua",
         "screen.lua"
       ],
@@ -105,11 +110,12 @@
       "dir": "backgammon.koplugin",
       "fullname": "Backgammon",
       "description": "Classic 2-player dice and checker race game.",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "files": [
         "_meta.lua",
         "board.lua",
         "board_widget.lua",
+        "i18n_fr.lua",
         "main.lua",
         "screen.lua"
       ],
@@ -121,7 +127,7 @@
       "dir": "balance.koplugin",
       "fullname": "Balance",
       "description": "Logical weighing puzzle",
-      "version": "1.1.2",
+      "version": "1.1.3",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -138,7 +144,7 @@
       "dir": "battleship.koplugin",
       "fullname": "Battleship Puzzle",
       "description": "Solitaire Bimaru: deduce the fleet from row and column clues.",
-      "version": "1.1.6",
+      "version": "1.1.7",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -155,11 +161,13 @@
       "dir": "betweenlines.koplugin",
       "fullname": "Between Lines Sudoku",
       "description": "Sudoku with between-lines constraints",
-      "version": "1.1.3",
+      "version": "1.1.4",
       "files": [
         "_meta.lua",
         "board.lua",
         "board_widget.lua",
+        "i18n.lua",
+        "i18n_fr.lua",
         "main.lua",
         "screen.lua",
         "common/base_board.lua",
@@ -175,7 +183,7 @@
       "dir": "binairo.koplugin",
       "fullname": "Binairo",
       "description": "Binary grid puzzle — fill each row and column with equal 0s and 1s, no three in a row.",
-      "version": "1.0.3",
+      "version": "1.0.4",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -192,7 +200,7 @@
       "dir": "boggle.koplugin",
       "fullname": "Boggle",
       "description": "Find words by connecting adjacent letters on the grid.",
-      "version": "1.1.7",
+      "version": "1.1.8",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -211,11 +219,12 @@
       "dir": "boggleparty.koplugin",
       "fullname": "Boggle Party",
       "description": "Display a Boggle grid for table play — everyone plays on paper, then reveal solutions.",
-      "version": "1.1.3",
+      "version": "1.1.4",
       "files": [
         "_meta.lua",
         "board.lua",
         "board_widget.lua",
+        "i18n_fr.lua",
         "main.lua",
         "screen.lua",
         "words_en.lua",
@@ -229,7 +238,7 @@
       "dir": "bridges.koplugin",
       "fullname": "Bridges",
       "description": "Connect islands with the right number of bridges",
-      "version": "1.1.2",
+      "version": "1.1.3",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -246,7 +255,7 @@
       "dir": "calculmental.koplugin",
       "fullname": "Calcul Mental",
       "description": "Entraînez vos réflexes arithmétiques.",
-      "version": "1.1.2",
+      "version": "1.1.3",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -261,7 +270,7 @@
       "dir": "cave.koplugin",
       "fullname": "Cave",
       "description": "Find the cave hidden inside the grid",
-      "version": "1.1.2",
+      "version": "1.1.3",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -278,10 +287,11 @@
       "dir": "chiffreslettres.koplugin",
       "fullname": "Chiffres et Lettres",
       "description": "Draw letters and find the longest word; draw numbers and hit the target.",
-      "version": "1.1.2",
+      "version": "1.1.3",
       "files": [
         "_meta.lua",
         "board.lua",
+        "i18n_fr.lua",
         "main.lua",
         "screen.lua",
         "words_en.lua",
@@ -295,7 +305,7 @@
       "dir": "colornonogram.koplugin",
       "fullname": "Color Nonogram",
       "description": "Colored picross / nonogram",
-      "version": "1.1.2",
+      "version": "1.1.3",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -312,12 +322,13 @@
       "dir": "coursdechecs.koplugin",
       "fullname": "Cours d'échecs",
       "description": "Puzzles et leçons d'échecs",
-      "version": "1.2.2",
+      "version": "1.2.3",
       "files": [
         "_meta.lua",
         "board.lua",
         "board_widget.lua",
         "chess_pieces.lua",
+        "i18n_fr.lua",
         "lessons.lua",
         "lessons_finale.lua",
         "lessons_mat1.lua",
@@ -336,7 +347,7 @@
       "dir": "crossword.koplugin",
       "fullname": "Crossword",
       "description": "Classic crossword puzzles. Fill the grid from the across and down clues.",
-      "version": "1.1.6",
+      "version": "1.1.7",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -354,7 +365,7 @@
       "dir": "cryptogram.koplugin",
       "fullname": "Cryptogram",
       "description": "Substitution cipher word puzzle",
-      "version": "1.1.4",
+      "version": "1.1.5",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -371,11 +382,12 @@
       "dir": "dames.koplugin",
       "fullname": "Dames",
       "description": "Jeu de dames 8x8",
-      "version": "1.1.2",
+      "version": "1.1.3",
       "files": [
         "_meta.lua",
         "board.lua",
         "board_widget.lua",
+        "i18n_fr.lua",
         "main.lua",
         "screen.lua"
       ],
@@ -387,7 +399,7 @@
       "dir": "dashboard.koplugin",
       "fullname": "Dashboard",
       "description": "Tableau de bord : livre en cours, derniers jeux, statistiques.",
-      "version": "1.2.2",
+      "version": "1.2.3",
       "files": [
         "_meta.lua",
         "i18n_fr.lua",
@@ -401,7 +413,7 @@
       "dir": "dice.koplugin",
       "fullname": "Dice",
       "description": "Roll virtual dice with a configurable number of faces and dice.",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -418,9 +430,10 @@
       "dir": "doubleornothing.koplugin",
       "fullname": "Double or Nothing Party",
       "description": "Quiz where each team can bank their points or double the pot on a harder question.",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "files": [
         "_meta.lua",
+        "i18n_fr.lua",
         "main.lua",
         "screen.lua"
       ],
@@ -432,12 +445,13 @@
       "dir": "echecs.koplugin",
       "fullname": "Échecs",
       "description": "Jeu d'échecs avec IA",
-      "version": "1.1.3",
+      "version": "1.1.4",
       "files": [
         "_meta.lua",
         "board.lua",
         "board_widget.lua",
         "chess_pieces.lua",
+        "i18n_fr.lua",
         "main.lua",
         "screen.lua"
       ],
@@ -449,7 +463,7 @@
       "dir": "fifteen.koplugin",
       "fullname": "Fifteen Puzzle",
       "description": "Sliding tile puzzle. Reassemble the scrambled picture.",
-      "version": "1.1.6",
+      "version": "1.1.7",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -466,11 +480,12 @@
       "dir": "fillomino.koplugin",
       "fullname": "Fillomino",
       "description": "Fill regions with matching numbers",
-      "version": "1.1.2",
+      "version": "1.1.3",
       "files": [
         "_meta.lua",
         "board.lua",
         "board_widget.lua",
+        "i18n_fr.lua",
         "main.lua",
         "screen.lua"
       ],
@@ -482,7 +497,7 @@
       "dir": "futoshiki.koplugin",
       "fullname": "Futoshiki",
       "description": "Fill the grid with digits satisfying row, column and inequality constraints.",
-      "version": "1.1.2",
+      "version": "1.1.3",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -499,7 +514,7 @@
       "dir": "galaxies.koplugin",
       "fullname": "Galaxies",
       "description": "Divide the grid into rotationally symmetric galaxies",
-      "version": "1.1.2",
+      "version": "1.1.3",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -516,11 +531,12 @@
       "dir": "go.koplugin",
       "fullname": "Go",
       "description": "Classic territory and capture board game.",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "files": [
         "_meta.lua",
         "board.lua",
         "board_widget.lua",
+        "i18n_fr.lua",
         "main.lua",
         "screen.lua"
       ],
@@ -532,11 +548,12 @@
       "dir": "gomoku.koplugin",
       "fullname": "Gomoku",
       "description": "Gomoku — 5 pions en ligne sur 15\\xC3\\xB715.",
-      "version": "1.1.2",
+      "version": "1.1.3",
       "files": [
         "_meta.lua",
         "board.lua",
         "board_widget.lua",
+        "i18n_fr.lua",
         "main.lua",
         "screen.lua"
       ],
@@ -548,7 +565,7 @@
       "dir": "hangman.koplugin",
       "fullname": "Hangman",
       "description": "Classic word-guessing game. Reveal the word before the hangman is drawn.",
-      "version": "1.1.2",
+      "version": "1.1.3",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -565,7 +582,7 @@
       "dir": "hanoi.koplugin",
       "fullname": "Towers of Hanoi",
       "description": "Move disks between pegs",
-      "version": "1.1.4",
+      "version": "1.1.5",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -582,11 +599,12 @@
       "dir": "hidato.koplugin",
       "fullname": "Hidato",
       "description": "Connect numbers 1-N on a grid",
-      "version": "1.1.2",
+      "version": "1.1.3",
       "files": [
         "_meta.lua",
         "board.lua",
         "board_widget.lua",
+        "i18n_fr.lua",
         "main.lua",
         "screen.lua"
       ],
@@ -598,11 +616,12 @@
       "dir": "hitori.koplugin",
       "fullname": "Hitori",
       "description": "Blacken cells so no number repeats in any row or column.",
-      "version": "1.1.2",
+      "version": "1.1.3",
       "files": [
         "_meta.lua",
         "board.lua",
         "board_widget.lua",
+        "i18n_fr.lua",
         "main.lua",
         "screen.lua"
       ],
@@ -614,11 +633,13 @@
       "dir": "hypersudoku.koplugin",
       "fullname": "Hyper Sudoku",
       "description": "Sudoku with 4 extra inner regions",
-      "version": "1.2.5",
+      "version": "1.2.6",
       "files": [
         "_meta.lua",
         "board.lua",
         "board_widget.lua",
+        "i18n.lua",
+        "i18n_fr.lua",
         "main.lua",
         "screen.lua"
       ],
@@ -630,11 +651,12 @@
       "dir": "kakuro.koplugin",
       "fullname": "Kakuro",
       "description": "Fill white cells with digits 1–9 so each run sums to its clue.",
-      "version": "1.1.2",
+      "version": "1.1.3",
       "files": [
         "_meta.lua",
         "board.lua",
         "board_widget.lua",
+        "i18n_fr.lua",
         "main.lua",
         "screen.lua"
       ],
@@ -646,7 +668,7 @@
       "dir": "kenken.koplugin",
       "fullname": "KenKen",
       "description": "Fill the grid with digits satisfying row, column and cage arithmetic constraints.",
-      "version": "1.1.3",
+      "version": "1.1.4",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -663,11 +685,13 @@
       "dir": "sudokukiller.koplugin",
       "fullname": "Killer Sudoku",
       "description": "Play touch-friendly Killer Sudoku puzzles with caged sums, resume later, and reveal the solution when needed.",
-      "version": "1.2.5",
+      "version": "1.2.6",
       "files": [
         "_meta.lua",
         "board.lua",
         "board_widget.lua",
+        "i18n.lua",
+        "i18n_fr.lua",
         "main.lua",
         "screen.lua",
         "common/base_board.lua",
@@ -683,7 +707,7 @@
       "dir": "lightup.koplugin",
       "fullname": "Light Up",
       "description": "Akari: place light bulbs to illuminate every white cell without conflicts.",
-      "version": "1.1.6",
+      "version": "1.1.7",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -700,7 +724,7 @@
       "dir": "mastermind.koplugin",
       "fullname": "Mastermind",
       "description": "Deduce the secret code from black and white peg feedback.",
-      "version": "1.1.2",
+      "version": "1.1.3",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -717,7 +741,7 @@
       "dir": "masyu.koplugin",
       "fullname": "Masyu",
       "description": "Draw a loop through black and white pearls",
-      "version": "1.1.2",
+      "version": "1.1.3",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -734,7 +758,7 @@
       "dir": "memory.koplugin",
       "fullname": "Mémoire",
       "description": "Jeu de mémoire — trouvez les paires de cartes.",
-      "version": "1.1.2",
+      "version": "1.1.3",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -750,7 +774,7 @@
       "dir": "minesweeper.koplugin",
       "fullname": "Minesweeper",
       "description": "Classic mine-sweeping game. Reveal all safe cells without triggering a mine.",
-      "version": "1.1.6",
+      "version": "1.1.7",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -767,11 +791,12 @@
       "dir": "nonogram.koplugin",
       "fullname": "Nonogram",
       "description": "Fill cells by row and column clues to reveal the hidden picture.",
-      "version": "1.1.2",
+      "version": "1.1.3",
       "files": [
         "_meta.lua",
         "board.lua",
         "board_widget.lua",
+        "i18n_fr.lua",
         "main.lua",
         "screen.lua"
       ],
@@ -783,7 +808,7 @@
       "dir": "numberlink.koplugin",
       "fullname": "Numberlink",
       "description": "Connect each pair of matching numbers with a path covering every cell.",
-      "version": "1.1.2",
+      "version": "1.1.3",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -800,11 +825,12 @@
       "dir": "numbrix.koplugin",
       "fullname": "Numbrix",
       "description": "Snake-like number path puzzle",
-      "version": "1.1.2",
+      "version": "1.1.3",
       "files": [
         "_meta.lua",
         "board.lua",
         "board_widget.lua",
+        "i18n_fr.lua",
         "main.lua",
         "screen.lua"
       ],
@@ -816,11 +842,12 @@
       "dir": "nurikabe.koplugin",
       "fullname": "Nurikabe",
       "description": "Paint the river: connect islands of numbered white cells.",
-      "version": "1.1.2",
+      "version": "1.1.3",
       "files": [
         "_meta.lua",
         "board.lua",
         "board_widget.lua",
+        "i18n_fr.lua",
         "main.lua",
         "screen.lua"
       ],
@@ -835,6 +862,8 @@
       "version": "1.0.1",
       "files": [
         "_meta.lua",
+        "i18n.lua",
+        "i18n_fr.lua",
         "main.lua"
       ],
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/koreader-plugins/master/opdsdir.koplugin/"
@@ -844,11 +873,12 @@
       "dir": "othello.koplugin",
       "fullname": "Othello",
       "description": "Othello/Reversi 8x8 avec IA.",
-      "version": "1.1.2",
+      "version": "1.1.3",
       "files": [
         "_meta.lua",
         "board.lua",
         "board_widget.lua",
+        "i18n_fr.lua",
         "main.lua",
         "screen.lua"
       ],
@@ -860,7 +890,7 @@
       "dir": "pickomino.koplugin",
       "fullname": "Pickomino",
       "description": "Combinatorial dice and tile logic game",
-      "version": "1.1.2",
+      "version": "1.1.3",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -877,9 +907,10 @@
       "dir": "pictionary.koplugin",
       "fullname": "Pictionary Party",
       "description": "Draw words against the clock — team-based party game.",
-      "version": "1.1.2",
+      "version": "1.1.3",
       "files": [
         "_meta.lua",
+        "i18n_fr.lua",
         "main.lua",
         "screen.lua",
         "words.lua"
@@ -892,9 +923,11 @@
       "dir": "pluginmanager.koplugin",
       "fullname": "Plugin Manager",
       "description": "Check for updates and install game plugins from the koreader-plugins repository.",
-      "version": "1.1.17",
+      "version": "1.1.18",
       "files": [
         "_meta.lua",
+        "i18n.lua",
+        "i18n_fr.lua",
         "main.lua"
       ],
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/pluginmanager.koplugin/main/"
@@ -904,11 +937,12 @@
       "dir": "puissance4.koplugin",
       "fullname": "Puissance 4",
       "description": "Connect Four — alignez 4 pièces avec IA.",
-      "version": "1.1.2",
+      "version": "1.1.3",
       "files": [
         "_meta.lua",
         "board.lua",
         "board_widget.lua",
+        "i18n_fr.lua",
         "main.lua",
         "screen.lua"
       ],
@@ -920,9 +954,10 @@
       "dir": "quiz.koplugin",
       "fullname": "Quiz Party",
       "description": "General knowledge quiz — everyone writes their answer, then reveal.",
-      "version": "1.2.1",
+      "version": "1.2.2",
       "files": [
         "_meta.lua",
+        "i18n_fr.lua",
         "main.lua",
         "quiz_questions_fr.lua",
         "screen.lua"
@@ -935,11 +970,12 @@
       "dir": "rippleeffect.koplugin",
       "fullname": "Ripple Effect",
       "description": "Fill rooms so each number appears once per row/col",
-      "version": "1.1.2",
+      "version": "1.1.3",
       "files": [
         "_meta.lua",
         "board.lua",
         "board_widget.lua",
+        "i18n_fr.lua",
         "main.lua",
         "screen.lua"
       ],
@@ -951,11 +987,13 @@
       "dir": "sandwichsudoku.koplugin",
       "fullname": "Sandwich Sudoku",
       "description": "Sudoku with sandwich sum clues",
-      "version": "1.2.5",
+      "version": "1.2.6",
       "files": [
         "_meta.lua",
         "board.lua",
         "board_widget.lua",
+        "i18n.lua",
+        "i18n_fr.lua",
         "main.lua",
         "screen.lua"
       ],
@@ -967,7 +1005,7 @@
       "dir": "shikaku.koplugin",
       "fullname": "Shikaku",
       "description": "Divide the grid into rectangles",
-      "version": "1.1.2",
+      "version": "1.1.3",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -984,11 +1022,12 @@
       "dir": "skyscraper.koplugin",
       "fullname": "Skyscraper",
       "description": "Place buildings by skyline clues",
-      "version": "1.1.2",
+      "version": "1.1.3",
       "files": [
         "_meta.lua",
         "board.lua",
         "board_widget.lua",
+        "i18n_fr.lua",
         "main.lua",
         "screen.lua"
       ],
@@ -1000,7 +1039,7 @@
       "dir": "slitherlink.koplugin",
       "fullname": "Slitherlink",
       "description": "Draw a single closed loop along grid edges matching the numbered clues.",
-      "version": "1.1.2",
+      "version": "1.1.3",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -1017,7 +1056,7 @@
       "dir": "sokoban.koplugin",
       "fullname": "Sokoban",
       "description": "Push all crates onto their targets. You can push but not pull.",
-      "version": "1.1.6",
+      "version": "1.1.7",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -1035,11 +1074,12 @@
       "dir": "solitaire.koplugin",
       "fullname": "Solitaire",
       "description": "Classic Klondike solitaire card game.",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "files": [
         "_meta.lua",
         "board.lua",
         "board_widget.lua",
+        "i18n_fr.lua",
         "main.lua",
         "screen.lua"
       ],
@@ -1051,7 +1091,7 @@
       "dir": "starbattle.koplugin",
       "fullname": "Star Battle",
       "description": "Place stars with one per row/col/region",
-      "version": "1.1.3",
+      "version": "1.1.4",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -1068,9 +1108,11 @@
       "dir": "startmenu.koplugin",
       "fullname": "Startup Menu",
       "description": "Shows a choice screen on KOReader startup: read or launch a game.",
-      "version": "1.1.2",
+      "version": "1.1.3",
       "files": [
         "_meta.lua",
+        "i18n.lua",
+        "i18n_fr.lua",
         "main.lua"
       ],
       "common_lib": "common",
@@ -1081,12 +1123,14 @@
       "dir": "sudoku.koplugin",
       "fullname": "Sudoku",
       "description": "Play touch-friendly Sudoku puzzles, resume later, and reveal the solution when needed.",
-      "version": "2.2.4",
+      "version": "2.2.5",
       "files": [
         "_meta.lua",
         "board.lua",
         "board_widget.lua",
         "daily_seed.lua",
+        "i18n.lua",
+        "i18n_fr.lua",
         "main.lua",
         "screen.lua",
         "common/base_board.lua",
@@ -1102,11 +1146,13 @@
       "dir": "sudokux.koplugin",
       "fullname": "Sudoku X",
       "description": "Sudoku with diagonal constraints",
-      "version": "1.2.5",
+      "version": "1.2.6",
       "files": [
         "_meta.lua",
         "board.lua",
         "board_widget.lua",
+        "i18n.lua",
+        "i18n_fr.lua",
         "main.lua",
         "screen.lua"
       ],
@@ -1118,11 +1164,12 @@
       "dir": "suguru.koplugin",
       "fullname": "Suguru",
       "description": "Fill regions with non-repeating numbers",
-      "version": "1.1.2",
+      "version": "1.1.3",
       "files": [
         "_meta.lua",
         "board.lua",
         "board_widget.lua",
+        "i18n_fr.lua",
         "main.lua",
         "screen.lua"
       ],
@@ -1134,9 +1181,10 @@
       "dir": "taboo.koplugin",
       "fullname": "Taboo Party",
       "description": "Describe words without saying the forbidden ones — team buzzer party game.",
-      "version": "1.5.2",
+      "version": "1.5.3",
       "files": [
         "_meta.lua",
+        "i18n_fr.lua",
         "main.lua",
         "screen.lua",
         "taboo_cards_fr.lua"
@@ -1152,7 +1200,7 @@
       "dir": "tapa.koplugin",
       "fullname": "Tapa",
       "description": "Shade cells to form a connected wall",
-      "version": "1.1.2",
+      "version": "1.1.3",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -1169,7 +1217,7 @@
       "dir": "tatami.koplugin",
       "fullname": "Tatami",
       "description": "Fill the grid with 1x2 dominoes",
-      "version": "1.1.2",
+      "version": "1.1.3",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -1186,7 +1234,7 @@
       "dir": "tents.koplugin",
       "fullname": "Tents and Trees",
       "description": "Logic puzzle: pair each tree with an adjacent tent, no touching tents.",
-      "version": "1.1.6",
+      "version": "1.1.7",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -1203,11 +1251,13 @@
       "dir": "thermosudoku.koplugin",
       "fullname": "Thermo Sudoku",
       "description": "Sudoku with thermometer constraints",
-      "version": "1.2.5",
+      "version": "1.2.6",
       "files": [
         "_meta.lua",
         "board.lua",
         "board_widget.lua",
+        "i18n.lua",
+        "i18n_fr.lua",
         "main.lua",
         "screen.lua"
       ],
@@ -1219,11 +1269,13 @@
       "dir": "windoku.koplugin",
       "fullname": "Windoku",
       "description": "Sudoku with 4 windowed inner regions",
-      "version": "1.1.5",
+      "version": "1.1.6",
       "files": [
         "_meta.lua",
         "board.lua",
         "board_widget.lua",
+        "i18n.lua",
+        "i18n_fr.lua",
         "main.lua",
         "screen.lua"
       ],
@@ -1235,11 +1287,12 @@
       "dir": "wordladder.koplugin",
       "fullname": "Word Ladder",
       "description": "Change one word into another, one letter at a time.",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "files": [
         "_meta.lua",
         "board.lua",
         "board_widget.lua",
+        "i18n_fr.lua",
         "main.lua",
         "screen.lua",
         "words_en.lua"
@@ -1252,7 +1305,7 @@
       "dir": "wordle.koplugin",
       "fullname": "Wordle",
       "description": "Guess the hidden word in 6 tries. Letter hints guide each attempt.",
-      "version": "1.1.2",
+      "version": "1.1.3",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -1270,7 +1323,7 @@
       "dir": "wordsearch.koplugin",
       "fullname": "Word Search",
       "description": "Find hidden words in a letter grid",
-      "version": "1.1.4",
+      "version": "1.1.5",
       "files": [
         "_meta.lua",
         "board.lua",
