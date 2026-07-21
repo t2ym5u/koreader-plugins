@@ -26,6 +26,10 @@ FILES=(base_board.lua base_board_widget.lua base_screen.lua puzzle_generator.lua
 #                                         algorithm, no extra_regions needed.
 #   sudoku/base_board_widget.lua      -- 3-line max_size clamp for its
 #                                         portrait-layout sizing.
+#   sudoku/base_screen.lua            -- generateWithProgress takes an extra
+#                                         rng param (for Daily Challenge's
+#                                         date-seeded generation), which no
+#                                         other variant needs.
 #   sudokukiller/base_board_widget.lua -- "single-cell cages as given values;
 #                                         dashed 3x3 borders" rendering for
 #                                         cage-sum clues.
@@ -37,6 +41,7 @@ FILES=(base_board.lua base_board_widget.lua base_screen.lua puzzle_generator.lua
 KNOWN_DIVERGENCES=(
   "sudoku:puzzle_generator.lua"
   "sudoku:base_board_widget.lua"
+  "sudoku:base_screen.lua"
   "sudokukiller:base_board_widget.lua"
   "betweenlines:base_board.lua"
   "betweenlines:base_screen.lua"
