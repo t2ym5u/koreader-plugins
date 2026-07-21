@@ -30,9 +30,15 @@ have been tested, and every bug found in this pass has now been fixed —
 - **Clean, no bug**: battleship, fillomino, hitori, shikaku, slitherlink,
   sudokukiller (different failure shape, already acceptable by precedent),
   tents, wordsearch
-- **Not yet started**: the "lower priority" plugins and galaxies/masyu
-  (already tracked in [[project_generator_bugs_2026-07-17]], not re-tested
-  here) — see the tables below for what's left.
+- **Session 2 (same day)**: all 17 "lower priority" plugins tested/reviewed
+  — 0 bugs found (2 of the 17, dames/puissance4, turned out to have no
+  procedural generator at all). Regression specs added for the 7 plugins
+  fixed in session 1 that had zero test coverage (cave, hidato, numbrix,
+  starbattle, rippleeffect, suguru, tatami). See the lower-priority table
+  below for details.
+- **Still open**: galaxies/masyu (already tracked in
+  [[project_generator_bugs_2026-07-17]], deep structural issues, not
+  re-tested here) — the only remaining known generator bugs in the repo.
 
 ## Status legend
 - ⬜ not started
@@ -80,25 +86,47 @@ have been tested, and every bug found in this pass has now been fixed —
 (worth a lighter pass — mainly checking it doesn't hang or crash — but not the
 proven bug shape above)
 
+**Status as of 2026-07-21 (session 2): all 17 tested/reviewed, 0 bugs found.**
+The 7 sudoku-family plugins (arrowsudoku/hypersudoku/sandwichsudoku/sudokux/
+thermosudoku/windoku/sudoku) share `sudoku-common`'s `generateSolvedBoard`
+(full backtracking construction, standard NxN sudoku always has a valid
+fill — no attempt cap that can be exhausted) and `createPuzzle` (digs holes
+one at a time, skips a cell rather than retrying/failing if removal would
+break uniqueness — no fallback branch exists). Verified via the
+`generateWithProgress` functional tests done the same session (0 crashes,
+`extra_regions` constraints — hyper boxes, diagonals — still hold in
+generated solutions across all 6 non-`sudoku` variants). `binairo`,
+`colornonogram`, `kenken`, `nonogram`, `numberlink`, `skyscraper` were run
+through a 50-trial-per-size/difficulty driver checking for crashes, hangs,
+and (for `colornonogram`'s bounded 100-attempt retry and `nonogram`'s
+unbounded `repeat...until` retry specifically) residual empty rows/columns
+after generation — 0 errors, 0 suspect boards, worst-case timing well under
+1s. `minesweeper` and `futoshiki` were code-reviewed (single-pass Fisher-Yates
+mine placement; existing spec suite) rather than driven — both already
+low-risk by construction, no retry/fallback pattern present. `dames` and
+`puissance4` have **no procedural generator at all** — `generate()` is just
+`self:reset()` to a fixed starting position (checkers/connect-4), so this
+bug class doesn't apply to them.
+
 | Plugin | Status | Notes |
 |---|---|---|
-| arrowsudoku | ⬜ | vendored, no common/ symlink |
-| binairo | ⬜ | |
-| colornonogram | ⬜ | |
-| dames | ⬜ | (checkers — likely no procedural gen, verify) |
-| futoshiki | ⬜ | has spec already |
-| hypersudoku | ⬜ | shares sudoku-common/puzzle_generator.lua (backtracking, not bounded-retry — lower risk) |
-| kenken | ⬜ | has spec already |
-| minesweeper | ⬜ | has spec already; mine placement is single-pass, unlikely to fail |
-| nonogram | ⬜ | has spec already |
-| numberlink | ⬜ | has spec already |
-| puissance4 | ⬜ | (connect-4 — likely no procedural gen, verify) |
-| sandwichsudoku | ⬜ | shares sudoku-common |
-| skyscraper | ⬜ | has spec already |
-| sudoku | ⬜ | shares sudoku-common |
-| sudokux | ⬜ | shares sudoku-common |
-| thermosudoku | ⬜ | vendored, no common/ symlink |
-| windoku | ⬜ | shares sudoku-common; was fixed 2026-07-17 for region-constraint bug, worth a fallback-rate check too |
+| arrowsudoku | ✅ | shares sudoku-common (backtracking, no retry/fallback branch) |
+| binairo | ✅ | backtracking `_fill`; 0/450 errors incl. worst case n=12, max 0.82s |
+| colornonogram | ✅ | bounded 100-attempt retry; 0/300 residual-empty-line after fix window |
+| dames | ➖ | no procedural generator — `generate()` is `self:reset()` |
+| futoshiki | ✅ | has spec, passing; no retry pattern |
+| hypersudoku | ✅ | shares sudoku-common; extra_regions (hyper boxes) verified valid |
+| kenken | ✅ | constructive cage growth, gracefully truncates, no retry |
+| minesweeper | ✅ | single-pass Fisher-Yates mine placement, can't fail |
+| nonogram | ✅ | unbounded `repeat...until` at n=10/15; 0/540 hangs or residual empty lines |
+| numberlink | ✅ | constructive serpentine path with a valid built-in fallback shape |
+| puissance4 | ➖ | no procedural generator — `generate()` is `self:reset()` |
+| sandwichsudoku | ✅ | shares sudoku-common (backtracking, no retry/fallback branch) |
+| skyscraper | ✅ | constructive Latin square + deterministic clues, no retry |
+| sudoku | ✅ | shares sudoku-common; own daily-challenge rng variant also verified |
+| sudokux | ✅ | shares sudoku-common; extra_regions (diagonals) verified valid |
+| thermosudoku | ✅ | shares sudoku-common (backtracking, no retry/fallback branch) |
+| windoku | ✅ | shares sudoku-common; extra_regions (windows) verified valid, region-constraint bug from 2026-07-17 stays fixed |
 
 ## Out of scope: no procedural puzzle generator (shuffle/deal/word-list/interactive only)
 
