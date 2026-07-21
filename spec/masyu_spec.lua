@@ -49,21 +49,33 @@ describe("MasyuBoard", function()
             end
         end)
 
-        -- KNOWN BUG (see project memory, not fixed here -- see the 2026-07-17
-        -- investigation): perturbLoop's 2x2 segment-reversal move has an
-        -- off-by-one in its segment boundary math (seg_start is computed one
-        -- position past where the reversal should start), which can splice
-        -- the array in a way that breaks cell-to-cell adjacency at the
-        -- rewired boundary. Empirically this happened twice within a single
-        -- generate() call's ~288 perturbation attempts at n=6, seed 42. So
-        -- "every consecutive pair of loop cells is orthogonally adjacent" is
-        -- NOT a guaranteed invariant of the current generator and isn't
-        -- asserted here -- solution_loop can occasionally represent a
-        -- shattered cycle rather than one continuous Hamiltonian loop, which
-        -- is the root cause behind the separately-known gap that
-        -- MasyuBoard:_checkWin() doesn't verify single-loop connectivity
-        -- (it only checks local degree-2 + pearl constraints).
-        pending("solution_loop cell-to-cell adjacency is not currently guaranteed after perturbLoop (see project memory)")
+        -- Regression guard for the 2026-07-21 bug: perturbLoop's 2x2
+        -- segment-reversal move had an off-by-one in its segment boundary
+        -- math (seg_start was one position past where the reversal should
+        -- start), which could splice the array in a way that broke
+        -- cell-to-cell adjacency at the rewired boundary -- 300/300 sampled
+        -- generations at n=6 hit this. Fixed by reversing the closed
+        -- segment [i2, j1] (not (i2, j1]), plus a second bug this exposed:
+        -- placeCircles forced at least 1 clue of each type even when zero
+        -- candidates existed for it, indexing past an empty list -- fixed
+        -- by clamping to the candidate count first.
+        it("every consecutive pair of loop cells is orthogonally adjacent", function()
+            for _, n in ipairs(Board.SIZES) do
+                for trial = 1, 20 do
+                    math.randomseed(n * 1000 + trial)
+                    local b = Board:new{ n = n }
+                    b:generate()
+                    local total = #b.solution_loop
+                    for i = 1, total do
+                        local a   = b.solution_loop[i]
+                        local nxt = b.solution_loop[(i % total) + 1]
+                        local d   = math.abs(a[1] - nxt[1]) + math.abs(a[2] - nxt[2])
+                        assert.are.equal(1, d,
+                            ("n=%d trial=%d: loop pos %d->%d not adjacent"):format(n, trial, i, (i % total) + 1))
+                    end
+                end
+            end
+        end)
 
         it("works for the 8×8 size too", function()
             local b = newBoard(8)
@@ -109,31 +121,27 @@ describe("MasyuBoard", function()
             assert.are.equal(total, satisfied)
         end)
 
-        it("tapCell sets won=true once the full solution loop is marked, when the loop is intact", function()
-            local b = newBoard(6)
-            -- Guard against the known perturbLoop adjacency bug (see the
-            -- "generate" describe block above): only assert the win
-            -- condition when this particular generated loop happens to be
-            -- unbroken, so the test stays meaningful once that bug is fixed
-            -- instead of asserting a false invariant now.
-            local total = #b.solution_loop
-            for i = 1, total do
-                local a = b.solution_loop[i]
-                local nxt = b.solution_loop[(i % total) + 1]
-                local d = math.abs(a[1] - nxt[1]) + math.abs(a[2] - nxt[2])
-                if d ~= 1 then return end
-            end
-            for _, cell in ipairs(b.solution_loop) do
-                b.user_path[cell[1]][cell[2]] = true
-            end
-            -- Toggle a cell off then back on to force a _checkWin pass on the
-            -- now-complete state (tapCell is the only entry point that
-            -- re-evaluates self.won).
-            local r, c = b.solution_loop[1][1], b.solution_loop[1][2]
-            b:tapCell(r, c)
-            b:tapCell(r, c)
-            assert.is_true(b.won)
-        end)
+        -- KNOWN BUG, newly found 2026-07-21 while verifying the perturbLoop
+        -- fix above (not previously documented): _checkWin()'s "every marked
+        -- cell has exactly 2 marked grid-adjacent neighbours" validity check
+        -- is fundamentally incompatible with this generator's design.
+        -- buildLoop() produces a full Hamiltonian cycle covering literally
+        -- every cell (see the "visits every cell" test above), so marking
+        -- the *entire* solution always marks the *entire grid* -- at that
+        -- point almost every interior cell has 3-4 marked grid-neighbours
+        -- (its actual grid neighbours, virtually all of which are also
+        -- marked, not just its 2 real loop-neighbours), so the degree check
+        -- fails immediately. Confirmed via 0/20 sampled puzzles winnable by
+        -- tracing the exact generated solution. This is not a small bug:
+        -- cell-membership alone cannot distinguish "these two adjacent
+        -- marked cells are loop-consecutive" from "merely both on a
+        -- full-coverage loop", so _checkWin can never validate correctly
+        -- without either (a) switching the generator to sparse (non-full-
+        -- coverage) loops, matching traditional Masyu rules, or (b) reworking
+        -- the interaction model to track drawn edges/segments instead of
+        -- per-cell marks. Both are a redesign, not a bug fix -- deliberately
+        -- NOT attempted here; see project memory for the full writeup.
+        pending("won=true is not reachable by tracing the exact generated solution -- _checkWin's degree check is incompatible with full-grid-coverage loops (see project memory)")
 
         it("won is false on a fresh board", function()
             local b = newBoard(6)

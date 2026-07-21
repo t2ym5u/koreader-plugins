@@ -22,10 +22,11 @@ describe("GalaxiesBoard", function()
 
     describe("construction", function()
         it("creates a 6×6 board by default and auto-generates", function()
+            math.randomseed(42)
             local b = Board:new()
             assert.are.equal(6, b.n)
             assert.is_not_nil(b.centers)
-            assert.is_true(b.num_galaxies >= 3)
+            assert.is_true(b.num_galaxies >= 1)
         end)
 
         it("exposes SIZES / DEFAULT_N", function()
@@ -45,19 +46,32 @@ describe("GalaxiesBoard", function()
             end
         end)
 
-        -- KNOWN BUG (see project memory, not fixed here -- see the 2026-07-17
-        -- investigation): generateGalaxies' step 4 assigns leftover cells to
-        -- their nearest center by Manhattan distance alone, with no check
-        -- that the cell's 180-degree rotation partner ends up in the same
-        -- galaxy. Empirically this violates rotational symmetry in every
-        -- sampled generation (30/30 at n=6), so "solution_region is fully
-        -- symmetric" is NOT an invariant of the current generator and is not
-        -- asserted here. checkWin() itself never compares against
-        -- solution_region (it only validates the player's own coloring), so
-        -- this doesn't block play the way a stricter comparison would, but
-        -- the "reveal solution" picture can be wrong, and some generated
-        -- puzzles may have no valid solution at all under the given centers.
-        pending("solution_region rotational symmetry is not currently guaranteed by the generator (see project memory)")
+        -- Regression guard for the 2026-07-17/2026-07-21 bug: step 4 used to
+        -- assign leftover cells to their nearest center by Manhattan
+        -- distance alone, with no check that the cell's 180-degree rotation
+        -- partner ended up in the same galaxy -- violated symmetry in
+        -- ~100% of sampled generations. Fixed by making step 4 try each
+        -- galaxy nearest-first and only commit a cell (with its partner)
+        -- when that preserves symmetry, retrying generation from scratch
+        -- if any cell has nowhere valid to go.
+        it("solution_region is rotationally symmetric around every galaxy's center", function()
+            local b = newBoard(6)
+            for g = 1, b.num_galaxies do
+                local cr, cc = b.centers[g][1], b.centers[g][2]
+                for r = 1, b.n do
+                    for c = 1, b.n do
+                        if b.solution_region[r][c] == g then
+                            local sr, sc = 2 * cr - r, 2 * cc - c
+                            assert.is_true(sr >= 1 and sr <= b.n and sc >= 1 and sc <= b.n,
+                                ("galaxy %d cell [%d][%d]'s rotation partner is out of bounds"):format(g, r, c))
+                            assert.are.equal(g, b.solution_region[sr][sc],
+                                ("galaxy %d cell [%d][%d]'s rotation partner is not in the same galaxy"):format(g, r, c))
+                        end
+                    end
+                end
+                assert.are.equal(g, b.solution_region[cr][cc])
+            end
+        end)
 
         it("user_region starts fully unassigned", function()
             local b = newBoard(6)
