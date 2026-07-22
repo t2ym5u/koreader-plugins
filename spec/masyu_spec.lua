@@ -12,10 +12,6 @@ describe("MasyuBoard", function()
         H.unload("board", "grid_utils")
     end)
 
-    -- generate() is a deterministic construction (Hamiltonian cycle +
-    -- perturbation), not a retry-loop generator — it always succeeds, but
-    -- buildLoop's construction assumes an even n, so only even sizes (the
-    -- game's own SIZES = {6,8}) are exercised here.
     local function newBoard(n)
         math.randomseed(42)
         local b = Board:new{ n = n or 6 }
@@ -38,27 +34,43 @@ describe("MasyuBoard", function()
     end)
 
     describe("generate", function()
-        it("solution_loop visits every cell of the grid exactly once", function()
-            local b = newBoard(6)
-            assert.are.equal(b.n * b.n, #b.solution_loop)
-            local seen = {}
-            for _, cell in ipairs(b.solution_loop) do
-                local key = cell[1] * 100 + cell[2]
-                assert.is_nil(seen[key], "cell visited twice by the loop")
-                seen[key] = true
+        -- Regression guard for the 2026-07-22 redesign: _checkWin() can only
+        -- validate a solution by grid-adjacency ("a marked cell is on the
+        -- loop iff it has exactly 2 marked neighbours"), which is only sound
+        -- for a CHORDLESS (induced) cycle -- no two loop cells that are
+        -- non-consecutive in the loop may be grid-adjacent. The previous
+        -- generator produced a full Hamiltonian cycle (100% coverage), which
+        -- always violates this. The generator now grows a sparse loop and
+        -- must never produce a chord.
+        it("solution_loop has no duplicate cells and no chords (non-consecutive cells are never grid-adjacent)", function()
+            for _, n in ipairs(Board.SIZES) do
+                for trial = 1, 20 do
+                    math.randomseed(n * 1000 + trial)
+                    local b     = Board:new{ n = n }
+                    b:generate()
+                    local total = #b.solution_loop
+                    local pos   = {}
+                    for i, cell in ipairs(b.solution_loop) do
+                        local key = cell[1] * 100 + cell[2]
+                        assert.is_nil(pos[key], "cell visited twice by the loop")
+                        pos[key] = i
+                    end
+                    for i, cell in ipairs(b.solution_loop) do
+                        for _, d in ipairs{ {-1,0}, {1,0}, {0,-1}, {0,1} } do
+                            local nr, nc = cell[1] + d[1], cell[2] + d[2]
+                            local j = pos[nr * 100 + nc]
+                            if j then
+                                local dist     = math.abs(i - j)
+                                local cyc_dist = math.min(dist, total - dist)
+                                assert.are.equal(1, cyc_dist,
+                                    ("n=%d trial=%d: chord between loop positions %d and %d"):format(n, trial, i, j))
+                            end
+                        end
+                    end
+                end
             end
         end)
 
-        -- Regression guard for the 2026-07-21 bug: perturbLoop's 2x2
-        -- segment-reversal move had an off-by-one in its segment boundary
-        -- math (seg_start was one position past where the reversal should
-        -- start), which could splice the array in a way that broke
-        -- cell-to-cell adjacency at the rewired boundary -- 300/300 sampled
-        -- generations at n=6 hit this. Fixed by reversing the closed
-        -- segment [i2, j1] (not (i2, j1]), plus a second bug this exposed:
-        -- placeCircles forced at least 1 clue of each type even when zero
-        -- candidates existed for it, indexing past an empty list -- fixed
-        -- by clamping to the candidate count first.
         it("every consecutive pair of loop cells is orthogonally adjacent", function()
             for _, n in ipairs(Board.SIZES) do
                 for trial = 1, 20 do
@@ -77,9 +89,13 @@ describe("MasyuBoard", function()
             end
         end)
 
-        it("works for the 8×8 size too", function()
-            local b = newBoard(8)
-            assert.are.equal(64, #b.solution_loop)
+        it("produces a sparse loop (not full-grid coverage) for both sizes", function()
+            for _, n in ipairs(Board.SIZES) do
+                local b = newBoard(n)
+                assert.is_true(#b.solution_loop < n * n,
+                    ("n=%d: loop covers the entire grid (%d cells) -- checkWin can never validate a full-coverage loop"):format(n, #b.solution_loop))
+                assert.is_true(#b.solution_loop >= 4)
+            end
         end)
 
         it("places at least one clue", function()
@@ -121,27 +137,25 @@ describe("MasyuBoard", function()
             assert.are.equal(total, satisfied)
         end)
 
-        -- KNOWN BUG, newly found 2026-07-21 while verifying the perturbLoop
-        -- fix above (not previously documented): _checkWin()'s "every marked
-        -- cell has exactly 2 marked grid-adjacent neighbours" validity check
-        -- is fundamentally incompatible with this generator's design.
-        -- buildLoop() produces a full Hamiltonian cycle covering literally
-        -- every cell (see the "visits every cell" test above), so marking
-        -- the *entire* solution always marks the *entire grid* -- at that
-        -- point almost every interior cell has 3-4 marked grid-neighbours
-        -- (its actual grid neighbours, virtually all of which are also
-        -- marked, not just its 2 real loop-neighbours), so the degree check
-        -- fails immediately. Confirmed via 0/20 sampled puzzles winnable by
-        -- tracing the exact generated solution. This is not a small bug:
-        -- cell-membership alone cannot distinguish "these two adjacent
-        -- marked cells are loop-consecutive" from "merely both on a
-        -- full-coverage loop", so _checkWin can never validate correctly
-        -- without either (a) switching the generator to sparse (non-full-
-        -- coverage) loops, matching traditional Masyu rules, or (b) reworking
-        -- the interaction model to track drawn edges/segments instead of
-        -- per-cell marks. Both are a redesign, not a bug fix -- deliberately
-        -- NOT attempted here; see project memory for the full writeup.
-        pending("won=true is not reachable by tracing the exact generated solution -- _checkWin's degree check is incompatible with full-grid-coverage loops (see project memory)")
+        -- Regression guard for the 2026-07-22 fix: this used to be
+        -- unreachable (pending()) because the generator produced a
+        -- full-coverage loop -- see the chordless-loop comment above
+        -- generate(). Tracing the exact generated solution must now win.
+        it("marking the exact generated solution wins, for both sizes", function()
+            for _, n in ipairs(Board.SIZES) do
+                for trial = 1, 20 do
+                    math.randomseed(n * 2000 + trial)
+                    local b = Board:new{ n = n }
+                    b:generate()
+                    for _, cell in ipairs(b.solution_loop) do
+                        b.user_path[cell[1]][cell[2]] = true
+                    end
+                    b:_checkWin()
+                    assert.is_true(b.won,
+                        ("n=%d trial=%d: exact solution did not satisfy _checkWin()"):format(n, trial))
+                end
+            end
+        end)
 
         it("won is false on a fresh board", function()
             local b = newBoard(6)
