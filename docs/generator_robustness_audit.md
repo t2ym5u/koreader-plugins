@@ -514,8 +514,23 @@ full writeup.
 | bridges | 🐛 **fixed (2026-07-27)** | Simpler than classic Hashiwokakero here: `tapBridge` only lets the player adjust bridge counts on connection slots the generator already chose (clamped to that slot's solution count), never invent a new connection — so the graph topology is fixed and already crossing-free by construction, and solving is just "how many bridges (0-2) per fixed edge". Turned out to already be ~93-100% unique by construction once the counter's own forward-checking bug was fixed (see above) — much lower severity than the rest of this tier. Verify-and-retry closes the remaining gap: 20/20 unique after, still near-instant. |
 | shikaku | 🐛 **fixed (2026-07-27)** | One random clue-cell position per rectangle, zero uniqueness verification — severe (0/15 unique at n=8/n=10, every difficulty). Fixed generate+verify style, but cheaply: repicking which cell within a fixed rectangle holds the clue (up to 25 times) is far cheaper than re-splitting the grid, and turned out to be enough on its own most of the time before falling back to a fresh partition (up to 40 times). 20/20 unique at every size/difficulty after the fix, worst case ~0.15s avg (n=10). |
 | galaxies | ⬜ not started | already deferred for a structural generation bug — re-check this dimension once/if that's resolved |
-| cave | ⬜ not started | need to read the ruleset first, unclear if "solvability" even applies the same way |
-| tatami | ⬜ not started | now generated constructively (100% valid by construction per the robustness audit) — likely low risk, but the *puzzle-from-solution clue* step (if any) hasn't been checked for this dimension |
+| cave | 🐛 **fixed (2026-07-28, partial at n=7/8-medium)** | Literal full-grid comparison; `generate()` revealed a flat fraction of visibility clues from a random cave shape with zero uniqueness check. Measured pre-fix: severe (n=6/hard 0/10, n=8/easy 1/15). Needed TWO sound pruning rules to be tractable at all: bidirectional future-connectivity (mirrors numberlink's per-color reachability check — after every cell decision, verify decided shaded cells are still mutually reachable via shaded-or-undecided cells, and same for unshaded) plus per-clue visibility bounds (a clue's ray running into undecided territory has a computable min/max reach; reject immediately if the target falls outside that range) — together cut worst-case latency from ~56s to sub-second in most cases. Fixed generate+verify style: escalate the clue-keep ratio in bounded steps per cave shape before drawing a fresh one. n=6: 100% unique at every difficulty (<0.5s). n=7/n=8: mostly 100%, with n=7/medium (~65%) and n=8/medium (~75%) as honest partial spots (generate()'s own verification occasionally can't conclude in time, falls back to best structurally-valid candidate — never worse than pre-fix). Worst case ~7.9s at n=8/hard. |
+| tatami | ✅ **audited, no bug (2026-07-28)** | Provably always unique, not just empirically — `_checkWin()` is literal full-grid comparison, but `generateTiling()`'s own header comment already records an exhaustive prior-session result: exactly 2 valid (cross-violation-free) domino tilings exist per size (4×4 and 6×6), the `horiz=true`/`horiz=false` pinwheels. Checked directly: those 2 tilings share **zero cells in common** at either size, so any non-empty clue reveal (guaranteed by `selectGivens`'s `math.max(1, ...)`) instantly and unambiguously identifies the one true solution. No fix needed; persisted a lightweight regression guard for the "zero shared cells" invariant in case the tiling construction ever changes. |
+
+**Phase 5 (cave, tatami) completed 2026-07-28.** cave turned out to need
+the standard Tier-3 fix (zero uniqueness verification, same shape as
+nurikabe/hitori/masyu), just with an unusually hard-to-verify dual
+"both regions must stay connected" constraint — the numberlink-style
+bidirectional reachability check plus a cheap per-clue visibility-bounds
+check together made it tractable. tatami needed no fix at all: unlike
+every other Tier 3 game, its solution space is so constrained by the
+already-fixed constructive generator (exactly 2 possible tilings, period)
+that uniqueness could be proven analytically rather than measured
+statistically — worth remembering that "audit for a uniqueness bug"
+doesn't always mean "build a full CSP solver and measure a percentage";
+sometimes the generator's own structure makes the proof trivial once you
+look at it the right way. See `spec/solvability_audits/{cave,tatami}_
+solvability_check.lua` for the full writeups.
 
 ### Tier 4 — sudoku-variant siblings sharing `sudoku-common`
 
