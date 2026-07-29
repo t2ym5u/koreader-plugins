@@ -136,6 +136,30 @@ def list_vendored_common_files(plugin_dir: Path) -> list[str]:
     return files
 
 
+ASSET_EXTENSIONS = {".png"}
+
+
+def list_asset_files(plugin_dir: Path) -> list[str]:
+    """List static asset files (e.g. piece/tile PNGs) a plugin loads at
+    runtime from its own subdirectories, such as
+    echecs.koplugin/chess_pieces_img/, dames.koplugin/pieces_img/, and
+    fifteen.koplugin/images/.
+
+    Without this, list_plugin_files() (top-level .lua only) never surfaces
+    them, PluginManager never downloads them, and installed plugins are
+    silently stuck on their code's built-in fallback rendering forever.
+    `common/` is excluded since it ships via the separate common_lib path.
+    """
+    files = []
+    for sub in sorted(plugin_dir.iterdir()):
+        if not sub.is_dir() or sub.name == "common" or sub.name.startswith("."):
+            continue
+        for f in sorted(sub.rglob("*")):
+            if f.is_file() and f.suffix.lower() in ASSET_EXTENSIONS:
+                files.append(str(f.relative_to(plugin_dir)))
+    return files
+
+
 def matches_canonical(plugin_dir: Path, canonical_dir: Path) -> bool:
     """True if this plugin's common/*.lua is safe to serve from the shared
     library instead of vendoring: every file it has also exists in
@@ -231,7 +255,7 @@ def main() -> int:
             # Stub without version — intentionally omitted.
             continue
 
-        files  = list_plugin_files(koplugin_dir)
+        files  = list_plugin_files(koplugin_dir) + list_asset_files(koplugin_dir)
         family = common_family(koplugin_dir)
         common_lib = None
         if family == "game-common":
