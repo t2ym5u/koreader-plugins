@@ -6,7 +6,7 @@ A collection of game and utility plugins for [KOReader](https://koreader.rocks/)
 
 ---
 
-## 🎮 Games (71 plugins)
+## 🎮 Games (70 plugins)
 
 | Plugin | Description |
 |---|---|
@@ -15,7 +15,7 @@ A collection of game and utility plugins for [KOReader](https://koreader.rocks/)
 | [Arrow Sudoku](https://github.com/t2ym5u/arrowsudoku.koplugin) | Sudoku with arrow constraints |
 | [Backgammon](https://github.com/t2ym5u/backgammon.koplugin) | Classic 2-player dice and checker race game |
 | [Battleship Puzzle](https://github.com/t2ym5u/battleship.koplugin) | Locate hidden ships on a grid |
-| Binairo | Binary grid puzzle — fill rows and columns with equal 0s and 1s, no three in a row |
+| [Binairo](https://github.com/t2ym5u/binairo.koplugin) | Binary grid puzzle — fill rows and columns with equal 0s and 1s, no three in a row |
 | [Between Lines Sudoku](https://github.com/t2ym5u/betweenlines.koplugin) | Sudoku with between-lines constraints |
 | [Boggle](https://github.com/t2ym5u/boggle.koplugin) | Find words in a letter grid |
 | [Boggle Party](https://github.com/t2ym5u/boggleparty.koplugin) | Multiplayer Boggle |
@@ -87,6 +87,7 @@ A collection of game and utility plugins for [KOReader](https://koreader.rocks/)
 
 | Plugin | Description |
 |---|---|
+| [Dashboard](https://github.com/t2ym5u/dashboard.koplugin) | Home screen: current book, recent games, play stats |
 | [Plugin Manager](https://github.com/t2ym5u/pluginmanager.koplugin) | Check for updates and install plugins from this repo |
 | [Startup Menu](https://github.com/t2ym5u/startmenu.koplugin) | Launch plugins from a customisable home screen |
 | [opdsdir](opdsdir.koplugin/) | Per-catalog download folder and AES-256 encryption for the OPDS browser |
