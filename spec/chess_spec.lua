@@ -4,7 +4,7 @@ describe("ChessBoard", function()
     local Board, PGN
 
     setup(function()
-        package.path = "echecs.koplugin/?.lua;" .. package.path
+        package.path = "chess.koplugin/?.lua;" .. package.path
         Board = require("board")
         PGN   = require("pgn")
     end)
