@@ -41,7 +41,6 @@ A collection of game and utility plugins for [KOReader](https://koreader.rocks/)
 | [Towers of Hanoi](https://github.com/t2ym5u/hanoi.koplugin) | Move a stack of discs |
 | [Hidato](https://github.com/t2ym5u/hidato.koplugin) | Fill a grid with consecutive numbers |
 | [Hitori](https://github.com/t2ym5u/hitori.koplugin) | Blacken cells so no number repeats |
-| [Hyper Sudoku](https://github.com/t2ym5u/hypersudoku.koplugin) | Sudoku with extra inner squares |
 | [Kakuro](https://github.com/t2ym5u/kakuro.koplugin) | Crossword-style sum puzzle |
 | [KenKen](https://github.com/t2ym5u/kenken.koplugin) | Arithmetic cage puzzle |
 | [Light Up](https://github.com/t2ym5u/lightup.koplugin) | Place bulbs to illuminate the grid |

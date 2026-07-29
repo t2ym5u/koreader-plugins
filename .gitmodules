@@ -118,10 +118,6 @@
 	path = hitori.koplugin
 	url = https://github.com/t2ym5u/hitori.koplugin.git
 	branch = main
-[submodule "hypersudoku.koplugin"]
-	path = hypersudoku.koplugin
-	url = https://github.com/t2ym5u/hypersudoku.koplugin.git
-	branch = main
 [submodule "kakuro.koplugin"]
 	path = kakuro.koplugin
 	url = https://github.com/t2ym5u/kakuro.koplugin.git
