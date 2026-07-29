@@ -3,7 +3,7 @@
   "updated": "2026-07-29",
   "repo": "t2ym5u/koreader-plugins",
   "common": {
-    "version": "1.2.3-5-g46cc102",
+    "version": "1.2.3-6-g1780b64",
     "dir": "game-common",
     "files": [
       "daily_seed.lua",
@@ -93,7 +93,7 @@
       "dir": "arrowwords.koplugin",
       "fullname": "Mots fléchés",
       "description": "Arrow crossword puzzle",
-      "version": "1.2.8",
+      "version": "1.2.9",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -144,7 +144,7 @@
       "dir": "battleship.koplugin",
       "fullname": "Battleship Puzzle",
       "description": "Solitaire Bimaru: deduce the fleet from row and column clues.",
-      "version": "1.1.13",
+      "version": "1.1.14",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -347,7 +347,7 @@
       "dir": "crossword.koplugin",
       "fullname": "Crossword",
       "description": "Classic crossword puzzles. Fill the grid from the across and down clues.",
-      "version": "1.1.14",
+      "version": "1.1.15",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -365,7 +365,7 @@
       "dir": "cryptogram.koplugin",
       "fullname": "Cryptogram",
       "description": "Substitution cipher word puzzle",
-      "version": "1.1.12",
+      "version": "1.1.13",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -445,7 +445,7 @@
       "dir": "echecs.koplugin",
       "fullname": "Échecs",
       "description": "Jeu d'échecs avec IA",
-      "version": "1.1.11",
+      "version": "1.1.12",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -485,7 +485,7 @@
       "dir": "fillomino.koplugin",
       "fullname": "Fillomino",
       "description": "Fill regions with matching numbers",
-      "version": "1.1.10",
+      "version": "1.1.11",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -606,7 +606,7 @@
       "dir": "hidato.koplugin",
       "fullname": "Hidato",
       "description": "Connect numbers 1-N on a grid",
-      "version": "1.1.10",
+      "version": "1.1.11",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -623,7 +623,7 @@
       "dir": "hitori.koplugin",
       "fullname": "Hitori",
       "description": "Blacken cells so no number repeats in any row or column.",
-      "version": "1.1.10",
+      "version": "1.1.11",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -640,7 +640,7 @@
       "dir": "kakuro.koplugin",
       "fullname": "Kakuro",
       "description": "Fill white cells with digits 1–9 so each run sums to its clue.",
-      "version": "1.1.9",
+      "version": "1.1.10",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -674,7 +674,7 @@
       "dir": "lightup.koplugin",
       "fullname": "Light Up",
       "description": "Akari: place light bulbs to illuminate every white cell without conflicts.",
-      "version": "1.1.14",
+      "version": "1.1.15",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -725,7 +725,7 @@
       "dir": "memory.koplugin",
       "fullname": "Mémoire",
       "description": "Jeu de mémoire — trouvez les paires de cartes.",
-      "version": "1.1.9",
+      "version": "1.1.10",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -792,7 +792,7 @@
       "dir": "numbrix.koplugin",
       "fullname": "Numbrix",
       "description": "Snake-like number path puzzle",
-      "version": "1.1.10",
+      "version": "1.1.11",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -1023,7 +1023,7 @@
       "dir": "sokoban.koplugin",
       "fullname": "Sokoban",
       "description": "Push all crates onto their targets. You can push but not pull.",
-      "version": "1.1.13",
+      "version": "1.1.14",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -1041,7 +1041,7 @@
       "dir": "solitaire.koplugin",
       "fullname": "Solitaire",
       "description": "Classic Klondike solitaire card game.",
-      "version": "1.0.7",
+      "version": "1.0.8",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -1058,7 +1058,7 @@
       "dir": "starbattle.koplugin",
       "fullname": "Star Battle",
       "description": "Place stars with one per row/col/region",
-      "version": "1.1.11",
+      "version": "1.1.12",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -1222,7 +1222,7 @@
       "dir": "tents.koplugin",
       "fullname": "Tents and Trees",
       "description": "Logic puzzle: pair each tree with an adjacent tent, no touching tents.",
-      "version": "1.1.14",
+      "version": "1.1.15",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -1275,7 +1275,7 @@
       "dir": "wordladder.koplugin",
       "fullname": "Word Ladder",
       "description": "Change one word into another, one letter at a time.",
-      "version": "1.0.8",
+      "version": "1.0.9",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -1294,7 +1294,7 @@
       "dir": "wordle.koplugin",
       "fullname": "Wordle",
       "description": "Guess the hidden word in 6 tries. Letter hints guide each attempt.",
-      "version": "1.1.9",
+      "version": "1.1.10",
       "files": [
         "_meta.lua",
         "board.lua",
