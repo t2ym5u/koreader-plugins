@@ -42,25 +42,13 @@
 	path = bridges.koplugin
 	url = https://github.com/t2ym5u/bridges.koplugin.git
 	branch = main
-[submodule "calculmental.koplugin"]
-	path = calculmental.koplugin
-	url = https://github.com/t2ym5u/calculmental.koplugin.git
-	branch = main
 [submodule "cave.koplugin"]
 	path = cave.koplugin
 	url = https://github.com/t2ym5u/cave.koplugin.git
 	branch = main
-[submodule "chiffreslettres.koplugin"]
-	path = chiffreslettres.koplugin
-	url = https://github.com/t2ym5u/chiffreslettres.koplugin.git
-	branch = master
 [submodule "colornonogram.koplugin"]
 	path = colornonogram.koplugin
 	url = https://github.com/t2ym5u/colornonogram.koplugin.git
-	branch = main
-[submodule "coursdechecs.koplugin"]
-	path = coursdechecs.koplugin
-	url = https://github.com/t2ym5u/coursdechecs.koplugin.git
 	branch = main
 [submodule "crossword.koplugin"]
 	path = crossword.koplugin
@@ -69,14 +57,6 @@
 [submodule "cryptogram.koplugin"]
 	path = cryptogram.koplugin
 	url = https://github.com/t2ym5u/cryptogram.koplugin.git
-	branch = main
-[submodule "dames.koplugin"]
-	path = dames.koplugin
-	url = https://github.com/t2ym5u/dames.koplugin.git
-	branch = main
-[submodule "echecs.koplugin"]
-	path = echecs.koplugin
-	url = https://github.com/t2ym5u/echecs.koplugin.git
 	branch = main
 [submodule "fifteen.koplugin"]
 	path = fifteen.koplugin
@@ -177,10 +157,6 @@
 [submodule "pluginmanager.koplugin"]
 	path = pluginmanager.koplugin
 	url = https://github.com/t2ym5u/pluginmanager.koplugin.git
-	branch = main
-[submodule "puissance4.koplugin"]
-	path = puissance4.koplugin
-	url = https://github.com/t2ym5u/puissance4.koplugin.git
 	branch = main
 [submodule "quiz.koplugin"]
 	path = quiz.koplugin
@@ -300,4 +276,28 @@
 [submodule "wordladder.koplugin"]
 	path = wordladder.koplugin
 	url = https://github.com/t2ym5u/wordladder.koplugin.git
+	branch = main
+[submodule "chess.koplugin"]
+	path = chess.koplugin
+	url = https://github.com/t2ym5u/chess.koplugin.git
+	branch = main
+[submodule "checkers.koplugin"]
+	path = checkers.koplugin
+	url = https://github.com/t2ym5u/checkers.koplugin.git
+	branch = main
+[submodule "chesscourse.koplugin"]
+	path = chesscourse.koplugin
+	url = https://github.com/t2ym5u/chesscourse.koplugin.git
+	branch = main
+[submodule "mentalmath.koplugin"]
+	path = mentalmath.koplugin
+	url = https://github.com/t2ym5u/mentalmath.koplugin.git
+	branch = main
+[submodule "numletters.koplugin"]
+	path = numletters.koplugin
+	url = https://github.com/t2ym5u/numletters.koplugin.git
+	branch = master
+[submodule "connect4.koplugin"]
+	path = connect4.koplugin
+	url = https://github.com/t2ym5u/connect4.koplugin.git
 	branch = main
