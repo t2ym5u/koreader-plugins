@@ -6,7 +6,7 @@ A collection of game and utility plugins for [KOReader](https://koreader.rocks/)
 
 ---
 
-## 🎮 Games (70 plugins)
+## 🎮 Games (69 plugins)
 
 | Plugin | Description |
 |---|---|
@@ -25,7 +25,6 @@ A collection of game and utility plugins for [KOReader](https://koreader.rocks/)
 | [Chiffres et Lettres](https://github.com/t2ym5u/numletters.koplugin) | Numbers and letters game (fr) |
 | [Color Nonogram](https://github.com/t2ym5u/colornonogram.koplugin) | Nonogram with multiple colors |
 | [Cours d'Échecs](https://github.com/t2ym5u/chesscourse.koplugin) | Chess lessons and puzzles |
-| [Crossword](https://github.com/t2ym5u/crossword.koplugin) | Crossword puzzles |
 | [Cryptogram](https://github.com/t2ym5u/cryptogram.koplugin) | Decode encrypted quotes |
 | [Dames](https://github.com/t2ym5u/checkers.koplugin) | Draughts / Checkers |
 | [Dice](https://github.com/t2ym5u/dice.koplugin) | Roll virtual dice with a configurable number of faces and dice |
