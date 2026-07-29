@@ -584,8 +584,8 @@
       "id": "gomoku",
       "dir": "gomoku.koplugin",
       "fullname": "Gomoku",
-      "description": "Gomoku — 5 pions en ligne sur 15\\xC3\\xB715.",
-      "version": "1.1.9",
+      "description": "Gomoku — 5 pions en ligne sur 15×15.",
+      "version": "1.1.10",
       "files": [
         "_meta.lua",
         "board.lua",
