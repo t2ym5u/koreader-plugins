@@ -281,10 +281,6 @@
 	path = chess.koplugin
 	url = https://github.com/t2ym5u/chess.koplugin.git
 	branch = main
-[submodule "checkers.koplugin"]
-	path = checkers.koplugin
-	url = https://github.com/t2ym5u/checkers.koplugin.git
-	branch = main
 [submodule "chesscourse.koplugin"]
 	path = chesscourse.koplugin
 	url = https://github.com/t2ym5u/chesscourse.koplugin.git
@@ -300,4 +296,8 @@
 [submodule "connect4.koplugin"]
 	path = connect4.koplugin
 	url = https://github.com/t2ym5u/connect4.koplugin.git
+	branch = main
+[submodule "checkers.koplugin"]
+	path = checkers.koplugin
+	url = https://github.com/kbarni/checkers.koplugin.git
 	branch = main
