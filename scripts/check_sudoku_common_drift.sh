@@ -16,7 +16,7 @@ set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 CANON="$ROOT/sudoku-common"
 
-PLUGINS=(sudoku arrowsudoku hypersudoku sandwichsudoku sudokukiller sudokux thermosudoku betweenlines windoku)
+PLUGINS=(sudoku arrowsudoku sandwichsudoku sudokukiller sudokux thermosudoku betweenlines windoku)
 FILES=(base_board.lua base_board_widget.lua base_screen.lua puzzle_generator.lua sudoku_grid_utils.lua)
 
 # Known-intentional divergences: "<plugin>:<canonical filename>".
