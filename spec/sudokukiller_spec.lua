@@ -42,15 +42,35 @@ describe("KillerSudokuBoard", function()
     end)
 
     describe("isGiven", function()
-        it("always returns false (no pre-filled cells in killer variant)", function()
+        it("Easy has deliberate given digits (anchors for human-solvable deduction)", function()
             math.randomseed(42)
             local b = KillerSudokuBoard:new()
             b:generate("easy")
+            local given_count = 0
             for r = 1, b.n do
                 for c = 1, b.n do
-                    assert.is_false(b:isGiven(r, c))
+                    if b:isGiven(r, c) then
+                        given_count = given_count + 1
+                        assert.are.equal(b.solution[r][c], b.user[r][c])
+                    end
                 end
             end
+            assert.is_true(given_count > 0)
+        end)
+
+        it("Hard stays genre-pure Killer Sudoku (no deliberate givens)", function()
+            math.randomseed(42)
+            local b = KillerSudokuBoard:new()
+            b:generate("hard")
+            local given_count = 0
+            for r = 1, b.n do
+                for c = 1, b.n do
+                    if b:isGiven(r, c) then given_count = given_count + 1 end
+                end
+            end
+            -- A rare growth-stranded singleton can still slip through, but
+            -- Hard should never carry the Easy/Medium deliberate-given count.
+            assert.is_true(given_count <= 2)
         end)
     end)
 
