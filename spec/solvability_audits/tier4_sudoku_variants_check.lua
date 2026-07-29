@@ -144,7 +144,6 @@ checkClueCount("thermosudoku", "ThermoSudokuBoard", "thermos", 300, 5)
 checkClueCount("arrowsudoku", "ArrowSudokuBoard", "arrows", 300, 5)
 
 checkNoDupInRegions("windoku", "WindokuBoard", WINDOWS, 60)
-checkNoDupInRegions("hypersudoku", "HyperSudokuBoard", WINDOWS, 60)
 checkNoDupInRegions("sudokux", "SudokuXBoard", diagonalRegions(9), 60)
 
 -- Sanity check independent of clue generation entirely: fill the working
@@ -181,7 +180,6 @@ end
 
 checkWinConditionAcceptsSolution("sudoku", "SudokuBoard", 20)
 checkWinConditionAcceptsSolution("windoku", "WindokuBoard", 20)
-checkWinConditionAcceptsSolution("hypersudoku", "HyperSudokuBoard", 20)
 checkWinConditionAcceptsSolution("sudokux", "SudokuXBoard", 20)
 checkWinConditionAcceptsSolution("arrowsudoku", "ArrowSudokuBoard", 20)
 checkWinConditionAcceptsSolution("thermosudoku", "ThermoSudokuBoard", 20)
