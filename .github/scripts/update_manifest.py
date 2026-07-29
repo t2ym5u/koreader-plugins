@@ -65,8 +65,6 @@ def read_meta(meta_path: Path) -> dict:
         return m.group(1) if m else None
 
     return {
-        # (?<!\w) keeps this from matching "name" inside "fullname".
-        "name":        get(r'(?<!\w)name\s*=\s*"([^"]+)"'),
         "version":     get(r'version\s*=\s*"([^"]+)"'),
         "fullname":    (get(r'fullname\s*=\s*_\("([^"]+)"\)')
                      or get(r'fullname\s*=\s*_\(\[\[([^\]]+)\]\]\)')),
@@ -222,11 +220,13 @@ def main() -> int:
             continue
 
         meta      = read_meta(meta_path)
-        plugin_id = meta.get("name")
+        # KOReader's PluginLoader now derives a plugin's id from its
+        # directory name (stripping ".koplugin") and ignores/warns on any
+        # "name" field in _meta.lua -- match that here instead of trusting
+        # the (now-removed) _meta.lua field, so ids stay in sync with what
+        # KOReader actually uses at runtime.
+        plugin_id = koplugin_dir.stem
 
-        if not plugin_id:
-            skipped.append(f"{koplugin_dir.name}: no name in _meta.lua")
-            continue
         if not meta.get("version"):
             # Stub without version — intentionally omitted.
             continue
