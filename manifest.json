@@ -399,7 +399,7 @@
       "dir": "dashboard.koplugin",
       "fullname": "Dashboard",
       "description": "Tableau de bord : livre en cours, derniers jeux, statistiques.",
-      "version": "1.2.9",
+      "version": "1.2.10",
       "files": [
         "_meta.lua",
         "i18n_fr.lua",
