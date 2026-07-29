@@ -50,10 +50,6 @@
 	path = colornonogram.koplugin
 	url = https://github.com/t2ym5u/colornonogram.koplugin.git
 	branch = main
-[submodule "crossword.koplugin"]
-	path = crossword.koplugin
-	url = https://github.com/t2ym5u/crossword.koplugin.git
-	branch = main
 [submodule "cryptogram.koplugin"]
 	path = cryptogram.koplugin
 	url = https://github.com/t2ym5u/cryptogram.koplugin.git

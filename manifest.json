@@ -395,24 +395,6 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/connect4.koplugin/main/"
     },
     {
-      "id": "crossword",
-      "dir": "crossword.koplugin",
-      "fullname": "Crossword",
-      "description": "Classic crossword puzzles. Fill the grid from the across and down clues.",
-      "version": "1.1.15",
-      "files": [
-        "_meta.lua",
-        "board.lua",
-        "board_widget.lua",
-        "i18n_fr.lua",
-        "main.lua",
-        "puzzles.lua",
-        "screen.lua"
-      ],
-      "common_lib": "common",
-      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/crossword.koplugin/main/"
-    },
-    {
       "id": "cryptogram",
       "dir": "cryptogram.koplugin",
       "fullname": "Cryptogram",
