@@ -636,24 +636,6 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/hitori.koplugin/main/"
     },
     {
-      "id": "hypersudoku",
-      "dir": "hypersudoku.koplugin",
-      "fullname": "Hyper Sudoku",
-      "description": "Sudoku with 4 extra inner regions",
-      "version": "1.2.10",
-      "files": [
-        "_meta.lua",
-        "board.lua",
-        "board_widget.lua",
-        "i18n.lua",
-        "i18n_fr.lua",
-        "main.lua",
-        "screen.lua"
-      ],
-      "common_lib": "sudoku_common",
-      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/hypersudoku.koplugin/main/"
-    },
-    {
       "id": "kakuro",
       "dir": "kakuro.koplugin",
       "fullname": "Kakuro",
