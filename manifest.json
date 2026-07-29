@@ -270,23 +270,28 @@
     {
       "id": "checkers",
       "dir": "checkers.koplugin",
-      "fullname": "Dames",
-      "description": "Jeu de dames 8x8",
-      "version": "1.1.11",
+      "fullname": "Checkers",
+      "description": "English draughts (checkers) — human vs human.",
+      "version": "1.1",
       "files": [
         "_meta.lua",
-        "board.lua",
-        "board_widget.lua",
-        "i18n_fr.lua",
+        "checkersai.lua",
+        "checkersboard.lua",
+        "checkersbuttontable.lua",
+        "checkersgame.lua",
+        "checkerssettings.lua",
         "main.lua",
-        "screen.lua",
-        "pieces_img/bking.png",
-        "pieces_img/bman.png",
-        "pieces_img/wking.png",
-        "pieces_img/wman.png"
+        "icons/black.svg",
+        "icons/black_king.svg",
+        "icons/black_simple.svg",
+        "icons/empty.svg",
+        "icons/hint.svg",
+        "icons/select.svg",
+        "icons/white-simple.svg",
+        "icons/white.svg",
+        "icons/white_king.svg"
       ],
-      "common_lib": "common",
-      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/checkers.koplugin/main/"
+      "raw_base_url": "https://raw.githubusercontent.com/kbarni/checkers.koplugin/main/"
     },
     {
       "id": "chess",
