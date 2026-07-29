@@ -22,11 +22,11 @@ A collection of game and utility plugins for [KOReader](https://koreader.rocks/)
 | [Bridges](https://github.com/t2ym5u/bridges.koplugin) | Connect islands with bridges |
 | [Calcul Mental](https://github.com/t2ym5u/mentalmath.koplugin) | Mental arithmetic training |
 | [Cave](https://github.com/t2ym5u/cave.koplugin) | Navigate through a cave |
+| [Checkers](https://github.com/kbarni/checkers.koplugin) | Draughts / Checkers (upstream by kbarni, AI opponent) |
 | [Chiffres et Lettres](https://github.com/t2ym5u/numletters.koplugin) | Numbers and letters game (fr) |
 | [Color Nonogram](https://github.com/t2ym5u/colornonogram.koplugin) | Nonogram with multiple colors |
 | [Cours d'Échecs](https://github.com/t2ym5u/chesscourse.koplugin) | Chess lessons and puzzles |
 | [Cryptogram](https://github.com/t2ym5u/cryptogram.koplugin) | Decode encrypted quotes |
-| [Dames](https://github.com/t2ym5u/checkers.koplugin) | Draughts / Checkers |
 | [Dice](https://github.com/t2ym5u/dice.koplugin) | Roll virtual dice with a configurable number of faces and dice |
 | [Double or Nothing Party](https://github.com/t2ym5u/doubleornothing.koplugin) | Bank your points or double the pot on a harder question |
 | [Échecs](https://github.com/t2ym5u/chess.koplugin) | Chess |
