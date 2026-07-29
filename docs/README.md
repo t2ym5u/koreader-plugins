@@ -20,17 +20,17 @@ A collection of game and utility plugins for [KOReader](https://koreader.rocks/)
 | [Boggle](https://github.com/t2ym5u/boggle.koplugin) | Find words in a letter grid |
 | [Boggle Party](https://github.com/t2ym5u/boggleparty.koplugin) | Multiplayer Boggle |
 | [Bridges](https://github.com/t2ym5u/bridges.koplugin) | Connect islands with bridges |
-| [Calcul Mental](https://github.com/t2ym5u/calculmental.koplugin) | Mental arithmetic training |
+| [Calcul Mental](https://github.com/t2ym5u/mentalmath.koplugin) | Mental arithmetic training |
 | [Cave](https://github.com/t2ym5u/cave.koplugin) | Navigate through a cave |
-| [Chiffres et Lettres](https://github.com/t2ym5u/chiffreslettres.koplugin) | Numbers and letters game (fr) |
+| [Chiffres et Lettres](https://github.com/t2ym5u/numletters.koplugin) | Numbers and letters game (fr) |
 | [Color Nonogram](https://github.com/t2ym5u/colornonogram.koplugin) | Nonogram with multiple colors |
-| [Cours d'Échecs](https://github.com/t2ym5u/coursdechecs.koplugin) | Chess lessons and puzzles |
+| [Cours d'Échecs](https://github.com/t2ym5u/chesscourse.koplugin) | Chess lessons and puzzles |
 | [Crossword](https://github.com/t2ym5u/crossword.koplugin) | Crossword puzzles |
 | [Cryptogram](https://github.com/t2ym5u/cryptogram.koplugin) | Decode encrypted quotes |
-| [Dames](https://github.com/t2ym5u/dames.koplugin) | Draughts / Checkers |
+| [Dames](https://github.com/t2ym5u/checkers.koplugin) | Draughts / Checkers |
 | [Dice](https://github.com/t2ym5u/dice.koplugin) | Roll virtual dice with a configurable number of faces and dice |
 | [Double or Nothing Party](https://github.com/t2ym5u/doubleornothing.koplugin) | Bank your points or double the pot on a harder question |
-| [Échecs](https://github.com/t2ym5u/echecs.koplugin) | Chess |
+| [Échecs](https://github.com/t2ym5u/chess.koplugin) | Chess |
 | [Fifteen Puzzle](https://github.com/t2ym5u/fifteen.koplugin) | Classic 15-tile sliding puzzle |
 | [Fillomino](https://github.com/t2ym5u/fillomino.koplugin) | Fill regions with matching numbers |
 | [Futoshiki](https://github.com/t2ym5u/futoshiki.koplugin) | Inequality-constrained Latin square |
@@ -56,7 +56,7 @@ A collection of game and utility plugins for [KOReader](https://koreader.rocks/)
 | [Othello](https://github.com/t2ym5u/othello.koplugin) | Flip your opponent's discs |
 | [Pickomino](https://github.com/t2ym5u/pickomino.koplugin) | Dice game — steal worms from opponents |
 | [Pictionary Party](https://github.com/t2ym5u/pictionary.koplugin) | Multiplayer drawing game |
-| [Puissance 4](https://github.com/t2ym5u/puissance4.koplugin) | Connect Four |
+| [Puissance 4](https://github.com/t2ym5u/connect4.koplugin) | Connect Four |
 | [Quiz Party](https://github.com/t2ym5u/quiz.koplugin) | Multiplayer quiz game |
 | [Ripple Effect](https://github.com/t2ym5u/rippleeffect.koplugin) | Fill regions, larger regions allow larger numbers |
 | [Sandwich Sudoku](https://github.com/t2ym5u/sandwichsudoku.koplugin) | Sudoku with sandwich sum clues |

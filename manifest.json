@@ -251,21 +251,6 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/bridges.koplugin/main/"
     },
     {
-      "id": "calculmental",
-      "dir": "calculmental.koplugin",
-      "fullname": "Calcul Mental",
-      "description": "Entraînez vos réflexes arithmétiques.",
-      "version": "1.1.9",
-      "files": [
-        "_meta.lua",
-        "board.lua",
-        "main.lua",
-        "screen.lua"
-      ],
-      "common_lib": "common",
-      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/calculmental.koplugin/main/"
-    },
-    {
       "id": "cave",
       "dir": "cave.koplugin",
       "fullname": "Cave",
@@ -283,46 +268,67 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/cave.koplugin/main/"
     },
     {
-      "id": "chiffreslettres",
-      "dir": "chiffreslettres.koplugin",
-      "fullname": "Chiffres et Lettres",
-      "description": "Draw letters and find the longest word; draw numbers and hit the target.",
-      "version": "1.1.9",
-      "files": [
-        "_meta.lua",
-        "board.lua",
-        "i18n_fr.lua",
-        "main.lua",
-        "screen.lua",
-        "words_en.lua",
-        "words_fr.lua"
-      ],
-      "common_lib": "common",
-      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/chiffreslettres.koplugin/master/"
-    },
-    {
-      "id": "colornonogram",
-      "dir": "colornonogram.koplugin",
-      "fullname": "Color Nonogram",
-      "description": "Colored picross / nonogram",
-      "version": "1.1.10",
+      "id": "checkers",
+      "dir": "checkers.koplugin",
+      "fullname": "Dames",
+      "description": "Jeu de dames 8x8",
+      "version": "1.1.11",
       "files": [
         "_meta.lua",
         "board.lua",
         "board_widget.lua",
         "i18n_fr.lua",
         "main.lua",
-        "screen.lua"
+        "screen.lua",
+        "pieces_img/bking.png",
+        "pieces_img/bman.png",
+        "pieces_img/wking.png",
+        "pieces_img/wman.png"
       ],
       "common_lib": "common",
-      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/colornonogram.koplugin/main/"
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/checkers.koplugin/main/"
     },
     {
-      "id": "coursdechecs",
-      "dir": "coursdechecs.koplugin",
+      "id": "chess",
+      "dir": "chess.koplugin",
+      "fullname": "Échecs",
+      "description": "Jeu d'échecs avec IA",
+      "version": "1.1.14",
+      "files": [
+        "_meta.lua",
+        "board.lua",
+        "board_widget.lua",
+        "chess_clock.lua",
+        "chess_pieces.lua",
+        "engine_home.lua",
+        "engine_uci.lua",
+        "i18n_fr.lua",
+        "main.lua",
+        "pgn.lua",
+        "screen.lua",
+        "uci_process.lua",
+        "chess_pieces_img/bb.png",
+        "chess_pieces_img/bk.png",
+        "chess_pieces_img/bn.png",
+        "chess_pieces_img/bp.png",
+        "chess_pieces_img/bq.png",
+        "chess_pieces_img/br.png",
+        "chess_pieces_img/wb.png",
+        "chess_pieces_img/wk.png",
+        "chess_pieces_img/wn.png",
+        "chess_pieces_img/wp.png",
+        "chess_pieces_img/wq.png",
+        "chess_pieces_img/wr.png"
+      ],
+      "common_lib": "common",
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/chess.koplugin/main/"
+    },
+    {
+      "id": "chesscourse",
+      "dir": "chesscourse.koplugin",
       "fullname": "Cours d'échecs",
       "description": "Puzzles et leçons d'échecs",
-      "version": "1.2.10",
+      "version": "1.2.11",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -352,7 +358,41 @@
         "chess_pieces_img/wr.png"
       ],
       "common_lib": "common",
-      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/coursdechecs.koplugin/main/"
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/chesscourse.koplugin/main/"
+    },
+    {
+      "id": "colornonogram",
+      "dir": "colornonogram.koplugin",
+      "fullname": "Color Nonogram",
+      "description": "Colored picross / nonogram",
+      "version": "1.1.10",
+      "files": [
+        "_meta.lua",
+        "board.lua",
+        "board_widget.lua",
+        "i18n_fr.lua",
+        "main.lua",
+        "screen.lua"
+      ],
+      "common_lib": "common",
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/colornonogram.koplugin/main/"
+    },
+    {
+      "id": "connect4",
+      "dir": "connect4.koplugin",
+      "fullname": "Puissance 4",
+      "description": "Connect Four — alignez 4 pièces avec IA.",
+      "version": "1.1.10",
+      "files": [
+        "_meta.lua",
+        "board.lua",
+        "board_widget.lua",
+        "i18n_fr.lua",
+        "main.lua",
+        "screen.lua"
+      ],
+      "common_lib": "common",
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/connect4.koplugin/main/"
     },
     {
       "id": "crossword",
@@ -388,27 +428,6 @@
       ],
       "common_lib": "common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/cryptogram.koplugin/main/"
-    },
-    {
-      "id": "dames",
-      "dir": "dames.koplugin",
-      "fullname": "Dames",
-      "description": "Jeu de dames 8x8",
-      "version": "1.1.10",
-      "files": [
-        "_meta.lua",
-        "board.lua",
-        "board_widget.lua",
-        "i18n_fr.lua",
-        "main.lua",
-        "screen.lua",
-        "pieces_img/bking.png",
-        "pieces_img/bman.png",
-        "pieces_img/wking.png",
-        "pieces_img/wman.png"
-      ],
-      "common_lib": "common",
-      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/dames.koplugin/main/"
     },
     {
       "id": "dashboard",
@@ -455,41 +474,6 @@
       ],
       "common_lib": "common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/doubleornothing.koplugin/main/"
-    },
-    {
-      "id": "echecs",
-      "dir": "echecs.koplugin",
-      "fullname": "Échecs",
-      "description": "Jeu d'échecs avec IA",
-      "version": "1.1.13",
-      "files": [
-        "_meta.lua",
-        "board.lua",
-        "board_widget.lua",
-        "chess_clock.lua",
-        "chess_pieces.lua",
-        "engine_home.lua",
-        "engine_uci.lua",
-        "i18n_fr.lua",
-        "main.lua",
-        "pgn.lua",
-        "screen.lua",
-        "uci_process.lua",
-        "chess_pieces_img/bb.png",
-        "chess_pieces_img/bk.png",
-        "chess_pieces_img/bn.png",
-        "chess_pieces_img/bp.png",
-        "chess_pieces_img/bq.png",
-        "chess_pieces_img/br.png",
-        "chess_pieces_img/wb.png",
-        "chess_pieces_img/wk.png",
-        "chess_pieces_img/wn.png",
-        "chess_pieces_img/wp.png",
-        "chess_pieces_img/wq.png",
-        "chess_pieces_img/wr.png"
-      ],
-      "common_lib": "common",
-      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/echecs.koplugin/main/"
     },
     {
       "id": "fifteen",
@@ -785,6 +769,21 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/memory.koplugin/main/"
     },
     {
+      "id": "mentalmath",
+      "dir": "mentalmath.koplugin",
+      "fullname": "Calcul Mental",
+      "description": "Entraînez vos réflexes arithmétiques.",
+      "version": "1.1.10",
+      "files": [
+        "_meta.lua",
+        "board.lua",
+        "main.lua",
+        "screen.lua"
+      ],
+      "common_lib": "common",
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/mentalmath.koplugin/main/"
+    },
+    {
       "id": "minesweeper",
       "dir": "minesweeper.koplugin",
       "fullname": "Minesweeper",
@@ -851,6 +850,24 @@
       ],
       "common_lib": "common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/numbrix.koplugin/main/"
+    },
+    {
+      "id": "numletters",
+      "dir": "numletters.koplugin",
+      "fullname": "Chiffres et Lettres",
+      "description": "Draw letters and find the longest word; draw numbers and hit the target.",
+      "version": "1.1.10",
+      "files": [
+        "_meta.lua",
+        "board.lua",
+        "i18n_fr.lua",
+        "main.lua",
+        "screen.lua",
+        "words_en.lua",
+        "words_fr.lua"
+      ],
+      "common_lib": "common",
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/numletters.koplugin/master/"
     },
     {
       "id": "nurikabe",
@@ -946,23 +963,6 @@
         "main.lua"
       ],
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/pluginmanager.koplugin/main/"
-    },
-    {
-      "id": "puissance4",
-      "dir": "puissance4.koplugin",
-      "fullname": "Puissance 4",
-      "description": "Connect Four — alignez 4 pièces avec IA.",
-      "version": "1.1.9",
-      "files": [
-        "_meta.lua",
-        "board.lua",
-        "board_widget.lua",
-        "i18n_fr.lua",
-        "main.lua",
-        "screen.lua"
-      ],
-      "common_lib": "common",
-      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/puissance4.koplugin/main/"
     },
     {
       "id": "quiz",

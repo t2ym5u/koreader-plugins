@@ -67,9 +67,11 @@ def read_meta(meta_path: Path) -> dict:
     return {
         "version":     get(r'version\s*=\s*"([^"]+)"'),
         "fullname":    (get(r'fullname\s*=\s*_\("([^"]+)"\)')
-                     or get(r'fullname\s*=\s*_\(\[\[([^\]]+)\]\]\)')),
+                     or get(r'fullname\s*=\s*_\(\[\[([^\]]+)\]\]\)')
+                     or get(r'fullname\s*=\s*"([^"]+)"')),
         "description": (get(r'description\s*=\s*_\("([^"]+)"\)')
-                     or get(r'description\s*=\s*_\(\[\[([^\]]+)\]\]\)')),
+                     or get(r'description\s*=\s*_\(\[\[([^\]]+)\]\]\)')
+                     or get(r'description\s*=\s*"([^"]+)"')),
     }
 
 
@@ -142,7 +144,7 @@ ASSET_EXTENSIONS = {".png"}
 def list_asset_files(plugin_dir: Path) -> list[str]:
     """List static asset files (e.g. piece/tile PNGs) a plugin loads at
     runtime from its own subdirectories, such as
-    echecs.koplugin/chess_pieces_img/, dames.koplugin/pieces_img/, and
+    chess.koplugin/chess_pieces_img/, checkers.koplugin/pieces_img/, and
     fifteen.koplugin/images/.
 
     Without this, list_plugin_files() (top-level .lua only) never surfaces
