@@ -150,10 +150,6 @@
 	path = pictionary.koplugin
 	url = https://github.com/t2ym5u/pictionary.koplugin.git
 	branch = master
-[submodule "pluginmanager.koplugin"]
-	path = pluginmanager.koplugin
-	url = https://github.com/t2ym5u/pluginmanager.koplugin.git
-	branch = main
 [submodule "quiz.koplugin"]
 	path = quiz.koplugin
 	url = https://github.com/t2ym5u/quiz.koplugin.git
