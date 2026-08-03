@@ -1,4 +1,10 @@
+-- Convenience runner for the whole monorepo: `busted` here recurses into
+-- every plugin dir and picks up its local test_*_spec.lua (each plugin also
+-- carries its own .busted so it works standalone, outside this monorepo).
 return {
+  _all = {
+    ROOT = { "." },
+  },
   default = {
     pattern  = "_spec%.lua$",
     output   = "plainTerminal",
