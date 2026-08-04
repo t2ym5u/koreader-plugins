@@ -1150,7 +1150,8 @@
         "main.lua",
         "screen.lua"
       ],
-      "common_lib": "sudoku_common"
+      "common_lib": "sudoku_common",
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/sudokukiller.koplugin/master/"
     },
     {
       "id": "sudokux",
