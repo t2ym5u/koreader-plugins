@@ -937,12 +937,13 @@
       "dir": "pluginmanager.koplugin",
       "fullname": "Plugin Manager",
       "description": "Check for updates and install game plugins from the koreader-plugins repository.",
-      "version": "1.1.26",
+      "version": "1.2.0",
       "files": [
         "_meta.lua",
         "i18n.lua",
         "i18n_fr.lua",
-        "main.lua"
+        "main.lua",
+        "pluginmanager_configuration.sample.lua"
       ],
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/pluginmanager.koplugin/main/"
     },
