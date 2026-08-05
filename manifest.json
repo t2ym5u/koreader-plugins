@@ -3,7 +3,7 @@
   "updated": "2026-08-05",
   "repo": "t2ym5u/koreader-plugins",
   "common": {
-    "version": "1.2.3-6-g1780b64",
+    "version": "1.2.3-7-gbc265f0",
     "dir": "game-common",
     "files": [
       "daily_seed.lua",
@@ -424,7 +424,7 @@
       "dir": "dice.koplugin",
       "fullname": "Dice",
       "description": "Roll virtual dice with a configurable number of faces and dice.",
-      "version": "1.0.9",
+      "version": "1.0.10",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -1105,7 +1105,7 @@
       "dir": "sudokukiller.koplugin",
       "fullname": "Killer Sudoku",
       "description": "Play touch-friendly Killer Sudoku puzzles with caged sums, resume later, and reveal the solution when needed.",
-      "version": "1.2.15",
+      "version": "1.2.16",
       "files": [
         "_meta.lua",
         "board.lua",
