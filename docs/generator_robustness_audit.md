@@ -1,5 +1,15 @@
 # Generator robustness audit
 
+> **2026-08-05: kakuro and galaxies are set aside.** Both have confirmed,
+> unfixed generator bugs (see their rows/sections below — kakuro's
+> "Confirmed bug, fix attempted and reverted" and galaxies' "deferred,
+> structural" status). Their GitHub repos are archived and they're excluded
+> from `manifest.json`/`dist/` via `EXCLUDED_PLUGINS` in
+> `.github/scripts/update_manifest.py` — see `CLAUDE.md` for the convention.
+> This doc's findings below are kept as-is (historical record of what's
+> broken and why); it does not need updating just because the plugin was
+> archived rather than fixed.
+
 Triggered by a real bug found 2026-07-20 in `bridges.koplugin`: its generator
 retried a bounded number of times, then silently degraded to a hardcoded
 "emergency fallback" puzzle (2 islands) when generation kept failing —
