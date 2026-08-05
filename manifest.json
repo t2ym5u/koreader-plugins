@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-08-04",
+  "updated": "2026-08-05",
   "repo": "t2ym5u/koreader-plugins",
   "common": {
     "version": "1.2.3-6-g1780b64",
@@ -87,23 +87,6 @@
       ],
       "common_lib": "sudoku_common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/arrowsudoku.koplugin/main/"
-    },
-    {
-      "id": "arrowwords",
-      "dir": "arrowwords.koplugin",
-      "fullname": "Mots fléchés",
-      "description": "Arrow crossword puzzle",
-      "version": "1.2.11",
-      "files": [
-        "_meta.lua",
-        "board.lua",
-        "board_widget.lua",
-        "i18n_fr.lua",
-        "main.lua",
-        "screen.lua"
-      ],
-      "common_lib": "common",
-      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/arrowwords.koplugin/main/"
     },
     {
       "id": "backgammon",
@@ -530,23 +513,6 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/futoshiki.koplugin/main/"
     },
     {
-      "id": "galaxies",
-      "dir": "galaxies.koplugin",
-      "fullname": "Galaxies",
-      "description": "Divide the grid into rotationally symmetric galaxies",
-      "version": "1.1.12",
-      "files": [
-        "_meta.lua",
-        "board.lua",
-        "board_widget.lua",
-        "i18n_fr.lua",
-        "main.lua",
-        "screen.lua"
-      ],
-      "common_lib": "common",
-      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/galaxies.koplugin/main/"
-    },
-    {
       "id": "go",
       "dir": "go.koplugin",
       "fullname": "Go",
@@ -649,23 +615,6 @@
       ],
       "common_lib": "common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/hitori.koplugin/main/"
-    },
-    {
-      "id": "kakuro",
-      "dir": "kakuro.koplugin",
-      "fullname": "Kakuro",
-      "description": "Fill white cells with digits 1–9 so each run sums to its clue.",
-      "version": "1.1.12",
-      "files": [
-        "_meta.lua",
-        "board.lua",
-        "board_widget.lua",
-        "i18n_fr.lua",
-        "main.lua",
-        "screen.lua"
-      ],
-      "common_lib": "common",
-      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/kakuro.koplugin/main/"
     },
     {
       "id": "kenken",

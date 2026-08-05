@@ -6,7 +6,7 @@ A collection of game and utility plugins for [KOReader](https://koreader.rocks/)
 
 ---
 
-## 🎮 Games (69 plugins)
+## 🎮 Games (66 plugins)
 
 | Plugin | Description |
 |---|---|
@@ -33,21 +33,18 @@ A collection of game and utility plugins for [KOReader](https://koreader.rocks/)
 | [Fifteen Puzzle](https://github.com/t2ym5u/fifteen.koplugin) | Classic 15-tile sliding puzzle |
 | [Fillomino](https://github.com/t2ym5u/fillomino.koplugin) | Fill regions with matching numbers |
 | [Futoshiki](https://github.com/t2ym5u/futoshiki.koplugin) | Inequality-constrained Latin square |
-| [Galaxies](https://github.com/t2ym5u/galaxies.koplugin) | Divide a grid into symmetric galaxies |
 | [Go](https://github.com/t2ym5u/go.koplugin) | Classic territory and capture board game |
 | [Gomoku](https://github.com/t2ym5u/gomoku.koplugin) | Five in a row |
 | [Hangman](https://github.com/t2ym5u/hangman.koplugin) | Classic word guessing game |
 | [Towers of Hanoi](https://github.com/t2ym5u/hanoi.koplugin) | Move a stack of discs |
 | [Hidato](https://github.com/t2ym5u/hidato.koplugin) | Fill a grid with consecutive numbers |
 | [Hitori](https://github.com/t2ym5u/hitori.koplugin) | Blacken cells so no number repeats |
-| [Kakuro](https://github.com/t2ym5u/kakuro.koplugin) | Crossword-style sum puzzle |
 | [KenKen](https://github.com/t2ym5u/kenken.koplugin) | Arithmetic cage puzzle |
 | [Light Up](https://github.com/t2ym5u/lightup.koplugin) | Place bulbs to illuminate the grid |
 | [Mastermind](https://github.com/t2ym5u/mastermind.koplugin) | Code-breaking game |
 | [Masyu](https://github.com/t2ym5u/masyu.koplugin) | Draw a loop through black and white circles |
 | [Mémoire](https://github.com/t2ym5u/memory.koplugin) | Memory card matching game |
 | [Minesweeper](https://github.com/t2ym5u/minesweeper.koplugin) | Classic mine avoidance |
-| [Mots Fléchés](https://github.com/t2ym5u/arrowwords.koplugin) | French arrow crossword |
 | [Nonogram](https://github.com/t2ym5u/nonogram.koplugin) | Paint-by-numbers logic puzzle |
 | [Numberlink](https://github.com/t2ym5u/numberlink.koplugin) | Connect matching numbers with paths |
 | [Numbrix](https://github.com/t2ym5u/numbrix.koplugin) | Connect numbers in sequence |

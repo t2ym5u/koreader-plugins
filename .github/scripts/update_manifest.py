@@ -30,6 +30,12 @@ ROOT = Path(__file__).resolve().parent.parent.parent
 # Field order in each plugin entry.
 FIELD_ORDER = ["id", "dir", "fullname", "description", "version", "files", "common_lib"]
 
+# Plugins deliberately set aside (broken/unpublished), excluded from the
+# manifest even though their submodule is still checked out locally. See
+# docs/generator_robustness_audit.md for kakuro/galaxies (confirmed generator
+# bugs, unfixed); arrowwords was set aside by user request (2026-08-05).
+EXCLUDED_PLUGINS = {"kakuro", "galaxies", "arrowwords"}
+
 
 def is_git_tracked(path: Path) -> bool:
     """Return True if `path` is directly tracked by the parent git repo."""
@@ -253,6 +259,10 @@ def main() -> int:
         # KOReader actually uses at runtime.
         plugin_id = koplugin_dir.stem
 
+        if plugin_id in EXCLUDED_PLUGINS:
+            skipped.append(f"{koplugin_dir.name}: excluded (EXCLUDED_PLUGINS)")
+            continue
+
         if not meta.get("version"):
             # Stub without version — intentionally omitted.
             continue
@@ -294,7 +304,7 @@ def main() -> int:
     # known manifest entry instead of silently dropping them.
     found_ids = {p["id"] for p in plugins}
     for old_entry in current.get("plugins", []):
-        if old_entry["id"] not in found_ids:
+        if old_entry["id"] not in found_ids and old_entry["id"] not in EXCLUDED_PLUGINS:
             plugins.append(old_entry)
     plugins.sort(key=lambda p: p.get("id", ""))
 
