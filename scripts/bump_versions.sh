@@ -152,6 +152,11 @@ while IFS= read -r dir; do
     # Template/skeleton dirs (leading underscore) are excluded from the
     # manifest by update_manifest.py and must never get a real release.
     [[ "$dir" == _* ]] && { skipped+=("$dir (template dir)"); continue; }
+    # Set-aside plugins (see EXCLUDED_PLUGINS in
+    # .github/scripts/update_manifest.py / CLAUDE.md): their GitHub repos
+    # are archived (read-only), so a version bump here would fail to push.
+    [[ "$dir" == "kakuro.koplugin" || "$dir" == "galaxies.koplugin" || "$dir" == "arrowwords.koplugin" ]] && \
+        { skipped+=("$dir (set-aside/archived, see CLAUDE.md)"); continue; }
     bump_plugin "$dir"
 done < <(git -C "$ROOT" submodule status | awk '{print $2}')
 
