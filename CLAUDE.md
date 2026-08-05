@@ -46,3 +46,36 @@ To audit topics across the whole account in one call instead of looping
 gh api "users/t2ym5u/repos?per_page=100&type=owner" --paginate \
   --jq '.[] | "\(.name)\t\(.topics|join(","))"'
 ```
+
+## Community files (issues/PRs) and branch protection
+
+Every active plugin repo (same set as the topic convention above) has
+issue templates, a PR template, and a `CONTRIBUTING.md`, synced from
+`templates/plugin-repo/` via `scripts/sync_community_files.sh` — same
+pattern as `scripts/sync_workflow.sh` and `.github/workflows/
+release-plugin.yml`: the canonical copy lives at a path that isn't itself
+"live" for this monorepo (GitHub would otherwise treat root-level
+`CONTRIBUTING.md`/`.github/ISSUE_TEMPLATE/` as this repo's own templates,
+which isn't the intent — they're per-plugin-repo content). Edit the files
+under `templates/plugin-repo/`, then run `./scripts/sync_community_files.sh`
+(`--dry-run` first) to push the update to all 68 repos.
+
+Each repo's default branch (`main`, or `master` on a handful of older
+repos — check `default_branch` via the API, don't assume) also has branch
+protection: force-push and branch deletion are blocked, but
+`enforce_admins` is deliberately `false` and there's no required-PR/
+required-status-check rule. This is intentional, not an oversight —
+`scripts/bump_versions.sh` and `scripts/sync_workflow.sh`/
+`sync_community_files.sh` push directly to each repo's default branch as
+the release owner, and the release CI (`release-plugin.yml`) only
+triggers on `push`, never `pull_request`, so requiring a PR or a status
+check here would break that existing automation, not just add friction.
+Applied via:
+```bash
+gh api -X PUT "repos/t2ym5u/<name>.koplugin/branches/<branch>/protection" \
+  --input - <<'EOF'
+{"required_status_checks": null, "enforce_admins": false,
+ "required_pull_request_reviews": null, "restrictions": null,
+ "allow_force_pushes": false, "allow_deletions": false}
+EOF
+```
