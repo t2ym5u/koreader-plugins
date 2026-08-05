@@ -34,6 +34,7 @@ Or install the [Plugin Manager](dist/pluginmanager.zip) to browse and update plu
 | `scripts/link_plugins.sh` | Symlink plugins into a local KOReader install for development |
 | `scripts/new_plugin.sh` | Onboard a new plugin: create its GitHub repo, register the submodule, wire up CI |
 | `scripts/sync_workflow.sh` | Sync the CI workflow template to all submodules |
+| `scripts/sync_community_files.sh` | Sync issue/PR templates + CONTRIBUTING.md to all submodules |
 | `scripts/trigger_packages.sh` | Trigger GHCR package publishing on all plugin repos |
 
 ## Keeping shared libraries fresh
