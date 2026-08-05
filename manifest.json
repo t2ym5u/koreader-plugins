@@ -46,7 +46,8 @@
         "board_widget.lua",
         "i18n_fr.lua",
         "main.lua",
-        "screen.lua"
+        "screen.lua",
+        "images/2048.png"
       ],
       "common_lib": "common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/2048.koplugin/main/"
@@ -65,7 +66,8 @@
         "main.lua",
         "screen.lua",
         "words_en.lua",
-        "words_fr.lua"
+        "words_fr.lua",
+        "images/anagram.png"
       ],
       "common_lib": "common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/anagram.koplugin/main/"
@@ -83,7 +85,8 @@
         "i18n.lua",
         "i18n_fr.lua",
         "main.lua",
-        "screen.lua"
+        "screen.lua",
+        "images/arrow-sudoku.png"
       ],
       "common_lib": "sudoku_common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/arrowsudoku.koplugin/main/"
@@ -152,7 +155,8 @@
         "i18n.lua",
         "i18n_fr.lua",
         "main.lua",
-        "screen.lua"
+        "screen.lua",
+        "images/between-lines-sudoku.png"
       ],
       "common_lib": "sudoku_common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/betweenlines.koplugin/main/"
@@ -169,7 +173,8 @@
         "board_widget.lua",
         "i18n_fr.lua",
         "main.lua",
-        "screen.lua"
+        "screen.lua",
+        "images/binairo.png"
       ],
       "common_lib": "common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/binairo.koplugin/main/"
@@ -188,7 +193,8 @@
         "main.lua",
         "screen.lua",
         "words_en.lua",
-        "words_fr.lua"
+        "words_fr.lua",
+        "images/boggle.png"
       ],
       "common_lib": "common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/boggle.koplugin/main/"
@@ -207,7 +213,8 @@
         "main.lua",
         "screen.lua",
         "words_en.lua",
-        "words_fr.lua"
+        "words_fr.lua",
+        "images/boggle-party.png"
       ],
       "common_lib": "common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/boggleparty.koplugin/master/"
@@ -224,7 +231,8 @@
         "board_widget.lua",
         "i18n_fr.lua",
         "main.lua",
-        "screen.lua"
+        "screen.lua",
+        "images/bridges.png"
       ],
       "common_lib": "common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/bridges.koplugin/main/"
@@ -241,7 +249,8 @@
         "board_widget.lua",
         "i18n_fr.lua",
         "main.lua",
-        "screen.lua"
+        "screen.lua",
+        "images/cave.png"
       ],
       "common_lib": "common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/cave.koplugin/main/"
@@ -275,9 +284,9 @@
     {
       "id": "chess",
       "dir": "chess.koplugin",
-      "fullname": "Échecs",
-      "description": "Jeu d'échecs avec IA",
-      "version": "1.1.17",
+      "fullname": "Chess",
+      "description": "Chess game with AI",
+      "version": "1.1.18",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -302,7 +311,8 @@
         "chess_pieces_img/wn.png",
         "chess_pieces_img/wp.png",
         "chess_pieces_img/wq.png",
-        "chess_pieces_img/wr.png"
+        "chess_pieces_img/wr.png",
+        "images/chess.png"
       ],
       "common_lib": "common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/chess.koplugin/main/"
@@ -310,9 +320,9 @@
     {
       "id": "chesscourse",
       "dir": "chesscourse.koplugin",
-      "fullname": "Cours d'échecs",
-      "description": "Puzzles et leçons d'échecs",
-      "version": "1.2.14",
+      "fullname": "Chess Course",
+      "description": "Chess puzzles and lessons",
+      "version": "1.2.15",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -364,9 +374,9 @@
     {
       "id": "connect4",
       "dir": "connect4.koplugin",
-      "fullname": "Puissance 4",
-      "description": "Connect Four — alignez 4 pièces avec IA.",
-      "version": "1.1.12",
+      "fullname": "Connect Four",
+      "description": "Connect Four — align 4 pieces with AI.",
+      "version": "1.1.13",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -399,8 +409,8 @@
       "id": "dashboard",
       "dir": "dashboard.koplugin",
       "fullname": "Dashboard",
-      "description": "Tableau de bord : livre en cours, derniers jeux, statistiques.",
-      "version": "1.2.13",
+      "description": "Dashboard: current book, recent games, stats.",
+      "version": "1.2.14",
       "files": [
         "_meta.lua",
         "i18n_fr.lua",
@@ -463,6 +473,7 @@
         "images/deer.png",
         "images/dog.png",
         "images/elephant.png",
+        "images/fifteen-puzzle.png",
         "images/fish.png",
         "images/fox.png",
         "images/horse.png",
@@ -490,7 +501,8 @@
         "board_widget.lua",
         "i18n_fr.lua",
         "main.lua",
-        "screen.lua"
+        "screen.lua",
+        "images/fillomino.png"
       ],
       "common_lib": "common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/fillomino.koplugin/main/"
@@ -507,7 +519,8 @@
         "board_widget.lua",
         "i18n_fr.lua",
         "main.lua",
-        "screen.lua"
+        "screen.lua",
+        "images/futoshiki.png"
       ],
       "common_lib": "common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/futoshiki.koplugin/main/"
@@ -533,8 +546,8 @@
       "id": "gomoku",
       "dir": "gomoku.koplugin",
       "fullname": "Gomoku",
-      "description": "Gomoku — 5 pions en ligne sur 15×15.",
-      "version": "1.1.12",
+      "description": "Gomoku — 5 in a row on a 15×15 board.",
+      "version": "1.1.13",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -687,13 +700,14 @@
     {
       "id": "memory",
       "dir": "memory.koplugin",
-      "fullname": "Mémoire",
-      "description": "Jeu de mémoire — trouvez les paires de cartes.",
-      "version": "1.1.12",
+      "fullname": "Memory",
+      "description": "Memory game — find matching card pairs.",
+      "version": "1.1.13",
       "files": [
         "_meta.lua",
         "board.lua",
         "board_widget.lua",
+        "i18n_fr.lua",
         "main.lua",
         "screen.lua"
       ],
@@ -703,12 +717,13 @@
     {
       "id": "mentalmath",
       "dir": "mentalmath.koplugin",
-      "fullname": "Calcul Mental",
-      "description": "Entraînez vos réflexes arithmétiques.",
-      "version": "1.1.12",
+      "fullname": "Mental Math",
+      "description": "Train your arithmetic reflexes.",
+      "version": "1.1.13",
       "files": [
         "_meta.lua",
         "board.lua",
+        "i18n_fr.lua",
         "main.lua",
         "screen.lua"
       ],
@@ -786,12 +801,13 @@
     {
       "id": "numletters",
       "dir": "numletters.koplugin",
-      "fullname": "Chiffres et Lettres",
+      "fullname": "Numbers and Letters",
       "description": "Draw letters and find the longest word; draw numbers and hit the target.",
-      "version": "1.1.12",
+      "version": "1.1.13",
       "files": [
         "_meta.lua",
         "board.lua",
+        "i18n_fr.lua",
         "main.lua",
         "screen.lua",
         "words_en.lua",
@@ -835,8 +851,8 @@
       "id": "othello",
       "dir": "othello.koplugin",
       "fullname": "Othello",
-      "description": "Othello/Reversi 8x8 avec IA.",
-      "version": "1.1.11",
+      "description": "Othello/Reversi 8x8 with AI.",
+      "version": "1.1.12",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -1097,7 +1113,8 @@
         "i18n.lua",
         "i18n_fr.lua",
         "main.lua",
-        "screen.lua"
+        "screen.lua",
+        "images/killer-sudoku.png"
       ],
       "common_lib": "sudoku_common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/sudokukiller.koplugin/master/"
