@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-08-05",
+  "updated": "2026-08-07",
   "repo": "t2ym5u/koreader-plugins",
   "common": {
     "version": "1.2.3-8-gfb93704",
@@ -1105,7 +1105,7 @@
       "dir": "sudokukiller.koplugin",
       "fullname": "Killer Sudoku",
       "description": "Play touch-friendly Killer Sudoku puzzles with caged sums, resume later, and reveal the solution when needed.",
-      "version": "1.2.17",
+      "version": "1.2.18",
       "files": [
         "_meta.lua",
         "board.lua",
