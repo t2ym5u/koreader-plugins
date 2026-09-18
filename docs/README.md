@@ -126,8 +126,8 @@ Each game lives in its own repository (git submodule). To work on a plugin local
 ```bash
 git clone --recurse-submodules https://github.com/t2ym5u/koreader-plugins
 cd koreader-plugins
-./build_release.sh <plugin-id>   # build a single plugin
-./build_release.sh               # build all plugins
+./scripts/build_release.sh <plugin-id>   # build a single plugin
+./scripts/build_release.sh               # build all plugins
 ```
 
 Output zips are written to `dist/`.
