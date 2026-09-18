@@ -8,6 +8,39 @@ A collection of 70 game and utility plugins for [KOReader](https://koreader.rock
 
 ---
 
+## Screenshots
+
+<sub>A sample of 14 plugins — see each plugin's own repo for more.</sub>
+
+<table>
+<tr>
+<td align="center" width="25%"><a href="https://github.com/t2ym5u/2048.koplugin"><img src="images/2048.png" width="160"></a><br><sub>2048</sub></td>
+<td align="center" width="25%"><a href="https://github.com/t2ym5u/anagram.koplugin"><img src="images/anagram.png" width="160"></a><br><sub>Anagram</sub></td>
+<td align="center" width="25%"><a href="https://github.com/t2ym5u/arrowsudoku.koplugin"><img src="images/arrow-sudoku.png" width="160"></a><br><sub>Arrow Sudoku</sub></td>
+<td align="center" width="25%"><a href="https://github.com/t2ym5u/betweenlines.koplugin"><img src="images/between-lines-sudoku.png" width="160"></a><br><sub>Between Lines Sudoku</sub></td>
+</tr>
+<tr>
+<td align="center"><a href="https://github.com/t2ym5u/binairo.koplugin"><img src="images/binairo.png" width="160"></a><br><sub>Binairo</sub></td>
+<td align="center"><a href="https://github.com/t2ym5u/boggleparty.koplugin"><img src="images/boggle-party.png" width="160"></a><br><sub>Boggle Party</sub></td>
+<td align="center"><a href="https://github.com/t2ym5u/boggle.koplugin"><img src="images/boggle.png" width="160"></a><br><sub>Boggle</sub></td>
+<td align="center"><a href="https://github.com/t2ym5u/bridges.koplugin"><img src="images/bridges.png" width="160"></a><br><sub>Bridges</sub></td>
+</tr>
+<tr>
+<td align="center"><a href="https://github.com/t2ym5u/cave.koplugin"><img src="images/cave.png" width="160"></a><br><sub>Cave</sub></td>
+<td align="center"><a href="https://github.com/t2ym5u/chess.koplugin"><img src="images/chess.png" width="160"></a><br><sub>Échecs</sub></td>
+<td align="center"><a href="https://github.com/t2ym5u/fifteen.koplugin"><img src="images/fifteen-puzzle.png" width="160"></a><br><sub>Fifteen Puzzle</sub></td>
+<td align="center"><a href="https://github.com/t2ym5u/fillomino.koplugin"><img src="images/fillomino.png" width="160"></a><br><sub>Fillomino</sub></td>
+</tr>
+<tr>
+<td align="center"><a href="https://github.com/t2ym5u/futoshiki.koplugin"><img src="images/futoshiki.png" width="160"></a><br><sub>Futoshiki</sub></td>
+<td align="center"><a href="https://github.com/t2ym5u/sudokukiller.koplugin"><img src="images/killer-sudoku.png" width="160"></a><br><sub>Sudoku Killer</sub></td>
+<td></td>
+<td></td>
+</tr>
+</table>
+
+---
+
 ## Quick install
 
 1. Download a plugin zip from [`dist/`](dist/) (or [`koreader-games-full.zip`](dist/koreader-games-full.zip) for everything at once)
