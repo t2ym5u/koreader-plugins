@@ -419,9 +419,10 @@
       "dir": "dashboard.koplugin",
       "fullname": "Dashboard",
       "description": "Dashboard: current book, recent games, stats.",
-      "version": "1.2.15",
+      "version": "1.2.16",
       "files": [
         "_meta.lua",
+        "format.lua",
         "i18n_fr.lua",
         "main.lua"
       ],
@@ -451,11 +452,12 @@
       "dir": "doubleornothing.koplugin",
       "fullname": "Double or Nothing Party",
       "description": "Quiz where each team can bank their points or double the pot on a harder question.",
-      "version": "1.0.10",
+      "version": "1.0.11",
       "files": [
         "_meta.lua",
         "i18n_fr.lua",
         "main.lua",
+        "round.lua",
         "screen.lua",
         "images/doubleornothing.png"
       ],
@@ -885,12 +887,13 @@
       "dir": "opdsdir.koplugin",
       "fullname": "OPDS per-catalog download directory",
       "description": "Long-press a catalog to assign a dedicated download folder.",
-      "version": "1.0.3",
+      "version": "1.0.4",
       "files": [
         "_meta.lua",
         "i18n.lua",
         "i18n_fr.lua",
-        "main.lua"
+        "main.lua",
+        "sh.lua"
       ],
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/opdsdir.koplugin/main/"
     },
@@ -935,7 +938,7 @@
       "dir": "pictionary.koplugin",
       "fullname": "Pictionary Party",
       "description": "Draw words against the clock — team-based party game.",
-      "version": "1.1.12",
+      "version": "1.1.13",
       "files": [
         "_meta.lua",
         "i18n_fr.lua",
@@ -968,7 +971,7 @@
       "dir": "quiz.koplugin",
       "fullname": "Quiz Party",
       "description": "General knowledge quiz — everyone writes their answer, then reveal.",
-      "version": "1.2.10",
+      "version": "1.2.11",
       "files": [
         "_meta.lua",
         "i18n_fr.lua",
@@ -1131,9 +1134,10 @@
       "dir": "startmenu.koplugin",
       "fullname": "Startup Menu",
       "description": "Shows a choice screen on KOReader startup: read or launch a game.",
-      "version": "1.1.11",
+      "version": "1.1.12",
       "files": [
         "_meta.lua",
+        "games.lua",
         "i18n.lua",
         "i18n_fr.lua",
         "main.lua"
@@ -1222,7 +1226,7 @@
       "dir": "taboo.koplugin",
       "fullname": "Taboo Party",
       "description": "Describe words without saying the forbidden ones — team buzzer party game.",
-      "version": "1.5.11",
+      "version": "1.5.12",
       "files": [
         "_meta.lua",
         "i18n_fr.lua",
