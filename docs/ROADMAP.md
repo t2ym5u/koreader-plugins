@@ -513,13 +513,18 @@ temps de coup, pas sur la moyenne.
   ont besoin du module LuaJIT `bit`~~ — corrigé en Phase A : les 8 variantes
   sudoku partagent `puzzle_generator.lua`, qui l'exige, et `sudoku-common/`
   a désormais sa propre spec soumise à la même contrainte.
-- `dashboard` et `opdsdir` n'ont pas de `.github/workflows/release.yml` :
-  `scripts/sync_workflow.sh` les a manqués, et ils ne publient donc aucune
-  release depuis leur propre dépôt (le monorepo, lui, les publie normalement).
-  Découvert le 2026-09-30 quand `binairo` a livré une v1.1.0 sans release —
-  corrigé pour lui, pas pour les deux autres. Noter aussi que ce workflow ne se
-  déclenche que sur les chemins `*.lua` : ajouter le fichier de workflow ne
-  suffit pas à rattraper la release en cours, il faut un `workflow_dispatch`.
+- ~~`dashboard` et `opdsdir` n'ont pas de `.github/workflows/release.yml`~~ —
+  corrigé et rectifié le 2026-09-30. Trois dépôts n'avaient jamais reçu le
+  workflow : `binairo` et `dashboard` l'ont désormais (déclenchés à la main
+  par `workflow_dispatch`, le workflow ne se déclenchant que sur les chemins
+  `*.lua`). **`opdsdir` n'était pas concerné** : contrairement à tous les
+  autres, ce n'est pas un sous-module — il vit directement dans le monorepo,
+  n'a donc pas de dépôt à lui, et `sync_workflow.sh` (qui itère sur
+  `git submodule status`) a raison de l'ignorer. Il est publié par la CI du
+  monorepo comme les autres, dès que sa version bouge dans `manifest.json`.
+  À savoir : `cd opdsdir.koplugin && git …` opère sur le monorepo, pas sur un
+  sous-module — une boucle de traitement en masse sur `*.koplugin` y commettra
+  silencieusement dans le dépôt parent.
 - `go.koplugin/README.md` : capture d'écran manquante
   (« *(Screenshot to be added.)* »).
 - `galaxies` reste bloqué sur un bug de générateur structurel (n=8), cf.
