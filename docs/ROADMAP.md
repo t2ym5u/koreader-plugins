@@ -711,20 +711,43 @@ apostrophes internes étant fermées puis rouvertes.
 
 ### Couverture de tests, plus largement
 
-8 plugins sans test. Les sept derniers — `dashboard`, `startmenu`, `opdsdir`,
-`quiz`, `taboo`, `pictionary`, `doubleornothing` — sont sans enjeu : aucun
-n'écrit hors de son répertoire. La seule absence qui comptait était
-`pluginmanager`, désormais couverte.
+8 plugins étaient sans test. `pluginmanager` était la seule absence qui
+comptait, et elle est couverte. **Les sept autres le sont désormais aussi**, et
+j'avais tort de les dire « sans enjeu » : les tests ont trouvé des défauts
+réels dans cinq d'entre eux.
+
+| Plugin | Test | Ce qu'il a trouvé |
+|---|---|---|
+| `quiz` | banque de 3 200 questions | **36 questions en double**, dont 10 avec deux réponses différentes |
+| `taboo` | deck de 8 419 cartes | **35 cartes cassées** : 10 interdisent leur propre mot, 12 répètent un interdit, 1 en a six, 11 mots en double |
+| `pictionary` | liste de 5 760 mots | rien — la liste est saine |
+| `opdsdir` | `sh.lua` | **injection shell** : le nom de fichier vient du catalogue OPDS distant |
+| `dashboard` | `format.lua` | rien — les quatre seuils sont justes |
+| `startmenu` | `games.lua` | **`name%s*=` matchait aussi `fullname%s*=`** (latent) |
+| `doubleornothing` | `round.lua` | `nextTeam` divisait par zéro sans équipe |
+
+Trois d'entre eux n'avaient rien de testable en l'état : la logique était
+soudée à `UIManager`. Elle est extraite telle quelle dans `format.lua`,
+`games.lua` et `round.lua` — aucun changement de comportement, sauf les deux
+corrections ci-dessus.
+
+Le chevauchement entre catégories de `pictionary` (« Shark » est dans *ocean*
+et dans *animals*) **n'est pas** un défaut : c'est le principe des catégories
+thématiques, et le test ne traque donc que les doublons intra-catégorie. Même
+raisonnement pour les cinq paires d'homographes français de `taboo`
+(*Poire/Poiré*, *Traite/Traité*, *Granite/Granité*, *Paris/Pâris*,
+*Gaia/Gaïa*), listées dans le test plutôt que de relâcher la vérification.
 
 Toute la logique de chemin vit dans `pathguard.lua`, **sans dépendance à
 KOReader** : c'est ce qui la rend testable seule, et `test_pathguard_spec.lua`
 couvre les 15 cas — chaque forme de voisin et de `..` du tableau ci-dessus.
 
-19 plugins n'ont pas de `CHANGELOG.md` : `2048`, `anagram`, `balance`,
-`chesscourse`, `dice`, `fifteen`, `hanoi`, `mastermind`, `memory`,
-`mentalmath`, `pickomino`, `quiz`, `sokoban`, `solitaire`, `startmenu`,
-`tatami`, `dashboard`, plus `checkers` (dépôt tiers) et `kakuro` (mis de côté).
-Gêne documentaire, sans conséquence fonctionnelle.
+19 plugins n'avaient pas de `CHANGELOG.md`. **17 en ont un**, reconstruit
+depuis les tags et l'historique git de chaque dépôt : chaque version y est
+listée avec les commits de fonctionnalité et de correction qu'elle portait
+réellement, les bumps de version, ajouts de capture et syncs CI étant écartés
+car ils ne disent rien du plugin. Restent `checkers` (dépôt tiers, non modifié)
+et `kakuro` (mis de côté).
 
 Vérifié au passage et **sain** : aucun autre plugin ne charge `i18n` par deux
 chemins différents (le piège rencontré sur `slitherlink`), et les versions
