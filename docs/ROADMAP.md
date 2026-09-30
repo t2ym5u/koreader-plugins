@@ -658,7 +658,7 @@ Le plugin reste donc mis de côté et son dépôt archivé.
 
 ---
 
-## Phase G — `pluginmanager` : le seul composant qui peut détruire des données, sans aucun test
+## Phase G — `pluginmanager` : suppression sécurisée ✅ FAIT (2026-09-30)
 
 Trouvé le 2026-09-30 en balayant ce qui restait. C'est le point le plus sérieux
 de tout ce qui suit.
@@ -693,9 +693,11 @@ garde-fou s'y oppose. Ce n'est pas exploitable par un tiers aujourd'hui (le
 manifeste est le vôtre), mais c'est de la donnée distante qui construit un
 chemin de suppression.
 
-Correctif : ancrer le test en préfixe et refuser tout `..`, par exemple
-`path:sub(1, #root) == root` avec `root = _plugins_dir .. "/"`, plus un rejet
-explicite des segments `..`.
+**Corrigé** (v1.4.0). Le test est désormais ancré en préfixe avec séparateur
+final, le répertoire des plugins lui-même n'est plus une cible supprimable,
+tout segment `..` est refusé, et le nom est validé **là où le chemin est
+construit** — pas seulement là où il est supprimé : une suppression au nom
+douteux est annoncée comme refusée plutôt que d'échouer en silence.
 
 ### Le repli sans `lfs` n'échappe pas le chemin
 
@@ -703,16 +705,20 @@ explicite des segments `..`.
 os.execute("rm -rf " .. path)
 ```
 
-Un chemin contenant une espace ou un métacaractère du shell ferait autre chose
-que ce qui est demandé. Les répertoires de plugins n'en contiennent pas
-aujourd'hui, mais rien ne l'impose.
+Un chemin contenant une espace aurait donné deux cibles à `rm -rf` au lieu
+d'une. **Corrigé** : le chemin est mis entre apostrophes simples, les
+apostrophes internes étant fermées puis rouvertes.
 
 ### Couverture de tests, plus largement
 
-8 plugins sans test : `pluginmanager`, `dashboard`, `startmenu`, `opdsdir`,
-`quiz`, `taboo`, `pictionary`, `doubleornothing`. Les sept derniers sont sans
-enjeu — aucun n'écrit hors de son répertoire. `pluginmanager` est la seule
-absence qui compte.
+8 plugins sans test. Les sept derniers — `dashboard`, `startmenu`, `opdsdir`,
+`quiz`, `taboo`, `pictionary`, `doubleornothing` — sont sans enjeu : aucun
+n'écrit hors de son répertoire. La seule absence qui comptait était
+`pluginmanager`, désormais couverte.
+
+Toute la logique de chemin vit dans `pathguard.lua`, **sans dépendance à
+KOReader** : c'est ce qui la rend testable seule, et `test_pathguard_spec.lua`
+couvre les 15 cas — chaque forme de voisin et de `..` du tableau ci-dessus.
 
 19 plugins n'ont pas de `CHANGELOG.md` : `2048`, `anagram`, `balance`,
 `chesscourse`, `dice`, `fifteen`, `hanoi`, `mastermind`, `memory`,
