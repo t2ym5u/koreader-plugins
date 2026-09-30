@@ -297,3 +297,7 @@
 	path = pluginmanager.koplugin
 	url = https://github.com/t2ym5u/pluginmanager.koplugin.git
 	branch = main
+[submodule "opdsdir.koplugin"]
+	path = opdsdir.koplugin
+	url = https://github.com/t2ym5u/opdsdir.koplugin.git
+	branch = main

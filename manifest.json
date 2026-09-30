@@ -867,14 +867,14 @@
       "dir": "opdsdir.koplugin",
       "fullname": "OPDS per-catalog download directory",
       "description": "Long-press a catalog to assign a dedicated download folder.",
-      "version": "1.0.2",
+      "version": "1.0.3",
       "files": [
         "_meta.lua",
         "i18n.lua",
         "i18n_fr.lua",
         "main.lua"
       ],
-      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/koreader-plugins/master/opdsdir.koplugin/"
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/opdsdir.koplugin/main/"
     },
     {
       "id": "othello",
