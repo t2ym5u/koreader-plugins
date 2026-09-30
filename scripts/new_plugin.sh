@@ -63,7 +63,11 @@ if ! command -v gh >/dev/null 2>&1; then
 fi
 gh auth status >/dev/null 2>&1 || { echo "Error: gh is not authenticated (run: gh auth login)." >&2; exit 1; }
 
-for required in _meta.lua main.lua board.lua; do
+# board.lua is a game's file. Utility plugins (dashboard, startmenu,
+# pluginmanager, opdsdir) build their UI straight from main.lua and have none,
+# and requiring it turned this script away from exactly the plugins that most
+# needed onboarding.
+for required in _meta.lua main.lua; do
   if [ ! -f "$PLUGIN_DIR/$required" ]; then
     echo "Error: $PLUGIN_DIR/$required is missing -- plugin looks incomplete." >&2
     exit 1
