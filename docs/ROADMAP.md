@@ -161,24 +161,88 @@ mode de défaillance nouveau.
 
 ---
 
-## Phase C — Bouton Astuce générique pour les autres puzzles
+## Phase C — Bouton Astuce générique pour les autres puzzles ✅ FAIT (2026-09-30)
 
 *(Correction du premier audit : j'avais annoncé qu'aucun jeu n'avait de bouton
 astuce. C'était faux — `chesscourse` et `wordladder` en ont un depuis
 toujours ; mes premières recherches ne ramenaient que le champ de métadonnées
-`sorting_hint`. Ces deux-là sont donc hors périmètre de cette phase.)*
+`sorting_hint`. Ces deux-là sont hors périmètre.)*
 
-**Constat.** 34 plugins ont déjà un bouton `Check`, 18 un `Reveal`, et la
-plupart des `board.lua` stockent déjà `self.solution` (kenken 9 réfs,
-nonogram 9, binairo/starbattle/hitori 8, tapa 7…). Un helper partagé dans
-`game-common` + ~15 lignes par écran suffit pour un « révéler une case ».
+**La prémisse de cette phase était fausse.** J'avais écrit « un helper partagé
+dans `game-common` + ~15 lignes par écran suffit ». À l'inspection, les
+modèles d'état n'ont rien de commun : `binairo` garde une grille de valeurs,
+`hitori` une grille d'états plus une grille booléenne de solution, `shikaku`
+des rectangles, `bridges` des arêtes. Un « révéler `self.solution[r][c]` »
+générique ne marche pas.
 
-Exceptions à traiter séparément : `slitherlink` et `tents` ne stockent pas
-`self.solution`.
+**Ce qui est réellement générique**, c'est l'interaction, pas les données. D'où
+`game-common/hint.lua` : un plateau se décrit **une fois** par une table de
+spec et reçoit `findHint`/`applyHint` ; `ScreenBase:onHint` pilote le reste.
+Coût réel : ~8 lignes par plateau, 1 ligne par écran.
 
-Bonus : `nonogram`, `slitherlink` et `lightup` ont déjà une fonction
-`propagate()` (propagation de contraintes) — l'astuce *pédagogique* y est
-presque gratuite, comme pour le sudoku.
+```lua
+Hint.install(BinairoBoard, {
+    isEmpty     = function(v) return v == nil end,   -- ici 0 est une vraie valeur
+    getUser     = function(b, r, c) return b.cells[r] and b.cells[r][c] end,
+    getSolution = function(b, r, c) return b.solution[r][c] end,
+    isGiven     = function(b, r, c) return b.given[r] and b.given[r][c] end,
+    setCell     = function(b, r, c, v) return b:setCellValue(r, c, v) end,
+})
+```
+
+**Deux taps**, pas un : le premier dit quelle case va céder, le second agit.
+L'écart est tout l'intérêt — qui sait où regarder trouve en général le reste
+seul. Et une case qui **contredit** la solution est toujours signalée avant
+qu'une nouvelle soit révélée : un joueur qui s'est trompé doit le savoir avant
+de bâtir dessus. Sur une erreur, l'astuce **vide** la case au lieu de la
+résoudre.
+
+Choix déterministe assumé : `ScreenBase` distingue « montre-moi où » de
+« remplis-la » en regardant si la cible a bougé, donc un tirage aléatoire
+remettrait à l'étape 1 à chaque appui et ne révélerait jamais rien. La case
+proposée est celle qui a le plus de voisins déjà remplis — heuristique de
+présentation, pas une preuve de déductibilité (il n'y a pas de solveur ici,
+contrairement à `sudoku-common`).
+
+**Deux pièges par plugin**, qui ont demandé de lire la logique de vérification
+existante plutôt que de deviner :
+
+- `isEmpty` — la valeur « vide » par défaut (nil / 0 / false) est fausse dès
+  que l'une d'elles est une vraie valeur. Le `0` de `binairo` en est une ;
+  sans surcharge, l'astuce proposait de « remplir » des cases déjà répondues.
+- `equals` — là où le jeu a des annotations facultatives (croix de `nonogram`,
+  point de `lightup` ou de `starbattle`), comparer l'état exact ferait passer
+  des notes parfaitement correctes pour des erreurs.
+
+**Livré : 18 plugins.**
+
+| Groupe | Plugins |
+|---|---|
+| Grilles de chiffres | `binairo`, `fillomino`, `hidato`, `numbrix`, `skyscraper`, `futoshiki`, `kenken`, `rippleeffect`, `suguru` |
+| Grilles à noircir / marquer | `nonogram`, `colornonogram`, `cave`, `tapa`, `hitori`, `nurikabe`, `lightup`, `battleship`, `starbattle` |
+
+Trois plateaux n'avaient aucun accesseur de cellule (`cave`, `colornonogram`,
+`tapa`) et un quatrième non plus (`starbattle`) : ils en ont reçu un, calqué
+sur leur méthode de cycle existante et passant par le même historique
+d'annulation.
+
+**Non couvert, et pourquoi.**
+
+- `bridges` (arêtes), `numberlink` (chemins), `shikaku` (rectangles),
+  `masyu` (boucle) — l'unité de jeu n'est pas la cellule. Chacun demande une
+  astuce sur mesure (« voici un pont », « voici un rectangle »), pas ce
+  module.
+- `minesweeper`, `slitherlink`, `tents` — ne stockent pas `self.solution` du
+  tout ; il faudrait la conserver à la génération avant d'espérer révéler
+  quoi que ce soit.
+
+**Vérification.** 12 tests unitaires sur `hint.lua` (déterminisme, priorité
+aux erreurs, cases données intouchables, `isEmpty`/`equals` personnalisés,
+grille menée à son terme). Puis, dans l'**émulateur KOReader**, les 18 plugins
+résolvent leur grille de bout en bout par astuces successives — et comme
+`findHint` signale aussi toute divergence, « plus aucune astuce » prouve
+l'égalité avec la solution. Les suites existantes des 18 passent sans
+régression.
 
 ---
 
