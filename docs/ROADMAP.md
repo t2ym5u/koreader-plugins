@@ -257,15 +257,32 @@ Trois plateaux n'avaient aucun accesseur de cellule (`cave`, `colornonogram`,
 sur leur méthode de cycle existante et passant par le même historique
 d'annulation.
 
-**Non couvert, et pourquoi.**
+**Suite livrée le 2026-09-30 — 4 plugins de plus, soit 22.**
 
-- `bridges` (arêtes), `numberlink` (chemins), `shikaku` (rectangles),
-  `masyu` (boucle) — l'unité de jeu n'est pas la cellule. Chacun demande une
-  astuce sur mesure (« voici un pont », « voici un rectangle »), pas ce
-  module.
-- `minesweeper`, `slitherlink`, `tents` — ne stockent pas `self.solution` du
-  tout ; il faudrait la conserver à la génération avant d'espérer révéler
-  quoi que ce soit.
+- ~~`minesweeper`, `slitherlink`, `tents` ne stockent pas `self.solution`~~ —
+  **faux, et c'est mon relevé qui l'était** : je n'avais cherché que le nom
+  `self.solution`. Ils la stockent sous `mines`, `h_sol`/`v_sol` et
+  `tents_sol`. `tents` et `minesweeper` utilisent le helper à cases tel quel
+  (une correction a été nécessaire : les grilles de `minesweeper` sont
+  rectangulaires, le helper supposait `board.n` carré). Son bouton reste muet
+  avant le premier clic, les mines n'étant posées qu'à ce moment — sinon il
+  « prouverait » n'importe quelle case sûre.
+- `slitherlink` et `shikaku` ont reçu une astuce **sur leur propre unité** :
+  un segment (horizontal ou vertical — les deux grilles d'arêtes sont
+  indépendantes, « L3C4 » seul ne dirait pas laquelle) et un rectangle entier
+  (révéler une case ne dirait presque rien, le jeu portant sur l'emplacement
+  des bords). `game-common` v1.4.0 ajoute pour cela le hook
+  `ScreenBase:describeHintStep` et un champ `tag` distinguant deux coups à la
+  même position.
+
+Le libellé vit dans l'écran, pas dans le plateau : un plateau qui formate du
+texte d'interface entraîne `ffi/util` de KOReader dans chaque test unitaire
+headless qui le touche — ce qui a cassé les specs de `slitherlink` et
+`shikaku` quand je l'avais fait dans l'autre sens.
+
+**Reste :** `bridges` (ponts entre îles), `numberlink` (chemins colorés) et
+`masyu` (boucle unique). Leur unité n'est ni une case, ni une arête isolée,
+mais un objet à plusieurs segments — chacun demande son propre parcours.
 
 **Vérification.** 12 tests unitaires sur `hint.lua` (déterminisme, priorité
 aux erreurs, cases données intouchables, `isEmpty`/`equals` personnalisés,
