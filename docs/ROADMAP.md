@@ -1,0 +1,298 @@
+# ROADMAP
+
+Améliorations planifiées sur la flotte de plugins KOReader. Établi le
+2026-09-30 à partir d'un audit de l'état réel du code (voir « Constat »
+sous chaque phase — ce sont des faits vérifiés, pas des suppositions).
+
+Ordre = rapport gain/effort décroissant. Chaque phase est indépendante et
+livrable seule.
+
+---
+
+## Phase A — Grilles sudoku solvables par pure logique ✅ FAIT (2026-09-30)
+
+**Constat (mesuré, pas supposé).** `createPuzzle` garantissait l'*unicité* de
+la solution et rien de plus. La difficulté n'était qu'un nombre d'indices :
+
+```lua
+local ratios = { easy = 0.43, medium = 0.56, hard = 0.65, expert = 0.72 }
+```
+
+Mesure sur 20 grilles 9×9 par difficulté, avant le changement :
+
+| Difficulté | Grilles exigeant de **deviner** | Palier réellement requis |
+|---|---|---|
+| easy | 0/20 | palier 1 |
+| medium | 0/20 | palier 1 |
+| hard | 1/20 | palier 1 |
+| **expert** | **7/20 (35 %)** | palier 1 |
+
+Donc deux défauts distincts : plus d'un tiers des grilles « expert » ne se
+résolvaient qu'à l'essai-erreur, et les quatre étiquettes décrivaient la même
+expérience avec des nombres d'indices différents.
+
+**Livré.**
+
+1. `sudoku-common/logic_solver.lua` — solveur humain à base de candidats,
+   générique sur les « unités » (lignes, colonnes, boîtes **et**
+   `extra_regions`, donc sudokux/windoku sans code spécifique) :
+
+   | Palier | Techniques |
+   |---|---|
+   | 1 | single nu, single caché |
+   | 2 | candidats verrouillés, paire nue |
+   | 3 | paire cachée, triplet nu, triplet caché, quadruplet nu |
+   | 4 | X-Wing, Swordfish, XY-Wing |
+
+2. L'oracle de creusement de `createPuzzle` est devenu « ce qui reste est-il
+   encore déductible avec le jeu de techniques autorisé ? ». Comme une grille
+   résoluble par pure logique a forcément une solution unique (chaque
+   déduction est forcée), ce test **remplace** `countSolutions(...) == 1` au
+   lieu de s'y ajouter.
+
+3. `createPuzzle` retourne en second une table d'info (`tier_cap`, `max_tier`,
+   `counts`, `clues`). `max_tier` est le palier réellement exigé : il peut
+   être inférieur au plafond (une grille 4×4 n'a pas la place pour un X-Wing),
+   et c'est reporté honnêtement plutôt que maquillé.
+
+**Résultat.** 0 grille exigeant de deviner, toutes tailles et toutes
+difficultés confondues. Et le générateur est nettement **plus rapide**, la
+propagation de contraintes rejetant une impasse bien avant un backtracking
+complet :
+
+| Grille | Avant | Après |
+|---|---|---|
+| 12×12 expert | 3,46 s | **0,13 s** |
+| 16×16 expert | > 60 s | **1,09 s** |
+| 9×9 expert | 0,01 s | 0,04 s |
+
+Gradient d'indices obtenu en 9×9 : 47 / 36 / 29 / 25 (easy → expert).
+
+**Portée réelle.** 7 plugins via le symlink `common/` → `sudoku-common/` :
+`sudoku`, `sudokux`, `windoku`, `thermosudoku`, `arrowsudoku`,
+`sandwichsudoku`, `betweenlines`. Pour les variantes à contraintes
+additionnelles (thermomètres, flèches, sommes sandwich, lignes), la garantie
+porte sur la logique du sudoku *classique* seule — leurs indices spécifiques
+restent une aide en plus, jamais une béquille nécessaire.
+
+**Non couvert :** `sudokukiller` n'appelle pas `createPuzzle`, il a son propre
+générateur par cages (ses commentaires reconnaissent déjà que la déductibilité
+y dépend de la géométrie tirée). À traiter séparément — le solveur devrait
+apprendre les contraintes de cage pour cela.
+
+**Tests.** `sudoku-common/test_logic_solver_spec.lua`, 27 cas : techniques sur
+grilles vérifiées à la main, détection de contradiction, plafond de palier,
+**soundness** (aucune technique ne pose jamais une mauvaise valeur ni
+n'élimine le bon candidat, vérifié contre la solution sur toutes les tailles),
+garantie de déductibilité par taille × difficulté, variantes à régions
+supplémentaires, et une grille-témoin réelle produite par l'ancien générateur —
+unique mais indéductible — que le nouveau ne peut plus émettre. Les 62 tests
+préexistants des 8 plugins sudoku passent toujours.
+
+**Reporté.** La symétrie rotationnelle des indices (esthétique « grille
+publiée ») : elle change l'allure de toutes les grilles existantes, ce qui
+mérite une décision explicite plutôt qu'un effet de bord. À reprendre avec un
+réglage dédié.
+
+---
+
+## Phase B — Bouton Astuce sur la famille sudoku ✅ FAIT (2026-09-30)
+
+**Constat.** Deux plugins seulement avaient déjà un bouton astuce
+(`chesscourse`, texte d'aide stocké par leçon ; `wordladder`, révèle le mot
+suivant d'un chemin le plus court). Aucun sudoku n'en avait.
+
+**Livré.** Le solveur de la Phase A donne la *bonne* astuce gratuitement : pas
+« voici la valeur », mais la déduction disponible et son nom.
+
+`logic_solver.nextPlacement()` — `nextStep()` seul a la mauvaise forme pour un
+bouton d'aide : plus de la moitié des techniques ne font qu'éliminer des
+candidats, et « on peut exclure un 4 ici » ne sert à rien à qui ne note pas ses
+candidats. `nextPlacement` avance donc le solveur à travers ces étapes
+préparatoires et s'arrête à la première case *remplissable* — une astuce est
+toujours actionnable.
+
+Trois appuis, dans `BaseScreen:onHint` :
+
+1. **où chercher** — nomme la ligne / colonne / bloc qui va céder ;
+2. **pourquoi** — nomme la technique et le chiffre, et sélectionne la case ;
+3. **la valeur** — l'écrit, annulable comme n'importe quel coup.
+
+Le niveau est déduit en comparant la case visée d'un appui à l'autre, pas
+stocké : si le joueur a résolu cette case lui-même entre-temps, l'astuce
+suivante repart au niveau 1 au lieu de rester bloquée sur un état périmé.
+
+Garde-fou important : `BaseBoard:findWrongEntry()` refuse toute astuce tant
+qu'une valeur saisie contredit la solution. Sans cela le solveur déduirait
+depuis une prémisse fausse et donnerait une réponse fausse avec aplomb —
+vérifié, ce n'est pas théorique.
+
+**Portée.** 7 plugins. `sudokukiller` est délibérément **exclu** : le solveur
+ne connaît que lignes/colonnes/blocs/régions, alors que l'information d'une
+grille killer vit dans les sommes de cages. Mesuré de easy à expert, la
+déduction classique y place **moins d'1 case sur 65 à 80** avant de caler — un
+bouton qui ne fait rien est pire que pas de bouton. Le code partagé est en
+place ; il suffira de réintroduire la ligne du bouton quand le solveur saura
+lire les cages (même prérequis que pour la garantie Phase A sur ce plugin).
+
+**Correctif i18n au passage.** `common/base_screen.lua` appelait `gettext`
+directement, alors que ses ~19 chaînes ne sont connues que de l'`i18n.lua`
+vendu dans chaque plugin. Vérifié dans l'émulateur : le gettext de KOReader
+renvoie ces chaînes inchangées en français. Toute l'interface partagée des
+8 plugins restait donc anglaise sur un appareil français (« Hide result to
+keep playing. », « Started a new game. »…). `base_screen` passe désormais par
+`i18n` quand il est joignable, avec repli sur l'ancien shim.
+
+**Vérification.** 34 cas dans `test_logic_solver_spec.lua` (dont : une grille
+menée à son terme uniquement par astuces, l'annulabilité, le refus quand la
+solution est affichée, le refus sur saisie fausse). Puis un test d'intégration
+dans l'**émulateur KOReader** avec la vraie chaîne de modules : les 7 plugins
+résolvent leur grille de bout en bout par astuces successives, `windoku` (4
+régions) et `sudokux` (2 diagonales) compris ; `sudokukiller` renvoie son
+message d'échec sans planter ; les messages sortent correctement en français.
+
+La rangée de boutons passe de 4 à 5. Mesuré avec le moteur de mise en page de
+KOReader lui-même (il ne tronque pas : il réduit la police) : à la largeur
+réelle du pavé, aucun texte n'est coupé en EN/FR/DE/ES ; seuls les libellés
+déjà longs perdent un peu de corps (« Notes : inactif » 18 → 16,
+« Rückgängig » 18 → 14). Le rétrécissement existait déjà à 4 boutons sur les
+mises en page étroites — le 5ᵉ bouton déplace le seuil, il n'introduit pas un
+mode de défaillance nouveau.
+
+---
+
+## Phase C — Bouton Astuce générique pour les autres puzzles
+
+*(Correction du premier audit : j'avais annoncé qu'aucun jeu n'avait de bouton
+astuce. C'était faux — `chesscourse` et `wordladder` en ont un depuis
+toujours ; mes premières recherches ne ramenaient que le champ de métadonnées
+`sorting_hint`. Ces deux-là sont donc hors périmètre de cette phase.)*
+
+**Constat.** 34 plugins ont déjà un bouton `Check`, 18 un `Reveal`, et la
+plupart des `board.lua` stockent déjà `self.solution` (kenken 9 réfs,
+nonogram 9, binairo/starbattle/hitori 8, tapa 7…). Un helper partagé dans
+`game-common` + ~15 lignes par écran suffit pour un « révéler une case ».
+
+Exceptions à traiter séparément : `slitherlink` et `tents` ne stockent pas
+`self.solution`.
+
+Bonus : `nonogram`, `slitherlink` et `lightup` ont déjà une fonction
+`propagate()` (propagation de contraintes) — l'astuce *pédagogique* y est
+presque gratuite, comme pour le sudoku.
+
+---
+
+## Phase D — Dictionnaires anglais ✅ FAIT (2026-09-30)
+
+**Constat.** Asymétrie d'un facteur ~25 entre listes FR et EN :
+
+| Jeu | EN avant | FR |
+|---|---|---|
+| `boggle`, `boggleparty`, `numletters` (même fichier) | **1 837** | 47 435 |
+| `wordle` | **715** (en dur dans `board.lua`) | 5 884 |
+
+Un joueur anglophone se faisait donc refuser des mots parfaitement valides.
+
+**Source retenue : ENABLE**, la liste maîtresse formellement versée au domaine
+public par ses auteurs comme « don à la communauté des jeux de mots », avec
+pour seule demande d'en créditer l'origine (fait dans l'en-tête de chaque
+fichier). Le `/usr/share/dict/words` local a été écarté après examen : son
+échantillon de mots de 5 lettres est truffé d'archaïsmes (*sycee*, *khoja*,
+*rorty*, *pooka*…), mauvais pour la validation comme pour les réponses.
+
+### boggle / boggleparty / numletters
+
+`words_en.lua` passe de 1 837 à **105 145 mots** (3 à 9 lettres). La borne
+haute est 9 parce que `numletters` tire 9 jetons ; la recherche de `boggle`
+s'arrête d'elle-même à 8.
+
+Effet mesuré, mêmes 20 grilles avant/après : **24,0 → 108,5 mots trouvables
+par grille (×4,5)**, soit désormais le même ordre de grandeur que le français
+(79/grille).
+
+Coût : ~7,4 Mo de table Lua quand un jeu de mots est ouvert (contre ~3,3 Mo
+pour le français), chargement 0,02 s ici. Les trois plugins passent par
+`require("words_en")`, donc une seule copie en mémoire même en enchaînant les
+jeux.
+
+`numletters:findSolutions()` balaie tout le dictionnaire à chaque manche ; avec
+105 k mots, le `word:upper()` par entrée dominait le coût. La table de
+disponibilité est désormais construite en minuscules, comme le dictionnaire :
+**33 ms → 9 ms**, mêmes solutions.
+
+### wordle
+
+Le problème n'était pas le nombre de réponses mais la **validation** : une
+seule liste de 715 mots servait à la fois de vivier de réponses et de
+définition de « est-ce un mot ». `STARE`, `TEARS`, `IRATE`, `NOTES`, `QUIRK`,
+`FJORD`, `LYMPH`, `ADIEU` étaient tous refusés.
+
+Séparation en deux listes, comme le fait Wordle lui-même :
+
+- `words_en.lua` — **2 307 réponses**, intersection d'ENABLE et de SCOWL
+  taille 35 (mots courants ; licence permissive de Kevin Atkinson, notice
+  conservée), moins les pluriels et 3ᵉ personnes du singulier (réponses trop
+  faciles) et les mots inadaptés à une grille de jeu — tous restant des
+  saisies valides. Les 715 mots historiques sont conservés tels quels, ce qui
+  préserve notamment `EMAIL`, absent d'ENABLE.
+- `guesses_en.lua` — **6 330 mots** acceptés en saisie mais jamais tirés comme
+  réponse.
+
+Le chargeur est désormais unifié : `words_<lang>.lua` + `guesses_<lang>.lua`
+optionnel. Le français, qui n'a pas de fichier de saisies, se comporte
+exactement comme avant. Au passage, `board.lua` perd la table française morte
+qui y était inlinée et passe de ~470 à 252 lignes.
+
+**Dette corrigée en passant.** Les README de `boggle`, `boggleparty` et
+`wordle` annonçaient des dictionnaires « EN, FR, DE, ES » : seuls EN et FR ont
+jamais existé (`LANG_ORDER = { "en", "fr" }`). Celui de `wordle` annonçait
+aussi une longueur de mot configurable (4/5/6) que rien ne règle — et ce
+chemin menait à un `math.random(0)`, toutes les listes étant en 5 lettres ;
+une garde a été ajoutée.
+
+**Vérification.** 17 tests wordle et 16/16/11 pour boggle/boggleparty/
+numletters, plus un test d'intégration dans l'émulateur KOReader : les mots
+autrefois refusés sont acceptés, `ZZZZZ` reste refusé, le français est
+inchangé, et `numletters` sort bien des solutions longues (*cowrite*, 7).
+
+**Reste à faire.** Le français est plafonné à 7 lettres, si bien que ses
+manches de `numletters` ne peuvent pas produire de solution de 8 ou 9 lettres —
+l'asymétrie est désormais inversée. À reprendre avec une liste FR CC0 plus
+longue.
+
+---
+
+## Phase E — IA des jeux d'opposition
+
+**Constat.**
+
+| Jeu | Existant | Action |
+|---|---|---|
+| `chess` | alpha-beta + quiescence + killer moves, profondeur 3 ; **backend Stockfish/UCI optionnel déjà écrit** | approfondissement itératif à budget temps (plutôt que profondeur fixe, mieux adapté à un CPU e-ink), table de transposition |
+| `checkers` | alpha-beta profondeur 5 | correct, rien à faire |
+| `connect4` | alpha-beta profondeur 3/5/7 | table de transposition + ordonnancement centre-d'abord |
+| `othello` | minimax alpha-beta profondeur 4 ; éval = coins/bords/mobilité | pénalités cases X et C, poids par phase, **résolution exacte de la fin de partie** |
+| `gomoku` | heuristique de menaces, profondeur 1 par défaut, minimax *sans* alpha-beta (cf. commentaire l.265) | le plus faible : alpha-beta + recherche VCF/VCT |
+| `go` | **aucune IA** (2 joueurs seulement) | IA débutant honnête (atari/capture/extension + playouts bornés) ; MCTS 9×9 coûteux sur e-ink |
+| `backgammon` | **aucune IA** ; le README admet aussi : pas de videau, Blanc commence toujours, obligation de jouer les deux dés non appliquée | corriger d'abord les règles manquantes, puis IA heuristique (pip count, blots, points faits, prime) |
+
+Mutualisation visée : `game-common/search.lua` (alpha-beta + table de
+transposition + budget temps) partagé par chess/othello/gomoku/connect4/
+checkers au lieu de cinq implémentations séparées.
+
+---
+
+## Hors phases — dette repérée en passant
+
+- `scripts/check_sudoku_common_drift.sh` documente des divergences
+  per-plugin de `common/` qui n'existent plus : les 8 variantes sont
+  aujourd'hui des symlinks committés vers `sudoku-common/` (mode git
+  `120000`). Le script et ses commentaires sont obsolètes.
+- ~~`spec/README.md` affirme que seuls `sudoku`, `sudokukiller` et `hanoi`
+  ont besoin du module LuaJIT `bit`~~ — corrigé en Phase A : les 8 variantes
+  sudoku partagent `puzzle_generator.lua`, qui l'exige, et `sudoku-common/`
+  a désormais sa propre spec soumise à la même contrainte.
+- `go.koplugin/README.md` : capture d'écran manquante
+  (« *(Screenshot to be added.)* »).
+- `galaxies` reste bloqué sur un bug de générateur structurel (n=8), cf.
+  `docs/generator_robustness_audit.md`.

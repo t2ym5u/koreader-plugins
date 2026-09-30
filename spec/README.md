@@ -27,9 +27,11 @@ Or every plugin's tests at once, from the monorepo root:
 busted
 ```
 
-Note: `sudoku.koplugin`, `sudokukiller.koplugin` and `hanoi.koplugin` require
-the LuaJIT `bit` module (their generators use a bitmask-based solver) and
-will error under plain PUC-Lua unless `busted` is also installed under a
+Note: `hanoi.koplugin`, `sudoku-common/` and every sudoku-variant plugin
+(`arrowsudoku`, `betweenlines`, `sandwichsudoku`, `sudoku`, `sudokukiller`,
+`sudokux`, `thermosudoku`, `windoku` — they all share `sudoku-common`'s
+bitmask-based generator and logic solver) require the LuaJIT `bit` module,
+and will error under plain PUC-Lua unless `busted` is also installed under a
 LuaJIT rocks tree (`busted --lua=luajit ...`). All other specs run under
 plain Lua.
 
