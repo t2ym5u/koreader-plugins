@@ -74,6 +74,24 @@ for required in _meta.lua main.lua; do
   fi
 done
 
+# Since KOReader 2026.03 (PR #15096) PluginLoader keys a plugin on its
+# directory name and overwrites main.lua's `name` with it, while `name` in
+# _meta.lua is deprecated and dropped with a warning. A mismatch is not
+# cosmetic: PluginBase derives the settings file and the game_stats.lua row
+# from `name`, so the plugin would write to one path and KOReader would look
+# for another. Catch it at onboarding rather than after users have saved games.
+declared_name="$(sed -n 's/.*name[[:space:]]*=[[:space:]]*"\([^"]*\)".*/\1/p' "$PLUGIN_DIR/main.lua" | head -1)"
+if [ -n "$declared_name" ] && [ "$declared_name" != "$NAME" ]; then
+  echo "Error: $PLUGIN_DIR/main.lua declares name=\"$declared_name\" but the" >&2
+  echo "       directory is ${NAME}.koplugin. They must match." >&2
+  exit 1
+fi
+if grep -qE '^[[:space:]]*name[[:space:]]*=' "$PLUGIN_DIR/_meta.lua"; then
+  echo "Error: $PLUGIN_DIR/_meta.lua sets \`name\`, which KOReader deprecated" >&2
+  echo "       in 2026.03 and ignores. Remove it." >&2
+  exit 1
+fi
+
 echo "=== new_plugin.sh: ${NAME}.koplugin ==="
 echo "  Repo to create : $REPO"
 echo "  Local dir      : $PLUGIN_DIR"
