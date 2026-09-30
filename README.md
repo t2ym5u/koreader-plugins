@@ -5,6 +5,7 @@
 A collection of 70 game and utility plugins for [KOReader](https://koreader.rocks/).
 
 **→ Full documentation: [docs/README.md](docs/README.md)**
+**→ Planned and delivered improvements: [docs/ROADMAP.md](docs/ROADMAP.md)**
 
 ---
 
