@@ -350,10 +350,13 @@ numletters, plus un test d'intégration dans l'émulateur KOReader : les mots
 autrefois refusés sont acceptés, `ZZZZZ` reste refusé, le français est
 inchangé, et `numletters` sort bien des solutions longues (*cowrite*, 7).
 
-**Reste à faire.** Le français est plafonné à 7 lettres, si bien que ses
-manches de `numletters` ne peuvent pas produire de solution de 8 ou 9 lettres —
-l'asymétrie est désormais inversée. À reprendre avec une liste FR CC0 plus
-longue.
+**Asymétrie inversée, puis corrigée (2026-09-30).** Le français plafonnait à
+7 lettres : ses manches de `numletters` ne pouvaient pas produire de solution
+de 8 ou 9 lettres alors que l'anglais le pouvait. La liste FR passe de 47 435 à
+**132 778 mots** (3-9 lettres) : les 3-7 restent la liste CC0 Scrabble-valide
+d'origine, les 8-9 viennent d'`an-array-of-french-words` (MIT), normalisés de
+la même façon. Les deux langues couvrent désormais le tirage complet de 9
+jetons. Coût : ~12,4 Mo de table Lua côté français contre 7,4 Mo côté anglais.
 
 ---
 
