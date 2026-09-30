@@ -370,13 +370,36 @@ rien. Toute mesure d'IA dans ce dépôt doit varier les ouvertures.
 l'est.** Le plan ci-dessous, qui misait surtout sur des gains de recherche,
 est à reconsidérer jeu par jeu avec des mesures avant/après.
 
+### `othello` ✅ FAIT (2026-09-30)
+
+Le seul point du plan initial qui promettait une certitude plutôt qu'une
+heuristique — et c'est le seul qui a tenu.
+
+**Livré : ~2 parties gagnées sur 3 contre la version précédente, en deux fois
+moins de temps par coup** (38-21 et une nulle sur 60 parties à ouvertures
+aléatoires ; 0,015 s/coup contre 0,029 s à profondeur 4).
+
+- **Solveur de fin de partie exact.** À 10 cases vides ou moins, l'arbre
+  restant tient dans le budget : le moteur cesse d'évaluer et joue la position
+  jusqu'au dernier pion. Son choix final est *prouvé*, plus estimé.
+- **Seuil fixé à 10, pas plus.** À 13 il joue marginalement mieux mais un coup
+  a pris **10,8 s** sur un poste de bureau — une minute devant l'écran sur un
+  CPU e-ink. À 10, le pire coup mesuré est à 0,21 s.
+- **Même bug de racine qu'à `gomoku`** : alpha et bêta repartaient de leurs
+  extrêmes à chaque candidat, jetant toutes les coupes entre frères. Corrigé —
+  c'est de là que vient le gain de vitesse.
+
+Les pénalités de cases X et C et les poids par phase n'ont pas été tentées :
+après l'expérience `gomoku`, toucher une évaluation calibrée sans mesure est
+le meilleur moyen de livrer une régression, et le solveur exact apportait déjà
+le gain visé.
+
 ### Reste à faire
 
 | Jeu | Existant | Action |
 |---|---|---|
 | `checkers` | alpha-bêta profondeur 5 | correct, rien à faire |
 | `connect4` | alpha-bêta profondeur 3/5/7 | table de transposition + ordonnancement centre-d'abord ; **à valider par match avant/après** |
-| `othello` | minimax alpha-bêta profondeur 4 ; éval = coins/bords/mobilité | pénalités cases X et C, poids par phase, résolution exacte de fin de partie (celle-ci est un vrai gain, pas une heuristique) |
 | `chess` | alpha-bêta + quiescence + killer moves, profondeur 3 ; backend Stockfish/UCI optionnel déjà écrit | approfondissement itératif à budget temps, table de transposition |
 | `go` | **aucune IA** (2 joueurs seulement) | IA débutant honnête ; MCTS 9×9 coûteux sur e-ink |
 | `backgammon` | **aucune IA** ; le README admet aussi : pas de videau, Blanc commence toujours, obligation de jouer les deux dés non appliquée | corriger d'abord les règles manquantes, puis IA heuristique |
