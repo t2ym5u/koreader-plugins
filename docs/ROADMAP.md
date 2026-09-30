@@ -658,6 +658,74 @@ Le plugin reste donc mis de côté et son dépôt archivé.
 
 ---
 
+## Phase G — `pluginmanager` : le seul composant qui peut détruire des données, sans aucun test
+
+Trouvé le 2026-09-30 en balayant ce qui restait. C'est le point le plus sérieux
+de tout ce qui suit.
+
+**3 322 lignes, 12 appels de suppression de fichiers (`os.remove`,
+`lfs.rmdir`), zéro test.** C'est aussi le seul plugin qui écrit hors de son
+propre répertoire, et il a déjà mordu une fois : le bug de portée de
+« Tout supprimer » qui effaçait les plugins de KOReader lui-même (corrigé le
+2026-08-04).
+
+### Le garde-fou de `rm_rf` ne fait pas ce qu'il paraît faire
+
+```lua
+local function rm_rf(path)
+    if not path:find(_plugins_dir, 1, true) then return end
+```
+
+`find(…, 1, true)` cherche une **sous-chaîne**, pas un préfixe. Vérifié :
+
+| chemin | garde-fou |
+|---|---|
+| `…/koreader/plugins/sudoku.koplugin` | passe (voulu) |
+| `…/koreader/plugins-backup/mes-sauvegardes` | **passe** |
+| `…/koreader/plugins_old` | **passe** |
+| `/tmp/ailleurs/…/koreader/plugins` | **passe** |
+
+Un répertoire voisin dont le nom commence par celui des plugins est donc
+supprimable. Le chemin vient de `_plugins_dir .. "/" .. entry.dir`, où
+`entry.dir` est lu dans le `manifest.json` **récupéré sur le réseau** et n'est
+pas assaini : un `dir` contenant `..` sortirait du répertoire sans que le
+garde-fou s'y oppose. Ce n'est pas exploitable par un tiers aujourd'hui (le
+manifeste est le vôtre), mais c'est de la donnée distante qui construit un
+chemin de suppression.
+
+Correctif : ancrer le test en préfixe et refuser tout `..`, par exemple
+`path:sub(1, #root) == root` avec `root = _plugins_dir .. "/"`, plus un rejet
+explicite des segments `..`.
+
+### Le repli sans `lfs` n'échappe pas le chemin
+
+```lua
+os.execute("rm -rf " .. path)
+```
+
+Un chemin contenant une espace ou un métacaractère du shell ferait autre chose
+que ce qui est demandé. Les répertoires de plugins n'en contiennent pas
+aujourd'hui, mais rien ne l'impose.
+
+### Couverture de tests, plus largement
+
+8 plugins sans test : `pluginmanager`, `dashboard`, `startmenu`, `opdsdir`,
+`quiz`, `taboo`, `pictionary`, `doubleornothing`. Les sept derniers sont sans
+enjeu — aucun n'écrit hors de son répertoire. `pluginmanager` est la seule
+absence qui compte.
+
+19 plugins n'ont pas de `CHANGELOG.md` : `2048`, `anagram`, `balance`,
+`chesscourse`, `dice`, `fifteen`, `hanoi`, `mastermind`, `memory`,
+`mentalmath`, `pickomino`, `quiz`, `sokoban`, `solitaire`, `startmenu`,
+`tatami`, `dashboard`, plus `checkers` (dépôt tiers) et `kakuro` (mis de côté).
+Gêne documentaire, sans conséquence fonctionnelle.
+
+Vérifié au passage et **sain** : aucun autre plugin ne charge `i18n` par deux
+chemins différents (le piège rencontré sur `slitherlink`), et les versions
+`_meta.lua` concordent avec le dernier tag sur les 71 plugins.
+
+---
+
 ## Hors phases — dette repérée en passant
 
 - ~~`scripts/check_sudoku_common_drift.sh` documente des divergences
