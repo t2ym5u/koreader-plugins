@@ -3,7 +3,7 @@
   "updated": "2026-09-30",
   "repo": "t2ym5u/koreader-plugins",
   "common": {
-    "version": "1.3.0",
+    "version": "1.3.1",
     "dir": "game-common",
     "files": [
       "daily_seed.lua",
@@ -758,7 +758,7 @@
       "dir": "minesweeper.koplugin",
       "fullname": "Minesweeper",
       "description": "Classic mine-sweeping game. Reveal all safe cells without triggering a mine.",
-      "version": "1.1.16",
+      "version": "1.2.0",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -1259,7 +1259,7 @@
       "dir": "tents.koplugin",
       "fullname": "Tents and Trees",
       "description": "Logic puzzle: pair each tree with an adjacent tent, no touching tents.",
-      "version": "1.1.18",
+      "version": "1.2.0",
       "files": [
         "_meta.lua",
         "board.lua",
