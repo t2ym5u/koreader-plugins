@@ -639,5 +639,35 @@ Le plugin reste donc mis de côté et son dépôt archivé.
   `pluginmanager`, `opdsdir`) — l'exigence est levée.
 - `go.koplugin/README.md` : capture d'écran manquante
   (« *(Screenshot to be added.)* »).
-- `galaxies` reste bloqué sur un bug de générateur structurel (n=8), cf.
-  `docs/generator_robustness_audit.md`.
+- ~~`galaxies` reste bloqué sur un bug de générateur structurel~~ — **résolu le
+  2026-09-30, le plugin est réintégré** (71 plugins au manifeste). La cause
+  n'était pas « structurelle et insoluble » mais un choix de repère : le centre
+  d'une galaxie était limité au *milieu d'une case*, ce qui force toute région
+  à être de taille impaire autour de son centre dans les deux axes — une grille
+  n×n ne se pave presque jamais ainsi.
+
+  | | avant | après |
+  |---|---|---|
+  | n=6 valides | 8/20 | **20/20** |
+  | n=7 valides | 0/20 (100 % de repli dégénéré) | **20/20** |
+  | n=8 valides | 0/20 (100 % de repli dégénéré) | **20/20** |
+  | temps | 0,09-0,40 s/grille | instantané |
+
+  Les centres sont désormais en **coordonnées doublées** — la case (r,c) occupe
+  (2r-1, 2c-1) — de sorte qu'un centre peut tomber au milieu d'une case, sur une
+  arête ou sur un coin, ce que le jeu a toujours permis. Le pavage croît
+  symétriquement, chaque ajout vérifie que sa région reste connexe, et une case
+  seule est toujours une galaxie légale : la génération **ne peut plus échouer**,
+  la boucle de 3000 essais et son repli ont disparu. Dépôt désarchivé, retiré
+  d'`EXCLUDED_PLUGINS` et de `bump_versions.sh`, topic et protection de branche
+  appliqués.
+
+- **Statut mal recentré quand son texte s'allonge** — trouvé en vérifiant le
+  rendu de `galaxies`, corrigé dans `game-common` v1.4.1. `VerticalGroup` met en
+  cache sa taille *et* le décalage de chaque enfant au premier calcul ; les
+  écrans construisent leur mise en page puis appellent `updateStatus`, si bien
+  que tout statut plus long que celui présent à la construction gardait
+  l'ancien centrage et débordait à droite. Je l'avais d'abord pris pour un
+  artefact de mon harnais de capture et « corrigé » là ; il se reproduisait via
+  la vraie passe de mise en page de `UIManager`, ce qui a montré qu'il était
+  réel.

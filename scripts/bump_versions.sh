@@ -155,7 +155,7 @@ while IFS= read -r dir; do
     # Set-aside plugins (see EXCLUDED_PLUGINS in
     # .github/scripts/update_manifest.py / CLAUDE.md): their GitHub repos
     # are archived (read-only), so a version bump here would fail to push.
-    [[ "$dir" == "kakuro.koplugin" || "$dir" == "galaxies.koplugin" || "$dir" == "arrowwords.koplugin" ]] && \
+    [[ "$dir" == "kakuro.koplugin" || "$dir" == "arrowwords.koplugin" ]] && \
         { skipped+=("$dir (set-aside/archived, see CLAUDE.md)"); continue; }
     bump_plugin "$dir"
 done < <(git -C "$ROOT" submodule status | awk '{print $2}')

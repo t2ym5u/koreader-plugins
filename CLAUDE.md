@@ -7,11 +7,13 @@ full plugin list.
 
 ## Set-aside plugins
 
-`kakuro`, `galaxies`, `arrowwords` are deliberately excluded from
+`kakuro`, `arrowwords` are deliberately excluded from
 `manifest.json`/`dist/` and their GitHub repos (`t2ym5u/<name>.koplugin`)
-are archived. kakuro and galaxies have confirmed, unfixed generator bugs
-(see `docs/generator_robustness_audit.md`); arrowwords was set aside by
-user request. Their submodules are still checked out locally — don't
+are archived. kakuro has a confirmed, unfixed generator bug (see
+`docs/generator_robustness_audit.md`); arrowwords was set aside by user
+request — its blocker is a clue bank, not code, see `docs/ROADMAP.md` phase F.
+`galaxies` was in this list until 2026-09-30, when its generator was rebuilt on
+doubled-coordinate centres; it is a normal plugin again. Their submodules are still checked out locally — don't
 assume presence in `manifest.json` means "not yet built", check
 `EXCLUDED_PLUGINS` in `.github/scripts/update_manifest.py` first.
 
