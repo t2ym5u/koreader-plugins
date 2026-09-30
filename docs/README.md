@@ -33,6 +33,7 @@ A collection of game and utility plugins for [KOReader](https://koreader.rocks/)
 | [Fifteen Puzzle](https://github.com/t2ym5u/fifteen.koplugin) | Classic 15-tile sliding puzzle |
 | [Fillomino](https://github.com/t2ym5u/fillomino.koplugin) | Fill regions with matching numbers |
 | [Futoshiki](https://github.com/t2ym5u/futoshiki.koplugin) | Inequality-constrained Latin square |
+| [Galaxies](https://github.com/t2ym5u/galaxies.koplugin) | Divide the grid into rotationally symmetric regions |
 | [Go](https://github.com/t2ym5u/go.koplugin) | Classic territory and capture board game |
 | [Gomoku](https://github.com/t2ym5u/gomoku.koplugin) | Five in a row |
 | [Hangman](https://github.com/t2ym5u/hangman.koplugin) | Classic word guessing game |
