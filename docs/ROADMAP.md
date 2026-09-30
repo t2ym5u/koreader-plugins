@@ -709,6 +709,42 @@ Un chemin contenant une espace aurait donné deux cibles à `rm -rf` au lieu
 d'une. **Corrigé** : le chemin est mis entre apostrophes simples, les
 apostrophes internes étant fermées puis rouvertes.
 
+**Complété le 2026-09-30.** `shellQuote` était appelé pour le `rm -rf` de la
+ligne 592 et oublié pour le `mkdir -p` de la ligne 540, dans le même fichier,
+sur la même branche de repli et depuis la même source distante. Corrigé.
+
+### Le champ `files` du manifeste n'était pas gardé — et le zip non plus
+
+`pathguard.lua` a été écrit pour le champ `dir` de `manifest.json`, et son
+propre commentaire dit pourquoi : *« les chemins qu'il protège sont construits
+depuis le champ `dir` de manifest.json, qui arrive par le réseau »*. Le même
+raisonnement n'avait jamais été appliqué au champ **`files`**, ni aux entrées
+d'une archive téléchargée. Trois sites écrivaient un chemin composé d'une
+chaîne choisie ailleurs :
+
+| Site | Source du chemin | Forme dangereuse |
+|---|---|---|
+| `ensureCommon` | `manifest.json` → `files[]` | `../../evil.lua` |
+| `installPlugin` | `manifest.json` → `files[]` | `../../evil.lua` |
+| `extract_archive` | entrée du zip téléchargé | `monplugin/../../evil.lua` |
+
+Le troisième est le plus exposé — c'est un **Zip Slip** classique. Le test de
+préfixe déjà présent (`entry.path:sub(1, #prefix) == prefix`) ne protège de
+rien ici : `monplugin/../../evil.lua` **commence bien** par `monplugin/`, et
+ce qui en est extrait est `../../evil.lua`.
+
+**Corrigé** : `PathGuard.filePath(root, rel)` construit le chemin puis le
+refuse s'il n'a pas atterri sous `root`. `isSafeName` ne convenait pas — les
+entrées portent légitimement un sous-répertoire (`common/i18n.lua`), ce qu'un
+nom de plugin n'a pas le droit de faire. Les trois sites passent par lui et
+remontent une erreur nommée au lieu d'écrire. `test_pathguard_spec.lua` monte
+de 15 à 29 cas ; le dernier vérifie que `filePath` ne rend jamais un chemin
+qu'`isWithin` refuserait, pour que les deux gardes ne puissent pas diverger.
+
+**Portée réelle** : le manifeste est servi depuis le dépôt GitHub du projet en
+HTTPS, donc rien n'était déclenchable à distance. C'étaient des garde-fous
+manquants, pas des failles ouvertes.
+
 ### Couverture de tests, plus largement
 
 8 plugins étaient sans test. `pluginmanager` était la seule absence qui
