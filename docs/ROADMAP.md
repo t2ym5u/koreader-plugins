@@ -550,8 +550,55 @@ Toujours pas de cube de doublement.
 | Jeu | État |
 |---|---|
 | `checkers` | alpha-bêta profondeur 5, correct — rien à faire |
-| tous | mutualisation dans un `game-common/search.lua` (alpha-bêta + table de transposition + budget temps) au lieu de cinq implémentations. Les bancs d'essai tête-à-tête à ouvertures aléatoires devraient y aller aussi : ce sont eux qui ont évité de livrer plusieurs régressions. |
-| `backgammon` | cube de doublement (fonctionnalité, pas règle manquante) |
+| `backgammon` | ~~cube de doublement~~ — **fait le 2026-09-30** (v1.2.0). Offert avant de lancer par le propriétaire du videau ; accepter double l'enjeu et transmet le videau, refuser met fin à la partie **à l'enjeu d'avant** — c'est tout l'intérêt du videau. Les parties sont désormais cotées : ×2 sur un gammon, ×3 sur un backgammon. Contre l'ordinateur il n'y a personne à qui passer l'offre, il répond donc lui-même (il prend sauf s'il est à plus d'un quart de retard au pip count) ; il ne propose jamais de doublement de sa propre initiative, car refuser de doubler ne fait jamais perdre une partie alors que doubler mal, si. |
+| `checkers` | correct côté profondeur, **mais il a le même bug de racine que les quatre autres** — voir ci-dessous |
+
+### `game-common/search.lua` ❌ NON FAIT — décision argumentée
+
+Le plan prévoyait de mutualiser les cinq alpha-bêta. **Je recommande de ne pas
+le faire**, sur la base de ce que la phase E a mesuré.
+
+Le squelette partagé pèse 191 lignes au total (chess 41, othello 42, connect4
+45, gomoku 32, checkers 31) — mais les cinq moteurs diffèrent précisément sur
+la dimension critique, la façon d'avancer et de défaire un état :
+
+| moteur | avance l'état par |
+|---|---|
+| `chess` | `_applyMove`/`_undoMove` sur place, avec quiescence et killer moves |
+| `othello` | une grille **neuve** par coup |
+| `connect4` | une grille **neuve** par coup |
+| `gomoku` | écriture sur place dans la grille |
+| `checkers` | un **objet de jeu neuf** par coup (`clone`) |
+
+Et chacun porte une règle propre *dans* la boucle : `checkers` ne consomme pas
+de profondeur sur un saut multiple, `othello` saute un joueur sans coup sans
+consommer de tour, `connect4` court-circuite les gains et blocages immédiats,
+`gomoku` ne plafonne ses candidats qu'à la racine. Un squelette générique
+devrait passer par des closures pour coups/appliquer/défaire/évaluer — exactement
+là où `chess` tire sa vitesse — et rouvrir cinq crochets pour ces
+particularités. Plus de code au total, plus lent pour `chess`, et un risque de
+régression dont j'ai la preuve directe : sur `gomoku` seul, trois modifications
+plausibles ont été mesurées comme des reculs.
+
+**Ce que la duplication a réellement coûté, en revanche, est démontrable : le
+même bug de racine existait dans les cinq moteurs** — alpha réinitialisé à
+±∞ pour chaque candidat, ce qui jette toutes les coupes entre frères. Quatre
+sont corrigés et livrés. Le cinquième, `checkers`, appartient à `kbarni` et
+non à ce compte : je l'ai corrigé et mesuré localement, puis **remis en
+l'état** — je ne pousse pas chez un tiers sans votre accord.
+
+Mesure sur 23 positions aléatoires à profondeur 5 : **coup identique 23/23,
+temps ramené à 63 %**. Le correctif tient en un argument, dans
+`CheckersAI.best_move` :
+
+```lua
+-- avant
+local val = alpha_beta(child, next_depth, -INF, INF, ai_player)
+-- après
+local val = alpha_beta(child, next_depth, best_val, INF, ai_player)
+```
+
+À proposer en amont si vous le souhaitez.
 
 **Bilan de la phase.** Le bug de racine — alpha réinitialisé à chaque candidat,
 qui jette toutes les coupes entre frères — était présent dans **les quatre**
