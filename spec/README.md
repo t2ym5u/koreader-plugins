@@ -40,3 +40,9 @@ plain Lua.
 `solvability_audits/` holds one-off research scripts used while auditing
 puzzle-generator uniqueness bugs across the fleet — not part of the busted
 suite, kept for historical reference.
+
+`ai_harnesses/` holds the head-to-head harnesses used to measure the game AIs.
+Also outside the busted suite (a match takes minutes), but these are meant to
+be re-run: its README explains why a match without randomised openings
+measures nothing here, and why the worst move time matters more than the
+average.

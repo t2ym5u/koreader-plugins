@@ -7,6 +7,25 @@ sous chaque phase — ce sont des faits vérifiés, pas des suppositions).
 Ordre = rapport gain/effort décroissant. Chaque phase est indépendante et
 livrable seule.
 
+## État au 2026-09-30
+
+Les cinq phases sont livrées, chacune taggée et publiée plugin par plugin.
+
+| Phase | Objet | Portée |
+|---|---|---|
+| A ✅ | Grilles sudoku solvables par pure logique | `sudoku-common` + 7 variantes |
+| B ✅ | Bouton Astuce sur la famille sudoku | 7 plugins |
+| C ✅ | Bouton Astuce générique | `game-common` + 18 plugins |
+| D ✅ | Dictionnaires anglais | 4 plugins |
+| E ✅ | IA des jeux d'opposition | 6 plugins |
+
+Ce qui reste est listé sous « Reste à faire » de la phase E et sous « Hors
+phases » en fin de document : rien de commencé, tout mesuré ou constaté.
+
+Les bancs d'essai qui ont servi à la phase E sont dans
+`spec/ai_harnesses/` — leur README explique les deux façons de se tromper en
+mesurant une IA ici, toutes deux rencontrées.
+
 ---
 
 ## Phase A — Grilles sudoku solvables par pure logique ✅ FAIT (2026-09-30)
