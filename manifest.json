@@ -98,7 +98,7 @@
       "dir": "backgammon.koplugin",
       "fullname": "Backgammon",
       "description": "Classic 2-player dice and checker race game.",
-      "version": "1.0.10",
+      "version": "1.1.0",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -288,7 +288,7 @@
       "dir": "chess.koplugin",
       "fullname": "Chess",
       "description": "Chess game with AI",
-      "version": "1.1.19",
+      "version": "1.1.20",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -378,7 +378,7 @@
       "dir": "connect4.koplugin",
       "fullname": "Connect Four",
       "description": "Connect Four — align 4 pieces with AI.",
-      "version": "1.1.14",
+      "version": "1.1.15",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -532,7 +532,7 @@
       "dir": "go.koplugin",
       "fullname": "Go",
       "description": "Classic territory and capture board game.",
-      "version": "1.0.10",
+      "version": "1.1.0",
       "files": [
         "_meta.lua",
         "board.lua",
