@@ -23,7 +23,7 @@
     "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/game-common/main/"
   },
   "sudoku_common": {
-    "version": "1.1.0",
+    "version": "1.2.0",
     "dir": "sudoku-common",
     "files": [
       "base_board.lua",
@@ -79,7 +79,7 @@
       "dir": "arrowsudoku.koplugin",
       "fullname": "Arrow Sudoku",
       "description": "Sudoku with arrow sum constraints",
-      "version": "1.3.0",
+      "version": "1.3.1",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -105,7 +105,8 @@
         "board_widget.lua",
         "i18n_fr.lua",
         "main.lua",
-        "screen.lua"
+        "screen.lua",
+        "images/backgammon.png"
       ],
       "common_lib": "common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/backgammon.koplugin/main/"
@@ -122,7 +123,8 @@
         "board_widget.lua",
         "i18n_fr.lua",
         "main.lua",
-        "screen.lua"
+        "screen.lua",
+        "images/balance.png"
       ],
       "common_lib": "common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/balance.koplugin/main/"
@@ -139,7 +141,8 @@
         "board_widget.lua",
         "i18n_fr.lua",
         "main.lua",
-        "screen.lua"
+        "screen.lua",
+        "images/battleship.png"
       ],
       "common_lib": "common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/battleship.koplugin/main/"
@@ -149,7 +152,7 @@
       "dir": "betweenlines.koplugin",
       "fullname": "Between Lines Sudoku",
       "description": "Sudoku with between-lines constraints",
-      "version": "1.2.0",
+      "version": "1.2.1",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -351,7 +354,8 @@
         "chess_pieces_img/wn.png",
         "chess_pieces_img/wp.png",
         "chess_pieces_img/wq.png",
-        "chess_pieces_img/wr.png"
+        "chess_pieces_img/wr.png",
+        "images/chesscourse.png"
       ],
       "common_lib": "common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/chesscourse.koplugin/main/"
@@ -368,7 +372,8 @@
         "board_widget.lua",
         "i18n_fr.lua",
         "main.lua",
-        "screen.lua"
+        "screen.lua",
+        "images/colornonogram.png"
       ],
       "common_lib": "common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/colornonogram.koplugin/main/"
@@ -385,7 +390,8 @@
         "board_widget.lua",
         "i18n_fr.lua",
         "main.lua",
-        "screen.lua"
+        "screen.lua",
+        "images/connect4.png"
       ],
       "common_lib": "common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/connect4.koplugin/main/"
@@ -402,7 +408,8 @@
         "board_widget.lua",
         "i18n_fr.lua",
         "main.lua",
-        "screen.lua"
+        "screen.lua",
+        "images/cryptogram.png"
       ],
       "common_lib": "common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/cryptogram.koplugin/main/"
@@ -433,7 +440,8 @@
         "board_widget.lua",
         "i18n_fr.lua",
         "main.lua",
-        "screen.lua"
+        "screen.lua",
+        "images/dice.png"
       ],
       "common_lib": "common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/dice.koplugin/main/"
@@ -448,7 +456,8 @@
         "_meta.lua",
         "i18n_fr.lua",
         "main.lua",
-        "screen.lua"
+        "screen.lua",
+        "images/doubleornothing.png"
       ],
       "common_lib": "common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/doubleornothing.koplugin/main/"
@@ -539,7 +548,8 @@
         "board_widget.lua",
         "i18n_fr.lua",
         "main.lua",
-        "screen.lua"
+        "screen.lua",
+        "images/go.png"
       ],
       "common_lib": "common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/go.koplugin/main/"
@@ -556,7 +566,8 @@
         "board_widget.lua",
         "i18n_fr.lua",
         "main.lua",
-        "screen.lua"
+        "screen.lua",
+        "images/gomoku.png"
       ],
       "common_lib": "common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/gomoku.koplugin/main/"
@@ -575,7 +586,8 @@
         "main.lua",
         "screen.lua",
         "words_en.lua",
-        "words_fr.lua"
+        "words_fr.lua",
+        "images/hangman.png"
       ],
       "common_lib": "common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/hangman.koplugin/main/"
@@ -592,7 +604,8 @@
         "board_widget.lua",
         "i18n_fr.lua",
         "main.lua",
-        "screen.lua"
+        "screen.lua",
+        "images/hanoi.png"
       ],
       "common_lib": "common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/hanoi.koplugin/main/"
@@ -609,7 +622,8 @@
         "board_widget.lua",
         "i18n_fr.lua",
         "main.lua",
-        "screen.lua"
+        "screen.lua",
+        "images/hidato.png"
       ],
       "common_lib": "common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/hidato.koplugin/main/"
@@ -626,7 +640,8 @@
         "board_widget.lua",
         "i18n_fr.lua",
         "main.lua",
-        "screen.lua"
+        "screen.lua",
+        "images/hitori.png"
       ],
       "common_lib": "common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/hitori.koplugin/main/"
@@ -643,7 +658,8 @@
         "board_widget.lua",
         "i18n_fr.lua",
         "main.lua",
-        "screen.lua"
+        "screen.lua",
+        "images/kenken.png"
       ],
       "common_lib": "common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/kenken.koplugin/main/"
@@ -660,7 +676,8 @@
         "board_widget.lua",
         "i18n_fr.lua",
         "main.lua",
-        "screen.lua"
+        "screen.lua",
+        "images/lightup.png"
       ],
       "common_lib": "common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/lightup.koplugin/main/"
@@ -677,7 +694,8 @@
         "board_widget.lua",
         "i18n_fr.lua",
         "main.lua",
-        "screen.lua"
+        "screen.lua",
+        "images/mastermind.png"
       ],
       "common_lib": "common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/mastermind.koplugin/main/"
@@ -694,7 +712,8 @@
         "board_widget.lua",
         "i18n_fr.lua",
         "main.lua",
-        "screen.lua"
+        "screen.lua",
+        "images/masyu.png"
       ],
       "common_lib": "common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/masyu.koplugin/main/"
@@ -711,7 +730,8 @@
         "board_widget.lua",
         "i18n_fr.lua",
         "main.lua",
-        "screen.lua"
+        "screen.lua",
+        "images/memory.png"
       ],
       "common_lib": "common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/memory.koplugin/main/"
@@ -727,7 +747,8 @@
         "board.lua",
         "i18n_fr.lua",
         "main.lua",
-        "screen.lua"
+        "screen.lua",
+        "images/mentalmath.png"
       ],
       "common_lib": "common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/mentalmath.koplugin/main/"
@@ -744,7 +765,8 @@
         "board_widget.lua",
         "i18n_fr.lua",
         "main.lua",
-        "screen.lua"
+        "screen.lua",
+        "images/minesweeper.png"
       ],
       "common_lib": "common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/minesweeper.koplugin/main/"
@@ -761,7 +783,8 @@
         "board_widget.lua",
         "i18n_fr.lua",
         "main.lua",
-        "screen.lua"
+        "screen.lua",
+        "images/nonogram.png"
       ],
       "common_lib": "common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/nonogram.koplugin/main/"
@@ -778,7 +801,8 @@
         "board_widget.lua",
         "i18n_fr.lua",
         "main.lua",
-        "screen.lua"
+        "screen.lua",
+        "images/numberlink.png"
       ],
       "common_lib": "common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/numberlink.koplugin/main/"
@@ -795,7 +819,8 @@
         "board_widget.lua",
         "i18n_fr.lua",
         "main.lua",
-        "screen.lua"
+        "screen.lua",
+        "images/numbrix.png"
       ],
       "common_lib": "common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/numbrix.koplugin/main/"
@@ -813,7 +838,8 @@
         "main.lua",
         "screen.lua",
         "words_en.lua",
-        "words_fr.lua"
+        "words_fr.lua",
+        "images/numletters.png"
       ],
       "common_lib": "common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/numletters.koplugin/master/"
@@ -830,7 +856,8 @@
         "board_widget.lua",
         "i18n_fr.lua",
         "main.lua",
-        "screen.lua"
+        "screen.lua",
+        "images/nurikabe.png"
       ],
       "common_lib": "common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/nurikabe.koplugin/main/"
@@ -861,7 +888,8 @@
         "board_widget.lua",
         "i18n_fr.lua",
         "main.lua",
-        "screen.lua"
+        "screen.lua",
+        "images/othello.png"
       ],
       "common_lib": "common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/othello.koplugin/main/"
@@ -878,7 +906,8 @@
         "board_widget.lua",
         "i18n_fr.lua",
         "main.lua",
-        "screen.lua"
+        "screen.lua",
+        "images/pickomino.png"
       ],
       "common_lib": "common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/pickomino.koplugin/main/"
@@ -894,7 +923,8 @@
         "i18n_fr.lua",
         "main.lua",
         "screen.lua",
-        "words.lua"
+        "words.lua",
+        "images/pictionary.png"
       ],
       "common_lib": "common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/pictionary.koplugin/master/"
@@ -925,7 +955,8 @@
         "i18n_fr.lua",
         "main.lua",
         "quiz_questions_fr.lua",
-        "screen.lua"
+        "screen.lua",
+        "images/quiz.png"
       ],
       "common_lib": "common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/quiz.koplugin/master/"
@@ -942,7 +973,8 @@
         "board_widget.lua",
         "i18n_fr.lua",
         "main.lua",
-        "screen.lua"
+        "screen.lua",
+        "images/rippleeffect.png"
       ],
       "common_lib": "common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/rippleeffect.koplugin/main/"
@@ -952,7 +984,7 @@
       "dir": "sandwichsudoku.koplugin",
       "fullname": "Sandwich Sudoku",
       "description": "Sudoku with sandwich sum clues",
-      "version": "1.3.0",
+      "version": "1.3.1",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -960,7 +992,8 @@
         "i18n.lua",
         "i18n_fr.lua",
         "main.lua",
-        "screen.lua"
+        "screen.lua",
+        "images/sandwichsudoku.png"
       ],
       "common_lib": "sudoku_common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/sandwichsudoku.koplugin/main/"
@@ -977,7 +1010,8 @@
         "board_widget.lua",
         "i18n_fr.lua",
         "main.lua",
-        "screen.lua"
+        "screen.lua",
+        "images/shikaku.png"
       ],
       "common_lib": "common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/shikaku.koplugin/main/"
@@ -994,7 +1028,8 @@
         "board_widget.lua",
         "i18n_fr.lua",
         "main.lua",
-        "screen.lua"
+        "screen.lua",
+        "images/skyscraper.png"
       ],
       "common_lib": "common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/skyscraper.koplugin/main/"
@@ -1011,7 +1046,8 @@
         "board_widget.lua",
         "i18n_fr.lua",
         "main.lua",
-        "screen.lua"
+        "screen.lua",
+        "images/slitherlink.png"
       ],
       "common_lib": "common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/slitherlink.koplugin/main/"
@@ -1029,7 +1065,8 @@
         "i18n_fr.lua",
         "levels.lua",
         "main.lua",
-        "screen.lua"
+        "screen.lua",
+        "images/sokoban.png"
       ],
       "common_lib": "common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/sokoban.koplugin/main/"
@@ -1046,7 +1083,8 @@
         "board_widget.lua",
         "i18n_fr.lua",
         "main.lua",
-        "screen.lua"
+        "screen.lua",
+        "images/solitaire.png"
       ],
       "common_lib": "common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/solitaire.koplugin/main/"
@@ -1063,7 +1101,8 @@
         "board_widget.lua",
         "i18n_fr.lua",
         "main.lua",
-        "screen.lua"
+        "screen.lua",
+        "images/starbattle.png"
       ],
       "common_lib": "common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/starbattle.koplugin/main/"
@@ -1088,7 +1127,7 @@
       "dir": "sudoku.koplugin",
       "fullname": "Sudoku",
       "description": "Play touch-friendly Sudoku puzzles, resume later, and reveal the solution when needed.",
-      "version": "2.3.0",
+      "version": "2.3.1",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -1097,7 +1136,8 @@
         "i18n.lua",
         "i18n_fr.lua",
         "main.lua",
-        "screen.lua"
+        "screen.lua",
+        "images/sudoku.png"
       ],
       "common_lib": "sudoku_common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/sudoku.koplugin/main/"
@@ -1107,7 +1147,7 @@
       "dir": "sudokukiller.koplugin",
       "fullname": "Killer Sudoku",
       "description": "Play touch-friendly Killer Sudoku puzzles with caged sums, resume later, and reveal the solution when needed.",
-      "version": "1.2.19",
+      "version": "1.3.0",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -1126,7 +1166,7 @@
       "dir": "sudokux.koplugin",
       "fullname": "Sudoku X",
       "description": "Sudoku with diagonal constraints",
-      "version": "1.3.0",
+      "version": "1.3.1",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -1134,7 +1174,8 @@
         "i18n.lua",
         "i18n_fr.lua",
         "main.lua",
-        "screen.lua"
+        "screen.lua",
+        "images/sudokux.png"
       ],
       "common_lib": "sudoku_common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/sudokux.koplugin/main/"
@@ -1151,7 +1192,8 @@
         "board_widget.lua",
         "i18n_fr.lua",
         "main.lua",
-        "screen.lua"
+        "screen.lua",
+        "images/suguru.png"
       ],
       "common_lib": "common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/suguru.koplugin/main/"
@@ -1167,7 +1209,8 @@
         "i18n_fr.lua",
         "main.lua",
         "screen.lua",
-        "taboo_cards_fr.lua"
+        "taboo_cards_fr.lua",
+        "images/taboo.png"
       ],
       "common_lib": "common",
       "renamed_from": [
@@ -1187,7 +1230,8 @@
         "board_widget.lua",
         "i18n_fr.lua",
         "main.lua",
-        "screen.lua"
+        "screen.lua",
+        "images/tapa.png"
       ],
       "common_lib": "common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/tapa.koplugin/main/"
@@ -1204,7 +1248,8 @@
         "board_widget.lua",
         "i18n_fr.lua",
         "main.lua",
-        "screen.lua"
+        "screen.lua",
+        "images/tatami.png"
       ],
       "common_lib": "common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/tatami.koplugin/main/"
@@ -1221,7 +1266,8 @@
         "board_widget.lua",
         "i18n_fr.lua",
         "main.lua",
-        "screen.lua"
+        "screen.lua",
+        "images/tents.png"
       ],
       "common_lib": "common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/tents.koplugin/main/"
@@ -1231,7 +1277,7 @@
       "dir": "thermosudoku.koplugin",
       "fullname": "Thermo Sudoku",
       "description": "Sudoku with thermometer constraints",
-      "version": "1.3.0",
+      "version": "1.3.1",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -1239,7 +1285,8 @@
         "i18n.lua",
         "i18n_fr.lua",
         "main.lua",
-        "screen.lua"
+        "screen.lua",
+        "images/thermosudoku.png"
       ],
       "common_lib": "sudoku_common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/thermosudoku.koplugin/main/"
@@ -1249,7 +1296,7 @@
       "dir": "windoku.koplugin",
       "fullname": "Windoku",
       "description": "Sudoku with 4 windowed inner regions",
-      "version": "1.2.0",
+      "version": "1.2.1",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -1257,7 +1304,8 @@
         "i18n.lua",
         "i18n_fr.lua",
         "main.lua",
-        "screen.lua"
+        "screen.lua",
+        "images/windoku.png"
       ],
       "common_lib": "sudoku_common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/windoku.koplugin/main/"
@@ -1276,7 +1324,8 @@
         "main.lua",
         "screen.lua",
         "words_en.lua",
-        "words_fr.lua"
+        "words_fr.lua",
+        "images/wordladder.png"
       ],
       "common_lib": "common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/wordladder.koplugin/main/"
@@ -1296,7 +1345,8 @@
         "main.lua",
         "screen.lua",
         "words_en.lua",
-        "words_fr.lua"
+        "words_fr.lua",
+        "images/wordle.png"
       ],
       "common_lib": "common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/wordle.koplugin/main/"
@@ -1315,7 +1365,8 @@
         "main.lua",
         "screen.lua",
         "words_en.lua",
-        "words_fr.lua"
+        "words_fr.lua",
+        "images/wordsearch.png"
       ],
       "common_lib": "common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/wordsearch.koplugin/main/"

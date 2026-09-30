@@ -94,10 +94,22 @@ additionnelles (thermomètres, flèches, sommes sandwich, lignes), la garantie
 porte sur la logique du sudoku *classique* seule — leurs indices spécifiques
 restent une aide en plus, jamais une béquille nécessaire.
 
-**Non couvert :** `sudokukiller` n'appelle pas `createPuzzle`, il a son propre
-générateur par cages (ses commentaires reconnaissent déjà que la déductibilité
-y dépend de la géométrie tirée). À traiter séparément — le solveur devrait
-apprendre les contraintes de cage pour cela.
+**`sudokukiller` : traité le 2026-09-30.** Il n'appelle pas `createPuzzle`, il
+a son propre générateur par cages. Le solveur lit désormais les sommes
+(`opts.cages`) et joue les techniques killer : analyse combinatoire de cage,
+dernière case d'une cage, et la règle des 45 (innies/outies).
+
+| Difficulté | Déductible avant | Après | Indices |
+|---|---|---|---|
+| easy | 0/4 | **4/4** | 16 |
+| medium | 0/4 | **4/4** | 15 |
+| hard / expert | 0/4 | 0/4 — **délibérément** | 1-2 |
+
+Hard et Expert restent **genre-purs** : un vrai Killer Sudoku ne donne aucun
+chiffre, les cages disent tout, et `test_board_spec.lua` le fige. Leur ajouter
+les indices nécessaires à la déductibilité en ferait un autre jeu — j'ai essayé
+et cassé ce test, à raison. Le bouton Astuce y annonce donc honnêtement qu'aucune
+déduction purement logique n'est disponible, plutôt que d'en inventer une.
 
 **Tests.** `sudoku-common/test_logic_solver_spec.lua`, 27 cas : techniques sur
 grilles vérifiées à la main, détection de contradiction, plafond de palier,
