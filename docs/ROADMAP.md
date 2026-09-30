@@ -505,10 +505,12 @@ temps de coup, pas sur la moyenne.
 
 ## Hors phases — dette repérée en passant
 
-- `scripts/check_sudoku_common_drift.sh` documente des divergences
-  per-plugin de `common/` qui n'existent plus : les 8 variantes sont
-  aujourd'hui des symlinks committés vers `sudoku-common/` (mode git
-  `120000`). Le script et ses commentaires sont obsolètes.
+- ~~`scripts/check_sudoku_common_drift.sh` documente des divergences
+  per-plugin de `common/` qui n'existent plus~~ — réécrit le 2026-09-30. Il ne
+  compare plus des copies (il n'y en a plus) mais vérifie l'invariant qui
+  compte désormais : chaque variante atteint `sudoku-common/` par un symlink
+  **committé** (mode git `120000`). Une copie réintroduite, ou un symlink
+  seulement présent dans l'arbre de travail, est signalée.
 - ~~`spec/README.md` affirme que seuls `sudoku`, `sudokukiller` et `hanoi`
   ont besoin du module LuaJIT `bit`~~ — corrigé en Phase A : les 8 variantes
   sudoku partagent `puzzle_generator.lua`, qui l'exige, et `sudoku-common/`

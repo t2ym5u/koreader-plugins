@@ -64,7 +64,7 @@ Or install the [Plugin Manager](dist/pluginmanager.zip) to browse and update plu
 | `scripts/build_release.sh` | Build distributable zips from `manifest.json` |
 | `scripts/bump_versions.sh` | Bump versions in all submodules, tag and push |
 | `scripts/check_shared_libs.sh` | Check whether game-common/sudoku-common have drifted past `manifest.json` |
-| `scripts/check_sudoku_common_drift.sh` | Diff each sudoku-variant's vendored `common/*.lua` against `sudoku-common/` canonical |
+| `scripts/check_sudoku_common_drift.sh` | Verify each sudoku variant still reaches `sudoku-common/` through a committed symlink, rather than a copy that can drift |
 | `scripts/link_plugins.sh` | Symlink plugins into a local KOReader install for development |
 | `scripts/new_plugin.sh` | Onboard a new plugin: create its GitHub repo, register the submodule, wire up CI |
 | `scripts/sync_workflow.sh` | Sync the CI workflow template to all submodules |
