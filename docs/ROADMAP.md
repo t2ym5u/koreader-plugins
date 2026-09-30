@@ -326,7 +326,7 @@ longue.
 
 ---
 
-## Phase E — IA des jeux d'opposition ⏳ EN COURS
+## Phase E — IA des jeux d'opposition ✅ FAIT (2026-09-30)
 
 ### `gomoku` ✅ FAIT (2026-09-30) — mais pas pour la raison annoncée
 
@@ -394,20 +394,93 @@ après l'expérience `gomoku`, toucher une évaluation calibrée sans mesure est
 le meilleur moyen de livrer une régression, et le solveur exact apportait déjà
 le gain visé.
 
+### `connect4` ✅ FAIT (2026-09-30)
+
+Même bug de racine. Corrigé, **jeu identique** — vérifié : les deux versions
+choisissent la même colonne sur 289 positions aléatoires sur 289 — pour un
+tiers de temps en moins (0,006 s/coup contre 0,009 s).
+
+Profondeurs laissées telles quelles. Chercher plus profond aide bien ici
+(prof. 7 bat prof. 5 par 10-6-4, prof. 8 bat prof. 7 par 11-7-2) mais la
+prof. 8 fait passer le pire coup de 0,47 s à 1,47 s, et la prof. 9 à 15,5 s.
+L'ordonnancement centre-d'abord que le plan proposait d'ajouter existait déjà.
+
+### `chess` ✅ FAIT (2026-09-30)
+
+Le plus gros gain de vitesse des quatre : **jeu identique, en un quart du
+temps**. Sur « difficile », le pire coup passe de 4,2 s à environ 1 s.
+
+Subtilité propre à ce moteur : il collecte délibérément les coups à score égal
+pour en tirer un au hasard (de la variété). Propager la fenêtre naïvement
+aurait fait échouer bas ces coups et cette collecte aurait cessé de trouver
+des égalités — silencieusement. La fenêtre est donc élargie d'une unité de
+part et d'autre, ce qui est sûr parce que `_evaluate()` est entière.
+
+Profondeurs inchangées (1/2/3). La prof. 4 semble plus forte (3-1 et 6
+indécises sur 10 parties) mais son pire coup a pris 14,8 s.
+
+### `go` ✅ FAIT (2026-09-30) — IA créée
+
+Le jeu n'avait aucune IA. Celle-ci est délibérément **débutante** plutôt
+qu'une mauvaise tentative de moteur fort : ni recherche ni playouts. Une
+recherche au go ne vaut que ce que vaut sa capacité à distinguer un groupe
+vivant d'un groupe mort, et peu profonde sur un CPU e-ink elle joue moins bien
+que des règles de conduite claires.
+
+Ce qu'elle comprend, c'est ce qui fait perdre les débutants : les captures
+disponibles, ses propres groupes en atari, les groupes adverses qu'elle peut
+mettre en atari, les pierres jouées droit dans la capture, le bord — et
+surtout ne jamais combler ses propres yeux, qui est la façon dont un débutant
+tue un groupe vivant. Le test d'œil ignore les diagonales, donc elle ne
+reconnaît pas les faux yeux : simplification connue, pas un oubli.
+
+**19-1 contre un joueur aléatoire sur 20 parties en 9×9, à 0,001 s/coup.**
+Elle joue les Blancs pour laisser le premier coup au joueur.
+
+### `backgammon` ✅ FAIT (2026-09-30) — IA créée + deux règles manquantes
+
+Trois manques que le README admettait, dont deux étaient des **règles**, pas
+des fonctionnalités :
+
+- Un tour doit utiliser autant de dés qu'il le peut légalement, et quand un
+  seul des deux est jouable ce doit être le plus grand. Ni l'un ni l'autre
+  n'était appliqué : on pouvait discrètement esquiver la moitié gênante d'un
+  tirage gênant. Les deux découlent d'une seule question — combien de dés
+  peut-on encore jouer d'ici — résolue par une petite anticipation.
+- Le tirage d'ouverture décide qui commence, au lieu que les Blancs partent
+  toujours. Volontairement hors de `reset()`, qui reste déterministe pour
+  qu'un test ou un rechargement puisse poser une position sans que les dés
+  décident de quoi que ce soit.
+- **IA** : un tour au backgammon est une *séquence*, pas un coup. Le moteur
+  énumère toutes les séquences légales que les dés permettent et évalue la
+  position que chacune laisse — course, points faits et primes, blots pondérés
+  par la facilité à les frapper, pions à la barre et sortis. Aucune
+  anticipation du jet adverse : moyenner sur 21 jets coûte bien plus que ça ne
+  rapporte ici. **20-0 contre un joueur aléatoire**, 0,02 s/tour, 0,84 s au
+  pire (doublé, quatre pions à placer).
+
+Un bug mérite d'être nommé : `_restore()` reconstruisait la liste des dés dans
+une table neuve pendant que `_maxPlayable()` l'itérait, laissant l'itérateur
+parcourir une copie orpheline — il n'examinait donc que le premier dé. La
+règle *paraissait* implémentée et ne l'était pas.
+
+Toujours pas de cube de doublement.
+
 ### Reste à faire
 
-| Jeu | Existant | Action |
-|---|---|---|
-| `checkers` | alpha-bêta profondeur 5 | correct, rien à faire |
-| `connect4` | alpha-bêta profondeur 3/5/7 | table de transposition + ordonnancement centre-d'abord ; **à valider par match avant/après** |
-| `chess` | alpha-bêta + quiescence + killer moves, profondeur 3 ; backend Stockfish/UCI optionnel déjà écrit | approfondissement itératif à budget temps, table de transposition |
-| `go` | **aucune IA** (2 joueurs seulement) | IA débutant honnête ; MCTS 9×9 coûteux sur e-ink |
-| `backgammon` | **aucune IA** ; le README admet aussi : pas de videau, Blanc commence toujours, obligation de jouer les deux dés non appliquée | corriger d'abord les règles manquantes, puis IA heuristique |
+| Jeu | État |
+|---|---|
+| `checkers` | alpha-bêta profondeur 5, correct — rien à faire |
+| tous | mutualisation dans un `game-common/search.lua` (alpha-bêta + table de transposition + budget temps) au lieu de cinq implémentations. Les bancs d'essai tête-à-tête à ouvertures aléatoires devraient y aller aussi : ce sont eux qui ont évité de livrer plusieurs régressions. |
+| `backgammon` | cube de doublement (fonctionnalité, pas règle manquante) |
 
-Mutualisation visée : `game-common/search.lua` (alpha-bêta + table de
-transposition + budget temps) partagé au lieu de cinq implémentations
-séparées. Le banc d'essai tête-à-tête à ouvertures aléatoires devrait y aller
-aussi — c'est lui qui a évité de livrer trois régressions ici.
+**Bilan de la phase.** Le bug de racine — alpha réinitialisé à chaque candidat,
+qui jette toutes les coupes entre frères — était présent dans **les quatre**
+moteurs existants. Il achète de la vitesse, jamais de la force. Le seul gain
+de force mesuré sur un moteur existant vient d'`othello`, parce qu'il remplace
+une estimation par une preuve. Et sur chacun des quatre, la profondeur
+supplémentaire que la vitesse rendait envisageable a été refusée sur le pire
+temps de coup, pas sur la moyenne.
 
 ---
 
