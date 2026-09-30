@@ -854,7 +854,7 @@
       "dir": "othello.koplugin",
       "fullname": "Othello",
       "description": "Othello/Reversi 8x8 with AI.",
-      "version": "1.1.13",
+      "version": "1.2.0",
       "files": [
         "_meta.lua",
         "board.lua",
