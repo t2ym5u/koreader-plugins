@@ -280,9 +280,37 @@ texte d'interface entraîne `ffi/util` de KOReader dans chaque test unitaire
 headless qui le touche — ce qui a cassé les specs de `slitherlink` et
 `shikaku` quand je l'avais fait dans l'autre sens.
 
-**Reste :** `bridges` (ponts entre îles), `numberlink` (chemins colorés) et
-`masyu` (boucle unique). Leur unité n'est ni une case, ni une arête isolée,
-mais un objet à plusieurs segments — chacun demande son propre parcours.
+**Terminé le 2026-09-30 — 26 plugins au total.** `bridges`, `numberlink` et
+`masyu` ont eux aussi leur astuce :
+
+- `masyu` s'est révélé être une simple grille de booléens (`user_path`), la
+  boucle-solution n'étant qu'une liste de cellules : le helper standard
+  s'applique.
+- `bridges` travaille en ponts entre deux îles. Particularité : **une erreur y
+  est impossible** — `tapBridge` plafonne chaque liaison au compte de la
+  solution, le joueur ne peut donc qu'être *en retard*, jamais en trop. C'est
+  le seul puzzle de la collection sans branche « erreur ».
+- `numberlink` révèle un **chemin entier**. Sa solution est pourtant bien une
+  grille de couleurs, mais `path_cells[]` garde la route de chaque couleur dans
+  l'ordre de parcours : écrire des cases isolées la désynchroniserait.
+
+### Lisibilité sur e-ink monochrome
+
+Remarque de l'utilisateur, vérifiée et fondée. `numberlink` et
+`colornonogram` n'utilisent pas de RVB — ce sont déjà des niveaux de gris.
+Mais les six teintes de `numberlink` sont espacées de 34/255, soit **environ
+deux crans sur une dalle e-ink 16 niveaux** : deux chemins voisins ne se
+distinguaient que par la nuance, ce qui sur un écran réflectif est souvent
+impossible.
+
+Corrigé : chaque chemin porte désormais **le chiffre de sa paire dans toutes
+les cases qu'il traverse**, plus seulement à ses deux extrémités. L'identité ne
+dépend plus des gris. Et la bordure « case fausse » était tracée en
+`COLOR_GRAY` — exactement la teinte du chemin n°5, donc invisible sur celui-ci ;
+elle est noire.
+
+`colornonogram` n'a pas ce défaut : ses trois nuances sont espacées d'environ
+85/255, soit cinq crans.
 
 **Vérification.** 12 tests unitaires sur `hint.lua` (déterminisme, priorité
 aux erreurs, cases données intouchables, `isEmpty`/`equals` personnalisés,
