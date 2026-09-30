@@ -518,6 +518,54 @@ temps de coup, pas sur la moyenne.
 
 ---
 
+## Phase F — `arrowwords` : un vrai mots fléchés ❌ NON FAIT, et pourquoi
+
+Demandé le 2026-09-30, évalué, **décliné en connaissance de cause**.
+
+**État réel du plugin.** Le commentaire « Auto-generated puzzles (word+clue
+bank crossed via greedy fill) » induit en erreur : il n'y a dans le code **ni
+générateur ni banque d'indices**. Ces grilles ont été produites hors ligne puis
+collées en dur. Le plugin embarque **17 grilles fixes**, point.
+
+**Le verrou n'est pas le code, c'est la donnée.** Écrire le générateur (pose
+des cases-définitions, flèches, mots croisés, remplissage) est tout à fait
+faisable. Ce qui manque est une banque de couples mot/définition de qualité
+mots fléchés. Mesure sur l'existant :
+
+| | |
+|---|---|
+| cellules-indices dans les 17 grilles | 154 |
+| indices **distincts** | **120** |
+| « Note de musique » à lui seul | 13 occurrences |
+
+Un générateur nourri de 120 indices produirait des grilles qui se répètent
+lourdement — la même limite qu'aujourd'hui, simplement déguisée. Un vrai mots
+fléchés demande de l'ordre de 2 000 entrées.
+
+**Les sources automatiques ne conviennent pas.** Vérifié :
+
+- `kaikki.org` (extraction Wiktionary) expose le français **défini en
+  anglais** : inutilisable tel quel.
+- Le Wiktionnaire français est en CC BY-SA (partage à l'identique, décision de
+  licence qui vous revient) et ses gloses font de mauvais indices : circulaires
+  (la définition contient le mot), formes fléchies (« Pluriel de… »), prose
+  encyclopédique là où il faut une formule courte et univoque.
+- Littré et l'Académie 8ᵉ sont dans le domaine public mais datent de 1873 et
+  1935 : définitions longues et archaïques.
+
+Transformer des gloses en indices de mots croisés est un travail de curation,
+pas d'extraction.
+
+**Ce qui débloquerait.** Une banque au format `{ mot, indice }` d'environ
+2 000 entrées — écrite, achetée sous licence, ou constituée peu à peu. Le
+générateur se construit ensuite en une session, et les 17 grilles fixes
+deviennent un nombre illimité. Sans elle, le mieux honnête reste d'écrire à la
+main d'autres grilles comme les 17 actuelles.
+
+Le plugin reste donc mis de côté et son dépôt archivé.
+
+---
+
 ## Hors phases — dette repérée en passant
 
 - ~~`scripts/check_sudoku_common_drift.sh` documente des divergences
