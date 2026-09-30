@@ -531,17 +531,19 @@ temps de coup, pas sur la moyenne.
   sudoku partagent `puzzle_generator.lua`, qui l'exige, et `sudoku-common/`
   a désormais sa propre spec soumise à la même contrainte.
 - ~~`dashboard` et `opdsdir` n'ont pas de `.github/workflows/release.yml`~~ —
-  corrigé et rectifié le 2026-09-30. Trois dépôts n'avaient jamais reçu le
-  workflow : `binairo` et `dashboard` l'ont désormais (déclenchés à la main
-  par `workflow_dispatch`, le workflow ne se déclenchant que sur les chemins
-  `*.lua`). **`opdsdir` n'était pas concerné** : contrairement à tous les
-  autres, ce n'est pas un sous-module — il vit directement dans le monorepo,
-  n'a donc pas de dépôt à lui, et `sync_workflow.sh` (qui itère sur
-  `git submodule status`) a raison de l'ignorer. Il est publié par la CI du
-  monorepo comme les autres, dès que sa version bouge dans `manifest.json`.
-  À savoir : `cd opdsdir.koplugin && git …` opère sur le monorepo, pas sur un
-  sous-module — une boucle de traitement en masse sur `*.koplugin` y commettra
-  silencieusement dans le dépôt parent.
+  soldé le 2026-09-30. `binairo` et `dashboard` ont reçu le workflow qui leur
+  manquait (déclenché à la main : il ne se réveille que sur les chemins
+  `*.lua`). `opdsdir` était un cas différent, et mon diagnostic initial était
+  faux : ce n'était pas un sous-module mais un simple répertoire du monorepo,
+  donc sans dépôt à lui. Il en a désormais un, comme tous les autres — avec
+  workflow de release, tag, CHANGELOG, fichiers communautaires, topic
+  `koreader-plugins` et protection de branche.
+  À savoir tant que ce genre de cas existe : `cd <plugin>.koplugin && git …`
+  sur un répertoire non-sous-module opère **sur le monorepo**, et une boucle de
+  traitement en masse y commettra silencieusement dans le dépôt parent.
+  `scripts/new_plugin.sh` refusait par ailleurs tout plugin sans `board.lua`,
+  c'est-à-dire précisément les quatre utilitaires (`dashboard`, `startmenu`,
+  `pluginmanager`, `opdsdir`) — l'exigence est levée.
 - `go.koplugin/README.md` : capture d'écran manquante
   (« *(Screenshot to be added.)* »).
 - `galaxies` reste bloqué sur un bug de générateur structurel (n=8), cf.
