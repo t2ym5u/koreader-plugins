@@ -326,23 +326,65 @@ longue.
 
 ---
 
-## Phase E — IA des jeux d'opposition
+## Phase E — IA des jeux d'opposition ⏳ EN COURS
 
-**Constat.**
+### `gomoku` ✅ FAIT (2026-09-30) — mais pas pour la raison annoncée
+
+**Mon constat de départ était faux.** J'avais écrit « minimax *sans*
+alpha-bêta (cf. commentaire l.265) ». J'avais lu le commentaire, pas le code :
+l'élagage alpha-bêta était bien là. Le commentaire, lui, était périmé.
+
+Les vraies faiblesses, trouvées en lisant :
+
+- **À la racine, alpha repartait de −∞ pour chaque candidat**, ce qui jette
+  toutes les coupes entre frères — l'essentiel de ce à quoi sert alpha-bêta.
+- Le test de cinq-en-ligne était recopié trois fois, sous trois formes
+  légèrement différentes.
+- Les candidats n'étaient ordonnés nulle part dans la recherche, alors que
+  l'élagage est proportionnel à la qualité de l'ordre.
+
+**Résultat livré : force égale, ~3× plus rapide** (0,11 s/coup contre 0,31 s à
+profondeur 3). Sur un CPU e-ink, c'est la différence entre un niveau
+« difficile » jouable et une attente.
+
+**Ce que la mesure a démenti.** Trois tentatives d'amélioration de la *force*
+ont toutes échoué, et c'est le résultat le plus utile de cette phase :
+
+| Tentative | Résultat sur 20 parties |
+|---|---|
+| Échelle de menaces plus nette (open four ≫ four ≈ open three) | **14-6 contre** — nettement plus faible |
+| Plafonner les candidats internes (top-16 par proximité) | 13-7 contre — le bon coup de blocage sortait du top-16 |
+| Chercher plus profond (prof. 4 au lieu de 2) avec la version plafonnée | 11-9, sans effet |
+
+En revanche, l'ancienne IA à profondeur 3 bat la même à profondeur 2 (12-8) :
+la profondeur aide, mais elle coûte 24× plus cher. C'est exactement ce que le
+gain de vitesse achète.
+
+**Leçon méthodologique.** Mon premier banc d'essai annonçait 10-0 en faveur de
+la nouvelle version. C'était un artefact : les deux moteurs étant
+déterministes, « 10 parties » n'étaient que 2 parties distinctes répétées 5
+fois. Avec des ouvertures aléatoires, le même test donne 11-9 — c'est-à-dire
+rien. Toute mesure d'IA dans ce dépôt doit varier les ouvertures.
+
+**Conséquence pour la suite : la recherche n'est pas le goulot, l'évaluation
+l'est.** Le plan ci-dessous, qui misait surtout sur des gains de recherche,
+est à reconsidérer jeu par jeu avec des mesures avant/après.
+
+### Reste à faire
 
 | Jeu | Existant | Action |
 |---|---|---|
-| `chess` | alpha-beta + quiescence + killer moves, profondeur 3 ; **backend Stockfish/UCI optionnel déjà écrit** | approfondissement itératif à budget temps (plutôt que profondeur fixe, mieux adapté à un CPU e-ink), table de transposition |
-| `checkers` | alpha-beta profondeur 5 | correct, rien à faire |
-| `connect4` | alpha-beta profondeur 3/5/7 | table de transposition + ordonnancement centre-d'abord |
-| `othello` | minimax alpha-beta profondeur 4 ; éval = coins/bords/mobilité | pénalités cases X et C, poids par phase, **résolution exacte de la fin de partie** |
-| `gomoku` | heuristique de menaces, profondeur 1 par défaut, minimax *sans* alpha-beta (cf. commentaire l.265) | le plus faible : alpha-beta + recherche VCF/VCT |
-| `go` | **aucune IA** (2 joueurs seulement) | IA débutant honnête (atari/capture/extension + playouts bornés) ; MCTS 9×9 coûteux sur e-ink |
-| `backgammon` | **aucune IA** ; le README admet aussi : pas de videau, Blanc commence toujours, obligation de jouer les deux dés non appliquée | corriger d'abord les règles manquantes, puis IA heuristique (pip count, blots, points faits, prime) |
+| `checkers` | alpha-bêta profondeur 5 | correct, rien à faire |
+| `connect4` | alpha-bêta profondeur 3/5/7 | table de transposition + ordonnancement centre-d'abord ; **à valider par match avant/après** |
+| `othello` | minimax alpha-bêta profondeur 4 ; éval = coins/bords/mobilité | pénalités cases X et C, poids par phase, résolution exacte de fin de partie (celle-ci est un vrai gain, pas une heuristique) |
+| `chess` | alpha-bêta + quiescence + killer moves, profondeur 3 ; backend Stockfish/UCI optionnel déjà écrit | approfondissement itératif à budget temps, table de transposition |
+| `go` | **aucune IA** (2 joueurs seulement) | IA débutant honnête ; MCTS 9×9 coûteux sur e-ink |
+| `backgammon` | **aucune IA** ; le README admet aussi : pas de videau, Blanc commence toujours, obligation de jouer les deux dés non appliquée | corriger d'abord les règles manquantes, puis IA heuristique |
 
-Mutualisation visée : `game-common/search.lua` (alpha-beta + table de
-transposition + budget temps) partagé par chess/othello/gomoku/connect4/
-checkers au lieu de cinq implémentations séparées.
+Mutualisation visée : `game-common/search.lua` (alpha-bêta + table de
+transposition + budget temps) partagé au lieu de cinq implémentations
+séparées. Le banc d'essai tête-à-tête à ouvertures aléatoires devrait y aller
+aussi — c'est lui qui a évité de livrer trois régressions ici.
 
 ---
 
@@ -356,6 +398,13 @@ checkers au lieu de cinq implémentations séparées.
   ont besoin du module LuaJIT `bit`~~ — corrigé en Phase A : les 8 variantes
   sudoku partagent `puzzle_generator.lua`, qui l'exige, et `sudoku-common/`
   a désormais sa propre spec soumise à la même contrainte.
+- `dashboard` et `opdsdir` n'ont pas de `.github/workflows/release.yml` :
+  `scripts/sync_workflow.sh` les a manqués, et ils ne publient donc aucune
+  release depuis leur propre dépôt (le monorepo, lui, les publie normalement).
+  Découvert le 2026-09-30 quand `binairo` a livré une v1.1.0 sans release —
+  corrigé pour lui, pas pour les deux autres. Noter aussi que ce workflow ne se
+  déclenche que sur les chemins `*.lua` : ajouter le fichier de workflow ne
+  suffit pas à rattraper la release en cours, il faut un `workflow_dispatch`.
 - `go.koplugin/README.md` : capture d'écran manquante
   (« *(Screenshot to be added.)* »).
 - `galaxies` reste bloqué sur un bug de générateur structurel (n=8), cf.
