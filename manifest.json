@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-09-30",
+  "updated": "2026-10-01",
   "repo": "t2ym5u/koreader-plugins",
   "common": {
     "version": "1.5.0",
@@ -23,7 +23,7 @@
     "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/game-common/main/"
   },
   "sudoku_common": {
-    "version": "1.3.0",
+    "version": "1.4.0",
     "dir": "sudoku-common",
     "files": [
       "base_board.lua",
@@ -31,6 +31,7 @@
       "base_screen.lua",
       "logic_solver.lua",
       "puzzle_generator.lua",
+      "stats_exporter.lua",
       "sudoku_grid_utils.lua"
     ],
     "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/sudoku-common/master/"
@@ -79,7 +80,7 @@
       "dir": "arrowsudoku.koplugin",
       "fullname": "Arrow Sudoku",
       "description": "Sudoku with arrow sum constraints",
-      "version": "1.3.2",
+      "version": "1.4.0",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -152,7 +153,7 @@
       "dir": "betweenlines.koplugin",
       "fullname": "Between Lines Sudoku",
       "description": "Sudoku with between-lines constraints",
-      "version": "1.2.2",
+      "version": "1.3.0",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -419,7 +420,7 @@
       "dir": "dashboard.koplugin",
       "fullname": "Dashboard",
       "description": "Dashboard: current book, recent games, stats.",
-      "version": "1.2.17",
+      "version": "1.2.18",
       "files": [
         "_meta.lua",
         "format.lua",
@@ -955,7 +956,7 @@
       "dir": "pluginmanager.koplugin",
       "fullname": "Plugin Manager",
       "description": "Check for updates and install game plugins from the koreader-plugins repository.",
-      "version": "1.4.1",
+      "version": "1.4.2",
       "files": [
         "_meta.lua",
         "i18n.lua",
@@ -1006,7 +1007,7 @@
       "dir": "sandwichsudoku.koplugin",
       "fullname": "Sandwich Sudoku",
       "description": "Sudoku with sandwich sum clues",
-      "version": "1.3.2",
+      "version": "1.4.0",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -1134,7 +1135,7 @@
       "dir": "startmenu.koplugin",
       "fullname": "Startup Menu",
       "description": "Shows a choice screen on KOReader startup: read or launch a game.",
-      "version": "1.1.13",
+      "version": "1.1.14",
       "files": [
         "_meta.lua",
         "games.lua",
@@ -1150,7 +1151,7 @@
       "dir": "sudoku.koplugin",
       "fullname": "Sudoku",
       "description": "Play touch-friendly Sudoku puzzles, resume later, and reveal the solution when needed.",
-      "version": "2.3.2",
+      "version": "2.4.0",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -1170,7 +1171,7 @@
       "dir": "sudokukiller.koplugin",
       "fullname": "Killer Sudoku",
       "description": "Play touch-friendly Killer Sudoku puzzles with caged sums, resume later, and reveal the solution when needed.",
-      "version": "1.3.1",
+      "version": "1.4.0",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -1189,7 +1190,7 @@
       "dir": "sudokux.koplugin",
       "fullname": "Sudoku X",
       "description": "Sudoku with diagonal constraints",
-      "version": "1.3.2",
+      "version": "1.4.0",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -1300,7 +1301,7 @@
       "dir": "thermosudoku.koplugin",
       "fullname": "Thermo Sudoku",
       "description": "Sudoku with thermometer constraints",
-      "version": "1.3.2",
+      "version": "1.4.0",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -1319,7 +1320,7 @@
       "dir": "windoku.koplugin",
       "fullname": "Windoku",
       "description": "Sudoku with 4 windowed inner regions",
-      "version": "1.2.2",
+      "version": "1.3.0",
       "files": [
         "_meta.lua",
         "board.lua",

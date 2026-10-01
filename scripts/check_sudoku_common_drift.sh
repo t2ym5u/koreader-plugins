@@ -60,6 +60,27 @@ for name in "${PLUGINS[@]}"; do
   echo "OK   $name: common -> $target (committed symlink)"
 done
 
+# stats_exporter.lua exists in BOTH shared libraries, on purpose: a sudoku
+# variant mounts sudoku-common and never sees game-common, yet both write the
+# same game_stats.lua, so the schema must stay identical. game-common's copy is
+# the canonical one.
+DUPLICATED=(stats_exporter.lua)
+for fname in "${DUPLICATED[@]}"; do
+  a="$ROOT/game-common/$fname"
+  b="$ROOT/sudoku-common/$fname"
+  if [ ! -f "$b" ]; then
+    echo "FAIL $fname: missing from sudoku-common"
+    problems=$((problems + 1))
+  elif ! diff -q <(grep -v '^--' "$a") <(grep -v '^--' "$b") >/dev/null; then
+    echo "FAIL $fname: game-common and sudoku-common copies have diverged."
+    echo "     game-common's is canonical: cp game-common/$fname sudoku-common/$fname"
+    echo "     (then restore sudoku-common's header comment)"
+    problems=$((problems + 1))
+  else
+    echo "OK   $fname: identical in game-common and sudoku-common"
+  fi
+done
+
 echo
 if [ "$problems" -eq 0 ]; then
   echo "All ${#PLUGINS[@]} sudoku variants share sudoku-common. Nothing can drift."
