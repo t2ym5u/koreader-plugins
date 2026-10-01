@@ -544,7 +544,7 @@
       "dir": "galaxies.koplugin",
       "fullname": "Galaxies",
       "description": "Divide the grid into rotationally symmetric galaxies",
-      "version": "1.2.1",
+      "version": "1.2.2",
       "files": [
         "_meta.lua",
         "board.lua",
