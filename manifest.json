@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-10-01",
+  "updated": "2026-10-02",
   "repo": "t2ym5u/koreader-plugins",
   "common": {
     "version": "1.5.0",
@@ -60,7 +60,7 @@
       "dir": "anagram.koplugin",
       "fullname": "Anagram",
       "description": "Rearrange letters to find words",
-      "version": "1.3.11",
+      "version": "1.3.12",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -80,7 +80,7 @@
       "dir": "arrowsudoku.koplugin",
       "fullname": "Arrow Sudoku",
       "description": "Sudoku with arrow sum constraints",
-      "version": "1.4.0",
+      "version": "1.4.1",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -99,7 +99,7 @@
       "dir": "backgammon.koplugin",
       "fullname": "Backgammon",
       "description": "Classic 2-player dice and checker race game.",
-      "version": "1.2.1",
+      "version": "1.2.2",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -153,7 +153,7 @@
       "dir": "betweenlines.koplugin",
       "fullname": "Between Lines Sudoku",
       "description": "Sudoku with between-lines constraints",
-      "version": "1.3.0",
+      "version": "1.3.1",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -328,7 +328,7 @@
       "dir": "chesscourse.koplugin",
       "fullname": "Chess Course",
       "description": "Chess puzzles and lessons",
-      "version": "1.2.17",
+      "version": "1.2.18",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -384,7 +384,7 @@
       "dir": "connect4.koplugin",
       "fullname": "Connect Four",
       "description": "Connect Four — align 4 pieces with AI.",
-      "version": "1.1.16",
+      "version": "1.1.17",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -562,7 +562,7 @@
       "dir": "go.koplugin",
       "fullname": "Go",
       "description": "Classic territory and capture board game.",
-      "version": "1.1.1",
+      "version": "1.1.2",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -580,7 +580,7 @@
       "dir": "gomoku.koplugin",
       "fullname": "Gomoku",
       "description": "Gomoku — 5 in a row on a 15×15 board.",
-      "version": "1.2.1",
+      "version": "1.2.2",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -888,9 +888,10 @@
       "dir": "opdsdir.koplugin",
       "fullname": "OPDS per-catalog download directory",
       "description": "Long-press a catalog to assign a dedicated download folder.",
-      "version": "1.0.4",
+      "version": "1.1.0",
       "files": [
         "_meta.lua",
+        "decrypt.lua",
         "i18n.lua",
         "i18n_fr.lua",
         "main.lua",
@@ -903,7 +904,7 @@
       "dir": "othello.koplugin",
       "fullname": "Othello",
       "description": "Othello/Reversi 8x8 with AI.",
-      "version": "1.2.1",
+      "version": "1.2.2",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -956,7 +957,7 @@
       "dir": "pluginmanager.koplugin",
       "fullname": "Plugin Manager",
       "description": "Check for updates and install game plugins from the koreader-plugins repository.",
-      "version": "1.4.2",
+      "version": "1.4.3",
       "files": [
         "_meta.lua",
         "i18n.lua",
@@ -1007,7 +1008,7 @@
       "dir": "sandwichsudoku.koplugin",
       "fullname": "Sandwich Sudoku",
       "description": "Sudoku with sandwich sum clues",
-      "version": "1.4.0",
+      "version": "1.4.1",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -1151,7 +1152,7 @@
       "dir": "sudoku.koplugin",
       "fullname": "Sudoku",
       "description": "Play touch-friendly Sudoku puzzles, resume later, and reveal the solution when needed.",
-      "version": "2.4.0",
+      "version": "2.4.1",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -1171,7 +1172,7 @@
       "dir": "sudokukiller.koplugin",
       "fullname": "Killer Sudoku",
       "description": "Play touch-friendly Killer Sudoku puzzles with caged sums, resume later, and reveal the solution when needed.",
-      "version": "1.4.0",
+      "version": "1.4.1",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -1190,7 +1191,7 @@
       "dir": "sudokux.koplugin",
       "fullname": "Sudoku X",
       "description": "Sudoku with diagonal constraints",
-      "version": "1.4.0",
+      "version": "1.4.1",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -1301,7 +1302,7 @@
       "dir": "thermosudoku.koplugin",
       "fullname": "Thermo Sudoku",
       "description": "Sudoku with thermometer constraints",
-      "version": "1.4.0",
+      "version": "1.4.1",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -1320,7 +1321,7 @@
       "dir": "windoku.koplugin",
       "fullname": "Windoku",
       "description": "Sudoku with 4 windowed inner regions",
-      "version": "1.3.0",
+      "version": "1.3.1",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -1339,7 +1340,7 @@
       "dir": "wordladder.koplugin",
       "fullname": "Word Ladder",
       "description": "Change one word into another, one letter at a time.",
-      "version": "1.0.13",
+      "version": "1.0.14",
       "files": [
         "_meta.lua",
         "board.lua",
