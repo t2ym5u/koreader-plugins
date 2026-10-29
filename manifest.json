@@ -117,7 +117,7 @@
       "dir": "balance.koplugin",
       "fullname": "Balance",
       "description": "Logical weighing puzzle",
-      "version": "1.1.14",
+      "version": "1.2.0",
       "files": [
         "_meta.lua",
         "board.lua",
