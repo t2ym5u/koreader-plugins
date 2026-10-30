@@ -1201,6 +1201,38 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/hex.koplugin/main/"
     },
     {
+      "id": "heyawake",
+      "dir": "heyawake.koplugin",
+      "fullname": "Heyawake",
+      "description": "Shade cells in walled rooms: numbers count the shaded cells, white cells stay connected.",
+      "category": "logic",
+      "version": "1.0.0",
+      "files": [
+        "_meta.lua",
+        "board.lua",
+        "board_widget.lua",
+        "gen_progress.lua",
+        "i18n_fr.lua",
+        "main.lua",
+        "screen.lua",
+        "solver.lua",
+        "images/heyawake.png"
+      ],
+      "sha256": {
+        "_meta.lua": "133cf119d4dc6e461220b249e27682e83e6479f7952e1e150863f3d050ccc741",
+        "board.lua": "36ed02a1bc95428e8726694eddc2b7d83e911da8d00dabf2a2bf3b57f0a8fa30",
+        "board_widget.lua": "a3606b7f7d272b3d472f49ac79b84b69fd5044bc225b4770593168eb705c7eb6",
+        "gen_progress.lua": "3bab3b609a65e34a861cbfd8478c56515793fdfc3fd15c3e5a76dc2bb084856e",
+        "i18n_fr.lua": "884c25e5daff97942632cfcf1e510a9d13c2f71b15ad225dd5f45c0997109524",
+        "main.lua": "e48c5a098d9c7814d1f785cd3d434bb18fa097255a2cc0482ebc382da0050fcd",
+        "screen.lua": "6f71428173d64411f3823f721813e98cc594c9506befdc59355124610117735d",
+        "solver.lua": "f8389759157c9127dc594bf33d2fb035d481cb9ab87b04a9e3ef69e9f3cbd73b",
+        "images/heyawake.png": "e3e0878155483102a9a19d3e66544c8f6b71d72b81680844c164c2de66470b88"
+      },
+      "common_lib": "common",
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/heyawake.koplugin/main/"
+    },
+    {
       "id": "hidato",
       "dir": "hidato.koplugin",
       "fullname": "Hidato",
@@ -1341,6 +1373,36 @@
       },
       "common_lib": "common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/lightup.koplugin/main/"
+    },
+    {
+      "id": "lits",
+      "dir": "lits.koplugin",
+      "fullname": "LITS",
+      "description": "Shade an L, I, T or S tetromino in every region: one connected group, no 2×2 block.",
+      "category": "logic",
+      "version": "1.0.0",
+      "files": [
+        "_meta.lua",
+        "board.lua",
+        "board_widget.lua",
+        "i18n_fr.lua",
+        "main.lua",
+        "screen.lua",
+        "solver.lua",
+        "images/lits.png"
+      ],
+      "sha256": {
+        "_meta.lua": "e26b24f3ece4eb505efdbfa8e2732d8658b8c4774ab2478e9facc3f227284daf",
+        "board.lua": "e2a4d7060d2aa8e935175fb9e05314495901f815d5e0a7d2b10d5156f4713a92",
+        "board_widget.lua": "f843c49511912761b85e2a07140430de0c8d984c9d34327a0defa5aa91b2c189",
+        "i18n_fr.lua": "c3f36fd238e377310be48aa7adde7a097cefa40b64beca8c082fbc24bb586e05",
+        "main.lua": "a036f3672268b1ed3aaccedcecd7037bc6204eaf5a101d7969d1ed7cbe49b33c",
+        "screen.lua": "063814acc5ffe697760ea6d7ae4ce2140bc4c4f71a47ca7b958b7cd25e578c4b",
+        "solver.lua": "f4e244fbb709b11eb846b64522269aa71dacef2dd252825fbe8812c465971356",
+        "images/lits.png": "4ad7b6616bf009c19a6cf23174f7bc903689e110aed65a80542a1475e544661e"
+      },
+      "common_lib": "common",
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/lits.koplugin/main/"
     },
     {
       "id": "magnets",
@@ -1539,6 +1601,38 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/morris.koplugin/main/"
     },
     {
+      "id": "mosaic",
+      "dir": "mosaic.koplugin",
+      "fullname": "Mosaic",
+      "description": "Shade cells to match the neighbour counts",
+      "category": "logic",
+      "version": "1.0.0",
+      "files": [
+        "_meta.lua",
+        "board.lua",
+        "board_widget.lua",
+        "gen_progress.lua",
+        "i18n_fr.lua",
+        "main.lua",
+        "screen.lua",
+        "solver.lua",
+        "images/mosaic.png"
+      ],
+      "sha256": {
+        "_meta.lua": "8e04ea02f017caeeb652d9ee75b214c23c11980321a86083df3a790003aff7c0",
+        "board.lua": "299f49443cd7bf6caea95af70f985bea9e132e4aebb9dc674176b81edf6115c7",
+        "board_widget.lua": "7954d1a01437de10627716062fe576e1b7f7f62b5d0026a6fadc08ad6436e78d",
+        "gen_progress.lua": "3bab3b609a65e34a861cbfd8478c56515793fdfc3fd15c3e5a76dc2bb084856e",
+        "i18n_fr.lua": "78a292aec6b6af73af7562d6c9c5e754ed34ed49e545ff460ae9f827a59bbf61",
+        "main.lua": "29b4e4779ce455b23b20fd6891566774db339cd08bb7180043cb8e21acc6f3bd",
+        "screen.lua": "69eeb343a73272162944c0de0eedd73c13c1d29b10953a2b86823e8a2d8abe78",
+        "solver.lua": "0e093d325875af4e43c5ea033f8f977079d1c39fa5980eeb34de5db54235f58c",
+        "images/mosaic.png": "0d38c437e7331c2a2748c6f257b8b8b7209cf2828ff3b2e6978fd186e0eb94a7"
+      },
+      "common_lib": "common",
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/mosaic.koplugin/main/"
+    },
+    {
       "id": "netwalk",
       "dir": "netwalk.koplugin",
       "fullname": "Net",
@@ -1595,6 +1689,36 @@
       },
       "common_lib": "common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/nonogram.koplugin/main/"
+    },
+    {
+      "id": "norinori",
+      "dir": "norinori.koplugin",
+      "fullname": "Norinori",
+      "description": "Shade two cells per region so that every shaded cell forms a domino.",
+      "category": "logic",
+      "version": "1.0.0",
+      "files": [
+        "_meta.lua",
+        "board.lua",
+        "board_widget.lua",
+        "i18n_fr.lua",
+        "main.lua",
+        "screen.lua",
+        "solver.lua",
+        "images/norinori.png"
+      ],
+      "sha256": {
+        "_meta.lua": "f9e4ba3770eb3c5a5f0a03dc71d7bc3c2c83802ab8b8a01e6cb39459ce249a55",
+        "board.lua": "729f0af9f4bfa3ec87c7992627afff011a1010a712a25b8749433a1acaa43f5a",
+        "board_widget.lua": "e6ae2600dd1cf512f53b2d51d32b7540146c1abcd942a61047493f4ff49f0f13",
+        "i18n_fr.lua": "5810537f7fdb4dd03f6204647dd0198eee8658686276434440d63a2125eab577",
+        "main.lua": "4328d00599d4db2ff372e37279f96e3c85ed4fb3d7efd029b6197ebece3f6294",
+        "screen.lua": "e5fa5a19b7243705fd799af6e33aae686167488439f1ca7e369908efdf2a9343",
+        "solver.lua": "96ca699a491f34661aff1a821845cf66a2dc57a5cb458d308736ac42baf24fe4",
+        "images/norinori.png": "e37094bd25a6b48dc830f149fe43328bbad09448ef114c58175a0acb76e5ac05"
+      },
+      "common_lib": "common",
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/norinori.koplugin/main/"
     },
     {
       "id": "numberlink",
@@ -2458,6 +2582,38 @@
       },
       "common_lib": "sudoku_common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/thermosudoku.koplugin/main/"
+    },
+    {
+      "id": "tracks",
+      "dir": "tracks.koplugin",
+      "fullname": "Train Tracks",
+      "description": "Lay a railway from A to B that matches the row and column counts",
+      "category": "logic",
+      "version": "1.0.0",
+      "files": [
+        "_meta.lua",
+        "board.lua",
+        "board_widget.lua",
+        "gen_progress.lua",
+        "i18n_fr.lua",
+        "main.lua",
+        "screen.lua",
+        "solver.lua",
+        "images/tracks.png"
+      ],
+      "sha256": {
+        "_meta.lua": "8072dcb88dc49230e4661c9098be3e7a510764afe5fc5a20c72b9bb458b44291",
+        "board.lua": "e27f0a049960ccbd993083dc08f1fc0c27704685063cce5a13ca51fa08e66903",
+        "board_widget.lua": "78e82cccdcf3e1e49523bdd6d5f01205607b1365a72381216f1bd44a8ba2581d",
+        "gen_progress.lua": "3bab3b609a65e34a861cbfd8478c56515793fdfc3fd15c3e5a76dc2bb084856e",
+        "i18n_fr.lua": "ca7511f3a8475e23518721a6564e4c7f7220c30425ebf63bb5af5c21cda70055",
+        "main.lua": "d29d3173e282c57c764501e56a4fb0d5857d9e4291160d88d21d890fea5141b0",
+        "screen.lua": "9404f1dd3ee001b23f1d90047e167fbdf5ffb29949d792c5945187690a2cc911",
+        "solver.lua": "b2b1cf227544d73a4a9384fe9aa5b78a8b6729751eb8c51a005465addc9d018e",
+        "images/tracks.png": "c337e285949e08904f1545e6644e8330cf6a24bb15c020d77cd3103aca980bdc"
+      },
+      "common_lib": "common",
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/tracks.koplugin/main/"
     },
     {
       "id": "tsumego",
