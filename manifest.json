@@ -60,9 +60,11 @@
       "dir": "anagram.koplugin",
       "fullname": "Anagram",
       "description": "Rearrange letters to find words",
-      "version": "1.3.13",
+      "version": "1.4.0",
       "files": [
         "_meta.lua",
+        "answers_en.lua",
+        "answers_fr.lua",
         "board.lua",
         "board_widget.lua",
         "i18n_fr.lua",
