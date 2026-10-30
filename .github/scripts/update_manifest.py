@@ -27,6 +27,12 @@ Per plugin it also writes:
                   the committed (HEAD) blob of the plugin's repo, i.e. what
                   raw.githubusercontent serves once that commit is pushed.
 
+Top level, it also writes `patch_repos` -- the "owner/name" GitHub
+repositories whose KOReader user patches PluginManager's "Install
+everything" installs -- from patch_repos.json next to this script (file
+absent -> field removed; PluginManager treats a missing field as "no patch
+repositories").
+
 `--output PATH` writes the result somewhere other than manifest.json (the
 input is still the repo's manifest.json), for checking a change to this
 script without touching the real file.
@@ -43,6 +49,10 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent.parent
 CATEGORIES_PATH = Path(__file__).resolve().parent / "categories.json"
+PATCH_REPOS_PATH = Path(__file__).resolve().parent / "patch_repos.json"
+# Same rule PluginManager applies on the device (pmlogic.lua patchRepos):
+# a GitHub owner, a slash, a repo name.
+PATCH_REPO_RE = re.compile(r"^[A-Za-z0-9][A-Za-z0-9-]*/[A-Za-z0-9._-]+$")
 
 # Field order in each plugin entry.
 FIELD_ORDER = ["id", "dir", "fullname", "description", "category", "version",
@@ -249,6 +259,27 @@ def load_categories() -> dict[str, str]:
     return mapping
 
 
+def load_patch_repos() -> list[str] | None:
+    """The "owner/name" list from patch_repos.json, or None when the file is
+    absent (the manifest then carries no patch_repos field at all).
+    Malformed or duplicate entries are warned about and dropped."""
+    if not PATCH_REPOS_PATH.exists():
+        return None
+    data = json.loads(PATCH_REPOS_PATH.read_text(encoding="utf-8"))
+    entries = data.get("patch_repos", []) if isinstance(data, dict) else data
+    out: list[str] = []
+    seen: set[str] = set()
+    for entry in entries if isinstance(entries, list) else []:
+        if not isinstance(entry, str) or not PATCH_REPO_RE.match(entry) or entry.endswith(("/.", "/..")):
+            print(f"WARN: {PATCH_REPOS_PATH.name}: ignoring {entry!r} (not owner/name)", file=sys.stderr)
+            continue
+        if entry.lower() in seen:
+            continue
+        seen.add(entry.lower())
+        out.append(entry)
+    return out
+
+
 def committed_blobs(repo_dir: Path, rel_paths: list[str]) -> dict[str, bytes]:
     """HEAD content of each path in the git repo at repo_dir, in one
     `git cat-file --batch` call. Paths missing from HEAD (new, uncommitted
@@ -448,6 +479,15 @@ def main() -> int:
 
     current["updated"] = date.today().isoformat()
     current["plugins"] = plugins
+
+    # Top-level patch_repos, kept just before `plugins` so the small
+    # top-level fields stay together at the head of the file.
+    patch_repos = load_patch_repos()
+    current.pop("patch_repos", None)
+    if patch_repos is not None:
+        current = {k: v for k, v in current.items() if k != "plugins"}
+        current["patch_repos"] = patch_repos
+        current["plugins"] = plugins
 
     output_path.write_text(
         json.dumps(current, indent=2, ensure_ascii=False) + "\n",
