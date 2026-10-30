@@ -142,5 +142,7 @@ Remaining manual steps:
   2. Add ${NAME}.koplugin to docs/README.md's plugin table.
   3. Review + commit the .gitmodules / manifest.json changes here in the
      monorepo (not done automatically by this script).
-  4. Run ./scripts/build_release.sh ${NAME} once ready to cut a release.
+  4. Run ./scripts/build_release.sh ${NAME}, then \`git add -f dist/${NAME}.zip\`:
+     dist/ is gitignored, so a plain \`git add dist/\` skips a NEW zip and the
+     monorepo release workflow then skips the plugin ("no dist/${NAME}.zip").
 EOF
