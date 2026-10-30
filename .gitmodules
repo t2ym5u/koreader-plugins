@@ -377,3 +377,7 @@
 	path = mosaic.koplugin
 	url = https://github.com/t2ym5u/mosaic.koplugin.git
 	branch = main
+[submodule "bookdrop.koplugin"]
+	path = bookdrop.koplugin
+	url = https://github.com/t2ym5u/bookdrop.koplugin.git
+	branch = main

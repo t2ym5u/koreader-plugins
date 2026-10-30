@@ -103,6 +103,7 @@ A collection of game and utility plugins for [KOReader](https://koreader.rocks/)
 
 | Plugin | Description |
 |---|---|
+| [Book Drop](https://github.com/t2ym5u/bookdrop.koplugin) | Drop books into a WebDAV folder (Koofr, Nextcloud…) from your phone or computer; the reader fetches them on its own when online. |
 | [Dashboard](https://github.com/t2ym5u/dashboard.koplugin) | Home screen: continue reading, resume a game, daily challenge, your games by category, play stats (replaces Startup Menu) |
 | [Plugin Manager](https://github.com/t2ym5u/pluginmanager.koplugin) | Check for updates and install plugins from this repo |
 | [opdsdir](opdsdir.koplugin/) | Per-catalog download folder and AES-256 encryption for the OPDS browser |
