@@ -1,0 +1,6 @@
+{
+  "_comment": "GitHub repositories (owner/name) of KOReader user patches that PluginManager's \"Install everything\" installs, every patch file at the repo root or under patches/. Copied into manifest.json's top-level patch_repos by update_manifest.py; delete this file to drop the field.",
+  "patch_repos": [
+    "t2ym5u/koreader-user-patches"
+  ]
+}

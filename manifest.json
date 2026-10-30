@@ -60,6 +60,9 @@
       "sudoku_grid_utils.lua": "312b48cb98184b003378579302f5b2d84551a78a43437f7197eaad029ce0129b"
     }
   },
+  "patch_repos": [
+    "t2ym5u/koreader-user-patches"
+  ],
   "plugins": [
     {
       "id": "2048",
@@ -1974,7 +1977,7 @@
       "fullname": "Plugin Manager",
       "description": "Check for updates and install game plugins from the koreader-plugins repository.",
       "category": "tools",
-      "version": "1.5.0",
+      "version": "1.6.0",
       "files": [
         "_meta.lua",
         "i18n.lua",
@@ -1985,13 +1988,13 @@
         "pmlogic.lua"
       ],
       "sha256": {
-        "_meta.lua": "5a0e8a11d9a8cf99469ef6d3f8e6084e159d586d1c401d00f45ed4359760c006",
+        "_meta.lua": "f23e00ceec684880ea8f8afab0226dcac84f320be55aa8171dc7026639e0279f",
         "i18n.lua": "87fdd0b7d6846f4bc6bd021e725b6a8a654ef38737cbea00582609d2249b5a09",
-        "i18n_fr.lua": "10169251b2e3c21c2ed783ca36895ff615fd00485be3e74ff3b9d2dc96fd9a3c",
-        "main.lua": "87768a63581c4b8fb61440b5afab31fc4088805c578f293e01b0c86ceb433a0f",
+        "i18n_fr.lua": "6644b0a5887ee454f1964994e205542582417d438f898da4b445bb395b531e9f",
+        "main.lua": "8542597e28f35521b36865f786b3a0776b0871021cfde2a3ca45d6f03196da18",
         "pathguard.lua": "e2551e9ca07e420cf6c82bbf15b786a1a4f128fbcb861e1dca91b2584eb26182",
         "pluginmanager_configuration.sample.lua": "aec68f12916255348c7983a83b2e5f9797d6b113d2b8d8cb3ad22defe0ea5a3c",
-        "pmlogic.lua": "24550a74d821abcffa710548d30c95c874e8733a2bd4c730e779de7feaa03158"
+        "pmlogic.lua": "5ab79aa3b42dde625c1c3b3bd8c0a2586b144d3786344ff8d8d9d0e9863a41f4"
       },
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/pluginmanager.koplugin/main/"
     },
