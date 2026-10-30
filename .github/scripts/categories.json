@@ -32,6 +32,10 @@
 
     "boggleparty": "party", "doubleornothing": "party", "pictionary": "party", "quiz": "party",
     "taboo": "party",
+    "codewords": "party", "categories": "party", "estimation": "party", "partyquestions": "party",
+    "threerounds": "party", "undercover": "party", "werewolf": "party", "whoami": "party",
+    "fireworks": "cards", "liarsdice": "cards", "detective": "logic",
+    "gamebook": "words", "textadventure": "words",
 
     "bookdrop": "tools", "dashboard": "tools", "opdsdir": "tools", "pluginmanager": "tools", "startmenu": "tools"
   }

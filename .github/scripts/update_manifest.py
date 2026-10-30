@@ -174,6 +174,8 @@ def list_vendored_common_files(plugin_dir: Path) -> list[str]:
 
 
 ASSET_EXTENSIONS = {".png"}
+# Subdirectories holding build-time tooling, never loaded on the device.
+SUBDIR_LUA_SKIP = {"gen", "tools"}
 
 
 def list_asset_files(plugin_dir: Path) -> list[str]:
@@ -186,13 +188,23 @@ def list_asset_files(plugin_dir: Path) -> list[str]:
     them, PluginManager never downloads them, and installed plugins are
     silently stuck on their code's built-in fallback rendering forever.
     `common/` is excluded since it ships via the separate common_lib path.
+
+    Content modules a plugin loads from its own subdirectories (word packs,
+    card decks, stories: undercover.koplugin/content/fr/*.lua...) are listed
+    too, for the same reason. Build-time tooling dirs (gen/, tools/) and
+    test files are not.
     """
     files = []
     for sub in sorted(plugin_dir.iterdir()):
         if not sub.is_dir() or sub.name == "common" or sub.name.startswith("."):
             continue
         for f in sorted(sub.rglob("*")):
-            if f.is_file() and f.suffix.lower() in ASSET_EXTENSIONS:
+            if not f.is_file():
+                continue
+            if f.suffix.lower() in ASSET_EXTENSIONS:
+                files.append(str(f.relative_to(plugin_dir)))
+            elif (f.suffix == ".lua" and sub.name not in SUBDIR_LUA_SKIP
+                  and not f.name.startswith("test_")):
                 files.append(str(f.relative_to(plugin_dir)))
     return files
 

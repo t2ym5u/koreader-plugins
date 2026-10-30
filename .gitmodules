@@ -381,3 +381,55 @@
 	path = bookdrop.koplugin
 	url = https://github.com/t2ym5u/bookdrop.koplugin.git
 	branch = main
+[submodule "undercover.koplugin"]
+	path = undercover.koplugin
+	url = https://github.com/t2ym5u/undercover.koplugin.git
+	branch = main
+[submodule "werewolf.koplugin"]
+	path = werewolf.koplugin
+	url = https://github.com/t2ym5u/werewolf.koplugin.git
+	branch = main
+[submodule "codewords.koplugin"]
+	path = codewords.koplugin
+	url = https://github.com/t2ym5u/codewords.koplugin.git
+	branch = main
+[submodule "whoami.koplugin"]
+	path = whoami.koplugin
+	url = https://github.com/t2ym5u/whoami.koplugin.git
+	branch = main
+[submodule "categories.koplugin"]
+	path = categories.koplugin
+	url = https://github.com/t2ym5u/categories.koplugin.git
+	branch = main
+[submodule "threerounds.koplugin"]
+	path = threerounds.koplugin
+	url = https://github.com/t2ym5u/threerounds.koplugin.git
+	branch = main
+[submodule "estimation.koplugin"]
+	path = estimation.koplugin
+	url = https://github.com/t2ym5u/estimation.koplugin.git
+	branch = main
+[submodule "liarsdice.koplugin"]
+	path = liarsdice.koplugin
+	url = https://github.com/t2ym5u/liarsdice.koplugin.git
+	branch = main
+[submodule "partyquestions.koplugin"]
+	path = partyquestions.koplugin
+	url = https://github.com/t2ym5u/partyquestions.koplugin.git
+	branch = main
+[submodule "textadventure.koplugin"]
+	path = textadventure.koplugin
+	url = https://github.com/t2ym5u/textadventure.koplugin.git
+	branch = main
+[submodule "gamebook.koplugin"]
+	path = gamebook.koplugin
+	url = https://github.com/t2ym5u/gamebook.koplugin.git
+	branch = main
+[submodule "detective.koplugin"]
+	path = detective.koplugin
+	url = https://github.com/t2ym5u/detective.koplugin.git
+	branch = main
+[submodule "fireworks.koplugin"]
+	path = fireworks.koplugin
+	url = https://github.com/t2ym5u/fireworks.koplugin.git
+	branch = main

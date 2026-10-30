@@ -6,7 +6,7 @@ A collection of game and utility plugins for [KOReader](https://koreader.rocks/)
 
 ---
 
-## 🎮 Games (85 plugins)
+## 🎮 Games (99 plugins)
 
 | Plugin | Description |
 |---|---|
@@ -23,27 +23,34 @@ A collection of game and utility plugins for [KOReader](https://koreader.rocks/)
 | [Boggle Party](https://github.com/t2ym5u/boggleparty.koplugin) | Multiplayer Boggle |
 | [Bridges](https://github.com/t2ym5u/bridges.koplugin) | Connect islands with bridges |
 | [Calcul Mental](https://github.com/t2ym5u/mentalmath.koplugin) | Mental arithmetic training |
+| [Categories](https://github.com/t2ym5u/categories.koplugin) | Draw a letter and a list of categories, write an answer for each before the timer ends, then score unique and shared answers — the classic pen-and-paper word game. |
 | [Cave](https://github.com/t2ym5u/cave.koplugin) | Navigate through a cave |
 | [Checkers](https://github.com/kbarni/checkers.koplugin) | Draughts / Checkers (upstream by kbarni, AI opponent) |
 | [Chiffres et Lettres](https://github.com/t2ym5u/numletters.koplugin) | Numbers and letters game (fr) |
+| [Code Words](https://github.com/t2ym5u/codewords.koplugin) | Two teams, one grid of 25 words: spymasters give one-word clues, operatives find their agents and avoid the assassin. |
 | [Color Nonogram](https://github.com/t2ym5u/colornonogram.koplugin) | Nonogram with multiple colors |
 | [Cours d'Échecs](https://github.com/t2ym5u/chesscourse.koplugin) | Chess lessons and puzzles |
 | [Cryptogram](https://github.com/t2ym5u/cryptogram.koplugin) | Decode encrypted quotes |
+| [Detective](https://github.com/t2ym5u/detective.koplugin) | Logic deduction cases: read the clues, fill the grid, find who did it, where and with what. |
 | [Dice](https://github.com/t2ym5u/dice.koplugin) | Roll virtual dice with a configurable number of faces and dice |
 | [Dominosa](https://github.com/t2ym5u/dominosa.koplugin) | Lay a full set of dominoes on the number grid |
 | [Dots and Boxes](https://github.com/t2ym5u/dotsandboxes.koplugin) | Dots and Boxes — draw lines, close boxes, keep control. |
 | [Double or Nothing Party](https://github.com/t2ym5u/doubleornothing.koplugin) | Bank your points or double the pot on a harder question |
 | [Échecs](https://github.com/t2ym5u/chess.koplugin) | Chess |
+| [Estimation](https://github.com/t2ym5u/estimation.koplugin) | Numeric trivia for 2 to 8 players: guess the year, the height, the count — closest wins, or bet on the best guess. |
 | [Farkle](https://github.com/t2ym5u/farkle.koplugin) | Push-your-luck dice game to 10,000 points (Dix mille). Hotseat for 2-4 players, with computer opponents. |
 | [Fifteen Puzzle](https://github.com/t2ym5u/fifteen.koplugin) | Classic 15-tile sliding puzzle |
 | [Fillomino](https://github.com/t2ym5u/fillomino.koplugin) | Fill regions with matching numbers |
+| [Fireworks](https://github.com/t2ym5u/fireworks.koplugin) | Cooperative hidden-hand card game: build five fireworks together, seeing every hand but your own. Pass the reader for 2-5 players, or play solo with AI teammates. |
 | [Futoshiki](https://github.com/t2ym5u/futoshiki.koplugin) | Inequality-constrained Latin square |
 | [Galaxies](https://github.com/t2ym5u/galaxies.koplugin) | Divide the grid into rotationally symmetric regions |
+| [Gamebooks](https://github.com/t2ym5u/gamebook.koplugin) | Choose-your-own-adventure books: pick your path, fight, test your luck. Write your own stories too. |
 | [Go](https://github.com/t2ym5u/go.koplugin) | Classic territory and capture board game |
 | [Gomoku](https://github.com/t2ym5u/gomoku.koplugin) | Five in a row |
 | [Hangman](https://github.com/t2ym5u/hangman.koplugin) | Classic word guessing game |
 | [Hex](https://github.com/t2ym5u/hex.koplugin) | Hex — connect your two sides of the board, against the AI or a friend. |
 | [Heyawake](https://github.com/t2ym5u/heyawake.koplugin) | Shade cells in walled rooms: numbers count the shaded cells, white cells stay connected. |
+| [Liar's Dice](https://github.com/t2ym5u/liarsdice.koplugin) | Bluffing dice game for 2 to 6 players: bid on all the dice under the cups, or call Liar! Play with friends on one reader, or against the computer. |
 | [Lights Out](https://github.com/t2ym5u/lightsout.koplugin) | Switch every light off: each tap toggles a cell and its neighbours. |
 | [LITS](https://github.com/t2ym5u/lits.koplugin) | Shade an L, I, T or S tetromino in every region: one connected group, no 2×2 block. |
 | [Magnets](https://github.com/t2ym5u/magnets.koplugin) | Logic puzzle: place magnets on the dominoes to match the + and − counts; like poles never touch. |
@@ -51,8 +58,11 @@ A collection of game and utility plugins for [KOReader](https://koreader.rocks/)
 | [Net](https://github.com/t2ym5u/netwalk.koplugin) | Rotate the pipe tiles until the whole network is connected to the source. |
 | [Nine Men's Morris](https://github.com/t2ym5u/morris.koplugin) | Nine Men's Morris — form mills and take pieces, against the AI or a friend. |
 | [Norinori](https://github.com/t2ym5u/norinori.koplugin) | Shade two cells per region so that every shaded cell forms a domino. |
+| [Party Questions](https://github.com/t2ym5u/partyquestions.koplugin) | Party card decks to read aloud: Would you rather, Never have I ever, Who's most likely to, Hot seat and more. |
 | [Signpost](https://github.com/t2ym5u/signpost.koplugin) | Link every cell into one numbered chain by following the arrows |
 | [Spelling Bee](https://github.com/t2ym5u/spellingbee.koplugin) | Make words from seven letters around a centre letter |
+| [Text Adventures](https://github.com/t2ym5u/textadventure.koplugin) | Play interactive fiction: a Z-machine interpreter for Infocom and Inform stories (.z3 .z5 .z8 .zblorb), with autosave. |
+| [Three Rounds](https://github.com/t2ym5u/threerounds.koplugin) | Team guessing party game in three rounds with the same deck of famous names: describe freely, then one word only, then mime. |
 | [Towers of Hanoi](https://github.com/t2ym5u/hanoi.koplugin) | Move a stack of discs |
 | [Hidato](https://github.com/t2ym5u/hidato.koplugin) | Fill a grid with consecutive numbers |
 | [Hitori](https://github.com/t2ym5u/hitori.koplugin) | Blacken cells so no number repeats |
@@ -90,6 +100,9 @@ A collection of game and utility plugins for [KOReader](https://koreader.rocks/)
 | [Thermo Sudoku](https://github.com/t2ym5u/thermosudoku.koplugin) | Sudoku with thermometer constraints |
 | [Train Tracks](https://github.com/t2ym5u/tracks.koplugin) | Lay a railway from A to B that matches the row and column counts |
 | [Tsumego](https://github.com/t2ym5u/tsumego.koplugin) | Go life-and-death problems: kill or live in the corner, with proven answers. |
+| [Undercover](https://github.com/t2ym5u/undercover.koplugin) | Social deduction for 3–12 players: find the undercover, Mr. White or the spy — one reader passed round the table. |
+| [Werewolf](https://github.com/t2ym5u/werewolf.koplugin) | Game master for the classic werewolf party game: 6 to 18 players, secret roles, night narration and day votes. |
+| [Who Am I?](https://github.com/t2ym5u/whoami.koplugin) | Forehead guessing party game: hold the reader facing the others, guess the famous name, animal or film from their clues before the time runs out. |
 | [Windoku](https://github.com/t2ym5u/windoku.koplugin) | Sudoku with four extra windows |
 | [Word Ladder](https://github.com/t2ym5u/wordladder.koplugin) | Change one word into another, one letter at a time |
 | [Wordle](https://github.com/t2ym5u/wordle.koplugin) | Guess the 5-letter word in 6 tries |
