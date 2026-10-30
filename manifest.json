@@ -2300,6 +2300,38 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/partyquestions.koplugin/main/"
     },
     {
+      "id": "passeword",
+      "dir": "passeword.koplugin",
+      "fullname": "Pass the Word",
+      "description": "Word-guessing party game for four, two teams of two, inspired by the classic TV game: one-word clues, a 4-round qualification, then a 5-level final with a prize pyramid.",
+      "category": "party",
+      "version": "1.0.0",
+      "files": [
+        "_meta.lua",
+        "game.lua",
+        "i18n_fr.lua",
+        "main.lua",
+        "screen.lua",
+        "widgets.lua",
+        "images/passeword.png",
+        "words/en.lua",
+        "words/fr.lua"
+      ],
+      "sha256": {
+        "_meta.lua": "4619488732774a7ebbaaf15dfb88ed32c680e4999a331c2ad3ac6433748e6c86",
+        "game.lua": "2365b513822d769f0b0229464b3762059d812b72c8498f516daf94f24d8c8623",
+        "i18n_fr.lua": "c4a43871abab074d2d065aa4b79da7ad9649e06d4d853051d1bcee29836d163d",
+        "main.lua": "8929a2393b0bde5e707e6b4ab8036616f277df6447ab6349c639f6daa7a16887",
+        "screen.lua": "e5eda2ab8ddb4c47aa00851af8eed132122b74581b835de4382ada040b9d6502",
+        "widgets.lua": "a79e15e727dbb178a1a88c56303173048d8a249f8a3546f5438f7b6f427dc9d9",
+        "images/passeword.png": "0f65fcb88d1b98fbe7d1dc6a782f55b4159083d711962fe734a3cd0c66e3d019",
+        "words/en.lua": "37407063da740f0213c3c9585feb4b416e955a5488c8a8441dac509da17dedfe",
+        "words/fr.lua": "49bf9076f4588b2ca18654522c8a22f9c749410e5788e85c77f18b25889b6650"
+      },
+      "common_lib": "common",
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/passeword.koplugin/main/"
+    },
+    {
       "id": "pickomino",
       "dir": "pickomino.koplugin",
       "fullname": "Pickomino",

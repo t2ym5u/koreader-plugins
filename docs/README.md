@@ -6,7 +6,7 @@ A collection of game and utility plugins for [KOReader](https://koreader.rocks/)
 
 ---
 
-## 🎮 Games (99 plugins)
+## 🎮 Games (100 plugins)
 
 | Plugin | Description |
 |---|---|
@@ -59,6 +59,7 @@ A collection of game and utility plugins for [KOReader](https://koreader.rocks/)
 | [Nine Men's Morris](https://github.com/t2ym5u/morris.koplugin) | Nine Men's Morris — form mills and take pieces, against the AI or a friend. |
 | [Norinori](https://github.com/t2ym5u/norinori.koplugin) | Shade two cells per region so that every shaded cell forms a domino. |
 | [Party Questions](https://github.com/t2ym5u/partyquestions.koplugin) | Party card decks to read aloud: Would you rather, Never have I ever, Who's most likely to, Hot seat and more. |
+| [Pass the Word](https://github.com/t2ym5u/passeword.koplugin) | Word-guessing party game for four, two teams of two, inspired by the classic TV game: one-word clues, a 4-round qualification, then a 5-level final with a prize pyramid. |
 | [Signpost](https://github.com/t2ym5u/signpost.koplugin) | Link every cell into one numbered chain by following the arrows |
 | [Spelling Bee](https://github.com/t2ym5u/spellingbee.koplugin) | Make words from seven letters around a centre letter |
 | [Text Adventures](https://github.com/t2ym5u/textadventure.koplugin) | Play interactive fiction: a Z-machine interpreter for Infocom and Inform stories (.z3 .z5 .z8 .zblorb), with autosave. |
