@@ -420,6 +420,33 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/boggleparty.koplugin/master/"
     },
     {
+      "id": "bookdrop",
+      "dir": "bookdrop.koplugin",
+      "fullname": "Book Drop",
+      "description": "Drop books into a WebDAV folder (Koofr, Nextcloud…) from your phone or computer; the reader fetches them on its own when online.",
+      "category": "tools",
+      "version": "1.0.0",
+      "files": [
+        "_meta.lua",
+        "bookdrop_logic.lua",
+        "bookdrop_sync.lua",
+        "i18n.lua",
+        "i18n_fr.lua",
+        "main.lua",
+        "images/bookdrop.png"
+      ],
+      "sha256": {
+        "_meta.lua": "830c9157d592411c28b17232ac236bec607b4b03cc1c94c3cacecf306714f6aa",
+        "bookdrop_logic.lua": "ea753fde9afb677cb408877edc351ba9b4a31a1c9ebd6c3d51e42cc8de5b236c",
+        "bookdrop_sync.lua": "edbb13caaaf1b67d16cbcfd49deacf5d4161e33fb9b5d11af5d19069d27580f9",
+        "i18n.lua": "87fdd0b7d6846f4bc6bd021e725b6a8a654ef38737cbea00582609d2249b5a09",
+        "i18n_fr.lua": "0b143b404194d117bb34c895b2e1077b2a4648bb33fe7c834c108ea5efef1fde",
+        "main.lua": "fcdf52bcbfb8a8d2208570831bea66e51e3223dd209c27ecca5ebe916286c105",
+        "images/bookdrop.png": "c8726cde038ef2d13e1cf1aeda12638316bf21a439675068e3901f203bc4b963"
+      },
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/bookdrop.koplugin/main/"
+    },
+    {
       "id": "bridges",
       "dir": "bridges.koplugin",
       "fullname": "Bridges",

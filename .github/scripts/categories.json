@@ -33,6 +33,6 @@
     "boggleparty": "party", "doubleornothing": "party", "pictionary": "party", "quiz": "party",
     "taboo": "party",
 
-    "dashboard": "tools", "opdsdir": "tools", "pluginmanager": "tools", "startmenu": "tools"
+    "bookdrop": "tools", "dashboard": "tools", "opdsdir": "tools", "pluginmanager": "tools", "startmenu": "tools"
   }
 }
