@@ -6,13 +6,15 @@ A collection of game and utility plugins for [KOReader](https://koreader.rocks/)
 
 ---
 
-## 🎮 Games (66 plugins)
+## 🎮 Games (80 plugins)
 
 | Plugin | Description |
 |---|---|
 | [2048](https://github.com/t2ym5u/2048.koplugin) | Slide tiles to merge them. Reach the 2048 tile! |
 | [Anagram](https://github.com/t2ym5u/anagram.koplugin) | Find all anagrams of a random word |
+| [Aquarium](https://github.com/t2ym5u/aquarium.koplugin) | Logic puzzle: fill the tanks with water to match the row and column counts; water stays level in each tank. |
 | [Arrow Sudoku](https://github.com/t2ym5u/arrowsudoku.koplugin) | Sudoku with arrow constraints |
+| [Awalé](https://github.com/t2ym5u/awale.koplugin) | Awalé (Oware) — sow and capture seeds, against the AI or a friend. |
 | [Backgammon](https://github.com/t2ym5u/backgammon.koplugin) | Classic 2-player dice and checker race game |
 | [Battleship Puzzle](https://github.com/t2ym5u/battleship.koplugin) | Locate hidden ships on a grid |
 | [Binairo](https://github.com/t2ym5u/binairo.koplugin) | Binary grid puzzle — fill rows and columns with equal 0s and 1s, no three in a row |
@@ -28,8 +30,11 @@ A collection of game and utility plugins for [KOReader](https://koreader.rocks/)
 | [Cours d'Échecs](https://github.com/t2ym5u/chesscourse.koplugin) | Chess lessons and puzzles |
 | [Cryptogram](https://github.com/t2ym5u/cryptogram.koplugin) | Decode encrypted quotes |
 | [Dice](https://github.com/t2ym5u/dice.koplugin) | Roll virtual dice with a configurable number of faces and dice |
+| [Dominosa](https://github.com/t2ym5u/dominosa.koplugin) | Lay a full set of dominoes on the number grid |
+| [Dots and Boxes](https://github.com/t2ym5u/dotsandboxes.koplugin) | Dots and Boxes — draw lines, close boxes, keep control. |
 | [Double or Nothing Party](https://github.com/t2ym5u/doubleornothing.koplugin) | Bank your points or double the pot on a harder question |
 | [Échecs](https://github.com/t2ym5u/chess.koplugin) | Chess |
+| [Farkle](https://github.com/t2ym5u/farkle.koplugin) | Push-your-luck dice game to 10,000 points (Dix mille). Hotseat for 2-4 players, with computer opponents. |
 | [Fifteen Puzzle](https://github.com/t2ym5u/fifteen.koplugin) | Classic 15-tile sliding puzzle |
 | [Fillomino](https://github.com/t2ym5u/fillomino.koplugin) | Fill regions with matching numbers |
 | [Futoshiki](https://github.com/t2ym5u/futoshiki.koplugin) | Inequality-constrained Latin square |
@@ -37,6 +42,13 @@ A collection of game and utility plugins for [KOReader](https://koreader.rocks/)
 | [Go](https://github.com/t2ym5u/go.koplugin) | Classic territory and capture board game |
 | [Gomoku](https://github.com/t2ym5u/gomoku.koplugin) | Five in a row |
 | [Hangman](https://github.com/t2ym5u/hangman.koplugin) | Classic word guessing game |
+| [Hex](https://github.com/t2ym5u/hex.koplugin) | Hex — connect your two sides of the board, against the AI or a friend. |
+| [Lights Out](https://github.com/t2ym5u/lightsout.koplugin) | Switch every light off: each tap toggles a cell and its neighbours. |
+| [Magnets](https://github.com/t2ym5u/magnets.koplugin) | Logic puzzle: place magnets on the dominoes to match the + and − counts; like poles never touch. |
+| [Net](https://github.com/t2ym5u/netwalk.koplugin) | Rotate the pipe tiles until the whole network is connected to the source. |
+| [Nine Men's Morris](https://github.com/t2ym5u/morris.koplugin) | Nine Men's Morris — form mills and take pieces, against the AI or a friend. |
+| [Signpost](https://github.com/t2ym5u/signpost.koplugin) | Link every cell into one numbered chain by following the arrows |
+| [Spelling Bee](https://github.com/t2ym5u/spellingbee.koplugin) | Make words from seven letters around a centre letter |
 | [Towers of Hanoi](https://github.com/t2ym5u/hanoi.koplugin) | Move a stack of discs |
 | [Hidato](https://github.com/t2ym5u/hidato.koplugin) | Fill a grid with consecutive numbers |
 | [Hitori](https://github.com/t2ym5u/hitori.koplugin) | Blacken cells so no number repeats |
@@ -72,11 +84,13 @@ A collection of game and utility plugins for [KOReader](https://koreader.rocks/)
 | [Tatami](https://github.com/t2ym5u/tatami.koplugin) | Fill grid with alternating numbers |
 | [Tents and Trees](https://github.com/t2ym5u/tents.koplugin) | Match each tent to a tree |
 | [Thermo Sudoku](https://github.com/t2ym5u/thermosudoku.koplugin) | Sudoku with thermometer constraints |
+| [Tsumego](https://github.com/t2ym5u/tsumego.koplugin) | Go life-and-death problems: kill or live in the corner, with proven answers. |
 | [Windoku](https://github.com/t2ym5u/windoku.koplugin) | Sudoku with four extra windows |
 | [Word Ladder](https://github.com/t2ym5u/wordladder.koplugin) | Change one word into another, one letter at a time |
 | [Wordle](https://github.com/t2ym5u/wordle.koplugin) | Guess the 5-letter word in 6 tries |
 | [Word Search](https://github.com/t2ym5u/wordsearch.koplugin) | Find hidden words in a letter grid |
 | [Balance](https://github.com/t2ym5u/balance.koplugin) | Balance weights on a scale |
+| [Yahtzee](https://github.com/t2ym5u/yahtzee.koplugin) | Classic five-dice game: roll, hold and fill your score sheet. Solo, hotseat or against the computer. |
 
 ---
 
