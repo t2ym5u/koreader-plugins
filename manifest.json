@@ -1266,7 +1266,7 @@
       "fullname": "Hitori",
       "description": "Blacken cells so no number repeats in any row or column.",
       "category": "logic",
-      "version": "1.4.0",
+      "version": "1.4.1",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -1277,9 +1277,9 @@
         "images/hitori.png"
       ],
       "sha256": {
-        "_meta.lua": "bce8f3949d16cdac03f4ba8fa40f02210f09524ccce206de62093f8dea6c9881",
+        "_meta.lua": "834358c21fcd4569f9d51964ff72710ba901e52a03ef85e23e984ce058616157",
         "board.lua": "50463263f7ea4012a269f72a65a833da564b3f2597f13270aee8dc52f2183a4f",
-        "board_widget.lua": "c0dc4360262ab12f507f08205368c16db7f99ec0c948e84666bd53f9c1cc47cd",
+        "board_widget.lua": "46d145f8d5a69e9ccd0d7f19ff8f45598f25e86e54f46701e16e31d6f6d57470",
         "i18n_fr.lua": "a8778f9b6201172d5df27411809bab1b12380c128a156703bf4edb68295656b3",
         "main.lua": "bea9459b1c69f27378f1de0974c3463e429df4561f24d3bb41c947dda93d9347",
         "screen.lua": "237d042d56ace4a8ed9117c56bd55e31be1090bfaf06fb4c8e3621a42cdab766",
