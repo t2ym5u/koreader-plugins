@@ -433,3 +433,7 @@
 	path = fireworks.koplugin
 	url = https://github.com/t2ym5u/fireworks.koplugin.git
 	branch = main
+[submodule "passeword.koplugin"]
+	path = passeword.koplugin
+	url = https://github.com/t2ym5u/passeword.koplugin.git
+	branch = main
