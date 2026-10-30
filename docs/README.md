@@ -6,7 +6,7 @@ A collection of game and utility plugins for [KOReader](https://koreader.rocks/)
 
 ---
 
-## 🎮 Games (80 plugins)
+## 🎮 Games (85 plugins)
 
 | Plugin | Description |
 |---|---|
@@ -43,10 +43,14 @@ A collection of game and utility plugins for [KOReader](https://koreader.rocks/)
 | [Gomoku](https://github.com/t2ym5u/gomoku.koplugin) | Five in a row |
 | [Hangman](https://github.com/t2ym5u/hangman.koplugin) | Classic word guessing game |
 | [Hex](https://github.com/t2ym5u/hex.koplugin) | Hex — connect your two sides of the board, against the AI or a friend. |
+| [Heyawake](https://github.com/t2ym5u/heyawake.koplugin) | Shade cells in walled rooms: numbers count the shaded cells, white cells stay connected. |
 | [Lights Out](https://github.com/t2ym5u/lightsout.koplugin) | Switch every light off: each tap toggles a cell and its neighbours. |
+| [LITS](https://github.com/t2ym5u/lits.koplugin) | Shade an L, I, T or S tetromino in every region: one connected group, no 2×2 block. |
 | [Magnets](https://github.com/t2ym5u/magnets.koplugin) | Logic puzzle: place magnets on the dominoes to match the + and − counts; like poles never touch. |
+| [Mosaic](https://github.com/t2ym5u/mosaic.koplugin) | Shade cells to match the neighbour counts |
 | [Net](https://github.com/t2ym5u/netwalk.koplugin) | Rotate the pipe tiles until the whole network is connected to the source. |
 | [Nine Men's Morris](https://github.com/t2ym5u/morris.koplugin) | Nine Men's Morris — form mills and take pieces, against the AI or a friend. |
+| [Norinori](https://github.com/t2ym5u/norinori.koplugin) | Shade two cells per region so that every shaded cell forms a domino. |
 | [Signpost](https://github.com/t2ym5u/signpost.koplugin) | Link every cell into one numbered chain by following the arrows |
 | [Spelling Bee](https://github.com/t2ym5u/spellingbee.koplugin) | Make words from seven letters around a centre letter |
 | [Towers of Hanoi](https://github.com/t2ym5u/hanoi.koplugin) | Move a stack of discs |
@@ -84,6 +88,7 @@ A collection of game and utility plugins for [KOReader](https://koreader.rocks/)
 | [Tatami](https://github.com/t2ym5u/tatami.koplugin) | Fill grid with alternating numbers |
 | [Tents and Trees](https://github.com/t2ym5u/tents.koplugin) | Match each tent to a tree |
 | [Thermo Sudoku](https://github.com/t2ym5u/thermosudoku.koplugin) | Sudoku with thermometer constraints |
+| [Train Tracks](https://github.com/t2ym5u/tracks.koplugin) | Lay a railway from A to B that matches the row and column counts |
 | [Tsumego](https://github.com/t2ym5u/tsumego.koplugin) | Go life-and-death problems: kill or live in the corner, with proven answers. |
 | [Windoku](https://github.com/t2ym5u/windoku.koplugin) | Sudoku with four extra windows |
 | [Word Ladder](https://github.com/t2ym5u/wordladder.koplugin) | Change one word into another, one letter at a time |

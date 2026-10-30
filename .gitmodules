@@ -357,3 +357,23 @@
 	path = farkle.koplugin
 	url = https://github.com/t2ym5u/farkle.koplugin.git
 	branch = main
+[submodule "lits.koplugin"]
+	path = lits.koplugin
+	url = https://github.com/t2ym5u/lits.koplugin.git
+	branch = main
+[submodule "norinori.koplugin"]
+	path = norinori.koplugin
+	url = https://github.com/t2ym5u/norinori.koplugin.git
+	branch = main
+[submodule "heyawake.koplugin"]
+	path = heyawake.koplugin
+	url = https://github.com/t2ym5u/heyawake.koplugin.git
+	branch = main
+[submodule "tracks.koplugin"]
+	path = tracks.koplugin
+	url = https://github.com/t2ym5u/tracks.koplugin.git
+	branch = main
+[submodule "mosaic.koplugin"]
+	path = mosaic.koplugin
+	url = https://github.com/t2ym5u/mosaic.koplugin.git
+	branch = main
