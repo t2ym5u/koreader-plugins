@@ -301,3 +301,59 @@
 	path = opdsdir.koplugin
 	url = https://github.com/t2ym5u/opdsdir.koplugin.git
 	branch = main
+[submodule "aquarium.koplugin"]
+	path = aquarium.koplugin
+	url = https://github.com/t2ym5u/aquarium.koplugin.git
+	branch = main
+[submodule "magnets.koplugin"]
+	path = magnets.koplugin
+	url = https://github.com/t2ym5u/magnets.koplugin.git
+	branch = main
+[submodule "dominosa.koplugin"]
+	path = dominosa.koplugin
+	url = https://github.com/t2ym5u/dominosa.koplugin.git
+	branch = main
+[submodule "netwalk.koplugin"]
+	path = netwalk.koplugin
+	url = https://github.com/t2ym5u/netwalk.koplugin.git
+	branch = main
+[submodule "lightsout.koplugin"]
+	path = lightsout.koplugin
+	url = https://github.com/t2ym5u/lightsout.koplugin.git
+	branch = main
+[submodule "signpost.koplugin"]
+	path = signpost.koplugin
+	url = https://github.com/t2ym5u/signpost.koplugin.git
+	branch = main
+[submodule "spellingbee.koplugin"]
+	path = spellingbee.koplugin
+	url = https://github.com/t2ym5u/spellingbee.koplugin.git
+	branch = main
+[submodule "tsumego.koplugin"]
+	path = tsumego.koplugin
+	url = https://github.com/t2ym5u/tsumego.koplugin.git
+	branch = main
+[submodule "awale.koplugin"]
+	path = awale.koplugin
+	url = https://github.com/t2ym5u/awale.koplugin.git
+	branch = main
+[submodule "morris.koplugin"]
+	path = morris.koplugin
+	url = https://github.com/t2ym5u/morris.koplugin.git
+	branch = main
+[submodule "dotsandboxes.koplugin"]
+	path = dotsandboxes.koplugin
+	url = https://github.com/t2ym5u/dotsandboxes.koplugin.git
+	branch = main
+[submodule "hex.koplugin"]
+	path = hex.koplugin
+	url = https://github.com/t2ym5u/hex.koplugin.git
+	branch = main
+[submodule "yahtzee.koplugin"]
+	path = yahtzee.koplugin
+	url = https://github.com/t2ym5u/yahtzee.koplugin.git
+	branch = main
+[submodule "farkle.koplugin"]
+	path = farkle.koplugin
+	url = https://github.com/t2ym5u/farkle.koplugin.git
+	branch = main
