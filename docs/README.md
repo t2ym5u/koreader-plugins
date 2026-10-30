@@ -6,7 +6,7 @@ A collection of game and utility plugins for [KOReader](https://koreader.rocks/)
 
 ---
 
-## 🎮 Games (100 plugins)
+## 🎮 Games (101 plugins)
 
 | Plugin | Description |
 |---|---|
@@ -106,6 +106,7 @@ A collection of game and utility plugins for [KOReader](https://koreader.rocks/)
 | [Who Am I?](https://github.com/t2ym5u/whoami.koplugin) | Forehead guessing party game: hold the reader facing the others, guess the famous name, animal or film from their clues before the time runs out. |
 | [Windoku](https://github.com/t2ym5u/windoku.koplugin) | Sudoku with four extra windows |
 | [Word Ladder](https://github.com/t2ym5u/wordladder.koplugin) | Change one word into another, one letter at a time |
+| [Word Pyramid](https://github.com/t2ym5u/wordpyramid.koplugin) | Word-guessing party game for four, two teams of two, inspired by the classic French TV word game: one-word clues that cost bricks, riddles, ping-pong, against the clock, proper names, then the Great Pyramid final. |
 | [Wordle](https://github.com/t2ym5u/wordle.koplugin) | Guess the 5-letter word in 6 tries |
 | [Word Search](https://github.com/t2ym5u/wordsearch.koplugin) | Find hidden words in a letter grid |
 | [Balance](https://github.com/t2ym5u/balance.koplugin) | Balance weights on a scale |

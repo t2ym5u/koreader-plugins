@@ -437,3 +437,7 @@
 	path = passeword.koplugin
 	url = https://github.com/t2ym5u/passeword.koplugin.git
 	branch = main
+[submodule "wordpyramid.koplugin"]
+	path = wordpyramid.koplugin
+	url = https://github.com/t2ym5u/wordpyramid.koplugin.git
+	branch = main
