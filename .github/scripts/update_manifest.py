@@ -15,9 +15,25 @@ Preserves fields not managed here (schema_version, repo, branch,
 raw_base_url) and updates: plugins[], updated, and each shared library's
 version (common.version from game-common, sudoku_common.version from
 sudoku-common — both derived from that library's own git tag, see
-shared_lib_version()).
+shared_lib_version()) and sha256 map.
+
+Per plugin it also writes:
+  - category      from categories.json next to this script (a missing id is
+                  warned about and left without one: PluginManager files it
+                  under "Other");
+  - min_koreader  from an optional `min_koreader = "2026.03"` line in the
+                  plugin's _meta.lua (absent -> field absent);
+  - sha256        {file: hex digest} for every entry in `files`, hashed from
+                  the committed (HEAD) blob of the plugin's repo, i.e. what
+                  raw.githubusercontent serves once that commit is pushed.
+
+`--output PATH` writes the result somewhere other than manifest.json (the
+input is still the repo's manifest.json), for checking a change to this
+script without touching the real file.
 """
 
+import argparse
+import hashlib
 import json
 import re
 import subprocess
@@ -26,9 +42,11 @@ from datetime import date
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent.parent
+CATEGORIES_PATH = Path(__file__).resolve().parent / "categories.json"
 
 # Field order in each plugin entry.
-FIELD_ORDER = ["id", "dir", "fullname", "description", "version", "files", "common_lib"]
+FIELD_ORDER = ["id", "dir", "fullname", "description", "category", "version",
+               "min_koreader", "files", "sha256", "common_lib"]
 
 # Plugins deliberately set aside (broken/unpublished), excluded from the
 # manifest even though their submodule is still checked out locally. See
@@ -72,6 +90,7 @@ def read_meta(meta_path: Path) -> dict:
 
     return {
         "version":     get(r'version\s*=\s*"([^"]+)"'),
+        "min_koreader": get(r'min_koreader\s*=\s*"([^"]+)"'),
         "fullname":    (get(r'fullname\s*=\s*_\("([^"]+)"\)')
                      or get(r'fullname\s*=\s*_\(\[\[([^\]]+)\]\]\)')
                      or get(r'fullname\s*=\s*"([^"]+)"')),
@@ -213,6 +232,90 @@ def shared_lib_version(lib_dir: Path) -> str | None:
     return result.stdout.strip().lstrip("v")
 
 
+def load_categories() -> dict[str, str]:
+    """Plugin id -> category id, from categories.json (see its _comment for
+    the ids and their labels; PluginManager carries the translated labels)."""
+    if not CATEGORIES_PATH.exists():
+        print(f"WARN: {CATEGORIES_PATH.name} not found, no categories written", file=sys.stderr)
+        return {}
+    data = json.loads(CATEGORIES_PATH.read_text(encoding="utf-8"))
+    known = set(data.get("categories", []))
+    mapping = {}
+    for plugin_id, cat in data.get("plugins", {}).items():
+        if cat not in known:
+            print(f"WARN: {plugin_id}: unknown category {cat!r} in {CATEGORIES_PATH.name}", file=sys.stderr)
+            continue
+        mapping[plugin_id] = cat
+    return mapping
+
+
+def committed_blobs(repo_dir: Path, rel_paths: list[str]) -> dict[str, bytes]:
+    """HEAD content of each path in the git repo at repo_dir, in one
+    `git cat-file --batch` call. Paths missing from HEAD (new, uncommitted
+    files) are simply absent from the result."""
+    if not rel_paths or not (repo_dir / ".git").exists():
+        return {}
+    request = "".join(f"HEAD:{p}\n" for p in rel_paths).encode()
+    result = subprocess.run(["git", "cat-file", "--batch"], input=request,
+                            capture_output=True, cwd=repo_dir)
+    if result.returncode != 0:
+        return {}
+    out, pos, blobs = result.stdout, 0, {}
+    for p in rel_paths:
+        nl = out.index(b"\n", pos)
+        header = out[pos:nl].decode(errors="replace").split()
+        pos = nl + 1
+        if not header or header[-1] in ("missing", "ambiguous"):
+            continue
+        size = int(header[2])
+        if header[1] == "blob":
+            blobs[p] = out[pos:pos + size]
+        pos += size + 1  # content + trailing LF
+    return blobs
+
+
+def file_hashes(base_dir: Path, files: list[str]) -> dict[str, str]:
+    """sha256 of each of `files` (paths relative to base_dir).
+
+    Hashed from the committed blob, not the working tree: PluginManager
+    downloads from raw.githubusercontent, which serves commits, so an
+    uncommitted local edit must not leak into the manifest's hashes. A plugin
+    that is its own submodule is looked up in its own repo; one tracked
+    directly by the monorepo (opdsdir, dashboard) in the monorepo. A file not
+    in HEAD yet falls back to the working tree.
+
+    On device a mismatch is not fatal by itself: the branch head can be ahead
+    of the commit hashed here (pushed, manifest not yet regenerated), and
+    PluginManager accepts that drift when the downloaded _meta.lua is at
+    least the manifest's version. See installPlugin() in main.lua.
+    """
+    if (base_dir / ".git").exists():
+        repo, prefix = base_dir, ""
+    else:
+        repo, prefix = ROOT, base_dir.relative_to(ROOT).as_posix() + "/"
+    blobs = committed_blobs(repo, [prefix + f for f in files])
+    hashes = {}
+    for f in files:
+        data = blobs.get(prefix + f)
+        if data is None:
+            path = base_dir / f
+            if not path.is_file():
+                print(f"WARN: {base_dir.name}/{f}: listed but not found, no sha256", file=sys.stderr)
+                continue
+            data = path.read_bytes()
+        hashes[f] = hashlib.sha256(data).hexdigest()
+    return hashes
+
+
+def apply_category(entry: dict, categories: dict[str, str], missing: list[str]) -> None:
+    cat = categories.get(entry["id"])
+    if cat:
+        entry["category"] = cat
+    else:
+        entry.pop("category", None)
+        missing.append(entry["id"])
+
+
 def ordered_entry(entry: dict) -> dict:
     result = {}
     for key in FIELD_ORDER:
@@ -225,13 +328,21 @@ def ordered_entry(entry: dict) -> dict:
 
 
 def main() -> int:
+    parser = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
+    parser.add_argument("--output", type=Path, default=None,
+                        help="write here instead of manifest.json (input is still manifest.json)")
+    args = parser.parse_args()
+
     manifest_path = ROOT / "manifest.json"
     if not manifest_path.exists():
         print("ERROR: manifest.json not found at", manifest_path, file=sys.stderr)
         return 1
+    output_path = args.output or manifest_path
 
     current  = json.loads(manifest_path.read_text(encoding="utf-8"))
     existing = {p["id"]: p for p in current.get("plugins", [])}
+    categories = load_categories()
+    no_category: list[str] = []
 
     plugins = []
     skipped = []
@@ -287,11 +398,17 @@ def main() -> int:
             "description": meta["description"] or entry.get("description", ""),
             "version":     meta["version"],
             "files":       files,
+            "sha256":      file_hashes(koplugin_dir, files),
         })
         if common_lib:
             entry["common_lib"] = common_lib
         else:
             entry.pop("common_lib", None)
+        if meta.get("min_koreader"):
+            entry["min_koreader"] = meta["min_koreader"]
+        else:
+            entry.pop("min_koreader", None)
+        apply_category(entry, categories, no_category)
         plugins.append(ordered_entry(entry))
 
     if skipped:
@@ -302,26 +419,41 @@ def main() -> int:
     # submodules). Without `submodules: true` in the CI checkout, submodule
     # directories are empty so their _meta.lua is unreadable — keep the last
     # known manifest entry instead of silently dropping them.
+    # Their sha256 maps are kept as they were (nothing on disk to hash), but
+    # the category still follows categories.json.
     found_ids = {p["id"] for p in plugins}
     for old_entry in current.get("plugins", []):
         if old_entry["id"] not in found_ids and old_entry["id"] not in EXCLUDED_PLUGINS:
-            plugins.append(old_entry)
+            old_entry = dict(old_entry)
+            apply_category(old_entry, categories, no_category)
+            plugins.append(ordered_entry(old_entry))
     plugins.sort(key=lambda p: p.get("id", ""))
+
+    if no_category:
+        print(f"WARN: no category in {CATEGORIES_PATH.name} for: {', '.join(sorted(no_category))}",
+              file=sys.stderr)
 
     for lib_key, dir_name in (("common", "game-common"), ("sudoku_common", "sudoku-common")):
         version = shared_lib_version(ROOT / dir_name)
         if version and current.get(lib_key, {}).get("version") != version:
             print(f"{lib_key}.version: {current.get(lib_key, {}).get('version')} -> {version}")
             current.setdefault(lib_key, {})["version"] = version
+        # The `files` list stays hand-maintained (see the
+        # project-manifest-shared-lib-files-manual memory); only its hashes
+        # are derived here. Not checked out (CI without submodules): keep
+        # whatever map was there.
+        lib = current.get(lib_key)
+        if lib and lib.get("files") and (ROOT / dir_name).is_dir() and any((ROOT / dir_name).iterdir()):
+            lib["sha256"] = file_hashes(ROOT / dir_name, lib["files"])
 
     current["updated"] = date.today().isoformat()
     current["plugins"] = plugins
 
-    manifest_path.write_text(
+    output_path.write_text(
         json.dumps(current, indent=2, ensure_ascii=False) + "\n",
         encoding="utf-8",
     )
-    print(f"manifest.json updated: {len(plugins)} plugins, date={current['updated']}")
+    print(f"{output_path.name} updated: {len(plugins)} plugins, date={current['updated']}")
     return 0
 
 

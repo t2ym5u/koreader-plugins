@@ -1,0 +1,38 @@
+{
+  "_comment": "Plugin id -> category. Category ids are stable; labels: logic=Logic puzzles/Casse-têtes logiques, sudoku=Sudoku, words=Word games/Jeux de mots, board=Board games/Jeux de plateau, cards=Card & dice games/Cartes et dés, party=Party & quiz/Jeux de groupe, classic=Classic puzzles/Casse-têtes classiques, tools=Utilities/Utilitaires",
+  "categories": ["logic", "sudoku", "words", "board", "cards", "classic", "party", "tools"],
+  "plugins": {
+    "aquarium": "logic", "binairo": "logic", "bridges": "logic", "cave": "logic",
+    "colornonogram": "logic", "dominosa": "logic", "fillomino": "logic", "futoshiki": "logic",
+    "galaxies": "logic", "heyawake": "logic", "hidato": "logic", "hitori": "logic",
+    "kakuro": "logic", "kenken": "logic", "lightup": "logic", "lits": "logic",
+    "magnets": "logic", "masyu": "logic", "mosaic": "logic", "netwalk": "logic",
+    "nonogram": "logic", "norinori": "logic", "numberlink": "logic", "numbrix": "logic",
+    "nurikabe": "logic", "rippleeffect": "logic", "shikaku": "logic", "signpost": "logic",
+    "skyscraper": "logic", "slitherlink": "logic", "starbattle": "logic", "suguru": "logic",
+    "tapa": "logic", "tatami": "logic", "tents": "logic", "tracks": "logic", "balance": "logic",
+
+    "sudoku": "sudoku", "sudokux": "sudoku", "sudokukiller": "sudoku", "thermosudoku": "sudoku",
+    "windoku": "sudoku", "arrowsudoku": "sudoku", "sandwichsudoku": "sudoku", "betweenlines": "sudoku",
+
+    "anagram": "words", "arrowwords": "words", "boggle": "words", "cryptogram": "words",
+    "hangman": "words", "numletters": "words", "spellingbee": "words", "wordladder": "words",
+    "wordle": "words", "wordsearch": "words",
+
+    "awale": "board", "backgammon": "board", "battleship": "board", "checkers": "board",
+    "chess": "board", "chesscourse": "board", "connect4": "board", "dotsandboxes": "board",
+    "go": "board", "gomoku": "board", "hex": "board", "morris": "board", "othello": "board",
+    "tsumego": "board",
+
+    "solitaire": "cards", "yahtzee": "cards", "farkle": "cards", "pickomino": "cards", "dice": "cards",
+
+    "2048": "classic", "fifteen": "classic", "hanoi": "classic", "lightsout": "classic",
+    "mastermind": "classic", "memory": "classic", "minesweeper": "classic", "sokoban": "classic",
+    "mentalmath": "classic",
+
+    "boggleparty": "party", "doubleornothing": "party", "pictionary": "party", "quiz": "party",
+    "taboo": "party",
+
+    "dashboard": "tools", "opdsdir": "tools", "pluginmanager": "tools", "startmenu": "tools"
+  }
+}
