@@ -2197,30 +2197,6 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/starbattle.koplugin/main/"
     },
     {
-      "id": "startmenu",
-      "dir": "startmenu.koplugin",
-      "fullname": "Startup Menu",
-      "description": "Shows a choice screen on KOReader startup: read or launch a game.",
-      "category": "tools",
-      "version": "1.1.14",
-      "files": [
-        "_meta.lua",
-        "games.lua",
-        "i18n.lua",
-        "i18n_fr.lua",
-        "main.lua"
-      ],
-      "sha256": {
-        "_meta.lua": "adba4e10dc3e8b16456933a846d32585f57e5f1ce3d46eb32e419a4d6a35e1e0",
-        "games.lua": "fc481328c3d110148baa8790f0d2dd6030cca9e800496d0c33e827f5711a4c31",
-        "i18n.lua": "87fdd0b7d6846f4bc6bd021e725b6a8a654ef38737cbea00582609d2249b5a09",
-        "i18n_fr.lua": "ecccf4179114e6f7700bc8e1994b33d2a0f9558241bdee1779725e66e2947cd5",
-        "main.lua": "5d21bc8709cb9c43918acaf649e6fa75f5cd5237f7f75e6087528fd885a03d7a"
-      },
-      "common_lib": "common",
-      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/startmenu.koplugin/main/"
-    },
-    {
       "id": "sudoku",
       "dir": "sudoku.koplugin",
       "fullname": "Sudoku",

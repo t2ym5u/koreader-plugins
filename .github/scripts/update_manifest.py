@@ -52,7 +52,7 @@ FIELD_ORDER = ["id", "dir", "fullname", "description", "category", "version",
 # manifest even though their submodule is still checked out locally. See
 # docs/generator_robustness_audit.md for kakuro/galaxies (confirmed generator
 # bugs, unfixed); arrowwords was set aside by user request (2026-08-05).
-EXCLUDED_PLUGINS = {"kakuro", "arrowwords"}
+EXCLUDED_PLUGINS = {"kakuro", "arrowwords", "startmenu"}
 
 
 def is_git_tracked(path: Path) -> bool:
