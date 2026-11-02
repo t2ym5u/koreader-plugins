@@ -32,6 +32,16 @@ To set aside another plugin:
 4. `gh repo archive t2ym5u/<name>.koplugin --yes` (reversible via
    unarchive).
 
+## Game categories
+
+`.github/scripts/categories.json` is the one place a plugin's category is
+set. `update_manifest.py` writes it into `manifest.json` (PluginManager's
+catalogue) and regenerates `game-common/game_categories.lua`, which the
+device reads for **Tools → Games** (`game-common/games_menu.lua` — games no
+longer add their own Tools entry) and for Dashboard. A new plugin missing
+from the JSON lands in "Other" everywhere; after adding it, commit and
+release game-common too, or devices keep the old table.
+
 ## GitHub topic convention
 
 Every active `t2ym5u/*.koplugin` repo carries the topic

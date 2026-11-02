@@ -1,6 +1,11 @@
 {
-  "_comment": "Plugin id -> category. Category ids are stable; labels: logic=Logic puzzles/Casse-têtes logiques, sudoku=Sudoku, words=Word games/Jeux de mots, board=Board games/Jeux de plateau, cards=Card & dice games/Cartes et dés, party=Party & quiz/Jeux de groupe, classic=Classic puzzles/Casse-têtes classiques, tools=Utilities/Utilitaires",
+  "_comment": "Plugin id -> category, in `categories` display order. Category ids are stable; `labels` are English (French in game-common/i18n.lua and pluginmanager). update_manifest.py writes the manifest categories and generates game-common/game_categories.lua (Tools > Games menu, Dashboard) from this file.",
   "categories": ["logic", "sudoku", "words", "board", "cards", "classic", "party", "tools"],
+  "labels": {
+    "logic": "Logic puzzles", "sudoku": "Sudoku", "words": "Word games",
+    "board": "Board games", "cards": "Card & dice games", "classic": "Classic puzzles",
+    "party": "Party & quiz", "tools": "Utilities"
+  },
   "plugins": {
     "aquarium": "logic", "binairo": "logic", "bridges": "logic", "cave": "logic",
     "colornonogram": "logic", "dominosa": "logic", "fillomino": "logic", "futoshiki": "logic",
