@@ -24,7 +24,21 @@
     ],
     "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/game-common/main/",
     "sha256": {
-      "game_categories.lua": "f5a4d74c128fc52570349ea1629419851399a947abfbf46fd98bf40d8c11b173"
+      "daily_seed.lua": "e8d1af4abc69e1ce26481f93fb3071703bc801d4fd416be5c7d9b0fc0e89e8c6",
+      "game_categories.lua": "f5a4d74c128fc52570349ea1629419851399a947abfbf46fd98bf40d8c11b173",
+      "games_menu.lua": "67d4ecc0dc7882fed87445fc6f38593bcd470cb154081bbabab6c8dc39736b54",
+      "grid_utils.lua": "0ad7b19da43cdf91829fd06a897bb6f76dd6997856a7db95f703e85974731d2c",
+      "grid_widget_base.lua": "9e4768815db540b215be6ca884c4488433d4398c4547311c5581e584b8e78e89",
+      "hint.lua": "ffc88d122d812cf29437813e761ec9598dfa1ffbcdf30b866434f84e22cc2d24",
+      "i18n.lua": "2a4fa6667b339e957fd21d5093d73290613b8ab39d546e48cd624d9fb43d3223",
+      "menu_helper.lua": "25fed87a67c3b05aa130f73aa71078f1c877407128debe6eecc828f8ddcab6c2",
+      "plugin_base.lua": "b6b23cc6d484873258b4cea8a90375a86708e8d152327cbaa65030037ca77632",
+      "score_tracker.lua": "43930349ae8338c052a9cdf77f34b8d9f6e824644e818f668da83d98a2a7eebe",
+      "screen_base.lua": "97805eb84eac0a8b87a427cf052f7e09a190e429adbb2b154133d611ea347165",
+      "settings_dialog.lua": "c09b596409be4a802e3248152f9aed3f212c09003d9c25349ca61f41c103cced",
+      "stats_exporter.lua": "41f646f94720136d65ae118e86aa7f04d144f10a871d6a346a759c62437cc622",
+      "timer.lua": "2825dde22553cff4ddab0522d9c86139d8df84ca1b3001ff08c07cee701dee07",
+      "undo_stack.lua": "cc583c009d77dfb103bfcfd1d0ca51b4d658aee877e2d2f10e3bd3b671975d76"
     }
   },
   "sudoku_common": {
