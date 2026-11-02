@@ -441,3 +441,7 @@
 	path = wordpyramid.koplugin
 	url = https://github.com/t2ym5u/wordpyramid.koplugin.git
 	branch = main
+[submodule "trafficjam.koplugin"]
+	path = trafficjam.koplugin
+	url = https://github.com/t2ym5u/trafficjam.koplugin.git
+	branch = main

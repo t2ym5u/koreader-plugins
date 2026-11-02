@@ -3122,6 +3122,40 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/tracks.koplugin/main/"
     },
     {
+      "id": "trafficjam",
+      "dir": "trafficjam.koplugin",
+      "fullname": "Traffic Jam",
+      "description": "Sliding-block puzzle: slide the cars and trucks along their lanes to get the black car out of the car park. 2400 levels in four difficulties, hints and a Daily Challenge.",
+      "category": "classic",
+      "version": "1.0.0",
+      "files": [
+        "_meta.lua",
+        "board.lua",
+        "board_widget.lua",
+        "i18n_fr.lua",
+        "levels.lua",
+        "levels_data.lua",
+        "main.lua",
+        "screen.lua",
+        "solver.lua",
+        "images/trafficjam.png"
+      ],
+      "sha256": {
+        "_meta.lua": "d290efdb0be568d3b16971dfef6503eb9ba1e7487b64b17035878475e0ca54a1",
+        "board.lua": "07e86eaf904d4a86782867910c0b04a04d5124b1d06ef5a1ec59f4d2111d5002",
+        "board_widget.lua": "d0eeb9b74378995f29143aa534af99c1471f26a738a9d3cebd047da4a79d269f",
+        "i18n_fr.lua": "3d5ccde5c19b40d09f678173fe495a67a7e153ab1081097e860bf3796c2c2e99",
+        "levels.lua": "27932e22f1da0421f6f0371b3d6541cbbe3e845d457cf21e7ec84ad945541d4b",
+        "levels_data.lua": "d76858f77d1b22e568c3d81f492753325d9d9068854ee5f1cbcb8fd7c924ccc8",
+        "main.lua": "92ae4f8e717a72663e054886eb450c529d191a81d43abf2d5db1570d45178642",
+        "screen.lua": "4bdf79406d3fe7609175fd91573efa8fa68efc011b29b76456ff62ceccc1feff",
+        "solver.lua": "0d177506b4f715a1635ec87b97d37b20e82c846f1f3f2ce7f5c5422b3c10987d",
+        "images/trafficjam.png": "e3e216c9d36b196c36a4227f05cd72363cc9b79f0d5c2955521c753c391c2274"
+      },
+      "common_lib": "common",
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/trafficjam.koplugin/main/"
+    },
+    {
       "id": "tsumego",
       "dir": "tsumego.koplugin",
       "fullname": "Tsumego",
