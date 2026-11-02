@@ -6,7 +6,7 @@ A collection of game and utility plugins for [KOReader](https://koreader.rocks/)
 
 ---
 
-## 🎮 Games (101 plugins)
+## 🎮 Games (102 plugins)
 
 | Plugin | Description |
 |---|---|
@@ -99,6 +99,7 @@ A collection of game and utility plugins for [KOReader](https://koreader.rocks/)
 | [Tatami](https://github.com/t2ym5u/tatami.koplugin) | Fill grid with alternating numbers |
 | [Tents and Trees](https://github.com/t2ym5u/tents.koplugin) | Match each tent to a tree |
 | [Thermo Sudoku](https://github.com/t2ym5u/thermosudoku.koplugin) | Sudoku with thermometer constraints |
+| [Traffic Jam](https://github.com/t2ym5u/trafficjam.koplugin) | Sliding-block puzzle: slide the cars and trucks along their lanes to get the black car out of the car park. 2400 levels in four difficulties, hints and a Daily Challenge. |
 | [Train Tracks](https://github.com/t2ym5u/tracks.koplugin) | Lay a railway from A to B that matches the row and column counts |
 | [Tsumego](https://github.com/t2ym5u/tsumego.koplugin) | Go life-and-death problems: kill or live in the corner, with proven answers. |
 | [Undercover](https://github.com/t2ym5u/undercover.koplugin) | Social deduction for 3–12 players: find the undercover, Mr. White or the spy — one reader passed round the table. |
