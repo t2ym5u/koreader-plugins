@@ -350,7 +350,10 @@ def write_game_categories() -> None:
     """Regenerate game-common/game_categories.lua from categories.json. A
     change has to be committed and released in game-common like any other
     edit there; this only says so."""
-    if not CATEGORIES_PATH.exists() or not GAME_CATEGORIES_LUA.parent.is_dir():
+    # CI checks out no submodules: game-common/ is then an empty directory,
+    # and a file written into it would make the sha256 pass below take that
+    # lone file for the whole library.
+    if not CATEGORIES_PATH.exists() or not (GAME_CATEGORIES_LUA.parent / "plugin_base.lua").exists():
         return
     data = json.loads(CATEGORIES_PATH.read_text(encoding="utf-8"))
     text = render_game_categories(data)
