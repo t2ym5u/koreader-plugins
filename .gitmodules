@@ -445,3 +445,19 @@
 	path = trafficjam.koplugin
 	url = https://github.com/t2ym5u/trafficjam.koplugin.git
 	branch = main
+[submodule "chesspuzzles.koplugin"]
+	path = chesspuzzles.koplugin
+	url = https://github.com/t2ym5u/chesspuzzles.koplugin.git
+	branch = main
+[submodule "klotski.koplugin"]
+	path = klotski.koplugin
+	url = https://github.com/t2ym5u/klotski.koplugin.git
+	branch = main
+[submodule "pegsolitaire.koplugin"]
+	path = pegsolitaire.koplugin
+	url = https://github.com/t2ym5u/pegsolitaire.koplugin.git
+	branch = main
+[submodule "mahjong.koplugin"]
+	path = mahjong.koplugin
+	url = https://github.com/t2ym5u/mahjong.koplugin.git
+	branch = main
