@@ -1746,7 +1746,7 @@
       "fullname": "Magnets",
       "description": "Logic puzzle: place magnets on the dominoes to match the + and − counts; like poles never touch.",
       "category": "logic",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -1758,8 +1758,8 @@
         "images/magnets.png"
       ],
       "sha256": {
-        "_meta.lua": "e20bbf3447f5954ea0675a86a9812dd9b3e6366aca2f874fb805ef9056a4cc82",
-        "board.lua": "736baf74f5a09acc120c5161e84093608081e73c570dec6d369e1eb0aac21fb1",
+        "_meta.lua": "39bbc79c22dbf1fcc3aae0781a2cb4dbd82bbddb448552c643f91033766f317e",
+        "board.lua": "695472606e19fc2d3e74a9cfc693db74a5dcc8d15811beddca886cd727f077d2",
         "board_widget.lua": "0b21ba55d9a9e157007c50a307abea9a0b6a2eb8f6641ec35fcbd79d69627afb",
         "i18n_fr.lua": "bf3d637933e2d62b36ea1e0d465b71e3b58698da521e445dbbcb5a264982547d",
         "main.lua": "b7cf27dc60a453da0801a4a83cfdbdadf18b5bdd746779926950890b888a7803",
