@@ -20,7 +20,7 @@
     "wordle": "words", "wordsearch": "words",
 
     "awale": "board", "backgammon": "board", "battleship": "board", "checkers": "board",
-    "chess": "board", "chesscourse": "board", "connect4": "board", "dotsandboxes": "board",
+    "chess": "board", "chesscourse": "board", "chesspuzzles": "board", "connect4": "board", "dotsandboxes": "board",
     "go": "board", "gomoku": "board", "hex": "board", "morris": "board", "othello": "board",
     "tsumego": "board",
 
@@ -32,6 +32,7 @@
 
     "boggleparty": "party", "doubleornothing": "party", "pictionary": "party", "quiz": "party",
     "taboo": "party", "trafficjam": "classic",
+    "klotski": "classic", "pegsolitaire": "classic", "mahjong": "classic",
     "codewords": "party", "passeword": "party", "wordpyramid": "party", "categories": "party", "estimation": "party", "partyquestions": "party",
     "threerounds": "party", "undercover": "party", "werewolf": "party", "whoami": "party",
     "fireworks": "cards", "liarsdice": "cards", "detective": "logic",

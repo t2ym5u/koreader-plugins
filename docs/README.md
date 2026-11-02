@@ -6,7 +6,7 @@ A collection of game and utility plugins for [KOReader](https://koreader.rocks/)
 
 ---
 
-## 🎮 Games (102 plugins)
+## 🎮 Games (106 plugins)
 
 | Plugin | Description |
 |---|---|
@@ -26,6 +26,7 @@ A collection of game and utility plugins for [KOReader](https://koreader.rocks/)
 | [Categories](https://github.com/t2ym5u/categories.koplugin) | Draw a letter and a list of categories, write an answer for each before the timer ends, then score unique and shared answers — the classic pen-and-paper word game. |
 | [Cave](https://github.com/t2ym5u/cave.koplugin) | Navigate through a cave |
 | [Checkers](https://github.com/kbarni/checkers.koplugin) | Draughts / Checkers (upstream by kbarni, AI opponent) |
+| [Chess Puzzles](https://github.com/t2ym5u/chesspuzzles.koplugin) | Rated chess tactics: find the winning move in 10,000 puzzles from real games (Lichess database, CC0). Adaptive difficulty that follows your rating, themes, hints and a Daily Challenge. |
 | [Chiffres et Lettres](https://github.com/t2ym5u/numletters.koplugin) | Numbers and letters game (fr) |
 | [Code Words](https://github.com/t2ym5u/codewords.koplugin) | Two teams, one grid of 25 words: spymasters give one-word clues, operatives find their agents and avoid the assassin. |
 | [Color Nonogram](https://github.com/t2ym5u/colornonogram.koplugin) | Nonogram with multiple colors |
@@ -50,16 +51,19 @@ A collection of game and utility plugins for [KOReader](https://koreader.rocks/)
 | [Hangman](https://github.com/t2ym5u/hangman.koplugin) | Classic word guessing game |
 | [Hex](https://github.com/t2ym5u/hex.koplugin) | Hex — connect your two sides of the board, against the AI or a friend. |
 | [Heyawake](https://github.com/t2ym5u/heyawake.koplugin) | Shade cells in walled rooms: numbers count the shaded cells, white cells stay connected. |
+| [Klotski](https://github.com/t2ym5u/klotski.koplugin) | Sliding-block puzzle: slide the blocks around the tray to bring the big square out through the gap at the bottom. The classic Red Donkey and 1600 more levels in four difficulties, hints and a Daily Challenge. |
 | [Liar's Dice](https://github.com/t2ym5u/liarsdice.koplugin) | Bluffing dice game for 2 to 6 players: bid on all the dice under the cups, or call Liar! Play with friends on one reader, or against the computer. |
 | [Lights Out](https://github.com/t2ym5u/lightsout.koplugin) | Switch every light off: each tap toggles a cell and its neighbours. |
 | [LITS](https://github.com/t2ym5u/lits.koplugin) | Shade an L, I, T or S tetromino in every region: one connected group, no 2×2 block. |
 | [Magnets](https://github.com/t2ym5u/magnets.koplugin) | Logic puzzle: place magnets on the dominoes to match the + and − counts; like poles never touch. |
+| [Mahjong Solitaire](https://github.com/t2ym5u/mahjong.koplugin) | Tile-matching solitaire: take matching pairs of free tiles off the table until it is empty. Six layouts from 56 to 144 tiles, every deal winnable, checked hints, shuffle, undo and a Daily Challenge. |
 | [Mosaic](https://github.com/t2ym5u/mosaic.koplugin) | Shade cells to match the neighbour counts |
 | [Net](https://github.com/t2ym5u/netwalk.koplugin) | Rotate the pipe tiles until the whole network is connected to the source. |
 | [Nine Men's Morris](https://github.com/t2ym5u/morris.koplugin) | Nine Men's Morris — form mills and take pieces, against the AI or a friend. |
 | [Norinori](https://github.com/t2ym5u/norinori.koplugin) | Shade two cells per region so that every shaded cell forms a domino. |
 | [Party Questions](https://github.com/t2ym5u/partyquestions.koplugin) | Party card decks to read aloud: Would you rather, Never have I ever, Who's most likely to, Hot seat and more. |
 | [Pass the Word](https://github.com/t2ym5u/passeword.koplugin) | Word-guessing party game for four, two teams of two, inspired by the classic TV game: one-word clues, a 4-round qualification, then a 5-level final with a prize pyramid. |
+| [Peg Solitaire](https://github.com/t2ym5u/pegsolitaire.koplugin) | The classic peg solitaire: jump the pegs over each other until one is left, in the goal hole. English, French, triangular and square boards, 35 puzzles, hints that keep the puzzle solvable and a Daily Challenge. |
 | [Signpost](https://github.com/t2ym5u/signpost.koplugin) | Link every cell into one numbered chain by following the arrows |
 | [Spelling Bee](https://github.com/t2ym5u/spellingbee.koplugin) | Make words from seven letters around a centre letter |
 | [Text Adventures](https://github.com/t2ym5u/textadventure.koplugin) | Play interactive fiction: a Z-machine interpreter for Infocom and Inform stories (.z3 .z5 .z8 .zblorb), with autosave. |
