@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-10-30",
+  "updated": "2026-11-02",
   "repo": "t2ym5u/koreader-plugins",
   "common": {
     "version": "1.8.0",
@@ -134,7 +134,7 @@
       "fullname": "Aquarium",
       "description": "Logic puzzle: fill the tanks with water to match the row and column counts; water stays level in each tank.",
       "category": "logic",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -146,8 +146,8 @@
         "images/aquarium.png"
       ],
       "sha256": {
-        "_meta.lua": "af9c9ff8d47998f6a3ef466faf63a57d8535518b80606b8e4334dbc2104496ea",
-        "board.lua": "fa8d5485451e24be49e19d7b726eadaba55957dc4153c846a9c8b7f2c31816aa",
+        "_meta.lua": "c828e09cc06f99d6168e54774a5d7dd60016c8dbaf549a5ade11a1ba42d7fc76",
+        "board.lua": "579dcb8b7b2e7250942335efa5b78e15e0e2234c7348d30ec36ff254c0d2d467",
         "board_widget.lua": "12b85710068fc86cf831d7a895e1437948c8e69de9e5c2b85c828876efa2978c",
         "i18n_fr.lua": "66f77f3279adea324b26dd22f734bbcc22adfc192dc90733a17564e5ed71f752",
         "main.lua": "fe21f5f6f5b043504446c0b8fbcd39b0a25b8bd9c318cd78900c8828c6261d21",
