@@ -178,6 +178,8 @@ if [[ "$DRY" != "--dry-run" && ${#bumped[@]} -gt 0 ]]; then
     echo "Rebuilding manifest and dist..."
     python3 "$ROOT/.github/scripts/update_manifest.py"
     bash "$ROOT/scripts/build_release.sh"
+    # Second pass: the build rewrote every zip, the manifest carries their hashes.
+    python3 "$ROOT/.github/scripts/update_manifest.py"
     git -C "$ROOT" add manifest.json dist/
     git -C "$ROOT" commit -m "chore: regenerate manifest + rebuild dist after version bump"
 fi

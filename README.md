@@ -57,6 +57,18 @@ Or install the [Plugin Manager](dist/pluginmanager.zip) to browse and update plu
 ./scripts/build_release.sh fifteen    # build a single plugin
 ```
 
+Release order: `manifest.json` names each plugin's `dist/<id>.zip` with its
+sha256 and size (Plugin Manager 1.7.0+ installs from that one zip, falling
+back to file-by-file downloads when it doesn't match), and every build
+rewrites the zips, so regenerate the manifest on both sides of the build and
+commit `manifest.json` and `dist/` together:
+
+```bash
+python3 .github/scripts/update_manifest.py   # versions, file lists, file hashes
+./scripts/build_release.sh                   # zips from that manifest
+python3 .github/scripts/update_manifest.py   # again: picks up the new zip hashes
+```
+
 ## Scripts
 
 | Script | Purpose |
