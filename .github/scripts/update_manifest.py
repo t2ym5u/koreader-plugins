@@ -247,6 +247,23 @@ def matches_canonical(plugin_dir: Path, canonical_dir: Path) -> bool:
     return True
 
 
+def shared_lib_files(lib_dir: Path) -> list[str]:
+    """The shared library's shippable files: every top-level .lua committed
+    at its HEAD, specs (test_*) excluded, sorted. Committed rather than on
+    disk, like file_hashes(): an untracked work-in-progress module must not be
+    listed before it is pushed. Empty when git can't tell."""
+    result = subprocess.run(
+        ["git", "-C", str(lib_dir), "ls-tree", "--name-only", "HEAD"],
+        capture_output=True, text=True,
+    )
+    if result.returncode != 0:
+        return []
+    return sorted(
+        name for name in result.stdout.splitlines()
+        if name.endswith(".lua") and not name.startswith("test_")
+    )
+
+
 def shared_lib_version(lib_dir: Path) -> str | None:
     """Derive a shared library's version from its own git tags.
 
@@ -604,13 +621,21 @@ def main() -> int:
         if version and current.get(lib_key, {}).get("version") != version:
             print(f"{lib_key}.version: {current.get(lib_key, {}).get('version')} -> {version}")
             current.setdefault(lib_key, {})["version"] = version
-        # The `files` list stays hand-maintained (see the
-        # project-manifest-shared-lib-files-manual memory); only its hashes
-        # are derived here. Not checked out (CI without submodules): keep
-        # whatever map was there.
+        # `files` is every committed top-level .lua of the library except its
+        # specs. It used to be hand-maintained, and a module added to the
+        # library but not to the list never reached any device (game-common's
+        # keyboard_widget.lua went missing that way for months). Not checked
+        # out (CI without submodules): keep whatever list and map were there.
         lib = current.get(lib_key)
-        if lib and lib.get("files") and (ROOT / dir_name).is_dir() and any((ROOT / dir_name).iterdir()):
-            lib["sha256"] = file_hashes(ROOT / dir_name, lib["files"])
+        lib_dir = ROOT / dir_name
+        if lib is not None and lib_dir.is_dir() and any(lib_dir.iterdir()):
+            committed = shared_lib_files(lib_dir)
+            if committed:
+                if lib.get("files") != committed:
+                    print(f"{lib_key}.files: {len(lib.get('files') or [])} -> {len(committed)}")
+                lib["files"] = committed
+            if lib.get("files"):
+                lib["sha256"] = file_hashes(lib_dir, lib["files"])
 
     current["updated"] = date.today().isoformat()
     current["plugins"] = plugins
