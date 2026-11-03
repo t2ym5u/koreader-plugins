@@ -30,7 +30,7 @@ A collection of game and utility plugins for [KOReader](https://koreader.rocks/)
 | [Chiffres et Lettres](https://github.com/t2ym5u/numletters.koplugin) | Numbers and letters game (fr) |
 | [Code Words](https://github.com/t2ym5u/codewords.koplugin) | Two teams, one grid of 25 words: spymasters give one-word clues, operatives find their agents and avoid the assassin. |
 | [Color Nonogram](https://github.com/t2ym5u/colornonogram.koplugin) | Nonogram with multiple colors |
-| [Cours d'Échecs](https://github.com/t2ym5u/chesscourse.koplugin) | Chess lessons and puzzles |
+| [Cours d'Échecs](https://github.com/t2ym5u/chesscourse.koplugin) | 58 chess lessons and puzzles, in English and French |
 | [Cryptogram](https://github.com/t2ym5u/cryptogram.koplugin) | Decode encrypted quotes |
 | [Detective](https://github.com/t2ym5u/detective.koplugin) | Logic deduction cases: read the clues, fill the grid, find who did it, where and with what. |
 | [Dice](https://github.com/t2ym5u/dice.koplugin) | Roll virtual dice with a configurable number of faces and dice |
@@ -88,7 +88,7 @@ A collection of game and utility plugins for [KOReader](https://koreader.rocks/)
 | [Signpost](https://github.com/t2ym5u/signpost.koplugin) | Link every cell into one numbered chain by following the arrows |
 | [Skyscraper](https://github.com/t2ym5u/skyscraper.koplugin) | Place buildings so visibility clues are satisfied |
 | [Slitherlink](https://github.com/t2ym5u/slitherlink.koplugin) | Draw a single loop around clue numbers |
-| [Sokoban](https://github.com/t2ym5u/sokoban.koplugin) | Push boxes to their targets |
+| [Sokoban](https://github.com/t2ym5u/sokoban.koplugin) | Push boxes to their targets — 372 levels in 4 difficulties, each solvable and checked for its fewest pushes |
 | [Solitaire](https://github.com/t2ym5u/solitaire.koplugin) | Classic Klondike solitaire card game |
 | [Spelling Bee](https://github.com/t2ym5u/spellingbee.koplugin) | Make words from seven letters around a centre letter |
 | [Star Battle](https://github.com/t2ym5u/starbattle.koplugin) | Place stars so no two are adjacent |
@@ -105,7 +105,7 @@ A collection of game and utility plugins for [KOReader](https://koreader.rocks/)
 | [Towers of Hanoi](https://github.com/t2ym5u/hanoi.koplugin) | Move a stack of discs |
 | [Traffic Jam](https://github.com/t2ym5u/trafficjam.koplugin) | Sliding-block puzzle: slide the cars and trucks along their lanes to get the black car out of the car park. 2400 levels in four difficulties, hints and a Daily Challenge. |
 | [Train Tracks](https://github.com/t2ym5u/tracks.koplugin) | Lay a railway from A to B that matches the row and column counts |
-| [Tsumego](https://github.com/t2ym5u/tsumego.koplugin) | Go life-and-death problems: kill or live in the corner, with proven answers. |
+| [Tsumego](https://github.com/t2ym5u/tsumego.koplugin) | Go life-and-death problems: kill or live in the corner, with proven answers — 298 problems. |
 | [Undercover](https://github.com/t2ym5u/undercover.koplugin) | Social deduction for 3–12 players: find the undercover, Mr. White or the spy — one reader passed round the table. |
 | [Werewolf](https://github.com/t2ym5u/werewolf.koplugin) | Game master for the classic werewolf party game: 6 to 18 players, secret roles, night narration and day votes. |
 | [Who Am I?](https://github.com/t2ym5u/whoami.koplugin) | Forehead guessing party game: hold the reader facing the others, guess the famous name, animal or film from their clues before the time runs out. |

@@ -3,7 +3,7 @@
   "updated": "2026-11-03",
   "repo": "t2ym5u/koreader-plugins",
   "common": {
-    "version": "1.10.0",
+    "version": "1.11.0",
     "dir": "game-common",
     "files": [
       "daily_seed.lua",
@@ -13,11 +13,13 @@
       "grid_widget_base.lua",
       "hint.lua",
       "i18n.lua",
+      "keyboard_widget.lua",
       "menu_helper.lua",
       "party.lua",
       "plugin_base.lua",
       "score_tracker.lua",
       "screen_base.lua",
+      "seen_history.lua",
       "settings_dialog.lua",
       "stats_exporter.lua",
       "timer.lua",
@@ -32,11 +34,13 @@
       "grid_widget_base.lua": "9e4768815db540b215be6ca884c4488433d4398c4547311c5581e584b8e78e89",
       "hint.lua": "ffc88d122d812cf29437813e761ec9598dfa1ffbcdf30b866434f84e22cc2d24",
       "i18n.lua": "4cdd0a2ffcdbcff6b739957e04cb6bed979dd90df1c6a2534b532bd2dc8fbc54",
+      "keyboard_widget.lua": "0d899575f3423ade43239380c94200e0590a8036a84793a45c32252fd3e7cdda",
       "menu_helper.lua": "25fed87a67c3b05aa130f73aa71078f1c877407128debe6eecc828f8ddcab6c2",
       "party.lua": "4cef70b8576df0187243e37bc32d1511c785e204a983c832294fbf4e7eb13d5c",
       "plugin_base.lua": "0c2c7e5a50713d18711d50de0cfe71fcdc34be0aad6678c1532b43e9e7b5e1ae",
       "score_tracker.lua": "43930349ae8338c052a9cdf77f34b8d9f6e824644e818f668da83d98a2a7eebe",
       "screen_base.lua": "fc6a16f499ca844c2200e3e514af7a2565e20f1e12ac4b7080e46e586d20a5be",
+      "seen_history.lua": "40c43beba59735ccce8083890ec7503421af99232f4d88a9d12a7edaf9f668d9",
       "settings_dialog.lua": "c09b596409be4a802e3248152f9aed3f212c09003d9c25349ca61f41c103cced",
       "stats_exporter.lua": "41f646f94720136d65ae118e86aa7f04d144f10a871d6a346a759c62437cc622",
       "timer.lua": "2825dde22553cff4ddab0522d9c86139d8df84ca1b3001ff08c07cee701dee07",
@@ -76,7 +80,7 @@
       "fullname": "2048",
       "description": "Slide tiles to merge them. Reach the 2048 tile!",
       "category": "classic",
-      "version": "1.2.2",
+      "version": "1.2.3",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -87,7 +91,7 @@
         "images/2048.png"
       ],
       "sha256": {
-        "_meta.lua": "d2c2108be6c23ab836e5a6b0850db08d1a831a4cd1239ddade341cfc9ff58e86",
+        "_meta.lua": "42e0328b5f06f4d531bf940801a4bcc7eccb7f83f403f35848cd8af28677d370",
         "board.lua": "9971c13483f0276cacfccceca75ab59ef3e833c1437548bd95679dfb7b5633c9",
         "board_widget.lua": "33dd5e4ffa0e2919651276d928a790d144718b0c53e2d817561220c874a55d75",
         "i18n_fr.lua": "730beabcfe47b1b85d9ef7c423a506ab0310506e0eb201a2125bae8e6fb0ebaa",
@@ -99,8 +103,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/2048.koplugin/main/",
       "zip": {
         "path": "dist/2048.zip",
-        "sha256": "b3a74f5965b5bad27650df6aa0ba68fcdc0c9ed7b35eab7b4ebab86ea1f3fbd8",
-        "size": 100375
+        "sha256": "29aceec28c095b5a9c031c5b1f0dc2eb88a5d969777d8907debd2a7f57196e69",
+        "size": 110596
       }
     },
     {
@@ -109,7 +113,7 @@
       "fullname": "Anagram",
       "description": "Rearrange letters to find words",
       "category": "words",
-      "version": "1.5.0",
+      "version": "1.6.0",
       "files": [
         "_meta.lua",
         "answers_en.lua",
@@ -129,19 +133,19 @@
         "images/anagram.png"
       ],
       "sha256": {
-        "_meta.lua": "7a3c1e395f23073b21673f5a7bcd50110ad512c99d795afe921c5960a76805e6",
+        "_meta.lua": "826e027d866ade0d732e28fb58410c0efb48d1d280461dd66ae71891c6431d37",
         "answers_en.lua": "601a253bed0276e00fc812c7f3f54d21450b8275d35441e265836efbb958936b",
         "answers_fr.lua": "d6bdd9a42717fd64623677030262f1631a4e99a10e9a9a8f7b92f1767610b54f",
-        "board.lua": "6aec5822e9e78645f9382d9a427403a6c6a8a9884f169d0b42894420dd889259",
+        "board.lua": "f50d58b70fd058308da0b216e0463283cb4f0c0be86adddd904abe8a8f258254",
         "board_widget.lua": "e85494716eb5c6c355d2d5beb8f86bffa96bc033c2f38ccdc2f48c9b8f385022",
         "i18n_fr.lua": "bb5c767b8eb0cdf74745afa6758d220bc9c309238bb4b1ca806f4d8271637107",
         "main.lua": "0cc1e96a314d1af370548ae5002fe34cb625a3e307909181cd29c049132e2372",
         "mode.lua": "1c0cad13b17e92fb9986467a88abefd62798fda19187400e1348f1479ccd5c29",
-        "party_game.lua": "5bde4b9e6bbe373f97e174d1b6decfa97c6a3105931a1b8480a526147ce24b4d",
-        "party_screen.lua": "0b1feeea66a3b733302ed8fd90dc92aad940990c3b0a75cd7b0fd13851ef9ff4",
+        "party_game.lua": "d0c5b40fc0a2899eca0a97e1a6cc80333cdce21d40bc4bf0870fac8215843ec1",
+        "party_screen.lua": "80a4355652e8ac6ded1c8c19a0bef5a5eb33495a1f9679ee6189af37d59dd87a",
         "party_widget.lua": "c0e58ef694edd0e1f1948d97643bb64ae6cfee32793d8fbf946f9cf71fae7fa1",
         "rules.lua": "c305e684f74c1dbb9524d15575fd648c3ed1e717af04aa80f81fd1ca6e711228",
-        "screen.lua": "72a380f3022dfeb646ea4838da57104bd71f8bb93dba62bc5d9cbadb522e9d19",
+        "screen.lua": "a70852999e03f92df8f8fc1ad2389ff5ac84e4431f7d3afd23aa6a0d2ad62932",
         "words_en.lua": "9e850f42f5f206a524fd2482dfa26d2afeff1000f8b45668b4e48855be241443",
         "words_fr.lua": "38ea013f3d383ec3720829cac59ed0ee021f8ce7ad6f8b3236f12dd20214f5b8",
         "images/anagram.png": "49b0ca1c419032224305ee1acf056d30d87ac047ed9e2228caea272450a7ad45"
@@ -150,8 +154,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/anagram.koplugin/main/",
       "zip": {
         "path": "dist/anagram.zip",
-        "sha256": "f2a1eb6c03bf51c52fd45feb1795eb75dd46fd61f2d74812bb8477bd82f83f71",
-        "size": 211652
+        "sha256": "1a5d3f96a88d35a0be72b236d2942cbbe6965298f8e4830bc8501db77af04999",
+        "size": 222707
       }
     },
     {
@@ -160,7 +164,7 @@
       "fullname": "Aquarium",
       "description": "Logic puzzle: fill the tanks with water to match the row and column counts; water stays level in each tank.",
       "category": "logic",
-      "version": "1.0.3",
+      "version": "1.0.4",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -172,7 +176,7 @@
         "images/aquarium.png"
       ],
       "sha256": {
-        "_meta.lua": "75941b491ab115814dd7bd6d9deefe8df3c3f5b632cc45259a1c359a35e64e63",
+        "_meta.lua": "80878e783e77a8e8d7a4571b5adb5ad3d56bab5b677c9945271a1f8b5023894d",
         "board.lua": "579dcb8b7b2e7250942335efa5b78e15e0e2234c7348d30ec36ff254c0d2d467",
         "board_widget.lua": "12b85710068fc86cf831d7a895e1437948c8e69de9e5c2b85c828876efa2978c",
         "i18n_fr.lua": "66f77f3279adea324b26dd22f734bbcc22adfc192dc90733a17564e5ed71f752",
@@ -185,8 +189,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/aquarium.koplugin/main/",
       "zip": {
         "path": "dist/aquarium.zip",
-        "sha256": "214ab690d548a428064c0434bb5a51db093bdf20553aad8292fb9061dfc1252c",
-        "size": 116457
+        "sha256": "c0f6010b2016ab1f7a789023980b4a394b1331f5093f04f458a0dfceca2bdf54",
+        "size": 126693
       }
     },
     {
@@ -220,7 +224,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/arrowsudoku.koplugin/main/",
       "zip": {
         "path": "dist/arrowsudoku.zip",
-        "sha256": "c2caf31021b6425491ed1462c15548e72f1d58e1160053d767084ed0dcc7a324",
+        "sha256": "235a35fe47ef58b43205ffa8155dd3a8d33a903fa573637b66f42860a00661a1",
         "size": 124125
       }
     },
@@ -230,7 +234,7 @@
       "fullname": "Awalé",
       "description": "Awalé (Oware) — sow and capture seeds, against the AI or a friend.",
       "category": "board",
-      "version": "1.0.2",
+      "version": "1.0.3",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -241,7 +245,7 @@
         "images/awale.png"
       ],
       "sha256": {
-        "_meta.lua": "01741219b62b87df1d74d9956c3c56c329385128518658e71822bc7c21c082a3",
+        "_meta.lua": "fb77a680e06d87beed7e8d37be230efd9422e228f7f267120b3b71279e63c639",
         "board.lua": "14f46f2cb044f416cb5d8f17acfc619ede8717c0a26537307e0c5f7a1344de7b",
         "board_widget.lua": "6cb294919f8f53b14463976d8b92569e8fd24439f59d143dba441d8c28adce66",
         "i18n_fr.lua": "1c3fd8a6d5032ac41ad04f08706a556fa36da0df6fa1a63b90d0d9482b3f39a9",
@@ -253,8 +257,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/awale.koplugin/main/",
       "zip": {
         "path": "dist/awale.zip",
-        "sha256": "598342a115f433861db09b841d46e57df351c059cddfe16e6b564c09f962e53f",
-        "size": 111778
+        "sha256": "b3b820c019fa083ba629d70efd41068517fd4757f0f51d6a7a8b4694133df2b1",
+        "size": 122002
       }
     },
     {
@@ -263,7 +267,7 @@
       "fullname": "Backgammon",
       "description": "Classic 2-player dice and checker race game.",
       "category": "board",
-      "version": "1.3.2",
+      "version": "1.3.3",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -274,7 +278,7 @@
         "images/backgammon.png"
       ],
       "sha256": {
-        "_meta.lua": "6bc2fc31c32da5f38fa766337ed6f6691ec9d7f65c60bde66a77e5f5c2d82607",
+        "_meta.lua": "e87cc558d62fc90010802e62911d5bfec1d3058662288356fce80f9479db8f2b",
         "board.lua": "43c0e77e73659ef81bd274252b0a5c9f28ab83e3453a00f032da5128b1d46e11",
         "board_widget.lua": "5d6a18027e3bbba506bf8d1eb2dc7e9cf14a60638db8065df3878bc78ae24b2a",
         "i18n_fr.lua": "6e2f615c740e96f5032fababb048f3a4deb380f19445f82f2be0bc6d986b2d97",
@@ -286,8 +290,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/backgammon.koplugin/main/",
       "zip": {
         "path": "dist/backgammon.zip",
-        "sha256": "da82f82cfc5ccf4f9816f73131bb7cc8f2aee63f77ba7f5e5e1a73a4f994527b",
-        "size": 115808
+        "sha256": "098ae3e6d4007b156a0e9fdf01476e7b4f5980a7d3abbd5366cd918b20fe91a9",
+        "size": 126052
       }
     },
     {
@@ -296,7 +300,7 @@
       "fullname": "Balance",
       "description": "Logical weighing puzzle",
       "category": "logic",
-      "version": "1.3.2",
+      "version": "1.3.3",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -307,7 +311,7 @@
         "images/balance.png"
       ],
       "sha256": {
-        "_meta.lua": "fe7955ffefdbe926a5143888c76eb64d8e2d58065920243ab89f549b37a746ab",
+        "_meta.lua": "7dd4715212ad2b26d6dfd9ab13ffa14a2f6d2144ee2d7c5ae1450195d7dbdc68",
         "board.lua": "5f89143f6687e1f05370dca309bdbd8207eb0b240ec782ba1259b8c31df107ea",
         "board_widget.lua": "c86607cfca0680d0b8abeeb499cf96b5466292357f08443c2e6ea90cf878a99c",
         "i18n_fr.lua": "925d62324989c318cbaf2e31be01e644fb99328b06dd1800d82351bd41972827",
@@ -319,8 +323,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/balance.koplugin/main/",
       "zip": {
         "path": "dist/balance.zip",
-        "sha256": "d546f83d7b5230a467b3195158420a7546489a11f356095efe22961bec29fcf5",
-        "size": 118375
+        "sha256": "5cbfc0b8d38bb8924c22e39050b412f7e55f5972064b546f3fb4debedfb105c5",
+        "size": 128607
       }
     },
     {
@@ -329,7 +333,7 @@
       "fullname": "Battleship Puzzle",
       "description": "Solitaire Bimaru: deduce the fleet from row and column clues.",
       "category": "board",
-      "version": "1.3.2",
+      "version": "1.3.3",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -340,7 +344,7 @@
         "images/battleship.png"
       ],
       "sha256": {
-        "_meta.lua": "cebfa9f812fb6f7c2608df5a436ba66dfcb2f969ba6be7fdca9b99d4f9e11726",
+        "_meta.lua": "1b7d838355aa7c46ffff28b445eef32bd7de6cbca147ffb78ff0ed165223979c",
         "board.lua": "b8ac0eb3b85396a43bb2569d88cdfcdcb6faae3f25ee2c6fb4b7e354385f4953",
         "board_widget.lua": "8a09cd8646089cf0e547d4bd841862bade7293dbb76a8f36ab57dabcd0b4b1b9",
         "i18n_fr.lua": "6dde56d8d6f33195e210a3a6f33c4c133da878c310a34909490702fa9727bfa6",
@@ -352,8 +356,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/battleship.koplugin/main/",
       "zip": {
         "path": "dist/battleship.zip",
-        "sha256": "a014665ca9bc8a0c8ce45e9028cac869b7a707f3f5bb6e1b97d14834cc2a5515",
-        "size": 110861
+        "sha256": "8006b6235cf4d4e2ff0d85f63068ff0952d26ca27c6b045005bfd59ef144a80e",
+        "size": 121104
       }
     },
     {
@@ -387,7 +391,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/betweenlines.koplugin/main/",
       "zip": {
         "path": "dist/betweenlines.zip",
-        "sha256": "8e6ac12c86b0cf50526903882326d67b80bace75348df9b752e047f7cdba4e7c",
+        "sha256": "447cd74bcc06010dfe4bde27ba1d4c939e225d406a9cc6d89fd0b2b086952ed4",
         "size": 123413
       }
     },
@@ -397,7 +401,7 @@
       "fullname": "Binairo",
       "description": "Binary grid puzzle — fill each row and column with equal 0s and 1s, no three in a row.",
       "category": "logic",
-      "version": "1.3.2",
+      "version": "1.3.3",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -408,7 +412,7 @@
         "images/binairo.png"
       ],
       "sha256": {
-        "_meta.lua": "bc56a284e0574c940e4a5e834a1e3027a5e1719bf49df0c2b22b0dae73ea1cdb",
+        "_meta.lua": "bffc22f6bd14cc2b7d383f2ecc1f138c7e29e01d70ad76f664ab1c15ff6212c4",
         "board.lua": "3e417274de3da1158d4ec2463e4e4687f918e4f7b543cd2dc780ea543632e3f0",
         "board_widget.lua": "88a346a2ba6818cf9f078803f71349f65f0b94c30b9f71c8f26946f4195dad2d",
         "i18n_fr.lua": "b131879c94476cdc281e453b417b7b9c55b0e59000b0b2d141c2fee18fe6ac6a",
@@ -420,8 +424,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/binairo.koplugin/main/",
       "zip": {
         "path": "dist/binairo.zip",
-        "sha256": "c6a291de298532cc923a64a92548760e39829009213b5d76c2222caefcecdebc",
-        "size": 118926
+        "sha256": "80aa21dee89213f3539e923566f6760f03f67798b67a82fb6f32c73abeba01f4",
+        "size": 129158
       }
     },
     {
@@ -430,7 +434,7 @@
       "fullname": "Boggle",
       "description": "Find words by connecting adjacent letters on the grid — alone, or around the table with friends.",
       "category": "words",
-      "version": "1.5.0",
+      "version": "1.5.1",
       "files": [
         "_meta.lua",
         "blocklist.lua",
@@ -447,7 +451,7 @@
         "images/boggle.png"
       ],
       "sha256": {
-        "_meta.lua": "c7c90922bb97ac3d923d07e082bf661cddd2bec09a9af025b980db008c40958e",
+        "_meta.lua": "1846022a269db9c0999df1e3cc6749ba01431bb70a0f249d50c297f2a6887c44",
         "blocklist.lua": "f52357609b48a05edac4f937cad211fcbd96369e165ddc4635b19e069bc661fa",
         "board.lua": "3718f04df3683f50401bb9eae759116c43963f271f44b91133700d7fd32b27f1",
         "board_widget.lua": "2307c8235d77dd8ee2d873cf98ec5d3b4d784c2e157a3384a5be9c24106a80fe",
@@ -465,8 +469,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/boggle.koplugin/main/",
       "zip": {
         "path": "dist/boggle.zip",
-        "sha256": "b44bde87828dc5fcfc815ab898d1acc60f1bd308542454c50612f58d277d3c48",
-        "size": 725103
+        "sha256": "937e18634cafb85d97136be1f7fc033b919fe9b90b6792af0eb5bf4ad6e7ad1a",
+        "size": 735331
       }
     },
     {
@@ -497,7 +501,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/bookdrop.koplugin/main/",
       "zip": {
         "path": "dist/bookdrop.zip",
-        "sha256": "246c2f22170d411d9718102a203ae2a840e7abbb4625c480c79f48ef6a4ebea5",
+        "sha256": "f44b5c662adc7f35895e3e5ea66ae0a86f091e84a843d59c8a46a72da805a6fe",
         "size": 66404
       }
     },
@@ -507,7 +511,7 @@
       "fullname": "Bridges",
       "description": "Connect islands with the right number of bridges",
       "category": "logic",
-      "version": "1.4.2",
+      "version": "1.4.3",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -518,7 +522,7 @@
         "images/bridges.png"
       ],
       "sha256": {
-        "_meta.lua": "9c92f2c4e4e5ad5dbb0e14c1cf1212f8d51f7e7c267e325fd86afed9ecc3be48",
+        "_meta.lua": "13b22620bbab64e7198e2e7a53eaf83cfc4006353787099d9e36bf7d58d264c8",
         "board.lua": "52d31d7ea5b05e948c65c1a2e7f446e6f709db966cfc21213919f5546a8f470a",
         "board_widget.lua": "5c41ae1f7658db3ab9f2e18fd5b0de313b396c3228d29074a75540e85af3a299",
         "i18n_fr.lua": "ca07d0a1c38c18215a24bc694e140605032b90d3bf0c143166ef2d2baa8b54d6",
@@ -530,8 +534,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/bridges.koplugin/main/",
       "zip": {
         "path": "dist/bridges.zip",
-        "sha256": "759d32fa22192823ada1d0bb88ebe365d63e0c920fcc45ba21e4aadafb6e464c",
-        "size": 116584
+        "sha256": "bab253cba7574e3109236f161bccfa7a276443d225d0f866bd4d0a9973c84b7c",
+        "size": 126816
       }
     },
     {
@@ -540,7 +544,7 @@
       "fullname": "Categories",
       "description": "Draw a letter and a list of categories, write an answer for each before the timer ends, then score unique and shared answers — the classic pen-and-paper word game.",
       "category": "party",
-      "version": "1.0.2",
+      "version": "1.1.0",
       "files": [
         "_meta.lua",
         "content_en.lua",
@@ -553,13 +557,13 @@
         "images/categories.png"
       ],
       "sha256": {
-        "_meta.lua": "3f2de69d90b8f5c2240a74fd1a6a4b62349064607c716e2218155b2b5c4eef69",
-        "content_en.lua": "6ea1620615e2e520ec8656ff2b2c31f9ae642feec25e88f356a505cf7f2e68a6",
-        "content_fr.lua": "60c8f1b0e14d71e0bc9b542fcbaa6693547e1f7dfc835b493d15607fe7e4cbbe",
-        "game.lua": "8d1e8c881aed54a1d3a533a9883679db75329da3e167794d0c647da264c2a318",
+        "_meta.lua": "a86bb987bbe50fbbfa35a3013a94fe6b727a04370bbcb759222184fe2d4274cc",
+        "content_en.lua": "3420a62eaeff4361f0e60b1a34dd95e2bb69d88313299501e93eb1926b6d60e3",
+        "content_fr.lua": "4ac5c58b4e074c837d5478f183784b5fd52935bc37a68cebb6d3ec926a55249f",
+        "game.lua": "5a26a5029a3b8270c82b208eeed4a86af49029819488a8a89bfb45354796270a",
         "i18n_fr.lua": "8cf9078a66f9119893af1248816294180be20e2948a6ca046ac2f7de2930768b",
         "main.lua": "902d66eae7ec1c414a88f9c701d262d69ad0a98ff3c17f1ae3cb69dae1ac9979",
-        "screen.lua": "988595c16eb3c0eb84775294ef6947bd17feeb5792c675036d8966fbca06a1b0",
+        "screen.lua": "60f716b9dd1dc6195f0b833a9041f039586f91a811a9f344d88e1d295bb44660",
         "widgets.lua": "637ab98434bb6c670dc8e992bf73a253eb1c905d2877d0a266df7497a7adcc3f",
         "images/categories.png": "7a9fd1b1d1b9f2717c958c11ef233bb948e59cd4ea02c0efb113b030a370cfab"
       },
@@ -567,8 +571,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/categories.koplugin/main/",
       "zip": {
         "path": "dist/categories.zip",
-        "sha256": "56f08c236d67dadd0bc0e2a9b821a4b0742a79c850510bd45997287a992a9008",
-        "size": 171334
+        "sha256": "56f305fa2ca8004e5387d6d450b02bff2ba293c173684baf6bf1a444fc3d2e3d",
+        "size": 191360
       }
     },
     {
@@ -577,7 +581,7 @@
       "fullname": "Cave",
       "description": "Find the cave hidden inside the grid",
       "category": "logic",
-      "version": "1.4.2",
+      "version": "1.4.3",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -588,7 +592,7 @@
         "images/cave.png"
       ],
       "sha256": {
-        "_meta.lua": "3ba6dcdffec9907c266dc1c674f2f220400acc34a80682586aab4a0cf79c5e0c",
+        "_meta.lua": "6410f187da49a0e03f1c9b2fb08a92052ec7b5fdf0af90837bdc9e609a43ed13",
         "board.lua": "d94ad4543ea572f83b7d7f494a96204c5366ad111675b826b44ca5e009a8b7ed",
         "board_widget.lua": "a65f7008216c42c21b46e317332b46a525da3bf72cbf82bfd546bf4dab32196b",
         "i18n_fr.lua": "67cd91efeb14d20c3ec0faa97028b234bc535a71a6b1e840d162783abc2bf709",
@@ -600,8 +604,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/cave.koplugin/main/",
       "zip": {
         "path": "dist/cave.zip",
-        "sha256": "317f9a6c1961dbbf88e1c186ba70ef46aedb9fca1e2f14a19e054a087b5b5f08",
-        "size": 112381
+        "sha256": "d19066b5612034b83676fb2fad7973c49bd2111f9f774a58c440cdd1ec69faa8",
+        "size": 122601
       }
     },
     {
@@ -632,7 +636,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/kbarni/checkers.koplugin/main/",
       "zip": {
         "path": "dist/checkers.zip",
-        "sha256": "34dc28280932f160fdb900aa5a997f259cd01deb991984be7fd7f71d5ec11605",
+        "sha256": "067487d7720fa41276f325675a89908fa958218f25795921e6ec0a35aabff449",
         "size": 23124
       }
     },
@@ -642,7 +646,7 @@
       "fullname": "Chess",
       "description": "Chess game with AI",
       "category": "board",
-      "version": "1.2.2",
+      "version": "1.2.3",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -671,7 +675,7 @@
         "images/chess.png"
       ],
       "sha256": {
-        "_meta.lua": "0f6178e10a32e2a7e892ca0ca59f60b971c96f837a967bf240b7fb1b3bdfcc41",
+        "_meta.lua": "91f766cd7dc4b6b15c39d6c32b5561c5e3424480b02d7deb4e80fdc2bf19c3ab",
         "board.lua": "294b3242d7e6ad2d40b623df4842f84c4f12563c98113f487780a614a577a16c",
         "board_widget.lua": "ca92e9801b255cb0467acbeac33f82058e4a3ceffc50c76679dc7a4fc35eeb36",
         "chess_clock.lua": "f3c01f942787dfb15d326aa27166ca77b5b2c76b194b5208a49b1b8838433f91",
@@ -701,8 +705,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/chess.koplugin/main/",
       "zip": {
         "path": "dist/chess.zip",
-        "sha256": "55e1caea75e09f9573cd19ad07df9cd1372f883486e5b2b93ee9dfee5e78a93c",
-        "size": 208128
+        "sha256": "ba48b8a353d4d40a6d57cd376e3ba6d27edb0ca14fadb629722269362195afa2",
+        "size": 218352
       }
     },
     {
@@ -711,7 +715,7 @@
       "fullname": "Chess Course",
       "description": "Chess puzzles and lessons",
       "category": "board",
-      "version": "1.3.2",
+      "version": "1.4.0",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -742,20 +746,20 @@
         "images/chesscourse.png"
       ],
       "sha256": {
-        "_meta.lua": "a8e347007419c09a3f4807786625d721b7a1b73630dc966ddbda7dc45540e89e",
+        "_meta.lua": "329814616a607781cf42ed333db7e5e497b692134b24f5f8a4b99ac35d745883",
         "board.lua": "106d21a557e6743a7e3a21a135f8849e945084f9871fdd688cd6d831830381ee",
         "board_widget.lua": "4b32088efda0c3c757679601cc9d644b14394da280ee10d95c3b367147890be1",
         "chess_pieces.lua": "cce1000d71155377ba02418dd89f4ff4bdbef5df8be40b966e4a9f21ab7f68bd",
         "i18n_fr.lua": "b1c235de83f0260c0122576277be6a0b0912db57c818d068179f12b9f85e9ce8",
         "lessons.lua": "8050616ee78d3d91c05d90bfa257127355943058a98915e2af7c6fa3222c121c",
-        "lessons_finale.lua": "f219bd6815b7de344f020e253e8a7a1d7b3578613d565c80bf8cdabfdb92ac3f",
-        "lessons_mat1.lua": "e92db8a0922374f57680deb763e825c1ef14170cb687f17d1317f15655fb5895",
-        "lessons_mat2.lua": "c2fb5c2b4ad21052420ac2c379f7ed03fbb875cba60c9335b8532418be388bb3",
-        "lessons_mat3.lua": "00e8dc33e5a6ffb209c02b7f546ae8622ffa5a0f931efe6cbb6ae466ab22314f",
-        "lessons_ouverture.lua": "49b88852feacc4c166bafa3d43ac0e98237d7fa8f7804da233aa9a782531cd91",
-        "lessons_tactique.lua": "4d2c05e79327bead1b31d61c4f7ff76c782904aad05d0f04146f41c71314f170",
+        "lessons_finale.lua": "339ae17b297d8f3d38c79efdd5cd09b051dc9f623a1e095ff2abb9796d4e6b82",
+        "lessons_mat1.lua": "cdfdc6f1e41a9c43debf078e657853083fb7a2a4aafe51ae67bab63025d2d849",
+        "lessons_mat2.lua": "04073b08d076d5bdb6c8aa1f5be5701fbce42b26f9ec79af40282308f13ccd3c",
+        "lessons_mat3.lua": "e6fb6c1023490f58a0ce23ec84e813d97cdfed1d76ed48c9676eaf40113ec63b",
+        "lessons_ouverture.lua": "40d85373f964f7fb8c4eca7bcb20330bcb4581cd22fb8293727b2ac1e06ad3a6",
+        "lessons_tactique.lua": "e0745dcaeed50a16a17957ffadc10fab19a08136e0f7d9748906c4792e81d1de",
         "main.lua": "07022031cec420fa7da0ff1853f67af56ddfdbdb1cd222b18e403ca8e348cd13",
-        "screen.lua": "267a214da7740f0dc2fab8ecee9242ba749c5163fe95c49bec936a24ea0e0940",
+        "screen.lua": "b27614124b6d06c223eadea88191f6cd5f7639aee7c65f8a0fda16eab516f5af",
         "chess_pieces_img/bb.png": "567194c347a0e22fd9a6e82676000a831918838247594d5f303560c54b4a72cf",
         "chess_pieces_img/bk.png": "92c30d0b5c427b997dff3be0f7a8137460f4a25861f220306e9bd39281701d22",
         "chess_pieces_img/bn.png": "1ff5f7fbf729e623206bf6584b336be446927f579d3682d54b7f9f9d6364ce1a",
@@ -774,8 +778,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/chesscourse.koplugin/main/",
       "zip": {
         "path": "dist/chesscourse.zip",
-        "sha256": "794ef67789ac2f8efb837a4372f130ddbb342b6a39ffda645dfe26c9a50714f9",
-        "size": 188958
+        "sha256": "49ab676fa6c3734fde30eea04b552070adbafcf17835d2d5994b8aa0d14b3cfd",
+        "size": 202381
       }
     },
     {
@@ -784,7 +788,7 @@
       "fullname": "Chess Puzzles",
       "description": "Rated chess tactics: find the winning move in 10,000 puzzles from real games (Lichess database, CC0). Adaptive difficulty that follows your rating, themes, hints and a Daily Challenge.",
       "category": "board",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -817,7 +821,7 @@
         "images/chesspuzzles.png"
       ],
       "sha256": {
-        "_meta.lua": "76b93eb21e9cc04e5dbe8046f2c34198c9e8d9dccca0a74ad15ff7c3d5a5bb88",
+        "_meta.lua": "e4ffaef793f8c6572f1adcee1a5f47abc97bce521db95037a821e46e33a236f8",
         "board.lua": "18edc8ab463d58f65ec075e2b514bfdbdc1a3fda77843d7efdd3852a6e7c07f4",
         "board_widget.lua": "f8cb77f4dd7659b0fe863ed8e5a381ecf3c60b62529c662550a2cf0f68bfe54b",
         "chess_pieces.lua": "cce1000d71155377ba02418dd89f4ff4bdbef5df8be40b966e4a9f21ab7f68bd",
@@ -851,8 +855,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/chesspuzzles.koplugin/main/",
       "zip": {
         "path": "dist/chesspuzzles.zip",
-        "sha256": "f2911b6305f93846fa24d9f57b372b58d5ae44f724710b552d2386724495bed9",
-        "size": 616617
+        "sha256": "fd1290d2081fe974dd266795d782b656c052c3908b4fbc4533be10b775e3608d",
+        "size": 626869
       }
     },
     {
@@ -861,7 +865,7 @@
       "fullname": "Code Words",
       "description": "Two teams, one grid of 25 words: spymasters give one-word clues, operatives find their agents and avoid the assassin.",
       "category": "party",
-      "version": "1.0.2",
+      "version": "1.1.0",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -886,12 +890,12 @@
         "words/fr/science.lua"
       ],
       "sha256": {
-        "_meta.lua": "0b1bfc0a6fa21c05c45a0ae598bc4a7f4c8e096cb2223d254a6c9da67895daff",
-        "board.lua": "e694ee3034f0e1caac3b5e5ffcb00f7838735caf8beb8cce0b8062fe7dedec90",
+        "_meta.lua": "8489d49633f581f43cdd04fa2dfdaf0d6a5cbe881f96ce64e436ed7fd35888e4",
+        "board.lua": "e03b166abfb441d8463ee6e0183410db45b9c16d5696424b45022d7f805b64b8",
         "grid.lua": "e0e4ccbd81ad5f957a8c561f9371023018c727b40e2e99b1a11dfcbd3ec1368d",
         "i18n_fr.lua": "baa65d30d8c8142c4a1e4246d942d817053a206a97f5e4125a8c43a0f35efb5e",
         "main.lua": "daa3279078e431977aa8ca690e49aad837097d7617c28233a9b47bda7ca00a7a",
-        "screen.lua": "10d83afae0cb89c9a23d744514b199388a865d28d1fdaf88ed75eab43c558990",
+        "screen.lua": "38c515e60470474113471187d914aadd285421ed40eb4a272407a488111d9fc2",
         "images/codewords.png": "6a627b18aa73b648bb98c717a8c2d483919f47f6f946c9b24a5ebf006f379c05",
         "words/en/classic.lua": "c49db4e8a63eef612d56123904b221638ceb4ac95109f7e649941b9da0de5d30",
         "words/en/food.lua": "29da15d995628695cc803cf80f035194462f6059533da698ab1d559d6fd09ab8",
@@ -903,7 +907,7 @@
         "words/fr/classic.lua": "015dc7f0c8c6a7e256a23ac8fa5166d6a7da3d088dffba6645be98134b7fd8db",
         "words/fr/food.lua": "f6592060520ff7b984faa06962c952a95b3fbc4ebb07a5cf27e49f8805b5aa20",
         "words/fr/geography.lua": "435e3c3b2c88eb0cef6712aeebbf708fabaa70971ee77b8875436a4e3ed1abd4",
-        "words/fr/history.lua": "90e3c9df2767e478e89eeb48b1ae0fbb6817da198b7c021d282392c82abf84c0",
+        "words/fr/history.lua": "ca9a3e18cf0b4a8c05d059940ddb266d62d14e5a70f43ac7bf2917eaa43e545b",
         "words/fr/kids.lua": "a0dc33d4b048191864c936217f53ba79ee46e0c92e9e66eb619b4c8beefc7488",
         "words/fr/pop.lua": "d84095dd6278fcb3244ba09e4ebc1392e3f63687734cc4bcac48c08a44f7ca2b",
         "words/fr/science.lua": "6213d06f2d3944feedc5a0b633386ad3c1c1a3d733525e8d333455fed682e929"
@@ -912,8 +916,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/codewords.koplugin/main/",
       "zip": {
         "path": "dist/codewords.zip",
-        "sha256": "b3c73d6c1532e8153dd43c10a58abedc4aabd6cdbcb0fee4e0ed40790d1d1825",
-        "size": 167604
+        "sha256": "65996575c0e327b3ef71cf0c9d3739895683c8eb807f194ecf774e2a1f0ce2ff",
+        "size": 178234
       }
     },
     {
@@ -922,7 +926,7 @@
       "fullname": "Color Nonogram",
       "description": "Colored picross / nonogram",
       "category": "logic",
-      "version": "1.4.2",
+      "version": "1.4.3",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -933,7 +937,7 @@
         "images/colornonogram.png"
       ],
       "sha256": {
-        "_meta.lua": "6cf92f4c3ba63040df782dfc69b5112bc1eb7e0474a0a5fcbad105ad2ccda669",
+        "_meta.lua": "cce436115a3205c6e77a8ff3de37c21fa64702bd4199ce9e217f7610ff615cc7",
         "board.lua": "05964a2857f10c9c0459b333539253205870decb5412a2fc19d9c2f3bdb21ec7",
         "board_widget.lua": "7a0c971a7d29c5d453a68274bd4ee00c0197c3b2302b7f6c8d26611d055536a8",
         "i18n_fr.lua": "280aee236e5807ebaf5ec1c451c93bd9cf3f74bf70b704066ad3c2c3aa5be9b5",
@@ -945,8 +949,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/colornonogram.koplugin/main/",
       "zip": {
         "path": "dist/colornonogram.zip",
-        "sha256": "d918c0c3e4d112e441b0fbe87998ef746b47c3344ac9970bb75a4ccc6915f10e",
-        "size": 114153
+        "sha256": "f6ec3d07407454b0f8893a83ef55433f69101ba9d357c564fb60b0e0e37ec16b",
+        "size": 124409
       }
     },
     {
@@ -955,7 +959,7 @@
       "fullname": "Connect Four",
       "description": "Connect Four — align 4 pieces with AI.",
       "category": "board",
-      "version": "1.2.2",
+      "version": "1.2.3",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -966,7 +970,7 @@
         "images/connect4.png"
       ],
       "sha256": {
-        "_meta.lua": "e435a0a96b544c6ccdc02bb47062f7777a876bda2f9e17a1c17d6a0a528179ea",
+        "_meta.lua": "9d14fe34065b34e5e7114f92a15b9e8fa23ed6dd71f1298d245e1643f15a9c96",
         "board.lua": "108dab7ac1b4d905622c99dcf783e782130b1026d9730676b7f85deae8388a11",
         "board_widget.lua": "f1743e232b10df72219706dc49ecd771bc652bb9f87e57763ef9d290a679f1d2",
         "i18n_fr.lua": "f6540bde40a02daff3bca8ffd4e6902ed55bbd7be5f14ff7a7969b9a3cd3eb64",
@@ -978,8 +982,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/connect4.koplugin/main/",
       "zip": {
         "path": "dist/connect4.zip",
-        "sha256": "dd17262d469827145ee974e3fb783e31034d122a471956e0c2a27c01b32f894e",
-        "size": 103087
+        "sha256": "6ff8d67f37567154b1df6a1482428e5dea978f3bc66bbf158bec56d13fb2b984",
+        "size": 113324
       }
     },
     {
@@ -988,7 +992,7 @@
       "fullname": "Cryptogram",
       "description": "Substitution cipher word puzzle",
       "category": "words",
-      "version": "1.2.2",
+      "version": "1.3.0",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -996,23 +1000,27 @@
         "i18n_fr.lua",
         "main.lua",
         "screen.lua",
+        "data/phrases_en.lua",
+        "data/phrases_fr.lua",
         "images/cryptogram.png"
       ],
       "sha256": {
-        "_meta.lua": "472be35e2daf348671c30de4767c5eb1f021ea306e783955b3882873e220b791",
-        "board.lua": "818c92809b9a4b604eab008ed83dfd82dc13041f615fa20c43dedb12c4e30c1c",
-        "board_widget.lua": "af76c277bad59d4e63508c8632b13cf9a3fc60b29ae87d630a7ce3e30373c62d",
+        "_meta.lua": "e485451ed40be6596cf80ba269c90ae3e86807adf8d9e5129b339594f12a6068",
+        "board.lua": "1ef8c81f821df7c56ddd003f25e1c37fd0184211e35a2c120fd2c442c7278d0f",
+        "board_widget.lua": "30f5b836d8e8d83044231e10571c3a2d9ac0653257b7a19a2832cc1dfc6ce722",
         "i18n_fr.lua": "25033277bfa48a4da55f9d92a8e9025e8a10439bf094fb2c154b7beb572ac0e2",
         "main.lua": "8e59b3804fca921ce01bf91c1b4222b12dd55dfe823456748b72b155f4daba42",
-        "screen.lua": "aa67125bdf8a2e3d598d617e440c7590fff3b980ef36a6dd38dd47700d045f3b",
+        "screen.lua": "c668006dd47068d78d0345f58ec60c82d9486fdce02d1985bcf6d4a24ecf8600",
+        "data/phrases_en.lua": "b0899c8a59c5294b1474d8f48fcfc61e9b6c2c554b527504e542291e114797b4",
+        "data/phrases_fr.lua": "aaa4116891a29af1ce23b2d467412b7c685ea50f14aacb2ce85d50bc581008af",
         "images/cryptogram.png": "71200f0661e7312d99b52d721586703a9eed5f62c6cf7fa9a8ff7796516a3077"
       },
       "common_lib": "common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/cryptogram.koplugin/main/",
       "zip": {
         "path": "dist/cryptogram.zip",
-        "sha256": "bfbd7968dc67778d0843c607063fd7e7f00c304272d785ab51548b44bb17c767",
-        "size": 117109
+        "sha256": "4f4eca05737c8ab02c96464e9f27a1385229498a92cf1eb1f04ed225ed06bb41",
+        "size": 148682
       }
     },
     {
@@ -1021,7 +1029,7 @@
       "fullname": "Dashboard",
       "description": "Home screen: continue reading, resume a game, daily challenge, your games and stats.",
       "category": "tools",
-      "version": "1.4.1",
+      "version": "1.5.0",
       "files": [
         "_meta.lua",
         "all_games_screen.lua",
@@ -1038,16 +1046,16 @@
         "images/dashboard.png"
       ],
       "sha256": {
-        "_meta.lua": "39036fa67930671e4b21d9065f1d58b72162e1706ba7bdd758b958826331925f",
+        "_meta.lua": "2b365c9886b425af8052d64e58721d6fd45a80402490feb02072fe767f381174",
         "all_games_screen.lua": "7a0f12e02a7618c01a13192add8d4b583a100088a971adb112460de876a6c919",
-        "daily.lua": "b7cac21bbde887f7d454670477a36e56eaefdf33b91725ed7e94d998f1c2a185",
+        "daily.lua": "5e959133a62ac9ed71c150592fd69700dcac532ff7b24199b94d372e0f91bc4c",
         "format.lua": "43632e28d676a6acc8101bf37747cc87b01a1fea47b845340a456b9ae159f0f6",
         "games.lua": "e757139cbc1d7f29568e524637cee2b85156fcd02cfcc6885553edafcce7380d",
         "games_screen.lua": "2bc113cbc7de26cb2f2a87d991d10aaed6e482868f406fded2ee77c64ca84dbe",
         "home_screen.lua": "ba7bfd99d2943623572d74f69f256a0e44c2d1616dc6a9eb5bf43c7c99d1eba1",
         "i18n_fr.lua": "92141093243b2b1fa9085fd794cb53897215c86627b28b2842b816f5ea74c516",
         "layout.lua": "b648ba16a989f6c9a8fc726aae69495fb8f5f713e9b889ecb7764aa96b7bd53a",
-        "main.lua": "b31f52dfca8399b866b36f693a4901c1a7492b28a85febe4af8d47b5f8ac5be2",
+        "main.lua": "f42a8e1765a15a68871d68e589122ce32bece80567489c0da22b550a602024cd",
         "startup.lua": "fc637e87f1825090cbf20d07340d77b041b4e8143c5bd9960fa586654307720f",
         "widgets.lua": "cd889f3cbccdd26ce8844d1d626efd117c9c1b7764a3986729ef55cc3f5c2f74",
         "images/dashboard.png": "d00c320afca97bd31e11309d2a07df2009138dcbe743919cd1f60515bba1826b"
@@ -1056,8 +1064,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/dashboard.koplugin/main/",
       "zip": {
         "path": "dist/dashboard.zip",
-        "sha256": "42015a0bc34de9c9c1142a19226cd009867194bce420b8c6a6773269c63f34d4",
-        "size": 169765
+        "sha256": "f8566f5c70ffa320faebb8a0980b030766c6e6a458dd419cae8a832499fbd9b3",
+        "size": 180260
       }
     },
     {
@@ -1066,7 +1074,7 @@
       "fullname": "Detective",
       "description": "Logic deduction cases: read the clues, fill the grid, find who did it, where and with what.",
       "category": "logic",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -1082,7 +1090,7 @@
         "images/detective.png"
       ],
       "sha256": {
-        "_meta.lua": "4d2cbf83ecc94c3a4ba75cb40a943007b715da33b1741b97cc50076025af6da9",
+        "_meta.lua": "55f1ce54f44e0ddade863572dffaec0d1feb4063f2e9a9ea810f1851e3d140c3",
         "board.lua": "6c764e59a8e963ac910d360462e09b7a86d704348203ea2f00b26cbb6beb9593",
         "clues.lua": "5e2a44a1840afd8d1859a9c0780fdc607a15eaf0dfcaec6339acad1e9753f2c8",
         "content_en.lua": "3a09414c7a1f52467495006245b6bab8503e96ea5f00c2dfefae0a1dd5c60d76",
@@ -1099,8 +1107,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/detective.koplugin/main/",
       "zip": {
         "path": "dist/detective.zip",
-        "sha256": "b95b807dcc01dce22999893d68147bf411ddf3d4f642d06a162844cd50bed508",
-        "size": 164058
+        "sha256": "2c656106c97f0b96f33f3a1efeed6a613454e65c8680a5ef21ac880ff3871093",
+        "size": 174297
       }
     },
     {
@@ -1109,7 +1117,7 @@
       "fullname": "Dice",
       "description": "Roll virtual dice with a configurable number of faces and dice.",
       "category": "cards",
-      "version": "1.1.2",
+      "version": "1.1.3",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -1120,7 +1128,7 @@
         "images/dice.png"
       ],
       "sha256": {
-        "_meta.lua": "19855f3c1e8d37273f4a14ea821aa5d8fcbf21ba36e8597d0c6d6514823e2850",
+        "_meta.lua": "2c833ae27fa2a2540ff67e571b738d610e88bd0e1e5acc8f77835e1acd5d530d",
         "board.lua": "39d5c7b8ea09805b7dc487d10e99df29e878c0ab2c9a494e532bc219629b048f",
         "board_widget.lua": "f3c5e5e71e06fa0f2a5dfbada783dd6f27078c2dab7fc122e888b8717f16ab37",
         "i18n_fr.lua": "8ab5a93c606cf81c8ccdb425fff60fab5736e3556e801a179eb97ad8ff2944d8",
@@ -1132,8 +1140,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/dice.koplugin/main/",
       "zip": {
         "path": "dist/dice.zip",
-        "sha256": "861081c8bac7b412bd296cb7e6d7061f15bf4d956cb356c803dd5c42d92a0ff1",
-        "size": 99162
+        "sha256": "7870c9d3451f2d9da24a10d75a8c411906f95baf84a5ae09fa9889044d5d47b3",
+        "size": 109382
       }
     },
     {
@@ -1142,7 +1150,7 @@
       "fullname": "Dominosa",
       "description": "Lay a full set of dominoes on the number grid",
       "category": "logic",
-      "version": "1.0.2",
+      "version": "1.0.3",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -1154,7 +1162,7 @@
         "images/dominosa.png"
       ],
       "sha256": {
-        "_meta.lua": "fcb181a83dfe65ff5125942c6994eec214d2da190c813054001cf0d2ab0bfd59",
+        "_meta.lua": "95d9d731c86c382604f30a0f2071d6d617a1ac940e7487f02c3200e7dc790fc3",
         "board.lua": "e63ab1ce28a936c3d27714b19b25f7588a1c64d452d04e1103333d4cd7a0f383",
         "board_widget.lua": "236b3cb64a3f8f43076ec143ea62756d23160a60fac816885046d85b0a33951d",
         "i18n_fr.lua": "4063c3a836c845372a0452419a6436365d526c518590dc41a8b99f7dacbdeb8e",
@@ -1167,8 +1175,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/dominosa.koplugin/main/",
       "zip": {
         "path": "dist/dominosa.zip",
-        "sha256": "86877b685cb7f84d179e1eca4071c3d75fb4e579b8799199c7b69c94910477c8",
-        "size": 137914
+        "sha256": "cf1470daa077a04354ac5a4cd9b2c84364c666bdc0ff7dfecade6aedd39ad947",
+        "size": 148150
       }
     },
     {
@@ -1177,7 +1185,7 @@
       "fullname": "Dots and Boxes",
       "description": "Dots and Boxes — draw lines, close boxes, keep control.",
       "category": "board",
-      "version": "1.0.2",
+      "version": "1.0.3",
       "files": [
         "_meta.lua",
         "ai.lua",
@@ -1189,7 +1197,7 @@
         "images/dotsandboxes.png"
       ],
       "sha256": {
-        "_meta.lua": "61c060c0c6791527d4c28bb9c0f87712b4d555ce3a353b51d660a7df3d7d7c8b",
+        "_meta.lua": "0bd4b5e0f9403e43450132c4f69fd3fb318a8bafeae646c5316d87924919cc57",
         "ai.lua": "711bb12b3fb2ba40bb7d1bc3685cddd44a280095b34d893c1e49e1558d8a059e",
         "board.lua": "c7cb99d0b4730d2b6ad65d48114521765debd1f10db4489b4bb5b031a64779fe",
         "board_widget.lua": "f6da47b5fdb73a2be5bc7f11aa64fe5eae75c9ac6e3cfb79d97ca26f19f80b58",
@@ -1202,8 +1210,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/dotsandboxes.koplugin/main/",
       "zip": {
         "path": "dist/dotsandboxes.zip",
-        "sha256": "d31ad91b5dbae400220d2b6eed308172c9deab7b395b25b922db9cde426d5703",
-        "size": 109603
+        "sha256": "09488d413076a5c511d82e553d1c4ab8053c748f7ad9dc5c6c73dbba43e3fe56",
+        "size": 119856
       }
     },
     {
@@ -1212,7 +1220,7 @@
       "fullname": "Double or Nothing",
       "description": "Quiz where each team can bank their points or double the pot on a harder question.",
       "category": "party",
-      "version": "1.2.0",
+      "version": "1.3.0",
       "files": [
         "_meta.lua",
         "deck.lua",
@@ -1225,22 +1233,22 @@
         "images/doubleornothing.png"
       ],
       "sha256": {
-        "_meta.lua": "688dddff11bd7a884012eee4131d6d59fecae16f4e77146c921ef16ccb124ccd",
-        "deck.lua": "11d50b312de045584f2827c757b29a4bd7a433ef3c6e8dcd58568d80d4f6ac12",
+        "_meta.lua": "7af5514176a622060af89ff596592a9bed51e6feff85025e83d6a97d85f144b1",
+        "deck.lua": "d17d17d31957ba5c731e77c2615b0fd5fd8d4a8209ebc4bbeec3917eae6b5b6d",
         "i18n_fr.lua": "5691166b68e7a3a37bef6f38432cbf3097665f3b60165d335820abdf3a9aa5b8",
         "main.lua": "a017f46377eb1b23fad80a282e85d99bf291ba44654bdb6fc2bb4ef4dc6c2d47",
         "questions_en.lua": "7b44e654d46a41d44fb5b3a738067fafd2ae7bc7c6786d9f71ef34cae7aa4de9",
         "questions_fr.lua": "4010b837dafbe68458bdaf84cf13f28c9291771bdaa89f732dedb1ab7b65bd18",
         "round.lua": "8a39fe94c84d35b565450ceec2ec5ae25ea6cc9e92a16d9198e4ab7e9c29ca03",
-        "screen.lua": "384d5f264c56b239f49ae5faab01eea23f15e459c634583751dd8efecba0a95f",
+        "screen.lua": "89190c18925cf99db4dc0a8d3aa45374ff49feeb47476248bc9f48a7b299b479",
         "images/doubleornothing.png": "c45e52722be9c197f74e0efa92409e3c736138195dfca783f09c3b2384419d97"
       },
       "common_lib": "common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/doubleornothing.koplugin/main/",
       "zip": {
         "path": "dist/doubleornothing.zip",
-        "sha256": "a31cbe2e54c708f6e94725bd0a77acdc39da2bac17912a7b2209ba41eac8ddb5",
-        "size": 166597
+        "sha256": "84523865e23575b541c37971ee51f718a7dce6f73fd75cb2884cdfcd67f7defa",
+        "size": 177340
       }
     },
     {
@@ -1249,7 +1257,7 @@
       "fullname": "Estimation",
       "description": "Numeric trivia for 2 to 8 players: guess the year, the height, the count — closest wins, or bet on the best guess.",
       "category": "party",
-      "version": "1.0.2",
+      "version": "1.0.3",
       "files": [
         "_meta.lua",
         "game.lua",
@@ -1277,7 +1285,7 @@
         "images/estimation.png"
       ],
       "sha256": {
-        "_meta.lua": "24f07125c8212645d6f53ca053af3193b97fe0df69bfbdb969b71bbf4f2657a5",
+        "_meta.lua": "5a692f3ea48d947a84348bd117f015da21e3f5bd59f9bba430e0307a05d1a285",
         "game.lua": "ba6a88e2e5438b3559187a763bcba05b68c40a5f0c785d3db7730f0b9f299ec4",
         "i18n_fr.lua": "c750d42fe439905941094252ac32fc0ea2e8986dba53298d1a8ed1a584bab051",
         "main.lua": "264a10892b1c78f66c0bebe563b381167e3137c9aef0d75c32928e3b708c682d",
@@ -1306,8 +1314,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/estimation.koplugin/main/",
       "zip": {
         "path": "dist/estimation.zip",
-        "sha256": "7feaea150b748d8a4a0d7ea042b5cf53f61f1716c5bf87c6be837cd73b109dc9",
-        "size": 239525
+        "sha256": "0bd02e9d5a63cf0d5d5e244b01de4066c594d31870d60fe827980eb9a0a14b73",
+        "size": 249769
       }
     },
     {
@@ -1316,7 +1324,7 @@
       "fullname": "Farkle",
       "description": "Push-your-luck dice game to 10,000 points (Dix mille). Hotseat for 2-4 players, with computer opponents.",
       "category": "cards",
-      "version": "1.0.2",
+      "version": "1.0.3",
       "files": [
         "_meta.lua",
         "ai.lua",
@@ -1328,7 +1336,7 @@
         "images/farkle.png"
       ],
       "sha256": {
-        "_meta.lua": "9c65d201b12be43a84951dda0cf4861d758b3dcc3fa20fbcc05b56e73092db5c",
+        "_meta.lua": "65320cc3a95283a81b2f826bb487b16e1cac821094d8bb7188c188e1dd96f5d8",
         "ai.lua": "388172841efc62239cd805bee544fc9bcfb4c97b7dad1100147e41e04d263e1b",
         "board.lua": "e80a1b51e77186e881f2d16807953c8bb181ad7d8e53ac9f1f7469171ce5662e",
         "board_widget.lua": "505641a4eacfe63c9fbea6433c6e5d2bfcf3afee86f8d71ec16685fe946a6bf6",
@@ -1341,8 +1349,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/farkle.koplugin/main/",
       "zip": {
         "path": "dist/farkle.zip",
-        "sha256": "e62d7ad292d43553b5d1ea853638ed3496caf9a0e9babd2e4767f644604d3ce8",
-        "size": 125547
+        "sha256": "7d95970d91f5ad39dbca9eec3ece067df79bd95d75308dfca8e9187ad98c8de7",
+        "size": 135776
       }
     },
     {
@@ -1351,7 +1359,7 @@
       "fullname": "Fifteen Puzzle",
       "description": "Sliding tile puzzle. Reassemble the scrambled picture.",
       "category": "classic",
-      "version": "1.2.2",
+      "version": "1.2.3",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -1382,7 +1390,7 @@
         "images/windmill.png"
       ],
       "sha256": {
-        "_meta.lua": "4697aff00da69c9954aad158f88da1ad478a9a111a01fc74d119a11427c55c67",
+        "_meta.lua": "625a997c13922e00282b9ef3263b8f0df86c8f574740308da49b132ca316265c",
         "board.lua": "c51888ab8991c1d0206446cfea72137d26fb133a081f88f386eeae7532c761d0",
         "board_widget.lua": "eb67c1629219b1dba2270ba638284cec56a2ed56ed4e400552fc40480ad3579a",
         "i18n_fr.lua": "b9e1e120d19a36c9a84bb46eb6ddefda0472ca7810b4c038c9d969a738c6438a",
@@ -1414,8 +1422,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/fifteen.koplugin/main/",
       "zip": {
         "path": "dist/fifteen.zip",
-        "sha256": "51f4848c16c1e39ba63a2d52d1e65290e80eeb5fa1b7f6f8203545459ee4e817",
-        "size": 2224580
+        "sha256": "4151d662e0c396b6e6375511ceaf0933bff7c99fc50c2a3d59de31ef34f038b8",
+        "size": 2234812
       }
     },
     {
@@ -1424,7 +1432,7 @@
       "fullname": "Fillomino",
       "description": "Fill regions with matching numbers",
       "category": "logic",
-      "version": "1.4.2",
+      "version": "1.4.3",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -1435,7 +1443,7 @@
         "images/fillomino.png"
       ],
       "sha256": {
-        "_meta.lua": "419a6032cc9722201fe7488e19916824bec79be80c43bfecca999dd933a4e92e",
+        "_meta.lua": "e7e0fe121d8e2839ecfd5afb0d59c7ea17d1636c499d01aab61f77a2f0a60ff5",
         "board.lua": "cbee20d759c8996f204afa87c4ed11bdca1026076e16dd095b594e8f0ed370a7",
         "board_widget.lua": "e9878c7752234c097c6a542a6b4adef15f4fbe9b215176a6a319b1b9be9873e5",
         "i18n_fr.lua": "d5e88a39447c2813836ddbbc6423b20967e820da12b6dbd240c34ce7c0984a70",
@@ -1447,8 +1455,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/fillomino.koplugin/main/",
       "zip": {
         "path": "dist/fillomino.zip",
-        "sha256": "ccd5cbbbbcc85ce5a9446e26e1d2a09ef1b7851129a5a827aa254212140d64c1",
-        "size": 134092
+        "sha256": "b21ee044d686bb9aa7dbff6b73cc3f471be00d54500c267aa239ccc8418cf2a0",
+        "size": 144332
       }
     },
     {
@@ -1457,7 +1465,7 @@
       "fullname": "Fireworks",
       "description": "Cooperative hidden-hand card game: build five fireworks together, seeing every hand but your own. Pass the reader for 2-5 players, or play solo with AI teammates.",
       "category": "cards",
-      "version": "1.0.2",
+      "version": "1.0.3",
       "files": [
         "_meta.lua",
         "ai.lua",
@@ -1471,7 +1479,7 @@
         "images/fireworks.png"
       ],
       "sha256": {
-        "_meta.lua": "67cdbc18c8b148a960289ecb5f356794cc491e8419d086fb9d857521c8ff6ec7",
+        "_meta.lua": "6c4bbdce1b7205a187efa2e22c158af4bc67366477987e6ec6cb72f7d41cfe36",
         "ai.lua": "25b65627371491ad62d7ec0ce9445709ec6cc6b39af1009f47023a0f9cb0f19f",
         "board_widget.lua": "a82613ca435d394c173291d261fef2156e066d3c232ed0483cbc77df783d9280",
         "game.lua": "b869f6eae4f724c243381e2f3769531fbe31f128f29c71ef76685e81d8f689b4",
@@ -1486,8 +1494,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/fireworks.koplugin/main/",
       "zip": {
         "path": "dist/fireworks.zip",
-        "sha256": "8a379f8c7ceda074ed174e4d1450b6cccb1b330dd022a9eda020d7a6f04d05fb",
-        "size": 162019
+        "sha256": "4d8bbc51854c5a1f4aa3aac29811609c82c22f424ca6992f0ef48956d102ed35",
+        "size": 172260
       }
     },
     {
@@ -1496,7 +1504,7 @@
       "fullname": "Futoshiki",
       "description": "Fill the grid with digits satisfying row, column and inequality constraints.",
       "category": "logic",
-      "version": "1.4.2",
+      "version": "1.4.3",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -1507,7 +1515,7 @@
         "images/futoshiki.png"
       ],
       "sha256": {
-        "_meta.lua": "be66f9563fe5ff5fc42bb2b86072269c29298586db1c4fc30d4a3b484d6f2ef2",
+        "_meta.lua": "3111be2f6c247c5d10816d19e4f3b33704e8dc5b187c429d42a10806361e8599",
         "board.lua": "5bdd2fda568ec69ed2e92b007d9b019fed73e335d2a107abf4da66cbe1b4e38f",
         "board_widget.lua": "1f40d8d4da7cd38d16454c330c1c99fd5c9d8279e0bb93bae4ac301d81a665a7",
         "i18n_fr.lua": "5d44b96d332846f2cc93ef3f0bbbf69f0ab55c6f223a3e4d4b26c64152573624",
@@ -1519,8 +1527,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/futoshiki.koplugin/main/",
       "zip": {
         "path": "dist/futoshiki.zip",
-        "sha256": "2e28a6aa4f43c51fb951ed2dd5658467123ced19777cc92ebb5f0aa0b9cf3208",
-        "size": 121395
+        "sha256": "cc9fd2fa273a48d7dc467d0ff6b5f8344794d64531db3d9535259c566f11134c",
+        "size": 131635
       }
     },
     {
@@ -1529,7 +1537,7 @@
       "fullname": "Galaxies",
       "description": "Divide the grid into rotationally symmetric galaxies",
       "category": "logic",
-      "version": "1.4.2",
+      "version": "1.4.3",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -1540,7 +1548,7 @@
         "images/galaxies.png"
       ],
       "sha256": {
-        "_meta.lua": "3d11eca0c3eb294752edaddd1ac652b314fd85991c9707cabdbac3322271618e",
+        "_meta.lua": "909fbe33edc35060d66b0e1f0a7d85aaf0541755b9d207864dfea46b6cbbb49c",
         "board.lua": "58e3be4b75cca0347b1a46e5c78df7936e2ba3cc9c19c8b96884f02cd20b1548",
         "board_widget.lua": "f35330bf14de90cec301e092b7c5d48b2a7062c07fc11e04d7a5025178975103",
         "i18n_fr.lua": "3ecaf22b6b849bea2c6c159074820f5b82e42bddd3efb943d4b08bd12ce3eff6",
@@ -1552,8 +1560,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/galaxies.koplugin/main/",
       "zip": {
         "path": "dist/galaxies.zip",
-        "sha256": "c82de71cae8df1ba7ba8f429346c11af1895fca6ea8b34a43781eeed0f2dee6c",
-        "size": 112335
+        "sha256": "fef19ac7a2987892cedac6050380faf80b56f929e9e162f33e3458bd51ac410e",
+        "size": 122571
       }
     },
     {
@@ -1562,7 +1570,7 @@
       "fullname": "Gamebooks",
       "description": "Choose-your-own-adventure books: pick your path, fight, test your luck. Write your own stories too.",
       "category": "words",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "files": [
         "_meta.lua",
         "game.lua",
@@ -1588,7 +1596,7 @@
         "stories/viking_en.lua"
       ],
       "sha256": {
-        "_meta.lua": "f6e06aab9bbbecc50963e1eedc0e4aba05da8327c1044098204b30ec575258f9",
+        "_meta.lua": "ab4e3c4a313ebc8e58594fbfdff408e8d9b0d482fd1dd3a6735a89ac63e32308",
         "game.lua": "f13f6472a5d37625d18f2676ba07da4f3a662766314d5b9ec815f170a354c063",
         "i18n_fr.lua": "e07967a3f78dd67b466eace25dc454c7149276997882ea14d8f42ba47f2797f3",
         "main.lua": "3836e49699a5c897011e0290fc65f012425e42cc40c8da3f51eb33d52e407149",
@@ -1615,8 +1623,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/gamebook.koplugin/main/",
       "zip": {
         "path": "dist/gamebook.zip",
-        "sha256": "55aba581bbaf578c37a21b01d934585d675aee35e88d6fa8697e14123debe074",
-        "size": 370242
+        "sha256": "483ae98c849c734d82c05e381629f5fb6c1dc4a92dc1a8afde6a467e6b8f72fe",
+        "size": 380476
       }
     },
     {
@@ -1625,7 +1633,7 @@
       "fullname": "Go",
       "description": "Classic territory and capture board game.",
       "category": "board",
-      "version": "1.2.2",
+      "version": "1.2.3",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -1636,7 +1644,7 @@
         "images/go.png"
       ],
       "sha256": {
-        "_meta.lua": "5c0823da60001f72849ab84ee70dd4a073ac018bcadd2a1499d7245b7a0129c2",
+        "_meta.lua": "c8396b87c804281ede26b2cf1cad6521da03ec4c7eaa4e64beba1ed4dcd0e72b",
         "board.lua": "d5287dd60d72a2ee609c346ad9c586461a62b7d25d8d2b701ce246ffe6bc1709",
         "board_widget.lua": "d5ad5c3949a37500cea3888361bd9ab9124296dcd8b685eb5a86b0b30d58718e",
         "i18n_fr.lua": "07a5b965f37cda5a46152f67969f7929be8aa45966f57288b2d155c1a3e2c658",
@@ -1648,8 +1656,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/go.koplugin/main/",
       "zip": {
         "path": "dist/go.zip",
-        "sha256": "2ec487cdf59206843fe8add2e1053a30877630208c75997f18acede7fb902ed5",
-        "size": 101750
+        "sha256": "6261acb6759a6da0e4a9726fa0cc7fa3d6d8accf35e4ec862cd29be72875fe83",
+        "size": 111962
       }
     },
     {
@@ -1658,7 +1666,7 @@
       "fullname": "Gomoku",
       "description": "Gomoku — 5 in a row on a 15×15 board.",
       "category": "board",
-      "version": "1.3.2",
+      "version": "1.3.3",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -1669,7 +1677,7 @@
         "images/gomoku.png"
       ],
       "sha256": {
-        "_meta.lua": "dee81504f185c8a7c1c52f58c7f13ec40135a6444844a14486d0e5c999753bb4",
+        "_meta.lua": "99709b8c6145e0ed0b2a54343f5af6f8e7a582e12a96e5ff91f68def682e6b9e",
         "board.lua": "5efce11290c62fee457497031c9b988fb9604754e7cbc9dc509a77d88f262a16",
         "board_widget.lua": "b367f221ae0ce11948813d6908c2cb7e5bc85264bf743d15488e081e6246f474",
         "i18n_fr.lua": "ecb4ad71081aa3eade9e5c7380ea38bb19346751da955cde52ee4e5bdb3b946a",
@@ -1681,8 +1689,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/gomoku.koplugin/main/",
       "zip": {
         "path": "dist/gomoku.zip",
-        "sha256": "7d356546ef3e7155a68d4317caf2b98d70dc0c3e31d3ab14a8587a34a7e361ba",
-        "size": 99872
+        "sha256": "f2c9b8a1fd2fbe73bd9d7b940d0c51500b8e049ab28a42c8056b525dd3200e66",
+        "size": 110100
       }
     },
     {
@@ -1691,7 +1699,7 @@
       "fullname": "Hangman",
       "description": "Classic word-guessing game. Reveal the word before the hangman is drawn.",
       "category": "words",
-      "version": "1.3.0",
+      "version": "1.4.0",
       "files": [
         "_meta.lua",
         "blocklist.lua",
@@ -1706,15 +1714,15 @@
         "images/hangman.png"
       ],
       "sha256": {
-        "_meta.lua": "bbcd9c39661f024c4d549689a4850e28b5bc03bf36236dd30b0bcfa20b4f2884",
+        "_meta.lua": "9aacfd9b91412a7a187b94c0345bfb1fcce6f738d18d395d9e523e859b732e21",
         "blocklist.lua": "f52357609b48a05edac4f937cad211fcbd96369e165ddc4635b19e069bc661fa",
-        "board.lua": "e6ee2d94b0e5ca00b38bba0fe7cfae8c4b0cb9fac66604eba6d308bae949d241",
+        "board.lua": "5467d0b73dfae16dfefeebcbfeb3dae5c211fe5006091bd11db94ea3e67ea7ca",
         "board_widget.lua": "1711b2e6f43eec1de796205938df5f0ee22e87894d5d263c41ec9cbc98feae6b",
         "i18n_fr.lua": "45702aae0a2f6bff176c682e93cf72082c2e81d9711edbb1e48c8f28bb41bccb",
         "main.lua": "c436e0136e6f58e5506a39196d89f0a7ac1d47ce6482a00b6736f73d0e31e010",
-        "party_game.lua": "6c32ff418812eab6941c0f19d7e5ac9f30365aa8baa003f0880cce7f4a97c53e",
-        "screen.lua": "f400ec817d4dbf2c8c8cf1fd8b73e7fa442a339769d0da6f7b9a66f86846e702",
-        "words_en.lua": "4401a27c2364e3a040625666820d9362d3cb7d6b852fdb0f183d893511d27020",
+        "party_game.lua": "aceccc03d03b6b7159b07be2189ecd6834efb83e3cd72984da8912243ed89ec7",
+        "screen.lua": "b4a0991ac9206edbae0f424d0dd4d36969041f677bf1bf4de72c064b6d4cb4f1",
+        "words_en.lua": "3f7308b236384f4d20951865c7bb34e9ec6e27b141733a396ea4fef114aea326",
         "words_fr.lua": "df8df20c51911ed582d19352dad952701f1dae0f07af1709ee3804d5bf224d70",
         "images/hangman.png": "339837a8bd0d6498d96bce5a2c11145ce6ccb6d598f72a1724569018716cc1d3"
       },
@@ -1722,8 +1730,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/hangman.koplugin/main/",
       "zip": {
         "path": "dist/hangman.zip",
-        "sha256": "4f5b1a1caf3dd23f8e7cbf4426769d98f9fc7496e151f97c924d1e0f73b3eda7",
-        "size": 167945
+        "sha256": "46dd662cc3a12a8617d93cb3310cf3853f84b3751b145e9f673bbc28ccc67199",
+        "size": 175572
       }
     },
     {
@@ -1732,7 +1740,7 @@
       "fullname": "Towers of Hanoi",
       "description": "Move disks between pegs",
       "category": "classic",
-      "version": "1.2.2",
+      "version": "1.2.3",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -1743,7 +1751,7 @@
         "images/hanoi.png"
       ],
       "sha256": {
-        "_meta.lua": "c37e20b48d8b94cb14e08a52815e6795525bc09388bdd0127f435930a87e3712",
+        "_meta.lua": "cbe85822004d51c7b1a3549ae4aacf6651af18e3d34125700c1760c590cdd0cc",
         "board.lua": "bf10ecd781e207235d0633edc50b40a3bc966a4147b1c2bd1983de753e130ad3",
         "board_widget.lua": "7a02ee6565e9210cc7232d9039f8fe4ecf65cd02e0c854e067c192978c22aa94",
         "i18n_fr.lua": "f0784bf76b8019845fa428c60da810c88fd15505d5927128f47d70d0f0a710f8",
@@ -1755,8 +1763,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/hanoi.koplugin/main/",
       "zip": {
         "path": "dist/hanoi.zip",
-        "sha256": "18adad64910ab0418f0bd3aec6b112580d8f9a3f2ebf777d327f55c33fbfae1a",
-        "size": 99794
+        "sha256": "3394de076191b945b7271bbc89f80f244f1a7d477a95a9efd47816b716eab777",
+        "size": 110019
       }
     },
     {
@@ -1765,7 +1773,7 @@
       "fullname": "Hex",
       "description": "Hex — connect your two sides of the board, against the AI or a friend.",
       "category": "board",
-      "version": "1.0.2",
+      "version": "1.0.3",
       "files": [
         "_meta.lua",
         "ai.lua",
@@ -1777,7 +1785,7 @@
         "images/hex.png"
       ],
       "sha256": {
-        "_meta.lua": "e36d129e9f34848940851525aa1dfb48dfcde57589c5f94f60b4b09b83caeff9",
+        "_meta.lua": "4a2e1004b80e93c5a127cdc4c7e14269cda15f114cd26a190ea499daf7750c76",
         "ai.lua": "02e499ce467ca311a5ffaa86186cec3bb3e696443b6c9082756698b6764bba35",
         "board.lua": "c51f933a04405a062dc8d54eff372b8d5efdb2152c420b998b32ad9f1ed330a2",
         "board_widget.lua": "922eec6df428c8f752c2d46c1bf5b6482e5abc5b0ee4dd70cfd0ff7ffe3962e5",
@@ -1790,8 +1798,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/hex.koplugin/main/",
       "zip": {
         "path": "dist/hex.zip",
-        "sha256": "3d09777e3f62ee1bf3d381db6aea1063d2c9e3f1079f2146d7d4f5db98145824",
-        "size": 113521
+        "sha256": "30d0f50e1a0f36e21c05bb99908cf59b4751b4fb00553daaf5aa8dc7803a3ed5",
+        "size": 123738
       }
     },
     {
@@ -1800,7 +1808,7 @@
       "fullname": "Heyawake",
       "description": "Shade cells in walled rooms: numbers count the shaded cells, white cells stay connected.",
       "category": "logic",
-      "version": "1.0.2",
+      "version": "1.0.3",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -1813,7 +1821,7 @@
         "images/heyawake.png"
       ],
       "sha256": {
-        "_meta.lua": "d4c5c51b17ed78fa3baebd2b734162484852bf6a0073c9b1ef288544333408fe",
+        "_meta.lua": "7c7d5778caf910c8e7b93f3e4c3605ef234fe09579bd7fc74cf8bec6de4bbd04",
         "board.lua": "36ed02a1bc95428e8726694eddc2b7d83e911da8d00dabf2a2bf3b57f0a8fa30",
         "board_widget.lua": "a3606b7f7d272b3d472f49ac79b84b69fd5044bc225b4770593168eb705c7eb6",
         "gen_progress.lua": "3bab3b609a65e34a861cbfd8478c56515793fdfc3fd15c3e5a76dc2bb084856e",
@@ -1827,8 +1835,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/heyawake.koplugin/main/",
       "zip": {
         "path": "dist/heyawake.zip",
-        "sha256": "bd5f9c16437a0d84c9a71455ee2cd0c811dc7917a2578087a055f2559e9ca497",
-        "size": 119680
+        "sha256": "84dbeba5d516170d30fc373398db73b6c7ad79e80992857305b3f7ba60964dcc",
+        "size": 129917
       }
     },
     {
@@ -1837,7 +1845,7 @@
       "fullname": "Hidato",
       "description": "Connect numbers 1-N on a grid",
       "category": "logic",
-      "version": "1.4.2",
+      "version": "1.4.3",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -1848,7 +1856,7 @@
         "images/hidato.png"
       ],
       "sha256": {
-        "_meta.lua": "c902546637ee2baa107421f5f7eaab5a3e4859e2cd7f18a7daaa659a8073efb0",
+        "_meta.lua": "2a3c9566dedfa9a7144793171320aff69dd981bd1b3ab19863658eb441867465",
         "board.lua": "d785b4c4e4122a850065890234030f597b01914c37c5ae0a9f513f86d00d5c4a",
         "board_widget.lua": "8871f4298f66b3ec1f5a1f0888caec1dd1e10ebc91a74b64483eb86fbd97ee98",
         "i18n_fr.lua": "7253e78ea85a6128022b6c7ac04bf865527b3956c45580bdde50b5197838c926",
@@ -1860,8 +1868,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/hidato.koplugin/main/",
       "zip": {
         "path": "dist/hidato.zip",
-        "sha256": "c19a820bd26f2cdd0682fd7b2c4e09d4a9122f45e3a4339ded7c84826cab9b34",
-        "size": 118495
+        "sha256": "5b133d5f7d689f12041792deb8474c888e61b3cc00a47473838012dabda426ef",
+        "size": 128723
       }
     },
     {
@@ -1870,7 +1878,7 @@
       "fullname": "Hitori",
       "description": "Blacken cells so no number repeats in any row or column.",
       "category": "logic",
-      "version": "1.4.3",
+      "version": "1.4.4",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -1881,7 +1889,7 @@
         "images/hitori.png"
       ],
       "sha256": {
-        "_meta.lua": "18c8291b437ae5c4325d63ffd00a532c3e92728b00c0d2a1da75c293bd6a8c28",
+        "_meta.lua": "5eca083c9dd4a2f862498e21e862451a801eac15cfbc24889603818774da4278",
         "board.lua": "50463263f7ea4012a269f72a65a833da564b3f2597f13270aee8dc52f2183a4f",
         "board_widget.lua": "46d145f8d5a69e9ccd0d7f19ff8f45598f25e86e54f46701e16e31d6f6d57470",
         "i18n_fr.lua": "a8778f9b6201172d5df27411809bab1b12380c128a156703bf4edb68295656b3",
@@ -1893,8 +1901,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/hitori.koplugin/main/",
       "zip": {
         "path": "dist/hitori.zip",
-        "sha256": "98eb1efed2e2b912c2c6a20c6699e924fa2236df5c73ac4b92f9521e6418a188",
-        "size": 130593
+        "sha256": "fbaa2bd15328d0170cce13737f83363b658e6f5221b073391dde354db286534c",
+        "size": 140820
       }
     },
     {
@@ -1903,7 +1911,7 @@
       "fullname": "KenKen",
       "description": "Fill the grid with digits satisfying row, column and cage arithmetic constraints.",
       "category": "logic",
-      "version": "1.4.2",
+      "version": "1.4.3",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -1914,7 +1922,7 @@
         "images/kenken.png"
       ],
       "sha256": {
-        "_meta.lua": "f55dae2d7e27da086e3cf391e0d80fb96045ff73f3a9b304e017fcaec0bd1e7e",
+        "_meta.lua": "0e9cd3653fb5d10531d6e2439269eedffa857a683a991744c41f982ab53d6277",
         "board.lua": "df7919e48a7bb79307b5ccb14f47f9f814cdcaefaa751af9487ee54d9b568cd7",
         "board_widget.lua": "85171e9d8c45cd6e0a41dc3c224b6854b0b2a93f9ff557821458b7f19758df1b",
         "i18n_fr.lua": "6670e68f8ea8189c196edc69b9abf7f4bcfa417381142fc29612e7d5d74d5b7f",
@@ -1926,8 +1934,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/kenken.koplugin/main/",
       "zip": {
         "path": "dist/kenken.zip",
-        "sha256": "7d271d55f92ca0e3737a047285709ee2ee92b644e7417adb1cc94f7f98a0ec5d",
-        "size": 117120
+        "sha256": "58f3cecd1d5ea88a9218e30e7b588bcc510a5db96b7c4d75302ecc1bf12c1cf6",
+        "size": 127348
       }
     },
     {
@@ -1936,7 +1944,7 @@
       "fullname": "Klotski",
       "description": "Sliding-block puzzle: slide the blocks around the tray to bring the big square out through the gap at the bottom. The classic Red Donkey and 1600 more levels in four difficulties, hints and a Daily Challenge.",
       "category": "classic",
-      "version": "1.0.2",
+      "version": "1.0.3",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -1950,7 +1958,7 @@
         "images/klotski.png"
       ],
       "sha256": {
-        "_meta.lua": "cef156b118354b2991718701bb8c7b37b7cf1904d5053c9f60df2a7a36d2d2d4",
+        "_meta.lua": "7b4f9725e3a7d556d6613a82b7135134e5c639de3bcff076dbbda3021858aade",
         "board.lua": "0898284a795e62c63d4ca5a469e14aff1d46a22a05a12e9bd4256bce54d7b186",
         "board_widget.lua": "975586ae10fe345a50b1b66b76ad8ffec84b6ac74344c59409b09e3d37cbf739",
         "i18n_fr.lua": "4ad54d0be3e15f67e02bee44f987e696b8667ee6e0b9f95b317699fca2f3eb02",
@@ -1965,8 +1973,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/klotski.koplugin/main/",
       "zip": {
         "path": "dist/klotski.zip",
-        "sha256": "4d4b9a5077c207f0b2c82daf5aa8bb0b5f88659cef5ed5689ae5f9b84057431a",
-        "size": 128025
+        "sha256": "9d2af6390594b736d05e796f75bc978e19f8dfb2ac503680fe5098bac6e6f8d2",
+        "size": 138257
       }
     },
     {
@@ -1975,7 +1983,7 @@
       "fullname": "Liar's Dice",
       "description": "Bluffing dice game for 2 to 6 players: bid on all the dice under the cups, or call Liar! Play with friends on one reader, or against the computer.",
       "category": "cards",
-      "version": "1.0.2",
+      "version": "1.0.3",
       "files": [
         "_meta.lua",
         "ai.lua",
@@ -1988,7 +1996,7 @@
         "images/liarsdice.png"
       ],
       "sha256": {
-        "_meta.lua": "09042519fc484eb62d26e7fa0d4b96973af3c04227de8b22ddda9b4144b5fbd1",
+        "_meta.lua": "82fbbe1e429c453bb47da3696e73ece70d888e016c9fa749db074962b9fa6201",
         "ai.lua": "521cbac9c05dbc16668c7e86ac11be71964040950dee11ad59b2a6441bb8d63e",
         "board.lua": "9699328f9f757c3546af7ad9fab67d18c48b5878bc5c4753e039d40ab886191f",
         "dice_widget.lua": "992226958db1280ef1b71dd4dc9aa7bb22cad1fbcca9e11988f042589922538e",
@@ -2002,8 +2010,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/liarsdice.koplugin/main/",
       "zip": {
         "path": "dist/liarsdice.zip",
-        "sha256": "6b07f5f416d48f56b5a41c96da2b0f89265fd980cdb58270aba6b2f181aa8b19",
-        "size": 142706
+        "sha256": "0dad12e82e9089dc3e0113b70b7fb3d517c54cd30e4ba350a0228022e56b3fbd",
+        "size": 152947
       }
     },
     {
@@ -2012,7 +2020,7 @@
       "fullname": "Lights Out",
       "description": "Switch every light off: each tap toggles a cell and its neighbours.",
       "category": "classic",
-      "version": "1.0.2",
+      "version": "1.0.3",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -2024,7 +2032,7 @@
         "images/lightsout.png"
       ],
       "sha256": {
-        "_meta.lua": "a175b80b1d272a3a278977795d8bdb49a4867e8298b2590d8a276b82ec7d7ab4",
+        "_meta.lua": "1022a2d0f7e2f422d497f1f7c990198b76d2ff58d6c8dc33c66de94822b7833e",
         "board.lua": "b56e81f37c5dde8c25b663939569525b55c211aea16f4ae61cb1c9f3d7698d0d",
         "board_widget.lua": "642adc6e3d64f40b86113c5d8815d8d8d5ae94c277162b2b2038d50e801e705c",
         "gf2.lua": "bab875aa3935c69a4bc850870323ba20479b595f7cb207af12350258a579ca1a",
@@ -2037,8 +2045,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/lightsout.koplugin/main/",
       "zip": {
         "path": "dist/lightsout.zip",
-        "sha256": "0b1d5b06fcdf9422335ea059889219f0846983666289774916fe9916b4c2d163",
-        "size": 103067
+        "sha256": "3831c5f571ed39d4d31de9327bf4446024e863bb00eca08eaadc77e01d51cf54",
+        "size": 113308
       }
     },
     {
@@ -2047,7 +2055,7 @@
       "fullname": "Light Up",
       "description": "Akari: place light bulbs to illuminate every white cell without conflicts.",
       "category": "logic",
-      "version": "1.4.2",
+      "version": "1.4.3",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -2058,7 +2066,7 @@
         "images/lightup.png"
       ],
       "sha256": {
-        "_meta.lua": "d547530be8e766dc84b1386c5b986104ec558dc26648908b467ff40d5bc73119",
+        "_meta.lua": "f03441b41f014a8d32e6b8546b2ea74e0cba239c1704941bf934aed736470aa4",
         "board.lua": "599f9765f6462f381f96ab512588b113f9dd3614c070590627a4fcc6bfd07608",
         "board_widget.lua": "061488f1633cde4fbe1d95591f9efb4677f8e21395948408f2bb0aaf3cc4fe82",
         "i18n_fr.lua": "4b0245b848dcfab156428d490916cf269da82cac9b69412a6a09c6a44cdf3d1c",
@@ -2070,8 +2078,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/lightup.koplugin/main/",
       "zip": {
         "path": "dist/lightup.zip",
-        "sha256": "dfc7f59b7cf4821bba4d48d994e02b598d23fc2cb318feca2cf36a8efb4fbf1d",
-        "size": 118331
+        "sha256": "f5048206eb45efc9f34b010d2ffc593dbf19d079aa55a5e56960fa93a2f507c4",
+        "size": 128563
       }
     },
     {
@@ -2080,7 +2088,7 @@
       "fullname": "LITS",
       "description": "Shade an L, I, T or S tetromino in every region: one connected group, no 2×2 block.",
       "category": "logic",
-      "version": "1.0.2",
+      "version": "1.0.3",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -2092,7 +2100,7 @@
         "images/lits.png"
       ],
       "sha256": {
-        "_meta.lua": "d4a184000d4c15821e5f9e2abb375b63a3057e1ed42d15df3ca8c46a9a7eeb84",
+        "_meta.lua": "63f80f28855ff1a48c8ba7d3e60c4f72583a5343a70382dfb4a1ee4f05031366",
         "board.lua": "e2a4d7060d2aa8e935175fb9e05314495901f815d5e0a7d2b10d5156f4713a92",
         "board_widget.lua": "f843c49511912761b85e2a07140430de0c8d984c9d34327a0defa5aa91b2c189",
         "i18n_fr.lua": "c3f36fd238e377310be48aa7adde7a097cefa40b64beca8c082fbc24bb586e05",
@@ -2105,8 +2113,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/lits.koplugin/main/",
       "zip": {
         "path": "dist/lits.zip",
-        "sha256": "69ee4f8f787bc8f99e956d8d0764f80951bca93a2c170d58c6e0e1156b983d34",
-        "size": 114009
+        "sha256": "567550cb93d8033d0587b9f5c5a1a63bcf4a8159ce04e5154bd3f363331fa9d7",
+        "size": 124230
       }
     },
     {
@@ -2115,7 +2123,7 @@
       "fullname": "Magnets",
       "description": "Logic puzzle: place magnets on the dominoes to match the + and − counts; like poles never touch.",
       "category": "logic",
-      "version": "1.0.3",
+      "version": "1.0.4",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -2127,7 +2135,7 @@
         "images/magnets.png"
       ],
       "sha256": {
-        "_meta.lua": "9a2f447c21f4aa7c5395b084b1bfa761ab1e474e4069594d06e7eda1584cfe7c",
+        "_meta.lua": "36fb7c7262bf5366c9dab6bc5383598b63c6f0c1ee2e27fc586bfbacdb74edd7",
         "board.lua": "695472606e19fc2d3e74a9cfc693db74a5dcc8d15811beddca886cd727f077d2",
         "board_widget.lua": "0b21ba55d9a9e157007c50a307abea9a0b6a2eb8f6641ec35fcbd79d69627afb",
         "i18n_fr.lua": "bf3d637933e2d62b36ea1e0d465b71e3b58698da521e445dbbcb5a264982547d",
@@ -2140,8 +2148,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/magnets.koplugin/main/",
       "zip": {
         "path": "dist/magnets.zip",
-        "sha256": "d40e7bfdcbd7fac55a90c191d5de16b2651e0fba6f46dbb1d09ba9b824cb6e7c",
-        "size": 126055
+        "sha256": "fdb2f9acbef4b09eaf0c65f56c2e112dbd17f1092cc15ee070436d5e67379d7d",
+        "size": 136288
       }
     },
     {
@@ -2150,7 +2158,7 @@
       "fullname": "Mahjong Solitaire",
       "description": "Tile-matching solitaire: take matching pairs of free tiles off the table until it is empty. Six layouts from 56 to 144 tiles, every deal winnable, checked hints, shuffle, undo and a Daily Challenge.",
       "category": "classic",
-      "version": "1.0.2",
+      "version": "1.0.3",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -2164,7 +2172,7 @@
         "images/mahjong.png"
       ],
       "sha256": {
-        "_meta.lua": "621791073a460db10d32471151166d781fdc245a1c8ae67bf5bae10d81538448",
+        "_meta.lua": "3d11b934b9440cb784351f07d8badf939a4ddd283b6cea269963a27b5d983521",
         "board.lua": "21cfd23fce370da2b08b78625b5ef435b77a9db5a633941abe9f5dc86367def2",
         "board_widget.lua": "cc47c07801d4cba2e45c6960c2c19d955362c22874510827b093f9d7bb21f5c5",
         "deal.lua": "f37b686c52f4194d108b9767e18afc7ddda8be868b4d36813966adb88127b080",
@@ -2179,8 +2187,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/mahjong.koplugin/main/",
       "zip": {
         "path": "dist/mahjong.zip",
-        "sha256": "d10e8a16d43e3c2d856a5bb63a1681ae5d9e9386d2feb0562d9a9c354a5a5ac8",
-        "size": 167355
+        "sha256": "58ac68fd0133ca78d401625ec8655ad62be6388df58eb59da28da06b128215fa",
+        "size": 177587
       }
     },
     {
@@ -2189,7 +2197,7 @@
       "fullname": "Mastermind",
       "description": "Deduce the secret code from black and white peg feedback.",
       "category": "classic",
-      "version": "1.2.2",
+      "version": "1.2.3",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -2200,7 +2208,7 @@
         "images/mastermind.png"
       ],
       "sha256": {
-        "_meta.lua": "e0f409605abd861563e2db908037e924cd4caabdc86dc9d430678543495b8598",
+        "_meta.lua": "8541638d660bb4b812304d52c7094aa7b1341b53d6ac1ecf5deb616abbe53b31",
         "board.lua": "d7a295636bc7701446fea63bff40f7e037ade8605050ea2ab3efd932ba1933af",
         "board_widget.lua": "56b41c60e4b13c78d93119e43ac31fa5aa60413863333cef683251a46c4a160d",
         "i18n_fr.lua": "74b338cc18b86d892c94570a674a72b116d99e00d0f95bfc2b23f7c86b29f244",
@@ -2212,8 +2220,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/mastermind.koplugin/main/",
       "zip": {
         "path": "dist/mastermind.zip",
-        "sha256": "70acd0d9bc2beb5839f37619594cd7f6c02e949241b13925116f2964e658e1ee",
-        "size": 105583
+        "sha256": "bc1ffb5877184be4b2e932a83317babd1b0c2182acbf6a1537854e0a7c963605",
+        "size": 115827
       }
     },
     {
@@ -2222,7 +2230,7 @@
       "fullname": "Masyu",
       "description": "Draw a loop through black and white pearls",
       "category": "logic",
-      "version": "1.4.2",
+      "version": "1.4.3",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -2233,7 +2241,7 @@
         "images/masyu.png"
       ],
       "sha256": {
-        "_meta.lua": "3d5bde8a3711b84ae41de5b4244ab2b0e415d5ede7db050e84e8101dc25563fd",
+        "_meta.lua": "d8da2259a4f6966e912b49a70401133fbe136e0792afbf52f181dbefa2e9e976",
         "board.lua": "9de6b98aed9bc071653d422f31cc6290dd67e3d959e4b8f22ee7ffc3dc5ce2a3",
         "board_widget.lua": "3f55a75b3112f9c19e88637532cb1c7908115cddfbc81b2ddbd0edb242d38282",
         "i18n_fr.lua": "e1c27b3cfe0eaa82665a857c20e582e4e6bfee19c45d8ff88d3a8a867c64dd49",
@@ -2245,8 +2253,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/masyu.koplugin/main/",
       "zip": {
         "path": "dist/masyu.zip",
-        "sha256": "91bc1e69d080b81460eaf78c701409948819325023e74ae5d3ee86f36c32b401",
-        "size": 108141
+        "sha256": "538b150e387cb9bb5cc068efdb14b48832b0e50103572a9d32262bed25303566",
+        "size": 118365
       }
     },
     {
@@ -2255,7 +2263,7 @@
       "fullname": "Memory",
       "description": "Memory game — find matching card pairs.",
       "category": "classic",
-      "version": "1.2.2",
+      "version": "1.2.3",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -2266,7 +2274,7 @@
         "images/memory.png"
       ],
       "sha256": {
-        "_meta.lua": "df033eefaf4bd195cd601ed545ae72a2b44aef45ce627897861ea8627f3afe7c",
+        "_meta.lua": "d19d29567e8f840f99dd422093e3dc0abee99c95b58d67157ba3497199794573",
         "board.lua": "717b1ebdb415037cbf8624f3eb1c56c4c07b806c69b5144f0b7886430340a378",
         "board_widget.lua": "8f462e442780d78a24c8cee7e91aab95477626ac9c4e95a25017fbb1e6212274",
         "i18n_fr.lua": "0ab8febca1ed832ebe66e6710bd6b0fd5dd9fb4ced2e485c7b2c4c1009db0c78",
@@ -2278,8 +2286,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/memory.koplugin/main/",
       "zip": {
         "path": "dist/memory.zip",
-        "sha256": "8fc396247cf07b82a93427c1662fb258fc8ce6837ceae99ec6beebb4ee431c03",
-        "size": 98785
+        "sha256": "497a8689ecf187485f345e7972484190a3b5ca9c52f7f53ab6e76494edec4ae2",
+        "size": 109013
       }
     },
     {
@@ -2288,7 +2296,7 @@
       "fullname": "Mental Math",
       "description": "Train your arithmetic reflexes.",
       "category": "classic",
-      "version": "1.3.0",
+      "version": "1.3.1",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -2299,7 +2307,7 @@
         "images/mentalmath.png"
       ],
       "sha256": {
-        "_meta.lua": "0e74ab5b798703dacb794e87c9d3ee7420406ae43fcd679cae08321f1cc8ef2c",
+        "_meta.lua": "9ea8437b4e88102252d60f5e52981f8f420726ff7db34ccfc069f80b3080f183",
         "board.lua": "5e9af7335b97f341d4dc7f5516185d77b448bb05819ab300cdca0ca1a121dd09",
         "i18n_fr.lua": "3508fb8131062cffa836cc2b7c2db7ad39accb7ae4cc805ca33643307b4ef1ff",
         "main.lua": "28be50f7282acaad899e99e95de88173215db1b7bafe11c65d9408ab8c851cfd",
@@ -2311,8 +2319,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/mentalmath.koplugin/main/",
       "zip": {
         "path": "dist/mentalmath.zip",
-        "sha256": "5330fe17e9ebba0d519a2d56f841dbc5088638eabc1184c9c6cf2a7b0aed7012",
-        "size": 107492
+        "sha256": "f9995a1637417ccf5fd2e056393e552974c206c6c8a4330fa74f000e39e3be88",
+        "size": 117735
       }
     },
     {
@@ -2321,7 +2329,7 @@
       "fullname": "Minesweeper",
       "description": "Classic mine-sweeping game. Reveal all safe cells without triggering a mine.",
       "category": "classic",
-      "version": "1.3.2",
+      "version": "1.3.3",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -2332,7 +2340,7 @@
         "images/minesweeper.png"
       ],
       "sha256": {
-        "_meta.lua": "b0db647b6f12debbf460e67f5c1824e27896032685591089f707c240b62a19ed",
+        "_meta.lua": "1879813cc7e2f497cb86fde798cc5fd2ea9277a95073209691ac57557a55e787",
         "board.lua": "f0cf62131e8157f4bff62364446674431c64a5bca0bf68966b5a7910941a4536",
         "board_widget.lua": "250f5a7bda8b92bfabb4e74839f8b46709c7994510b9bd539184b80ca1dbe08b",
         "i18n_fr.lua": "26ccafbc464e54b7f45104f61f68141a0e11a80f371df607b06e58d1744282bf",
@@ -2344,8 +2352,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/minesweeper.koplugin/main/",
       "zip": {
         "path": "dist/minesweeper.zip",
-        "sha256": "dc149d0e1780ce8a6695a6ba3da88ff830d25f0c3b3d5fbb683aba4c66073b03",
-        "size": 103161
+        "sha256": "c8ae377bb2fb2f4df708345445c1517d7b715d0d0f71dd9ee356647730c9a741",
+        "size": 113409
       }
     },
     {
@@ -2354,7 +2362,7 @@
       "fullname": "Nine Men's Morris",
       "description": "Nine Men's Morris — form mills and take pieces, against the AI or a friend.",
       "category": "board",
-      "version": "1.0.2",
+      "version": "1.0.3",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -2365,7 +2373,7 @@
         "images/morris.png"
       ],
       "sha256": {
-        "_meta.lua": "504ff17f554976105d2ed3cb245cd472a0489781fee317c0ec95c3117d5175c2",
+        "_meta.lua": "cc0cc0866630ce3052592a86b53b986e610ccb1634a34912243318fea4f8865a",
         "board.lua": "b4aa4b3e0996396f0d10ddd12df29942c45b6b2d624cc092e4df7924a9d4ceef",
         "board_widget.lua": "95eea8ca7eaea38c8544f595d820ae8a14cd24c0b69ad7b0ce62fc92903a61e2",
         "i18n_fr.lua": "fc15959a6d397d9df5a527600053bcc86126d42c8a1902f9015a556b11da55c1",
@@ -2377,8 +2385,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/morris.koplugin/main/",
       "zip": {
         "path": "dist/morris.zip",
-        "sha256": "db3cadcec87e05ac0c39b4c8298dd95d006fabe4db1f28973803b2805735ec44",
-        "size": 115406
+        "sha256": "966883fea75c4bf9af162ad8b42a9944e78dc36f7e2be30fb8c4f6ef752db9cd",
+        "size": 125634
       }
     },
     {
@@ -2387,7 +2395,7 @@
       "fullname": "Mosaic",
       "description": "Shade cells to match the neighbour counts",
       "category": "logic",
-      "version": "1.0.2",
+      "version": "1.0.3",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -2400,7 +2408,7 @@
         "images/mosaic.png"
       ],
       "sha256": {
-        "_meta.lua": "4c077a7c6cdcbca65e216088846b8a84a2603bb279932817ff1e0b5ec0fc2e2e",
+        "_meta.lua": "cd4aa22d372e7ac5cee808b1b3438f35e151ab832ef2998d33cf54b01f1cfcce",
         "board.lua": "299f49443cd7bf6caea95af70f985bea9e132e4aebb9dc674176b81edf6115c7",
         "board_widget.lua": "7954d1a01437de10627716062fe576e1b7f7f62b5d0026a6fadc08ad6436e78d",
         "gen_progress.lua": "3bab3b609a65e34a861cbfd8478c56515793fdfc3fd15c3e5a76dc2bb084856e",
@@ -2414,8 +2422,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/mosaic.koplugin/main/",
       "zip": {
         "path": "dist/mosaic.zip",
-        "sha256": "37277832a9f8b9fdf2ea600587a9d7025a71243e763374a02e8cad3c00ad5e52",
-        "size": 135111
+        "sha256": "5697cb0c93b5bbfa9d74215ab2cd2a3cc34a2e17d55935ff9fd946fb428dfff3",
+        "size": 145340
       }
     },
     {
@@ -2424,7 +2432,7 @@
       "fullname": "Net",
       "description": "Rotate the pipe tiles until the whole network is connected to the source.",
       "category": "logic",
-      "version": "1.0.2",
+      "version": "1.0.3",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -2436,7 +2444,7 @@
         "images/netwalk.png"
       ],
       "sha256": {
-        "_meta.lua": "4e51811e901fd78cfd632e4839f36956a121da14724ae2c87073a647590988f8",
+        "_meta.lua": "455aeb3c1b0e4c98af90adc0bb17625a6984f1bc614133e14201379bdbf7b483",
         "board.lua": "35ca3c45a685735e512f731fbca657e6d7d29714b7770403e610ddb15ca6b909",
         "board_widget.lua": "044dc33c65b2931cb7f35bbbecd1a9840e9a68aa2c5da1d3120095d1ee0c2df4",
         "i18n_fr.lua": "9d51a5f467e807920753f5fc73788dba989a5e3cc306fe309b8e576d666fa893",
@@ -2449,8 +2457,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/netwalk.koplugin/main/",
       "zip": {
         "path": "dist/netwalk.zip",
-        "sha256": "994091b4b1365809eca57b28df0bd91ec9dbbabdd01665b27d2064ecde1438f0",
-        "size": 108915
+        "sha256": "04829581f61f2bcfa3e7066ad9f82b3a7db51524eb331c65c84546a6176c4337",
+        "size": 119147
       }
     },
     {
@@ -2459,7 +2467,7 @@
       "fullname": "Nonogram",
       "description": "Fill cells by row and column clues to reveal the hidden picture.",
       "category": "logic",
-      "version": "1.4.2",
+      "version": "1.4.3",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -2470,7 +2478,7 @@
         "images/nonogram.png"
       ],
       "sha256": {
-        "_meta.lua": "5fb79b46ad2e0c5dfbbc843490058e6cdba918605e9eb0e0fdbe62086d198836",
+        "_meta.lua": "27e9f5bd3c26b734ee2cc12f97ca3ab3ec1ffba36bd05cacc42149e8e89c5916",
         "board.lua": "ec148d30a4928bb44c7a9380fa43998230e3d86136b3e088d8dc320bcb398917",
         "board_widget.lua": "cfda0655c36bb06ac1a02ea8781947a618105b85f0ebd2b6900880fc576e3b6b",
         "i18n_fr.lua": "d1504d07181913c8f94bc70d605efe49690280ef1c15bbc85bfdf9e36741f04c",
@@ -2482,8 +2490,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/nonogram.koplugin/main/",
       "zip": {
         "path": "dist/nonogram.zip",
-        "sha256": "f0fa1867086426a4132402bdc10b9a821f34f798e6a0029dcdda9f158dcd0965",
-        "size": 117676
+        "sha256": "d88306876e6bdda628935814aa2dc30f3a1feda792d51a2daff17d5d1be89b80",
+        "size": 127912
       }
     },
     {
@@ -2492,7 +2500,7 @@
       "fullname": "Norinori",
       "description": "Shade two cells per region so that every shaded cell forms a domino.",
       "category": "logic",
-      "version": "1.0.2",
+      "version": "1.0.3",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -2504,7 +2512,7 @@
         "images/norinori.png"
       ],
       "sha256": {
-        "_meta.lua": "b6dfcec65d5eed6aa2f6afd218c8f27c834be0ed974f6c9c6bf85686ecfb8c49",
+        "_meta.lua": "2e1f6b0dc9b4e80ac7dfd3a718ac2d388139e7fa24757d5f7b9fcc58f0a3c411",
         "board.lua": "729f0af9f4bfa3ec87c7992627afff011a1010a712a25b8749433a1acaa43f5a",
         "board_widget.lua": "e6ae2600dd1cf512f53b2d51d32b7540146c1abcd942a61047493f4ff49f0f13",
         "i18n_fr.lua": "5810537f7fdb4dd03f6204647dd0198eee8658686276434440d63a2125eab577",
@@ -2517,8 +2525,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/norinori.koplugin/main/",
       "zip": {
         "path": "dist/norinori.zip",
-        "sha256": "b615f3320ae3263300fbdc0e997187e5624ff540f2d8f01219002b797a0b5e0c",
-        "size": 112361
+        "sha256": "aa6a1816ebe772afbbefc5ba4e4083795b552fb034b8938a1418726d2b134f20",
+        "size": 122597
       }
     },
     {
@@ -2527,7 +2535,7 @@
       "fullname": "Numberlink",
       "description": "Connect each pair of matching numbers with a path covering every cell.",
       "category": "logic",
-      "version": "1.4.2",
+      "version": "1.4.3",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -2538,7 +2546,7 @@
         "images/numberlink.png"
       ],
       "sha256": {
-        "_meta.lua": "9fd681d1b487dab1aacac4fc2de9072337f16d6fbde5564dbf4d41c7d6b74c6f",
+        "_meta.lua": "3cadc00ad901eec15a1e07221cdd2ad4a40bddecdb775204c5e68eb408647a22",
         "board.lua": "99aba764fd9bcf1dbca9eb31c9cb0f721e740c5ad4006a9302446e49b1335ce1",
         "board_widget.lua": "0b32f09638d356780577820a8ae08ccb88e59dc3f4089a598f9e9926339a2f0d",
         "i18n_fr.lua": "ab9e8c3bec7c3952d23f491a5a48e75e16ea08a76ea62514de3983628ae360e0",
@@ -2550,8 +2558,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/numberlink.koplugin/main/",
       "zip": {
         "path": "dist/numberlink.zip",
-        "sha256": "9a570f952a2a2bf0cdad5e4578e5f5d35d463f718a0131687504e1fc76dc8aaf",
-        "size": 123833
+        "sha256": "a37d0682dd85a38134a5b482a0c9bf22491e28cd9d92b556df05b08983de7a8d",
+        "size": 134077
       }
     },
     {
@@ -2560,7 +2568,7 @@
       "fullname": "Numbrix",
       "description": "Snake-like number path puzzle",
       "category": "logic",
-      "version": "1.4.2",
+      "version": "1.4.3",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -2571,7 +2579,7 @@
         "images/numbrix.png"
       ],
       "sha256": {
-        "_meta.lua": "2e321419b652f0e8f7c98c4db61c7a00b2184b4df6ee414952520da901ae7ad4",
+        "_meta.lua": "99f51ea54064e30381c3ec28cbb1bdd5190436799f91bb6415d094a606342bdc",
         "board.lua": "efc6140b6b0eec1cf8859bc1f2bc69e9d0d906b8933b1c98d765675770ce63a2",
         "board_widget.lua": "e669a25d4e3469005d1adcdb758bd6406e5e558a50e5bc0ce66ef00f9616c4bb",
         "i18n_fr.lua": "78a527a4e2ade110fa3a84dccff29d10f877015ed2ba2eb44898ab92879b1570",
@@ -2583,8 +2591,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/numbrix.koplugin/main/",
       "zip": {
         "path": "dist/numbrix.zip",
-        "sha256": "6fbc42c3e1b3c7a5ec71b13953e8ca74b157bd81956c8da578f9c06e29cb93a9",
-        "size": 116814
+        "sha256": "4705b8f1e7d3a2ba249064de0f037526d65f6ac777477b10dc9dbe09d937844c",
+        "size": 127046
       }
     },
     {
@@ -2593,7 +2601,7 @@
       "fullname": "Numbers and Letters",
       "description": "Draw letters and find the longest word; draw numbers and hit the target.",
       "category": "words",
-      "version": "1.5.0",
+      "version": "1.5.1",
       "files": [
         "_meta.lua",
         "blocklist.lua",
@@ -2607,7 +2615,7 @@
         "images/numletters.png"
       ],
       "sha256": {
-        "_meta.lua": "876b6634d4a9276c067e33de093cafe6a1fa9fe273ecbd65a2c13472b851eba7",
+        "_meta.lua": "71b1e9cd733621eb2e0626b27bfa815ed02dd733655d2ed891db0ae653f5ba3a",
         "blocklist.lua": "f52357609b48a05edac4f937cad211fcbd96369e165ddc4635b19e069bc661fa",
         "board.lua": "17de243969a50bd83776fce4cc39b169cfab04d96450fd6abdd809a7add49af2",
         "i18n_fr.lua": "3b41702f20609d88e09ebcb2ccb398bc49b2f08e2a624af5082bddc620c3866b",
@@ -2622,8 +2630,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/numletters.koplugin/master/",
       "zip": {
         "path": "dist/numletters.zip",
-        "sha256": "6b5137b05f1efe4225186bfa7cd710c90f096e15252d280208d10e1db6290db1",
-        "size": 708046
+        "sha256": "07fe9679c4b3ff00ceb38c73510bf009e5949e0830df65deed9980261a94c1ea",
+        "size": 718289
       }
     },
     {
@@ -2632,7 +2640,7 @@
       "fullname": "Nurikabe",
       "description": "Paint the river: connect islands of numbered white cells.",
       "category": "logic",
-      "version": "1.4.2",
+      "version": "1.4.3",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -2643,7 +2651,7 @@
         "images/nurikabe.png"
       ],
       "sha256": {
-        "_meta.lua": "1468bafcdbfd34bf785b62033ebabc179c92341c796af1c1b11900306d2fa843",
+        "_meta.lua": "6af812382cb0f4cb4b23499e401ae3877b51da6ed327648b6908f085ab0f2d95",
         "board.lua": "28f105e29dab3f2588b119e92f8cd07b1635eda79db4b2321b0d992e2bb0402e",
         "board_widget.lua": "945b862f9552f7f21a00fc0753652c4d7e0af93005113acb87a655986c858c23",
         "i18n_fr.lua": "803ec9b0662f2f06592a5b20d965385cf2211713e19887d7de1c8c2421ad9641",
@@ -2655,8 +2663,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/nurikabe.koplugin/main/",
       "zip": {
         "path": "dist/nurikabe.zip",
-        "sha256": "a21e31b1ff446b058a47cca37b2c5ded50ecf92a302783098f104a0e13d57c97",
-        "size": 109335
+        "sha256": "5fd91280dab014ce96a6c661fa8ba94b183fef7222501ff630c7f2b502bebb70",
+        "size": 119571
       }
     },
     {
@@ -2685,7 +2693,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/opdsdir.koplugin/main/",
       "zip": {
         "path": "dist/opdsdir.zip",
-        "sha256": "4f950bbc98deb155ed1f521af5ff291ea605483216613a6875d797bfad98965f",
+        "sha256": "129881975f771375066eebf1fa07a9e8abb5b334fa12fbb5f3e5bba8c7b69fb5",
         "size": 11440
       }
     },
@@ -2695,7 +2703,7 @@
       "fullname": "Othello",
       "description": "Othello/Reversi 8x8 with AI.",
       "category": "board",
-      "version": "1.3.2",
+      "version": "1.3.3",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -2706,7 +2714,7 @@
         "images/othello.png"
       ],
       "sha256": {
-        "_meta.lua": "4eecfc872d46c4332b8c61464ccaaf7475c1d419d38cfce6dc6e220d34868407",
+        "_meta.lua": "0ec9da6e8bce7031256c14158d2a3ac4a92096e0109d269a94e97a1d9184d8b3",
         "board.lua": "0b9501c6e1d8df5a4531526c6fc5e78f8d13b4208fff253821e338201c7fe2cc",
         "board_widget.lua": "0552125cdc4055137146779772086163682665e0a68a781fab0518c5a3124b58",
         "i18n_fr.lua": "353ca5b2e10ad9a180f5dc8f7da898945916a6824b0130d28052c20e844594e5",
@@ -2718,8 +2726,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/othello.koplugin/main/",
       "zip": {
         "path": "dist/othello.zip",
-        "sha256": "6c498acd9cc36d599caa4375e1645155ebbedfe271d19daa404c63de0ca968c1",
-        "size": 103478
+        "sha256": "5d00cd6cfd835f825adf604d3b5eab5e462cca82ed60b490b298c522c4854b8b",
+        "size": 113710
       }
     },
     {
@@ -2728,7 +2736,7 @@
       "fullname": "Party Questions",
       "description": "Party card decks to read aloud: Would you rather, Never have I ever, Who's most likely to, Hot seat and more.",
       "category": "party",
-      "version": "1.0.2",
+      "version": "1.0.3",
       "files": [
         "_meta.lua",
         "deck.lua",
@@ -2763,7 +2771,7 @@
         "images/partyquestions.png"
       ],
       "sha256": {
-        "_meta.lua": "b616dbc9450cde7ea6e01fcbb8b9044325ebd0993d4394e5c5eaceb11fba2816",
+        "_meta.lua": "0b27d39ab38c85cde9d0fc3bc8b400a512753058dcd03eb800a6cc2882177924",
         "deck.lua": "af7fdfac031bff0f96e41e29dbe33899dd371d7fcf8b28dd33765a59266dcbdc",
         "i18n_fr.lua": "ee9338a07a450217556018898c08b3ce43f711747d38396d388060528e784a92",
         "main.lua": "0858f0405470d1a8a74e3c93f4d9c7a7c5537fd5f786fc4a28f09014eeb65b17",
@@ -2799,8 +2807,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/partyquestions.koplugin/main/",
       "zip": {
         "path": "dist/partyquestions.zip",
-        "sha256": "80944dab511757ab03ca8797abcbf8912ca1e31b17f5bc49570cd211bf9ea18c",
-        "size": 316830
+        "sha256": "48828612907a0736b4b9843cee4d726cca4334d711962a548410dd8b6d80b045",
+        "size": 327090
       }
     },
     {
@@ -2809,7 +2817,7 @@
       "fullname": "Pass the Word",
       "description": "Word-guessing party game for four, two teams of two, inspired by the classic TV game: one-word clues, a 4-round qualification, then a 5-level final with a prize pyramid.",
       "category": "party",
-      "version": "1.0.2",
+      "version": "1.1.0",
       "files": [
         "_meta.lua",
         "game.lua",
@@ -2822,11 +2830,11 @@
         "words/fr.lua"
       ],
       "sha256": {
-        "_meta.lua": "6299249e66e379cc1708d8eaaa1da86b31ff43b3fcad8849385ebdea64fa4f99",
-        "game.lua": "2365b513822d769f0b0229464b3762059d812b72c8498f516daf94f24d8c8623",
+        "_meta.lua": "80babdd48f067e6b5032c8ff0fdbff39eea69765b93e7008bd0015ad0900589d",
+        "game.lua": "2b15cbe579f80f190c5d1a26c36aeccd3dc4ca4c062c66a69b71e1ac29c3239d",
         "i18n_fr.lua": "c4a43871abab074d2d065aa4b79da7ad9649e06d4d853051d1bcee29836d163d",
         "main.lua": "8929a2393b0bde5e707e6b4ab8036616f277df6447ab6349c639f6daa7a16887",
-        "screen.lua": "e5eda2ab8ddb4c47aa00851af8eed132122b74581b835de4382ada040b9d6502",
+        "screen.lua": "df562f561062c4b9b60158886185e15aed2941e844bcf1d7e27c568a0ca0d113",
         "widgets.lua": "a79e15e727dbb178a1a88c56303173048d8a249f8a3546f5438f7b6f427dc9d9",
         "images/passeword.png": "0f65fcb88d1b98fbe7d1dc6a782f55b4159083d711962fe734a3cd0c66e3d019",
         "words/en.lua": "37407063da740f0213c3c9585feb4b416e955a5488c8a8441dac509da17dedfe",
@@ -2836,8 +2844,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/passeword.koplugin/main/",
       "zip": {
         "path": "dist/passeword.zip",
-        "sha256": "9873dcfba64e840b30b38d2ba3d27541a78f68f5a6dc7fba88f61acbf779a65b",
-        "size": 181044
+        "sha256": "dd5d045dd941f0fe0a6120cae38a8d409c47fbea7399137ba0f8f83bb0cde80d",
+        "size": 191763
       }
     },
     {
@@ -2846,7 +2854,7 @@
       "fullname": "Peg Solitaire",
       "description": "The classic peg solitaire: jump the pegs over each other until one is left, in the goal hole. English, French, triangular and square boards, 35 puzzles, hints that keep the puzzle solvable and a Daily Challenge.",
       "category": "classic",
-      "version": "1.0.2",
+      "version": "1.0.3",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -2862,7 +2870,7 @@
         "images/pegsolitaire.png"
       ],
       "sha256": {
-        "_meta.lua": "b7f65c899e4ecada9bba9b8a11bd98e0abd2657b1767ff81a6f589af2375cef0",
+        "_meta.lua": "f7d36bceed73af7f157cbd1f5413306d6c4fd18931366f2b3e2733436fc25b64",
         "board.lua": "a98cc25d84c27d15b98e359a2ec4b4504060ea8edf16b0f9d710b9a1576ab5c4",
         "board_widget.lua": "e5a0fb86ed2fc5da87bba83057c36212124025f9134604b4023c434f5ed28293",
         "geometry.lua": "8217b27f93108d672739b68cadad9e3b5dcc764f20f2bf09555ca5006d1a2bf3",
@@ -2879,8 +2887,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/pegsolitaire.koplugin/main/",
       "zip": {
         "path": "dist/pegsolitaire.zip",
-        "sha256": "c6d18bbbe7e9c4034e5bc5deca3fb9ef65966dfea778b5d5397fae30c4eec730",
-        "size": 137391
+        "sha256": "d19c25f177c9577f06988dcb4a36e251166799a5dc2825420c0b2b9107e619fc",
+        "size": 147643
       }
     },
     {
@@ -2889,7 +2897,7 @@
       "fullname": "Pickomino",
       "description": "Combinatorial dice and tile logic game",
       "category": "cards",
-      "version": "1.2.2",
+      "version": "1.2.3",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -2900,7 +2908,7 @@
         "images/pickomino.png"
       ],
       "sha256": {
-        "_meta.lua": "2577732717592e63830c51cf461a9af8b4339d83e337e531b93ffc7a4333cb3f",
+        "_meta.lua": "3b8dcb6834340e7759a8177b0a7a94c98d74ca653cd38fbcd7b2ba8a38886bf0",
         "board.lua": "d1a86c25dae2de659c9a099b5182ee0400ba9cfb8a6493f244df754bf1977a79",
         "board_widget.lua": "6a9e493f1296423346e84486a9244f3b6e877c643f7a8f35b913588504a30864",
         "i18n_fr.lua": "34df472d5a7c3219ffad463cf506c7bc859f535de20f73cea86d255441abf05c",
@@ -2912,8 +2920,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/pickomino.koplugin/main/",
       "zip": {
         "path": "dist/pickomino.zip",
-        "sha256": "743b5e9125df8ad5ca1e8d35bd21d2e5f090d9c648d01a17a10d75a0dc0e9977",
-        "size": 108221
+        "sha256": "5855eeeca24a7f74dac5a3ffed91a0ca89c935cb798de79e4dc4d988f5ac0306",
+        "size": 118461
       }
     },
     {
@@ -2922,9 +2930,10 @@
       "fullname": "Draw & Guess",
       "description": "Draw words against the clock — team-based party game.",
       "category": "party",
-      "version": "1.3.0",
+      "version": "1.4.0",
       "files": [
         "_meta.lua",
+        "deck.lua",
         "i18n_fr.lua",
         "main.lua",
         "screen.lua",
@@ -2932,10 +2941,11 @@
         "images/pictionary.png"
       ],
       "sha256": {
-        "_meta.lua": "77eb242ea8c8b56ead15c94cbc10bd1ab851009b31efcacca326bba33033ed92",
+        "_meta.lua": "d8eafb68c3c27309a483641a4c804f828ddcca31c00a6c899c7e05e34b3a34a3",
+        "deck.lua": "dac42f0044f85d754ba40dec4e5f43a35eeeb28b45e380be355afe0a8bd2c78a",
         "i18n_fr.lua": "e551276fc93dd50d7490ad3947674ad2a018c836bc1a66c3b9f9096dd1dd33c8",
         "main.lua": "73a2fbca03242fdc71832e99118fb5e480f8f1a0f687e59e30fb72a88d9bbecb",
-        "screen.lua": "1e683f1f03cba582784ddbbc02cdb3013069ad915602357fc8741c3036fc305a",
+        "screen.lua": "d9ab7fd76cd8228738d4c18dd12fa884adb0e9e3f5ecc2ed2f661b3aea26be48",
         "words.lua": "4d618b4633c228f56c128c249a3734313812da1fafe5f2e6cb1b2bdb713d6b3c",
         "images/pictionary.png": "e907e1d03b4771b2dc031148e81f0421a0535122dc09dbcf5b8a29e684723f00"
       },
@@ -2943,8 +2953,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/pictionary.koplugin/master/",
       "zip": {
         "path": "dist/pictionary.zip",
-        "sha256": "af17f0715359d182b260505607733580e14e11d9d480b6bd9ff0dbf756ad6d7c",
-        "size": 143643
+        "sha256": "08362622dc7ee59de6bd490deaecc4557feff957de137e85f67e4c74e24fa133",
+        "size": 154763
       }
     },
     {
@@ -2975,7 +2985,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/pluginmanager.koplugin/main/",
       "zip": {
         "path": "dist/pluginmanager.zip",
-        "sha256": "13c18299f9eae305004f7145a0e7de9ad8de96eac86f89e79cd825a0b85a4b78",
+        "sha256": "351d032de16564d8c39bce0ea17e909303265a25c85b4022020d657ab40a2cef",
         "size": 73752
       }
     },
@@ -2985,7 +2995,7 @@
       "fullname": "Quiz",
       "description": "General knowledge quiz — everyone writes their answer, then reveal.",
       "category": "party",
-      "version": "1.4.0",
+      "version": "1.5.0",
       "files": [
         "_meta.lua",
         "i18n_fr.lua",
@@ -2997,21 +3007,21 @@
         "images/quiz.png"
       ],
       "sha256": {
-        "_meta.lua": "d1806476738847f16887d3807d5e2a26ba0a1b501e354fcfb3a5b950dc4bb561",
+        "_meta.lua": "98db43917a22702a21df7abdc7dfb78e8a51cf8a66840a389b97efeb23c72b0e",
         "i18n_fr.lua": "49237e42d5839438e7a9c4384229b9ce4fa999086a05744e1d609ad533a28f96",
         "main.lua": "3f582cf086a03fcd9444ebac91aad39ebb079d89c86dc329d57e2b483b127ce9",
-        "quiz_bank.lua": "ea019c2683225ee1641af95dab03e8128cd4295e12bb7555a7ef8e083b99bffa",
+        "quiz_bank.lua": "4ac4797a53fcfcd1895935e8bfd19733b5498598b346a4f1a0f574d1bee413a3",
         "quiz_questions_en.lua": "61b2ce801772344fdc14c6399bae80260d6d603631e2050727a4174e61636958",
-        "quiz_questions_fr.lua": "7f057f93bc71c95300a8ec6573eb467f6a83f53a34bf52e6221962440fc535a2",
-        "screen.lua": "f21e20984868326f85cfd5874d4122d13aaba84ccb3f0cceb5da8770ea56d01d",
+        "quiz_questions_fr.lua": "ed247f99c219a3e3eb031da520a75d275de65bd6c2e6f7c2732909eaca1cda8a",
+        "screen.lua": "bbd4853eb2177800b675924b364a47dc9b984f7776803924bfa1944652b92300",
         "images/quiz.png": "e4847917495c6e79ff94cea4553f0032d71535ee26480fc56656a5def81502f4"
       },
       "common_lib": "common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/quiz.koplugin/master/",
       "zip": {
         "path": "dist/quiz.zip",
-        "sha256": "15c971123f81a5eec64df414346f091ec0394624a68fcaf6427e00a26da27be9",
-        "size": 279225
+        "sha256": "829c8a4d22b059a1526186e63cce1c652f2b584cdc2738191a94a55dbfe3c6ed",
+        "size": 290575
       }
     },
     {
@@ -3020,7 +3030,7 @@
       "fullname": "Ripple Effect",
       "description": "Fill rooms so each number appears once per row/col",
       "category": "logic",
-      "version": "1.4.2",
+      "version": "1.4.3",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -3031,7 +3041,7 @@
         "images/rippleeffect.png"
       ],
       "sha256": {
-        "_meta.lua": "2f47f7ef8ca0bfad519e62b0f0ac9d0a8835a5321f8f0091e6e8bc0c86a8fe86",
+        "_meta.lua": "e7e7d597e30ee9aca499b2d2ab358e30a4ad8eb266a418352c1de516a347a8f2",
         "board.lua": "ef674e733b94086743ad3671aedf8deb312907abe57e7c7bdc1fad762e36fdae",
         "board_widget.lua": "03b3c1497cd09bb52e3705ddc4dc0b97c93928b12294f8d16178360d663a04ca",
         "i18n_fr.lua": "34b9fee39a714b5aaddd75f1deac27509caf3152cb9e867eecbb6edfed234812",
@@ -3043,8 +3053,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/rippleeffect.koplugin/main/",
       "zip": {
         "path": "dist/rippleeffect.zip",
-        "sha256": "49bbefff2f0da79d24ac77d5da22a511480842420ac78831e60261bc60ab5b5f",
-        "size": 123266
+        "sha256": "073b3e0303dbc6d13f528cdc8d577f11ef55b5e2c70a29ab56eee9e9493799b3",
+        "size": 133518
       }
     },
     {
@@ -3078,7 +3088,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/sandwichsudoku.koplugin/main/",
       "zip": {
         "path": "dist/sandwichsudoku.zip",
-        "sha256": "d948f4d9ee3d9324500e500ffa6d70ed46022c4fe1a10d48af714da2a522bd77",
+        "sha256": "653d449eec9e2f47616b2b8bd987435010f39afb118dc629d33b95958985958f",
         "size": 127093
       }
     },
@@ -3088,7 +3098,7 @@
       "fullname": "Shikaku",
       "description": "Divide the grid into rectangles",
       "category": "logic",
-      "version": "1.4.2",
+      "version": "1.4.3",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -3099,7 +3109,7 @@
         "images/shikaku.png"
       ],
       "sha256": {
-        "_meta.lua": "83fad339292ac560be5da9f1148c6ad51b70ec1f731a4b16d4ff3bb793876def",
+        "_meta.lua": "626814a83fda9851710baea93156cdbffc7ec1953af18411e9234d75b8338b41",
         "board.lua": "b456c504ed4157fb8b5b525ad22f5f6e2a8e14e431d5c7d039a94202e3295ebe",
         "board_widget.lua": "3b38ca1c13ab8cbb564b4ddbd7087b92561f6c56be1a48a3c2446b85be3a9d84",
         "i18n_fr.lua": "729025f631c8f213cfee55f650d342dc1939b1a8419657ad4dc393c4f4a1c596",
@@ -3111,8 +3121,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/shikaku.koplugin/main/",
       "zip": {
         "path": "dist/shikaku.zip",
-        "sha256": "d083a23617268c54b6c524108d7a06c2b7056c68315609274f4f80b2de6191f8",
-        "size": 117041
+        "sha256": "248ee75664ec6d10012749af1b1efb011b5d30c1d64e62f913b10972875adefd",
+        "size": 127273
       }
     },
     {
@@ -3121,7 +3131,7 @@
       "fullname": "Signpost",
       "description": "Link every cell into one numbered chain by following the arrows",
       "category": "logic",
-      "version": "1.0.2",
+      "version": "1.0.3",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -3133,7 +3143,7 @@
         "images/signpost.png"
       ],
       "sha256": {
-        "_meta.lua": "9cc1d6b3e788b222efecf69bef03e56288a4b06baa4dd6bf5d25effef339f14b",
+        "_meta.lua": "af91b3045dc64664135d62f14d38e99b57bdf428794a6a9dff84bbbe8464f34e",
         "board.lua": "31c2766279f4e55169122c5049565ac865d805fb3cffcb5d02641a96a9dbbdaa",
         "board_widget.lua": "c85f3baad7cb5c924dc915f8d27c9fdf717bee0839276647a4661c6b23f5cc3b",
         "i18n_fr.lua": "9776c15925dd46cd12777a1d5ee375fc9246d396001b39db08ebae1e64f33ad1",
@@ -3146,8 +3156,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/signpost.koplugin/main/",
       "zip": {
         "path": "dist/signpost.zip",
-        "sha256": "12b8e7aa04ec54990fa3b78e2a6d72b760473c2ba0bc51a1cdee15bd110c86f7",
-        "size": 127285
+        "sha256": "b9542689ada02d703ab0eeb6fd3040b423921ea5719cf310649228f57a20c621",
+        "size": 137522
       }
     },
     {
@@ -3156,7 +3166,7 @@
       "fullname": "Skyscraper",
       "description": "Place buildings by skyline clues",
       "category": "logic",
-      "version": "1.4.2",
+      "version": "1.4.3",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -3167,7 +3177,7 @@
         "images/skyscraper.png"
       ],
       "sha256": {
-        "_meta.lua": "5613680c1c804a791af70e2bc47695ff1cca18cf910de915c635907800205b87",
+        "_meta.lua": "4c8f6159c5c5629adc2a6fef791eecb37661a65d2a13718373a3fb5cb63ddcd6",
         "board.lua": "78fb2cb9d85461f3deab587a67e4098129e3b42c1a8d8e2e66b1fb0298ddca89",
         "board_widget.lua": "0a6528370f864048df03f4ade180da523c9d3022e79b4bc602c656ada8836972",
         "i18n_fr.lua": "17bfa1472218726df57e82c575de0546294de25bb64f062ea5029d82820abbbd",
@@ -3179,8 +3189,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/skyscraper.koplugin/main/",
       "zip": {
         "path": "dist/skyscraper.zip",
-        "sha256": "cb12299b7f0b039306f3a92aae20e27f244bb37f3993c8e9bd982085c7b0c6b4",
-        "size": 112307
+        "sha256": "455c2308948aaefc00d2eb810e3a02abb280dac0377911d65023b5f0b83318f9",
+        "size": 122551
       }
     },
     {
@@ -3189,7 +3199,7 @@
       "fullname": "Slitherlink",
       "description": "Draw a single closed loop along grid edges matching the numbered clues.",
       "category": "logic",
-      "version": "1.4.2",
+      "version": "1.4.3",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -3200,7 +3210,7 @@
         "images/slitherlink.png"
       ],
       "sha256": {
-        "_meta.lua": "ff84a2ba94a03aea572139fc66cf2b65333895b7333a06dc7e0fbb258585f88c",
+        "_meta.lua": "005193df59287f774ad14088fdb735b04d50b36c64340300caa9fd9eac33f30c",
         "board.lua": "d69271f8dd4078e5fc662f6dbd5358678babb45c44e2cb0efacbaa9a13cc3612",
         "board_widget.lua": "62c361566ec371dd486fd0ce62b0e96a5e56bb246370de1f041edad6f29d59f8",
         "i18n_fr.lua": "86b055752df19db9e4c0ef8cfba042b67d7252403ac20c8e502d0b38693bfa7b",
@@ -3212,43 +3222,47 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/slitherlink.koplugin/main/",
       "zip": {
         "path": "dist/slitherlink.zip",
-        "sha256": "2a5746ccd35f3e844ad676c2439167aefbe0670755467ba18639c5ffea8cb041",
-        "size": 121749
+        "sha256": "28330600c7a92d7aba54fd77038d40787b726627e71664447e39424e546a4e4b",
+        "size": 131997
       }
     },
     {
       "id": "sokoban",
       "dir": "sokoban.koplugin",
       "fullname": "Sokoban",
-      "description": "Push all crates onto their targets. You can push but not pull.",
+      "description": "Push every box onto a target. 372 levels in four difficulties, all proven solvable, with hints, a list of the levels solved and a Daily Challenge.",
       "category": "classic",
-      "version": "1.2.2",
+      "version": "1.3.0",
       "files": [
         "_meta.lua",
         "board.lua",
         "board_widget.lua",
         "i18n_fr.lua",
         "levels.lua",
+        "levels_data.lua",
         "main.lua",
         "screen.lua",
+        "solver.lua",
         "images/sokoban.png"
       ],
       "sha256": {
-        "_meta.lua": "ba7e606debc4061319d51ff1749c67df36982004b4810ec2aa0c5109abf018a1",
-        "board.lua": "918c23864b6e42ab39606ee4b52c0501a575f48ccf7fea2e294d9b414db21b53",
-        "board_widget.lua": "57e651f57b0ecbb4027c93814f2ec47162324f8c47bb96d9a18078e39b08063d",
-        "i18n_fr.lua": "55aaa3be76cdb557c6392737ff5df0b4ffe75f826eb64a37c688d88ac75ed0cd",
-        "levels.lua": "5aed962e4eb4dab34687f767c2ae054d4d8bd4c6af6b051ebe224852fe65d73a",
+        "_meta.lua": "238342512903125d64d9d5ac292de52f48cf44ad1f7d07f2b82897e9d4d35998",
+        "board.lua": "83a60f18adfcc901c4ca4ecc769eeff186d3da17bcbe696e373bdf86f15d0c0e",
+        "board_widget.lua": "70c29c1f216c21ecf6a040c5a9e066cd1c858a0096e02a0948227476a788297a",
+        "i18n_fr.lua": "af45a2ad5199383a49dfdc9bc29b86f7c802180a32fb2fc4f3f9678057a81b66",
+        "levels.lua": "46b174d116d4b3f4db118f01ee94becfb7090f694979fdcec973813be5914ba7",
+        "levels_data.lua": "561f370e43a79c14e909571924e7e43b8ffcd67299b54b4ec11f68b53b2a27d9",
         "main.lua": "b9e3017eb9e97024bd82f7611c1b3d69428c0e683badaf1bf2214353447a0f12",
-        "screen.lua": "7d475552a79447a18246ad60df9204fc0a2a97ec2a80b1091973fbf8c831289f",
-        "images/sokoban.png": "d7fea31bc8d77f349083f94bb8b3948b5d6381f92f79ad0de5fbdbcad8d09a22"
+        "screen.lua": "e85c8412675946a1e66a8e0f1dafb8a7ac63f35834ba86b80f8b9d8aecd9c31c",
+        "solver.lua": "19f7a1147bfbf136278a9085a636d76d8f8d743d0b11eeb26f5fa72a1a35cc6c",
+        "images/sokoban.png": "dd59fc9ae168119f0f614ecd498c7137cc99219aaa87ae36a67b30f859c9d269"
       },
       "common_lib": "common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/sokoban.koplugin/main/",
       "zip": {
         "path": "dist/sokoban.zip",
-        "sha256": "0910f59cf6391c47db22c0bc1d507b53d75bee8180de102d491662aff3c1930d",
-        "size": 104374
+        "sha256": "e4c36b64011f51ef1b950bd09e461e26e4356c66db55b8e9fc876bc910f94e8d",
+        "size": 138588
       }
     },
     {
@@ -3257,7 +3271,7 @@
       "fullname": "Solitaire",
       "description": "Klondike, FreeCell, Spider, Golf and Pyramid solitaire card games.",
       "category": "cards",
-      "version": "1.2.2",
+      "version": "1.2.3",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -3284,7 +3298,7 @@
         "images/spider.png"
       ],
       "sha256": {
-        "_meta.lua": "2921724e702e015429a9c6bf85239b590e794308dd81f2bcaadef471e2eef8b4",
+        "_meta.lua": "4a22792b9e130b31d406b80bc79b714e54d8c09d02e6aa37b1a759c1daf9030f",
         "board.lua": "c1afe25257d237a6f034ac528c7ca91d2be91ae7918646d484bf5cf29ac0f25d",
         "board_widget.lua": "84ff252912a803f4cb0b0c9fe3b3fd799c3605f3216984adc5de0900c953c360",
         "card_widget.lua": "ddeee361d711722dbc77d76bf15b46d83f091f54f297d33845a653e1e471cf52",
@@ -3312,8 +3326,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/solitaire.koplugin/main/",
       "zip": {
         "path": "dist/solitaire.zip",
-        "sha256": "6a6c4871e131354d2f03e510007eba57a6c6cad2afcb150fac4324728c2abaaf",
-        "size": 357134
+        "sha256": "ba4af926530deaf744cfbb4e50e2433504eeab9041d294285a05b847baab8e9b",
+        "size": 367375
       }
     },
     {
@@ -3322,7 +3336,7 @@
       "fullname": "Spelling Bee",
       "description": "Make words from seven letters around a centre letter",
       "category": "words",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -3342,19 +3356,19 @@
         "images/spellingbee.png"
       ],
       "sha256": {
-        "_meta.lua": "0e596331473c97a379f62cf8d074ab69abdd8754596d7fca709733322e161610",
-        "board.lua": "4d871b3d84fdb6152935c0cf28cdca44254db5e7740d19d74e2b28220e0b1026",
+        "_meta.lua": "a50f621bdfedafd5c5b5139a6e4fc3fd23ac2899d9463b1d59d0ceaec7e0bcd5",
+        "board.lua": "07270f7129183e6ae81bcf1188e30159fd6c0de210ef38f61fb371a845e7f2fe",
         "board_widget.lua": "0a228c5cab97079b5f72ab76ab9b04b4a1e8aaf7c0a6202028e486b03754d5ac",
         "i18n_fr.lua": "0214527d679480409f6341b461e48d9c15d64a15d393aa1499468f7aa640586e",
         "main.lua": "f0af31422d1c3be44185f3a0a9879a3ef1467bea2cea055bce7f0543e40b83d6",
         "mode.lua": "1c0cad13b17e92fb9986467a88abefd62798fda19187400e1348f1479ccd5c29",
-        "party_game.lua": "876cad0ad217b4a4f31245b9473c59ff32635efa1586eedc983e8d994353ef58",
-        "party_screen.lua": "f7e45187b7743ee7a11736f0ff037582093879676b2bc80ed9f4c0068847696d",
+        "party_game.lua": "745eb57642000e9c17a03905c8ee04a446834f5c7deac52ef91b94a63e6f9d8c",
+        "party_screen.lua": "2c2617783fabeba64a5f9483c491151b499bb2f1a2410db7c5cf01430c8dedca",
         "party_widget.lua": "3b01499be74cb8762dea2b9683056042b47b1e897b6fa3c7050a3b468fd12c2d",
         "puzzles_en.lua": "55430013805fa80a6f296994d2abe76fa3f541d5c3b0e9d8773f6b33f445c07c",
         "puzzles_fr.lua": "60d160b4bf10dcf7bfe8ebae2b67f0aea35c8a3411ac177c0987b9b628ed8bdb",
         "rules.lua": "ebb558c9ac1271f2fa7ae6cf4acbe85e552331be01f5527170ff1dfcf371ce9c",
-        "screen.lua": "3e3a441810dd28f7489d1974d95d2cdb8d637699c4f8f4583d8ade0fcf76720f",
+        "screen.lua": "1e4906faa828e4717ed13b73e5ea21dedfabbf4aa090e611354e8fa3f5cc4e2e",
         "words_en.lua": "d565405f2db1419678e8215a488dd1ace1f199000ac199526b998f4f5081f67d",
         "words_fr.lua": "c70a080876a53ce3c07f32f87195ac0d47668140344420c3aca081091f28574f",
         "images/spellingbee.png": "9082855c0ba912f49286ced83f8ac0e5d4b1225e6310d77dd7ea36c37174617e"
@@ -3363,8 +3377,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/spellingbee.koplugin/main/",
       "zip": {
         "path": "dist/spellingbee.zip",
-        "sha256": "35d134d60c6b31b94722571c7f9fd6ed23745e09653e3331154d59f5d20d1f48",
-        "size": 305271
+        "sha256": "69ca3dcd06122a8ead9c57de62fc0bd4a69706ab702000b03e1f7fe1e0037a94",
+        "size": 316403
       }
     },
     {
@@ -3373,7 +3387,7 @@
       "fullname": "Star Battle",
       "description": "Place stars with one per row/col/region",
       "category": "logic",
-      "version": "1.4.2",
+      "version": "1.4.3",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -3384,7 +3398,7 @@
         "images/starbattle.png"
       ],
       "sha256": {
-        "_meta.lua": "ad39c75a85107194a1c28f7e1f59518192d59083519d1dad73023ce8a14076ad",
+        "_meta.lua": "3502ff9d71e9543f79b23990e26e3a55c68572d04e054fe155c9195862985ad8",
         "board.lua": "50f2e03abb563896cde68f62dd21b70385c65363046b2049bf8710d33e952aba",
         "board_widget.lua": "f0a3b1e933c898d1e2d2b74919b79c2d556bd65c78bb66fe4425342686bb162a",
         "i18n_fr.lua": "7d124fdce23ef90eb3e130f78542aa21cc555ada7ba693170741fb13da1cd213",
@@ -3396,8 +3410,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/starbattle.koplugin/main/",
       "zip": {
         "path": "dist/starbattle.zip",
-        "sha256": "d8c7c121ba2daa1d3440b6020c28600f40cbcbb5cbb68d79defe47c7adbc92df",
-        "size": 102112
+        "sha256": "0f145950399d8368e47e33d6f799acf1a5c234cdba6e9a3737617a3d16137581",
+        "size": 112356
       }
     },
     {
@@ -3433,7 +3447,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/sudoku.koplugin/main/",
       "zip": {
         "path": "dist/sudoku.zip",
-        "sha256": "ee98211d42333966efb3600d86dc1d79f59dc266ad5dc6c13fde03cdfcdb13f7",
+        "sha256": "6d42611a3b6e36ef3407d18a75c458d5219fc284de9b6a63932d61c977d5255e",
         "size": 118361
       }
     },
@@ -3468,7 +3482,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/sudokukiller.koplugin/master/",
       "zip": {
         "path": "dist/sudokukiller.zip",
-        "sha256": "f04c41bde82e50181c0bf1a8059783476c7972703a68b6e5f3c87195cbe07fcf",
+        "sha256": "cd851725e069eb6786c00a06e54d50e44767530b1c72e5fcd32ea20f9e8be168",
         "size": 124838
       }
     },
@@ -3503,7 +3517,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/sudokux.koplugin/main/",
       "zip": {
         "path": "dist/sudokux.zip",
-        "sha256": "73cd54623dd7ddf49b06b1a66c1595288f89804cf510c2c5f2faa6cd1441fa5e",
+        "sha256": "f3fbdded367a7523fb3e491c5a7fd04bcb61b826d61ff3b35db0095c49e9781a",
         "size": 118838
       }
     },
@@ -3513,7 +3527,7 @@
       "fullname": "Suguru",
       "description": "Fill regions with non-repeating numbers",
       "category": "logic",
-      "version": "1.4.2",
+      "version": "1.4.3",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -3524,7 +3538,7 @@
         "images/suguru.png"
       ],
       "sha256": {
-        "_meta.lua": "8abd734838c2bd18151460918f34b5c724b5ecf641a0af68a317982742e1b009",
+        "_meta.lua": "b2be94d64e7e1011fda8b074c784f9b0226e75dd08d3c477dc3a9a2ba4778350",
         "board.lua": "0d710b56bd00488b645c36f77f28d08b3e505980910d9fc2f758fedec84b8bf1",
         "board_widget.lua": "6caf2a224101f0295d168dbb3f239889c920890a82458a07e7a3824323201c19",
         "i18n_fr.lua": "03675ee4a2627fd0b6cbcd7a445fb0e0d9d0d4f23bdae27c77111d00cf3ab8a2",
@@ -3536,8 +3550,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/suguru.koplugin/main/",
       "zip": {
         "path": "dist/suguru.zip",
-        "sha256": "be7cbd96d893b87f74d8cfb47a6f81436df36a573de1f1091bbbdc90d06593ef",
-        "size": 115311
+        "sha256": "1329f54628a4db02ad2f2421291b5a8d40af940ea7d06c24821f74a3cb4c4834",
+        "size": 125539
       }
     },
     {
@@ -3546,7 +3560,7 @@
       "fullname": "Forbidden Words",
       "description": "Describe words without saying the forbidden ones — team buzzer party game.",
       "category": "party",
-      "version": "1.7.0",
+      "version": "1.8.0",
       "files": [
         "_meta.lua",
         "i18n_fr.lua",
@@ -3554,15 +3568,17 @@
         "screen.lua",
         "taboo_cards_en.lua",
         "taboo_cards_fr.lua",
+        "taboo_history.lua",
         "images/taboo.png"
       ],
       "sha256": {
-        "_meta.lua": "e2ee052a720b1b764fb8fc176f72305df4f93129bed3fd69eb1a8ff0e35066d7",
+        "_meta.lua": "2cadf984f9bf70502cd1a063b1ebd86603c21ab2e5efe4d7aab80e4ae6b85e34",
         "i18n_fr.lua": "705b505ac1787ea1fd2e70fc892934312b3a244cca912d1f3902f01f47d52621",
         "main.lua": "da1cfae73d1ab399e5594bb5ea89ac967384a21856e432b4f8d0419b84c2632f",
-        "screen.lua": "b847bb86b978c86252e9f9dd2d66e858cdafab723b9b7c969c0aebf9589e907b",
-        "taboo_cards_en.lua": "3c20f1bdfefb537ea16bb9bb7e8352033a7715eb6accc3a9118748e101c3527f",
+        "screen.lua": "6b002baf35863110a308f734d50788c24cbdc82fc8f68a4813543e94553b5cb4",
+        "taboo_cards_en.lua": "4b2bebec1de7cb60d4cc4e158996e5be17a152cbe70de5b750dbaa121feb5d8b",
         "taboo_cards_fr.lua": "605b1d035250611170e74bdffb5165215b658d05dc5b330a884a504301949856",
+        "taboo_history.lua": "dffe725ee12e4006a2147ee1a2d7fc622cb6c4950ec0b99b32b0ff19ed58c693",
         "images/taboo.png": "b4957fa2185b9a55b136b657450e2835c8f18a6f5a37b883133e4d5ed611970e"
       },
       "common_lib": "common",
@@ -3572,8 +3588,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/taboo.koplugin/master/",
       "zip": {
         "path": "dist/taboo.zip",
-        "sha256": "67f8f6b541d5c39f42ffba69db6a0275edca7bc97f341c4c535cf4b6f54db96c",
-        "size": 393424
+        "sha256": "7c06fde758d06e51776f8a58f298751535775f860cfe12c74096bce104ed6676",
+        "size": 407310
       }
     },
     {
@@ -3582,7 +3598,7 @@
       "fullname": "Tapa",
       "description": "Shade cells to form a connected wall",
       "category": "logic",
-      "version": "1.4.2",
+      "version": "1.4.3",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -3593,7 +3609,7 @@
         "images/tapa.png"
       ],
       "sha256": {
-        "_meta.lua": "c7a443add44959d650a4c9f6903cf33067310e718d2ccf2f26d8e9f50c6591b5",
+        "_meta.lua": "fbe3453c6dea8b9a300f7fa80b125a501845e158b21fdcdb27019205464f56de",
         "board.lua": "b63eb9400ccd68b3ea2c2bed0b7edd4c38dccb34a1c592c86779d2254684b096",
         "board_widget.lua": "a48bcbdac48cdbd6cd17fd192db79ba023432381898adbde0e5a4cc1d6457fb1",
         "i18n_fr.lua": "57a1aa6f2ea4be9c51779a15c96bf87fae04ea0645df302e1ed844dedcc5c968",
@@ -3605,8 +3621,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/tapa.koplugin/main/",
       "zip": {
         "path": "dist/tapa.zip",
-        "sha256": "31944091d75424d1441383db38cf891a4aca1fc871a795f4f27185cf13b077dd",
-        "size": 127168
+        "sha256": "2782d519eda02f59ef47ceea61bfe3e8d4d798212b1cd2d064fad4dd9ecf9522",
+        "size": 137388
       }
     },
     {
@@ -3615,7 +3631,7 @@
       "fullname": "Tatami",
       "description": "Fill the grid with 1x2 dominoes",
       "category": "logic",
-      "version": "1.3.2",
+      "version": "1.3.3",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -3626,7 +3642,7 @@
         "images/tatami.png"
       ],
       "sha256": {
-        "_meta.lua": "97fca91b241980d6137ecae929e8887a7c0a8eaba6c0674573bc772b0e80ab70",
+        "_meta.lua": "b7991b58415652bf79746f6eed326da6319a11a03e00721f8d0c7ae4ddd406ef",
         "board.lua": "e6119b4e057489b749c8fdfcf3fa816ef9f5e1d7c4c4549296d16daca3a86a90",
         "board_widget.lua": "eb2c808cb3f0ba9857ef17798939e1926b278101a7c5dc7816b4cf72f339997f",
         "i18n_fr.lua": "6ba3fd57eeff8043939bb9faf51b1ec9a82b4293359a095bc8e7fa9c5fca9c21",
@@ -3638,8 +3654,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/tatami.koplugin/main/",
       "zip": {
         "path": "dist/tatami.zip",
-        "sha256": "18a128d3c937eb8a54e06a66472fdee264624c988ecb29836b97b6c8d3b7e9bf",
-        "size": 101023
+        "sha256": "27ff1a947e98347eaaaeaae21bdb5c8b9d70215b524f842db35d5fc7bc0c467b",
+        "size": 111251
       }
     },
     {
@@ -3648,7 +3664,7 @@
       "fullname": "Tents and Trees",
       "description": "Logic puzzle: pair each tree with an adjacent tent, no touching tents.",
       "category": "logic",
-      "version": "1.4.2",
+      "version": "1.4.3",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -3659,7 +3675,7 @@
         "images/tents.png"
       ],
       "sha256": {
-        "_meta.lua": "d3eed07971711efbe1d92e836f651ea21c7bf3a207f50f3a1b528a1d0aa8c703",
+        "_meta.lua": "f89f2785624ae91cac9d1a90f59a96d12dff5f8007e88760a565ce31d0671884",
         "board.lua": "16cb9fd65144e302c123f966af7c4d551cf5024f3e292090b7e11605ee2f43c5",
         "board_widget.lua": "ab620610fc45141b1ccdc557566227b579178a9fb3e58caffd948385b625d7a9",
         "i18n_fr.lua": "22ec6dd53df1407084c68075f02388ad31c1e698508377311e09039b4bb28808",
@@ -3671,8 +3687,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/tents.koplugin/main/",
       "zip": {
         "path": "dist/tents.zip",
-        "sha256": "9b1df3685228292e4b3eb1b86b33c07796a862e40b3176497e9b84ceb48c69a4",
-        "size": 113824
+        "sha256": "51c6066213e0648eaa504b1548eee42d11595339fb2ab6e46fc93ccf7117ca74",
+        "size": 124048
       }
     },
     {
@@ -3681,7 +3697,7 @@
       "fullname": "Text Adventures",
       "description": "Play interactive fiction: a Z-machine interpreter for Infocom and Inform stories (.z3 .z5 .z8 .zblorb), with autosave.",
       "category": "words",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "files": [
         "_meta.lua",
         "i18n_fr.lua",
@@ -3694,7 +3710,7 @@
         "images/textadventure.png"
       ],
       "sha256": {
-        "_meta.lua": "727bde57e4cbe3006b72709c777740aade4cc16db2f4a0349ed9bcfd079e48ab",
+        "_meta.lua": "fa78393655caf7ea908997d44f74cdedfe15b216fcb196f200c94c9aedd75963",
         "i18n_fr.lua": "1578b516796235fbeccd839926139fa478b3b7dcc2bdc973094e16c0a0b60d99",
         "library.lua": "345f733427b368097c7982e5055488018ddbd964a33afb059c5e335574cef981",
         "main.lua": "c91b0ce2b6e2747e79806deb8ff161398fd57ab818005b052dfea7134bf6419b",
@@ -3708,8 +3724,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/textadventure.koplugin/main/",
       "zip": {
         "path": "dist/textadventure.zip",
-        "sha256": "8547a5587b8321c6dfd6c1bbd16f39c69e5c41b089ea15343d220909ff816abe",
-        "size": 188152
+        "sha256": "04c2e547175bed69d69940632fef9f1e70520ce8ffe808c921f194b3a16e9c1c",
+        "size": 198407
       }
     },
     {
@@ -3743,7 +3759,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/thermosudoku.koplugin/main/",
       "zip": {
         "path": "dist/thermosudoku.zip",
-        "sha256": "24daa42f3728c15f9b1050ece0cc75cc7c9aa031082bb7fd451b113b4eba4efc",
+        "sha256": "fb2577985e728113f1f116ed3a047db2ac8007af8c3412bb155c19df22eedd77",
         "size": 121696
       }
     },
@@ -3753,7 +3769,7 @@
       "fullname": "Three Rounds",
       "description": "Team guessing party game in three rounds with the same deck of famous names: describe freely, then one word only, then mime.",
       "category": "party",
-      "version": "1.0.2",
+      "version": "1.1.0",
       "files": [
         "_meta.lua",
         "cards_en.lua",
@@ -3766,13 +3782,13 @@
         "images/threerounds.png"
       ],
       "sha256": {
-        "_meta.lua": "e6bd42e3035dabc5c131ea9e3ec0dd646be7611a130f3d5336445a6ffb5d7104",
+        "_meta.lua": "09d7436fc54ffec2ae58c14da26a9bc7eeeeb9a9359ca28aa918b2d30ee3cbd6",
         "cards_en.lua": "d81ad2301cd38322ec866456f222640a306cb7a38a18e583bccc57a2b2d73200",
         "cards_fr.lua": "f4528c0fbefb5ed9e21828cce1742e640731abae838d6f342a18ba8f8455e3ed",
-        "game.lua": "26249ad9d613ec33bfe8c91e11c401fa51d94ef8d6ac504793a9b3b8f77dfef2",
+        "game.lua": "dcc1640d64499ec75996ebf6f44710033478437f5f237683a9581e156f7cff07",
         "i18n_fr.lua": "a425e9f10a4069102c9b4411f5ca40b43b3e3ffc1d2f630782ae77649b719be0",
         "main.lua": "aa02d3827e234531d44c5330ecb527984997e6d00b35e019faecb4343a9488a3",
-        "screen.lua": "e2b7e4e74cc61f1a8fcaa945eec22bf0fe99ee1ba6e7b15cc5a43e006865126e",
+        "screen.lua": "3a354fdf6dad8753ebae6796880102aad5bf6e35d1d63014d7191206f6a615e3",
         "widgets.lua": "08216130392a25da5dcd3eb34859bb2aaf14091c73b484463e4b1faa478df5a7",
         "images/threerounds.png": "bc4eb164841691fb9c5470b7e9fc52a821d80868ef72b0e5a0cf5908942dc0e3"
       },
@@ -3780,8 +3796,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/threerounds.koplugin/main/",
       "zip": {
         "path": "dist/threerounds.zip",
-        "sha256": "92d3302a31a324465e2d84aff8f58dc35d94374a81bf82d82d9ebba31430151c",
-        "size": 171012
+        "sha256": "e27ebc84a47b2554cfa1fa3282a871c5fb969e7a3672b357930d5f88f8574591",
+        "size": 181735
       }
     },
     {
@@ -3790,7 +3806,7 @@
       "fullname": "Train Tracks",
       "description": "Lay a railway from A to B that matches the row and column counts",
       "category": "logic",
-      "version": "1.0.2",
+      "version": "1.0.3",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -3803,7 +3819,7 @@
         "images/tracks.png"
       ],
       "sha256": {
-        "_meta.lua": "8d9b8e73544f6bba34da3072882793e5631fb33814bcd9d7c1014fc4e48b4ebd",
+        "_meta.lua": "12014c28e07c390cfe0c81d5ffb160ce4a00159c022840685e1ab378083976b1",
         "board.lua": "e27f0a049960ccbd993083dc08f1fc0c27704685063cce5a13ca51fa08e66903",
         "board_widget.lua": "78e82cccdcf3e1e49523bdd6d5f01205607b1365a72381216f1bd44a8ba2581d",
         "gen_progress.lua": "3bab3b609a65e34a861cbfd8478c56515793fdfc3fd15c3e5a76dc2bb084856e",
@@ -3817,8 +3833,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/tracks.koplugin/main/",
       "zip": {
         "path": "dist/tracks.zip",
-        "sha256": "e134485c50f98b66e7680237dbebedb96b7ce0e9df1010b39e7080b000274b50",
-        "size": 124848
+        "sha256": "3ee2086cd21e9836ec2c51f70e6853f589a03e22888984e34658402173e040a9",
+        "size": 135076
       }
     },
     {
@@ -3827,7 +3843,7 @@
       "fullname": "Traffic Jam",
       "description": "Sliding-block puzzle: slide the cars and trucks along their lanes to get the black car out of the car park. 2400 levels in four difficulties, hints and a Daily Challenge.",
       "category": "classic",
-      "version": "1.0.2",
+      "version": "1.0.3",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -3841,7 +3857,7 @@
         "images/trafficjam.png"
       ],
       "sha256": {
-        "_meta.lua": "9677563d53b4dd36b5f0a92e6f24a5f4d713533d432b87ce7997849891572c47",
+        "_meta.lua": "ff3fc62733c99b700389167340002fa73ea980c3a82a394fbe1cfd1f8d918b54",
         "board.lua": "07e86eaf904d4a86782867910c0b04a04d5124b1d06ef5a1ec59f4d2111d5002",
         "board_widget.lua": "d0eeb9b74378995f29143aa534af99c1471f26a738a9d3cebd047da4a79d269f",
         "i18n_fr.lua": "3d5ccde5c19b40d09f678173fe495a67a7e153ab1081097e860bf3796c2c2e99",
@@ -3856,8 +3872,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/trafficjam.koplugin/main/",
       "zip": {
         "path": "dist/trafficjam.zip",
-        "sha256": "09a300ef8a9d621348383ec7cdc0ba4451b8f610dd9695cf2eebc8bc6f837091",
-        "size": 142813
+        "sha256": "fd280b91c1d864d26e8ea213e73e328ad18bda87e312377373b38694b2ba3589",
+        "size": 153057
       }
     },
     {
@@ -3866,7 +3882,7 @@
       "fullname": "Tsumego",
       "description": "Go life-and-death problems: kill or live in the corner, with proven answers.",
       "category": "board",
-      "version": "1.0.2",
+      "version": "1.1.0",
       "files": [
         "_meta.lua",
         "bank.lua",
@@ -3880,13 +3896,13 @@
         "images/tsumego.png"
       ],
       "sha256": {
-        "_meta.lua": "3b4224e50008f17b5835ebf5fbdbc3dbc92c7296441f6eea782a3b005a55a262",
+        "_meta.lua": "4f9033ba85cc2aab209128327da382cf1fc972c5a5ada5a4643dadcb7e457878",
         "bank.lua": "ac917c7f7734cda897ffedfadddab9015cc35a9a87eae599b6f7bedf90ee3fe9",
         "board.lua": "dc3551711ac60730a38a4426dea78f20f8b6192113b027dd92675c1f5f686890",
         "board_widget.lua": "159693f012ce2c8ad7feb5196cc9e70706205f1e9811aa34c5649ddde094d271",
         "i18n_fr.lua": "23c28bc5add5f17d341aeab00b7f11890c95228ea940501a81010abe827a896a",
         "main.lua": "4bcd9eddb6c18aea68033cc16bc59282c78b40093deaef364459de17956cd6f5",
-        "problems.lua": "8f81a093146ea2680b78ed82d69abf0d8bffe4b26d7ce9a476090c46c48ac2b7",
+        "problems.lua": "8cc9c18311288bbd804cce06f35ce7cbfaaa2ea9edc4a8d02b1d5db879117f0c",
         "screen.lua": "bff986a4cde3a1f30c01f114f9c2b5d9aed44f0af7431a823ffdba9ee6f49d58",
         "solver.lua": "72eed5ed06f87518a04b2c6d6552659ecaad6a431d1fa5724c2f53d01817cc0d",
         "images/tsumego.png": "c463b30a5f306881650928f8745ba91403c67c5d51ec144a57bd8ca70660d267"
@@ -3895,8 +3911,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/tsumego.koplugin/main/",
       "zip": {
         "path": "dist/tsumego.zip",
-        "sha256": "71c6d17c1ec17ac42db204e8fabe3053c9410700309dfdb4b05565547088575a",
-        "size": 129296
+        "sha256": "77f5b59610d898d2b3ac84e50ab53c4f1471cc9669398ba3a505dfde1c981047",
+        "size": 142443
       }
     },
     {
@@ -3905,7 +3921,7 @@
       "fullname": "Undercover",
       "description": "Social deduction for 3–12 players: find the undercover, Mr. White or the spy — one reader passed round the table.",
       "category": "party",
-      "version": "1.0.2",
+      "version": "1.1.0",
       "files": [
         "_meta.lua",
         "game.lua",
@@ -3940,12 +3956,12 @@
         "images/undercover.png"
       ],
       "sha256": {
-        "_meta.lua": "40acd4ca688e19a64509311e9f760bbd492dd98171a3534cf9d73fdfff3c4fd7",
-        "game.lua": "7e3af1e699ca1ac7e147c0586005c2b62148dcbe4f400d1ad4478a7306bfabd8",
+        "_meta.lua": "7f6f4f0a41b18ac018ac44225aa9565d22748c2f832cba2c80ae63739146bdf4",
+        "game.lua": "a3cb7af70a8d0992fc49a0fc060c6331804e4a8096a9b0ffefbe94e8912b9e40",
         "i18n_fr.lua": "69862aba50afa8c3ca9f104eeb06c12b98c8d3eb5b30fbfbedec73e507b52e39",
         "main.lua": "e28f0a5c06796640266d8d961c04fffe883c537f4047af234723210ba69ebdff",
         "players.lua": "28bc496607cc14107e5557c396f5f8af45505cbd010b07122c1e060a3cc9512c",
-        "screen.lua": "1da17779d1630fdffe30d9661afe0a835b32fd0eaa1d1107c8ad01a81168332a",
+        "screen.lua": "7942c24dd36a8727ce86fd7bbcdaa698fe65b26ec5ae6e5ce95e55ef1fffd406",
         "content/en/pairs_food.lua": "57eebe3c175fe5d3a7587060699672ab646bfcd45753db5ac42f1664782c64ea",
         "content/en/pairs_geo.lua": "7b99d6839c5df97a5c63390f1a776ed051855172d51e616b403aca1eac9855d2",
         "content/en/pairs_history.lua": "3c59e4bec2427117d9895b4ed7497312a8d23cde6aa5ac9afd81fc5cbbf4de34",
@@ -3976,8 +3992,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/undercover.koplugin/main/",
       "zip": {
         "path": "dist/undercover.zip",
-        "sha256": "1209afb642d72eb1079aa1e5470dc391057da2902fba18f82d2d89ec1cbe218a",
-        "size": 197778
+        "sha256": "1c72cf791b9456bb377ca1a225597f1c61e28b3b1aaaf43bfe39c679936ccad2",
+        "size": 209359
       }
     },
     {
@@ -3986,7 +4002,7 @@
       "fullname": "Werewolf",
       "description": "Game master for the classic werewolf party game: 6 to 18 players, secret roles, night narration and day votes.",
       "category": "party",
-      "version": "1.0.2",
+      "version": "1.1.0",
       "files": [
         "_meta.lua",
         "aliases_en.lua",
@@ -3996,6 +4012,7 @@
         "game.lua",
         "i18n_fr.lua",
         "main.lua",
+        "narration.lua",
         "pack_famous_en.lua",
         "pack_famous_fr.lua",
         "pack_medieval_en.lua",
@@ -4008,7 +4025,7 @@
         "images/werewolf.png"
       ],
       "sha256": {
-        "_meta.lua": "0f82adc73069cd6046f0d76881d73bc6f6d063c2d7262497d8fcac0538d32dd7",
+        "_meta.lua": "4f843b12c8e72074215a1ead1bd8afe59886a7aceef7ea61dcdcf90be0d584a0",
         "aliases_en.lua": "cd1565f17d03e9febff72d49a1f02bcfaa1d00e67b84ef32586c347f2055f47f",
         "aliases_fr.lua": "9703cb186a69cfec8506f7c68df7d9f1815379f7ad37e4fb2f0dbbf82f6bd6c5",
         "content_en.lua": "3f016ada60b43f5f441230b7ed1e6ce867b7ebf2b4939c5f2c040b338983748e",
@@ -4016,23 +4033,24 @@
         "game.lua": "e3dc4c669f246813aa6b2d40a5d53cbe0a09b8b14d7ef953cbeab09c6a01d63b",
         "i18n_fr.lua": "29a9db6495b752c19673a4eb11c0d6f56260b6d1b9eb2ae9714c88bee1f5df4d",
         "main.lua": "6c233610fa8c8ce62e3e247bee9b768432f5584b893d98d476cb4ce9d267ce15",
+        "narration.lua": "289386ebb58553e6a1517f8c82dab644949709a164d37f1b8b3888832a2d952a",
         "pack_famous_en.lua": "7c57fad10ab8c8054a02c0dab39e58cf197467f80adabb328d7e6a6d34b193f7",
         "pack_famous_fr.lua": "2a612153c9d73f733468f26d207781e4ef1c670372bf0384375669daaa51a471",
-        "pack_medieval_en.lua": "da2732ac5ad07ca02d2a6d852de0b57d1880818d42cc25ea38a1cd81af9603a3",
-        "pack_medieval_fr.lua": "3125ac1014b9f22f48b664b87493e23de6de1ab7033ee94c6ee11342f053a65f",
-        "pack_pirate_en.lua": "4b265040aa592d421c1ab626423b3c69b2dd53b634fdb6f28da5ca5612a4a0fb",
-        "pack_pirate_fr.lua": "07e142df1e7fe1aa2ba184ee4c40644ca73a1bae87f1972b7fd188be4a064b38",
-        "pack_space_en.lua": "5c2d3f7006ffda22d4f69e74e6b51862c56cec185b35952e56679c10a2dfc731",
-        "pack_space_fr.lua": "180c5978672d1ac3855fec00131ec2716f81cd3d9025172dac1616ff25ad3eaf",
-        "screen.lua": "ff07ab4082a8ae0ac23706b9ef6af46757131d448953abeed35ee28e43ab3cc4",
+        "pack_medieval_en.lua": "cc1cd31413e27103eea8d9c4238bfc690bee5f4dd0e9e5efd178640577a2b6df",
+        "pack_medieval_fr.lua": "51812888f786eb2b445ff733624545da493bd45a40c3f990bfd6a04c910354c5",
+        "pack_pirate_en.lua": "70de259de0d697288b8d4cb9b788088d7c228af2d3bfadcded60592b03962307",
+        "pack_pirate_fr.lua": "c6d120bbbf9b917a6ad34cc707ab64a8830e073a323a7058283fa1562cf87a63",
+        "pack_space_en.lua": "aa12b597823ea2caa0ca22677a4573e4a8edb388f06932e83dc6f1163758404e",
+        "pack_space_fr.lua": "96005fd3428865a6c8d50d9828112f6e4c50e2ad83c446789d6394c1c4f8a90c",
+        "screen.lua": "8fd814f80f4387087c4defe3a94f82c76b096d79dcdc4ced5f1bf56eeeb358c6",
         "images/werewolf.png": "ea86624a71a5a29be067337b2b36a77a3fb7f8c1d8138aabc59c4bf3e051fd16"
       },
       "common_lib": "common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/werewolf.koplugin/main/",
       "zip": {
         "path": "dist/werewolf.zip",
-        "sha256": "5ba737e1560414e2413051673d63e25d3541313eba1291658a5ffc46c9320cec",
-        "size": 228076
+        "sha256": "a9218f7d40d5270c8d1627e6d65a7072604c35d2079c39725b7c333bfff810a3",
+        "size": 261692
       }
     },
     {
@@ -4041,7 +4059,7 @@
       "fullname": "Who Am I?",
       "description": "Forehead guessing party game: hold the reader facing the others, guess the famous name, animal or film from their clues before the time runs out.",
       "category": "party",
-      "version": "1.0.2",
+      "version": "1.1.0",
       "files": [
         "_meta.lua",
         "game.lua",
@@ -4087,11 +4105,11 @@
         "images/whoami.png"
       ],
       "sha256": {
-        "_meta.lua": "b7e71ced47aac34732d4311b8b8eba801d33344b35d870c956e8c421efa7adf3",
-        "game.lua": "1c985bce92923aa15ba1781d198c72acc1fb826e65c3fdd29fd9d43dfc4d30f7",
+        "_meta.lua": "5be1a2ca59cca13dab0b8238ff8d8f27cdaf90f7610f899053a7f2e3987b62f0",
+        "game.lua": "9b9c0203c62bd4d2909c8cfdd27bef94d8107a88f76a5ef215c3e73346b135b2",
         "i18n_fr.lua": "cfc2fe7307cb0e1b45fedc8cf203a75bda619b4e74af807fb531c11930ae00a8",
         "main.lua": "d7340ea858c98630754002744867e446c702e65c92a80e707ba2a6c213d021d5",
-        "screen.lua": "9a6179f6b49f7b42b4ba9965caa7156d18710cf0868ce926c4ad8759b9dfa3ee",
+        "screen.lua": "8b01623d9c104c057fcc2dec120dfc26ce4a68b8e0294b6267996ae9a3895e4e",
         "cards/en/actions.lua": "60c1cbdfd6921d271a0e6bb528baf5315e9ff3c0ff74fc0ba31edb6acf88566a",
         "cards/en/animals.lua": "7cd9ae0fecc881a400afceff060ff7f4028b521ca5045b8a075bbfbb70fbfa94",
         "cards/en/art.lua": "a8eec8066fda220e790c8cccc12ea3bca26dec1989f75ef5fff087629defd0ac",
@@ -4134,8 +4152,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/whoami.koplugin/main/",
       "zip": {
         "path": "dist/whoami.zip",
-        "sha256": "477a82595060cd1ab89940aef13c020542325448214e2074085ed1ceb5ab1bd7",
-        "size": 228497
+        "sha256": "c76a6dafff4ae1bfcb45cbe79f4b161e6288d5e1e43dea9b9436a82bea0bf716",
+        "size": 239379
       }
     },
     {
@@ -4169,7 +4187,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/windoku.koplugin/main/",
       "zip": {
         "path": "dist/windoku.zip",
-        "sha256": "6db9693ef90ef5a54f4aa8df1b983a04540908f58a0127433ed111342c791f84",
+        "sha256": "7c8d14aaa0e44cd25a3c80c3b92771fb3b0bc685b4e4bdb8cf67d01438f9729a",
         "size": 120517
       }
     },
@@ -4179,7 +4197,7 @@
       "fullname": "Word Ladder",
       "description": "Change one word into another, one letter at a time.",
       "category": "words",
-      "version": "1.1.2",
+      "version": "1.1.3",
       "files": [
         "_meta.lua",
         "blocklist.lua",
@@ -4193,7 +4211,7 @@
         "images/wordladder.png"
       ],
       "sha256": {
-        "_meta.lua": "3397f42371cc44045d815a1b65ee54878aa030d373ae61f79fb2ebddb893307e",
+        "_meta.lua": "66c45ca551564d6e6233de1305f670107ca4c3960a1d59f1f72fc6e732114cd9",
         "blocklist.lua": "f52357609b48a05edac4f937cad211fcbd96369e165ddc4635b19e069bc661fa",
         "board.lua": "f710b75f63f93cb815802a9f7c26d377c58c729c4fdc3ccb68b1a7b888d0efb2",
         "board_widget.lua": "33d02bf3d7869c533f35749bb5aef8abc16b71e439f24ad59fece7a829a39d9c",
@@ -4208,8 +4226,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/wordladder.koplugin/main/",
       "zip": {
         "path": "dist/wordladder.zip",
-        "sha256": "83c85e8f74f03b26ecd56c86dc21a88ae37a5c7a886399f157473d10ec34aa0c",
-        "size": 134054
+        "sha256": "4d4efe66794f3810988c8e44f09bec9f4fd988c9531b7cbb5d0cc772c9994e38",
+        "size": 144299
       }
     },
     {
@@ -4218,7 +4236,7 @@
       "fullname": "Wordle",
       "description": "Guess the hidden word in 6 tries. Letter hints guide each attempt.",
       "category": "words",
-      "version": "1.4.0",
+      "version": "1.5.0",
       "files": [
         "_meta.lua",
         "blocklist.lua",
@@ -4234,16 +4252,16 @@
         "images/wordle.png"
       ],
       "sha256": {
-        "_meta.lua": "a34a36264bc0f49af5d19d9145eeca0eacd0d860cbd25ef0cab63eea5291bd52",
+        "_meta.lua": "d9581f9a08bcf9d9b863fd7d4f0a9a0e41e6dcd573fc4760eec89a3f1c2eb3d4",
         "blocklist.lua": "f52357609b48a05edac4f937cad211fcbd96369e165ddc4635b19e069bc661fa",
-        "board.lua": "5199f5e5a0813fad003ab8f949bada5a90cb56b36c581e6760b757303046cbbd",
+        "board.lua": "1a4b99eba9bbf9189688c787a4bf3582b99c35b5c491d9ddda4bd1113cd7d20c",
         "board_widget.lua": "3d2f9202c43cf9bbc4c5fb2fe4161e2cade6035362b75912cccff3ad453de701",
-        "guesses_en.lua": "5ab9d4f9145008d05b221e553455bb40bf17ad7a7469d3e8772a53091d1f905e",
+        "guesses_en.lua": "666f36ef92cf69ec816283efecb8435bac0d47f751f7f5caa6abd03ea425126c",
         "i18n_fr.lua": "c59d8f26e4178e72c19776f0382c34e7a198a7047e2b61def12ba694425c247b",
         "main.lua": "3cf12efbfebaf32b004f9ac2be65c56f208e719e62725adba07322606e387487",
-        "party_game.lua": "4665b3b7834d04ba233b66e71d199209fe3f706df538f2ea24af477b5f0b8735",
-        "screen.lua": "9d633dc911b6470af82aca5e00d96008e2f8d35cf052dece338d27dd6d63ec2e",
-        "words_en.lua": "6783db36cce28b6057daa97e2811f6a51f9ee12a03a829cff7fc582ed143a6e4",
+        "party_game.lua": "7f2863205e9d8f676c6299b33db756a2d7b84869778989aee05661fcc8bcb2f8",
+        "screen.lua": "a05d3a3a83f434a4877ceaccc4cc4c41fa4789d2d9d879354792138f1785c7a8",
+        "words_en.lua": "35bf683adde12342c5ad39bfaf99d9560ca47f2e6d17099d7dd0b8a29de86bfe",
         "words_fr.lua": "15808cbaa700db366b02116b971f0d112076aee1caebe057dbb9fcc070b6f686",
         "images/wordle.png": "cda193ce857c355e770edf8af42de522bc9507af628b4f14dc426f71e38ad5d6"
       },
@@ -4251,8 +4269,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/wordle.koplugin/main/",
       "zip": {
         "path": "dist/wordle.zip",
-        "sha256": "0ea4b1d292679d106a03bb3c9aa5e09ecaecdc084ba2af8513a968f9f20a0a75",
-        "size": 153597
+        "sha256": "cd3c6bad3abd4b4486942b74a1ca1e1d90f835bb8e977384c322bf572211984f",
+        "size": 164956
       }
     },
     {
@@ -4261,7 +4279,7 @@
       "fullname": "Word Pyramid",
       "description": "Word-guessing party game for four, two teams of two, inspired by the classic French TV word game: one-word clues that cost bricks, riddles, ping-pong, against the clock, proper names, then the Great Pyramid final.",
       "category": "party",
-      "version": "1.0.2",
+      "version": "1.1.0",
       "files": [
         "_meta.lua",
         "game.lua",
@@ -4282,11 +4300,11 @@
         "images/wordpyramid.png"
       ],
       "sha256": {
-        "_meta.lua": "5f537ee2b14e273a565168385616d00817ad0813b4efb123f15d016be101078f",
-        "game.lua": "f824487b3e6d014d4c915b7d2c80b4083e4cfdee13bf4d731a2a94c740bd1c73",
+        "_meta.lua": "5cd0421ea5b58bf8b422a08845097571e9c89a8e9181841398fe374063a0dced",
+        "game.lua": "8e93581d1d906a6da2ef1571c88937ef0b259f088834ecc0ef91d1ae84a0e831",
         "i18n_fr.lua": "99ef1cf904030c2485ae238b6160ba30d42d8566372d6615dd090890ceb3e1c9",
         "main.lua": "6403b4d24fb5943e96142e697e690ffb119a32c525d65d41daae3cd129d4da9a",
-        "screen.lua": "5abd85444c28df88c6825e5bb17659dabce13e1997f53654a8bb73b41d7fef37",
+        "screen.lua": "f3d92194786757814eebb30b37b6b5c5518c1de76ce6d1744ca5dd051630ddcc",
         "widgets.lua": "f41245d686c2606f5e1d5f0ac5d3f6bd46f2931aed948954e0ce63c27df8793c",
         "content/en/clock.lua": "e32103e71a71fa3216edcf79b8dda98d70ebe8fe9b62a5b8528c7b7dc05f0cef",
         "content/en/names.lua": "99dc3e7a46f90a24aebb914ccef0da71710a888dd0566a1c8304af3e81c5bdca",
@@ -4304,8 +4322,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/wordpyramid.koplugin/main/",
       "zip": {
         "path": "dist/wordpyramid.zip",
-        "sha256": "d4d6d29d3a00ff6c0e0cfb7aafd2995b680cfbd1ac5570cda47b2e8adacf5f1b",
-        "size": 241129
+        "sha256": "ef94d1f762b30c04d62aac31a66ae21c822b752fd42792aebcd599684ac67d74",
+        "size": 251872
       }
     },
     {
@@ -4314,7 +4332,7 @@
       "fullname": "Word Search",
       "description": "Find hidden words in a letter grid",
       "category": "words",
-      "version": "1.4.0",
+      "version": "1.4.1",
       "files": [
         "_meta.lua",
         "blocklist.lua",
@@ -4329,7 +4347,7 @@
         "images/wordsearch.png"
       ],
       "sha256": {
-        "_meta.lua": "31dcbf975d5ad393a3d249783c5f01f6eb6caf1af4af496ae2ad9b064dbfe982",
+        "_meta.lua": "bc3ce0b596ac6762f9db191dc0d716c0dbff1c61e6f46f7f1f1c0e2bae896ab2",
         "blocklist.lua": "f52357609b48a05edac4f937cad211fcbd96369e165ddc4635b19e069bc661fa",
         "board.lua": "ece6404fa73ff4d019157b33c4829e948119828ffcdf64ac335065784b9649dd",
         "board_widget.lua": "fb10aad88abcb045c3b049f2bd326147c71639731bb2b41102545bae2a2d3595",
@@ -4345,8 +4363,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/wordsearch.koplugin/main/",
       "zip": {
         "path": "dist/wordsearch.zip",
-        "sha256": "fc3de8187d413bba19d1825c4f949348fe5e2d488684b38ed64e12d2a90f1ea9",
-        "size": 218844
+        "sha256": "d597a89716d3313907f89f02aeffc7b44b453a104bca89b936cb18dfb236af26",
+        "size": 229088
       }
     },
     {
@@ -4355,7 +4373,7 @@
       "fullname": "Yahtzee",
       "description": "Classic five-dice game: roll, hold and fill your score sheet. Solo, hotseat or against the computer.",
       "category": "cards",
-      "version": "1.0.2",
+      "version": "1.0.3",
       "files": [
         "_meta.lua",
         "ai.lua",
@@ -4367,7 +4385,7 @@
         "images/yahtzee.png"
       ],
       "sha256": {
-        "_meta.lua": "359af5bba5853b3b10c28d7c84a2e837595c712b300a880a7d3e3ed5d2193da9",
+        "_meta.lua": "edc27d1c33f62e016e5b3e58fcc0d6ea8d9e5226934e748aa915f4ea185a3bfe",
         "ai.lua": "bebaa4b1b823fb4f898e2fc677dc04980af5f6024a28193b2fc4725f4ce33632",
         "board.lua": "3f2aa89cb6cf3a1beb7e04cacde5d0184de60758d861a8d5fdf56d57ff0785aa",
         "board_widget.lua": "18522cabed089866e93fb5f25ec452cdc9991d6703295aeaa392857159ecf77d",
@@ -4380,8 +4398,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/yahtzee.koplugin/main/",
       "zip": {
         "path": "dist/yahtzee.zip",
-        "sha256": "8b76ce49a46c33c346874837522c073428d62597e54ebef5c4fb43168e374f5e",
-        "size": 135408
+        "sha256": "bd4d1857ea18c2d263af55bac668c2b3f2ed83eb15f2c3232d68bd0acf6fa180",
+        "size": 145640
       }
     }
   ]
