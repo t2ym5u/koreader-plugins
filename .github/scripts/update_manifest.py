@@ -30,6 +30,15 @@ Per plugin it also writes:
 It also regenerates game-common/game_categories.lua from categories.json
 (not with --output), the category table the device itself reads.
 
+  - zip           {"path": "dist/<id>.zip", "sha256": ..., "size": N} when
+                  dist/<id>.zip exists (built by scripts/build_release.sh),
+                  hashed from the working tree: PluginManager 1.7.0+ installs
+                  a plugin from that one file instead of file by file. The
+                  zips are rebuilt on every release, so the release order is
+                  update_manifest -> build_release -> update_manifest again
+                  (the second pass only refreshes these hashes). No zip ->
+                  field removed.
+
 Top level, it also writes `patch_repos` -- the "owner/name" GitHub
 repositories whose KOReader user patches PluginManager's "Install
 everything" installs -- from patch_repos.json next to this script (file
@@ -51,6 +60,7 @@ from datetime import date
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent.parent
+DIST_DIR = ROOT / "dist"
 CATEGORIES_PATH = Path(__file__).resolve().parent / "categories.json"
 PATCH_REPOS_PATH = Path(__file__).resolve().parent / "patch_repos.json"
 # Same rule PluginManager applies on the device (pmlogic.lua patchRepos):
@@ -442,6 +452,22 @@ def file_hashes(base_dir: Path, files: list[str]) -> dict[str, str]:
     return hashes
 
 
+def apply_zip(entry: dict) -> None:
+    """Point `entry` at its committed dist/<id>.zip, or drop a stale `zip`
+    field when there is none. Hashed from the working tree, unlike file_hashes():
+    on a release the freshly built zips are not committed yet when this runs."""
+    path = DIST_DIR / f"{entry['id']}.zip"
+    if path.is_file():
+        data = path.read_bytes()
+        entry["zip"] = {
+            "path":   f"dist/{path.name}",
+            "sha256": hashlib.sha256(data).hexdigest(),
+            "size":   len(data),
+        }
+    else:
+        entry.pop("zip", None)
+
+
 def apply_category(entry: dict, categories: dict[str, str], missing: list[str]) -> None:
     cat = categories.get(entry["id"])
     if cat:
@@ -547,6 +573,7 @@ def main() -> int:
         else:
             entry.pop("min_koreader", None)
         apply_category(entry, categories, no_category)
+        apply_zip(entry)
         plugins.append(ordered_entry(entry))
 
     if skipped:
@@ -564,6 +591,7 @@ def main() -> int:
         if old_entry["id"] not in found_ids and old_entry["id"] not in EXCLUDED_PLUGINS:
             old_entry = dict(old_entry)
             apply_category(old_entry, categories, no_category)
+            apply_zip(old_entry)
             plugins.append(ordered_entry(old_entry))
     plugins.sort(key=lambda p: p.get("id", ""))
 
