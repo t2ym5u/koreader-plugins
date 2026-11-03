@@ -461,3 +461,31 @@
 	path = mahjong.koplugin
 	url = https://github.com/t2ym5u/mahjong.koplugin.git
 	branch = main
+[submodule "quickcalc.koplugin"]
+	path = quickcalc.koplugin
+	url = https://github.com/t2ym5u/quickcalc.koplugin.git
+	branch = main
+[submodule "converter.koplugin"]
+	path = converter.koplugin
+	url = https://github.com/t2ym5u/converter.koplugin.git
+	branch = main
+[submodule "scoresheet.koplugin"]
+	path = scoresheet.koplugin
+	url = https://github.com/t2ym5u/scoresheet.koplugin.git
+	branch = main
+[submodule "randomizer.koplugin"]
+	path = randomizer.koplugin
+	url = https://github.com/t2ym5u/randomizer.koplugin.git
+	branch = main
+[submodule "stopwatch.koplugin"]
+	path = stopwatch.koplugin
+	url = https://github.com/t2ym5u/stopwatch.koplugin.git
+	branch = main
+[submodule "almanac.koplugin"]
+	path = almanac.koplugin
+	url = https://github.com/t2ym5u/almanac.koplugin.git
+	branch = main
+[submodule "reference.koplugin"]
+	path = reference.koplugin
+	url = https://github.com/t2ym5u/reference.koplugin.git
+	branch = main

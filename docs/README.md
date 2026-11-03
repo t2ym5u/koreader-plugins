@@ -6,7 +6,7 @@ A collection of game and utility plugins for [KOReader](https://koreader.rocks/)
 
 ---
 
-## 🎮 Games (105 plugins)
+## 🎮 Games (107 plugins)
 
 | Plugin | Description |
 |---|---|
@@ -82,8 +82,10 @@ A collection of game and utility plugins for [KOReader](https://koreader.rocks/)
 | [Pickomino](https://github.com/t2ym5u/pickomino.koplugin) | Dice game — steal worms from opponents |
 | [Puissance 4](https://github.com/t2ym5u/connect4.koplugin) | Connect Four |
 | [Quiz](https://github.com/t2ym5u/quiz.koplugin) | General knowledge quiz for the table, in French and English |
+| [Random Draw](https://github.com/t2ym5u/randomizer.koplugin) | Coin flip, random number, pick a name, turn order, teams and raffle draws for games around the table. |
 | [Ripple Effect](https://github.com/t2ym5u/rippleeffect.koplugin) | Fill regions, larger regions allow larger numbers |
 | [Sandwich Sudoku](https://github.com/t2ym5u/sandwichsudoku.koplugin) | Sudoku with sandwich sum clues |
+| [Score Sheets](https://github.com/t2ym5u/scoresheet.koplugin) | Score sheets for real card and board games: Tarot, Belote / Coinche, word tile game, Rummy and a free sheet for any other game. |
 | [Shikaku](https://github.com/t2ym5u/shikaku.koplugin) | Divide grid into rectangles |
 | [Signpost](https://github.com/t2ym5u/signpost.koplugin) | Link every cell into one numbered chain by following the arrows |
 | [Skyscraper](https://github.com/t2ym5u/skyscraper.koplugin) | Place buildings so visibility clues are satisfied |
@@ -123,9 +125,14 @@ A collection of game and utility plugins for [KOReader](https://koreader.rocks/)
 | Plugin | Description |
 |---|---|
 | [Book Drop](https://github.com/t2ym5u/bookdrop.koplugin) | Drop books into a WebDAV folder (Koofr, Nextcloud…) from your phone or computer; the reader fetches them on its own when online. |
+| [Calculator](https://github.com/t2ym5u/quickcalc.koplugin) | Calculator with scientific functions, memory and history, plus VAT and percentages, bill split with tip, and loan and savings forms. |
+| [Calendar](https://github.com/t2ym5u/almanac.koplugin) | Month calendar with week numbers, public holidays, moon phases and a date calculator. |
 | [Dashboard](https://github.com/t2ym5u/dashboard.koplugin) | Home screen: continue reading, resume a game, daily challenge, your games by category, play stats (replaces Startup Menu) |
 | [Plugin Manager](https://github.com/t2ym5u/pluginmanager.koplugin) | Check for updates and install plugins from this repo |
 | [opdsdir](opdsdir.koplugin/) | Per-catalog download folder and AES-256 encryption for the OPDS browser |
+| [Quick Reference](https://github.com/t2ym5u/reference.koplugin) | Periodic table, radio, Greek and Morse alphabets, multiplication tables, SI prefixes and an on-screen ruler. |
+| [Stopwatch & Timer](https://github.com/t2ym5u/stopwatch.koplugin) | Stopwatch with laps, several countdown timers at once and an interval timer. Flashes the screen when time is up. |
+| [Unit Converter](https://github.com/t2ym5u/converter.koplugin) | Convert units, cooking measures, oven temperatures, currencies (ECB rates), time zones, Roman numerals and number bases. |
 
 ---
 
