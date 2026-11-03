@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-11-02",
+  "updated": "2026-11-03",
   "repo": "t2ym5u/koreader-plugins",
   "common": {
     "version": "1.9.1",
@@ -64,6 +64,7 @@
       "sudoku_grid_utils.lua": "312b48cb98184b003378579302f5b2d84551a78a43437f7197eaad029ce0129b"
     }
   },
+  "date": null,
   "patch_repos": [
     "t2ym5u/koreader-user-patches"
   ],
@@ -646,7 +647,12 @@
         "icons/white.svg",
         "icons/white_king.svg"
       ],
-      "raw_base_url": "https://raw.githubusercontent.com/kbarni/checkers.koplugin/main/"
+      "raw_base_url": "https://raw.githubusercontent.com/kbarni/checkers.koplugin/main/",
+      "zip": {
+        "path": "dist/checkers.zip",
+        "sha256": "fa0986fe6ba4b1f513da4eae6603dd0e59ecdfaf54d2bfdac9ae23e41b317b5a",
+        "size": 23124
+      }
     },
     {
       "id": "chess",
@@ -4344,6 +4350,5 @@
         "size": 124855
       }
     }
-  ],
-  "date": null
+  ]
 }
