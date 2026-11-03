@@ -43,6 +43,9 @@
     "fireworks": "cards", "liarsdice": "cards", "detective": "logic",
     "gamebook": "words", "textadventure": "words",
 
-    "bookdrop": "tools", "dashboard": "tools", "opdsdir": "tools", "pluginmanager": "tools", "startmenu": "tools"
+    "scoresheet": "party", "randomizer": "party",
+
+    "bookdrop": "tools", "dashboard": "tools", "opdsdir": "tools", "pluginmanager": "tools", "startmenu": "tools",
+    "quickcalc": "tools", "converter": "tools", "stopwatch": "tools", "almanac": "tools", "reference": "tools"
   }
 }
