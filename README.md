@@ -2,7 +2,7 @@
 
 > ⚠️ **Stability notice** — Tested on **Kobo** devices running KOReader. Other devices (Kindle, PocketBook, Android) may work but are untested.
 
-A collection of 110 game and utility plugins for [KOReader](https://koreader.rocks/).
+A collection of 109 game and utility plugins for [KOReader](https://koreader.rocks/).
 
 **→ Full documentation: [docs/README.md](docs/README.md)**
 **→ Planned and delivered improvements: [docs/ROADMAP.md](docs/ROADMAP.md)**
@@ -22,19 +22,19 @@ A collection of 110 game and utility plugins for [KOReader](https://koreader.roc
 </tr>
 <tr>
 <td align="center"><a href="https://github.com/t2ym5u/binairo.koplugin"><img src="images/binairo.png" width="160"></a><br><sub>Binairo</sub></td>
-<td align="center"><a href="https://github.com/t2ym5u/boggleparty.koplugin"><img src="images/boggle-party.png" width="160"></a><br><sub>Boggle Party</sub></td>
 <td align="center"><a href="https://github.com/t2ym5u/boggle.koplugin"><img src="images/boggle.png" width="160"></a><br><sub>Boggle</sub></td>
 <td align="center"><a href="https://github.com/t2ym5u/bridges.koplugin"><img src="images/bridges.png" width="160"></a><br><sub>Bridges</sub></td>
+<td align="center"><a href="https://github.com/t2ym5u/cave.koplugin"><img src="images/cave.png" width="160"></a><br><sub>Cave</sub></td>
 </tr>
 <tr>
-<td align="center"><a href="https://github.com/t2ym5u/cave.koplugin"><img src="images/cave.png" width="160"></a><br><sub>Cave</sub></td>
 <td align="center"><a href="https://github.com/t2ym5u/chess.koplugin"><img src="images/chess.png" width="160"></a><br><sub>Échecs</sub></td>
 <td align="center"><a href="https://github.com/t2ym5u/fifteen.koplugin"><img src="images/fifteen-puzzle.png" width="160"></a><br><sub>Fifteen Puzzle</sub></td>
 <td align="center"><a href="https://github.com/t2ym5u/fillomino.koplugin"><img src="images/fillomino.png" width="160"></a><br><sub>Fillomino</sub></td>
+<td align="center"><a href="https://github.com/t2ym5u/futoshiki.koplugin"><img src="images/futoshiki.png" width="160"></a><br><sub>Futoshiki</sub></td>
 </tr>
 <tr>
-<td align="center"><a href="https://github.com/t2ym5u/futoshiki.koplugin"><img src="images/futoshiki.png" width="160"></a><br><sub>Futoshiki</sub></td>
 <td align="center"><a href="https://github.com/t2ym5u/sudokukiller.koplugin"><img src="images/killer-sudoku.png" width="160"></a><br><sub>Sudoku Killer</sub></td>
+<td></td>
 <td></td>
 <td></td>
 </tr>

@@ -35,7 +35,7 @@
     "mastermind": "classic", "memory": "classic", "minesweeper": "classic", "sokoban": "classic",
     "mentalmath": "classic",
 
-    "boggleparty": "party", "doubleornothing": "party", "pictionary": "party", "quiz": "party",
+    "doubleornothing": "party", "pictionary": "party", "quiz": "party",
     "taboo": "party", "trafficjam": "classic",
     "klotski": "classic", "pegsolitaire": "classic", "mahjong": "classic",
     "codewords": "party", "passeword": "party", "wordpyramid": "party", "categories": "party", "estimation": "party", "partyquestions": "party",
