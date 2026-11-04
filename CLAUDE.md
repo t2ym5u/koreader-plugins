@@ -47,8 +47,10 @@ release game-common too, or devices keep the old table.
 Every active `t2ym5u/*.koplugin` repo carries the topic
 `koreader-plugins` (GitHub topics are lowercase-hyphenated only). Skip:
 `_skeleton.koplugin` (template), `game-common`/`sudoku-common` (shared
-libraries, not plugins), `checkers.koplugin` (external remote owned by
-kbarni, not t2ym5u — see `.gitmodules`), and any set-aside plugin above.
+libraries, not plugins), and any set-aside plugin above.
+`checkers.koplugin` was kbarni's repo until 2026-11-04; it is now the fork
+`t2ym5u/checkers.koplugin` (upstream remote: kbarni) and is treated like
+the others.
 `scripts/new_plugin.sh` does not add this topic automatically yet — add
 it by hand when onboarding a new plugin:
 ```bash
