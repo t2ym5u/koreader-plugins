@@ -64,7 +64,7 @@ done
 # variant mounts sudoku-common and never sees game-common, yet both write the
 # same game_stats.lua, so the schema must stay identical. game-common's copy is
 # the canonical one.
-DUPLICATED=(stats_exporter.lua)
+DUPLICATED=(stats_exporter.lua module_guard.lua)
 for fname in "${DUPLICATED[@]}"; do
   a="$ROOT/game-common/$fname"
   b="$ROOT/sudoku-common/$fname"

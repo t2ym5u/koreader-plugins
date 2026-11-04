@@ -649,6 +649,15 @@ def main() -> int:
         current["patch_repos"] = patch_repos
         current["plugins"] = plugins
 
+    # Top-level `retired`: the set-aside plugin ids. PluginManager (1.7.3+)
+    # offers to delete an installed copy of any of them -- once out of the
+    # catalogue nothing else ever updates or removes it, and KOReader keeps
+    # loading its outdated common/ (an old arrowwords made every game crash).
+    # Older PluginManagers ignore the key. Also just before `plugins`.
+    current = {k: v for k, v in current.items() if k not in ("retired", "plugins")}
+    current["retired"] = sorted(EXCLUDED_PLUGINS)
+    current["plugins"] = plugins
+
     output_path.write_text(
         json.dumps(current, indent=2, ensure_ascii=False) + "\n",
         encoding="utf-8",
