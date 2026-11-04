@@ -27,7 +27,7 @@ FILES=(
 # Set aside / not ours to push to.
 EXCLUDE=("_skeleton.koplugin" "game-common" "sudoku-common" \
          "kakuro.koplugin" "arrowwords.koplugin" \
-         "startmenu.koplugin")
+         "startmenu.koplugin" "boggleparty.koplugin" "doubleornothing.koplugin")
 
 if [ ! -d "$TEMPLATE_DIR" ]; then
   echo "Error: template dir not found: $TEMPLATE_DIR" >&2; exit 1
