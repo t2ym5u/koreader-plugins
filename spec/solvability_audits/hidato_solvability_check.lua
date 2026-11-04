@@ -130,7 +130,7 @@ local function analyze(n, difficulty, n_trials)
     for i = 1, n_trials do
         math.randomseed(i * 7919)
         local b = Board:new({ n = n, difficulty = difficulty })
-        local solutions, exhausted = countCompletions(b, 2, 200000)
+        local solutions, exhausted = countCompletions(b, 2, 20000000)
         if exhausted then inconclusive = inconclusive + 1
         elseif solutions == 1 then unique = unique + 1
         else ambiguous = ambiguous + 1 end

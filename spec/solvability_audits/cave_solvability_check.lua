@@ -18,43 +18,24 @@
 -- measured pre-fix: severe, graduated ambiguity (e.g. n=6/hard 0/10
 -- unique, n=8/easy only 1/15).
 --
--- The uniqueness counter needed TWO sound pruning rules to be tractable at
--- all (plain backtracking with only a "no 2x2 shaded" check took up to
--- ~56s and sometimes never finished even at n=8):
---   - bidirectional future-connectivity: after every tentative cell
---     decision, verify all currently-decided SHADED cells are still
---     mutually reachable via (shaded-or-undecided) cells, and separately
---     that all currently-decided UNSHADED cells are mutually reachable via
---     (unshaded-or-undecided) cells -- mirrors numberlink's per-color
---     reachability check and tapa's connectivity fix elsewhere in this
---     audit. Sound: a decided cell that can never reconnect through
---     remaining undecided cells can never be part of a valid completion.
---   - per-clue visibility bounds: for each clue, compute the guaranteed
---     minimum and maximum possible visibility count given what's decided
---     so far in each of its 4 rays (an unresolved ray could still extend
---     anywhere up to the next decided-shaded cell or the boundary);
---     reject immediately if the clue's own target falls outside that
---     range. This alone cut worst-case latency from ~8s to sub-100ms in
---     testing -- the connectivity pruning handles the region-shape rules,
---     this handles the clue-matching rule, and together they made the
---     search tractable at every supported size.
--- Full validation (no 2x2 shaded, both regions connected, shaded touches
--- border, every clue matches exactly) is only checked once every cell is
--- decided.
+-- The independent counter below prunes with three sound rules after every
+-- tentative cell: no shaded 2x2 (tested AFTER setting the cell, so the
+-- block it completes counts), per-clue visibility bounds, and
+-- connectivity as the Rules screen states it (clear cells connected,
+-- every shaded cell reaching the grid edge). It branches on the cell just
+-- past a clue's clear run.
 --
--- Fixed generate+verify style (nothing to dig -- clue candidates ARE
--- exactly the unshaded cells of a given shape, same shape as hitori/
--- nurikabe/masyu): for each generated cave shape, escalates the clue-keep
--- ratio in bounded steps (nominal, then higher, then a guaranteed full
--- reveal of every unshaded cell) before drawing a fresh shape, verifying
--- with the counter above at each step. n=6: 100% unique at every
--- difficulty, fast (<0.4s). n=7/n=8: mostly 100%, with n=7/medium (~65%)
--- and n=8/medium (~75%) as honest partial spots where generate()'s own
--- verification sometimes can't conclude in time and falls back to the
--- best structurally-valid (not proven-unique) candidate -- the same
--- "never worse than before" fallback shape as masyu/nurikabe elsewhere in
--- this audit, not a regression. Worst case ~6.6s at n=8/hard, within this
--- fleet's precedent for its hardest settings.
+-- 2026-11-04 (cave 1.6.0): the earlier version of this script tested the
+-- 2x2 rule before setting the cell (so it counted rule-breaking grids as
+-- extra solutions and reported false ambiguity) and, like the plugin
+-- until 1.6.0, demanded one single shaded group. Both fixed; on 400
+-- random clue sets it returns exactly the plugin's solution counts.
+--
+-- Since 1.6.0 the generator digs clues out of a fully numbered grid and
+-- keeps a removal only while board.lua's deduce() (clue rays, 2x2,
+-- walled-off cells, plus bottlenecks at Hard -- no trial and error) still
+-- fills the whole grid, so every puzzle should be unique AND solvable
+-- without guessing; both are gated here at 100%.
 --
 -- Exit code is non-zero if any size/difficulty drops below its threshold.
 
@@ -89,38 +70,50 @@ local function countSolutions(clues, n, limit, node_budget)
         return false
     end
 
+    -- Connectivity as the Rules screen states it: decided clear cells must
+    -- still reach each other through clear-or-undecided cells, and every
+    -- decided shaded cell must still reach the grid edge through shaded-or-
+    -- undecided cells (shaded cells may form several groups, each touching
+    -- the edge -- cave 1.6.0 counts the same way; earlier versions of both
+    -- this script and the plugin demanded one single shaded group).
     local visited_stamp = {}
     for r = 1, n do visited_stamp[r] = {} end
     local stamp = 0
     local queue = {}
     local function regionOK(want_shaded)
         stamp = stamp + 1
-        local start_r, start_c
+        local qh, qt = 1, 0
         local decided_count = 0
         for r = 1, n do for c = 1, n do
-            if state[r][c] == want_shaded then
-                decided_count = decided_count + 1
-                if not start_r then start_r, start_c = r, c end
-            end
+            if state[r][c] == want_shaded then decided_count = decided_count + 1 end
         end end
         if decided_count == 0 then return true end
-        local qh, qt = 1, 1
-        queue[1] = { start_r, start_c }
-        visited_stamp[start_r][start_c] = stamp
-        local found_decided = 1
+        local function push(r, c)
+            visited_stamp[r][c] = stamp
+            qt = qt + 1
+            queue[qt] = { r, c }
+        end
+        if want_shaded then
+            -- seed from the edge: every border cell that may be shaded
+            for r = 1, n do for c = 1, n do
+                if (r == 1 or r == n or c == 1 or c == n)
+                    and (state[r][c] == true or state[r][c] == nil) then push(r, c) end
+            end end
+        else
+            for r = 1, n do for c = 1, n do
+                if qt == 0 and state[r][c] == false then push(r, c) end
+            end end
+        end
+        local found_decided = 0
         while qh <= qt do
             local cell = queue[qh]; qh = qh + 1
             local r, c = cell[1], cell[2]
+            if state[r][c] == want_shaded then found_decided = found_decided + 1 end
             for _, d in ipairs(DIRS) do
                 local nr, nc = r + d[1], c + d[2]
                 if inBounds(nr, nc, n) and visited_stamp[nr][nc] ~= stamp then
                     local v = state[nr][nc]
-                    if v == want_shaded or v == nil then
-                        visited_stamp[nr][nc] = stamp
-                        qt = qt + 1
-                        queue[qt] = { nr, nc }
-                        if v == want_shaded then found_decided = found_decided + 1 end
-                    end
+                    if v == want_shaded or v == nil then push(nr, nc) end
                 end
             end
         end
@@ -144,47 +137,73 @@ local function countSolutions(clues, n, limit, node_budget)
         end end
         return true
     end
-    local function touchesBorderFinal()
-        for r = 1, n do for c = 1, n do
-            if state[r][c] and (r == 1 or r == n or c == 1 or c == n) then return true end
-        end end
-        return false
-    end
-    local function hasBothFinal()
-        local sh, un = false, false
-        for r = 1, n do for c = 1, n do
-            if state[r][c] then sh = true else un = true end
-        end end
-        return sh and un
+    local clue_cells = {}
+    for r = 1, n do for c = 1, n do
+        if clues[r][c] then clue_cells[#clue_cells + 1] = { r, c, clues[r][c] } end
+    end end
+
+    -- Per-clue visibility bounds (sound): each ray sees at least its run
+    -- of decided-clear cells and at most its run of not-shaded cells.
+    local function cluesInRange()
+        for _, cl in ipairs(clue_cells) do
+            local lo, hi = 1, 1
+            for _, d in ipairs(DIRS) do
+                local nr, nc = cl[1] + d[1], cl[2] + d[2]
+                local sure = true
+                while inBounds(nr, nc, n) and state[nr][nc] ~= true do
+                    hi = hi + 1
+                    if state[nr][nc] == nil then sure = false end
+                    if sure then lo = lo + 1 end
+                    nr, nc = nr + d[1], nc + d[2]
+                end
+            end
+            if cl[3] < lo or cl[3] > hi then return false end
+        end
+        return true
     end
 
-    local cells = {}
-    for r = 1, n do for c = 1, n do if state[r][c] == nil then cells[#cells+1] = { r, c } end end end
+    -- Next cell: the first undecided cell just past a clue's clear run
+    -- (most constrained), else the first undecided cell in reading order.
+    local function pick()
+        for _, cl in ipairs(clue_cells) do
+            for _, d in ipairs(DIRS) do
+                local nr, nc = cl[1] + d[1], cl[2] + d[2]
+                while inBounds(nr, nc, n) and state[nr][nc] == false do
+                    nr, nc = nr + d[1], nc + d[2]
+                end
+                if inBounds(nr, nc, n) and state[nr][nc] == nil then return nr, nc end
+            end
+        end
+        for r = 1, n do for c = 1, n do
+            if state[r][c] == nil then return r, c end
+        end end
+        return nil
+    end
 
-    local function search(idx)
+    local function search()
         if solutions >= limit or exhausted then return end
         nodes = nodes + 1
         if nodes > node_budget then exhausted = true; return end
-        if idx > #cells then
-            if hasBothFinal() and touchesBorderFinal() and allCluesOKFinal() then
+        local r, c = pick()
+        if not r then
+            if allCluesOKFinal() then
                 solutions = solutions + 1
             end
             return
         end
-        local r, c = cells[idx][1], cells[idx][2]
         for _, val in ipairs({ false, true }) do
-            local ok = true
-            if val == true and has2x2ShadedAt(r, c) then ok = false end
-            if ok then
-                state[r][c] = val
-                if not (regionOK(true) and regionOK(false)) then ok = false end
-                if ok then search(idx + 1) end
-                state[r][c] = nil
-            end
+            -- Set the cell first: the 2x2 test must see the block this
+            -- very cell completes (the pre-1.6.0 script tested before
+            -- setting it, so it let such grids through as extra solutions).
+            state[r][c] = val
+            local ok = not (val == true and has2x2ShadedAt(r, c))
+                and cluesInRange() and regionOK(true) and regionOK(false)
+            if ok then search() end
+            state[r][c] = nil
             if solutions >= limit or exhausted then break end
         end
     end
-    search(1)
+    search()
     return solutions, exhausted
 end
 
@@ -192,7 +211,9 @@ local ok = true
 
 local function analyze(n, difficulty, n_trials, node_budget, threshold, gate)
     local unique, ambiguous, inconclusive = 0, 0, 0
-    local worst_gen = 0
+    local worst_gen, clue_total, clear_total = 0, 0, 0
+    local level = M.LEVELS[difficulty]
+    local deducible = 0
     for i = 1, n_trials do
         math.randomseed(i * 7919)
         local b = Board:new({ n = n, difficulty = difficulty })
@@ -200,27 +221,36 @@ local function analyze(n, difficulty, n_trials, node_budget, threshold, gate)
         b:generate(difficulty)
         local gen_t = os.clock() - t0
         if gen_t > worst_gen then worst_gen = gen_t end
+        -- Shape sanity (see the audit doc): a silent fallback to a trivial
+        -- grid would pass the uniqueness test, so check size and that some
+        -- clear cells are left unnumbered.
+        assert(b.n == n and #b.clues == n, "wrong board size")
+        local clues, clear = 0, 0
+        for r = 1, n do for c = 1, n do
+            if b.clues[r][c] then clues = clues + 1 end
+            if not b.solution[r][c] then clear = clear + 1 end
+        end end
+        clue_total, clear_total = clue_total + clues, clear_total + clear
+        if M.deduce(b.clues, n, level.tier) then deducible = deducible + 1 end
         local solutions, exhausted = countSolutions(b.clues, n, 2, node_budget)
         if exhausted then inconclusive = inconclusive + 1
         elseif solutions == 1 then unique = unique + 1
         else ambiguous = ambiguous + 1 end
     end
     local rate = unique / n_trials
-    local status = rate >= threshold and "OK" or (gate and "FAIL" or "KNOWN-LIMITATION")
+    local status = (rate >= threshold and deducible == n_trials) and "OK"
+        or (gate and "FAIL" or "KNOWN-LIMITATION")
     if status == "FAIL" then ok = false end
-    print(string.format("[%s] n=%d %s: unique=%d/%d ambiguous=%d inconclusive=%d (threshold %.0f%%, worst gen %.2fs)",
-        status, n, difficulty, unique, n_trials, ambiguous, inconclusive, threshold * 100, worst_gen))
+    print(string.format("[%s] n=%d %s: unique=%d/%d ambiguous=%d inconclusive=%d, solvable without guessing %d/%d, clues %.0f%% of clear cells (threshold %.0f%%, worst gen %.3fs)",
+        status, n, difficulty, unique, n_trials, ambiguous, inconclusive, deducible, n_trials,
+        100 * clue_total / clear_total, threshold * 100, worst_gen))
     io.flush()
 end
 
-analyze(6, "easy", 20, 1500000, 0.90, true)
-analyze(6, "medium", 20, 1500000, 0.90, true)
-analyze(6, "hard", 20, 1500000, 0.90, true)
-analyze(7, "easy", 20, 1500000, 0.90, true)
-analyze(7, "medium", 20, 1500000, 0.50, false) -- gated off: known partial spot, see header
-analyze(7, "hard", 20, 1500000, 0.80, true)
-analyze(8, "easy", 20, 1500000, 0.90, true)
-analyze(8, "medium", 20, 1500000, 0.50, false) -- gated off: known partial spot, see header
-analyze(8, "hard", 20, 1500000, 0.90, true)
+for _, n in ipairs({ 6, 7, 8 }) do
+    for _, diff in ipairs({ "easy", "medium", "hard" }) do
+        analyze(n, diff, 20, 1500000, 1.0, true)
+    end
+end
 
 os.exit(ok and 0 or 1)
