@@ -1,9 +1,37 @@
 # koreader-plugins
 
-Monorepo of ~70 KOReader game/utility plugins, one git submodule per
+Monorepo of ~115 KOReader game/utility plugins, one git submodule per
 `*.koplugin` (plus `game-common`/`sudoku-common` shared-library submodules).
 See `README.md` for build/release commands and `docs/README.md` for the
 full plugin list.
+
+## Owner's rules (always)
+
+- **« Je valide avant ».** Show the results (versions, test counts, renders
+  you looked at) and get an explicit GO before publishing anything: push,
+  tag, repo creation, archive, delete, or changes on the owner's e-reader. A
+  GO for one batch does not cover the next.
+- Talk to the owner in **French**. Code, comments and CHANGELOGs stay in
+  English.
+- Target device is a **Kobo Aura**: 758×1024 at 212 dpi, 256 MB RAM, single
+  core (about 25× slower than this Mac for Lua), touch only, no sound.
+- Content: family-friendly, no dictators, terrorists or serial killers, no
+  trademarks in names; puzzles must never require guessing.
+- Commit trailer: `Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>`.
+
+## Developer docs (read before non-trivial work)
+
+- `docs/dev/ARCHITECTURE.md`: plugins, game-common/sudoku-common, lazy
+  loading, **module guard**, i18n global table, menus/categories, Dashboard,
+  Plugin Manager.
+- `docs/dev/RELEASE.md`: release order (libs first, fleet bump, manifest
+  twice, zips, CI), onboarding, retiring a plugin, forks.
+- `docs/dev/TESTING.md`: specs + bit shim, i18n check, headless renders,
+  speed targets, memory probes, real-install test with a stale plugin, the
+  device over USB.
+- `docs/dev/PITFALLS.md`: everything that already broke once.
+- `docs/dev/NEW_PLUGIN.md`: checklist and reference plugins.
+- `scripts/dev/README.md`: the developer tools.
 
 ## Set-aside plugins
 
