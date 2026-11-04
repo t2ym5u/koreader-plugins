@@ -291,7 +291,7 @@
 	branch = main
 [submodule "checkers.koplugin"]
 	path = checkers.koplugin
-	url = https://github.com/kbarni/checkers.koplugin.git
+	url = https://github.com/t2ym5u/checkers.koplugin.git
 	branch = main
 [submodule "pluginmanager.koplugin"]
 	path = pluginmanager.koplugin

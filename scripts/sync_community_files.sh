@@ -25,7 +25,7 @@ FILES=(
 )
 
 # Set aside / not ours to push to.
-EXCLUDE=("_skeleton.koplugin" "game-common" "sudoku-common" "checkers.koplugin" \
+EXCLUDE=("_skeleton.koplugin" "game-common" "sudoku-common" \
          "kakuro.koplugin" "arrowwords.koplugin" \
          "startmenu.koplugin")
 

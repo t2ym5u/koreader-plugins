@@ -25,7 +25,7 @@ A collection of game and utility plugins for [KOReader](https://koreader.rocks/)
 | [Calcul Mental](https://github.com/t2ym5u/mentalmath.koplugin) | Mental arithmetic training |
 | [Categories](https://github.com/t2ym5u/categories.koplugin) | Draw a letter and a list of categories, write an answer for each before the timer ends, then score unique and shared answers — the classic pen-and-paper word game. |
 | [Cave](https://github.com/t2ym5u/cave.koplugin) | Navigate through a cave |
-| [Checkers](https://github.com/kbarni/checkers.koplugin) | Draughts / Checkers (upstream by kbarni, AI opponent) |
+| [Checkers](https://github.com/t2ym5u/checkers.koplugin) | Draughts / Checkers with an AI opponent (fork of kbarni/checkers.koplugin) |
 | [Chess Puzzles](https://github.com/t2ym5u/chesspuzzles.koplugin) | Rated chess tactics: find the winning move in 10,000 puzzles from real games (Lichess database, CC0). Adaptive difficulty that follows your rating, themes, hints and a Daily Challenge. |
 | [Chiffres et Lettres](https://github.com/t2ym5u/numletters.koplugin) | Numbers and letters game (fr) |
 | [Code Words](https://github.com/t2ym5u/codewords.koplugin) | Two teams, one grid of 25 words: spymasters give one-word clues, operatives find their agents and avoid the assassin. |
