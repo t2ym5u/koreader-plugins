@@ -120,7 +120,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/2048.koplugin/main/",
       "zip": {
         "path": "dist/2048.zip",
-        "sha256": "f299a0e7cdc4bc255ec438903198e529df293b7b6b66bac1e5b39ce1f3a257f9",
+        "sha256": "efbe46ac183643fd9ad56dd1d1d5da80ee73e0e57cc08603d689afdeb21e13d2",
         "size": 121553
       }
     },
@@ -161,7 +161,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/almanac.koplugin/main/",
       "zip": {
         "path": "dist/almanac.zip",
-        "sha256": "44863e73b31f1e36035b4425b6bca301be6984494bf0fbf7cb18c6167cc2318a",
+        "sha256": "98866cc8ee6f0b8c180547a94fb6df7da9a0ef5afbd597e530771d0673d0e4ef",
         "size": 164436
       }
     },
@@ -212,7 +212,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/anagram.koplugin/main/",
       "zip": {
         "path": "dist/anagram.zip",
-        "sha256": "aaa8e93e560b7096e187966693144ace3cd891efc5435cb34e621927042ec1f2",
+        "sha256": "c867e17ce57213fe3df5779f58db1d629bff702459a97e14c846920fef75fd26",
         "size": 234142
       }
     },
@@ -247,7 +247,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/aquarium.koplugin/main/",
       "zip": {
         "path": "dist/aquarium.zip",
-        "sha256": "c3195a217602e1a734c30cd2c8dfaf87d55d2487970d90346de4f6f1110640fa",
+        "sha256": "362ba677f67183c2eb4ad5f1e43e9a931d269593ec6e415dc9c252699b25ff30",
         "size": 145939
       }
     },
@@ -282,7 +282,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/arrowsudoku.koplugin/main/",
       "zip": {
         "path": "dist/arrowsudoku.zip",
-        "sha256": "b6b49af980a3e9a02df1428a5d443d66261399d7f78b6366b99f63f7e333c882",
+        "sha256": "33786191900d987278dddb6005a3cc8bf16d27aae75d9a25a1a1b1e4208b7c68",
         "size": 146256
       }
     },
@@ -315,7 +315,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/awale.koplugin/main/",
       "zip": {
         "path": "dist/awale.zip",
-        "sha256": "7664747c3e1d331543777edf42816be5e28a27838805639ff24330eb2cc9d361",
+        "sha256": "3920544c733d66521dec17ec81c1b91baceb429fab10db09d61d7a6601ee8449",
         "size": 132963
       }
     },
@@ -348,7 +348,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/backgammon.koplugin/main/",
       "zip": {
         "path": "dist/backgammon.zip",
-        "sha256": "2bec6be2a5cbfb9dfc8f93b44c8da9c8dacd34b8d721fea26a53f1d5fc07860a",
+        "sha256": "94894890b749cde4ba3cc4d26b9c6d41e892a3b492ad1fda1f2e342523ba22e8",
         "size": 138555
       }
     },
@@ -381,7 +381,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/balance.koplugin/main/",
       "zip": {
         "path": "dist/balance.zip",
-        "sha256": "4bd924c3e00797181338fad4e8c8e87d71a9f1905fe0cbbb2f48fdb21ed8d4af",
+        "sha256": "9cabb3b3a1ece817600b96db84183590d07b0997097faa45161e8d532a7bb53e",
         "size": 139586
       }
     },
@@ -414,7 +414,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/battleship.koplugin/main/",
       "zip": {
         "path": "dist/battleship.zip",
-        "sha256": "961f100dfbc108721cb5b9cd741b146d5e6785c13ae0e42e3ad66fd3034078a2",
+        "sha256": "1d65c9b6f5e0cd356ae0355a06dda6859f0775bd096f816d9506fd50fb17f437",
         "size": 132185
       }
     },
@@ -449,7 +449,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/betweenlines.koplugin/main/",
       "zip": {
         "path": "dist/betweenlines.zip",
-        "sha256": "41b5dbd2206fe74128e8ba65bc88e2f8a00b29e8c3563879d4a15b12442ab4da",
+        "sha256": "f4358d845745276a3895a9cb01f4c854574e9e212881f107f26d797886748be5",
         "size": 145677
       }
     },
@@ -482,7 +482,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/binairo.koplugin/main/",
       "zip": {
         "path": "dist/binairo.zip",
-        "sha256": "a9944d64e1c7971efb90b35de84b5b5e96eb85f7a2f57c3ab0676afdca46b601",
+        "sha256": "873f6a3e7cb3233e558db81569a1dff19abdc0be39af445ccfb70a49dcd5be22",
         "size": 142366
       }
     },
@@ -527,7 +527,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/boggle.koplugin/main/",
       "zip": {
         "path": "dist/boggle.zip",
-        "sha256": "2393c55ae57e5da5370425bfe482b130c6f4f5079686d9668c6a4ff605d6859b",
+        "sha256": "42847bc9ba729b4a6778788db451b6d7928e25e88e9a74865c1de3cf80291e1c",
         "size": 747325
       }
     },
@@ -559,7 +559,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/bookdrop.koplugin/main/",
       "zip": {
         "path": "dist/bookdrop.zip",
-        "sha256": "15f5fb86315afc45481ea17565d74cab1a035d67ddb64b4028d13a48263a7bba",
+        "sha256": "61cc271c6565f453657f36b51d449552a5662042aadf4a590becde84da9e0945",
         "size": 66582
       }
     },
@@ -592,7 +592,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/bridges.koplugin/main/",
       "zip": {
         "path": "dist/bridges.zip",
-        "sha256": "a92b506b452224d5c773f0793feb811ec3ca9110d6fc42b3b2a2bd65b36e04d9",
+        "sha256": "6fb8b378894d7ace27c15537ebcfd56f1cfe218bd43bed58058b38c114e34003",
         "size": 137791
       }
     },
@@ -629,7 +629,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/categories.koplugin/main/",
       "zip": {
         "path": "dist/categories.zip",
-        "sha256": "11663dd4884925b64e5563be88aee0fd547158ab19934b6e7ab505126cce5741",
+        "sha256": "ecd7c79f2cacaa5ac8742e72c45618a3a90049a3877598a1be3f61057d8ceb36",
         "size": 202482
       }
     },
@@ -662,7 +662,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/cave.koplugin/main/",
       "zip": {
         "path": "dist/cave.zip",
-        "sha256": "0f36929e39ddc1f1068ef4ee5be830fcd56900af15bd5672363f73c22fc78e43",
+        "sha256": "739ce6130fe31523ab27aff63543b030bbaa3a04eb28ed8b8ddcd9d98b86fa37",
         "size": 136155
       }
     },
@@ -699,7 +699,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/checkers.koplugin/main/",
       "zip": {
         "path": "dist/checkers.zip",
-        "sha256": "14953caf7866b56952450d012734e2bcac1a3d8a3d14117981c409cfded3a8c9",
+        "sha256": "da577239fb0edd5fcea9aef403bbdebd7d62e2b1ccc77ac15befa709f2cfca9a",
         "size": 145290
       }
     },
@@ -768,7 +768,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/chess.koplugin/main/",
       "zip": {
         "path": "dist/chess.zip",
-        "sha256": "1241c82b72bb5cb098add2120a2f3a2b9db002ee5dadd91a99ea8826445a1556",
+        "sha256": "2fde16adee2595327c9a1c9f4d102b3b3ebbeecfec13b278f57314af266d152f",
         "size": 231812
       }
     },
@@ -841,7 +841,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/chesscourse.koplugin/main/",
       "zip": {
         "path": "dist/chesscourse.zip",
-        "sha256": "3b3d60733f1ef4c4eb8fc1bc7b7ae8fd4d1dda29d8866e4ba463de9970743e53",
+        "sha256": "fddd92b1d5b7520cbfc134d568814c0a9a3fb632b216edad7b33a51b12f59e26",
         "size": 213378
       }
     },
@@ -918,7 +918,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/chesspuzzles.koplugin/main/",
       "zip": {
         "path": "dist/chesspuzzles.zip",
-        "sha256": "7cdd1d1c97ccb9512feeb9feaae34dfe30a131646623cb1c7b4358dabb3f357b",
+        "sha256": "595f9501b383b9b1a6a557c5ee87cbe0b8519877f60f3ac4fbc8ceb6b05f2b56",
         "size": 638083
       }
     },
@@ -979,7 +979,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/codewords.koplugin/main/",
       "zip": {
         "path": "dist/codewords.zip",
-        "sha256": "4f4df27fd86a251451d10cc50cfda7c61d78e1653e70a20b2268a854e72f010b",
+        "sha256": "e195a2ba708b0e73f8eab3966baec81a57c110f63a3ee67ea812e9ecc5326065",
         "size": 189222
       }
     },
@@ -1012,7 +1012,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/colornonogram.koplugin/main/",
       "zip": {
         "path": "dist/colornonogram.zip",
-        "sha256": "37d509578bfa0d17302ad03678cb150a724e49fc0924d30c5f0f7cf4672f5d05",
+        "sha256": "074df77c54707edf434a57160fb6bec3fb5712d43df7ff48917d06f7446fb558",
         "size": 135501
       }
     },
@@ -1045,7 +1045,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/connect4.koplugin/main/",
       "zip": {
         "path": "dist/connect4.zip",
-        "sha256": "1708b6ebd9512af7f52adc0245eeb16f01df38dff66614122229dadf321d5f60",
+        "sha256": "b855e26a22683324995b938d6946a740866b8df678b9ce60b4adc9826d8b9642",
         "size": 125616
       }
     },
@@ -1088,7 +1088,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/converter.koplugin/main/",
       "zip": {
         "path": "dist/converter.zip",
-        "sha256": "bf861756ec0f227739224ce01ec4a058d8069ccd447d44867e34a031dd22b22f",
+        "sha256": "bca3a61a18416393ef28c9fcd1a463bb73dcc2f784b4239ff50c41b4c0f3198f",
         "size": 189203
       }
     },
@@ -1125,7 +1125,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/cryptogram.koplugin/main/",
       "zip": {
         "path": "dist/cryptogram.zip",
-        "sha256": "f9ed4f046f8f803944c0096916083a30cc102ebed9cdf2d24dc0b325b0edc633",
+        "sha256": "c7ac2676e771ae002a57ce90170d697ca0f25fbc231d315462fc296a7799644c",
         "size": 160056
       }
     },
@@ -1170,7 +1170,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/dashboard.koplugin/main/",
       "zip": {
         "path": "dist/dashboard.zip",
-        "sha256": "62ced71541d139a37fbeacba107e114b8857901dd992607d27e5b16c0f4ed0a2",
+        "sha256": "96f63cf3721c9304ceda46df5b3da77ade3462b2a517cf37fa6e7ed19bf15a6f",
         "size": 195296
       }
     },
@@ -1215,7 +1215,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/detective.koplugin/main/",
       "zip": {
         "path": "dist/detective.zip",
-        "sha256": "6cb31199215aa25ea83df0a6dd2de55e9a3b162a571a2bed242c39f6afec0248",
+        "sha256": "3261e0611d9e52abd2e648e208f204c7609af94ec9e3683e18ba19e2a15e93c5",
         "size": 186089
       }
     },
@@ -1248,7 +1248,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/dice.koplugin/main/",
       "zip": {
         "path": "dist/dice.zip",
-        "sha256": "45675a2a6a4325422460b28393690c7b9a1c8f2cff247b61f7b7f7e8a302a36d",
+        "sha256": "aadb431819b0663958401af4b16bdf432a8d559c9e2a54489c617474a3327f8e",
         "size": 120335
       }
     },
@@ -1283,7 +1283,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/dominosa.koplugin/main/",
       "zip": {
         "path": "dist/dominosa.zip",
-        "sha256": "857387a228263ec1d105fa0abc321fb1e63da73533d73d2d38b4b7f19ae11f94",
+        "sha256": "7a8f0e3d361a491e402c0780a846ba6826013c8b234df0286f85e4c8295d7c1a",
         "size": 159894
       }
     },
@@ -1318,7 +1318,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/dotsandboxes.koplugin/main/",
       "zip": {
         "path": "dist/dotsandboxes.zip",
-        "sha256": "b9584ba3c6ca42c28d27132bb8b532d25ba7df6c874002b3bfae54dba1c52d75",
+        "sha256": "70c4517d0fdc4b1295e9397ec63dc8e2106aa7504dc1cc708b20865a659b9fc5",
         "size": 131353
       }
     },
@@ -1385,7 +1385,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/estimation.koplugin/main/",
       "zip": {
         "path": "dist/estimation.zip",
-        "sha256": "7636667f71d44a2f9fb3fd5e12e3c9f15a03128bdc9222d828e6da4729358f21",
+        "sha256": "192b45436b438ae23e9e9560f0b127c7de98c26006b4c29d5556a2bcf2874b9f",
         "size": 261114
       }
     },
@@ -1420,7 +1420,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/farkle.koplugin/main/",
       "zip": {
         "path": "dist/farkle.zip",
-        "sha256": "fafe0a31e406168b122f6c1dd8a43ef06f9a4ff3a0ac0ddfd9fa0b1c4ae88a64",
+        "sha256": "11f2e5ec83c6ed134490f177710c9e58f731bcd69161e78d8e1e73ac1421b974",
         "size": 146734
       }
     },
@@ -1493,7 +1493,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/fifteen.koplugin/main/",
       "zip": {
         "path": "dist/fifteen.zip",
-        "sha256": "40e69862f91ee1815e2de0ac0b48db6aee8936b86dc23bdffb2c2a6ab446ed6b",
+        "sha256": "2da724e121a496aebdb316c618a43a4666ba4657f88733b3377004f1148a7fe9",
         "size": 2245788
       }
     },
@@ -1526,7 +1526,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/fillomino.koplugin/main/",
       "zip": {
         "path": "dist/fillomino.zip",
-        "sha256": "2e81e4b091238b7560066dd11d538994bd3c6f4e4ecd7f4627488435bf580ad6",
+        "sha256": "a09d0e9054aa038ff2b541545d4818d2b05534fd69974a2239f814b80842c0b5",
         "size": 155320
       }
     },
@@ -1565,7 +1565,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/fireworks.koplugin/main/",
       "zip": {
         "path": "dist/fireworks.zip",
-        "sha256": "983f8a484050155cac94e94a8cf95e857cb4152eccf7690bd6e968ee02277252",
+        "sha256": "6fd2ba513c272d250cda61fc95523eedfa0f255061f09ca0d0f67f5d0cceeb88",
         "size": 183247
       }
     },
@@ -1598,7 +1598,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/futoshiki.koplugin/main/",
       "zip": {
         "path": "dist/futoshiki.zip",
-        "sha256": "e185a011e21bf7a94098855114a251f197047bec6aff2270208abbb43c957892",
+        "sha256": "a6e296410e7bd2d6ec92f1beef4e7ece973d33d7e41081a33a6437266d52e2f2",
         "size": 143530
       }
     },
@@ -1631,7 +1631,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/galaxies.koplugin/main/",
       "zip": {
         "path": "dist/galaxies.zip",
-        "sha256": "095a262ac9217ed39b6ebfbb6245d2eff49c13393116d3d39553630235c6b562",
+        "sha256": "903060adf51d73daa9e2940746ce1eeef66d33afbb4ff58d2873e8aea6679bbb",
         "size": 133626
       }
     },
@@ -1694,7 +1694,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/gamebook.koplugin/main/",
       "zip": {
         "path": "dist/gamebook.zip",
-        "sha256": "c04246b585d72bce4f0b2acf26f080aa56ca13c24a0467d69636e9fc9eb45d91",
+        "sha256": "51d0ed86dcaea14758348809bb75c9aaee16a1c2e84ce00fa0bbccbee8d4fbf5",
         "size": 391453
       }
     },
@@ -1727,7 +1727,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/go.koplugin/main/",
       "zip": {
         "path": "dist/go.zip",
-        "sha256": "5369d870af77dda01d0d4218c716074cb6f0cfcaea1a4e58b107026a9cdbd70a",
+        "sha256": "87e93404e8e8f3e7c6c17d5d9970d375383e9f108b06bdd07c610826bb902d25",
         "size": 122905
       }
     },
@@ -1760,7 +1760,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/gomoku.koplugin/main/",
       "zip": {
         "path": "dist/gomoku.zip",
-        "sha256": "b428dfe51bc3063a944036acd8b917422f9e0d892c9ff68db90a508d43af3750",
+        "sha256": "be8941b0bc49872c71a656b18a6e38d6d1e31d384f1c788ac88c50732c06759c",
         "size": 123045
       }
     },
@@ -1801,7 +1801,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/hangman.koplugin/main/",
       "zip": {
         "path": "dist/hangman.zip",
-        "sha256": "4a714c19c8fb5e0264a1d0a824a13c303219aa6d8527375de773b0accfe34e8f",
+        "sha256": "b4e2b9fa53afed0e204c0b8886b3172e5ef6ca35db1045b170a04063db05ed76",
         "size": 188193
       }
     },
@@ -1811,7 +1811,7 @@
       "fullname": "Towers of Hanoi",
       "description": "Move disks between pegs",
       "category": "classic",
-      "version": "1.2.5",
+      "version": "1.3.0",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -1822,20 +1822,20 @@
         "images/hanoi.png"
       ],
       "sha256": {
-        "_meta.lua": "6808ea165f78c475593ce1cc333299fcb93d3d00736703f0e49d62e91042e9d6",
-        "board.lua": "bf10ecd781e207235d0633edc50b40a3bc966a4147b1c2bd1983de753e130ad3",
+        "_meta.lua": "94992d60cc0b4ee915971cb17b41160af77af9400db66f7197ce25a1e5ab5198",
+        "board.lua": "7c6c19ca5d09e92b66489e52d75238ef84fa8431ca8ee88f195e317d93c0c3c9",
         "board_widget.lua": "7a02ee6565e9210cc7232d9039f8fe4ecf65cd02e0c854e067c192978c22aa94",
-        "i18n_fr.lua": "f0784bf76b8019845fa428c60da810c88fd15505d5927128f47d70d0f0a710f8",
+        "i18n_fr.lua": "74a496f5d9dc7f841d41c371ff5dee9b422f34262d4576681bbe73cccbcb4f52",
         "main.lua": "c97eeb166f73cd45c6048530cb9bef68617ee7d6c5632c86affab36c49045cc9",
-        "screen.lua": "0263325b0f878f30fe348024a565255e29a78225d599ed3a9bec73574b0498ce",
+        "screen.lua": "6a95fa1f4ee8d3fcdcce78971dfbf3095e8d22a35eb376cc9c3444be0deaf529",
         "images/hanoi.png": "604ebcc0f7e6c76a345b7a16dd7d71c21e5e19c490fa25be36cb454bb567793b"
       },
       "common_lib": "common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/hanoi.koplugin/main/",
       "zip": {
         "path": "dist/hanoi.zip",
-        "sha256": "4d097ad89d0d71ac48a43b799882a31f8db4fac91b2e859d5266c01ab0533100",
-        "size": 120985
+        "sha256": "92293c59ff50237c0f315c3a6f445b047d950c48307afc5758c220e358f20d49",
+        "size": 121422
       }
     },
     {
@@ -1869,7 +1869,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/hex.koplugin/main/",
       "zip": {
         "path": "dist/hex.zip",
-        "sha256": "c170dd547befd5b201ae43eb18472ca9320951d56731a4c4b4bf492a8cab6f7f",
+        "sha256": "e1bc3d0974b053e11c0403c7cc4253656eabbbacc0134160375df485cfc6c4bd",
         "size": 135736
       }
     },
@@ -1906,7 +1906,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/heyawake.koplugin/main/",
       "zip": {
         "path": "dist/heyawake.zip",
-        "sha256": "76cfb9c9a0008766c40895be03e5db42c6d44e4c0fa1a0358c911f16ce6c2448",
+        "sha256": "7e7b80d579568991b3c2fb4fb2784b149970d8791641adc804e4e49c34cc8f9e",
         "size": 140899
       }
     },
@@ -1939,7 +1939,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/hidato.koplugin/main/",
       "zip": {
         "path": "dist/hidato.zip",
-        "sha256": "d84d9c9d3f7b03a2a4e43187ee333d8995299826bf31eac4a83eae1b3ac84fac",
+        "sha256": "fe6762e51eab8c38a2b5a423fd5642ad5ee48e89aff63a7f647fdb9a2df8bd4e",
         "size": 141997
       }
     },
@@ -1972,7 +1972,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/hitori.koplugin/main/",
       "zip": {
         "path": "dist/hitori.zip",
-        "sha256": "f8716211a9edc88ec0e4758397976f94498e8c6e2dcf1e2a64bafa26891c0915",
+        "sha256": "e01c15c4f796d5760885d68cb07b6ac119ee936e9d8bc607ba8241906712652f",
         "size": 153139
       }
     },
@@ -2005,7 +2005,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/kenken.koplugin/main/",
       "zip": {
         "path": "dist/kenken.zip",
-        "sha256": "dc2bd834beab61eaeea5163b5d8d89fb5b05854a49200be758e4c15a11d5d175",
+        "sha256": "863face0cca2330bff50b8fc7c26d047f704f6ea94842602ad199f3c0a62795a",
         "size": 138318
       }
     },
@@ -2015,7 +2015,7 @@
       "fullname": "Klotski",
       "description": "Sliding-block puzzle: slide the blocks around the tray to bring the big square out through the gap at the bottom. The classic Red Donkey and 1600 more levels in four difficulties, hints and a Daily Challenge.",
       "category": "classic",
-      "version": "1.2.1",
+      "version": "1.3.0",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -2024,19 +2024,21 @@
         "levels.lua",
         "levels_data.lua",
         "main.lua",
+        "progress.lua",
         "screen.lua",
         "solver.lua",
         "images/klotski.png"
       ],
       "sha256": {
-        "_meta.lua": "49b2380ad5c39e26cdb889c89bd5de78baf53cf3e5202d1178c15aeed0ab7a9f",
-        "board.lua": "4af29ec7208e70f83ab4c1779266b68885a6fc46be8300ac49e04d5dd8de91d8",
+        "_meta.lua": "ad637bf62771ea0ed13f83406b3d5a9796b62a5e83ce7326881e2a616533ed65",
+        "board.lua": "30f667909b5c098f67c2189c8de4d1c8fd572477b12ad5c1d61e6fe4a51dd87a",
         "board_widget.lua": "975586ae10fe345a50b1b66b76ad8ffec84b6ac74344c59409b09e3d37cbf739",
-        "i18n_fr.lua": "92ee6e74d92a6261275ee3c388a68139b27ae38ffca18f10ccf30e038bdd7d83",
+        "i18n_fr.lua": "3077312175f029ad9ae3912381bf6f795b1312aebd3863dbf46a6955806153db",
         "levels.lua": "705fdafacdb392f119e4f6f92ea4b03597eb21d874fae40b5ba3a286f6e426dc",
         "levels_data.lua": "84ab1e84d647941acb6960f1282fab2a43c77f4a46606f7f95c52548ac4a7ad4",
         "main.lua": "f3b0fea396883fc2b3c6b524d641d7fda89cd4e7af84e7d475418db1fbe80a1b",
-        "screen.lua": "074e7227f6f67baabead6fa30e05065e9e98e4844571f8932197352ae2764263",
+        "progress.lua": "09179afca1da303c118d74797ff5927491bfde220c8dd00b8fab43550300a2e9",
+        "screen.lua": "7b39ea40625741545fc53a52f7ca90f17a9b02792088982de89c354a6b2a6b6e",
         "solver.lua": "b23f01a846a232d04542d20100877fa2d3c052d849c0400c8203a43f59c73f67",
         "images/klotski.png": "9ec772c901b89058426164a53ad70c924a6c693e5a67307b2cccdc6b9a220887"
       },
@@ -2044,8 +2046,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/klotski.koplugin/main/",
       "zip": {
         "path": "dist/klotski.zip",
-        "sha256": "18e8fc26e3162d58782bf228a7bd223a59af929318bd61199ec42fb3a33ff82b",
-        "size": 165554
+        "sha256": "9fba3b0b1bd61cead8275bda4801a003fedb549823fb92b6b628589afeb5aca8",
+        "size": 167275
       }
     },
     {
@@ -2081,7 +2083,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/liarsdice.koplugin/main/",
       "zip": {
         "path": "dist/liarsdice.zip",
-        "sha256": "2c2811ead16907ebaaa70172714e8de81af9b513be56b750af434deb9dcfef4e",
+        "sha256": "8e56a60c808148c392fa44d2b8b1e5f715c669bf97c7fb8aedd0d9e0c4587a72",
         "size": 163934
       }
     },
@@ -2116,7 +2118,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/lightsout.koplugin/main/",
       "zip": {
         "path": "dist/lightsout.zip",
-        "sha256": "905e94e10c4bf643bbadde777a6edc80af60e1e7de9355610393d3061f19c686",
+        "sha256": "a02c17db45845f11f6388a60a8b74569a3ab440a5280571e597bc150b91ea77d",
         "size": 124295
       }
     },
@@ -2149,7 +2151,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/lightup.koplugin/main/",
       "zip": {
         "path": "dist/lightup.zip",
-        "sha256": "3f605cf6df5b4f1a5851bffe52ac7e09b40efb9deb48e3a630c4aa9a69fd609c",
+        "sha256": "bb8391ea012261acdc00b99e6a2b224533fff9a5a674b132628b0797e8e19054",
         "size": 140558
       }
     },
@@ -2184,7 +2186,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/lits.koplugin/main/",
       "zip": {
         "path": "dist/lits.zip",
-        "sha256": "a156ac283c1c9ae50b4bd9d0c54b8f640367a8f207e4d6f42724b3cab00db0b5",
+        "sha256": "49e2dad199891707e6aa99f0d7872c3636c59860fdf54f92c072b23c574b404b",
         "size": 135428
       }
     },
@@ -2219,7 +2221,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/magnets.koplugin/main/",
       "zip": {
         "path": "dist/magnets.zip",
-        "sha256": "3056c946831e7b93e4afc4d395fd96dfdd14b11cb040c0a7ce8d125492a6a743",
+        "sha256": "537472d51c80b8399e78f50d2c987b7e43346b9bb3027d96601e7a55e29a5029",
         "size": 155152
       }
     },
@@ -2258,7 +2260,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/mahjong.koplugin/main/",
       "zip": {
         "path": "dist/mahjong.zip",
-        "sha256": "d0fbbadb3c20621af6e7263f4abbcf343c48fc62c87ec8ca92f43565ecfa88d1",
+        "sha256": "898890b5fccfe8fcb3a8e7f9075ff10b34daf2382f51d2cb12a73c6bb73bdfac",
         "size": 188563
       }
     },
@@ -2291,7 +2293,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/mastermind.koplugin/main/",
       "zip": {
         "path": "dist/mastermind.zip",
-        "sha256": "473e3aa586d61993bcfcea1d524a1596da136b683a2df9aa2203c0567c1d6660",
+        "sha256": "bcc1ff9457a480ae8feb7910b9df94eb24dbe367cef313b149b7c32734302c77",
         "size": 126815
       }
     },
@@ -2324,7 +2326,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/masyu.koplugin/main/",
       "zip": {
         "path": "dist/masyu.zip",
-        "sha256": "f1e2c858f557e5b84131cca7266753cf620961fb6c69e78640208ee682895ec2",
+        "sha256": "313c5e67a2b8997ef1e01802648a523b27f946ddfbc745985961e343e6ceb414",
         "size": 130243
       }
     },
@@ -2357,7 +2359,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/memory.koplugin/main/",
       "zip": {
         "path": "dist/memory.zip",
-        "sha256": "55cf3cc337d4c772c10165d672e4cfebd24ec1856e4ff7af41f98ef34b9fd93d",
+        "sha256": "de56baba3ad7b899869befbd0007a3e922c1a338a6df0ca2982a7c9d74f14fbe",
         "size": 119977
       }
     },
@@ -2390,7 +2392,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/mentalmath.koplugin/main/",
       "zip": {
         "path": "dist/mentalmath.zip",
-        "sha256": "f657a5448892fb611ac23bdf37f8e50eaa7d364011bc2a7d7f2f8c54e6e39c01",
+        "sha256": "61244928c814979e8d61c02ff568c2d05ac5c83810de9d5a602311a149beb33f",
         "size": 128726
       }
     },
@@ -2423,7 +2425,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/minesweeper.koplugin/main/",
       "zip": {
         "path": "dist/minesweeper.zip",
-        "sha256": "761d0a37abb697a69d8958e8bcda8fb11f7135e0d6a5b8e6985029634b8fa1f4",
+        "sha256": "f35ccc8133e4196f49125f1eec2b47368d43bd0107b017f58c4f2a240e564420",
         "size": 124408
       }
     },
@@ -2456,7 +2458,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/morris.koplugin/main/",
       "zip": {
         "path": "dist/morris.zip",
-        "sha256": "52d3dbaabd50ff64903736579b43d6cb4b753e1573f36f0fb04d4d6a325a0182",
+        "sha256": "22b6d1add30c23f36fcc3e4d62082018ef734ed968bc2fc39cebf8fa1958b4cb",
         "size": 136601
       }
     },
@@ -2493,7 +2495,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/mosaic.koplugin/main/",
       "zip": {
         "path": "dist/mosaic.zip",
-        "sha256": "39b6451d177f93fc810fefca0caec45502a0222b5c013ebefb2a7aa3e6c4c13c",
+        "sha256": "b1346f15353f11070b5cafda4a925a2711d420ee65d741280a0f8d5df867bfe6",
         "size": 156555
       }
     },
@@ -2528,7 +2530,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/netwalk.koplugin/main/",
       "zip": {
         "path": "dist/netwalk.zip",
-        "sha256": "2cf9dc796e280f240b38abd3ab11d8051248c8b87d3c4c81a90ad2296ef0d961",
+        "sha256": "891e91d80d695d48770c26be402e6eabb448a718490800c8511130f6c1f1bd22",
         "size": 131509
       }
     },
@@ -2561,7 +2563,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/nonogram.koplugin/main/",
       "zip": {
         "path": "dist/nonogram.zip",
-        "sha256": "48cb4c78f4f425a15223f1744322355ed1b01149ce26005627bd88edd5ac9245",
+        "sha256": "67aec196410c7d9a6246a9b489e8d4ccd63d3c290fc3396d92591b91ea2697c4",
         "size": 141600
       }
     },
@@ -2596,7 +2598,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/norinori.koplugin/main/",
       "zip": {
         "path": "dist/norinori.zip",
-        "sha256": "ff41e73e7f0a936e8d26c76bc02ab93d5d580ed298f2aa607c625f391a49f7b7",
+        "sha256": "1b8c77a165e33e3af4f61a1feac19cac71ca05d6143558b521176a8e8a4ab6ab",
         "size": 133570
       }
     },
@@ -2629,7 +2631,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/numberlink.koplugin/main/",
       "zip": {
         "path": "dist/numberlink.zip",
-        "sha256": "a4018c01c2663bf3664cbfa67e013de85225b19666ccbb909b9aec9295f407dc",
+        "sha256": "b321acb1bccd525ea822eae39c5892ed4745947ad5028b47f114bc5b70847fa8",
         "size": 145977
       }
     },
@@ -2662,7 +2664,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/numbrix.koplugin/main/",
       "zip": {
         "path": "dist/numbrix.zip",
-        "sha256": "faa754aa4555d201efd2cb95aba31925278c3fe5dca27c4cf53676373a449c41",
+        "sha256": "4712382dc3f76d6c298113853ae631ede82ad605583eea743f54023cd66ec140",
         "size": 138737
       }
     },
@@ -2701,7 +2703,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/numletters.koplugin/master/",
       "zip": {
         "path": "dist/numletters.zip",
-        "sha256": "0aad18f47672ad45131db4b9cc66a7ff4a2a7812918201a5f53a89bb5ad9c954",
+        "sha256": "307ec85120c9f1f569d44671dddca31a0a1ef1e191980cf93d4a1f27ca1cad26",
         "size": 730118
       }
     },
@@ -2734,7 +2736,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/nurikabe.koplugin/main/",
       "zip": {
         "path": "dist/nurikabe.zip",
-        "sha256": "118250445b1740407acd78ef1113e5c48e2f436a170a20442b18b59abf669d1b",
+        "sha256": "0b1839efe05e6719451937105cb27c9d8208be16f21b839bb7782b8e5fc0b82a",
         "size": 139567
       }
     },
@@ -2764,7 +2766,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/opdsdir.koplugin/main/",
       "zip": {
         "path": "dist/opdsdir.zip",
-        "sha256": "62b78b7c0e5612d747537268e45586e78a415254227bd309e16106cbe748d23e",
+        "sha256": "a79b0ae90df8e17ccfa9c97a4e072801e8b8f463f1191ceb9f563d7ad6b2841f",
         "size": 11517
       }
     },
@@ -2797,7 +2799,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/othello.koplugin/main/",
       "zip": {
         "path": "dist/othello.zip",
-        "sha256": "e368f579a06c1851e544fec870bd1a849dba2c46961ff446129d50952af5219b",
+        "sha256": "f648b527a4f0357dca7492ed9a7e846687de2a302d6585d2e8cc8c672a0042a2",
         "size": 126343
       }
     },
@@ -2878,7 +2880,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/partyquestions.koplugin/main/",
       "zip": {
         "path": "dist/partyquestions.zip",
-        "sha256": "1445fb95a4bf15c94bc4b6698866d8b4d6d4bf9b9df8b99ef5d6969aa304a556",
+        "sha256": "871c8c7655d07aa0af0ed5f42ac98a097ed49e10c5ec5309a6a7a781af8404b6",
         "size": 338108
       }
     },
@@ -2915,7 +2917,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/passeword.koplugin/main/",
       "zip": {
         "path": "dist/passeword.zip",
-        "sha256": "91e19e19ba02e6b97e2ff8cb1917d786fccd3fe35834ede66c7ae96fdeaf6ad9",
+        "sha256": "be35ec4e41eca73639673de14df9c03978c37c5a9634781c0209307a88e2fa3c",
         "size": 202749
       }
     },
@@ -2958,7 +2960,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/pegsolitaire.koplugin/main/",
       "zip": {
         "path": "dist/pegsolitaire.zip",
-        "sha256": "71a28bb30b125b859bef92ac86d56e93124df89047526b04e103b478e008fe15",
+        "sha256": "50e7a5f2fea41b2af655c7f01bf0c2e295a2b10ae3e6ea20ade71751b865c2e6",
         "size": 159757
       }
     },
@@ -2991,7 +2993,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/pickomino.koplugin/main/",
       "zip": {
         "path": "dist/pickomino.zip",
-        "sha256": "c623d1d511c44c611e5ecc75fff5052a80b387b49901b1f304d3846c966c3bc8",
+        "sha256": "98d45b661543f586bfaff7275586c2a98781cb6ae109f49b5901cc76fda2f6dd",
         "size": 129448
       }
     },
@@ -3028,7 +3030,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/pictionary.koplugin/master/",
       "zip": {
         "path": "dist/pictionary.zip",
-        "sha256": "abba779d70da02afcd5f25affcd689d3d841e573ae47727ba0a0bbcc8162f179",
+        "sha256": "e298adcf2af7549113a1d414999b206651fac6dd3541fcc6a8d1c5670955989b",
         "size": 167474
       }
     },
@@ -3062,7 +3064,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/pluginmanager.koplugin/main/",
       "zip": {
         "path": "dist/pluginmanager.zip",
-        "sha256": "3e7bc5377ac54b2e7cf1205c86bd6b5d4234e73fc1971570c14b6d563be0e7d8",
+        "sha256": "42cd5247a94198a04a7862352c990d3540f33127351f03f170d82c24a3e27f6c",
         "size": 80044
       }
     },
@@ -3101,7 +3103,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/quickcalc.koplugin/main/",
       "zip": {
         "path": "dist/quickcalc.zip",
-        "sha256": "93e2ed6635070fea9f95f288fde7de34636ae2301977c393edda5e9b47d6bc24",
+        "sha256": "5eeeb35b4d2944398cbee63d7e81ef9236eac305f30e810bd948a4611998c784",
         "size": 168788
       }
     },
@@ -3152,7 +3154,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/quiz.koplugin/master/",
       "zip": {
         "path": "dist/quiz.zip",
-        "sha256": "1bba9f936ec6c9832ef09f6cb86d4076e8d62364420d22294ff2890f535a0096",
+        "sha256": "91b0bed7e62006e6e8becea6188c7fd4fd81bdd4909118c45183a1faff9b29b6",
         "size": 359055
       }
     },
@@ -3189,7 +3191,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/randomizer.koplugin/main/",
       "zip": {
         "path": "dist/randomizer.zip",
-        "sha256": "1bd0328cadf4fa1ec27326eaad209745137430c59ce8fe6d2bb822867d246831",
+        "sha256": "8dd99f7fe1eaa773f6490e5709f75567cd8c9d6248c6af2177a35adc4993bb71",
         "size": 145393
       }
     },
@@ -3240,7 +3242,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/reference.koplugin/main/",
       "zip": {
         "path": "dist/reference.zip",
-        "sha256": "02a2b8a0ba0ff065879c9376d3a9297286bbdbc302eed475bd9b953a90ba4551",
+        "sha256": "0a6e7df9d6882d84aa972a15f4f447bfabbc84cdbbd43e2ffac524bb2d47e57f",
         "size": 186586
       }
     },
@@ -3273,7 +3275,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/rippleeffect.koplugin/main/",
       "zip": {
         "path": "dist/rippleeffect.zip",
-        "sha256": "45f1bd5e4021b481065ddb1e53e62847e081e0ee2cadaa97523e5c2249ec4033",
+        "sha256": "8a8c9ac2689e8916e6a76fb6241b60540ac9c75e025a3b162479414b82b59db0",
         "size": 145421
       }
     },
@@ -3308,7 +3310,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/sandwichsudoku.koplugin/main/",
       "zip": {
         "path": "dist/sandwichsudoku.zip",
-        "sha256": "860c2a04021518a581995b43d0cd64b22a0a7e1f4d4cb30545f5bedd79006e23",
+        "sha256": "882aad3a3c0d7daac3ec321ddcd2eb04d6f69ad66980ff31728bbbf94b7561ba",
         "size": 149230
       }
     },
@@ -3351,7 +3353,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/scoresheet.koplugin/main/",
       "zip": {
         "path": "dist/scoresheet.zip",
-        "sha256": "4f5067b0bb90400cfbeeb9d7aec99b189b81e4fd944595b50bd6aecdce2d2b57",
+        "sha256": "263881f0ee9dbb21663df4f626205ebe74b08bd53899bac6aa5730e48ed80b7e",
         "size": 153678
       }
     },
@@ -3384,7 +3386,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/shikaku.koplugin/main/",
       "zip": {
         "path": "dist/shikaku.zip",
-        "sha256": "6a1afeaf489934ef1141692603e40fee8ec07d088dc8a5e13a479aa2e8603eab",
+        "sha256": "5a6c39654b8fd20d074da4a0591736aaf3901900f0baee715e9293014b3e1ee5",
         "size": 140844
       }
     },
@@ -3419,7 +3421,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/signpost.koplugin/main/",
       "zip": {
         "path": "dist/signpost.zip",
-        "sha256": "069194bdd253568e027ac3bcc5d578194197ae96fee55d8ffc8651bc2b4ebb1c",
+        "sha256": "0717c10d4809897ece097e4cf67e2d8af0a1e8b3990e75f9e1b0c778f3a5aec2",
         "size": 150471
       }
     },
@@ -3452,7 +3454,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/skyscraper.koplugin/main/",
       "zip": {
         "path": "dist/skyscraper.zip",
-        "sha256": "4f27b259cc89a0525102df9b446660736200408bd74f426649fc9eee22be59bc",
+        "sha256": "bb080a801dfbc75eff9a32d6b7035622d833b286ee4bd003b1ac8d093c8d6a94",
         "size": 134015
       }
     },
@@ -3485,7 +3487,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/slitherlink.koplugin/main/",
       "zip": {
         "path": "dist/slitherlink.zip",
-        "sha256": "a91a64252cebc6a24e8dfc8cf7b9ee5cd6703c691190b3137223bf717f6d67ab",
+        "sha256": "d241427d284037539382de74eab46c6bea9b9d312ff1544e4e7f13dde5ed7595",
         "size": 144466
       }
     },
@@ -3495,7 +3497,7 @@
       "fullname": "Sokoban",
       "description": "Push every box onto a target. 372 levels in four difficulties, all proven solvable, with hints, a list of the levels solved and a Daily Challenge.",
       "category": "classic",
-      "version": "1.3.2",
+      "version": "1.4.0",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -3504,19 +3506,21 @@
         "levels.lua",
         "levels_data.lua",
         "main.lua",
+        "progress.lua",
         "screen.lua",
         "solver.lua",
         "images/sokoban.png"
       ],
       "sha256": {
-        "_meta.lua": "eb0f70d6e609fa02f5627af4e02de6b8c9b2694b62b365b0aaae86249424f588",
-        "board.lua": "83a60f18adfcc901c4ca4ecc769eeff186d3da17bcbe696e373bdf86f15d0c0e",
+        "_meta.lua": "98d7d82c272c854e57a37f5022612ca39b874ab5bafa65cb873abc61d3bd8311",
+        "board.lua": "1604305ac4772d548002e7dba60b904e3119d3d086cd169bc37e55343f1846f9",
         "board_widget.lua": "70c29c1f216c21ecf6a040c5a9e066cd1c858a0096e02a0948227476a788297a",
-        "i18n_fr.lua": "af45a2ad5199383a49dfdc9bc29b86f7c802180a32fb2fc4f3f9678057a81b66",
+        "i18n_fr.lua": "ce766292b76dd34135fba9af9190638b885600e241b492227e89670c89b07fbc",
         "levels.lua": "24f9202787faca9c4445b696ab829563a7d16c043988b1a95b398539fc67f126",
         "levels_data.lua": "561f370e43a79c14e909571924e7e43b8ffcd67299b54b4ec11f68b53b2a27d9",
         "main.lua": "9adeec922ea172cda55e7be52cf90f2a7542faf395a42ea72926792720b1ec4c",
-        "screen.lua": "809b63d38e5bc8a69329d225fdc9a8eb810929a844cd47f9adc7f972663a59b9",
+        "progress.lua": "09179afca1da303c118d74797ff5927491bfde220c8dd00b8fab43550300a2e9",
+        "screen.lua": "51ff81df348f30647e8f4e684f46f355c26a52412bd62c1e06cba6b2d13b2a49",
         "solver.lua": "19f7a1147bfbf136278a9085a636d76d8f8d743d0b11eeb26f5fa72a1a35cc6c",
         "images/sokoban.png": "dd59fc9ae168119f0f614ecd498c7137cc99219aaa87ae36a67b30f859c9d269"
       },
@@ -3524,8 +3528,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/sokoban.koplugin/main/",
       "zip": {
         "path": "dist/sokoban.zip",
-        "sha256": "e69c341b48a620a208b007c974419e66430d9a0b84f59099de6a95b5826f45c0",
-        "size": 149733
+        "sha256": "7c524be5d520cf642debf9241ca44801613b93bd6b846e0b25f403fca2a240df",
+        "size": 151454
       }
     },
     {
@@ -3589,7 +3593,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/solitaire.koplugin/main/",
       "zip": {
         "path": "dist/solitaire.zip",
-        "sha256": "42b9c0e02fc35aa8527773cc208a8f1772d337d5520dc0351d3c3be92ffe682c",
+        "sha256": "4a8d2a409169c1da9a2cfbaad02569f003fb1f25c7822d702fbbc090437bbf94",
         "size": 378359
       }
     },
@@ -3640,7 +3644,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/spellingbee.koplugin/main/",
       "zip": {
         "path": "dist/spellingbee.zip",
-        "sha256": "fabf56da27d533e3618d8f99301c7b7ae5d94db6305d23e1ea47c1d4fece2b53",
+        "sha256": "87cd2841d77ba3ce089b4bdb072fab07d523fa359c6daa16937654a1f05cb013",
         "size": 327767
       }
     },
@@ -3673,7 +3677,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/starbattle.koplugin/main/",
       "zip": {
         "path": "dist/starbattle.zip",
-        "sha256": "fc34fae6c659ce0f8fc24d6e360f68684b4d1e41b3ffe110842cc882c276bd72",
+        "sha256": "8dd8f48fa72a2dd236c4f5d3a31a9dfcf3d4182a99e0e7ef91fa06b60e973c6e",
         "size": 127740
       }
     },
@@ -3716,7 +3720,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/stopwatch.koplugin/main/",
       "zip": {
         "path": "dist/stopwatch.zip",
-        "sha256": "42622e858f232409c15067adc6a7572e18b184b6f14dd220b89f6a9228644a52",
+        "sha256": "cba754e571c2ea5b7ef4d4ac672fecc819de44aa6e2cc7f552588a3a10b8643a",
         "size": 157706
       }
     },
@@ -3753,7 +3757,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/sudoku.koplugin/main/",
       "zip": {
         "path": "dist/sudoku.zip",
-        "sha256": "99ff56da765d13a9c614df830ae086c98809aac79253b0668c7b28d18232c3d5",
+        "sha256": "f91f55d7034baaf44c8c7a6640ea7d8f55c4cb83fdd803a5818085acb7f75bf1",
         "size": 140447
       }
     },
@@ -3788,7 +3792,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/sudokukiller.koplugin/master/",
       "zip": {
         "path": "dist/sudokukiller.zip",
-        "sha256": "96f97a95187cd85452cb35ee039bf7c7eb021d70bf86cf7d1281e40f956f4155",
+        "sha256": "a7afefd7531006d1dfc8aed768e0c10fcbc881d5d85b6759d6d78c8763420e2f",
         "size": 148222
       }
     },
@@ -3823,7 +3827,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/sudokux.koplugin/main/",
       "zip": {
         "path": "dist/sudokux.zip",
-        "sha256": "16d158654fd2de2dcfa2d3ae07edf317aa465cfaf779ab415cc5af6e4dc31ea8",
+        "sha256": "87067257a9eedb46b4cdd65290432c64bc24cdd48a96275f525003169d18c434",
         "size": 140949
       }
     },
@@ -3856,7 +3860,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/suguru.koplugin/main/",
       "zip": {
         "path": "dist/suguru.zip",
-        "sha256": "1a2e02f0c3dd3623b33e60ec9976059d3e98d440795ea664422d79160c9915ba",
+        "sha256": "7c81b53c6ce417b08ee163637566359c2c6419638e4627da0a6a561918cb4f77",
         "size": 137585
       }
     },
@@ -3894,7 +3898,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/taboo.koplugin/master/",
       "zip": {
         "path": "dist/taboo.zip",
-        "sha256": "17955004aeed54a12a0d2f3aa356688337d759808f32d44977bf9ec948a21ef4",
+        "sha256": "2c773131d92340adc3e731704ef0ec071185645c2ec69cfd05edf304ec300322",
         "size": 418272
       }
     },
@@ -3927,7 +3931,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/tapa.koplugin/main/",
       "zip": {
         "path": "dist/tapa.zip",
-        "sha256": "348ff17bc1d9b09712d77a2c8cc3376e476ed79866904377521289919e52ba76",
+        "sha256": "d0591b1a131f3124e302b8fb7a10ed00edcf346207792d4a2301011613c8a400",
         "size": 149530
       }
     },
@@ -3960,7 +3964,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/tatami.koplugin/main/",
       "zip": {
         "path": "dist/tatami.zip",
-        "sha256": "504e65c02cf43e9278705ccce033a016f40fedecd8f0cd4b4f5947ff80d88902",
+        "sha256": "ba0cceeb84510e17c8d679a9e2e12fb35294d82d2ba900e78400d4eb5c04d5fc",
         "size": 122309
       }
     },
@@ -3993,7 +3997,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/tents.koplugin/main/",
       "zip": {
         "path": "dist/tents.zip",
-        "sha256": "fcf40cb9ea23330c87fd6ee2378bacf9b096e78e546ae33d1391a04da3af3302",
+        "sha256": "3fe63e46c3a7b22801fad08658371a39f714d305115d6057d3d6791d5276be73",
         "size": 135276
       }
     },
@@ -4030,7 +4034,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/textadventure.koplugin/main/",
       "zip": {
         "path": "dist/textadventure.zip",
-        "sha256": "52cf8e34fa10008c2c52da2919838b66b19be05aefc7c481597b260cda05f183",
+        "sha256": "ff7167ca1c07dac08519c2d57ec6db36b6180c5746ed297953f5c9148991a7a5",
         "size": 209416
       }
     },
@@ -4065,7 +4069,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/thermosudoku.koplugin/main/",
       "zip": {
         "path": "dist/thermosudoku.zip",
-        "sha256": "13c2e1654638d43ec786ca1fae4b018b9844b71d890eba1d788620bdacb12ff1",
+        "sha256": "7ca19722deb65183e9c9d6e1be5b268f8e591b8410264127d9d3fa4274a88911",
         "size": 143825
       }
     },
@@ -4102,7 +4106,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/threerounds.koplugin/main/",
       "zip": {
         "path": "dist/threerounds.zip",
-        "sha256": "b495c206ba561a3c97c3866826c3983c1c8749c16e57b270e76e702a2c640de4",
+        "sha256": "cdb6c57f5e51b160de1cce4d0f0e8528598e8b3e8fc2cd29dc29166f3d67d5df",
         "size": 192734
       }
     },
@@ -4139,7 +4143,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/tracks.koplugin/main/",
       "zip": {
         "path": "dist/tracks.zip",
-        "sha256": "8642b9598c8178d32a39812f688b274e13f9a6129c4ad115fb8e6a05050bcab4",
+        "sha256": "83a54c481f7611e5d0b6e3538f8fc14dc01edab41f340d2180fb9e420047384a",
         "size": 146036
       }
     },
@@ -4149,7 +4153,7 @@
       "fullname": "Traffic Jam",
       "description": "Sliding-block puzzle: slide the cars and trucks along their lanes to get the black car out of the car park. 2400 levels in four difficulties, hints and a Daily Challenge.",
       "category": "classic",
-      "version": "1.0.5",
+      "version": "1.1.0",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -4158,19 +4162,21 @@
         "levels.lua",
         "levels_data.lua",
         "main.lua",
+        "progress.lua",
         "screen.lua",
         "solver.lua",
         "images/trafficjam.png"
       ],
       "sha256": {
-        "_meta.lua": "3a50381548e0bd0897067e4b88214fa35e31372eafb5210e04f9ce46944a4562",
-        "board.lua": "07e86eaf904d4a86782867910c0b04a04d5124b1d06ef5a1ec59f4d2111d5002",
+        "_meta.lua": "64600f6ffa70d7c13b2d6029e3d3dcd49ecf11fe3120c7d5a3fd3e8c1f47e278",
+        "board.lua": "7799e8c52707b99bf6769c7b7250c98f7fdd93592fbeb08488602856d510f885",
         "board_widget.lua": "d0eeb9b74378995f29143aa534af99c1471f26a738a9d3cebd047da4a79d269f",
-        "i18n_fr.lua": "3d5ccde5c19b40d09f678173fe495a67a7e153ab1081097e860bf3796c2c2e99",
+        "i18n_fr.lua": "9bcf81a73c209144c1e3c1f6c0474c45c3245ac4971ddfcf61daf5c3932721fd",
         "levels.lua": "cf9171aa482bcc8e209a7198393b16fcdd3a7fad542815c26f15a96b7ad6a7a9",
         "levels_data.lua": "d76858f77d1b22e568c3d81f492753325d9d9068854ee5f1cbcb8fd7c924ccc8",
         "main.lua": "6533bed0a077d8a7197f609fad7b112847680bce36304f85f872daf141c7cc9b",
-        "screen.lua": "8ca101162031fc853a845dda8f528124038ded8218d96496674893e12d92f801",
+        "progress.lua": "09179afca1da303c118d74797ff5927491bfde220c8dd00b8fab43550300a2e9",
+        "screen.lua": "33fbecb65af98f779ef30b5ff66b0e2a0fe16622c16e07697814f915f3886fe9",
         "solver.lua": "0d177506b4f715a1635ec87b97d37b20e82c846f1f3f2ce7f5c5422b3c10987d",
         "images/trafficjam.png": "e3e216c9d36b196c36a4227f05cd72363cc9b79f0d5c2955521c753c391c2274"
       },
@@ -4178,8 +4184,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/trafficjam.koplugin/main/",
       "zip": {
         "path": "dist/trafficjam.zip",
-        "sha256": "379c10facd6c210f22f806da64a09cd9438559008cc276e6694d2b468b0350b0",
-        "size": 164220
+        "sha256": "5bb3db501483a3911f0f9ad7f009647ffb801f4fc8772d22ff6dda67c7e26efd",
+        "size": 165957
       }
     },
     {
@@ -4217,7 +4223,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/tsumego.koplugin/main/",
       "zip": {
         "path": "dist/tsumego.zip",
-        "sha256": "75ce126ebeaaa757a8575b3f9fe96e49d8f76886e67eab1e3a2c06e8a95c6e17",
+        "sha256": "55e880ab8ec6123909e8c69c1c62f98a1041d7f9b28d574080e94f0403221aff",
         "size": 153582
       }
     },
@@ -4298,7 +4304,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/undercover.koplugin/main/",
       "zip": {
         "path": "dist/undercover.zip",
-        "sha256": "aab6bb1b276132eafaa1da7efc6916bf2b7ef1a7587a0f3fafdeb57b1f634a86",
+        "sha256": "a5e7059a49d521f1f4957c6001ef1ed01f7b9b487d6ea8f0aa959c8b98c10284",
         "size": 220351
       }
     },
@@ -4355,7 +4361,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/werewolf.koplugin/main/",
       "zip": {
         "path": "dist/werewolf.zip",
-        "sha256": "ffb5f6ec5509a66c8bea7f538735e2f9d92fd91283390782dbc99a6f20e09499",
+        "sha256": "825cdc93b3c45d218186aa47dffa73dc6e379363cf893d42c4e21e12f99f5276",
         "size": 272674
       }
     },
@@ -4458,7 +4464,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/whoami.koplugin/main/",
       "zip": {
         "path": "dist/whoami.zip",
-        "sha256": "4895021f35a855eecbe849ebb6948cf4fffab76d8bf4108c712e02c69dceae45",
+        "sha256": "c8b859a46478354f74150fe0d35d7968629db3dcdb9f5cd14431dd496be3de5c",
         "size": 250351
       }
     },
@@ -4493,7 +4499,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/windoku.koplugin/main/",
       "zip": {
         "path": "dist/windoku.zip",
-        "sha256": "514c752267b4bf74be2310ab0ee2440805319b740af44afc35126af7a9313988",
+        "sha256": "723a5e22f0b08949330ed149debb225f011232e2d0761a136e7bf6e5b347a430",
         "size": 142631
       }
     },
@@ -4532,7 +4538,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/wordladder.koplugin/main/",
       "zip": {
         "path": "dist/wordladder.zip",
-        "sha256": "a153a199787456556ef4941bbd59d9c21b26fe9b8c1de45e4f6b3bdf6f83fffd",
+        "sha256": "701a2d430ccfb2144aac6ecd9a2f5fdc71f2cd1f463187aa4dc71420422f398b",
         "size": 156368
       }
     },
@@ -4575,7 +4581,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/wordle.koplugin/main/",
       "zip": {
         "path": "dist/wordle.zip",
-        "sha256": "deabb5fc8aaa3bbcbc924ae7c465cc34f933d5979d699e2a79e00d67173a1809",
+        "sha256": "4ba41d82b19a9290c465a0aebf55af45ec431d321e437cb9e4126ec9e815adc1",
         "size": 176347
       }
     },
@@ -4628,7 +4634,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/wordpyramid.koplugin/main/",
       "zip": {
         "path": "dist/wordpyramid.zip",
-        "sha256": "b23130c5fecf66bdc63b2252879b04e93c512b75dd440bdb0a73415abb063ca3",
+        "sha256": "59c530e823e2055fcd5cc05f813c4cabd7f244f40c49cd68673e51ca9cc86bed",
         "size": 262870
       }
     },
@@ -4669,7 +4675,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/wordsearch.koplugin/main/",
       "zip": {
         "path": "dist/wordsearch.zip",
-        "sha256": "a5588434f038a5868c82fbd2d76a80b8d8c206dc8eb67cb03168115f44bf918f",
+        "sha256": "f4e1a356e85d0975a2f23bd3d0568081e54637c5dbf8d3fd7a151742fd6d3bb5",
         "size": 240588
       }
     },
@@ -4704,7 +4710,7 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/yahtzee.koplugin/main/",
       "zip": {
         "path": "dist/yahtzee.zip",
-        "sha256": "c9f8580804eec6c973673042b89e3b02224a74571a3d6d1e567840d9e360bbf9",
+        "sha256": "8c07104026b0b63f5f1c7b56325451990c233624613b526bd4854b5ce7f32268",
         "size": 156604
       }
     }
