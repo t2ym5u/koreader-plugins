@@ -6,7 +6,7 @@ A collection of game and utility plugins for [KOReader](https://koreader.rocks/)
 
 ---
 
-## 🎮 Games (107 plugins)
+## 🎮 Games (106 plugins)
 
 | Plugin | Description |
 |---|---|
@@ -36,7 +36,6 @@ A collection of game and utility plugins for [KOReader](https://koreader.rocks/)
 | [Dice](https://github.com/t2ym5u/dice.koplugin) | Roll virtual dice with a configurable number of faces and dice |
 | [Dominosa](https://github.com/t2ym5u/dominosa.koplugin) | Lay a full set of dominoes on the number grid |
 | [Dots and Boxes](https://github.com/t2ym5u/dotsandboxes.koplugin) | Dots and Boxes — draw lines, close boxes, keep control. |
-| [Double or Nothing](https://github.com/t2ym5u/doubleornothing.koplugin) | Bank your points or double the pot on a harder question (FR « Quitte ou double ») |
 | [Draw & Guess](https://github.com/t2ym5u/pictionary.koplugin) | Draw the word, your team guesses (FR « Dessine et devine ») |
 | [Échecs](https://github.com/t2ym5u/chess.koplugin) | Chess |
 | [Estimation](https://github.com/t2ym5u/estimation.koplugin) | Numeric trivia for 2 to 8 players: guess the year, the height, the count — closest wins, or bet on the best guess. |
@@ -81,7 +80,7 @@ A collection of game and utility plugins for [KOReader](https://koreader.rocks/)
 | [Peg Solitaire](https://github.com/t2ym5u/pegsolitaire.koplugin) | The classic peg solitaire: jump the pegs over each other until one is left, in the goal hole. English, French, triangular and square boards, 35 puzzles, hints that keep the puzzle solvable and a Daily Challenge. |
 | [Pickomino](https://github.com/t2ym5u/pickomino.koplugin) | Dice game — steal worms from opponents |
 | [Puissance 4](https://github.com/t2ym5u/connect4.koplugin) | Connect Four |
-| [Quiz](https://github.com/t2ym5u/quiz.koplugin) | General knowledge quiz for the table, in French and English |
+| [Quiz](https://github.com/t2ym5u/quiz.koplugin) | General knowledge quiz for the table, in French and English — solo, or multiplayer with the Classic or Double or Nothing (FR « Quitte ou double ») rule |
 | [Random Draw](https://github.com/t2ym5u/randomizer.koplugin) | Coin flip, random number, pick a name, turn order, teams and raffle draws for games around the table. |
 | [Ripple Effect](https://github.com/t2ym5u/rippleeffect.koplugin) | Fill regions, larger regions allow larger numbers |
 | [Sandwich Sudoku](https://github.com/t2ym5u/sandwichsudoku.koplugin) | Sudoku with sandwich sum clues |
