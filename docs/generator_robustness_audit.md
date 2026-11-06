@@ -5,7 +5,7 @@
 > "Confirmed bug, fix attempted and reverted" and galaxies' "deferred,
 > structural" status). Their GitHub repos are archived and they're excluded
 > from `manifest.json`/`dist/` via `EXCLUDED_PLUGINS` in
-> `.github/scripts/update_manifest.py` — see `CLAUDE.md` for the convention.
+> `.github/scripts/update_manifest.py` — see `docs/dev/RELEASE.md` § Retiring a plugin for the convention.
 > This doc's findings below are kept as-is (historical record of what's
 > broken and why); it does not need updating just because the plugin was
 > archived rather than fixed.

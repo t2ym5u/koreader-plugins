@@ -1,0 +1,9 @@
+# Scripts that publish (push, tag, create repos, trigger CI), read by agent-kit's command-guard:
+# one extended regex per line; a match makes Claude Code ask before running the command.
+scripts/bump_versions\.sh
+scripts/sync_workflow\.sh
+scripts/sync_community_files\.sh
+scripts/trigger_packages\.sh
+scripts/new_plugin\.sh
+release_dirty_plugins\.py.*--apply
+fleet_patch_bump\.py.*--apply

@@ -62,8 +62,9 @@ repos, archive or delete. A GO for one batch does not cover the next.
    pushes, registers the submodule, and regenerates the manifest.
 4. Set the topic with
    `gh api -X PUT repos/t2ym5u/<id>.koplugin/topics -f "names[]=koreader-plugins"`.
-   Set branch protection (see CLAUDE.md), then run
-   `./scripts/sync_community_files.sh`.
+   Set branch protection (§ GitHub conventions below), then run
+   `./scripts/sync_community_files.sh`. `new_plugin.sh` does not add the
+   topic yet.
 5. Set `raw_base_url` in the manifest entry:
    `https://raw.githubusercontent.com/t2ym5u/<id>.koplugin/main/`.
    update_manifest never sets it.
@@ -77,15 +78,19 @@ repos, archive or delete. A GO for one batch does not cover the next.
 
 1. Give it a final release with a "merged into X" note, if it is absorbed.
    The absorbing plugin migrates its settings and stats.
-2. Add it to `EXCLUDED_PLUGINS` in update_manifest.py. It feeds both loops
-   and the manifest `retired` key, which Plugin Manager uses to offer
-   removal.
+2. Add it to `EXCLUDED_PLUGINS` in update_manifest.py. It feeds the main
+   discovery loop, the "preserve un-checked-out submodule entries" fallback
+   loop (guard both, or the second one silently un-excludes it) and the
+   manifest `retired` key, which Plugin Manager uses to offer removal. Then
+   run `python3 .github/scripts/update_manifest.py` and
+   `./scripts/build_release.sh`.
 3. Also add it to the exclusion lists in `scripts/bump_versions.sh` and
    `scripts/sync_community_files.sh`.
 4. `rm dist/<id>.zip` (build_release does not delete stale zips), then run
    `git rm --cached` on it.
-5. Update the counts and the docs table, and the set-aside paragraph in
-   CLAUDE.md.
+5. Update the plugin counts in `README.md` and `docs/README.md`, remove the
+   plugin's row from the `docs/README.md` table, and add it to the
+   set-aside list below and in `AGENTS.md` § Workflow.
 6. Run `gh repo archive t2ym5u/<id>.koplugin --yes`, after its release CI
    has finished.
    - To push to an archived repo later, run
@@ -94,9 +99,74 @@ repos, archive or delete. A GO for one batch does not cover the next.
    - `gh repo unarchive` sometimes fails with a GraphQL error. The REST call
      above works.
 
+### Set-aside plugins and why
+
+- `kakuro`: confirmed, unfixed generator bug (`docs/generator_robustness_audit.md`).
+- `arrowwords`: set aside by the owner; the blocker is a clue bank, not code
+  (`docs/ROADMAP.md` phase F).
+- `startmenu`: archived 2026-10-30; dashboard 1.3.0 absorbed it (startup
+  trigger, game grid) and migrates its settings.
+- `boggleparty`: absorbed by boggle (party mode).
+- `doubleornothing`: archived 2026-11-04; quiz 1.6.0 absorbed it
+  (Quiz · multiplayer → Rule: Double or nothing) and migrates its settings.
+- `galaxies` was set aside until 2026-09-30, when its generator was rebuilt on
+  doubled-coordinate centres; it is a normal plugin again.
+
+## GitHub conventions
+
+They apply to every active `t2ym5u/*.koplugin` repo. Skip `_skeleton.koplugin`
+(template), `game-common`/`sudoku-common` (shared libraries, not plugins) and
+the set-aside plugins. `checkers.koplugin` is a fork (§ Forks) and is treated
+like the others.
+
+### Topic
+
+Every active repo carries the topic `koreader-plugins` (GitHub topics are
+lowercase-hyphenated only):
+```bash
+gh api -X PUT "repos/t2ym5u/<name>.koplugin/topics" -f "names[]=koreader-plugins"
+```
+To audit topics across the account in one call instead of looping
+`gh repo view` per repo (slow, hits transient TLS timeouts at scale):
+```bash
+gh api "users/t2ym5u/repos?per_page=100&type=owner" --paginate \
+  --jq '.[] | "\(.name)\t\(.topics|join(","))"'
+```
+
+### Community files
+
+Issue templates, a PR template and `CONTRIBUTING.md` are synced from
+`templates/plugin-repo/` by `scripts/sync_community_files.sh`, the same
+pattern as `scripts/sync_workflow.sh` and `.github/workflows/release-plugin.yml`.
+The canonical copy lives at a path that is not "live" for this monorepo:
+GitHub would otherwise treat a root-level `CONTRIBUTING.md` or
+`.github/ISSUE_TEMPLATE/` as this repo's own templates. Edit the files under
+`templates/plugin-repo/`, then run `./scripts/sync_community_files.sh`
+(`--dry-run` first): it pushes to every active plugin repo.
+
+### Branch protection
+
+Each repo's default branch (`main`, or `master` on a handful of older repos:
+check `default_branch` via the API, don't assume) blocks force-push and branch
+deletion. `enforce_admins` is deliberately `false` and there is no
+required-PR or required-status-check rule: `scripts/bump_versions.sh`,
+`sync_workflow.sh` and `sync_community_files.sh` push directly to each default
+branch as the release owner, and the release CI (`release-plugin.yml`) only
+triggers on `push`, never `pull_request`. Requiring a PR or a status check
+would break that automation. Applied with:
+```bash
+gh api -X PUT "repos/t2ym5u/<name>.koplugin/branches/<branch>/protection" \
+  --input - <<'EOF'
+{"required_status_checks": null, "enforce_admins": false,
+ "required_pull_request_reviews": null, "restrictions": null,
+ "allow_force_pushes": false, "allow_deletions": false}
+EOF
+```
+
 ## Forks (checkers)
 
-- `origin` is `t2ym5u/checkers.koplugin` and `upstream` is kbarni.
+- `origin` is `t2ym5u/checkers.koplugin` and `upstream` is kbarni (it was
+  kbarni's repo until 2026-11-04).
 - GitHub disables Issues and Actions on forks by default. Enable both, or no
   release is ever created:
   ```bash
