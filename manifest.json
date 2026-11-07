@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-11-06",
+  "updated": "2026-11-07",
   "repo": "t2ym5u/koreader-plugins",
   "common": {
     "version": "1.14.0",
@@ -3779,7 +3779,7 @@
       "fullname": "Killer Sudoku",
       "description": "Play touch-friendly Killer Sudoku puzzles with caged sums, resume later, and reveal the solution when needed.",
       "category": "sudoku",
-      "version": "1.9.2",
+      "version": "1.9.3",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -3791,9 +3791,9 @@
         "images/killer-sudoku.png"
       ],
       "sha256": {
-        "_meta.lua": "e2ee3468db85c5d69519dcfc7ea81171932bbf7c9c1e1be30f485ceefb82ce7f",
+        "_meta.lua": "b9035c65885dbe9b2d78f31371e6071de7e677dce9799383e8969288cbd1a12e",
         "board.lua": "254a1f14bebc2e0011cf6d119af832ca58176345e53f1cd3ae0ff6aa6dab0d40",
-        "board_widget.lua": "64058549854b1add26a763780b9b5cbbaa4f6b847e4bc8d45933d1544cfc1a14",
+        "board_widget.lua": "06be0daedde8bbf0364de0ed8c9aa36d5ae33074082068b8380edca7268565cd",
         "i18n.lua": "60b0a583e37dad43557e2c532b467601cadf6852af6aed3c19bc0054caf49d1d",
         "i18n_fr.lua": "e187a1c4db650119a9ef4db1b2c0e64c7dd2e49d1c42911c2df938fe42ec0152",
         "main.lua": "8ae4a6536a69189f2fae5bfd8fc15a8e9bc8697f855afd2cdfd7ea009a7f6e52",
@@ -3804,8 +3804,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/sudokukiller.koplugin/master/",
       "zip": {
         "path": "dist/sudokukiller.zip",
-        "sha256": "a7b78cf33d3a5a97622b37ed1c6232a025dada71d489c8c43951b0d7c6bde6a1",
-        "size": 159198
+        "sha256": "edc78ba985f3c69e9302e7596af95bfa60f69cf4354b558cbee16e05e53b76a1",
+        "size": 159293
       }
     },
     {
