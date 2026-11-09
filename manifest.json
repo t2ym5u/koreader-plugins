@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-11-07",
+  "updated": "2026-11-09",
   "repo": "t2ym5u/koreader-plugins",
   "common": {
     "version": "1.14.0",
@@ -54,7 +54,7 @@
     }
   },
   "sudoku_common": {
-    "version": "1.9.0",
+    "version": "1.10.0",
     "dir": "sudoku-common",
     "files": [
       "base_board.lua",
@@ -74,9 +74,9 @@
       "base_screen.lua": "c51343b7563de166c699767527b35067ca37a551b4bf1727bcd0d14dae626f81",
       "logic_solver.lua": "21a98cb1770c341aa9a9c02482bfa14aa32d2e7ee63be4be10eb1d6fcea339c3",
       "module_guard.lua": "36977178870176d124749137829b322e7bf7ad91e512dad0e6aaa71d85100aac",
-      "puzzle_generator.lua": "a9f3fbaccbcdac07e7c549af1656fce27a9a11d431447e71d74b465277d2a4ad",
+      "puzzle_generator.lua": "f89c3c796ff099e8cbb44a60c81b01eeb510aba96fa657c173f1065f8e8cecc5",
       "stats_exporter.lua": "574fc3e415a4a2abe15a93af34be17f4d777962e8ad5a68036115cf03223469c",
-      "sudoku_common_version.lua": "832b152cda4d398aeba239d50fc64736ac4358631bc6b4803dd68e84cef66ca7",
+      "sudoku_common_version.lua": "7685b7791c5b9b0d7795afcaf0f37effc8b0be42d6f3771caab9ef2a85200030",
       "sudoku_grid_utils.lua": "312b48cb98184b003378579302f5b2d84551a78a43437f7197eaad029ce0129b"
     }
   },
@@ -171,7 +171,7 @@
       "fullname": "Anagram",
       "description": "Rearrange letters to find words",
       "category": "words",
-      "version": "1.6.3",
+      "version": "1.6.4",
       "files": [
         "_meta.lua",
         "answers_en.lua",
@@ -191,10 +191,10 @@
         "images/anagram.png"
       ],
       "sha256": {
-        "_meta.lua": "89ead1a799b7e279c803e55dbe847009b04778b17d56a23d1760ff7eeec9dfb2",
+        "_meta.lua": "f1916e55d6364b6d9b953752dbf8901b10970ee26937455ae9e898efc009b3ab",
         "answers_en.lua": "601a253bed0276e00fc812c7f3f54d21450b8275d35441e265836efbb958936b",
         "answers_fr.lua": "d6bdd9a42717fd64623677030262f1631a4e99a10e9a9a8f7b92f1767610b54f",
-        "board.lua": "ee7b4ad564dac6e4694fc57c5b5b0b8cb8235d47781f3794249f83bf70c42b2d",
+        "board.lua": "eb88586cba1b1892cee43536b83e905b517994eb2b7390b58577b7a0ae8846e5",
         "board_widget.lua": "e85494716eb5c6c355d2d5beb8f86bffa96bc033c2f38ccdc2f48c9b8f385022",
         "i18n_fr.lua": "bb5c767b8eb0cdf74745afa6758d220bc9c309238bb4b1ca806f4d8271637107",
         "main.lua": "ecafe94a1032983b0bfab633370a609e1e79416feaa4b3051873d1f839588d2a",
@@ -212,8 +212,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/anagram.koplugin/main/",
       "zip": {
         "path": "dist/anagram.zip",
-        "sha256": "d352e38cfb1253901914fea2f1cd3ff26c0da4a75a91f6943326f0aef3f99127",
-        "size": 234136
+        "sha256": "875fa69e90bc7c83cafd82bada40fc1716df2df0c291748af642648bbfa8533f",
+        "size": 234212
       }
     },
     {
@@ -257,7 +257,7 @@
       "fullname": "Arrow Sudoku",
       "description": "Sudoku with arrow sum constraints",
       "category": "sudoku",
-      "version": "1.8.2",
+      "version": "1.8.3",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -269,7 +269,7 @@
         "images/arrow-sudoku.png"
       ],
       "sha256": {
-        "_meta.lua": "ead8bc3690203549ffe430fd48a768ce9441e89a1cd8f0a4ea52b49f218016c1",
+        "_meta.lua": "5989d771974484f447b4676e7b0b7766b99124c13e03a5851776d8ef1e80b368",
         "board.lua": "bbefd061b4392c99d7c3e033331a2118773f32642704090a3838b8ec8c2b31c0",
         "board_widget.lua": "08ab4d581f08d004f34ddffe4329e6f80535f35fd7b5f08178596958d7ae896a",
         "i18n.lua": "60b0a583e37dad43557e2c532b467601cadf6852af6aed3c19bc0054caf49d1d",
@@ -282,8 +282,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/arrowsudoku.koplugin/main/",
       "zip": {
         "path": "dist/arrowsudoku.zip",
-        "sha256": "330afbdd6a1b6091c5684db95b4940af749fc3018362aaa6dac05082d3639cee",
-        "size": 155732
+        "sha256": "80293211d705a3948d2992f43fa3848446de4dac3193a9022236432e04004992",
+        "size": 156103
       }
     },
     {
@@ -426,7 +426,7 @@
       "fullname": "Between Lines Sudoku",
       "description": "Sudoku with between-lines constraints",
       "category": "sudoku",
-      "version": "1.7.2",
+      "version": "1.7.3",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -438,7 +438,7 @@
         "images/between-lines-sudoku.png"
       ],
       "sha256": {
-        "_meta.lua": "a24c57dfb75c9b9af75c35a27539b7bc17eae983a7234d9cccb6ea3be7736ff0",
+        "_meta.lua": "9764b735fab67d2df93de486916a8e4cd5aface75eab4304cdd25c29f43b4393",
         "board.lua": "db37f2c9615b1691827cd0153a13b9595c0b248234d6079eeff42ad60f8b9d88",
         "board_widget.lua": "85643006b0af1accd4b21e200b08edd34f8ca5e030247dabd09978072cee559a",
         "i18n.lua": "60b0a583e37dad43557e2c532b467601cadf6852af6aed3c19bc0054caf49d1d",
@@ -451,8 +451,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/betweenlines.koplugin/main/",
       "zip": {
         "path": "dist/betweenlines.zip",
-        "sha256": "f4986e7ce32166e476d21fe8f4281a58e3427c6fcd42e101239b70e860bb750e",
-        "size": 155153
+        "sha256": "38d33f0c43c1e23b54f07925140f2812466e6bb3eb9377704de6124b9b39471b",
+        "size": 155524
       }
     },
     {
@@ -3295,7 +3295,7 @@
       "fullname": "Sandwich Sudoku",
       "description": "Sudoku with sandwich sum clues",
       "category": "sudoku",
-      "version": "1.8.2",
+      "version": "1.8.3",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -3307,7 +3307,7 @@
         "images/sandwichsudoku.png"
       ],
       "sha256": {
-        "_meta.lua": "92d21caa6969d00e7a17fd89b2ae95a67ed17e00399b76aeecb073b80bd9dc49",
+        "_meta.lua": "7660abfa8fd8cd221b50d61b37ab5728fda7c521032f1d80f1f5789781391ab4",
         "board.lua": "55405c87c00b7ba9bb9a1884696a6b4136bea962083cac4069dbdde92330d4b0",
         "board_widget.lua": "a0b30d5e49163ea495dccf135811093ecc3a1ac7ca0430eea5aa8f7215a7c23d",
         "i18n.lua": "60b0a583e37dad43557e2c532b467601cadf6852af6aed3c19bc0054caf49d1d",
@@ -3320,8 +3320,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/sandwichsudoku.koplugin/main/",
       "zip": {
         "path": "dist/sandwichsudoku.zip",
-        "sha256": "a4876f3ce89199d5a18ebf5a96c38e58e617670eeec1e722ce4f7cad5d1c98ea",
-        "size": 158706
+        "sha256": "da8d1d2a1ad9ac4a702f02d2b3615f5e52d6978f735a9629ad83a2e99df8254e",
+        "size": 159077
       }
     },
     {
@@ -3742,7 +3742,7 @@
       "fullname": "Sudoku",
       "description": "Play touch-friendly Sudoku puzzles, resume later, and reveal the solution when needed.",
       "category": "sudoku",
-      "version": "2.8.2",
+      "version": "2.8.3",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -3755,7 +3755,7 @@
         "images/sudoku.png"
       ],
       "sha256": {
-        "_meta.lua": "5c75b430d37ad5cc8ce93af1b274963d8e382121347a3387df2906504e650884",
+        "_meta.lua": "af3e0cd8ef811c04aaeff504759646305d5be210de629883c5762324fcd70844",
         "board.lua": "1163640709da912990a3a856ae772f52d1c4044943a1916d059ceb1921ff4a6b",
         "board_widget.lua": "b94c07ccc0db7ac6b88611a19be79b98e8916b8eeb83ddb4a3d539678c137aa5",
         "daily_seed.lua": "a99dc79ab5335c9ac1e414d5e3fefaff88640fe8bb2c0300a064c89734bbbe5e",
@@ -3769,8 +3769,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/sudoku.koplugin/main/",
       "zip": {
         "path": "dist/sudoku.zip",
-        "sha256": "ccb8b63fb1d505cdd9c9e36879a7733d5bff869584a4e7ca5e401cf4c8b55fcb",
-        "size": 149923
+        "sha256": "9d8eade08f4b5f8b8e520f18880a12aebdf74b5d76188179970e49e1c3faa097",
+        "size": 150293
       }
     },
     {
@@ -3779,7 +3779,7 @@
       "fullname": "Killer Sudoku",
       "description": "Play touch-friendly Killer Sudoku puzzles with caged sums, resume later, and reveal the solution when needed.",
       "category": "sudoku",
-      "version": "1.9.3",
+      "version": "1.10.0",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -3791,21 +3791,21 @@
         "images/killer-sudoku.png"
       ],
       "sha256": {
-        "_meta.lua": "b9035c65885dbe9b2d78f31371e6071de7e677dce9799383e8969288cbd1a12e",
-        "board.lua": "254a1f14bebc2e0011cf6d119af832ca58176345e53f1cd3ae0ff6aa6dab0d40",
+        "_meta.lua": "34f4143dabb5fd3fb25741a2b1dbfee1eb10ea6b1bad0bf277813fef932a4b37",
+        "board.lua": "c44bed647e8d539b55a831a2433374530cc8ce4be9da227925f8bfda518faa02",
         "board_widget.lua": "06be0daedde8bbf0364de0ed8c9aa36d5ae33074082068b8380edca7268565cd",
         "i18n.lua": "60b0a583e37dad43557e2c532b467601cadf6852af6aed3c19bc0054caf49d1d",
-        "i18n_fr.lua": "e187a1c4db650119a9ef4db1b2c0e64c7dd2e49d1c42911c2df938fe42ec0152",
+        "i18n_fr.lua": "3e351c9b79a27eda8c00d1095256c1da6361e6c7232078895ff98196aed4602c",
         "main.lua": "8ae4a6536a69189f2fae5bfd8fc15a8e9bc8697f855afd2cdfd7ea009a7f6e52",
-        "screen.lua": "b9611720e8eb6ec929b6b6a9f7e8c409e99badf43fa1cb79e0a9fe327e8b328c",
+        "screen.lua": "d1ee46a7fc14c061228e3f38f1ecf4f02a541529c2bf283f31223e603aada50b",
         "images/killer-sudoku.png": "a1f60fe2e49714ef5310c87f215c2270ac49994880048de44c98e97ac1132f07"
       },
       "common_lib": "sudoku_common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/sudokukiller.koplugin/master/",
       "zip": {
         "path": "dist/sudokukiller.zip",
-        "sha256": "edc78ba985f3c69e9302e7596af95bfa60f69cf4354b558cbee16e05e53b76a1",
-        "size": 159293
+        "sha256": "5e7cb7a0a222b1551da5661ceb06a4911c2e839309ea32e06ee114f27dfdea42",
+        "size": 160277
       }
     },
     {
@@ -3814,7 +3814,7 @@
       "fullname": "Sudoku X",
       "description": "Sudoku with diagonal constraints",
       "category": "sudoku",
-      "version": "1.8.2",
+      "version": "1.8.3",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -3826,7 +3826,7 @@
         "images/sudokux.png"
       ],
       "sha256": {
-        "_meta.lua": "6b1ea8e7494fe38a6154caba2dc7a3ff56fc86dd6f34649429296a8358ad592e",
+        "_meta.lua": "8e92d4e79b813337970eeb82c44d1e7ebf5151271ce6fa8eff10ee9f8d8a76e3",
         "board.lua": "e6cc0c407f07a68585ae54f548298bc2f0f2239b15903f8d932ca0de0a2ae6df",
         "board_widget.lua": "b746f8e5458f07d68ecd2ade823c1e82c8aebc0211835641c20af0b1c772486a",
         "i18n.lua": "60b0a583e37dad43557e2c532b467601cadf6852af6aed3c19bc0054caf49d1d",
@@ -3839,8 +3839,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/sudokux.koplugin/main/",
       "zip": {
         "path": "dist/sudokux.zip",
-        "sha256": "547664cf9c3d7f680355fbf15e217f9f6d0d8a2b62e3af2cf9958556d3279cdf",
-        "size": 150426
+        "sha256": "b2bcc72b8dffde4bc726a5a9ca64310b7bc2f09305c27b38d94e4caa1d8c30a2",
+        "size": 150796
       }
     },
     {
@@ -4058,7 +4058,7 @@
       "fullname": "Thermo Sudoku",
       "description": "Sudoku with thermometer constraints",
       "category": "sudoku",
-      "version": "1.8.2",
+      "version": "1.8.3",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -4070,7 +4070,7 @@
         "images/thermosudoku.png"
       ],
       "sha256": {
-        "_meta.lua": "a0f9213c8f88ec27c6e83f710fa834b33c30c3ebcdc5036fce76d881f8b454f5",
+        "_meta.lua": "9b816bb50801fa704f6144abaa74fc5ed0764394009204ed68b27463530362d9",
         "board.lua": "4b782571def38656d27724077e5083b282affe7d29a6e953a4d98912b968603e",
         "board_widget.lua": "608516334c2808f756d73b1f0abb5c893543f504efefcc77bde57c5b41723539",
         "i18n.lua": "60b0a583e37dad43557e2c532b467601cadf6852af6aed3c19bc0054caf49d1d",
@@ -4083,8 +4083,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/thermosudoku.koplugin/main/",
       "zip": {
         "path": "dist/thermosudoku.zip",
-        "sha256": "2139da957dd23a40151020e3c05594a2686681b6090d862e50db81ee4e9bdeec",
-        "size": 153301
+        "sha256": "a4015fb27e00698273f8a09f41b9faa08691c05439b942f85c69749cef8c8a13",
+        "size": 153672
       }
     },
     {
@@ -4488,7 +4488,7 @@
       "fullname": "Windoku",
       "description": "Sudoku with 4 windowed inner regions",
       "category": "sudoku",
-      "version": "1.7.2",
+      "version": "1.7.3",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -4500,7 +4500,7 @@
         "images/windoku.png"
       ],
       "sha256": {
-        "_meta.lua": "9346ebebe9b1ee6920f88d9c8a8634e40a65d07476032c215f9b7babbfa550e7",
+        "_meta.lua": "f3831e41b564dfd088a36f32292a79e615bc742c496e1b850516d51fa0d8eaf3",
         "board.lua": "e0ca245568326b802837755cb12b3209ec6fab1b011d5a8a8ca51cb19c1d60be",
         "board_widget.lua": "1c7ccbb30323495cbc0f4f7d816d27c48a76efbdb01a5998cca156f20a8b23b7",
         "i18n.lua": "60b0a583e37dad43557e2c532b467601cadf6852af6aed3c19bc0054caf49d1d",
@@ -4513,8 +4513,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/windoku.koplugin/main/",
       "zip": {
         "path": "dist/windoku.zip",
-        "sha256": "b99e5bcc3c35370bc6261d3b1f44b758d82d1a71643ffbb2a11a9bc6213c5a04",
-        "size": 152107
+        "sha256": "ea0e6240406f79a1fe6cb2f8c971a0b25de2a28df3be2a656fa2ea890ad9f745",
+        "size": 152477
       }
     },
     {

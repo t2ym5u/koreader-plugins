@@ -4,6 +4,7 @@
 #   scripts/dev/run_specs.sh 2048 sudokux game-common   # named dirs (.koplugin optional)
 #   scripts/dev/run_specs.sh --changed                  # submodules with uncommitted changes
 #   scripts/dev/run_specs.sh --all                      # every *.koplugin + game-common + sudoku-common
+#   SPECS=test_difficulty_spec.lua scripts/dev/run_specs.sh --all   # only the difficulty specs
 #
 # Each dir runs `busted test_*_spec.lua` from inside that dir, with the `bit`
 # shim on LUA_PATH (Homebrew busted is Lua 5.5, which has no `bit`; without
@@ -11,14 +12,16 @@
 # Exit status: non-zero if any dir had a failure/error, or if busted printed
 # no "N successes / ..." summary line (= it crashed before running).
 # Env: REPO (monorepo root), BUSTED (default busted), VERBOSE=1 prints the
-#      full busted output of failing dirs.
+#      full busted output of failing dirs, SPECS a glob of spec files to run
+#      instead of test_*_spec.lua (dirs without a match print "(no specs)").
 set -uo pipefail
 DEV_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO="${REPO:-$(cd "$DEV_DIR/../.." && pwd -P)}"
 BUSTED="${BUSTED:-busted}"
+SPECS="${SPECS:-test_*_spec.lua}"
 SKIP=" kakuro arrowwords startmenu boggleparty doubleornothing _skeleton "
 
-usage() { sed -n '2,15p' "$0" | sed 's/^# \{0,1\}//'; exit 2; }
+usage() { sed -n '2,18p' "$0" | sed 's/^# \{0,1\}//'; exit 2; }
 [[ $# -ge 1 ]] || usage
 
 dirs=()
@@ -57,11 +60,12 @@ shopt -s nullglob
 for d in "${dirs[@]}"; do
   if [[ "$d" == !* ]]; then bad=1; continue; fi
   label="${d%.koplugin}"
-  specs=("$REPO/$d"/test_*_spec.lua)
+  specs=()
+  for f in "$REPO/$d"/$SPECS; do [[ -f "$f" ]] && specs+=("$f"); done
   if [[ ${#specs[@]} -eq 0 ]]; then
     printf '%-18s (no specs)\n' "$label:"; continue
   fi
-  out="$(cd "$REPO/$d" && LUA_PATH="$DEV_DIR/bitshim/?.lua;;" "$BUSTED" test_*_spec.lua 2>&1)"
+  out="$(cd "$REPO/$d" && LUA_PATH="$DEV_DIR/bitshim/?.lua;;" "$BUSTED" $SPECS 2>&1)"
   summary="$(printf '%s\n' "$out" | grep -E '^[0-9]+ success' | tail -1)"
   status=OK
   if [[ -z "$summary" ]]; then

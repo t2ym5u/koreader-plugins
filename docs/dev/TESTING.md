@@ -27,6 +27,41 @@ scripts/dev/run_specs.sh <plugin> ...        # or --changed / --all
   - save/load round-trip, including old saves;
   - nothing heavy at startup (`test_startup_spec.lua`).
 
+### Difficulty specs (`test_difficulty_spec.lua`)
+
+Every game with levels, sizes that change the difficulty, or a computer
+opponent has one `test_difficulty_spec.lua`, which holds its difficulty
+guarantees (moved there from other specs, not duplicated). Run them all with:
+
+```bash
+SPECS=test_difficulty_spec.lua scripts/dev/run_specs.sh --all
+```
+
+What it checks, as far as the game allows:
+
+- **Generated puzzles**, for each size × level, on a few fixed seeds:
+  - the puzzle builds, within a generous time bound;
+  - it is unique and solved by the game's own solver **without trial**
+    (single-cell "assume X, find a contradiction"), within the level's
+    technique cap; enumerating the ways to fill one region/line is allowed;
+  - Easy needs only the basic techniques;
+  - the levels are **distinct and in order** on the game's own measure
+    (hard steps, tier, givens, path length...): Easy < Medium < Hard, on
+    averages over the seeds, never on a single grid;
+  - the same seed gives the same puzzle, and generation never reads the
+    clock.
+- **Computer opponents:** the level table is ordered (depth, budget, noise),
+  each level plays legal moves, takes an immediate win and blocks an
+  immediate loss where the game has them, plays the same game for the same
+  seed, and stays within its time budget at Kobo scale. No full matches:
+  they are too slow and too noisy for a spec.
+- **Level banks and word lists** (sokoban, klotski, chess puzzles, word
+  games...): each level's entries sit in its documented band (moves, word
+  length, distance...) and the bands are ordered.
+
+Keep each file under about 30 s with Homebrew busted: few seeds, small
+sizes first. Use counts, never the clock, to bound the work.
+
 ## 2. Translations
 
 ```bash
