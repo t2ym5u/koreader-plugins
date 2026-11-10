@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-11-09",
+  "updated": "2026-11-10",
   "repo": "t2ym5u/koreader-plugins",
   "common": {
     "version": "1.15.0",
@@ -604,7 +604,7 @@
       "fullname": "Categories",
       "description": "Draw a letter and a list of categories, write an answer for each before the timer ends, then score unique and shared answers — the classic pen-and-paper word game.",
       "category": "party",
-      "version": "1.1.3",
+      "version": "1.2.0",
       "files": [
         "_meta.lua",
         "content_en.lua",
@@ -617,13 +617,13 @@
         "images/categories.png"
       ],
       "sha256": {
-        "_meta.lua": "d5e354f7f3ffb27aec346dcdc1ce12eb604ccf1ff7f4dba4b0decefbfd7fbb97",
+        "_meta.lua": "952d01e51676ea23b0d871924f2b4d4e1b8cf1fc2b3345df37e5ad80498bc4fe",
         "content_en.lua": "3420a62eaeff4361f0e60b1a34dd95e2bb69d88313299501e93eb1926b6d60e3",
-        "content_fr.lua": "4ac5c58b4e074c837d5478f183784b5fd52935bc37a68cebb6d3ec926a55249f",
+        "content_fr.lua": "f1422a8c1fd6facaf24a8b87c7a4409c8f76c6a90250b8c6d95bd0cdf6e16570",
         "game.lua": "5a26a5029a3b8270c82b208eeed4a86af49029819488a8a89bfb45354796270a",
         "i18n_fr.lua": "8cf9078a66f9119893af1248816294180be20e2948a6ca046ac2f7de2930768b",
         "main.lua": "53604cb951af067bbaf7101eef41248cdc0320f3b9176433f045cd3493cd15f0",
-        "screen.lua": "616c878c7233d23f16eb18817e4cb27ca47ca43a49b63fdc95ed2f768c9184cf",
+        "screen.lua": "a8040391a2b5313d79bdd418c54e496c512a9399c382dc09c06cc100fa130af5",
         "widgets.lua": "637ab98434bb6c670dc8e992bf73a253eb1c905d2877d0a266df7497a7adcc3f",
         "images/categories.png": "7a9fd1b1d1b9f2717c958c11ef233bb948e59cd4ea02c0efb113b030a370cfab"
       },
@@ -631,8 +631,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/categories.koplugin/main/",
       "zip": {
         "path": "dist/categories.zip",
-        "sha256": "49f0e6731ca1a4aa581d888684779769d335dda99b414a8f720259a959b49f04",
-        "size": 203711
+        "sha256": "16d02172d2d81c3bf58b89bf0e7d2d42c2029a31e2cf42b8e47d28dfad9ae78a",
+        "size": 213363
       }
     },
     {
@@ -930,7 +930,7 @@
       "fullname": "Code Words",
       "description": "Two teams, one grid of 25 words: spymasters give one-word clues, operatives find their agents and avoid the assassin.",
       "category": "party",
-      "version": "1.1.3",
+      "version": "1.2.0",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -955,12 +955,12 @@
         "words/fr/science.lua"
       ],
       "sha256": {
-        "_meta.lua": "ea0fb532aa96c733ec08e0ead65a11e4fc5d9098fc6a6233f6e71e43c754eb05",
+        "_meta.lua": "d99b70d7615512044a7e9ddf56350041868de05baa140b9df4ab17e9eafa65ff",
         "board.lua": "e03b166abfb441d8463ee6e0183410db45b9c16d5696424b45022d7f805b64b8",
         "grid.lua": "e0e4ccbd81ad5f957a8c561f9371023018c727b40e2e99b1a11dfcbd3ec1368d",
         "i18n_fr.lua": "baa65d30d8c8142c4a1e4246d942d817053a206a97f5e4125a8c43a0f35efb5e",
         "main.lua": "82ed88ac5431f13e86e59364105ccc159f08ca04788e5bd740fc1bbc71617af8",
-        "screen.lua": "cc34736d852ebe52cb55759b7261afd01564c22438a6236fe3efe92f96d20126",
+        "screen.lua": "4d185c58dbe398c6105ebb19987d9949c31e95299ca2cf218ab85ded02ecb026",
         "images/codewords.png": "6a627b18aa73b648bb98c717a8c2d483919f47f6f946c9b24a5ebf006f379c05",
         "words/en/classic.lua": "c49db4e8a63eef612d56123904b221638ceb4ac95109f7e649941b9da0de5d30",
         "words/en/food.lua": "29da15d995628695cc803cf80f035194462f6059533da698ab1d559d6fd09ab8",
@@ -969,20 +969,20 @@
         "words/en/kids.lua": "40b220be91c87fd54800148bf70e0bd470fa5bd512f9329144d76cee37af1cab",
         "words/en/pop.lua": "25740cd5e89c5d8ac14cb9a0151ec16c9a4addc3ef8569c9db5759fd5976534c",
         "words/en/science.lua": "91fc38364462513c0e76a2915b25397d59f020651c2294412fa337d462b40bd6",
-        "words/fr/classic.lua": "015dc7f0c8c6a7e256a23ac8fa5166d6a7da3d088dffba6645be98134b7fd8db",
-        "words/fr/food.lua": "f6592060520ff7b984faa06962c952a95b3fbc4ebb07a5cf27e49f8805b5aa20",
-        "words/fr/geography.lua": "435e3c3b2c88eb0cef6712aeebbf708fabaa70971ee77b8875436a4e3ed1abd4",
-        "words/fr/history.lua": "ca9a3e18cf0b4a8c05d059940ddb266d62d14e5a70f43ac7bf2917eaa43e545b",
-        "words/fr/kids.lua": "a0dc33d4b048191864c936217f53ba79ee46e0c92e9e66eb619b4c8beefc7488",
-        "words/fr/pop.lua": "d84095dd6278fcb3244ba09e4ebc1392e3f63687734cc4bcac48c08a44f7ca2b",
-        "words/fr/science.lua": "6213d06f2d3944feedc5a0b633386ad3c1c1a3d733525e8d333455fed682e929"
+        "words/fr/classic.lua": "3f5f337e70094fa57a44a47fd1b104c77b216f4062486fb1363676101ab5ffa9",
+        "words/fr/food.lua": "bb50eda17d1b6e90651a10fe2b19851e430251fd6c296b7badf97a4ee93db332",
+        "words/fr/geography.lua": "147034e3940269e26fcd3904ef0fb979d658cfc29228b3cbcdd2549cd98e7d04",
+        "words/fr/history.lua": "bd643aa29014f243e4c08b77e5e044ee3372626d4b45cb7782794d4438ccf9a4",
+        "words/fr/kids.lua": "ab89ccde949764420aabf976541c91c137c2542e72a5a610b39aba5095a9ab9c",
+        "words/fr/pop.lua": "aecd79f3c2902279a6765d53436ab08a8a0a3179ece9c80ce4ceb5144cb3b7ca",
+        "words/fr/science.lua": "18d26065fb053e84d36d509379e1fdb658f4608cedcb0c8bae7f41d6753f83df"
       },
       "common_lib": "common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/codewords.koplugin/main/",
       "zip": {
         "path": "dist/codewords.zip",
-        "sha256": "fee4e311e11aa235d48c1095504235be09f67d5628863f4d4afd1dc66b44408e",
-        "size": 190436
+        "sha256": "9d34e59722e233e2a4e91f77477221644a13686896ee42c861cdb91d8b2ec63e",
+        "size": 200946
       }
     },
     {
@@ -1100,7 +1100,7 @@
       "fullname": "Cryptogram",
       "description": "Substitution cipher word puzzle",
       "category": "words",
-      "version": "1.4.2",
+      "version": "1.5.0",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -1113,22 +1113,22 @@
         "images/cryptogram.png"
       ],
       "sha256": {
-        "_meta.lua": "fdf8029e5e163201f4b287716b9ca7fc3c57aff8614970f7a704617c3bf2b9f9",
+        "_meta.lua": "026d80c74e53595562a9212ade5fb7944e580abb7bfaa7dbd5567e4e7a9822ed",
         "board.lua": "756950dc537a0bea1659e7beb3f879af275c86f0aae5c665888712e0a6391f8d",
         "board_widget.lua": "30f5b836d8e8d83044231e10571c3a2d9ac0653257b7a19a2832cc1dfc6ce722",
         "i18n_fr.lua": "25033277bfa48a4da55f9d92a8e9025e8a10439bf094fb2c154b7beb572ac0e2",
         "main.lua": "158ff2bcb7157cdd7c00aae812be5f5113488679d3e81cdb0e87ee62cdf14f08",
         "screen.lua": "73c36833cb238c139368d35159dbf051cdb4429ca404f441c7f6396652725e0e",
         "data/phrases_en.lua": "b0899c8a59c5294b1474d8f48fcfc61e9b6c2c554b527504e542291e114797b4",
-        "data/phrases_fr.lua": "aaa4116891a29af1ce23b2d467412b7c685ea50f14aacb2ce85d50bc581008af",
+        "data/phrases_fr.lua": "c8e3aaa23a8d373f891e831870f00d7ff94c0ee864bce1430306d1ea6aae2893",
         "images/cryptogram.png": "71200f0661e7312d99b52d721586703a9eed5f62c6cf7fa9a8ff7796516a3077"
       },
       "common_lib": "common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/cryptogram.koplugin/main/",
       "zip": {
         "path": "dist/cryptogram.zip",
-        "sha256": "b90d1c1cd191eab4cc38f5527143ad4af3190d8f9679685af79a9bd1fc54d75f",
-        "size": 161289
+        "sha256": "ffba111f17ce0a54a23d16a3061c98f97ef13473062056c608f95f9f7d57eee0",
+        "size": 167181
       }
     },
     {
@@ -2900,7 +2900,7 @@
       "fullname": "Pass the Word",
       "description": "Word-guessing party game for four, two teams of two, inspired by the classic TV game: one-word clues, a 4-round qualification, then a 5-level final with a prize pyramid.",
       "category": "party",
-      "version": "1.1.3",
+      "version": "1.2.0",
       "files": [
         "_meta.lua",
         "game.lua",
@@ -2913,22 +2913,22 @@
         "words/fr.lua"
       ],
       "sha256": {
-        "_meta.lua": "884fd8e8dae1507918e8f940b5cd83bb89ae62a8a8b4d536634abbfc1f1a8b74",
+        "_meta.lua": "1bb20d4a3c55aaa5d8c5c437ac1cb2c0a3ee3bc7b0b6bf835a4969be45c27939",
         "game.lua": "2b15cbe579f80f190c5d1a26c36aeccd3dc4ca4c062c66a69b71e1ac29c3239d",
         "i18n_fr.lua": "c4a43871abab074d2d065aa4b79da7ad9649e06d4d853051d1bcee29836d163d",
         "main.lua": "d842cc111f86a9622863343bd8f2c4f64151d8d0e4ae4cb65e52ce095d643864",
-        "screen.lua": "b326af3357f613b9aec5041b53d8e0ca84ec5a33e2de6a78e5b54857c7f618a0",
+        "screen.lua": "861d361ce65e2aaa9436bb3895c8e420b08ef0a57b919e5b734863eee16f3ea0",
         "widgets.lua": "a79e15e727dbb178a1a88c56303173048d8a249f8a3546f5438f7b6f427dc9d9",
         "images/passeword.png": "0f65fcb88d1b98fbe7d1dc6a782f55b4159083d711962fe734a3cd0c66e3d019",
         "words/en.lua": "37407063da740f0213c3c9585feb4b416e955a5488c8a8441dac509da17dedfe",
-        "words/fr.lua": "49bf9076f4588b2ca18654522c8a22f9c749410e5788e85c77f18b25889b6650"
+        "words/fr.lua": "2e089813db4c0e1c993d22ad72c91affb22e5587a7a5da30a0f9e88931b62db4"
       },
       "common_lib": "common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/passeword.koplugin/main/",
       "zip": {
         "path": "dist/passeword.zip",
-        "sha256": "c78fde0cc9ae541158c92fb5082102e3e490e90a96f2ef0b274528321ecf8378",
-        "size": 203964
+        "sha256": "5ebd4cc3430207371e2d5bd296f4d834a3534162fa48271e737213b8d7515fd3",
+        "size": 211967
       }
     },
     {
@@ -3013,7 +3013,7 @@
       "fullname": "Draw & Guess",
       "description": "Draw words against the clock — team-based party game.",
       "category": "party",
-      "version": "1.4.3",
+      "version": "1.5.0",
       "files": [
         "_meta.lua",
         "deck.lua",
@@ -3026,22 +3026,22 @@
         "images/pictionary.png"
       ],
       "sha256": {
-        "_meta.lua": "d5a919486f36c0e4b5d0d1a833899d57589b1866caf1006fde23f8e6234d99a9",
-        "deck.lua": "dac42f0044f85d754ba40dec4e5f43a35eeeb28b45e380be355afe0a8bd2c78a",
+        "_meta.lua": "cc4eab7bc2863572bd39bc6cabae93185ec98ecdae3936a6052527bdbd8751cd",
+        "deck.lua": "db1cebc3557332c98860b870fa7b641925245549e5d33c85c1411008f4ed2fa8",
         "i18n_fr.lua": "e551276fc93dd50d7490ad3947674ad2a018c836bc1a66c3b9f9096dd1dd33c8",
         "main.lua": "763ef5239e1c9a9fd9bdaf8152c8fc90e805f5a923806c92b64aa36975987450",
         "screen.lua": "073af90da1f5f544ede88129dda0cb54eada4f2cdbc82865fdef9f86e9184fce",
         "words.lua": "4283b812dd75e6e0b48823532ae7875b61de7f4797905091968d4faf63740139",
         "words_en.lua": "718f984f5dca606d73eca9774d81d52feba6854b42d293a5eeb8d807b2207416",
-        "words_fr.lua": "ff44827a1a91d6ef83bfa1ffc38d8c3e89ee9c56076ea61dbda8dd8b28bb0e7a",
+        "words_fr.lua": "60829e3133806d51d80a58182afe545875109c49047323e44b9594254479b259",
         "images/pictionary.png": "e907e1d03b4771b2dc031148e81f0421a0535122dc09dbcf5b8a29e684723f00"
       },
       "common_lib": "common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/pictionary.koplugin/master/",
       "zip": {
         "path": "dist/pictionary.zip",
-        "sha256": "34bc5052cdea0af08573998311f076994687d27abd4d296b4af16c63cb1b88e7",
-        "size": 168715
+        "sha256": "c5a5a83cf31907cecbf48c541d4fe5fd36052d9f35ce9bdb0fc030b6891a9290",
+        "size": 185595
       }
     },
     {
@@ -4093,7 +4093,7 @@
       "fullname": "Three Rounds",
       "description": "Team guessing party game in three rounds with the same deck of famous names: describe freely, then one word only, then mime.",
       "category": "party",
-      "version": "1.1.3",
+      "version": "1.2.0",
       "files": [
         "_meta.lua",
         "cards_en.lua",
@@ -4106,13 +4106,13 @@
         "images/threerounds.png"
       ],
       "sha256": {
-        "_meta.lua": "33cf803c927a7eb08a5388a5910a61ea854e4596865e031821c391edb6f59bdf",
+        "_meta.lua": "e2d1ceafda234ea5a9b18b4f85a5c256de9ef8fcebe39d66bdf7a657940ddf39",
         "cards_en.lua": "d81ad2301cd38322ec866456f222640a306cb7a38a18e583bccc57a2b2d73200",
-        "cards_fr.lua": "f4528c0fbefb5ed9e21828cce1742e640731abae838d6f342a18ba8f8455e3ed",
+        "cards_fr.lua": "b4e995edc32491a2914e791c487d0a579105d3f38123b2b4b53566c3bfa2eb0a",
         "game.lua": "dcc1640d64499ec75996ebf6f44710033478437f5f237683a9581e156f7cff07",
         "i18n_fr.lua": "a425e9f10a4069102c9b4411f5ca40b43b3e3ffc1d2f630782ae77649b719be0",
         "main.lua": "a09a6bd1cd0b00b9e9e897971bcd81c25fb315678aa929e81eb82be667363d4c",
-        "screen.lua": "ffd5a077ef5cc2e40d731d43ca0ce40c4b22466dff2f4608a9bb1aafba041125",
+        "screen.lua": "445488a1d63dee2afcf48779652acae357b64a871c0bd32cb50f2814b9f91446",
         "widgets.lua": "08216130392a25da5dcd3eb34859bb2aaf14091c73b484463e4b1faa478df5a7",
         "images/threerounds.png": "bc4eb164841691fb9c5470b7e9fc52a821d80868ef72b0e5a0cf5908942dc0e3"
       },
@@ -4120,8 +4120,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/threerounds.koplugin/main/",
       "zip": {
         "path": "dist/threerounds.zip",
-        "sha256": "e8cd0a5d9fe322fe29bc4d0ededc5f283599b65cabf5f5d639ad6d1ebc97a2b0",
-        "size": 193956
+        "sha256": "566e2f9bc1af54b8af6e4b723e49117a54c422f626ea074bae37cd511a633311",
+        "size": 214923
       }
     },
     {
@@ -4605,7 +4605,7 @@
       "fullname": "Word Pyramid",
       "description": "Word-guessing party game for four, two teams of two, inspired by the classic French TV word game: one-word clues that cost bricks, riddles, ping-pong, against the clock, proper names, then the Great Pyramid final.",
       "category": "party",
-      "version": "1.1.3",
+      "version": "1.2.0",
       "files": [
         "_meta.lua",
         "game.lua",
@@ -4626,30 +4626,30 @@
         "images/wordpyramid.png"
       ],
       "sha256": {
-        "_meta.lua": "742fbeb8010cd2a4faa0114e5b61ffb48215f6c83b0774feefd28bb28c6a1d1d",
+        "_meta.lua": "f637784fa0498d5c198fd628b4063e36ab730009e0489eea12d430d2da18ebe2",
         "game.lua": "8e93581d1d906a6da2ef1571c88937ef0b259f088834ecc0ef91d1ae84a0e831",
         "i18n_fr.lua": "99ef1cf904030c2485ae238b6160ba30d42d8566372d6615dd090890ceb3e1c9",
         "main.lua": "4f3359871fd227faaa948a3e02bf4a4fc809d8fec00cb75bccf4716552e5555e",
-        "screen.lua": "e2c77889671ccda0e94d57353e3c5a55147dac1f4b578e72a9d9182f701fc738",
+        "screen.lua": "2c422e2c9d7319156dc7f6200517ebef90d5c17a16fc02ae3c83016a744dcd9c",
         "widgets.lua": "f41245d686c2606f5e1d5f0ac5d3f6bd46f2931aed948954e0ce63c27df8793c",
         "content/en/clock.lua": "e32103e71a71fa3216edcf79b8dda98d70ebe8fe9b62a5b8528c7b7dc05f0cef",
         "content/en/names.lua": "99dc3e7a46f90a24aebb914ccef0da71710a888dd0566a1c8304af3e81c5bdca",
         "content/en/pyramid.lua": "3fa3e5a14506a71f923f366ae61b660253d3bb74dd167d4146e10259587cd895",
         "content/en/riddles.lua": "1b62130d4a9fca784c30e8265a62c55a770d00448c9abf23aba7a505af17f113",
         "content/en/words.lua": "792135777149e58ab5b421807997acdd6c3bb9a32870f0b453e07e6e93bc1c0e",
-        "content/fr/clock.lua": "bd50ec8354e2eefff27a443171a6cd257d49498ae76342b02a66dd2b929543c5",
-        "content/fr/names.lua": "3cd815d32430b4136a2813fa2fc90b652d09e68c0689f3b3cb35717b1345682e",
-        "content/fr/pyramid.lua": "3132d8c73740a02488622fd286a9eaae1263e07ae317ab8a9904accb79acc5a9",
-        "content/fr/riddles.lua": "18d461406cd6eb51e227291dbc93c03c078872c1e09732f5b44a304fe2b33462",
-        "content/fr/words.lua": "9ff2fb2f2800eb58ebc13a47d844c411693dab0fa4b8eb132590bb3ec8c42912",
+        "content/fr/clock.lua": "31500f08d17b6ee505d43cc21121211b6cad8a83faa32a83848542cc49f2b629",
+        "content/fr/names.lua": "511ce44fd2ade28194cb3fc1fc6dbe03c725e18e964120f7694df4bd0520fad8",
+        "content/fr/pyramid.lua": "34f5327ac132d7edbff21395c66484bfbe9d74c99b4ee1e74d72295c37d04bf9",
+        "content/fr/riddles.lua": "75da77402b0e2124f996a29101b1cadfc606cb5295493b01a4f3fc81fd694bbb",
+        "content/fr/words.lua": "d5143fb63cee7771941d27c503b99a61160db76592dd085a0813c0ed0523ec59",
         "images/wordpyramid.png": "ff2de4a20506fcbf923cf54e7a5f7c219ac452445343f7c8aeb0b7af277801b8"
       },
       "common_lib": "common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/wordpyramid.koplugin/main/",
       "zip": {
         "path": "dist/wordpyramid.zip",
-        "sha256": "32157969ab6794ac7132f2a3fc4d358ae405521b0c6a3c336a701c10e4cb72cf",
-        "size": 264085
+        "sha256": "2fcda79a0def477ce6d79972055c0d4e21c48b14d28ac32a7cc461db71ba08cb",
+        "size": 294887
       }
     },
     {
