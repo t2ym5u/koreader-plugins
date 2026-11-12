@@ -13,8 +13,6 @@ are not repeated here.
   topic or protection change, or anything on the owner's e-reader. A GO for one batch does not
   cover the next. The scripts that publish are declared in `.claude/publish-scripts`.
 - Talk to the owner in **French**. Code, comments, docs and CHANGELOGs stay in **English**.
-- **Never stage `arrowwords.koplugin` or `kakuro.koplugin`**: they are archived and show as
-  modified locally (arrowwords holds a stranded i18n fix).
 - **Never commit another session's work in progress**: parallel sessions share this tree. Check
   `git status` and the diffs.
 - **No AI attribution** in commits, tags, release notes or PRs (owner's rule, 2026-11-12): no

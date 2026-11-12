@@ -4,9 +4,9 @@
 set -uo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 
-# Set-aside submodules that always show as modified: say it, so nobody stages them.
+# Archived submodules: a change there cannot be pushed without unarchiving.
 dirty="$(git -C "$ROOT" status --porcelain=v1 -- arrowwords.koplugin kakuro.koplugin 2>/dev/null | cut -c4- | paste -sd ' ' -)"
-[ -n "$dirty" ] && echo "- Expected noise, never stage: $dirty (AGENTS.md § Non-negotiable)"
+[ -n "$dirty" ] && echo "- Archived plugin modified: $dirty (push it via unarchive/archive before moving its pointer, docs/dev/PITFALLS.md)"
 
 # Shared libraries ahead of manifest.json: a fleet bump is needed before the next release.
 libs="$("$ROOT/scripts/check_shared_libs.sh" 2>/dev/null)" || {

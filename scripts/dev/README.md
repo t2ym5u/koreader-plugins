@@ -319,5 +319,5 @@ and is ahead of its upstream.
    ./scripts/build_release.sh
    python3 .github/scripts/update_manifest.py
    ```
-   Then commit the submodule pointers, `manifest.json` and `dist/` (never
-   stage arrowwords/kakuro), push, and watch CI. See `docs/dev/RELEASE.md`.
+   Then commit the submodule pointers, `manifest.json` and `dist/`, push, and
+   watch CI. See `docs/dev/RELEASE.md`.

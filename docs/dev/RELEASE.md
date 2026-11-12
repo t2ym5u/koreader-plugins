@@ -41,8 +41,8 @@ repos, archive or delete. A GO for one batch does not cover the next.
 
    Then stage submodule pointers, `manifest.json`, docs and scripts, run
    `git add -f dist/*.zip`, commit, and push.
-   - **Never stage** `arrowwords.koplugin` or `kakuro.koplugin`: they show as
-     modified locally and are archived.
+   - `arrowwords.koplugin` and `kakuro.koplugin` are archived: their pointers
+     only move after an unarchive / push / archive of the plugin repo.
    - Never commit a parallel session's work in progress. Check `git status`
      and diffs.
    - No AI attribution in commit messages (no `Co-Authored-By` trailer):

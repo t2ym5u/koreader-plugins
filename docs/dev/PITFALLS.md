@@ -41,8 +41,10 @@
   archive again. The release CI of a just-unarchived repo may fail on a tag
   race, which is harmless for a retired plugin.
 - Forks have Actions and Issues disabled by default.
-- Never stage arrowwords or kakuro. They are archived and dirty locally.
-  arrowwords holds a stranded i18n fix.
+- A commit made in an archived plugin's checkout cannot be pushed, and a
+  monorepo pointer to it breaks `git submodule update` on every fresh clone.
+  arrowwords stayed that way from 2026-08 to 2026-11-12 (pointer to a commit
+  that was never on GitHub): push first, then move the pointer.
 - A parallel Claude session may work in the same tree. Never commit its work
   in progress.
 
