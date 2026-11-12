@@ -64,6 +64,11 @@
   - nurikabe 15×15 Hard degenerated to one island.
 - **Throwaway or double generation.** `Board:new()` generating, then the
   screen loading the save, or generating again. Use `Board:new{ empty = true }`.
+- **Two readers must deal the same game from one code.** Two Kobos may run
+  different KOReader (and LuaJIT) builds. Detective shuffled its clue lists
+  in `pairs()` order, which a build may change (fixed 2026-11-10). Draw from
+  `Duo.rng`, iterate in a fixed order, sort with no ties, compare strings by
+  bytes (Lua's `<` follows the locale), and pin a few draws in a spec.
 - **Generators must not use time budgets.** That breaks the Daily Challenge
   across devices.
 - **Daily Challenge:** any change to a generator's random draws changes the

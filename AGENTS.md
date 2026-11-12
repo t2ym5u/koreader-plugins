@@ -1,6 +1,6 @@
 # AGENTS.md — koreader-plugins
 
-Monorepo of ~115 KOReader game/utility plugins for the owner's e-reader, one git submodule per
+Monorepo of ~121 KOReader game/utility plugins for the owner's e-reader, one git submodule per
 `*.koplugin` (repos `t2ym5u/<id>.koplugin`), plus the shared-library submodules `game-common`
 and `sudoku-common`. Build and release commands: `README.md`; plugin list: `docs/README.md`.
 General agent rules (GO before publishing, verification, `HANDOFF.md`) come from agent-kit and

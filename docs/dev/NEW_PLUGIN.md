@@ -11,6 +11,8 @@ skeleton has no lazyrequire and no module guard.
 | board game with AI | `othello.koplugin`, `connect4.koplugin`, `awale.koplugin` (time-budget AI) |
 | party game (reader on the table) | `boggle.koplugin` (party_mode), `werewolf.koplugin`, `quiz.koplugin` |
 | utility (own Tools entry) | `quickcalc.koplugin`, `converter.koplugin` |
+| two readers, shared game code | `spotdiff.koplugin` (roles, levels in the code), `stealthsubs.koplugin` (log replayed for Undo) |
+| two readers, no code | `navalduel.koplugin` |
 
 ## Must have
 

@@ -489,3 +489,27 @@
 	path = reference.koplugin
 	url = https://github.com/t2ym5u/reference.koplugin.git
 	branch = main
+[submodule "navalduel.koplugin"]
+	path = navalduel.koplugin
+	url = https://github.com/t2ym5u/navalduel.koplugin.git
+	branch = main
+[submodule "spotdiff.koplugin"]
+	path = spotdiff.koplugin
+	url = https://github.com/t2ym5u/spotdiff.koplugin.git
+	branch = main
+[submodule "mazeguide.koplugin"]
+	path = mazeguide.koplugin
+	url = https://github.com/t2ym5u/mazeguide.koplugin.git
+	branch = main
+[submodule "mysteryface.koplugin"]
+	path = mysteryface.koplugin
+	url = https://github.com/t2ym5u/mysteryface.koplugin.git
+	branch = main
+[submodule "stealthsubs.koplugin"]
+	path = stealthsubs.koplugin
+	url = https://github.com/t2ym5u/stealthsubs.koplugin.git
+	branch = main
+[submodule "defuser.koplugin"]
+	path = defuser.koplugin
+	url = https://github.com/t2ym5u/defuser.koplugin.git
+	branch = main

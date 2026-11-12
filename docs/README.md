@@ -6,7 +6,7 @@ A collection of game and utility plugins for [KOReader](https://koreader.rocks/)
 
 ---
 
-## 🎮 Games (106 plugins)
+## 🎮 Games (112 plugins)
 
 | Plugin | Description |
 |---|---|
@@ -28,15 +28,21 @@ A collection of game and utility plugins for [KOReader](https://koreader.rocks/)
 | [Checkers](https://github.com/t2ym5u/checkers.koplugin) | Draughts / Checkers with an AI opponent (fork of kbarni/checkers.koplugin) |
 | [Chess Puzzles](https://github.com/t2ym5u/chesspuzzles.koplugin) | Rated chess tactics: find the winning move in 10,000 puzzles from real games (Lichess database, CC0). Adaptive difficulty that follows your rating, themes, hints and a Daily Challenge. |
 | [Chiffres et Lettres](https://github.com/t2ym5u/numletters.koplugin) | Numbers and letters game (fr) |
-| [Code Words](https://github.com/t2ym5u/codewords.koplugin) | Two teams, one grid of 25 words: spymasters give one-word clues, operatives find their agents and avoid the assassin. |
+| [Code Words](https://github.com/t2ym5u/codewords.koplugin) | Two teams, one grid of 25 words: spymasters give one-word clues, operatives find their agents and avoid the assassin. Also Double Agents, a cooperative mode for two readers. |
 | [Color Nonogram](https://github.com/t2ym5u/colornonogram.koplugin) | Nonogram with multiple colors |
 | [Cours d'Échecs](https://github.com/t2ym5u/chesscourse.koplugin) | 58 chess lessons and puzzles, in English and French |
 | [Cryptogram](https://github.com/t2ym5u/cryptogram.koplugin) | Decode encrypted quotes |
-| [Detective](https://github.com/t2ym5u/detective.koplugin) | Logic deduction cases: read the clues, fill the grid, find who did it, where and with what. |
+| [Detective](https://github.com/t2ym5u/detective.koplugin) | Logic deduction cases: read the clues, fill the grid, find who did it, where and with what. Also Case for Two: two readers share out the clues. |
 | [Dice](https://github.com/t2ym5u/dice.koplugin) | Roll virtual dice with a configurable number of faces and dice |
 | [Dominosa](https://github.com/t2ym5u/dominosa.koplugin) | Lay a full set of dominoes on the number grid |
 | [Dots and Boxes](https://github.com/t2ym5u/dotsandboxes.koplugin) | Dots and Boxes — draw lines, close boxes, keep control. |
 | [Draw & Guess](https://github.com/t2ym5u/pictionary.koplugin) | Draw the word, your team guesses (FR « Dessine et devine ») |
+| [Guide & Explorer](https://github.com/t2ym5u/mazeguide.koplugin) | Two readers, one maze: the guide has the map, the explorer is lost inside and sees only the cells around. Talk your way to the key, then the door. |
+| [Hidden Differences](https://github.com/t2ym5u/spotdiff.koplugin) | Two readers, two grids of symbols that differ in a few cells: describe yours aloud and find the differences together. |
+| [Mystery Face](https://github.com/t2ym5u/mysteryface.koplugin) | Two readers, two secret characters among drawn faces: ask yes/no questions and be the first to find the other's. |
+| [Naval Duel](https://github.com/t2ym5u/navalduel.koplugin) | Battleship for two readers: hide your fleet, call your shots aloud, and your reader answers honestly for you. |
+| [Silent Subs](https://github.com/t2ym5u/stealthsubs.koplugin) | Two readers, two hidden submarines: announce your moves, track the enemy's from what it says, and torpedo it first. |
+| [The Defuser](https://github.com/t2ym5u/defuser.koplugin) | Two readers: the operator has an alarm machine, the expert its manual (new rules every game). Stop every module before the third mistake. |
 | [Échecs](https://github.com/t2ym5u/chess.koplugin) | Chess |
 | [Estimation](https://github.com/t2ym5u/estimation.koplugin) | Numeric trivia for 2 to 8 players: guess the year, the height, the count — closest wins, or bet on the best guess. |
 | [Farkle](https://github.com/t2ym5u/farkle.koplugin) | Push-your-luck dice game to 10,000 points (Dix mille). Hotseat for 2-4 players, with computer opponents. |

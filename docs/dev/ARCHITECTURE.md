@@ -133,8 +133,24 @@ Plugins no longer load their screen or data at KOReader startup.
 | gen_progress | "Generating puzzle…" progress bar after 200 ms: `GenProgress.run(function(p) board:generate(p) end)` |
 | keyboard_widget | shared letter keyboard (layout follows the KOReader UI language), one font size for all keys |
 | daily_seed | deterministic Daily Challenge seed (`DailySeed.run`) |
+| duo | two-reader games: five-digit game code (seed + variant + check digit), `Duo.rng` (same draws on every reader), Start / Join dialog with roles (`Duo.newGameDialog`) |
 | timer, undo_stack, hint, grid_utils, grid_widget_base, menu_helper, settings_dialog, score_tracker, stats_exporter | as named |
 | module_guard, game_common_version | the guard above |
+
+- **Two-reader games** (game-common ≥ 1.16.0): games played by two
+  people with a reader each, readers that never talk to each other. One
+  player starts a game and reads its code aloud, the other types it in;
+  both build the same game from it (`duo.lua`) and each shows only its
+  player's part. They sit in the `duo` category ("Two readers"):
+  - six games of their own (navalduel, spotdiff, mazeguide, mysteryface,
+    stealthsubs, defuser), each passing `category = "duo"` to
+    `GamesMenu.add` itself;
+  - modes of existing games, with `duo_mode = true` (and `duo_menu_text`
+    for a name of their own): codewords (Double Agents, `duo_screen.lua`)
+    and detective (Case for Two). The entry is `<id>:duo`, launch_mode
+    "duo"; the save goes under its own key (`duo_state`).
+  - Generators behind a game code must draw from `Duo.rng` only, never
+    from `math.random`, `pairs()` order or a sort with ties.
 
 ## Dashboard
 

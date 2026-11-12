@@ -1,10 +1,10 @@
 {
   "_comment": "Plugin id -> category, in `categories` display order. Category ids are stable; `labels` are English (French in game-common/i18n.lua and pluginmanager). update_manifest.py writes the manifest categories and generates game-common/game_categories.lua (Tools > Games menu, Dashboard) from this file.",
-  "categories": ["logic", "sudoku", "words", "board", "cards", "classic", "party", "tools"],
+  "categories": ["logic", "sudoku", "words", "board", "cards", "classic", "party", "duo", "tools"],
   "labels": {
     "logic": "Logic puzzles", "sudoku": "Sudoku", "words": "Word games",
     "board": "Board games", "cards": "Card & dice games", "classic": "Classic puzzles",
-    "party": "Party & quiz", "tools": "Utilities"
+    "party": "Party & quiz", "duo": "Two readers", "tools": "Utilities"
   },
   "plugins": {
     "aquarium": "logic", "binairo": "logic", "bridges": "logic", "cave": "logic",
@@ -44,6 +44,9 @@
     "gamebook": "words", "textadventure": "words",
 
     "scoresheet": "party", "randomizer": "party",
+
+    "navalduel": "duo", "mysteryface": "duo", "stealthsubs": "duo", "mazeguide": "duo",
+    "defuser": "duo", "spotdiff": "duo",
 
     "bookdrop": "tools", "dashboard": "tools", "opdsdir": "tools", "pluginmanager": "tools", "startmenu": "tools",
     "quickcalc": "tools", "converter": "tools", "stopwatch": "tools", "almanac": "tools", "reference": "tools"
