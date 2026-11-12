@@ -15,7 +15,7 @@ Bump step (--apply): for each manifest.json plugin with common_lib "common"
 uncommitted changes (dirty ones carry their own release, see
 release_dirty_plugins.py): _meta.lua version +0.0.1, a new top CHANGELOG.md
 entry "## [<new>] - <date>" / "### <section>" / the --message bullet(s),
-commit "release: <new> -- <subject>" with the Co-Authored-By trailer, and
+commit "release: <new> -- <subject>" (no attribution trailer), and
 tag v<new>, all LOCAL. Nothing is pushed.
 
 Push step (--push): for each consumer whose HEAD is tagged v<_meta version>
@@ -38,7 +38,6 @@ from pathlib import Path
 
 REPO = Path(os.environ.get("REPO") or Path(__file__).resolve().parents[2])
 EXCLUDED = {"kakuro", "arrowwords", "startmenu", "boggleparty", "doubleornothing", "_skeleton"}
-TRAILER = "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
 VER_RE = re.compile(r'(version\s*=\s*")(\d+)\.(\d+)\.(\d+)(")')
 
 
@@ -112,7 +111,7 @@ def bump(a):
         ch = ch[:i] + e + ch[i:] if i >= 0 else ch.rstrip() + "\n\n" + e
         chp.write_text(ch)
         git(d, "add", "_meta.lua", "CHANGELOG.md")
-        git(d, "commit", "-q", "-m", f"release: {new} -- {subject}\n\n{TRAILER}")
+        git(d, "commit", "-q", "-m", f"release: {new} -- {subject}")
         git(d, "tag", f"v{new}")
         print(f"bumped {pid} {cur} -> {new} (local commit + tag)", flush=True)
     print("\nCheck one (git -C <id>.koplugin show), then: fleet_patch_bump.py --push --apply")

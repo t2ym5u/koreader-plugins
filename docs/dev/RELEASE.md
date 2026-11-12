@@ -44,7 +44,9 @@ repos, archive or delete. A GO for one batch does not cover the next.
    - **Never stage** `arrowwords.koplugin` or `kakuro.koplugin`: they show as
      modified locally and are archived.
    - Never commit a parallel session's work in progress. Check `git status`
-     and diffs, and look for foreign `Claude-Session:` trailers.
+     and diffs.
+   - No AI attribution in commit messages (no `Co-Authored-By` trailer):
+     see `AGENTS.md`.
 5. **CI:** watch "Release plugins" and "Update manifest.json" with
    `gh run watch <id> --exit-status`. Then check that every
    `gh release view v<ver> -R t2ym5u/<id>.koplugin` exists.

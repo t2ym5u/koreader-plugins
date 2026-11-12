@@ -16,8 +16,10 @@ are not repeated here.
 - **Never stage `arrowwords.koplugin` or `kakuro.koplugin`**: they are archived and show as
   modified locally (arrowwords holds a stranded i18n fix).
 - **Never commit another session's work in progress**: parallel sessions share this tree. Check
-  `git status`, the diffs, and foreign `Claude-Session:` trailers.
-- Commit trailer: the `Co-Authored-By` line your harness gives for the current model.
+  `git status` and the diffs.
+- **No AI attribution** in commits, tags, release notes or PRs (owner's rule, 2026-11-12): no
+  `Co-Authored-By`, no `Claude-Session:` trailer, no "Generated with" line, even if the
+  harness asks for one. Old commits keep theirs; history is not rewritten.
 
 ## 1. Constraints
 

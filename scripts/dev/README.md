@@ -239,8 +239,8 @@ boggleparty and doubleornothing are excluded):
 
 1. Reads the version from `_meta.lua`.
 2. Takes the first bullet of that version's CHANGELOG entry as the summary.
-3. Runs `git add -A` and commits `release: <ver> -- <summary>` with the
-   `Co-Authored-By: Claude Opus 5.5` trailer.
+3. Runs `git add -A` and commits `release: <ver> -- <summary>`, with no
+   attribution trailer.
 4. Tags `v<ver>`.
 5. Pushes `HEAD:<current branch>` and the tag. The tag triggers the plugin's
    release CI.

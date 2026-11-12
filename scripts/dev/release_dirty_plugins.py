@@ -8,7 +8,7 @@
 For each dirty <id>.koplugin submodule (set-aside plugins, boggleparty and
 doubleornothing excluded): version from _meta.lua, summary = first bullet of
 that version's CHANGELOG.md entry, then
-    git add -A; git commit -m "release: <ver> -- <summary>" (+ Co-Authored-By trailer)
+    git add -A; git commit -m "release: <ver> -- <summary>" (no attribution trailer)
     git tag v<ver>; git push origin HEAD:<branch>; git push origin v<ver>
 <branch> is the submodule's current branch (main or master; refuses a
 detached HEAD). Pushing a v* tag triggers the plugin's release CI.
@@ -30,7 +30,6 @@ from pathlib import Path
 
 REPO = Path(os.environ.get("REPO") or Path(__file__).resolve().parents[2])
 EXCLUDED = {"kakuro", "arrowwords", "startmenu", "boggleparty", "doubleornothing", "_skeleton"}
-TRAILER = "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
 VERSION_RE = re.compile(r'version\s*=\s*"([\d.]+)"')
 
 
@@ -114,7 +113,7 @@ def main():
     for p in plans:
         d, ver = p["dir"], p["ver"]
         git(d, "add", "-A")
-        git(d, "commit", "-q", "-m", f"release: {ver} -- {p['summary']}\n\nSee CHANGELOG.md.\n\n{TRAILER}")
+        git(d, "commit", "-q", "-m", f"release: {ver} -- {p['summary']}\n\nSee CHANGELOG.md.")
         git(d, "tag", f"v{ver}")
         if not a.no_push:
             git(d, "push", "-q", "origin", f"HEAD:{p['branch']}")
