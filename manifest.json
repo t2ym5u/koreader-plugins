@@ -541,7 +541,7 @@
       "fullname": "Book Drop",
       "description": "Drop books into a WebDAV folder (Koofr, Nextcloud…) from your phone or computer; the reader fetches them on its own when online.",
       "category": "tools",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "files": [
         "_meta.lua",
         "bookdrop_logic.lua",
@@ -552,19 +552,19 @@
         "images/bookdrop.png"
       ],
       "sha256": {
-        "_meta.lua": "ca17c5443076af77a08eabdcec25dca3a825e71cd611ba9f1f2676b7d3db36f0",
-        "bookdrop_logic.lua": "ea753fde9afb677cb408877edc351ba9b4a31a1c9ebd6c3d51e42cc8de5b236c",
-        "bookdrop_sync.lua": "edbb13caaaf1b67d16cbcfd49deacf5d4161e33fb9b5d11af5d19069d27580f9",
+        "_meta.lua": "5e98bc3dcc96d975d81664bb2b5496d0267af576a618ddf1bb0ec831bf6512e0",
+        "bookdrop_logic.lua": "09153566deb19050024e057931e4debe43adbbe43180e880999ac5c94724b698",
+        "bookdrop_sync.lua": "6a4a947f7cd29f9e360b5faad740b9ffa8775824a585f2861b8ebb044add30a0",
         "i18n.lua": "87fdd0b7d6846f4bc6bd021e725b6a8a654ef38737cbea00582609d2249b5a09",
-        "i18n_fr.lua": "0b143b404194d117bb34c895b2e1077b2a4648bb33fe7c834c108ea5efef1fde",
-        "main.lua": "05d82b9c9f772925f701451edeeffceb65d33c40ea0626ccc8dbadfdcc55c014",
+        "i18n_fr.lua": "97bf308ddd810f82e7897c73dc18934ce3c975c49880fcf5558d494da88bd7fa",
+        "main.lua": "eea92d582764a4d2363162b3642aaab8bd71756b5c3b4f29cf2ee7047ca4d1cc",
         "images/bookdrop.png": "c8726cde038ef2d13e1cf1aeda12638316bf21a439675068e3901f203bc4b963"
       },
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/bookdrop.koplugin/main/",
       "zip": {
         "path": "dist/bookdrop.zip",
-        "sha256": "507607d7af9aa268c8e594f617d4d876ea4439e09bad61407771d0411127265b",
-        "size": 66582
+        "sha256": "bece42ee4741031e4e9a56735f16ec9992ecd4c70b07d3295e798adc060dbdfe",
+        "size": 67607
       }
     },
     {
