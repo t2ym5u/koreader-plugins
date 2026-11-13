@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-11-12",
+  "updated": "2026-11-13",
   "repo": "t2ym5u/koreader-plugins",
   "common": {
     "version": "1.16.0",
@@ -1223,7 +1223,7 @@
       "fullname": "Detective",
       "description": "Logic deduction cases: read the clues, fill the grid, find who did it, where and with what.",
       "category": "logic",
-      "version": "1.3.0",
+      "version": "1.4.0",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -1240,12 +1240,12 @@
         "images/detective.png"
       ],
       "sha256": {
-        "_meta.lua": "71c0be787f1207b2df2244d4549f5ea41c477eac18ffbfc93ee393a7d1ecf772",
+        "_meta.lua": "5a9ebaf4e2b9b77883397fe5c6c2a394339afc419887f9e9b30101f5c4e14dad",
         "board.lua": "865e5c043d37606d839081686e6fac6252b62097c731bedc09d4c7cc87a3dc50",
         "clues.lua": "5e2a44a1840afd8d1859a9c0780fdc607a15eaf0dfcaec6339acad1e9753f2c8",
         "content.lua": "9cb83083950d1505e9f587ea5f191aedc144b5b9398de44a7904f63476ae9b82",
         "content_en.lua": "3a09414c7a1f52467495006245b6bab8503e96ea5f00c2dfefae0a1dd5c60d76",
-        "content_fr.lua": "4cdf15e307c4b6ad7dbc99d91d3b042e444517856c41e0d317ae82d5e21c23e8",
+        "content_fr.lua": "23d1aed157d86ed39c863a536b9027536a01dc20b41e69449ec02d05d6a4c27d",
         "i18n_fr.lua": "8b2a41d9d7d923f22bbbe172ef943817e4eb13eb1480a119d657c40e1c86dc86",
         "logic_grid.lua": "9286dd0e0910ed6da8d62977a9caaae144b71dbaf5f2c6603a2c4878c4f951cc",
         "main.lua": "33fdad4d674c828b3f4a0f4623e12f3418b3c0d7abd29882ea2bde4be1a98b56",
@@ -1258,8 +1258,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/detective.koplugin/main/",
       "zip": {
         "path": "dist/detective.zip",
-        "sha256": "ae1f900328f5965b7980b4e551af508e175b69f5df82f6ebcdfb2d9c6bee24eb",
-        "size": 202820
+        "sha256": "4fb0a5c9b3a5a9109c6e1142f7556ba780214621b3607aee38908e5e1306bcd0",
+        "size": 213879
       }
     },
     {
