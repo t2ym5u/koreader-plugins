@@ -791,6 +791,52 @@ chemins différents (le piège rencontré sur `slitherlink`), et les versions
 
 ---
 
+## Contenu — à faire (noté le 2026-11-12)
+
+### Doubler le contenu anglais des jeux de mots et d'ambiance
+
+Le contenu français a été doublé le 2026-11-10 (monorepo 812dec7) dans 7 jeux :
+`wordpyramid`, `passeword`, `codewords`, `pictionary`, `threerounds`,
+`categories`, `cryptogram`. Le contenu anglais ne l'a pas été (« FR pour le
+moment »). Même méthode, mêmes garde-fous :
+
+- listes écrites à la main, pas tirées d'un dictionnaire ;
+- relire les ajouts : pas de marques, d'armes, de dictateurs ni de contenu
+  suggestif ; garder les entrées à plusieurs mots entières ;
+- relever le `max` de `SeenHistory` de chaque jeu, et les specs qui le codent
+  en dur (`codewords` `test_history_spec`, `threerounds` `test_game_spec`) ;
+- vérifier le temps de lecture du fichier sur la Kobo (≈ 25× le Mac).
+
+### `detective` : beaucoup plus d'enquêtes, surtout pour « Enquête à deux »
+
+Une enquête est tirée au hasard : une affaire (`crimes`) plus des suspects,
+des lieux et des objets. Le nombre d'enquêtes différentes dépend surtout du
+nombre d'affaires, qui se répètent vite quand on joue souvent à deux.
+
+| `content_*.lua` | affaires | suspects | lieux | objets |
+|---|---|---|---|---|
+| fr (2026-11-12) | 89 | 176 | 116 | 112 |
+| en (2026-11-12) | 90 | 183 | 116 | 125 |
+
+Objectif : au moins 300 affaires par langue, réparties dans les 5 thèmes
+(`history`, `art`, `science`, `fiction`, `world`), et 50 % de suspects, lieux
+et objets en plus pour varier les grilles. Toujours bon enfant : des farces,
+pas de crimes violents. Une affaire qui nomme sa victime (`victim`) doit citer
+exactement le `name` d'un suspect. Vérifier aussi que l'historique anti-répétition
+du jeu suit la nouvelle taille.
+
+### Où mettre les données ? (réponse du 2026-11-12)
+
+Elles restent dans le dépôt de chaque plugin, à côté du code. Le gestionnaire de
+plugins installe un plugin et ses fichiers d'un seul tenant, avec une seule
+version : des données à part pourraient être en décalage avec le code qui les lit.
+Les fichiers restent petits (quelques centaines de Ko), et chaque jeu ne charge
+déjà que la langue en cours. Deux cas justifieraient de les sortir : des listes
+partagées par plusieurs jeux (elles iraient alors dans une bibliothèque commune
+comme `game-common`), ou des fichiers de plusieurs Mo.
+
+---
+
 ## Hors phases — dette repérée en passant
 
 - ~~`scripts/check_sudoku_common_drift.sh` documente des divergences
