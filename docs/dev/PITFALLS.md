@@ -47,6 +47,11 @@
   that was never on GitHub): push first, then move the pointer.
 - A parallel Claude session may work in the same tree. Never commit its work
   in progress.
+- The reverse also happens: a parallel release can reset your uncommitted
+  `manifest.json` and `dist/` changes. On 2026-11-13, Book Drop 1.0.2 got its
+  pointer on master while the manifest still said 1.0.1, so the Plugin Manager
+  offered no update. Run update_manifest, build and commit in one go, then
+  check the pushed manifest (`git show origin/master:manifest.json`).
 
 ## Generators and gameplay
 
