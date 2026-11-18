@@ -32,7 +32,8 @@ H.WORK = env("WORK") or ((env("TMPDIR") or "/tmp"):gsub("/$", "") .. "/koplugins
 
 -- Plugins that are never loaded/tested by the dev tools.
 H.SET_ASIDE = { kakuro = true, arrowwords = true, startmenu = true,
-                boggleparty = true, doubleornothing = true, _skeleton = true }
+                boggleparty = true, doubleornothing = true, chesscourse = true,
+                _skeleton = true }
 
 function H.sh_quote(s) return "'" .. tostring(s):gsub("'", "'\\''") .. "'" end
 function H.mkdir(p) os.execute("mkdir -p " .. H.sh_quote(p)) end

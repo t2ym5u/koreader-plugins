@@ -111,6 +111,8 @@ repos, archive or delete. A GO for one batch does not cover the next.
 - `boggleparty`: absorbed by boggle (party mode).
 - `doubleornothing`: archived 2026-11-04; quiz 1.6.0 absorbed it
   (Quiz · multiplayer → Rule: Double or nothing) and migrates its settings.
+- `chesscourse`: archived 2026-11-18; chesspuzzles 1.2.0 absorbed its 58
+  lessons (title-bar menu → Lessons) and opens them where it was left.
 - `galaxies` was set aside until 2026-09-30, when its generator was rebuilt on
   doubled-coordinate centres; it is a normal plugin again.
 

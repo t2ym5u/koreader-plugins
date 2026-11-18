@@ -15,7 +15,7 @@ if [ -z "${KOREADER_EMU:-}" ]; then
   KOREADER_EMU="$(ls -d "$REPO"/../koreader/koreader-emulator-*/koreader 2>/dev/null | head -1)"
 fi
 LUAJIT="${LUAJIT:-$KOREADER_EMU/luajit}"
-SKIP=" kakuro arrowwords startmenu boggleparty doubleornothing _skeleton "
+SKIP=" kakuro arrowwords startmenu boggleparty doubleornothing chesscourse _skeleton "
 command -v "$LUAJIT" >/dev/null 2>&1 || [[ -x "$LUAJIT" ]] || {
   echo "error: no LuaJIT at $LUAJIT (set KOREADER_EMU or LUAJIT)" >&2; exit 2; }
 files=("$REPO/game-common/i18n.lua")

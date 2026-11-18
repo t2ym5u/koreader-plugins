@@ -6,7 +6,7 @@ A collection of game and utility plugins for [KOReader](https://koreader.rocks/)
 
 ---
 
-## 🎮 Games (112 plugins)
+## 🎮 Games (111 plugins)
 
 | Plugin | Description |
 |---|---|
@@ -26,11 +26,10 @@ A collection of game and utility plugins for [KOReader](https://koreader.rocks/)
 | [Categories](https://github.com/t2ym5u/categories.koplugin) | Draw a letter and a list of categories, write an answer for each before the timer ends, then score unique and shared answers — the classic pen-and-paper word game. |
 | [Cave](https://github.com/t2ym5u/cave.koplugin) | Navigate through a cave |
 | [Checkers](https://github.com/t2ym5u/checkers.koplugin) | Draughts / Checkers with an AI opponent (fork of kbarni/checkers.koplugin) |
-| [Chess Puzzles](https://github.com/t2ym5u/chesspuzzles.koplugin) | Rated chess tactics: find the winning move in 10,000 puzzles from real games (Lichess database, CC0). Adaptive difficulty that follows your rating, themes, hints and a Daily Challenge. |
+| [Chess Puzzles](https://github.com/t2ym5u/chesspuzzles.koplugin) | Rated chess tactics: find the winning move in 10,000 puzzles from real games (Lichess database, CC0), and 58 guided lessons. Adaptive difficulty that follows your rating, themes, hints and a Daily Challenge. |
 | [Chiffres et Lettres](https://github.com/t2ym5u/numletters.koplugin) | Numbers and letters game (fr) |
 | [Code Words](https://github.com/t2ym5u/codewords.koplugin) | Two teams, one grid of 25 words: spymasters give one-word clues, operatives find their agents and avoid the assassin. Also Double Agents, a cooperative mode for two readers. |
 | [Color Nonogram](https://github.com/t2ym5u/colornonogram.koplugin) | Nonogram with multiple colors |
-| [Cours d'Échecs](https://github.com/t2ym5u/chesscourse.koplugin) | 58 chess lessons and puzzles, in English and French |
 | [Cryptogram](https://github.com/t2ym5u/cryptogram.koplugin) | Decode encrypted quotes |
 | [Detective](https://github.com/t2ym5u/detective.koplugin) | Logic deduction cases: read the clues, fill the grid, find who did it, where and with what. Also Case for Two: two readers share out the clues. |
 | [Dice](https://github.com/t2ym5u/dice.koplugin) | Roll virtual dice with a configurable number of faces and dice |

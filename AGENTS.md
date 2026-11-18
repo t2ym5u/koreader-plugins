@@ -38,7 +38,8 @@ are not repeated here.
   ```
   plus headless renders you actually looked at, for any visible change.
 - **Release**: only in the order of `docs/dev/RELEASE.md`, after the GO.
-- **Set-aside plugins** (`kakuro`, `arrowwords`, `startmenu`, `boggleparty`, `doubleornothing`):
+- **Set-aside plugins** (`kakuro`, `arrowwords`, `startmenu`, `boggleparty`, `doubleornothing`,
+  `chesscourse`):
   excluded from `manifest.json`/`dist/`, repos archived, submodules still checked out. Presence
   in the tree does not mean "not yet built": `EXCLUDED_PLUGINS` in
   `.github/scripts/update_manifest.py` is the reference. Why each one and how to set one aside:
