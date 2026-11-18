@@ -87,6 +87,11 @@
 
 - Big touch targets, minimal repaints (`"ui"`/`"fast"` refresh of the changed
   widget only), no animations. Cap live updates at 1 per second (stopwatch).
+- `UIManager:setDirty(widget, ...)` only repaints top-level widgets (the
+  screen). On a child board it just refreshes the old pixels: the tap seems
+  ignored, unless something else (`updateStatus`) also dirties the screen.
+  Pass the screen and keep the board's rectangle as the region
+  (spellingbee 2026-11-18: letter taps showed nothing until Enter).
 - KOReader's Button shrinks wide letters or wraps them, so keyboards set one
   font size for every key.
 - In landscape the side panel is narrow. Keyboard games opt into

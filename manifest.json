@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-11-13",
+  "updated": "2026-11-18",
   "repo": "t2ym5u/koreader-plugins",
   "common": {
     "version": "1.16.0",
@@ -3757,7 +3757,7 @@
       "fullname": "Spelling Bee",
       "description": "Make words from seven letters around a centre letter",
       "category": "words",
-      "version": "1.2.5",
+      "version": "1.2.6",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -3777,9 +3777,9 @@
         "images/spellingbee.png"
       ],
       "sha256": {
-        "_meta.lua": "2b348c7d7140030607b84ea830150927d888074f20f72493acf07dcbf5e905bf",
+        "_meta.lua": "a67613d59a47b1b6ab58af383a6984de80494c9b9681dc74a2f6c8b2b2bbb43c",
         "board.lua": "63e1ce1846ff51c47a38e7f741adb1311d7f3d8f72ac827fbb90f56f78dc8d2a",
-        "board_widget.lua": "0a228c5cab97079b5f72ab76ab9b04b4a1e8aaf7c0a6202028e486b03754d5ac",
+        "board_widget.lua": "1e699e64bac6b56e8a7eba20f5898330908a545e1c7052fb34e68e23f867530d",
         "i18n_fr.lua": "0214527d679480409f6341b461e48d9c15d64a15d393aa1499468f7aa640586e",
         "main.lua": "bc0207b822ab77cce7b3f6b59b08ec63bd8c948f4b6b4fd5598c2af72de36f21",
         "mode.lua": "1c0cad13b17e92fb9986467a88abefd62798fda19187400e1348f1479ccd5c29",
@@ -3789,7 +3789,7 @@
         "puzzles_en.lua": "55430013805fa80a6f296994d2abe76fa3f541d5c3b0e9d8773f6b33f445c07c",
         "puzzles_fr.lua": "ac18b4947d50628f1a8aef8594a9ee6909fcf72a4e4e9c1af20c378d8de013bb",
         "rules.lua": "ebb558c9ac1271f2fa7ae6cf4acbe85e552331be01f5527170ff1dfcf371ce9c",
-        "screen.lua": "f8903183f6a1595bfde39e2f19f5f5047787a1591325deac6973ca09f56d520e",
+        "screen.lua": "784fd981643897943b6adb46aa326f3cd0471e61cd2d64266c0a1f5b0b7d8be6",
         "words_en.lua": "d565405f2db1419678e8215a488dd1ace1f199000ac199526b998f4f5081f67d",
         "words_fr.lua": "941ec125f51dde351060c1b5659e3fab573acde04be671bc75816605a03057e5",
         "images/spellingbee.png": "9082855c0ba912f49286ced83f8ac0e5d4b1225e6310d77dd7ea36c37174617e"
@@ -3798,8 +3798,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/spellingbee.koplugin/main/",
       "zip": {
         "path": "dist/spellingbee.zip",
-        "sha256": "8083d18c08da711410dc8fe99f407e75f3b573bcd1976f85ede5e9a36dd17966",
-        "size": 338910
+        "sha256": "241bea6ed6ca1c2125ce8fd9efcd1bc2f3325229c91a10d67037dc4abfe00366",
+        "size": 338990
       }
     },
     {
