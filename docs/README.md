@@ -6,7 +6,7 @@ A collection of game and utility plugins for [KOReader](https://koreader.rocks/)
 
 ---
 
-## 🎮 Games (111 plugins)
+## 🎮 Games (112 plugins)
 
 | Plugin | Description |
 |---|---|
@@ -61,6 +61,7 @@ A collection of game and utility plugins for [KOReader](https://koreader.rocks/)
 | [Hitori](https://github.com/t2ym5u/hitori.koplugin) | Blacken cells so no number repeats |
 | [KenKen](https://github.com/t2ym5u/kenken.koplugin) | Arithmetic cage puzzle |
 | [Klotski](https://github.com/t2ym5u/klotski.koplugin) | Sliding-block puzzle: slide the blocks around the tray to bring the big square out through the gap at the bottom. The classic Red Donkey and 1600 more levels in four difficulties, hints and a Daily Challenge. |
+| [Letter Pyramid](https://github.com/t2ym5u/letterpyramid.koplugin) | Build a pyramid of words, one letter more on every row: pyramid, upside down or diamond, three levels, English and French, hints and a Daily Challenge. |
 | [Liar's Dice](https://github.com/t2ym5u/liarsdice.koplugin) | Bluffing dice game for 2 to 6 players: bid on all the dice under the cups, or call Liar! Play with friends on one reader, or against the computer. |
 | [Light Up](https://github.com/t2ym5u/lightup.koplugin) | Place bulbs to illuminate the grid |
 | [Lights Out](https://github.com/t2ym5u/lightsout.koplugin) | Switch every light off: each tap toggles a cell and its neighbours. |

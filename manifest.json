@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-11-18",
+  "updated": "2026-11-19",
   "repo": "t2ym5u/koreader-plugins",
   "common": {
     "version": "1.17.0",
@@ -2025,6 +2025,45 @@
         "path": "dist/klotski.zip",
         "sha256": "3dbd017331081c027161a03fb9ba2c284ffb3c1995583fa034e50c8f909ada95",
         "size": 178837
+      }
+    },
+    {
+      "id": "letterpyramid",
+      "dir": "letterpyramid.koplugin",
+      "fullname": "Letter Pyramid",
+      "description": "Build a pyramid of words, one letter more on every row.",
+      "category": "words",
+      "version": "1.0.0",
+      "files": [
+        "_meta.lua",
+        "blocklist.lua",
+        "board.lua",
+        "board_widget.lua",
+        "i18n_fr.lua",
+        "main.lua",
+        "screen.lua",
+        "words_en.lua",
+        "words_fr.lua",
+        "images/letterpyramid.png"
+      ],
+      "sha256": {
+        "_meta.lua": "aef1432821f3a842d085e93ca098c06c06363902b55dd3fc101b8f4d258001cf",
+        "blocklist.lua": "bfe694d2c4eeaba3e6b65d6fe128cee5a703cc20d7161db2b1fc871fb66f2beb",
+        "board.lua": "c8a55bc9331e43be909c8096cedb067c2d7ddac0ea1e7d9d67b085470ee8d26a",
+        "board_widget.lua": "2915ee3e17e3c12d04f5fe2f900b51effa5a36a04134b613a52d1c2e0e0c9f1c",
+        "i18n_fr.lua": "075758d11c20a5fb5e658c1854544dd41225ba0237a50722873779e7a4fef96b",
+        "main.lua": "89339fc5930c74847511afe3c3e5589e86099a36a74f255dbbf135c485580e12",
+        "screen.lua": "84a72fad1ca4e483228e209b660b83fee1b5df3b0f9b3a85bc35d05acc70e4b6",
+        "words_en.lua": "c91b0769ebac3d750044575e28bfdf801284a85596e651110797d30d33784897",
+        "words_fr.lua": "f6dfb54b040ac69631de8b8158f81871ea538e50898d6038f9414078ac9b775b",
+        "images/letterpyramid.png": "bcfaf584fba2404833521cf65b8753cedc3df3eaf07a9b28ac9613a43044a6ab"
+      },
+      "common_lib": "common",
+      "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/letterpyramid.koplugin/main/",
+      "zip": {
+        "path": "dist/letterpyramid.zip",
+        "sha256": "c1548a4f4f03321f71f04cbe3328cd854da67d720d17dddbd1d47456f6c7490f",
+        "size": 329676
       }
     },
     {

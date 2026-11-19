@@ -45,6 +45,14 @@
   monorepo pointer to it breaks `git submodule update` on every fresh clone.
   arrowwords stayed that way from 2026-08 to 2026-11-12 (pointer to a commit
   that was never on GitHub): push first, then move the pointer.
+- A category change makes update_manifest.py rewrite
+  `game-common/game_categories.lua` without committing it, and
+  `build_release.sh` packs that working copy into every zip it builds, while
+  the manifest keeps the sha of the committed file. Unless you release
+  game-common in the same batch, run `git -C game-common checkout --
+  game_categories.lua` before building (2026-11-19, Letter Pyramid: the new
+  plugin passes its category to `GamesMenu.add` itself, so it did not need
+  the new table).
 - A parallel Claude session may work in the same tree. Never commit its work
   in progress.
 - The reverse also happens: a parallel release can reset your uncommitted

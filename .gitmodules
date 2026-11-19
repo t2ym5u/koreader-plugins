@@ -513,3 +513,7 @@
 	path = defuser.koplugin
 	url = https://github.com/t2ym5u/defuser.koplugin.git
 	branch = main
+[submodule "letterpyramid.koplugin"]
+	path = letterpyramid.koplugin
+	url = https://github.com/t2ym5u/letterpyramid.koplugin.git
+	branch = main

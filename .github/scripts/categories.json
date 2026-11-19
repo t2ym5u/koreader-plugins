@@ -21,7 +21,7 @@
     "windoku": "sudoku", "arrowsudoku": "sudoku", "sandwichsudoku": "sudoku", "betweenlines": "sudoku",
 
     "anagram": "words", "arrowwords": "words", "boggle": "words", "cryptogram": "words",
-    "hangman": "words", "numletters": "words", "spellingbee": "words", "wordladder": "words",
+    "hangman": "words", "letterpyramid": "words", "numletters": "words", "spellingbee": "words", "wordladder": "words",
     "wordle": "words", "wordsearch": "words",
 
     "awale": "board", "backgammon": "board", "battleship": "board", "checkers": "board",
