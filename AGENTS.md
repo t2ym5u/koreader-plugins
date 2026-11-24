@@ -35,6 +35,7 @@ are not repeated here.
   ```bash
   scripts/dev/run_specs.sh <plugin> ...   # or --changed; busted can exit 0 on errors: read the summary
   scripts/dev/check_i18n.sh               # must stay at 0 conflicts
+  scripts/dev/check_globals.sh            # no unknown global read or written
   ```
   plus headless renders you actually looked at, for any visible change.
 - **Release**: only in the order of `docs/dev/RELEASE.md`, after the GO.

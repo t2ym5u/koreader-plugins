@@ -125,8 +125,8 @@ Plugins no longer load their screen or data at KOReader startup.
 
 | Module | Role |
 |---|---|
-| plugin_base | settings (`getSetting/saveSetting`, `loadState/saveState`), showGame, stats, menu |
-| screen_base | layout (title bar, status line, `getControlsWidth`, `landscape_controls_ratio`, `getGutter`), rules, round-over action bar |
+| plugin_base | settings (`getSetting/saveSetting`, `loadState/saveState`; the file is written 3 s later or on close/FlushSettings, see below), showGame, stats, menu |
+| screen_base | layout (title bar, status line, `getControlsWidth`, `landscape_controls_ratio`, `getGutter`), rules, round-over action bar, deferred actions (`schedule` / `cancelScheduled`) |
 | games_menu / game_categories | Tools → Games |
 | party | players/teams, scores, scoreboard |
 | seen_history | no-repeat draws across sessions: `SeenHistory.open(plugin, key):draw(pool, n)` |
@@ -151,6 +151,24 @@ Plugins no longer load their screen or data at KOReader startup.
     "duo"; the save goes under its own key (`duo_state`).
   - Generators behind a game code must draw from `Duo.rng` only, never
     from `math.random`, `pairs()` order or a sort with ties.
+
+## Deferred actions and settings writes (game-common ≥ 1.20.0)
+
+- **Deferred actions.** A screen defers with `self:schedule(delay, fn)`,
+  never `UIManager:scheduleIn`. `fn` is dropped if the screen is no longer
+  shown or `self:cancelScheduled()` ran since. Call `cancelScheduled()` at
+  the start of anything that replaces the game a pending action belongs to
+  (new game, new round, undo), before scheduling the new one. `closeScreen()`
+  calls it. Objects that are not screens (chess clock, engines, stopwatch's
+  alarm service) keep their own guards.
+- **Settings writes.** `saveState` / `saveSetting` change the settings in
+  memory and write the file 3 s later (`PluginBase.FLUSH_DELAY`), once for
+  any number of changes. `flushSettings()` writes at once; it runs from
+  `closeScreen`, `stopPlugin`, and `onFlushSettings` on both the plugin and
+  the screen (KOReader sends FlushSettings before suspend, power-off, USB
+  mass storage, exit, and to a widget it closes). The sudoku variants do the
+  same in their own `main.lua` (sudoku-common ≥ 1.12.0). An `onFlushSettings`
+  handler must return nothing, or the event stops at it.
 
 ## Dashboard
 

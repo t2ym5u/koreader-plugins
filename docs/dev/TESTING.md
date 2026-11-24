@@ -7,7 +7,11 @@ Run every step below before showing a change to the owner.
 
 ```bash
 scripts/dev/run_specs.sh <plugin> ...        # or --changed / --all
+scripts/dev/check_globals.sh                 # globals read or written by mistake
 ```
+
+- `--all` runs the dirs in parallel (`JOBS`, default the CPU count). A spec
+  with a timing bound must keep a margin for that load.
 
 - Homebrew busted runs Lua 5.5, which has no `bit` module. Without the shim
   in `scripts/dev/bitshim/`, the sudoku specs error out and busted **still
@@ -111,6 +115,13 @@ cd "$KOREADER_EMU" && ./luajit "$REPO/scripts/dev/open_close_probe.lua" <id> fr 
 
 Reference values from 2026-11-04, with all plugins: about 11 MB heap at
 startup, against 8.35 MB with KOReader's own plugins only.
+
+`startup_cost.lua` ends with a budget check: over `MAX_SUM_KB` (default
+3500) for all plugins, or `MAX_PLUGIN_KB` (default 300) for one, it lists the
+culprits under "OVER BUDGET" and exits 1. On 2026-11-24 the sum was about
+3 050-3 180 KB, and pluginmanager the largest at 180-256 KB (it varies from
+run to run). A plugin that loads its screen or data at startup again shows
+up there.
 
 ## 6. Real install, including an outdated plugin
 

@@ -825,6 +825,30 @@ pas de crimes violents. Une affaire qui nomme sa victime (`victim`) doit citer
 exactement le `name` d'un suspect. Vérifier aussi que l'historique anti-répétition
 du jeu suit la nouvelle taille.
 
+### Captures d'écran des README en anglais (noté le 2026-11-18) — fait le 2026-11-24 sauf `textadventure`
+
+Fait le 2026-11-24 : 13 captures étaient en français (les autres sont en
+anglais ou sans texte) ; 12 sont refaites en anglais, à leur taille d'origine
+(1080×1440 à 300 dpi, almanac 758×1024), et chaque scène est rejouable depuis
+`scripts/dev/scenes/<id>.lua` (commande en tête de fichier). Reste
+`textadventure` : il faut une histoire anglaise (`STORY=…/Advent.z5`, Colossal
+Cave, IF Archive) ; la scène est écrite mais pas encore rendue.
+
+Les README sur GitHub sont en anglais, mais une partie des captures montre le
+jeu en français. Refaire en anglais la capture de chaque plugin
+(`<id>.koplugin/images/`, 122 README en ont une au 2026-11-18) :
+
+- les régénérer avec `scripts/dev/render_screen.lua <id> <out.png> 758 1024 en`
+  (rendu sans fenêtre, 212 dpi, `SEED=7`), et rejouer le `STATE_FILE` de la
+  scène quand le plugin en garde un à côté de ses images ;
+- regarder chaque image avant de l'adopter : texte, mots et indices en anglais,
+  partie en cours plutôt que grille vide ;
+- en profiter pour combler les manques (`go.koplugin/README.md`, voir plus bas) ;
+- les images partent aussi dans les zips (`build_release.sh` copie tout le
+  dossier du plugin) : le README sur GitHub change dès le push du dépôt du
+  plugin, mais les zips ne suivent qu'à leur prochaine reconstruction. Pas
+  besoin d'une version par plugin pour ça ; grouper avec une release (après GO).
+
 ### Où mettre les données ? (réponse du 2026-11-12)
 
 Elles restent dans le dépôt de chaque plugin, à côté du code. Le gestionnaire de
@@ -897,3 +921,59 @@ comme `game-common`), ou des fichiers de plusieurs Mo.
   artefact de mon harnais de capture et « corrigé » là ; il se reproduisait via
   la vraie passe de mise en page de `UIManager`, ce qui a montré qu'il était
   réel.
+
+## Phase H — Audit qualité de la flotte (2026-11-24) ✅ FAIT en local, livraison en attente du GO
+
+**Constat (mesuré le 2026-11-24, pas supposé).**
+
+- `run_specs.sh --all` : 120 suites vertes sur 121, 3 999 tests, ~10 min.
+  `check_i18n.sh` : 0 conflit.
+- Écritures de globales (scan du bytecode LuaJIT, `GSET`) : aucune involontaire,
+  seule `parse_json` de `pluginmanager` (voulue).
+- Démarrage, tous plugins chargés : ~3,2 Mo de tas et 131 ms sur l'émulateur Mac
+  (référence du 2026-11-04 : ~2,65 Mo).
+- `hex` : `test_ai_spec.lua` « saves a bridge » échouait 3 fois sur 6.
+- 31 plugins programmaient des callbacks (`UIManager:scheduleIn`) sans jamais
+  les annuler.
+- `PluginBase:saveState` / `saveSetting` faisaient à chaque coup un `dump`
+  complet, une sauvegarde `.old` et une écriture avec `fsync`. Aucun plugin ne
+  gérait `onFlushSettings`, un seul `onSuspend`.
+- Rotation : seuls 5 plugins gèrent `onScreenResize`/`onSetDimensions`.
+  61 plugins n'appellent jamais `scaleBySize`.
+
+**Livré (local, non commité au 2026-11-24).**
+
+| # | Objet | Résultat |
+|---|---|---|
+| H1 | `run_specs.sh` en parallèle (`JOBS`, défaut = nb de cœurs) | `--all` : 2 min 37 au lieu de ~10 min, sortie dans le même ordre. `chesscourse` (mis de côté) ajouté aux exclusions. |
+| H2 | `hex` : test instable | **Ce n'était pas un défaut de l'IA.** Plus on donne de simulations, plus elle s'éloigne de la parade (9/12 à 4 000, 0/12 à 80 000) : sur ce 7×7, la parade n'était pas le seul bon coup. Le test vérifie désormais la table des ponts elle-même, de façon déterministe. `ai.lua` n'expose qu'un accès pour les specs. |
+| H3 | `ScreenBase:schedule` / `cancelScheduled` (game-common 1.20.0) | 34 écrans migrés (othello + 33). Bugs réels corrigés au passage : **othello** (IA qui joue deux fois, ou à la place du joueur après « 2 joueurs »), **chess** (coup d'IA de l'ancienne partie posé sur la nouvelle ; moteur maison qui tournait après fermeture), **gomoku** (Annuler pendant la réflexion : l'IA jouait pour le joueur ; partie bloquée sur le tour de l'IA après Annuler), **memory** (nouvelle partie pendant le retournement : cartes de la nouvelle grille cachées ; fermeture pendant le retournement : partie bloquée), **anagram/boggle/spellingbee** (le `closeScreen` du mode à plusieurs n'arrêtait pas les minuteurs). Spec `game-common/test_schedule_spec.lua`. |
+| H4 | Écriture différée des réglages | Mesuré : 0,5 ms (9×9 avec notes) à 6,8 ms (historique de 3 000 entrées) par écriture sur le Mac, soit ~13-170 ms de CPU par coup sur la Kobo, hors écriture flash. game-common 1.20.0 écrit 3 s après, une fois pour N changements, et tout de suite à la fermeture, à la désinstallation et sur `FlushSettings` (veille, extinction, USB, sortie). Même chose dans les 8 sudokus (sudoku-common 1.12.0). Spec `game-common/test_plugin_flush_spec.lua`. |
+| H5 | Budget de démarrage dans `startup_cost.lua` | `MAX_SUM_KB` 3500 / `MAX_PLUGIN_KB` 300, sortie 1 et liste des coupables au-delà. Mesuré : ~3 050-3 180 Ko au total. |
+| H6 | Rendus en paysage (1024×758) et à 300 dpi (1072×1448), 117 écrans de jeu, `buildLayout()` rappelé avant le rendu | Aucune erreur Lua ; les 12 planches regardées : rien de cassé. Les 61 plugins sans `scaleBySize` dimensionnent depuis la taille d'écran et passent bien à 300 dpi. Les 4 utilitaires sans écran de jeu (bookdrop, dashboard, opdsdir, pluginmanager) ne se rendent pas avec cet outil. |
+| H7 | `scripts/dev/check_globals.sh` (GGET + GSET, sans dépendance) | 123 dossiers propres. Vérifié qu'il attrape une faute de frappe (`bord`) et un `local` oublié. Ajouté à la liste d'AGENTS.md. |
+
+Vérification d'ensemble : `run_specs.sh --all` 123 dossiers verts, 3 988 tests ;
+`check_i18n.sh` 0 conflit ; `check_globals.sh` OK. Les rappels différés eux-mêmes
+ne sont couverts que par la spec de game-common et par relecture : les specs des
+plugins ne les exercent pas. Rien n'a été essayé sur la Kobo.
+
+**Reste à faire.**
+
+- Livrer après GO : game-common 1.20.0 et sudoku-common 1.12.0 d'abord, puis les
+  42 plugins modifiés (bump + CHANGELOG), dans l'ordre de `docs/dev/RELEASE.md`.
+- Sur la Kobo : vérifier qu'une partie reprend bien au coup près après mise en
+  veille, et après fermeture/réouverture rapide.
+- **Rotation en cours de partie** (analysé, rien changé) : KOReader n'envoie rien
+  aux widgets plein écran quand il tourne l'écran (`UIManager:onRotation` ne fait
+  que repeindre). Sur l'Aura, la rotation passe par le gestionnaire de fichiers,
+  que l'écran de jeu recouvre, donc elle n'arrive pas en pleine partie. Sur une
+  liseuse à accéléromètre, le jeu serait repeint avec l'ancienne mise en page
+  jusqu'à réouverture. Correctif possible : dans `ScreenBase:paintTo`, refaire
+  `buildLayout()` quand la taille d'écran a changé (`buildLayout` est rappelable
+  sur les 117 écrans, vérifié par H6).
+- Corrigé le 2026-11-24 : `backgammon` et `go` relancent l'IA quand une partie
+  sauvegardée rouvre sur le tour de l'ordinateur (et `backgammon` quand le
+  lancer d'ouverture d'une première partie lui donne la main) ; en paysage,
+  la colonne des noms de `liarsdice` s'élargit au nom le plus long, « Computer
+  2 » n'est plus coupé.

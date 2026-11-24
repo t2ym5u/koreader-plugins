@@ -112,10 +112,20 @@
   `landscape_controls_ratio`.
 - Long tile and menu labels: let them wrap onto two lines instead of "…".
   Party tiles use two lines.
+- Never `UIManager:scheduleIn` from a game screen: the callback runs even
+  after the screen closed or "New game" replaced the game (Othello's AI
+  moved twice, Memory flipped back cards of the next grid). Use
+  `self:schedule` and call `self:cancelScheduled()` when a new game starts
+  (2026-11-24, game-common 1.20.0).
 - The Kobo Aura has no sound. Alerts are screen flashes plus a frontlight
   blink.
 
 ## Device and environment
+
+- Do not write the settings file after every move: a write is a full dump,
+  a backup and an fsync (13-170 ms of CPU a move on the Kobo, measured
+  2026-11-24). `saveState` defers it; code that calls `self.settings:flush()`
+  itself on every move brings the cost back.
 
 - Kobo Aura: 256 MB RAM, single core, landscape possible, an accelerometer
   that KOReader does not use, no physical page-turn buttons.

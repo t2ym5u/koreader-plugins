@@ -5,6 +5,7 @@
 #   scripts/dev/run_specs.sh --changed                  # submodules with uncommitted changes
 #   scripts/dev/run_specs.sh --all                      # every *.koplugin + game-common + sudoku-common
 #   SPECS=test_difficulty_spec.lua scripts/dev/run_specs.sh --all   # only the difficulty specs
+#   JOBS=1 scripts/dev/run_specs.sh --all               # one dir at a time
 #
 # Each dir runs `busted test_*_spec.lua` from inside that dir, with the `bit`
 # shim on LUA_PATH (Homebrew busted is Lua 5.5, which has no `bit`; without
@@ -13,15 +14,18 @@
 # no "N successes / ..." summary line (= it crashed before running).
 # Env: REPO (monorepo root), BUSTED (default busted), VERBOSE=1 prints the
 #      full busted output of failing dirs, SPECS a glob of spec files to run
-#      instead of test_*_spec.lua (dirs without a match print "(no specs)").
+#      instead of test_*_spec.lua (dirs without a match print "(no specs)"),
+#      JOBS how many dirs run at once (default: the CPU count; output stays
+#      in the same order, printed once all are done).
 set -uo pipefail
 DEV_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO="${REPO:-$(cd "$DEV_DIR/../.." && pwd -P)}"
 BUSTED="${BUSTED:-busted}"
 SPECS="${SPECS:-test_*_spec.lua}"
-SKIP=" kakuro arrowwords startmenu boggleparty doubleornothing _skeleton "
+SKIP=" kakuro arrowwords startmenu boggleparty doubleornothing chesscourse _skeleton "
+JOBS="${JOBS:-$(sysctl -n hw.ncpu 2>/dev/null || nproc 2>/dev/null || echo 1)}"
 
-usage() { sed -n '2,18p' "$0" | sed 's/^# \{0,1\}//'; exit 2; }
+usage() { sed -n '2,21p' "$0" | sed 's/^# \{0,1\}//'; exit 2; }
 [[ $# -ge 1 ]] || usage
 
 dirs=()
@@ -55,15 +59,16 @@ esac
 
 [[ ${#dirs[@]} -gt 0 ]] || { echo "(nothing to run)"; exit 0; }
 
-bad=0
-shopt -s nullglob
-for d in "${dirs[@]}"; do
-  if [[ "$d" == !* ]]; then bad=1; continue; fi
+# Run one dir; print its summary line (and, with VERBOSE, the failing output).
+# Returns 1 on failure.
+run_one() {
+  local d="$1" label specs f e out summary status
+  if [[ "$d" == !* ]]; then return 1; fi
   label="${d%.koplugin}"
   specs=()
   for f in "$REPO/$d"/$SPECS; do [[ -f "$f" ]] && specs+=("$f"); done
   if [[ ${#specs[@]} -eq 0 ]]; then
-    printf '%-18s (no specs)\n' "$label:"; continue
+    printf '%-18s (no specs)\n' "$label:"; return 0
   fi
   out="$(cd "$REPO/$d" && LUA_PATH="$DEV_DIR/bitshim/?.lua;;" "$BUSTED" $SPECS 2>&1)"
   summary="$(printf '%s\n' "$out" | grep -E '^[0-9]+ success' | tail -1)"
@@ -77,8 +82,31 @@ for d in "${dirs[@]}"; do
   fi
   printf '%-18s %-4s %s\n' "$label:" "$status" "$summary"
   if [[ "$status" != OK ]]; then
-    bad=1
     [[ -n "${VERBOSE:-}" ]] && printf '%s\n' "$out" | sed 's/^/    /'
+    return 1
   fi
+  return 0
+}
+
+shopt -s nullglob
+bad=0
+if [[ "$JOBS" -le 1 || ${#dirs[@]} -eq 1 ]]; then
+  for d in "${dirs[@]}"; do run_one "$d" || bad=1; done
+  exit "$bad"
+fi
+
+# Parallel: each dir writes its own file, then they are printed in order.
+tmp="$(mktemp -d)"; trap 'rm -rf "$tmp"' EXIT
+i=0; running=0
+for d in "${dirs[@]}"; do
+  i=$((i + 1))
+  ( run_one "$d" > "$tmp/$i.out"; echo $? > "$tmp/$i.rc" ) &
+  running=$((running + 1))
+  if [[ $running -ge $JOBS ]]; then wait -n 2>/dev/null || wait; running=$((running - 1)); fi
+done
+wait
+for ((k = 1; k <= i; k++)); do
+  cat "$tmp/$k.out"
+  [[ "$(cat "$tmp/$k.rc")" == 0 ]] || bad=1
 done
 exit "$bad"

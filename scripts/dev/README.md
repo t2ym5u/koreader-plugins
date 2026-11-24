@@ -9,6 +9,7 @@ documents the tools it relies on.
 | `bitshim/bit.lua` | LuaJIT `bit` API for busted under Lua 5.4+ | no |
 | `run_specs.sh` | busted specs, one line per plugin/lib, strict exit code | no |
 | `check_i18n.sh` (+ `i18n_conflicts.lua`) | English keys translated differently by two plugins | no |
+| `check_globals.sh` | globals read or written that Lua/KOReader do not provide (typos, missing `local`) | no |
 | `render_screen.lua` | headless render of a game screen to PNG | no |
 | `startup_cost.lua` | heap/time each plugin costs at KOReader startup | no |
 | `open_close_probe.lua` | open / new game / close / reopen smoke test + memory retained after close | no |
@@ -72,8 +73,11 @@ scripts/dev/run_specs.sh --all                      # every *.koplugin + game-co
   `(no specs)` for a dir without specs.
 - Exits 1 if any dir had failures or errors, or printed no
   `N successes / ...` line (busted crashed before running).
-- Never runs kakuro, arrowwords, startmenu, boggleparty, doubleornothing or
-  `_skeleton`.
+- Never runs kakuro, arrowwords, startmenu, boggleparty, doubleornothing,
+  chesscourse or `_skeleton`.
+- Runs `JOBS` dirs at once (default: the CPU count) and prints them in order
+  once all are done: `--all` takes about 2.5 min instead of 10 on this Mac.
+  `JOBS=1` runs one at a time, printing as it goes.
 - `VERBOSE=1` dumps the full output of failing dirs. `BUSTED=` overrides the
   binary.
 
@@ -90,6 +94,20 @@ scripts/dev/check_i18n.sh          # prints CONFLICT lines + "conflicts: N", exi
 It checks `game-common/i18n.lua` plus every `*.koplugin/i18n_fr.lua`, except
 the set-aside plugins and `_skeleton`. `i18n_conflicts.lua` is pure Lua 5.1,
 and `LUAJIT=` can point at any LuaJIT.
+
+### check_globals.sh
+
+```bash
+scripts/dev/check_globals.sh            # all released plugins + both libs
+scripts/dev/check_globals.sh 2048 hex   # some dirs
+```
+
+Lists every global read (`GGET`) or written (`GSET`) in the LuaJIT bytecode
+of each shipped `.lua` file (specs, `test_*.lua`, `gen/`, `tools/`, `data/`
+and `common/` skipped) that is not a Lua/LuaJIT or KOReader global. A read
+is usually a misspelt local (always nil), a write a forgotten `local` that
+leaks into every plugin. Exit 1 if any. A global that is meant to be one goes
+into `ALLOWED` in the script, with the reason (pluginmanager's `parse_json`).
 
 ### render_screen.lua: screenshots without a window
 

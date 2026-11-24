@@ -15,7 +15,11 @@
 --
 -- Env: TOTALS=1 (no per-plugin GC instrumentation: real totals, 5 fresh
 --      FileManager re-opens timed), ONLY_BUILTIN=1, UILANG=fr (UI language),
---      OUT=file.tsv (per-plugin rows: name loadKB loadms initKB initms re-ms).
+--      OUT=file.tsv (per-plugin rows: name loadKB loadms initKB initms re-ms),
+--      MAX_SUM_KB (default 3500) / MAX_PLUGIN_KB (default 300): budgets for
+--      the per-plugin table. Over budget, the culprits are listed under
+--      "OVER BUDGET" and the exit status is 1. Measured 2026-11-24: 3 178 KB
+--      in all, pluginmanager the largest at 180-256 KB (it varies run to run).
 -- Per-plugin numbers include a full GC per step, so their ms are only good
 -- for ranking; use TOTALS=1 vs TOTALS=1 ONLY_BUILTIN=1 for the real cost.
 local here = debug.getinfo(1, "S").source:gsub("^@", ""):match("^(.*)/") or "."
@@ -112,4 +116,24 @@ for _, r in ipairs(rows) do
 end
 print(string.format("%-16s %8.0f %6d %8.0f %6d %6d %8.0f", "SUM(" .. #rows .. ")", S.lkb, S.lms, S.ikb, S.ims, S.rms, S.lkb + S.ikb))
 if out then out:close() end
+
+-- Budgets: a plugin that starts loading its screen or data at startup again
+-- shows up here before it shows up on the Kobo.
+local max_sum    = tonumber(env("MAX_SUM_KB") or "") or 3500
+local max_plugin = tonumber(env("MAX_PLUGIN_KB") or "") or 300
+local over = {}
+for _, r in ipairs(rows) do
+    if r.lkb + r.ikb > max_plugin then
+        over[#over + 1] = string.format("  %s: %.0f KB > %d KB", r.name, r.lkb + r.ikb, max_plugin)
+    end
+end
+if S.lkb + S.ikb > max_sum then
+    over[#over + 1] = string.format("  all plugins: %.0f KB > %d KB", S.lkb + S.ikb, max_sum)
+end
+if #over > 0 then
+    print("OVER BUDGET")
+    for _, l in ipairs(over) do print(l) end
+    os.exit(1)
+end
+print(string.format("within budget (all <= %d KB, each <= %d KB)", max_sum, max_plugin))
 os.exit(0)
