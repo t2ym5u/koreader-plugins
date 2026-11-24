@@ -69,6 +69,19 @@
 
 ## Generators and gameplay
 
+- **French word lists have two sources (2026-11-24).**
+  `boggle.koplugin/words_fr.lua` keeps its original list in its first
+  `[[...]]` block, and the Grammalecte lexicon's forms in a second one
+  (`boggle.koplugin/tools/lexicon_fr.py`). The build scripts of anagram,
+  letterpyramid and spellingbee take their drawn and common words from the
+  first block only, and the lexicon only for accepted words. Merging the two
+  blocks would change their puzzles and the Daily Challenge. Additions go
+  through `lexicon_fr.py`'s family filter; a bad word found later goes in
+  `boggle.koplugin/tools/lexicon_blocklist_fr.txt` (its lemma is enough).
+- **Spelling Bee's puzzle banks are not reproducible.** They were pruned by
+  hand after generation (1.1.0, 1.2.3), so `build_words.py` keeps them unless
+  given `--new-puzzles`, which adds sets back and changes the Daily Challenge.
+
 - **Uniqueness checks:**
   - Check clues as early as possible: skyscraper's cell-by-cell check
     took 6 s, and row-at-a-time takes 0.02 s.

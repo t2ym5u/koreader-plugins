@@ -174,7 +174,7 @@
       "fullname": "Anagram",
       "description": "Rearrange letters to find words",
       "category": "words",
-      "version": "1.6.10",
+      "version": "1.7.0",
       "files": [
         "_meta.lua",
         "answers_en.lua",
@@ -194,9 +194,9 @@
         "images/anagram.png"
       ],
       "sha256": {
-        "_meta.lua": "5dd7f9194c369a8104049da582c9a16420739e02889662c4e592b056ff702d9b",
-        "answers_en.lua": "601a253bed0276e00fc812c7f3f54d21450b8275d35441e265836efbb958936b",
-        "answers_fr.lua": "d6bdd9a42717fd64623677030262f1631a4e99a10e9a9a8f7b92f1767610b54f",
+        "_meta.lua": "0872967e1836ee837ed1aa44c3fd7062db6bf0dd3ba01ee28155827763511416",
+        "answers_en.lua": "005af296c5eb38a76cb06108221497e726febbf76ad24b7739df34c2e32275a5",
+        "answers_fr.lua": "a659ae6cdfb5b15c0a89c5c4eeea16a23fc6f69ae031569ad56e88608d311b70",
         "board.lua": "eb88586cba1b1892cee43536b83e905b517994eb2b7390b58577b7a0ae8846e5",
         "board_widget.lua": "e85494716eb5c6c355d2d5beb8f86bffa96bc033c2f38ccdc2f48c9b8f385022",
         "i18n_fr.lua": "bb5c767b8eb0cdf74745afa6758d220bc9c309238bb4b1ca806f4d8271637107",
@@ -215,8 +215,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/anagram.koplugin/main/",
       "zip": {
         "path": "dist/anagram.zip",
-        "sha256": "588a8af2b397f5ca0666e98520bbb8f67f24f8c1ea73158a46402a1d109865c3",
-        "size": 249449
+        "sha256": "df369a27c11b8d0af42c1d41fd38d082c732c02607491519652a1ce4f57f0a71",
+        "size": 252371
       }
     },
     {
@@ -497,7 +497,7 @@
       "fullname": "Boggle",
       "description": "Find words by connecting adjacent letters on the grid — alone, or around the table with friends.",
       "category": "words",
-      "version": "1.6.9",
+      "version": "1.7.0",
       "files": [
         "_meta.lua",
         "blocklist.lua",
@@ -514,7 +514,7 @@
         "images/boggle.png"
       ],
       "sha256": {
-        "_meta.lua": "6f3cf5e3e568ed03e369a8d6be7bb75687826d3bec83926860c4b35543fd7629",
+        "_meta.lua": "5cedc24e2ca3505bae76ed254c732d699934b4ba5f4f47c70648e5aebfc82f62",
         "blocklist.lua": "fe132de974c8190cf34abb647b6538fc13f5a35ed233da70fa246ad9a50b323b",
         "board.lua": "c3c2d835ba6544f205da3e9a5c03c31382b85e6d01ce0113287ddae02ddbdf10",
         "board_widget.lua": "2307c8235d77dd8ee2d873cf98ec5d3b4d784c2e157a3384a5be9c24106a80fe",
@@ -525,15 +525,15 @@
         "rules.lua": "3edf9b768fe5decd647cf3e6c9a62893020c620069adee8cd2ab867a33dd509e",
         "screen.lua": "c500c8d1aa1fba2e8c57c6724b368a05c3f787ac02e1966995067a8a600bd722",
         "words_en.lua": "b955439be27a321de7f0f6fe9a2cfa3f1a682398e9ae3e56db7280aba2eff472",
-        "words_fr.lua": "1a270c060583c6cc9f291145563ea639b69e21bb721ed124498ecb251e617ed1",
+        "words_fr.lua": "87a2c33323a11f05a425f0a14fb82c16c10bb5c647103d0cb01a68bc52ea2fd6",
         "images/boggle.png": "32e0d62b9cf1063b29de89f1a8b9c74829a3a812ddf2d8767dc632f96a8e2446"
       },
       "common_lib": "common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/boggle.koplugin/main/",
       "zip": {
         "path": "dist/boggle.zip",
-        "sha256": "69c418470f63f1bd428c7e5a78542673528ddb6e9fbb868ddb8a882065c9aa2d",
-        "size": 762699
+        "sha256": "a8882cb4c5d9e0b214afb1cfc2a364c19599b140623c6c408fffc4c88efdae61",
+        "size": 836729
       }
     },
     {
@@ -2035,7 +2035,7 @@
       "fullname": "Letter Pyramid",
       "description": "Build a pyramid of words, one letter more on every row.",
       "category": "words",
-      "version": "1.0.3",
+      "version": "1.1.0",
       "files": [
         "_meta.lua",
         "blocklist.lua",
@@ -2049,7 +2049,7 @@
         "images/letterpyramid.png"
       ],
       "sha256": {
-        "_meta.lua": "e577a108bd13b892587dea8cc78c366c76a028c4d189493499ce1d54b67c8536",
+        "_meta.lua": "b42a0270dacfee8f246f1ef95b8cd957991c19b34249e087a4338e20624ae202",
         "blocklist.lua": "bfe694d2c4eeaba3e6b65d6fe128cee5a703cc20d7161db2b1fc871fb66f2beb",
         "board.lua": "c8a55bc9331e43be909c8096cedb067c2d7ddac0ea1e7d9d67b085470ee8d26a",
         "board_widget.lua": "2915ee3e17e3c12d04f5fe2f900b51effa5a36a04134b613a52d1c2e0e0c9f1c",
@@ -2057,15 +2057,15 @@
         "main.lua": "89339fc5930c74847511afe3c3e5589e86099a36a74f255dbbf135c485580e12",
         "screen.lua": "84a72fad1ca4e483228e209b660b83fee1b5df3b0f9b3a85bc35d05acc70e4b6",
         "words_en.lua": "c91b0769ebac3d750044575e28bfdf801284a85596e651110797d30d33784897",
-        "words_fr.lua": "f6dfb54b040ac69631de8b8158f81871ea538e50898d6038f9414078ac9b775b",
+        "words_fr.lua": "eda6689357742c75a41a30b04e601cafef2f2bf5af9d05c441fa1ffb55c2b061",
         "images/letterpyramid.png": "bcfaf584fba2404833521cf65b8753cedc3df3eaf07a9b28ac9613a43044a6ab"
       },
       "common_lib": "common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/letterpyramid.koplugin/main/",
       "zip": {
         "path": "dist/letterpyramid.zip",
-        "sha256": "855c84105b7be744c863d7fa5ea15f78c1e4ef94a48741030c4e9afd8692c6a0",
-        "size": 333396
+        "sha256": "5a429019cab337f79e3d75d27ef030fdda85d33e938e80ef4fa5c3e5701db494",
+        "size": 338878
       }
     },
     {
@@ -2797,7 +2797,7 @@
       "fullname": "Numbers and Letters",
       "description": "Draw letters and find the longest word; draw numbers and hit the target.",
       "category": "words",
-      "version": "1.6.9",
+      "version": "1.7.0",
       "files": [
         "_meta.lua",
         "blocklist.lua",
@@ -2811,7 +2811,7 @@
         "images/numletters.png"
       ],
       "sha256": {
-        "_meta.lua": "95f60233848e6adae0e7e2dc413ff1b3fa5e8713a8b82ac113137848709a2878",
+        "_meta.lua": "df70c7ca139fe134c9cb766a3a7f3de2e99189ee011ee79a50f903766c3b6d51",
         "blocklist.lua": "fe132de974c8190cf34abb647b6538fc13f5a35ed233da70fa246ad9a50b323b",
         "board.lua": "e0b206b52bc8233cfe0a470b28a72d302cd653a5eb6514a57d4fec98d96757cc",
         "i18n_fr.lua": "3b41702f20609d88e09ebcb2ccb398bc49b2f08e2a624af5082bddc620c3866b",
@@ -2819,15 +2819,15 @@
         "match.lua": "5ffc3391930dc7ce36d535256984787c973054554e502991cf1f87b11a03b3b6",
         "screen.lua": "b7d447d6a0cfb746d01e455181522f7ef31f70a1d9bcdd768abe6d5d80293cf5",
         "words_en.lua": "b955439be27a321de7f0f6fe9a2cfa3f1a682398e9ae3e56db7280aba2eff472",
-        "words_fr.lua": "1a270c060583c6cc9f291145563ea639b69e21bb721ed124498ecb251e617ed1",
+        "words_fr.lua": "87a2c33323a11f05a425f0a14fb82c16c10bb5c647103d0cb01a68bc52ea2fd6",
         "images/numletters.png": "cd318b51a9b1e2cd9ac966b86d4d97339f8960ecab1c06880180277dfbb904cb"
       },
       "common_lib": "common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/numletters.koplugin/master/",
       "zip": {
         "path": "dist/numletters.zip",
-        "sha256": "b0b3d778469a922997dd2ed3ea3daacb3a3d95c49d6ccf80581ea9a1948546cd",
-        "size": 745405
+        "sha256": "751c69fa6a2401af615d7f0df575dfa87835d45510b83adff0bc8dcbc986d721",
+        "size": 819436
       }
     },
     {
@@ -3728,7 +3728,7 @@
       "fullname": "Spelling Bee",
       "description": "Make words from seven letters around a centre letter",
       "category": "words",
-      "version": "1.2.12",
+      "version": "1.3.0",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -3748,7 +3748,7 @@
         "images/spellingbee.png"
       ],
       "sha256": {
-        "_meta.lua": "3faf828fc2741d0b0f3f2b49fc4974df015b743ae1ce735192ea6b063edbadda",
+        "_meta.lua": "68ef288efabf0a69be6157dc6bb0be9a911dde91c77466a447b63c5b01a1273c",
         "board.lua": "63e1ce1846ff51c47a38e7f741adb1311d7f3d8f72ac827fbb90f56f78dc8d2a",
         "board_widget.lua": "1e699e64bac6b56e8a7eba20f5898330908a545e1c7052fb34e68e23f867530d",
         "i18n_fr.lua": "92b29be60c31dbfeacdb4d8650c4abe36d58ba431b1ddb51ab5263e34f1d4f5b",
@@ -3762,15 +3762,15 @@
         "rules.lua": "15184859d2fe3a6086ed4fadd738b54aa96c80bb49cdf3e64adae0d70a2b875d",
         "screen.lua": "784fd981643897943b6adb46aa326f3cd0471e61cd2d64266c0a1f5b0b7d8be6",
         "words_en.lua": "d565405f2db1419678e8215a488dd1ace1f199000ac199526b998f4f5081f67d",
-        "words_fr.lua": "941ec125f51dde351060c1b5659e3fab573acde04be671bc75816605a03057e5",
+        "words_fr.lua": "ef140774bdfeb1cc5eba1e433c9ae2ba5adf9519c98f21a0c76adc99ffef0e03",
         "images/spellingbee.png": "9082855c0ba912f49286ced83f8ac0e5d4b1225e6310d77dd7ea36c37174617e"
       },
       "common_lib": "common",
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/spellingbee.koplugin/main/",
       "zip": {
         "path": "dist/spellingbee.zip",
-        "sha256": "305f7a1e29b091833a3eeff36bdc7cda9aa04c23efcecc8e1c61ce3195ce4aee",
-        "size": 358889
+        "sha256": "7bfa44b88a5c2596400cfa9853adf23ebcc4cf03109f862f856226b273692d66",
+        "size": 358901
       }
     },
     {
@@ -4704,9 +4704,10 @@
       "fullname": "Word Ladder",
       "description": "Change one word into another, one letter at a time.",
       "category": "words",
-      "version": "1.4.6",
+      "version": "1.5.0",
       "files": [
         "_meta.lua",
+        "accepted_fr.lua",
         "blocklist.lua",
         "board.lua",
         "board_widget.lua",
@@ -4718,9 +4719,10 @@
         "images/wordladder.png"
       ],
       "sha256": {
-        "_meta.lua": "af9fdcaaa8e8562cd595a7d9fe412ce4fee829323b1d754e022fe4c74b2a574e",
+        "_meta.lua": "0123eb0e9df1c3d3727e47013582da9e541f72f1255ee269de7c95a3617e3d88",
+        "accepted_fr.lua": "dfc22d057397671727781a5dfad4cd9aaffc7ea8283be3ad3851d2d614b1739c",
         "blocklist.lua": "bfe694d2c4eeaba3e6b65d6fe128cee5a703cc20d7161db2b1fc871fb66f2beb",
-        "board.lua": "ae4b3616b2aed6ec4c52c8eab6ddf38a0c966d0aa94a8359bfbe233db853529c",
+        "board.lua": "88ac49c2a9401aef9f9ceb4310a82c75d2603b540a6f3ce7d46d46fa8ae438df",
         "board_widget.lua": "33d02bf3d7869c533f35749bb5aef8abc16b71e439f24ad59fece7a829a39d9c",
         "i18n_fr.lua": "d03b06ea928abbfc15ca78fe1551fae6f44c4af23535da42f949f8c15d064250",
         "main.lua": "5344af1a1489638eaa6ad96c1985b5eca2b3125884cd5021f45f70cde6c44e85",
@@ -4733,8 +4735,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/wordladder.koplugin/main/",
       "zip": {
         "path": "dist/wordladder.zip",
-        "sha256": "d508b8eab336757b83a340c63ffb6a07687854b8a5aac5d923de49093792b568",
-        "size": 170720
+        "sha256": "8de3dbf848b879e6f82e2966fff2d90bf9f00fce70545e41471e08607c2b668f",
+        "size": 187511
       }
     },
     {
@@ -4743,13 +4745,14 @@
       "fullname": "Wordle",
       "description": "Guess the hidden word in 6 tries. Letter hints guide each attempt.",
       "category": "words",
-      "version": "1.6.8",
+      "version": "1.7.0",
       "files": [
         "_meta.lua",
         "blocklist.lua",
         "board.lua",
         "board_widget.lua",
         "guesses_en.lua",
+        "guesses_fr.lua",
         "i18n_fr.lua",
         "main.lua",
         "party_game.lua",
@@ -4759,11 +4762,12 @@
         "images/wordle.png"
       ],
       "sha256": {
-        "_meta.lua": "54ceb428480291adeaf7b137eb87a942df05c62062ce9db16269e824902f44cb",
+        "_meta.lua": "b3698f21078e4ae74140aad7415d7c9f87b1701568d24dc1d7458698b383b4ed",
         "blocklist.lua": "bfe694d2c4eeaba3e6b65d6fe128cee5a703cc20d7161db2b1fc871fb66f2beb",
-        "board.lua": "0bfa45487fea7b856643e530a4797d6e6fb3be52b2390dbdc6610c7fa92ebf9d",
+        "board.lua": "48f932676895262ee9f7caa7bd69b41749fefa5135ae64fb9ce634884af50d48",
         "board_widget.lua": "3d2f9202c43cf9bbc4c5fb2fe4161e2cade6035362b75912cccff3ad453de701",
         "guesses_en.lua": "666f36ef92cf69ec816283efecb8435bac0d47f751f7f5caa6abd03ea425126c",
+        "guesses_fr.lua": "3818cdfc767c9c4942ecee6ede2690eb1bb45b2856821f2e6026c43c27968bed",
         "i18n_fr.lua": "c59d8f26e4178e72c19776f0382c34e7a198a7047e2b61def12ba694425c247b",
         "main.lua": "b227cc06771f31f6697b5a94d4078ca2206c9b5ba5b01729575953ab6f23f0b5",
         "party_game.lua": "7f2863205e9d8f676c6299b33db756a2d7b84869778989aee05661fcc8bcb2f8",
@@ -4776,8 +4780,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/wordle.koplugin/main/",
       "zip": {
         "path": "dist/wordle.zip",
-        "sha256": "465c1eccc6bf453b793a5fe725587a8042022065924206579b911006be4eec50",
-        "size": 191648
+        "sha256": "f68530bc8447ade53861e843b1517007c5a1b865e88e8cae31738c2407a64298",
+        "size": 195507
       }
     },
     {
