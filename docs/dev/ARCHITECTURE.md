@@ -156,12 +156,18 @@ Plugins no longer load their screen or data at KOReader startup.
 
 - The home screen opens at startup. It shows continue reading, resume, the
   Daily Challenge, the game grid by category, and stats.
+- Continue reading: `lastfile`, then up to 2 more books in progress from
+  `ReadHistory.hist` (setting `books_shown`, default 1; `books.lua` picks,
+  reading at most 10 history entries' settings).
 - It scans installed plugins and caches each one's daily kind and
   party-capable flag in `settings/dashboard_daily_cache.lua`, keyed by
   version and mtime.
 - Multiplayer tiles are `<id>:party`. They are hidden by default and enabled
   in "Choose games".
-- It launches games with `self.ui[id]:showGame(mode)`.
+- It launches games with `self.ui[id]:showGame(mode)`, closing itself first.
+- Back in the other direction: when `self.ui.dashboard` exists, every game's
+  title bar (game-common and sudoku-common `buildTitleBar`) shows a house
+  instead of close, which closes the game and calls `dashboard:show()`.
 
 ## Plugin Manager
 
