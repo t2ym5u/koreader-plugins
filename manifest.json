@@ -3,7 +3,7 @@
   "updated": "2026-11-24",
   "repo": "t2ym5u/koreader-plugins",
   "common": {
-    "version": "1.19.0",
+    "version": "1.19.1",
     "dir": "game-common",
     "files": [
       "daily_seed.lua",
@@ -33,8 +33,8 @@
     "sha256": {
       "daily_seed.lua": "e8d1af4abc69e1ce26481f93fb3071703bc801d4fd416be5c7d9b0fc0e89e8c6",
       "duo.lua": "b4e3fb0f6ac4548714d6eec34547ccb5d74a828befb9a289e1e84353abbae3d6",
-      "game_categories.lua": "0394da6fa49537928d1e6207dbd86983eeef5e778745dfb5d00046b7baf40edb",
-      "game_common_version.lua": "e4eaa018521e9dea494d034977da0b0075c5e4980a9fc41e1685a8f208b331cc",
+      "game_categories.lua": "855e2b98fbe5f5efe23b71c5fb4d284fb700dc721270497ffa5bf0d1d761d3eb",
+      "game_common_version.lua": "82671949e134fd884610a61f6093eca3569648ad8e5668547077aac359a9ae40",
       "games_menu.lua": "46b35496d17063dd06711920aba107499e25ad04f05d2ce70a4a038d89873040",
       "gen_progress.lua": "6f11379404a7a8596469cb6d4edafec2076f3103da12c9d9134ddac75f347feb",
       "grid_utils.lua": "0ad7b19da43cdf91829fd06a897bb6f76dd6997856a7db95f703e85974731d2c",

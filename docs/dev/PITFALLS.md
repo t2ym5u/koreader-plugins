@@ -50,9 +50,15 @@
   `build_release.sh` packs that working copy into every zip it builds, while
   the manifest keeps the sha of the committed file. Unless you release
   game-common in the same batch, run `git -C game-common checkout --
-  game_categories.lua` before building (2026-11-19, Letter Pyramid: the new
-  plugin passes its category to `GamesMenu.add` itself, so it did not need
-  the new table).
+  game_categories.lua` before building, and again after the second
+  update_manifest pass (2026-11-19, Letter Pyramid: the new plugin passes
+  its category to `GamesMenu.add` itself, so it did not need the new table).
+  Commit the new table in the next game-common release: Letter Pyramid's
+  was left out until 1.19.1 (2026-11-24), so every run rewrote it.
+- For a release of one or a few plugins, build only them
+  (`./scripts/build_release.sh <id>`). A full build rezips every plugin and
+  changes every zip's sha256 in the manifest without changing a single
+  version (Spelling Bee 1.2.11, 2026-11-24).
 - A parallel Claude session may work in the same tree. Never commit its work
   in progress.
 - The reverse also happens: a parallel release can reset your uncommitted
