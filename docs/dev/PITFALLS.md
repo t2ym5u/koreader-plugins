@@ -66,6 +66,12 @@
   pointer on master while the manifest still said 1.0.1, so the Plugin Manager
   offered no update. Run update_manifest, build and commit in one go, then
   check the pushed manifest (`git show origin/master:manifest.json`).
+- A build zips the working tree, not the commits: a parallel session's build
+  ships your uncommitted files. On 2026-11-24 a fleet-wide build packed
+  Spelling Bee's unreleased French word list into the zip published as
+  1.2.12, until 1.3.0 replaced it 25 minutes later. Before building, check
+  `git status` in every submodule you build and leave out any plugin with
+  someone else's changes; build only the plugins you release (above).
 
 ## Generators and gameplay
 
