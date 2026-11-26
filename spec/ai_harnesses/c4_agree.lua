@@ -2,8 +2,8 @@
 -- move, only the time taken to find it.
 local S = "/private/tmp/claude-501/-Users-tomar-Projets-github-koreader-plugins/487f35ff-a2f5-4368-bdc2-a86fd3f6edcf/scratchpad/ai/"
 local R = "/Users/tomar/Projets/github/e-reader/koreader-plugins/"
-local A = assert(loadfile(S .. "connect4_base.lua"))()
-local B = assert(loadfile(R .. "connect4.koplugin/board.lua"))()
+local A = assert(loadfile(os.getenv("A") or (S .. "connect4_base.lua")))()
+local B = assert(loadfile(os.getenv("B") or (R .. "connect4.koplugin/board.lua")))()
 math.randomseed(99)
 local same, diff, checked = 0, 0, 0
 for trial = 1, 300 do
