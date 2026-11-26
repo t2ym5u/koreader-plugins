@@ -1,7 +1,7 @@
 -- Head-to-head harness for Connect 4. Both engines are deterministic, so each
 -- game opens with a few random legal drops or every match replays one game.
 local S = "/private/tmp/claude-501/-Users-tomar-Projets-github-koreader-plugins/487f35ff-a2f5-4368-bdc2-a86fd3f6edcf/scratchpad/ai/"
-local R = "/Users/tomar/Projets/github/koreader-plugins/"
+local R = "/Users/tomar/Projets/github/e-reader/koreader-plugins/"
 local A = assert(loadfile(os.getenv("A") or (S .. "connect4_base.lua")))()
 local B = assert(loadfile(os.getenv("B") or (R .. "connect4.koplugin/board.lua")))()
 local DA = tonumber(os.getenv("DEPTH_A") or os.getenv("DEPTH") or "5")

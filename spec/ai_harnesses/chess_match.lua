@@ -1,7 +1,7 @@
 -- Head-to-head for chess. One board drives; each engine is asked from its own
 -- copy of the position. Openings are randomised because both engines are
 -- otherwise near-deterministic.
-local R = "/Users/tomar/Projets/github/koreader-plugins/"
+local R = "/Users/tomar/Projets/github/e-reader/koreader-plugins/"
 local A = assert(loadfile(R .. "chess.koplugin/_board_baseline_tmp.lua"))()
 local B = assert(loadfile(R .. "chess.koplugin/board.lua"))()
 local DA = tonumber(os.getenv("DEPTH_A") or "3")

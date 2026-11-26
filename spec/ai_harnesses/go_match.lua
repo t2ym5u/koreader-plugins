@@ -1,6 +1,6 @@
 -- The Go AI against a player that picks legal non-eye-filling points at
 -- random. Anything that cannot beat that convincingly is not playing Go.
-local R = "/Users/tomar/Projets/github/koreader-plugins/"
+local R = "/Users/tomar/Projets/github/e-reader/koreader-plugins/"
 package.path = R .. "go.koplugin/?.lua;" .. R .. "go.koplugin/common/?.lua;" .. package.path
 local Go = assert(loadfile(R .. "go.koplugin/board.lua"))()
 math.randomseed(tonumber(os.getenv("SEED") or "20260930"))

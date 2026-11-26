@@ -1,4 +1,4 @@
-local R = "/Users/tomar/Projets/github/koreader-plugins/"
+local R = "/Users/tomar/Projets/github/e-reader/koreader-plugins/"
 local BG = assert(loadfile(R .. "backgammon.koplugin/board.lua"))()
 local function empty(b)
     for i = 1, 24 do b.points[i] = { color = nil, count = 0 } end

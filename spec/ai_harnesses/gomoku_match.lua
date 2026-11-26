@@ -2,7 +2,7 @@
 -- moves on one shared board. Colours alternate between games so neither side
 -- keeps the first-move advantage.
 local S = "/private/tmp/claude-501/-Users-tomar-Projets-github-koreader-plugins/487f35ff-a2f5-4368-bdc2-a86fd3f6edcf/scratchpad/ai/"
-local R = "/Users/tomar/Projets/github/koreader-plugins/"
+local R = "/Users/tomar/Projets/github/e-reader/koreader-plugins/"
 
 local function load(path)
     local chunk = assert(loadfile(path))

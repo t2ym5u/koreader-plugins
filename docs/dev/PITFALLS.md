@@ -59,6 +59,9 @@
   (`./scripts/build_release.sh <id>`). A full build rezips every plugin and
   changes every zip's sha256 in the manifest without changing a single
   version (Spelling Bee 1.2.11, 2026-11-24).
+- `build_release.sh` takes one plugin id: `build_release.sh a b c` builds
+  `a` only and says "1 plugin(s) built" without a warning. Loop over the ids
+  (2026-11-26, a six-plugin release).
 - A parallel Claude session may work in the same tree. Never commit its work
   in progress.
 - The reverse also happens: a parallel release can reset your uncommitted

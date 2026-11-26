@@ -1,6 +1,6 @@
 -- The AI against a player that picks legal moves at random. A positional
 -- engine that cannot beat random convincingly is not doing anything.
-local R = "/Users/tomar/Projets/github/koreader-plugins/"
+local R = "/Users/tomar/Projets/github/e-reader/koreader-plugins/"
 local BG = assert(loadfile(R .. "backgammon.koplugin/board.lua"))()
 math.randomseed(tonumber(os.getenv("SEED") or "20260930"))
 local GAMES = tonumber(os.getenv("GAMES") or "20")

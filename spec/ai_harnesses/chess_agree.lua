@@ -2,7 +2,7 @@
 -- new one must be faster. Both pick randomly among moves tied at the best
 -- score, so the RNG is reseeded identically before each call.
 local S = "/private/tmp/claude-501/-Users-tomar-Projets-github-koreader-plugins/487f35ff-a2f5-4368-bdc2-a86fd3f6edcf/scratchpad/ai/"
-local R = "/Users/tomar/Projets/github/koreader-plugins/"
+local R = "/Users/tomar/Projets/github/e-reader/koreader-plugins/"
 local A = assert(loadfile(R .. "chess.koplugin/_board_baseline_tmp.lua"))()
 local B = assert(loadfile(R .. "chess.koplugin/board.lua"))()
 

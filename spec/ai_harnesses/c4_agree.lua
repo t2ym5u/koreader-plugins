@@ -1,7 +1,7 @@
 -- Do the two engines choose the same column? Root pruning must not change the
 -- move, only the time taken to find it.
 local S = "/private/tmp/claude-501/-Users-tomar-Projets-github-koreader-plugins/487f35ff-a2f5-4368-bdc2-a86fd3f6edcf/scratchpad/ai/"
-local R = "/Users/tomar/Projets/github/koreader-plugins/"
+local R = "/Users/tomar/Projets/github/e-reader/koreader-plugins/"
 local A = assert(loadfile(S .. "connect4_base.lua"))()
 local B = assert(loadfile(R .. "connect4.koplugin/board.lua"))()
 math.randomseed(99)
