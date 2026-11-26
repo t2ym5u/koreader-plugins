@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-11-24",
+  "updated": "2026-11-26",
   "repo": "t2ym5u/koreader-plugins",
   "common": {
     "version": "1.20.0",
@@ -3163,7 +3163,7 @@
       "fullname": "Plugin Manager",
       "description": "Check for updates and install game plugins from the koreader-plugins repository.",
       "category": "tools",
-      "version": "1.7.4",
+      "version": "1.7.5",
       "files": [
         "_meta.lua",
         "i18n.lua",
@@ -3175,11 +3175,11 @@
         "pmlogic.lua"
       ],
       "sha256": {
-        "_meta.lua": "11f6b5df119ab10868e8f1e62c3dadee492d688fcbdb791251de6c73550bb7ad",
+        "_meta.lua": "6c612a735f764c85bfe3eeb13af642c70400b249d0f06a5fe16e3fb28ee3ad93",
         "i18n.lua": "4044f22a2f0b2774d39d5fe29294e672320a0d9cb16bb18db5cec46aca2ec30c",
-        "i18n_fr.lua": "8ff84f96bacfe5dfd7394cdb2c419203ddb35819e60056b8d71924715c978603",
-        "main.lua": "b78a5fa8667466340d566e338eb32b42f13f6c195a94eacd312a1deadd823aeb",
-        "manager.lua": "42608c2b0119757ff1abb09ef6f4bb85f490f55b1e1f3c49a9fd9d800ab52909",
+        "i18n_fr.lua": "fdae773d763bf06ee8641bd829a0e222204f13ec5b8960dbf898a400e1de41c9",
+        "main.lua": "235e116c910eac8d19ff9bffc7d2daf0f02bb4ed7575ac8c62bd4c55cafc1d2e",
+        "manager.lua": "ca27d3e4e5a9ecfba09f158723a24ad849623f7bbd7c182b8e794fbd01a1bd2b",
         "pathguard.lua": "e2551e9ca07e420cf6c82bbf15b786a1a4f128fbcb861e1dca91b2584eb26182",
         "pluginmanager_configuration.sample.lua": "aec68f12916255348c7983a83b2e5f9797d6b113d2b8d8cb3ad22defe0ea5a3c",
         "pmlogic.lua": "ca843baa8a1fd24a858feb7ae1f0d1320ffab39b5931283d8cf6923d68470ab5"
@@ -3187,8 +3187,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/pluginmanager.koplugin/main/",
       "zip": {
         "path": "dist/pluginmanager.zip",
-        "sha256": "c81eba349381711ac5956b40ea8153aea64384e3a0bac7842ec6835a6eed7387",
-        "size": 80101
+        "sha256": "c1ab4a580ea3d496486a6087dd25ccf8e9ef035bb807924130006e46a476819f",
+        "size": 81038
       }
     },
     {

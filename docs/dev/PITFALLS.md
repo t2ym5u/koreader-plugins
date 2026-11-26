@@ -150,7 +150,8 @@
   that KOReader does not use, no physical page-turn buttons.
 - A Kobo may not know its time zone, so converter / almanac offer a home
   city.
-- Plugin Manager leaves Wi-Fi on after downloading (no `afterWifiAction`).
-  Suspected cause of the "sluggish until restart" report; not confirmed.
+- Plugin Manager left Wi-Fi on after downloading (no `afterWifiAction`) up to
+  1.7.4; since 1.7.5 closing its home screen hands Wi-Fi back to KOReader's
+  setting. Suspected cause of the "sluggish until restart" report; not confirmed.
 - In this sandbox, foreground `sleep` is blocked. Use `until …; do sleep 5; done`
   or background runs.

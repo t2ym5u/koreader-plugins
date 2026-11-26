@@ -200,11 +200,16 @@ Installs from one zip per plugin, with a per-file fallback.
   `_skeleton`.
 - Since 1.7.2:
   - The settings/manifest cache is shared across instances at module level.
-  - `main.lua` is a thin stub; `manager.lua` holds the 103 methods and loads
+  - `main.lua` is a thin stub; `manager.lua` holds the 108 methods and loads
     on first use.
-- Known open issue: it never calls `NetworkMgr:afterWifiAction`, so Wi-Fi
-  stays on after installs. That is a possible cause of the "slow until
-  restart" report.
+- Since 1.7.5, closing its home screen calls `NetworkMgr:afterWifiAction`
+  (next tick): if one of its actions turned Wi-Fi on, KOReader applies the
+  user's "Action when done with Wi-Fi" setting. An Update launched from
+  Dashboard never opens that screen, so it still leaves Wi-Fi on. The home
+  screen's Wi-Fi line follows `NetworkConnected` / `NetworkDisconnected`.
+- Its lists go through `full_screen_menu` (`manager.lua`): borderless, not a
+  popout (KOReader's default draws rounded corners), no page bar on a
+  single page.
 
 ## Set-aside / retired plugins
 
