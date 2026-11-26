@@ -140,7 +140,7 @@ def description_translations(plugin_dir: Path, description: str | None) -> dict[
 
     Read from its i18n_fr.lua, whose entries look like
       ["English text"] = { fr = "...", es = "...", de = "..." },
-    (possibly over several lines). Plugin Manager shows them in the reader's
+    (possibly over several lines), or use a local t(fr, es, de) helper. Plugin Manager shows them in the reader's
     language instead of the English description. {} when the plugin has no
     such entry (another table format, or no translation).
     """
@@ -156,6 +156,17 @@ def description_translations(plugin_dir: Path, description: str | None) -> dict[
         if unlua(m.group(1)) == description:
             return {lang: unlua(text)
                     for lang, text in re.findall(r"\b([a-z]{2})\s*=\s*" + LUA_STRING, m.group(2))}
+    # The shorthand some plugins use (converter):
+    #   local function t(fr, es, de) return { fr = fr, es = es, de = de } end
+    #   ["English text"] = t("...", "...", "..."),
+    helper = re.search(r"local\s+function\s+t\s*\(([a-z]{2}(?:\s*,\s*[a-z]{2})*)\)", src)
+    if helper:
+        langs = [l.strip() for l in helper.group(1).split(",")]
+        args = r"\s*,\s*".join([LUA_STRING] * len(langs))
+        call = r"\[\s*" + LUA_STRING + r"\s*\]\s*=\s*t\(\s*" + args + r"\s*\)"
+        for m in re.finditer(call, src):
+            if unlua(m.group(1)) == description:
+                return {lang: unlua(m.group(i + 2)) for i, lang in enumerate(langs)}
     return {}
 
 

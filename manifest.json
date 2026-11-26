@@ -601,8 +601,13 @@
       "dir": "bookdrop.koplugin",
       "fullname": "Book Drop",
       "description": "Drop books into a WebDAV folder (Koofr, Nextcloud…) from your phone or computer; the reader fetches them on its own when online.",
+      "description_i18n": {
+        "fr": "Déposez des livres dans un dossier WebDAV (Koofr, Nextcloud…) depuis votre téléphone ou votre ordinateur ; la liseuse les récupère seule dès qu'elle est en ligne.",
+        "es": "Deja libros en una carpeta WebDAV (Koofr, Nextcloud…) desde el móvil o el ordenador; el lector los descarga solo cuando tiene conexión.",
+        "de": "Bücher vom Handy oder Computer in einen WebDAV-Ordner (Koofr, Nextcloud…) legen; der Reader holt sie selbst ab, sobald er online ist."
+      },
       "category": "tools",
-      "version": "1.0.2",
+      "version": "1.0.3",
       "files": [
         "_meta.lua",
         "bookdrop_logic.lua",
@@ -613,19 +618,19 @@
         "images/bookdrop.png"
       ],
       "sha256": {
-        "_meta.lua": "5e98bc3dcc96d975d81664bb2b5496d0267af576a618ddf1bb0ec831bf6512e0",
+        "_meta.lua": "283319ff119d5237991a261b3e72a918ec81af8d123a2b3a94a968b6a69eaf88",
         "bookdrop_logic.lua": "09153566deb19050024e057931e4debe43adbbe43180e880999ac5c94724b698",
         "bookdrop_sync.lua": "6a4a947f7cd29f9e360b5faad740b9ffa8775824a585f2861b8ebb044add30a0",
         "i18n.lua": "87fdd0b7d6846f4bc6bd021e725b6a8a654ef38737cbea00582609d2249b5a09",
-        "i18n_fr.lua": "97bf308ddd810f82e7897c73dc18934ce3c975c49880fcf5558d494da88bd7fa",
+        "i18n_fr.lua": "27c56ad02f1b6db5e1ab279dc199c5287b201a7766e63b81eb9774fbc720737f",
         "main.lua": "eea92d582764a4d2363162b3642aaab8bd71756b5c3b4f29cf2ee7047ca4d1cc",
         "images/bookdrop.png": "c8726cde038ef2d13e1cf1aeda12638316bf21a439675068e3901f203bc4b963"
       },
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/bookdrop.koplugin/main/",
       "zip": {
         "path": "dist/bookdrop.zip",
-        "sha256": "161b1f616c6a5f500b5f12b09b6aed5181d0254cdb6513bdda3e657192b8a328",
-        "size": 67607
+        "sha256": "9212cfdae7ee820175bf8d1e5fc9b33897e0c6b4ec8e23cde8fedc8435780bae",
+        "size": 67857
       }
     },
     {
@@ -1097,6 +1102,11 @@
       "dir": "converter.koplugin",
       "fullname": "Unit converter",
       "description": "Convert units, cooking measures, oven temperatures, currencies (ECB rates), time zones, Roman numerals and number bases.",
+      "description_i18n": {
+        "fr": "Convertit unités, mesures de cuisine, températures de four, devises (cours BCE), fuseaux horaires, chiffres romains et bases.",
+        "es": "Convierte unidades, medidas de cocina, temperaturas de horno, divisas (tipos del BCE), husos horarios, números romanos y bases.",
+        "de": "Rechnet Einheiten, Küchenmaße, Ofentemperaturen, Währungen (EZB-Kurse), Zeitzonen, römische Zahlen und Zahlensysteme um."
+      },
       "category": "tools",
       "version": "1.0.7",
       "files": [
@@ -1182,8 +1192,13 @@
       "dir": "dashboard.koplugin",
       "fullname": "Dashboard",
       "description": "Home screen: continue reading, resume a game, daily challenge, your games and stats.",
+      "description_i18n": {
+        "fr": "Écran d'accueil : reprendre la lecture ou une partie, défi du jour, vos jeux et vos statistiques.",
+        "es": "Pantalla de inicio: seguir leyendo, retomar una partida, reto del día, tus juegos y estadísticas.",
+        "de": "Startbildschirm: weiterlesen, ein Spiel fortsetzen, Tagesaufgabe, deine Spiele und Statistiken."
+      },
       "category": "tools",
-      "version": "1.8.1",
+      "version": "1.8.2",
       "files": [
         "_meta.lua",
         "all_games_screen.lua",
@@ -1201,7 +1216,7 @@
         "images/dashboard.png"
       ],
       "sha256": {
-        "_meta.lua": "c1d52175b1b8863ed2c9f70912f547c7eeccd9865cdb16173138be9dfea77962",
+        "_meta.lua": "5086c810ec283564446d4fcc4592ddc708fdb9ccaa7f7da2f9e311ef34679d40",
         "all_games_screen.lua": "997c7ec909c8a13ccd333f169a40e48dc78902fe244213f16877bb156126a75e",
         "books.lua": "2fdb11402b83a357b4cdc7c8990894df77d26bc442ac8ce99a6616fba167fa1e",
         "daily.lua": "5e959133a62ac9ed71c150592fd69700dcac532ff7b24199b94d372e0f91bc4c",
@@ -1209,7 +1224,7 @@
         "games.lua": "7d618f9cb54c1c56f2dc4b5e9bceec965eb2f5c3f16be984082c54f4e4712605",
         "games_screen.lua": "2bc113cbc7de26cb2f2a87d991d10aaed6e482868f406fded2ee77c64ca84dbe",
         "home_screen.lua": "44ebadd960bd0866b5001ada58ebd513729a36f4053ab1ad08f852c66cd00ffa",
-        "i18n_fr.lua": "a95b939006012cf320d8ad4e66b6044397f20f7174ea4c2450ed152c56ab70e6",
+        "i18n_fr.lua": "fd522ddf471607c1f4e20ee80ea54fc5f3936189f568fa0d355ddf68ec08dee9",
         "layout.lua": "b648ba16a989f6c9a8fc726aae69495fb8f5f713e9b889ecb7764aa96b7bd53a",
         "main.lua": "4de9a98413452eaaeb25cf2c5c48dd20cd927a490dae6d06bf8b46fa9d07707a",
         "startup.lua": "fc637e87f1825090cbf20d07340d77b041b4e8143c5bd9960fa586654307720f",
@@ -1220,8 +1235,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/dashboard.koplugin/main/",
       "zip": {
         "path": "dist/dashboard.zip",
-        "sha256": "1b3d43ea9b22c55558c19cf4986cea685c818877a93d0b773547f54bfc019b70",
-        "size": 212502
+        "sha256": "4a20d275c40fc890662f6cda457fd7f747b8d52ccfe5e81cce057dc0b3daa150",
+        "size": 212709
       }
     },
     {
@@ -3207,8 +3222,13 @@
       "dir": "opdsdir.koplugin",
       "fullname": "OPDS per-catalog download directory",
       "description": "Long-press a catalog to assign a dedicated download folder.",
+      "description_i18n": {
+        "fr": "Appui long sur un catalogue pour lui attribuer son propre dossier de téléchargement.",
+        "es": "Mantén pulsado un catálogo para asignarle su propia carpeta de descargas.",
+        "de": "Einen Katalog lange drücken, um ihm einen eigenen Download-Ordner zuzuweisen."
+      },
       "category": "tools",
-      "version": "1.2.3",
+      "version": "1.2.4",
       "files": [
         "_meta.lua",
         "decrypt.lua",
@@ -3218,18 +3238,18 @@
         "sh.lua"
       ],
       "sha256": {
-        "_meta.lua": "5c498620dabdd09180e47a85056dd34f9a48516d85384005818ceca86f130ae3",
+        "_meta.lua": "57d7629eccfb36c312ee8b3f2a1c3f445fc218c8a05ebcc3a26d6d73e3a56ed6",
         "decrypt.lua": "08ca627f97b50114ebdbb48d553ebbf86d8bfe63a3a0daf6473f4b70907d72c7",
         "i18n.lua": "87fdd0b7d6846f4bc6bd021e725b6a8a654ef38737cbea00582609d2249b5a09",
-        "i18n_fr.lua": "defc32fa6651a98ce6a1da4276cc2d0f7e3eebd82ca0f93f4509f9c52d6d88eb",
+        "i18n_fr.lua": "317cb4e2c8c52053e5f594f81878ce41d2c3faf875864c4dcd8ded65c415b462",
         "main.lua": "513a0b63261a0130eb6d15df4953efe1ccf66458ddd959d160e0cbc951ac159f",
         "sh.lua": "6d341d18221cf0be99b68590b96f5c9a0950ff7af8584eda371873e2b1ded3a4"
       },
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/opdsdir.koplugin/main/",
       "zip": {
         "path": "dist/opdsdir.zip",
-        "sha256": "a3e25f54684c89d8f8a409d921eb61e7fe6fcf7e25613f61369b6aaa02b6c758",
-        "size": 11517
+        "sha256": "95038c6d5ca495d7bb6c80a90b748f6b74a87394b039b1e4380ee059310a1414",
+        "size": 11717
       }
     },
     {
@@ -3531,8 +3551,13 @@
       "dir": "pluginmanager.koplugin",
       "fullname": "Plugin Manager",
       "description": "Check for updates and install game plugins from the koreader-plugins repository.",
+      "description_i18n": {
+        "fr": "Vérifie les mises à jour et installe les plugins de jeux du dépôt koreader-plugins.",
+        "es": "Busca actualizaciones e instala los plugins de juegos del repositorio koreader-plugins.",
+        "de": "Sucht nach Updates und installiert Spiele-Plugins aus dem Repository koreader-plugins."
+      },
       "category": "tools",
-      "version": "1.7.6",
+      "version": "1.7.7",
       "files": [
         "_meta.lua",
         "i18n.lua",
@@ -3544,9 +3569,9 @@
         "pmlogic.lua"
       ],
       "sha256": {
-        "_meta.lua": "8d4015934873a27465c7a014d665e6d0636bea30bd41fc0beb40886aad324248",
+        "_meta.lua": "8f8fe2ca9611948e812f514b7c4af8ff2ab295d67a0a35ca5036a51eb69db86f",
         "i18n.lua": "4044f22a2f0b2774d39d5fe29294e672320a0d9cb16bb18db5cec46aca2ec30c",
-        "i18n_fr.lua": "a5bc342f5eff59f84ff342b3ee02025914771a1a61a1d1c58060bdac3fe73cc7",
+        "i18n_fr.lua": "6fc58341f46c154a916e1c9d72d262b03751cb0ad8d632c17166a6badbee34e0",
         "main.lua": "564b45b4a77052b945112cbc311741bc3d784229764a0e0599381b97c8af13d1",
         "manager.lua": "2761f47741d82066a17187b630c82353564371bef8bcab06095d9bfdd274ad41",
         "pathguard.lua": "e2551e9ca07e420cf6c82bbf15b786a1a4f128fbcb861e1dca91b2584eb26182",
@@ -3556,8 +3581,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/pluginmanager.koplugin/main/",
       "zip": {
         "path": "dist/pluginmanager.zip",
-        "sha256": "fc22bebe47c2dcf7e79e69495173d871526574be236746f1e0598654f9b2bfca",
-        "size": 82681
+        "sha256": "cc79b51c5421071d0de10612244bfe4eea852b5963b8c6717d64d180743f6c7f",
+        "size": 82819
       }
     },
     {
@@ -4379,8 +4404,13 @@
       "dir": "sudoku.koplugin",
       "fullname": "Sudoku",
       "description": "Play touch-friendly Sudoku puzzles, resume later, and reveal the solution when needed.",
+      "description_i18n": {
+        "fr": "Jouez au Sudoku au doigt, reprenez plus tard et affichez la solution si besoin.",
+        "es": "Juega al Sudoku con la pantalla táctil, continúa más tarde y muestra la solución cuando la necesites.",
+        "de": "Sudoku per Touch spielen, später weitermachen und bei Bedarf die Lösung anzeigen."
+      },
       "category": "sudoku",
-      "version": "2.8.5",
+      "version": "2.8.6",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -4393,12 +4423,12 @@
         "images/sudoku.png"
       ],
       "sha256": {
-        "_meta.lua": "b3c7d39923978dd75381153cc0efacf9c9f3a00c0739db3742b324836088c11d",
+        "_meta.lua": "27820590589735582d4b0b396879a37645e05455f4f587a96c079e1fa6e18c9d",
         "board.lua": "1163640709da912990a3a856ae772f52d1c4044943a1916d059ceb1921ff4a6b",
         "board_widget.lua": "b94c07ccc0db7ac6b88611a19be79b98e8916b8eeb83ddb4a3d539678c137aa5",
         "daily_seed.lua": "a99dc79ab5335c9ac1e414d5e3fefaff88640fe8bb2c0300a064c89734bbbe5e",
         "i18n.lua": "60b0a583e37dad43557e2c532b467601cadf6852af6aed3c19bc0054caf49d1d",
-        "i18n_fr.lua": "d8bf5c2251134e5de816d0fa3fee4794c43422a0b52fb9f56597a1a07d1289dc",
+        "i18n_fr.lua": "86dbba7c3406762d6816ead5651f762d9c0c24ab7fa01c6bc8289cde3db07803",
         "main.lua": "d30b7deb21673c44f7109be7a1eb170c89f7e321aa63e47f23af928af67687a8",
         "screen.lua": "e938aa10eec0feef0fdfe852b036e3071c7fc9b26ef1a79c364f958c0dbae4dc",
         "images/sudoku.png": "d2d1613a8eccd28b83330ec6b657bf167da626616d3fffe8946e2241017fd685"
@@ -4407,8 +4437,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/sudoku.koplugin/main/",
       "zip": {
         "path": "dist/sudoku.zip",
-        "sha256": "c8acd826659b2b94d06eddc45dbcf537c31516e5d69217c589a51093b73879c3",
-        "size": 151473
+        "sha256": "d78d36f954be8f5d55658603762c09eee71fe084f9300ddeffa111b79407457b",
+        "size": 151716
       }
     },
     {
@@ -4416,8 +4446,13 @@
       "dir": "sudokukiller.koplugin",
       "fullname": "Killer Sudoku",
       "description": "Play touch-friendly Killer Sudoku puzzles with caged sums, resume later, and reveal the solution when needed.",
+      "description_i18n": {
+        "fr": "Jouez au Killer Sudoku au doigt, avec ses cages et leurs sommes, reprenez plus tard et affichez la solution si besoin.",
+        "es": "Juega al Killer Sudoku con la pantalla táctil, con sus jaulas y sus sumas, continúa más tarde y muestra la solución cuando la necesites.",
+        "de": "Killer-Sudoku mit Käfigsummen per Touch spielen, später weitermachen und bei Bedarf die Lösung anzeigen."
+      },
       "category": "sudoku",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "files": [
         "_meta.lua",
         "board.lua",
@@ -4429,11 +4464,11 @@
         "images/killer-sudoku.png"
       ],
       "sha256": {
-        "_meta.lua": "eeab3b5e20677eb496cd479382d6b7c94849677b26fb0e610838290fd23c0178",
+        "_meta.lua": "e6f93ac132f5e02d9567a11d49e5801d034dc92fb623fd507aec0ba649534e32",
         "board.lua": "c44bed647e8d539b55a831a2433374530cc8ce4be9da227925f8bfda518faa02",
         "board_widget.lua": "06be0daedde8bbf0364de0ed8c9aa36d5ae33074082068b8380edca7268565cd",
         "i18n.lua": "60b0a583e37dad43557e2c532b467601cadf6852af6aed3c19bc0054caf49d1d",
-        "i18n_fr.lua": "3e351c9b79a27eda8c00d1095256c1da6361e6c7232078895ff98196aed4602c",
+        "i18n_fr.lua": "85bc3ca71e0ffba6e4740bcaad9018f01003ffeba181f776aac1b7f5c128b83c",
         "main.lua": "b992c350ff4cbebc240f7dcaad7979fd8ee9a4485426d8068be71d67df9e8b71",
         "screen.lua": "d1ee46a7fc14c061228e3f38f1ecf4f02a541529c2bf283f31223e603aada50b",
         "images/killer-sudoku.png": "a1f60fe2e49714ef5310c87f215c2270ac49994880048de44c98e97ac1132f07"
@@ -4442,8 +4477,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/sudokukiller.koplugin/master/",
       "zip": {
         "path": "dist/sudokukiller.zip",
-        "sha256": "0985a42485d25712d0e94348d69c534bdf184ade77132ce79042f0e8bd632fa4",
-        "size": 161459
+        "sha256": "851e63069d11e4cb6d9b8d79184e0781d3301bb743afff80ab3f5d70d6dda8cf",
+        "size": 161748
       }
     },
     {
