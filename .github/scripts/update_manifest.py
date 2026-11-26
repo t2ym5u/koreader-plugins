@@ -21,6 +21,9 @@ Per plugin it also writes:
   - category      from categories.json next to this script (a missing id is
                   warned about and left without one: PluginManager files it
                   under "Other");
+  - description_i18n  {lang: text}, the plugin's own translations of its
+                  _meta.lua description, read from its i18n_fr.lua (absent
+                  when it has none); PluginManager shows the reader's language;
   - min_koreader  from an optional `min_koreader = "2026.03"` line in the
                   plugin's _meta.lua (absent -> field absent);
   - sha256        {file: hex digest} for every entry in `files`, hashed from
@@ -68,7 +71,7 @@ PATCH_REPOS_PATH = Path(__file__).resolve().parent / "patch_repos.json"
 PATCH_REPO_RE = re.compile(r"^[A-Za-z0-9][A-Za-z0-9-]*/[A-Za-z0-9._-]+$")
 
 # Field order in each plugin entry.
-FIELD_ORDER = ["id", "dir", "fullname", "description", "category", "version",
+FIELD_ORDER = ["id", "dir", "fullname", "description", "description_i18n", "category", "version",
                "min_koreader", "files", "sha256", "common_lib"]
 
 # Plugins deliberately set aside (broken/unpublished), excluded from the
@@ -121,6 +124,39 @@ def read_meta(meta_path: Path) -> dict:
                      or get(r'description\s*=\s*_\(\[\[([^\]]+)\]\]\)')
                      or get(r'description\s*=\s*"([^"]+)"')),
     }
+
+
+LUA_STRING = r'"((?:[^"\\]|\\.)*)"'
+
+
+def unlua(s: str) -> str:
+    """Decode the escapes a double-quoted Lua string uses in i18n tables."""
+    s = re.sub(r"\\u\{([0-9a-fA-F]+)\}", lambda m: chr(int(m.group(1), 16)), s)
+    return re.sub(r"\\(.)", lambda m: {"n": "\n", "t": "\t"}.get(m.group(1), m.group(1)), s)
+
+
+def description_translations(plugin_dir: Path, description: str | None) -> dict[str, str]:
+    """The plugin's own translations of its _meta.lua description.
+
+    Read from its i18n_fr.lua, whose entries look like
+      ["English text"] = { fr = "...", es = "...", de = "..." },
+    (possibly over several lines). Plugin Manager shows them in the reader's
+    language instead of the English description. {} when the plugin has no
+    such entry (another table format, or no translation).
+    """
+    path = plugin_dir / "i18n_fr.lua"
+    if not description or not path.is_file():
+        return {}
+    src = path.read_text(encoding="utf-8", errors="replace")
+    pair = r"[a-z]{2}\s*=\s*" + LUA_STRING
+    # The body is matched string by string: a "}" inside one (\u{2026})
+    # must not end it.
+    entry = r"\[\s*" + LUA_STRING + r"\s*\]\s*=\s*\{\s*((?:" + pair + r"\s*,?\s*)+)\}"
+    for m in re.finditer(entry, src):
+        if unlua(m.group(1)) == description:
+            return {lang: unlua(text)
+                    for lang, text in re.findall(r"\b([a-z]{2})\s*=\s*" + LUA_STRING, m.group(2))}
+    return {}
 
 
 def list_plugin_files(plugin_dir: Path) -> list[str]:
@@ -581,6 +617,11 @@ def main() -> int:
             "files":       files,
             "sha256":      file_hashes(koplugin_dir, files),
         })
+        translations = description_translations(koplugin_dir, meta["description"])
+        if translations:
+            entry["description_i18n"] = translations
+        else:
+            entry.pop("description_i18n", None)
         if common_lib:
             entry["common_lib"] = common_lib
         else:

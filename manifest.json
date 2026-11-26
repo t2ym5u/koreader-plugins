@@ -99,6 +99,11 @@
       "dir": "2048.koplugin",
       "fullname": "2048",
       "description": "Slide tiles to merge them. Reach the 2048 tile!",
+      "description_i18n": {
+        "fr": "Faites glisser les tuiles pour les fusionner. Atteignez la tuile 2048 !",
+        "es": "Desliza las fichas para fusionarlas. ¡Alcanza la ficha 2048!",
+        "de": "Schiebe die Kacheln, um sie zu verschmelzen. Erreiche die 2048-Kachel!"
+      },
       "category": "classic",
       "version": "1.3.5",
       "files": [
@@ -132,6 +137,11 @@
       "dir": "almanac.koplugin",
       "fullname": "Calendar",
       "description": "Month calendar with week numbers, public holidays, moon phases and a date calculator.",
+      "description_i18n": {
+        "fr": "Calendrier mensuel avec numéros de semaine, jours fériés, phases de la lune et calculs de dates.",
+        "es": "Calendario mensual con números de semana, festivos, fases lunares y calculadora de fechas.",
+        "de": "Monatskalender mit Kalenderwochen, Feiertagen, Mondphasen und Datumsrechner."
+      },
       "category": "tools",
       "version": "1.0.7",
       "files": [
@@ -173,6 +183,11 @@
       "dir": "anagram.koplugin",
       "fullname": "Anagram",
       "description": "Rearrange letters to find words",
+      "description_i18n": {
+        "fr": "Réarrangez les lettres pour trouver des mots",
+        "es": "Reordena las letras para formar palabras",
+        "de": "Ordne die Buchstaben neu, um Wörter zu finden"
+      },
       "category": "words",
       "version": "1.7.0",
       "files": [
@@ -224,6 +239,11 @@
       "dir": "aquarium.koplugin",
       "fullname": "Aquarium",
       "description": "Logic puzzle: fill the tanks with water to match the row and column counts; water stays level in each tank.",
+      "description_i18n": {
+        "fr": "Puzzle logique : remplissez les aquariums d'eau selon les nombres des lignes et colonnes ; l'eau reste horizontale dans chaque aquarium.",
+        "es": "Puzle lógico: llena los acuarios de agua según los números de filas y columnas; el agua queda nivelada en cada acuario.",
+        "de": "Logikrätsel: Fülle die Becken mit Wasser passend zu den Zeilen- und Spaltenzahlen; in jedem Becken steht das Wasser waagerecht."
+      },
       "category": "logic",
       "version": "1.2.6",
       "files": [
@@ -259,6 +279,11 @@
       "dir": "arrowsudoku.koplugin",
       "fullname": "Arrow Sudoku",
       "description": "Sudoku with arrow sum constraints",
+      "description_i18n": {
+        "fr": "Sudoku avec contraintes de somme en flèche",
+        "es": "Sudoku con restricciones de suma en flecha",
+        "de": "Sudoku mit Pfeilsummen-Beschränkungen"
+      },
       "category": "sudoku",
       "version": "1.8.5",
       "files": [
@@ -294,6 +319,11 @@
       "dir": "awale.koplugin",
       "fullname": "Awalé",
       "description": "Awalé (Oware) — sow and capture seeds, against the AI or a friend.",
+      "description_i18n": {
+        "fr": "Awalé — semez et prenez des graines, contre l'IA ou un ami.",
+        "es": "Awalé (Oware) — siembra y captura semillas, contra la IA o un amigo.",
+        "de": "Awalé (Oware) — Samen säen und schlagen, gegen die KI oder zu zweit."
+      },
       "category": "board",
       "version": "1.0.10",
       "files": [
@@ -327,6 +357,11 @@
       "dir": "backgammon.koplugin",
       "fullname": "Backgammon",
       "description": "Classic 2-player dice and checker race game.",
+      "description_i18n": {
+        "fr": "Jeu de dés et de pions classique à 2 joueurs.",
+        "es": "Juego clásico de dados y fichas de carrera para 2 jugadores.",
+        "de": "Klassisches Würfel- und Steine-Wettlaufspiel für 2 Spieler."
+      },
       "category": "board",
       "version": "1.4.8",
       "files": [
@@ -360,6 +395,11 @@
       "dir": "balance.koplugin",
       "fullname": "Balance",
       "description": "Logical weighing puzzle",
+      "description_i18n": {
+        "fr": "Casse-tête logique de pesée",
+        "es": "Rompecabezas lógico de pesaje",
+        "de": "Logisches Wiege-Rätsel"
+      },
       "category": "logic",
       "version": "1.3.11",
       "files": [
@@ -393,6 +433,11 @@
       "dir": "battleship.koplugin",
       "fullname": "Battleship Puzzle",
       "description": "Solitaire Bimaru: deduce the fleet from row and column clues.",
+      "description_i18n": {
+        "fr": "Solitaire Bimaru : déduisez la flotte à partir des indices de lignes et de colonnes.",
+        "es": "Solitario Bimaru: deduce la flota a partir de las pistas de filas y columnas.",
+        "de": "Solitär-Bimaru: Leite die Flotte aus den Zeilen- und Spaltenhinweisen ab."
+      },
       "category": "board",
       "version": "1.6.5",
       "files": [
@@ -428,6 +473,11 @@
       "dir": "betweenlines.koplugin",
       "fullname": "Between Lines Sudoku",
       "description": "Sudoku with between-lines constraints",
+      "description_i18n": {
+        "fr": "Sudoku avec contraintes entre les lignes",
+        "es": "Sudoku con restricciones entre líneas",
+        "de": "Sudoku mit Zwischen-Linien-Beschränkungen"
+      },
       "category": "sudoku",
       "version": "1.7.5",
       "files": [
@@ -463,6 +513,11 @@
       "dir": "binairo.koplugin",
       "fullname": "Binairo",
       "description": "Binary grid puzzle — fill each row and column with equal 0s and 1s, no three in a row.",
+      "description_i18n": {
+        "fr": "Puzzle de grille binaire — remplissez chaque ligne et colonne avec un nombre égal de 0 et de 1, sans trois identiques d'affilée.",
+        "es": "Puzzle de cuadrícula binaria — rellena cada fila y columna con la misma cantidad de 0 y 1, sin tres iguales seguidos.",
+        "de": "Binäres Gitterrätsel — fülle jede Zeile und Spalte mit gleich vielen 0en und 1en, keine drei in Folge."
+      },
       "category": "logic",
       "version": "1.5.6",
       "files": [
@@ -496,6 +551,11 @@
       "dir": "boggle.koplugin",
       "fullname": "Boggle",
       "description": "Find words by connecting adjacent letters on the grid — alone, or around the table with friends.",
+      "description_i18n": {
+        "fr": "Trouvez des mots en reliant des lettres adjacentes sur la grille — seul, ou à plusieurs autour de la table.",
+        "es": "Encuentra palabras conectando letras adyacentes en la cuadrícula — solo, o en grupo alrededor de la mesa.",
+        "de": "Finde Wörter, indem du benachbarte Buchstaben im Gitter verbindest — allein oder mit Freunden am Tisch."
+      },
       "category": "words",
       "version": "1.7.0",
       "files": [
@@ -573,6 +633,11 @@
       "dir": "bridges.koplugin",
       "fullname": "Bridges",
       "description": "Connect islands with the right number of bridges",
+      "description_i18n": {
+        "fr": "Reliez les îles avec le bon nombre de ponts",
+        "es": "Conecta las islas con el número correcto de puentes",
+        "de": "Verbinde die Inseln mit der richtigen Anzahl Brücken"
+      },
       "category": "logic",
       "version": "1.5.5",
       "files": [
@@ -606,6 +671,11 @@
       "dir": "categories.koplugin",
       "fullname": "Categories",
       "description": "Draw a letter and a list of categories, write an answer for each before the timer ends, then score unique and shared answers — the classic pen-and-paper word game.",
+      "description_i18n": {
+        "fr": "Tirez une lettre et une liste de catégories, trouvez une réponse pour chacune avant la fin du chrono, puis comptez les réponses uniques et partagées — le Petit Bac sur papier.",
+        "es": "Saca una letra y una lista de categorías, escribe una respuesta para cada una antes de que acabe el tiempo y puntúa las respuestas únicas y compartidas — el clásico juego de lápiz y papel.",
+        "de": "Zieht einen Buchstaben und eine Liste von Kategorien, schreibt vor Ablauf der Zeit zu jeder eine Antwort und wertet einmalige und doppelte Antworten — der Papier-und-Stift-Klassiker."
+      },
       "category": "party",
       "version": "1.2.5",
       "files": [
@@ -643,6 +713,11 @@
       "dir": "cave.koplugin",
       "fullname": "Cave",
       "description": "Find the cave hidden inside the grid",
+      "description_i18n": {
+        "fr": "Trouvez la grotte cachée dans la grille",
+        "es": "Encuentra la cueva oculta en la cuadrícula",
+        "de": "Finde die versteckte Höhle im Gitter"
+      },
       "category": "logic",
       "version": "1.6.7",
       "files": [
@@ -676,6 +751,11 @@
       "dir": "checkers.koplugin",
       "fullname": "Checkers",
       "description": "English draughts (checkers), against the AI or a friend.",
+      "description_i18n": {
+        "fr": "Dames anglaises, contre l'IA ou un ami.",
+        "es": "Damas inglesas, contra la IA o un amigo.",
+        "de": "Englisches Damespiel, gegen die KI oder zu zweit."
+      },
       "category": "board",
       "version": "1.4.5",
       "files": [
@@ -713,6 +793,11 @@
       "dir": "chess.koplugin",
       "fullname": "Chess",
       "description": "Chess game with AI",
+      "description_i18n": {
+        "fr": "Jeu d'échecs avec IA",
+        "es": "Juego de ajedrez con IA",
+        "de": "Schachspiel mit KI"
+      },
       "category": "board",
       "version": "1.4.6",
       "files": [
@@ -782,6 +867,11 @@
       "dir": "chesspuzzles.koplugin",
       "fullname": "Chess Puzzles",
       "description": "Rated chess tactics: find the winning move in 10,000 puzzles from real games (Lichess database, CC0), and 58 guided lessons. Adaptive difficulty that follows your rating, themes, hints and a Daily Challenge.",
+      "description_i18n": {
+        "fr": "Tactique d'échecs classée : trouvez le coup gagnant dans 10 000 problèmes issus de vraies parties (base Lichess, CC0), et 58 leçons guidées. Difficulté adaptative qui suit votre classement, thèmes, astuces et Défi du jour.",
+        "es": "Táctica de ajedrez con clasificación: encuentra la jugada ganadora en 10 000 problemas de partidas reales (base de Lichess, CC0), y 58 lecciones guiadas. Dificultad adaptativa que sigue tu clasificación, temas, pistas y Desafío diario.",
+        "de": "Schachtaktik mit Wertung: Finde den Gewinnzug in 10.000 Aufgaben aus echten Partien (Lichess-Datenbank, CC0), dazu 58 geführte Lektionen. Adaptive Schwierigkeit nach deiner Wertung, Themen, Tipps und Tägliche Herausforderung."
+      },
       "category": "board",
       "version": "1.2.3",
       "files": [
@@ -861,6 +951,11 @@
       "dir": "codewords.koplugin",
       "fullname": "Code Words",
       "description": "Two teams, one grid of 25 words: spymasters give one-word clues, operatives find their agents and avoid the assassin.",
+      "description_i18n": {
+        "fr": "Deux équipes, une grille de 25 mots : les maîtres-espions donnent des indices d'un mot, les agents retrouvent leurs alliés et évitent l'assassin.",
+        "es": "Dos equipos, una cuadrícula de 25 palabras: los jefes de espías dan pistas de una palabra y los agentes buscan a los suyos evitando al asesino.",
+        "de": "Zwei Teams, ein Raster aus 25 Wörtern: Die Geheimdienstchefs geben Ein-Wort-Hinweise, die Agenten finden ihre Leute und meiden den Attentäter."
+      },
       "category": "party",
       "version": "1.3.4",
       "files": [
@@ -926,6 +1021,11 @@
       "dir": "colornonogram.koplugin",
       "fullname": "Color Nonogram",
       "description": "Colored picross / nonogram",
+      "description_i18n": {
+        "fr": "Picross / nonogramme en couleurs",
+        "es": "Picross / nonograma en color",
+        "de": "Farbiges Picross / Nonogramm"
+      },
       "category": "logic",
       "version": "1.6.5",
       "files": [
@@ -959,6 +1059,11 @@
       "dir": "connect4.koplugin",
       "fullname": "Connect Four",
       "description": "Connect Four — align 4 pieces with AI.",
+      "description_i18n": {
+        "fr": "Connect Four — alignez 4 pièces avec IA.",
+        "es": "Cuatro en Línea — alinea 4 fichas contra la IA.",
+        "de": "Vier gewinnt — richte 4 Steine gegen die KI aus."
+      },
       "category": "board",
       "version": "1.4.5",
       "files": [
@@ -1035,6 +1140,11 @@
       "dir": "cryptogram.koplugin",
       "fullname": "Cryptogram",
       "description": "Substitution cipher word puzzle",
+      "description_i18n": {
+        "fr": "Casse-tête de mots à chiffrement par substitution",
+        "es": "Puzzle de palabras con cifrado por sustitución",
+        "de": "Worträtsel mit Substitutionschiffre"
+      },
       "category": "words",
       "version": "1.5.5",
       "files": [
@@ -1119,6 +1229,11 @@
       "dir": "defuser.koplugin",
       "fullname": "The Defuser",
       "description": "Two readers: the operator has an alarm machine, the expert its manual. Talk it through and stop every module.",
+      "description_i18n": {
+        "fr": "Deux liseuses : l'opérateur a une machine à alarme, l'expert son manuel. Parlez-vous et arrêtez chaque module.",
+        "es": "Dos lectores: el operador tiene una máquina con alarma, el experto su manual. Hablen y paren cada módulo.",
+        "de": "Zwei Reader: Der Bediener hat eine Alarmmaschine, der Experte ihr Handbuch. Sprecht euch ab und stoppt jedes Modul."
+      },
       "category": "duo",
       "version": "1.0.5",
       "files": [
@@ -1154,6 +1269,11 @@
       "dir": "detective.koplugin",
       "fullname": "Detective",
       "description": "Logic deduction cases: read the clues, fill the grid, find who did it, where and with what.",
+      "description_i18n": {
+        "fr": "Enquêtes de logique : lisez les indices, remplissez la grille, trouvez qui, où et avec quoi.",
+        "es": "Casos de deducción lógica: lee las pistas, rellena la cuadrícula, descubre quién, dónde y con qué.",
+        "de": "Logik-Kriminalfälle: Hinweise lesen, Raster füllen, herausfinden wer, wo und womit."
+      },
       "category": "logic",
       "version": "1.4.4",
       "files": [
@@ -1199,6 +1319,11 @@
       "dir": "dice.koplugin",
       "fullname": "Dice",
       "description": "Roll virtual dice with a configurable number of faces and dice.",
+      "description_i18n": {
+        "fr": "Lancez des dés virtuels avec un nombre de faces et de dés personnalisable.",
+        "es": "Lanza dados virtuales con un número configurable de caras y dados.",
+        "de": "Wirf virtuelle Würfel mit einer einstellbaren Anzahl von Seiten und Würfeln."
+      },
       "category": "cards",
       "version": "1.1.10",
       "files": [
@@ -1232,6 +1357,11 @@
       "dir": "dominosa.koplugin",
       "fullname": "Dominosa",
       "description": "Lay a full set of dominoes on the number grid",
+      "description_i18n": {
+        "fr": "Retrouvez un jeu complet de dominos dans la grille de chiffres",
+        "es": "Encuentra un juego completo de dominós en la cuadrícula de números",
+        "de": "Finde einen vollständigen Satz Dominosteine im Zahlenraster"
+      },
       "category": "logic",
       "version": "1.2.6",
       "files": [
@@ -1267,6 +1397,11 @@
       "dir": "dotsandboxes.koplugin",
       "fullname": "Dots and Boxes",
       "description": "Dots and Boxes — draw lines, close boxes, keep control.",
+      "description_i18n": {
+        "fr": "Pipopipette — tracez des traits, fermez des cases, gardez la main.",
+        "es": "Timbiriche — traza líneas, cierra cuadros, conserva el control.",
+        "de": "Käsekästchen — Linien ziehen, Kästchen schließen, die Kontrolle behalten."
+      },
       "category": "board",
       "version": "1.1.7",
       "files": [
@@ -1302,6 +1437,11 @@
       "dir": "estimation.koplugin",
       "fullname": "Estimation",
       "description": "Numeric trivia for 2 to 8 players: guess the year, the height, the count — closest wins, or bet on the best guess.",
+      "description_i18n": {
+        "fr": "Quiz numérique de 2 à 8 joueurs : estimez l'année, la hauteur, le nombre — le plus proche gagne, ou pariez sur la meilleure estimation.",
+        "es": "Trivial numérico de 2 a 8 jugadores: calcula el año, la altura, la cantidad — gana el más cercano, o apuesta por la mejor estimación.",
+        "de": "Zahlen-Quiz für 2 bis 8 Spieler: Jahr, Höhe, Anzahl schätzen — wer am nächsten liegt, gewinnt, oder auf die beste Schätzung wetten."
+      },
       "category": "party",
       "version": "1.0.11",
       "files": [
@@ -1369,6 +1509,11 @@
       "dir": "farkle.koplugin",
       "fullname": "Farkle",
       "description": "Push-your-luck dice game to 10,000 points (Dix mille). Hotseat for 2-4 players, with computer opponents.",
+      "description_i18n": {
+        "fr": "Jeu de dés où l'on tente sa chance jusqu'à 10 000 points (Farkle). De 2 à 4 joueurs sur le même appareil, avec adversaires ordinateur.",
+        "es": "Juego de dados de arriesgar hasta 10.000 puntos. De 2 a 4 jugadores en el mismo aparato, con rivales controlados por el ordenador.",
+        "de": "Würfelspiel mit Risiko bis 10.000 Punkte (Farkle). 2-4 Spieler an einem Gerät, mit Computergegnern."
+      },
       "category": "cards",
       "version": "1.0.10",
       "files": [
@@ -1404,6 +1549,11 @@
       "dir": "fifteen.koplugin",
       "fullname": "Fifteen Puzzle",
       "description": "Sliding tile puzzle. Reassemble the scrambled picture.",
+      "description_i18n": {
+        "fr": "Puzzle à tuiles coulissantes. Reconstituez l'image mélangée.",
+        "es": "Puzle de fichas deslizantes. Recompón la imagen desordenada.",
+        "de": "Schiebepuzzle. Setze das durcheinandergebrachte Bild wieder zusammen."
+      },
       "category": "classic",
       "version": "1.2.10",
       "files": [
@@ -1477,6 +1627,11 @@
       "dir": "fillomino.koplugin",
       "fullname": "Fillomino",
       "description": "Fill regions with matching numbers",
+      "description_i18n": {
+        "fr": "Remplissez les régions avec des nombres correspondants",
+        "es": "Rellena las regiones con números coincidentes",
+        "de": "Fülle die Bereiche mit passenden Zahlen"
+      },
       "category": "logic",
       "version": "1.5.5",
       "files": [
@@ -1512,6 +1667,11 @@
       "dir": "fireworks.koplugin",
       "fullname": "Fireworks",
       "description": "Cooperative hidden-hand card game: build five fireworks together, seeing every hand but your own. Pass the reader for 2-5 players, or play solo with AI teammates.",
+      "description_i18n": {
+        "fr": "Jeu de cartes coopératif à main cachée : construisez ensemble cinq feux d'artifice en voyant toutes les mains sauf la vôtre. Liseuse passée de main en main pour 2 à 5 joueurs, ou en solo avec des partenaires IA.",
+        "es": "Juego de cartas cooperativo con la mano oculta: construid juntos cinco fuegos artificiales viendo todas las manos menos la vuestra. Pasad el lector entre 2 y 5 jugadores, o jugad solo con compañeros IA.",
+        "de": "Kooperatives Kartenspiel mit verdeckter Hand: Baut gemeinsam fünf Feuerwerke und seht alle Hände außer der eigenen. Reader weiterreichen für 2–5 Spieler, oder solo mit KI-Mitspielern."
+      },
       "category": "cards",
       "version": "1.0.10",
       "files": [
@@ -1551,6 +1711,11 @@
       "dir": "futoshiki.koplugin",
       "fullname": "Futoshiki",
       "description": "Fill the grid with digits satisfying row, column and inequality constraints.",
+      "description_i18n": {
+        "fr": "Remplissez la grille avec des chiffres respectant les contraintes de ligne, de colonne et d'inégalité.",
+        "es": "Rellena la cuadrícula con cifras que cumplan las restricciones de fila, columna y desigualdad.",
+        "de": "Fülle das Raster mit Ziffern, die die Zeilen-, Spalten- und Ungleichheitsbedingungen erfüllen."
+      },
       "category": "logic",
       "version": "1.6.5",
       "files": [
@@ -1584,6 +1749,9 @@
       "dir": "galaxies.koplugin",
       "fullname": "Galaxies",
       "description": "Divide the grid into rotationally symmetric galaxies",
+      "description_i18n": {
+        "fr": "Divisez la grille en galaxies à symétrie de rotation"
+      },
       "category": "logic",
       "version": "1.6.5",
       "files": [
@@ -1617,6 +1785,11 @@
       "dir": "gamebook.koplugin",
       "fullname": "Gamebooks",
       "description": "Choose-your-own-adventure books: pick your path, fight, test your luck. Write your own stories too.",
+      "description_i18n": {
+        "fr": "Les livres dont vous êtes le héros : choisissez votre chemin, combattez, tentez votre chance. Écrivez aussi vos propres histoires.",
+        "es": "Libros de elige tu propia aventura: elige tu camino, lucha, prueba tu suerte. También puedes escribir tus historias.",
+        "de": "Spielbücher zum Selbst-Entscheiden: Weg wählen, kämpfen, das Glück versuchen. Auch eigene Geschichten möglich."
+      },
       "category": "words",
       "version": "1.1.9",
       "files": [
@@ -1680,6 +1853,11 @@
       "dir": "go.koplugin",
       "fullname": "Go",
       "description": "Classic territory and capture board game.",
+      "description_i18n": {
+        "fr": "Jeu de plateau classique de territoire et de capture.",
+        "es": "Juego de mesa clásico de territorio y captura.",
+        "de": "Klassisches Brettspiel um Gebiet und Gefangene."
+      },
       "category": "board",
       "version": "1.2.10",
       "files": [
@@ -1713,6 +1891,11 @@
       "dir": "gomoku.koplugin",
       "fullname": "Gomoku",
       "description": "Gomoku — 5 in a row on a 15×15 board.",
+      "description_i18n": {
+        "fr": "Gomoku — 5 pions en ligne sur 15×15.",
+        "es": "Gomoku — 5 en línea en un tablero de 15×15.",
+        "de": "Gomoku — 5 in einer Reihe auf einem 15×15-Brett."
+      },
       "category": "board",
       "version": "1.5.5",
       "files": [
@@ -1746,6 +1929,11 @@
       "dir": "hangman.koplugin",
       "fullname": "Hangman",
       "description": "Classic word-guessing game. Reveal the word before the hangman is drawn.",
+      "description_i18n": {
+        "fr": "Jeu classique de devinette de mots. Révélez le mot avant que le pendu ne soit dessiné.",
+        "es": "Juego clásico de adivinar palabras. Descubre la palabra antes de que se complete el dibujo del ahorcado.",
+        "de": "Klassisches Wortratespiel. Errate das Wort, bevor das Galgenmännchen fertig gezeichnet ist."
+      },
       "category": "words",
       "version": "1.5.8",
       "files": [
@@ -1787,6 +1975,11 @@
       "dir": "hanoi.koplugin",
       "fullname": "Towers of Hanoi",
       "description": "Move disks between pegs",
+      "description_i18n": {
+        "fr": "Déplacez les disques entre les tiges",
+        "es": "Mueve los discos entre los postes",
+        "de": "Bewege die Scheiben zwischen den Stäben"
+      },
       "category": "classic",
       "version": "1.3.5",
       "files": [
@@ -1820,6 +2013,11 @@
       "dir": "hex.koplugin",
       "fullname": "Hex",
       "description": "Hex — connect your two sides of the board, against the AI or a friend.",
+      "description_i18n": {
+        "fr": "Hex — reliez vos deux bords du plateau, contre l'IA ou un ami.",
+        "es": "Hex — une tus dos lados del tablero, contra la IA o un amigo.",
+        "de": "Hex — verbinde deine zwei Seiten des Bretts, gegen die KI oder einen Freund."
+      },
       "category": "board",
       "version": "1.1.7",
       "files": [
@@ -1855,6 +2053,11 @@
       "dir": "heyawake.koplugin",
       "fullname": "Heyawake",
       "description": "Shade cells in walled rooms: numbers count the shaded cells, white cells stay connected.",
+      "description_i18n": {
+        "fr": "Noircissez des cases dans des pièces murées : les nombres comptent les cases noires, les cases blanches restent reliées.",
+        "es": "Sombrea casillas en habitaciones con muros: los números cuentan las casillas sombreadas y las blancas quedan conectadas.",
+        "de": "Schattiere Zellen in ummauerten Räumen: Zahlen zählen die schattierten Zellen, weiße Zellen bleiben verbunden."
+      },
       "category": "logic",
       "version": "1.1.5",
       "files": [
@@ -1892,6 +2095,11 @@
       "dir": "hidato.koplugin",
       "fullname": "Hidato",
       "description": "Connect numbers 1-N on a grid",
+      "description_i18n": {
+        "fr": "Reliez les nombres 1 à N sur une grille",
+        "es": "Conecta los números 1-N en una cuadrícula",
+        "de": "Verbinde die Zahlen 1-N auf einem Raster"
+      },
       "category": "logic",
       "version": "1.6.5",
       "files": [
@@ -1927,6 +2135,11 @@
       "dir": "hitori.koplugin",
       "fullname": "Hitori",
       "description": "Blacken cells so no number repeats in any row or column.",
+      "description_i18n": {
+        "fr": "Noircissez des cases pour qu'aucun chiffre ne se répète sur une ligne ou une colonne.",
+        "es": "Ennegrece casillas para que ningún número se repita en fila o columna.",
+        "de": "Schwärze Zellen, sodass sich keine Zahl in einer Zeile oder Spalte wiederholt."
+      },
       "category": "logic",
       "version": "1.6.5",
       "files": [
@@ -1960,6 +2173,11 @@
       "dir": "kenken.koplugin",
       "fullname": "KenKen",
       "description": "Fill the grid with digits satisfying row, column and cage arithmetic constraints.",
+      "description_i18n": {
+        "fr": "Remplissez la grille de chiffres respectant les contraintes arithmétiques de ligne, de colonne et de cage.",
+        "es": "Rellena la cuadrícula con cifras que cumplan las restricciones aritméticas de fila, columna y jaula.",
+        "de": "Fülle das Raster mit Ziffern, die die arithmetischen Bedingungen von Zeile, Spalte und Käfig erfüllen."
+      },
       "category": "logic",
       "version": "1.5.6",
       "files": [
@@ -1993,6 +2211,11 @@
       "dir": "klotski.koplugin",
       "fullname": "Klotski",
       "description": "Sliding-block puzzle: slide the blocks around the tray to bring the big square out through the gap at the bottom. The classic Red Donkey and 1600 more levels in four difficulties, hints and a Daily Challenge.",
+      "description_i18n": {
+        "fr": "Casse-tête de blocs coulissants : faites glisser les blocs sur le plateau pour amener le gros carré à l'ouverture du bas. L'Âne rouge classique et 1600 autres niveaux en quatre difficultés, indices et Défi du jour.",
+        "es": "Rompecabezas de bloques deslizantes: desliza los bloques por la bandeja para llevar el cuadrado grande a la salida de abajo. El clásico burro rojo y 1600 niveles más en cuatro dificultades, pistas y Desafío diario.",
+        "de": "Schiebepuzzle: Schiebe die Blöcke durch das Feld, bis der große Block an der Öffnung unten steht. Der klassische Rote Esel und 1600 weitere Level in vier Schwierigkeitsstufen, Tipps und Tägliche Herausforderung."
+      },
       "category": "classic",
       "version": "1.3.6",
       "files": [
@@ -2034,6 +2257,11 @@
       "dir": "letterpyramid.koplugin",
       "fullname": "Letter Pyramid",
       "description": "Build a pyramid of words, one letter more on every row.",
+      "description_i18n": {
+        "fr": "Construisez une pyramide de mots, une lettre de plus à chaque ligne.",
+        "es": "Construye una pirámide de palabras, una letra más en cada fila.",
+        "de": "Baue eine Wörterpyramide, in jeder Reihe ein Buchstabe mehr."
+      },
       "category": "words",
       "version": "1.1.0",
       "files": [
@@ -2073,6 +2301,11 @@
       "dir": "liarsdice.koplugin",
       "fullname": "Liar's Dice",
       "description": "Bluffing dice game for 2 to 6 players: bid on all the dice under the cups, or call Liar! Play with friends on one reader, or against the computer.",
+      "description_i18n": {
+        "fr": "Jeu de dés et de bluff de 2 à 6 joueurs : enchérissez sur tous les dés cachés sous les gobelets, ou criez Menteur ! Entre amis sur une seule liseuse, ou contre l'ordinateur.",
+        "es": "Juego de dados y faroles de 2 a 6 jugadores: apuesta sobre todos los dados bajo los cubiletes, o grita ¡Mentiroso! Con amigos en un solo lector, o contra el ordenador.",
+        "de": "Bluff-Würfelspiel für 2 bis 6 Spieler: Biete auf alle Würfel unter den Bechern oder rufe Lügner! Mit Freunden an einem Reader oder gegen den Computer."
+      },
       "category": "cards",
       "version": "1.0.10",
       "files": [
@@ -2110,6 +2343,9 @@
       "dir": "lightsout.koplugin",
       "fullname": "Lights Out",
       "description": "Switch every light off: each tap toggles a cell and its neighbours.",
+      "description_i18n": {
+        "fr": "Éteignez toutes les lumières : chaque appui inverse une case et ses voisines."
+      },
       "category": "classic",
       "version": "1.0.11",
       "files": [
@@ -2145,6 +2381,11 @@
       "dir": "lightup.koplugin",
       "fullname": "Light Up",
       "description": "Akari: place light bulbs to illuminate every white cell without conflicts.",
+      "description_i18n": {
+        "fr": "Akari : placez des ampoules pour illuminer toutes les cases blanches sans conflit.",
+        "es": "Akari: coloca bombillas para iluminar todas las casillas blancas sin conflictos.",
+        "de": "Akari: Platziere Glühbirnen, um alle weißen Felder ohne Konflikte zu beleuchten."
+      },
       "category": "logic",
       "version": "1.6.5",
       "files": [
@@ -2178,6 +2419,11 @@
       "dir": "lits.koplugin",
       "fullname": "LITS",
       "description": "Shade an L, I, T or S tetromino in every region: one connected group, no 2×2 block.",
+      "description_i18n": {
+        "fr": "Noircissez un tétromino L, I, T ou S dans chaque région : un seul groupe, aucun bloc 2×2.",
+        "es": "Sombrea un tetrominó L, I, T o S en cada región: un solo grupo, ningún bloque de 2×2.",
+        "de": "Schattiere in jeder Region ein L-, I-, T- oder S-Tetromino: eine zusammenhängende Gruppe, kein 2×2-Block."
+      },
       "category": "logic",
       "version": "1.1.5",
       "files": [
@@ -2213,6 +2459,11 @@
       "dir": "magnets.koplugin",
       "fullname": "Magnets",
       "description": "Logic puzzle: place magnets on the dominoes to match the + and − counts; like poles never touch.",
+      "description_i18n": {
+        "fr": "Puzzle logique : placez des aimants sur les dominos selon les nombres de + et de − ; deux pôles identiques ne se touchent jamais.",
+        "es": "Puzle lógico: coloca imanes en las fichas de dominó según los números de + y −; dos polos iguales nunca se tocan.",
+        "de": "Logikrätsel: Lege Magnete auf die Dominosteine passend zu den Plus- und Minus-Zahlen; gleiche Pole berühren sich nie."
+      },
       "category": "logic",
       "version": "1.3.5",
       "files": [
@@ -2248,6 +2499,11 @@
       "dir": "mahjong.koplugin",
       "fullname": "Mahjong Solitaire",
       "description": "Tile-matching solitaire: take matching pairs of free tiles off the table until it is empty. Six layouts from 56 to 144 tiles, every deal winnable, checked hints, shuffle, undo and a Daily Challenge.",
+      "description_i18n": {
+        "fr": "Solitaire de tuiles : retirez les paires de tuiles libres identiques jusqu'à vider la table. Six dispositions de 56 à 144 tuiles, chaque donne gagnable, astuces vérifiées, mélange, annulation et Défi du jour.",
+        "es": "Solitario de fichas: retira parejas iguales de fichas libres hasta vaciar la mesa. Seis disposiciones de 56 a 144 fichas, todas las partidas ganables, pistas comprobadas, mezclar, deshacer y Desafío diario.",
+        "de": "Steine-Solitär: Nimm gleiche Paare freier Steine vom Tisch, bis er leer ist. Sechs Aufstellungen mit 56 bis 144 Steinen, jedes Spiel lösbar, geprüfte Tipps, Mischen, Rückgängig und Tägliche Herausforderung."
+      },
       "category": "classic",
       "version": "1.0.10",
       "files": [
@@ -2287,6 +2543,11 @@
       "dir": "mastermind.koplugin",
       "fullname": "Mastermind",
       "description": "Deduce the secret code from black and white peg feedback.",
+      "description_i18n": {
+        "fr": "Déduisez le code secret grâce aux indices de pions noirs et blancs.",
+        "es": "Deduce el código secreto a partir de las fichas negras y blancas.",
+        "de": "Errate den geheimen Code anhand der schwarzen und weißen Stifte."
+      },
       "category": "classic",
       "version": "1.2.10",
       "files": [
@@ -2320,6 +2581,11 @@
       "dir": "masyu.koplugin",
       "fullname": "Masyu",
       "description": "Draw a loop through black and white pearls",
+      "description_i18n": {
+        "fr": "Tracez une boucle passant par les perles noires et blanches",
+        "es": "Traza un bucle que pase por las perlas negras y blancas",
+        "de": "Zeichne eine Schleife durch schwarze und weiße Perlen"
+      },
       "category": "logic",
       "version": "1.6.5",
       "files": [
@@ -2353,6 +2619,11 @@
       "dir": "mazeguide.koplugin",
       "fullname": "Guide & Explorer",
       "description": "Two readers, one maze: the guide has the map, the explorer is lost inside. Talk your way to the exit.",
+      "description_i18n": {
+        "fr": "Deux liseuses, un labyrinthe : le guide a le plan, l'explorateur est perdu dedans. Trouvez la sortie en vous parlant.",
+        "es": "Dos lectores, un laberinto: el guía tiene el plano, el explorador está perdido dentro. Encuentren la salida hablando.",
+        "de": "Zwei Reader, ein Labyrinth: Der Lotse hat den Plan, der Entdecker ist darin verloren. Findet den Ausgang im Gespräch."
+      },
       "category": "duo",
       "version": "1.0.5",
       "files": [
@@ -2388,6 +2659,11 @@
       "dir": "memory.koplugin",
       "fullname": "Memory",
       "description": "Memory game — find matching card pairs.",
+      "description_i18n": {
+        "fr": "Jeu de mémoire — trouvez les paires de cartes.",
+        "es": "Juego de memoria — encuentra las parejas de cartas.",
+        "de": "Memory-Spiel — finde die passenden Kartenpaare."
+      },
       "category": "classic",
       "version": "1.2.10",
       "files": [
@@ -2421,6 +2697,11 @@
       "dir": "mentalmath.koplugin",
       "fullname": "Mental Math",
       "description": "Train your arithmetic reflexes.",
+      "description_i18n": {
+        "fr": "Entraînez vos réflexes arithmétiques.",
+        "es": "Entrena tus reflejos aritméticos.",
+        "de": "Trainiere deine Rechenreflexe."
+      },
       "category": "classic",
       "version": "1.4.5",
       "files": [
@@ -2454,6 +2735,11 @@
       "dir": "minesweeper.koplugin",
       "fullname": "Minesweeper",
       "description": "Classic mine-sweeping game. Reveal all safe cells without triggering a mine.",
+      "description_i18n": {
+        "fr": "Jeu de démineur classique. Révélez toutes les cases sûres sans déclencher de mine.",
+        "es": "Juego clásico de buscaminas. Revela todas las casillas seguras sin activar una mina.",
+        "de": "Klassisches Minensuchspiel. Decke alle sicheren Felder auf, ohne eine Mine auszulösen."
+      },
       "category": "classic",
       "version": "1.4.5",
       "files": [
@@ -2489,6 +2775,11 @@
       "dir": "morris.koplugin",
       "fullname": "Nine Men's Morris",
       "description": "Nine Men's Morris — form mills and take pieces, against the AI or a friend.",
+      "description_i18n": {
+        "fr": "Jeu du moulin — formez des moulins et prenez des pions, contre l'IA ou un ami.",
+        "es": "Molino — forma molinos y captura fichas, contra la IA o un amigo.",
+        "de": "Mühle — Mühlen bilden und Steine schlagen, gegen die KI oder zu zweit."
+      },
       "category": "board",
       "version": "1.0.10",
       "files": [
@@ -2522,6 +2813,11 @@
       "dir": "mosaic.koplugin",
       "fullname": "Mosaic",
       "description": "Shade cells to match the neighbour counts",
+      "description_i18n": {
+        "fr": "Noircissez les cases selon les nombres de voisines",
+        "es": "Sombrea las casillas según los números de vecinas",
+        "de": "Schattiere Felder passend zu den Nachbarzahlen"
+      },
       "category": "logic",
       "version": "1.0.10",
       "files": [
@@ -2559,6 +2855,11 @@
       "dir": "mysteryface.koplugin",
       "fullname": "Mystery Face",
       "description": "Two readers, two secret characters: ask yes/no questions and be the first to find the other's.",
+      "description_i18n": {
+        "fr": "Deux liseuses, deux personnages secrets : posez des questions par oui ou non et trouvez le premier celui de l'autre.",
+        "es": "Dos lectores, dos personajes secretos: haga preguntas de sí o no y descubra antes que nadie el del otro.",
+        "de": "Zwei Reader, zwei geheime Figuren: Stellt Ja-Nein-Fragen und findet als Erster die des anderen."
+      },
       "category": "duo",
       "version": "1.0.4",
       "files": [
@@ -2592,6 +2893,11 @@
       "dir": "navalduel.koplugin",
       "fullname": "Naval Duel",
       "description": "Two players, two readers: hide your fleet, call your shots aloud, your reader answers for you.",
+      "description_i18n": {
+        "fr": "Deux joueurs, deux liseuses : cachez votre flotte, annoncez vos tirs à voix haute, votre liseuse répond pour vous.",
+        "es": "Dos jugadores, dos lectores: esconda su flota, anuncie sus disparos en voz alta, su lector responde por usted.",
+        "de": "Zwei Spieler, zwei Reader: Versteck deine Flotte, sag deine Schüsse laut an, dein Reader antwortet für dich."
+      },
       "category": "duo",
       "version": "1.0.4",
       "files": [
@@ -2625,6 +2931,9 @@
       "dir": "netwalk.koplugin",
       "fullname": "Net",
       "description": "Rotate the pipe tiles until the whole network is connected to the source.",
+      "description_i18n": {
+        "fr": "Tournez les tuiles de tuyaux jusqu'à ce que tout le réseau soit relié à la source."
+      },
       "category": "logic",
       "version": "1.1.7",
       "files": [
@@ -2660,6 +2969,11 @@
       "dir": "nonogram.koplugin",
       "fullname": "Nonogram",
       "description": "Fill cells by row and column clues to reveal the hidden picture.",
+      "description_i18n": {
+        "fr": "Remplissez les cases selon les indices de ligne et de colonne pour révéler l'image cachée.",
+        "es": "Rellena las casillas según las pistas de fila y columna para revelar la imagen oculta.",
+        "de": "Fülle die Felder anhand der Zeilen- und Spaltenhinweise, um das verborgene Bild aufzudecken."
+      },
       "category": "logic",
       "version": "1.6.6",
       "files": [
@@ -2693,6 +3007,11 @@
       "dir": "norinori.koplugin",
       "fullname": "Norinori",
       "description": "Shade two cells per region so that every shaded cell forms a domino.",
+      "description_i18n": {
+        "fr": "Noircissez deux cases par région pour que chaque case noire forme un domino.",
+        "es": "Sombrea dos casillas por región para que cada casilla sombreada forme un dominó.",
+        "de": "Schattiere zwei Felder pro Region, sodass jedes schattierte Feld einen Dominostein bildet."
+      },
       "category": "logic",
       "version": "1.1.5",
       "files": [
@@ -2728,6 +3047,11 @@
       "dir": "numberlink.koplugin",
       "fullname": "Numberlink",
       "description": "Connect each pair of matching numbers with a path covering every cell.",
+      "description_i18n": {
+        "fr": "Reliez chaque paire de nombres identiques par un chemin couvrant chaque case.",
+        "es": "Conecta cada pareja de números iguales con un camino que cubra cada casilla.",
+        "de": "Verbinde jedes Zahlenpaar mit einem Pfad, der jedes Feld abdeckt."
+      },
       "category": "logic",
       "version": "1.6.5",
       "files": [
@@ -2761,6 +3085,11 @@
       "dir": "numbrix.koplugin",
       "fullname": "Numbrix",
       "description": "Snake-like number path puzzle",
+      "description_i18n": {
+        "fr": "Casse-tête de chemin numérique façon serpent",
+        "es": "Puzle de camino numérico tipo serpiente",
+        "de": "Zahlenpfad-Rätsel im Schlangenstil"
+      },
       "category": "logic",
       "version": "1.6.5",
       "files": [
@@ -2796,6 +3125,11 @@
       "dir": "numletters.koplugin",
       "fullname": "Numbers and Letters",
       "description": "Draw letters and find the longest word; draw numbers and hit the target.",
+      "description_i18n": {
+        "fr": "Tirez des lettres et trouvez le mot le plus long ; tirez des chiffres et atteignez la cible.",
+        "es": "Saca letras y encuentra la palabra más larga; saca números y alcanza el objetivo.",
+        "de": "Zieht Buchstaben und findet das längste Wort; zieht Zahlen und trefft das Ziel."
+      },
       "category": "words",
       "version": "1.7.0",
       "files": [
@@ -2835,6 +3169,11 @@
       "dir": "nurikabe.koplugin",
       "fullname": "Nurikabe",
       "description": "Paint the river: connect islands of numbered white cells.",
+      "description_i18n": {
+        "fr": "Peignez la rivière : reliez les îlots de cases blanches numérotées.",
+        "es": "Pinta el río: conecta las islas de casillas blancas numeradas.",
+        "de": "Male den Fluss: Verbinde die Inseln nummerierter weißer Zellen."
+      },
       "category": "logic",
       "version": "1.7.6",
       "files": [
@@ -2898,6 +3237,11 @@
       "dir": "othello.koplugin",
       "fullname": "Othello",
       "description": "Othello/Reversi 8x8 with AI.",
+      "description_i18n": {
+        "fr": "Othello/Reversi 8x8 avec IA.",
+        "es": "Othello/Reversi 8x8 con IA.",
+        "de": "Othello/Reversi 8x8 mit KI."
+      },
       "category": "board",
       "version": "1.5.5",
       "files": [
@@ -2931,6 +3275,11 @@
       "dir": "partyquestions.koplugin",
       "fullname": "Party Questions",
       "description": "Party card decks to read aloud: Would you rather, Never have I ever, Who's most likely to, Hot seat and more.",
+      "description_i18n": {
+        "fr": "Des paquets de cartes à lire à voix haute : Tu préfères, Je n'ai jamais, Qui pourrait le plus, Sur la sellette et d'autres.",
+        "es": "Mazos de cartas para leer en voz alta: ¿Qué prefieres?, Yo nunca, ¿Quién es más probable que…?, Silla caliente y más.",
+        "de": "Kartenstapel zum Vorlesen: Würdest du eher, Ich hab noch nie, Wer würde am ehesten, Heißer Stuhl und mehr."
+      },
       "category": "party",
       "version": "1.0.11",
       "files": [
@@ -3012,6 +3361,11 @@
       "dir": "passeword.koplugin",
       "fullname": "Pass the Word",
       "description": "Word-guessing party game for four, two teams of two, inspired by the classic TV game: one-word clues, a 4-round qualification, then a 5-level final with a prize pyramid.",
+      "description_i18n": {
+        "fr": "Jeu de mots à faire deviner pour quatre, en deux équipes de deux, inspiré du jeu télévisé classique : des indices d'un seul mot, une qualification en 4 manches, puis une finale en 5 paliers avec sa pyramide de gains.",
+        "es": "Juego de adivinar palabras para cuatro, dos equipos de dos, inspirado en el clásico concurso de televisión: pistas de una sola palabra, una clasificación en 4 rondas y una final de 5 niveles con su pirámide de premios.",
+        "de": "Worträtsel-Partyspiel für vier, zwei Zweierteams, nach dem Vorbild der klassischen TV-Rateshow: Hinweise aus einem Wort, eine Qualifikation in 4 Runden, dann ein Finale über 5 Stufen mit Gewinnpyramide."
+      },
       "category": "party",
       "version": "1.2.5",
       "files": [
@@ -3049,6 +3403,11 @@
       "dir": "pegsolitaire.koplugin",
       "fullname": "Peg Solitaire",
       "description": "The classic peg solitaire: jump the pegs over each other until one is left, in the goal hole. English, French, triangular and square boards, 35 puzzles, hints that keep the puzzle solvable and a Daily Challenge.",
+      "description_i18n": {
+        "fr": "Le solitaire classique : faites sauter les billes les unes par-dessus les autres jusqu'à n'en laisser qu'une, dans le trou d'arrivée. Plateaux anglais, français, triangulaires et carré, 35 problèmes, des astuces qui gardent le problème soluble et un Défi du jour.",
+        "es": "El solitario clásico: salta las fichas unas sobre otras hasta dejar solo una, en el agujero final. Tableros inglés, francés, triangulares y cuadrado, 35 problemas, pistas que mantienen el problema resoluble y Desafío diario.",
+        "de": "Das klassische Solitär: Springe mit den Steinen übereinander, bis nur einer übrig ist, im Zielloch. Englisches, französisches, dreieckige und quadratisches Brett, 35 Aufgaben, Tipps, die die Aufgabe lösbar halten, und eine Tägliche Herausforderung."
+      },
       "category": "classic",
       "version": "1.1.7",
       "files": [
@@ -3092,6 +3451,11 @@
       "dir": "pickomino.koplugin",
       "fullname": "Pickomino",
       "description": "Combinatorial dice and tile logic game",
+      "description_i18n": {
+        "fr": "Jeu de logique combinatoire avec dés et tuiles",
+        "es": "Juego de lógica combinatoria con dados y fichas",
+        "de": "Kombinatorisches Würfel- und Kachel-Logikspiel"
+      },
       "category": "cards",
       "version": "1.2.10",
       "files": [
@@ -3125,6 +3489,11 @@
       "dir": "pictionary.koplugin",
       "fullname": "Draw & Guess",
       "description": "Draw words against the clock — team-based party game.",
+      "description_i18n": {
+        "fr": "Dessinez des mots contre la montre — jeu de groupe en équipes.",
+        "es": "Dibuja palabras contra el reloj — juego de fiesta por equipos.",
+        "de": "Zeichne Wörter gegen die Uhr — teambasiertes Partyspiel."
+      },
       "category": "party",
       "version": "1.5.5",
       "files": [
@@ -3163,7 +3532,7 @@
       "fullname": "Plugin Manager",
       "description": "Check for updates and install game plugins from the koreader-plugins repository.",
       "category": "tools",
-      "version": "1.7.5",
+      "version": "1.7.6",
       "files": [
         "_meta.lua",
         "i18n.lua",
@@ -3175,11 +3544,11 @@
         "pmlogic.lua"
       ],
       "sha256": {
-        "_meta.lua": "6c612a735f764c85bfe3eeb13af642c70400b249d0f06a5fe16e3fb28ee3ad93",
+        "_meta.lua": "8d4015934873a27465c7a014d665e6d0636bea30bd41fc0beb40886aad324248",
         "i18n.lua": "4044f22a2f0b2774d39d5fe29294e672320a0d9cb16bb18db5cec46aca2ec30c",
-        "i18n_fr.lua": "fdae773d763bf06ee8641bd829a0e222204f13ec5b8960dbf898a400e1de41c9",
-        "main.lua": "235e116c910eac8d19ff9bffc7d2daf0f02bb4ed7575ac8c62bd4c55cafc1d2e",
-        "manager.lua": "ca27d3e4e5a9ecfba09f158723a24ad849623f7bbd7c182b8e794fbd01a1bd2b",
+        "i18n_fr.lua": "a5bc342f5eff59f84ff342b3ee02025914771a1a61a1d1c58060bdac3fe73cc7",
+        "main.lua": "564b45b4a77052b945112cbc311741bc3d784229764a0e0599381b97c8af13d1",
+        "manager.lua": "2761f47741d82066a17187b630c82353564371bef8bcab06095d9bfdd274ad41",
         "pathguard.lua": "e2551e9ca07e420cf6c82bbf15b786a1a4f128fbcb861e1dca91b2584eb26182",
         "pluginmanager_configuration.sample.lua": "aec68f12916255348c7983a83b2e5f9797d6b113d2b8d8cb3ad22defe0ea5a3c",
         "pmlogic.lua": "ca843baa8a1fd24a858feb7ae1f0d1320ffab39b5931283d8cf6923d68470ab5"
@@ -3187,8 +3556,8 @@
       "raw_base_url": "https://raw.githubusercontent.com/t2ym5u/pluginmanager.koplugin/main/",
       "zip": {
         "path": "dist/pluginmanager.zip",
-        "sha256": "c1ab4a580ea3d496486a6087dd25ccf8e9ef035bb807924130006e46a476819f",
-        "size": 81038
+        "sha256": "fc22bebe47c2dcf7e79e69495173d871526574be236746f1e0598654f9b2bfca",
+        "size": 82681
       }
     },
     {
@@ -3196,6 +3565,11 @@
       "dir": "quickcalc.koplugin",
       "fullname": "Calculator",
       "description": "Calculator with scientific functions, memory and history, plus VAT and percentages, bill split with tip, and loan and savings forms.",
+      "description_i18n": {
+        "fr": "Calculatrice avec fonctions scientifiques, mémoire et historique, plus TVA et pourcentages, partage d'addition avec pourboire, prêt et épargne.",
+        "es": "Calculadora con funciones científicas, memoria e historial, además de IVA y porcentajes, división de la cuenta con propina, préstamo y ahorro.",
+        "de": "Rechner mit wissenschaftlichen Funktionen, Speicher und Verlauf, dazu MwSt. und Prozente, Rechnung teilen mit Trinkgeld, Kredit und Sparen."
+      },
       "category": "tools",
       "version": "1.0.7",
       "files": [
@@ -3235,6 +3609,11 @@
       "dir": "quiz.koplugin",
       "fullname": "Quiz",
       "description": "General knowledge quiz — everyone writes their answer, then reveal.",
+      "description_i18n": {
+        "fr": "Quiz de culture générale — chacun écrit sa réponse, puis on révèle.",
+        "es": "Quiz de cultura general — todos escriben su respuesta, luego se revela.",
+        "de": "Allgemeinwissen-Quiz — alle schreiben ihre Antwort, dann wird aufgedeckt."
+      },
       "category": "party",
       "version": "1.6.7",
       "files": [
@@ -3286,6 +3665,11 @@
       "dir": "randomizer.koplugin",
       "fullname": "Random draw",
       "description": "Coin flip, random number, pick a name, turn order, teams and raffle draws for games around the table.",
+      "description_i18n": {
+        "fr": "Pile ou face, nombre au hasard, tirage d'un nom, ordre de jeu, équipes et tombola pour les jeux autour de la table.",
+        "es": "Cara o cruz, número al azar, elegir un nombre, orden de juego, equipos y rifa para los juegos de mesa.",
+        "de": "Münzwurf, Zufallszahl, Namen ziehen, Spielreihenfolge, Teams und Tombola für Spiele am Tisch."
+      },
       "category": "party",
       "version": "1.0.8",
       "files": [
@@ -3323,6 +3707,11 @@
       "dir": "reference.koplugin",
       "fullname": "Quick reference",
       "description": "Periodic table, radio, Greek and Morse alphabets, multiplication tables, SI prefixes and an on-screen ruler.",
+      "description_i18n": {
+        "fr": "Tableau périodique, alphabets radio, grec et Morse, tables de multiplication, préfixes SI et règle à l'écran.",
+        "es": "Tabla periódica, alfabetos radiofónico, griego y Morse, tablas de multiplicar, prefijos SI y regla en pantalla.",
+        "de": "Periodensystem, Funk-, griechisches und Morsealphabet, Einmaleins, SI-Präfixe und Lineal auf dem Bildschirm."
+      },
       "category": "tools",
       "version": "1.0.7",
       "files": [
@@ -3374,6 +3763,11 @@
       "dir": "rippleeffect.koplugin",
       "fullname": "Ripple Effect",
       "description": "Fill rooms so each number appears once per row/col",
+      "description_i18n": {
+        "fr": "Remplissez les zones pour que chaque chiffre apparaisse une fois par ligne/colonne",
+        "es": "Rellena las zonas para que cada número aparezca una vez por fila/columna",
+        "de": "Fülle die Bereiche, sodass jede Zahl einmal pro Zeile/Spalte erscheint"
+      },
       "category": "logic",
       "version": "1.6.5",
       "files": [
@@ -3407,6 +3801,11 @@
       "dir": "sandwichsudoku.koplugin",
       "fullname": "Sandwich Sudoku",
       "description": "Sudoku with sandwich sum clues",
+      "description_i18n": {
+        "fr": "Sudoku avec indices de somme sandwich",
+        "es": "Sudoku con pistas de suma sándwich",
+        "de": "Sudoku mit Sandwich-Summen-Hinweisen"
+      },
       "category": "sudoku",
       "version": "1.8.5",
       "files": [
@@ -3442,6 +3841,11 @@
       "dir": "scoresheet.koplugin",
       "fullname": "Score sheets",
       "description": "Score sheets for real card and board games: Tarot, Belote / Coinche, word tile game, Rummy and a free sheet for any other game.",
+      "description_i18n": {
+        "fr": "Feuilles de score pour les vrais jeux de cartes et de société : Tarot, Belote / Coinche, jeu de lettres, Rami et une feuille libre pour tous les autres jeux.",
+        "es": "Hojas de puntuación para juegos de cartas y de mesa reales: Tarot, Belote / Coinche, juego de letras, Rummy y una hoja libre para cualquier otro juego.",
+        "de": "Spielblöcke für echte Karten- und Brettspiele: Tarot, Belote / Coinche, Buchstabenspiel, Rommé und ein freier Block für jedes andere Spiel."
+      },
       "category": "party",
       "version": "1.0.8",
       "files": [
@@ -3485,6 +3889,11 @@
       "dir": "shikaku.koplugin",
       "fullname": "Shikaku",
       "description": "Divide the grid into rectangles",
+      "description_i18n": {
+        "fr": "Divisez la grille en rectangles",
+        "es": "Divide la cuadrícula en rectángulos",
+        "de": "Teile das Raster in Rechtecke"
+      },
       "category": "logic",
       "version": "1.6.7",
       "files": [
@@ -3518,6 +3927,11 @@
       "dir": "signpost.koplugin",
       "fullname": "Signpost",
       "description": "Link every cell into one numbered chain by following the arrows",
+      "description_i18n": {
+        "fr": "Reliez toutes les cases en une seule chaîne numérotée en suivant les flèches",
+        "es": "Enlaza todas las casillas en una sola cadena numerada siguiendo las flechas",
+        "de": "Verbinde alle Felder zu einer nummerierten Kette, indem du den Pfeilen folgst"
+      },
       "category": "logic",
       "version": "1.3.5",
       "files": [
@@ -3553,6 +3967,11 @@
       "dir": "skyscraper.koplugin",
       "fullname": "Skyscraper",
       "description": "Place buildings by skyline clues",
+      "description_i18n": {
+        "fr": "Placez les gratte-ciel selon les indices de vue",
+        "es": "Coloca los edificios según las pistas de perfil",
+        "de": "Platziere Gebäude nach den Skyline-Hinweisen"
+      },
       "category": "logic",
       "version": "1.6.5",
       "files": [
@@ -3588,6 +4007,11 @@
       "dir": "slitherlink.koplugin",
       "fullname": "Slitherlink",
       "description": "Draw a single closed loop along grid edges matching the numbered clues.",
+      "description_i18n": {
+        "fr": "Tracez une boucle fermée unique le long des arêtes de la grille correspondant aux indices numérotés.",
+        "es": "Trace un único bucle cerrado a lo largo de las aristas de la cuadrícula que coincida con las pistas numeradas.",
+        "de": "Zeichne eine einzelne geschlossene Schleife entlang der Gitterkanten passend zu den nummerierten Hinweisen."
+      },
       "category": "logic",
       "version": "1.6.5",
       "files": [
@@ -3621,6 +4045,11 @@
       "dir": "sokoban.koplugin",
       "fullname": "Sokoban",
       "description": "Push every box onto a target. 372 levels in four difficulties, all proven solvable, with hints, a list of the levels solved and a Daily Challenge.",
+      "description_i18n": {
+        "fr": "Poussez chaque caisse sur une cible. 372 niveaux en quatre difficultés, tous prouvés solubles, avec astuces, liste des niveaux résolus et Défi du jour.",
+        "es": "Empuje cada caja hasta un objetivo. 372 niveles en cuatro dificultades, todos con solución comprobada, con pistas, lista de niveles resueltos y Desafío diario.",
+        "de": "Schiebe jede Kiste auf ein Zielfeld. 372 Level in vier Schwierigkeitsstufen, alle nachweislich lösbar, mit Tipps, einer Liste gelöster Level und einer Tagesherausforderung."
+      },
       "category": "classic",
       "version": "1.4.5",
       "files": [
@@ -3662,6 +4091,11 @@
       "dir": "solitaire.koplugin",
       "fullname": "Solitaire",
       "description": "Klondike, FreeCell, Spider, Golf and Pyramid solitaire card games.",
+      "description_i18n": {
+        "fr": "Jeux de cartes de patience : Klondike, FreeCell, Spider, Golf et Pyramide.",
+        "es": "Juegos de solitario: Klondike, FreeCell, Spider, Golf y Pirámide.",
+        "de": "Patiencen: Klondike, FreeCell, Spider, Golf und Pyramide."
+      },
       "category": "cards",
       "version": "1.3.5",
       "files": [
@@ -3727,6 +4161,9 @@
       "dir": "spellingbee.koplugin",
       "fullname": "Spelling Bee",
       "description": "Make words from seven letters around a centre letter",
+      "description_i18n": {
+        "fr": "Formez des mots avec sept lettres autour d'une lettre centrale"
+      },
       "category": "words",
       "version": "1.3.0",
       "files": [
@@ -3778,6 +4215,11 @@
       "dir": "spotdiff.koplugin",
       "fullname": "Hidden Differences",
       "description": "Two readers, two grids of symbols: describe yours aloud and find the differences together.",
+      "description_i18n": {
+        "fr": "Deux liseuses, deux grilles de symboles : décrivez la vôtre à voix haute et trouvez ensemble les différences.",
+        "es": "Dos lectores, dos cuadrículas de símbolos: describa la suya en voz alta y encuentren juntos las diferencias.",
+        "de": "Zwei Reader, zwei Symbolgitter: Beschreibt eure Gitter laut und findet gemeinsam die Unterschiede."
+      },
       "category": "duo",
       "version": "1.0.4",
       "files": [
@@ -3813,6 +4255,11 @@
       "dir": "starbattle.koplugin",
       "fullname": "Star Battle",
       "description": "Place stars with one per row/col/region",
+      "description_i18n": {
+        "fr": "Placez des étoiles, une par ligne/colonne/région",
+        "es": "Coloque estrellas, una por fila/columna/región",
+        "de": "Platziere Sterne, einen pro Zeile/Spalte/Region"
+      },
       "category": "logic",
       "version": "1.7.5",
       "files": [
@@ -3846,6 +4293,11 @@
       "dir": "stealthsubs.koplugin",
       "fullname": "Silent Subs",
       "description": "Two readers, two hidden submarines: announce your moves, track the enemy's, and torpedo it first.",
+      "description_i18n": {
+        "fr": "Deux liseuses, deux sous-marins cachés : annoncez vos déplacements, pistez ceux de l'adversaire et torpillez-le le premier.",
+        "es": "Dos lectores, dos submarinos ocultos: anuncie sus movimientos, siga los del rival y torpedéelo primero.",
+        "de": "Zwei Reader, zwei versteckte U-Boote: Sag deine Züge an, verfolge die des Gegners und torpediere ihn zuerst."
+      },
       "category": "duo",
       "version": "1.0.4",
       "files": [
@@ -3879,6 +4331,11 @@
       "dir": "stopwatch.koplugin",
       "fullname": "Stopwatch & timer",
       "description": "Stopwatch with laps, several countdown timers at once and an interval timer. Flashes the screen when time is up.",
+      "description_i18n": {
+        "fr": "Chronomètre avec tours, plusieurs minuteurs à la fois et minuteur fractionné. L'écran clignote quand le temps est écoulé.",
+        "es": "Cronómetro con vueltas, varios temporizadores a la vez y temporizador por intervalos. La pantalla parpadea al terminar.",
+        "de": "Stoppuhr mit Runden, mehrere Timer gleichzeitig und Intervall-Timer. Der Bildschirm blinkt, wenn die Zeit um ist."
+      },
       "category": "tools",
       "version": "1.0.7",
       "files": [
@@ -3994,6 +4451,11 @@
       "dir": "sudokux.koplugin",
       "fullname": "Sudoku X",
       "description": "Sudoku with diagonal constraints",
+      "description_i18n": {
+        "fr": "Sudoku avec contraintes diagonales",
+        "es": "Sudoku con restricciones diagonales",
+        "de": "Sudoku mit diagonalen Beschränkungen"
+      },
       "category": "sudoku",
       "version": "1.8.5",
       "files": [
@@ -4029,6 +4491,11 @@
       "dir": "suguru.koplugin",
       "fullname": "Suguru",
       "description": "Fill regions with non-repeating numbers",
+      "description_i18n": {
+        "fr": "Remplissez les régions avec des chiffres non répétés",
+        "es": "Rellene las regiones con números sin repetir",
+        "de": "Fülle die Regionen mit nicht wiederholenden Zahlen"
+      },
       "category": "logic",
       "version": "1.6.5",
       "files": [
@@ -4062,6 +4529,11 @@
       "dir": "taboo.koplugin",
       "fullname": "Forbidden Words",
       "description": "Describe words without saying the forbidden ones — team buzzer party game.",
+      "description_i18n": {
+        "fr": "Décrivez des mots sans dire les mots interdits — jeu de groupe en équipes avec buzzer.",
+        "es": "Describe palabras sin decir las prohibidas — juego de fiesta por equipos con timbre.",
+        "de": "Beschreibe Wörter, ohne die verbotenen zu nennen — Team-Partyspiel mit Buzzer."
+      },
       "category": "party",
       "version": "1.8.8",
       "files": [
@@ -4100,6 +4572,11 @@
       "dir": "tapa.koplugin",
       "fullname": "Tapa",
       "description": "Shade cells to form a connected wall",
+      "description_i18n": {
+        "fr": "Noircissez des cases pour former un mur connecté",
+        "es": "Sombrea casillas para formar un muro conectado",
+        "de": "Schattiere Zellen, um eine zusammenhängende Wand zu bilden"
+      },
       "category": "logic",
       "version": "1.6.5",
       "files": [
@@ -4135,6 +4612,11 @@
       "dir": "tatami.koplugin",
       "fullname": "Tatami",
       "description": "Fill the mats with digits: balanced rows and columns, no equal neighbours",
+      "description_i18n": {
+        "fr": "Remplissez les tatamis de chiffres : lignes et colonnes équilibrées, pas de voisins égaux",
+        "es": "Rellena los tatamis con cifras: filas y columnas equilibradas, sin vecinos iguales",
+        "de": "Fülle die Matten mit Ziffern: ausgeglichene Zeilen und Spalten, keine gleichen Nachbarn"
+      },
       "category": "logic",
       "version": "2.0.6",
       "files": [
@@ -4168,6 +4650,11 @@
       "dir": "tents.koplugin",
       "fullname": "Tents and Trees",
       "description": "Logic puzzle: pair each tree with an adjacent tent, no touching tents.",
+      "description_i18n": {
+        "fr": "Puzzle logique : associez chaque arbre à une tente adjacente, sans tentes qui se touchent.",
+        "es": "Puzle lógico: empareja cada árbol con una tienda adyacente, sin tiendas que se toquen.",
+        "de": "Logikrätsel: Ordne jedem Baum ein angrenzendes Zelt zu, ohne dass sich Zelte berühren."
+      },
       "category": "logic",
       "version": "1.6.5",
       "files": [
@@ -4201,6 +4688,11 @@
       "dir": "textadventure.koplugin",
       "fullname": "Text Adventures",
       "description": "Play interactive fiction: a Z-machine interpreter for Infocom and Inform stories (.z3 .z5 .z8 .zblorb), with autosave.",
+      "description_i18n": {
+        "fr": "Jouez à des fictions interactives : un interpréteur Z-machine pour les histoires Infocom et Inform (.z3 .z5 .z8 .zblorb), avec sauvegarde automatique.",
+        "es": "Juega a ficción interactiva: un intérprete Z-machine para historias de Infocom e Inform (.z3 .z5 .z8 .zblorb), con guardado automático.",
+        "de": "Interaktive Fiktion spielen: ein Z-Machine-Interpreter für Infocom- und Inform-Geschichten (.z3 .z5 .z8 .zblorb), mit automatischem Speichern."
+      },
       "category": "words",
       "version": "1.1.8",
       "files": [
@@ -4238,6 +4730,11 @@
       "dir": "thermosudoku.koplugin",
       "fullname": "Thermo Sudoku",
       "description": "Sudoku with thermometer constraints",
+      "description_i18n": {
+        "fr": "Sudoku avec contraintes de thermomètre",
+        "es": "Sudoku con restricciones de termómetro",
+        "de": "Sudoku mit Thermometer-Beschränkungen"
+      },
       "category": "sudoku",
       "version": "1.8.5",
       "files": [
@@ -4273,6 +4770,11 @@
       "dir": "threerounds.koplugin",
       "fullname": "Three Rounds",
       "description": "Team guessing party game in three rounds with the same deck of famous names: describe freely, then one word only, then mime.",
+      "description_i18n": {
+        "fr": "Jeu d'ambiance en équipes, en trois manches avec le même paquet de noms célèbres : on décrit librement, puis en un seul mot, puis en mime.",
+        "es": "Juego de adivinar por equipos en tres rondas con la misma baraja de nombres famosos: describir libremente, luego una sola palabra y luego mímica.",
+        "de": "Team-Ratespiel in drei Runden mit demselben Stapel berühmter Namen: frei beschreiben, dann ein einziges Wort, dann Pantomime."
+      },
       "category": "party",
       "version": "1.2.5",
       "files": [
@@ -4310,6 +4812,11 @@
       "dir": "tracks.koplugin",
       "fullname": "Train Tracks",
       "description": "Lay a railway from A to B that matches the row and column counts",
+      "description_i18n": {
+        "fr": "Posez une voie ferrée de A à B qui respecte les nombres des lignes et des colonnes",
+        "es": "Tiende una vía de A a B que respete los números de filas y columnas",
+        "de": "Lege eine Bahnstrecke von A nach B passend zu den Zeilen- und Spaltenzahlen"
+      },
       "category": "logic",
       "version": "1.1.5",
       "files": [
@@ -4347,6 +4854,11 @@
       "dir": "trafficjam.koplugin",
       "fullname": "Traffic Jam",
       "description": "Sliding-block puzzle: slide the cars and trucks along their lanes to get the black car out of the car park. 2400 levels in four difficulties, hints and a Daily Challenge.",
+      "description_i18n": {
+        "fr": "Casse-tête de blocs coulissants : faites glisser voitures et camions dans leur file pour sortir la voiture noire du parking. 2400 niveaux en quatre difficultés, indices et Défi du jour.",
+        "es": "Rompecabezas de bloques deslizantes: desliza coches y camiones por su carril para sacar el coche negro del aparcamiento. 2400 niveles en cuatro dificultades, pistas y Desafío diario.",
+        "de": "Schiebepuzzle: Schiebe Autos und Lastwagen in ihrer Spur, um das schwarze Auto aus dem Parkplatz zu holen. 2400 Level in vier Schwierigkeitsstufen, Tipps und Tägliche Herausforderung."
+      },
       "category": "classic",
       "version": "1.1.6",
       "files": [
@@ -4388,6 +4900,11 @@
       "dir": "tsumego.koplugin",
       "fullname": "Tsumego",
       "description": "Go life-and-death problems: kill or live in the corner, with proven answers.",
+      "description_i18n": {
+        "fr": "Problèmes de vie et de mort au go : tuer ou vivre dans le coin, avec des réponses prouvées.",
+        "es": "Problemas de vida y muerte de go: matar o vivir en la esquina, con respuestas demostradas.",
+        "de": "Go-Probleme um Leben und Tod: in der Ecke töten oder leben, mit bewiesenen Lösungen."
+      },
       "category": "board",
       "version": "1.1.7",
       "files": [
@@ -4427,6 +4944,11 @@
       "dir": "undercover.koplugin",
       "fullname": "Undercover",
       "description": "Social deduction for 3–12 players: find the undercover, Mr. White or the spy — one reader passed round the table.",
+      "description_i18n": {
+        "fr": "Jeu de déduction pour 3 à 12 joueurs : démasquez l'undercover, Mr. White ou l'espion — une seule liseuse qui fait le tour de la table.",
+        "es": "Juego de deducción para 3 a 12 jugadores: descubre al infiltrado, a Mr. White o al espía — un solo lector que pasa de mano en mano.",
+        "de": "Deduktionsspiel für 3–12 Spieler: entlarvt den Undercover, Mr. White oder den Spion — ein Reader, der reihum geht."
+      },
       "category": "party",
       "version": "1.1.8",
       "files": [
@@ -4508,6 +5030,11 @@
       "dir": "werewolf.koplugin",
       "fullname": "Werewolf",
       "description": "Game master for the classic werewolf party game: 6 to 18 players, secret roles, night narration and day votes.",
+      "description_i18n": {
+        "fr": "Meneur de jeu pour le loup-garou classique : 6 à 18 joueurs, rôles secrets, narration de la nuit et votes du jour.",
+        "es": "Narrador para el clásico juego del hombre lobo: de 6 a 18 jugadores, roles secretos, narración nocturna y votaciones de día.",
+        "de": "Spielleiter für das klassische Werwolf-Partyspiel: 6 bis 18 Spieler, geheime Rollen, Erzählung in der Nacht und Abstimmungen am Tag."
+      },
       "category": "party",
       "version": "1.1.8",
       "files": [
@@ -4565,6 +5092,11 @@
       "dir": "whoami.koplugin",
       "fullname": "Who Am I?",
       "description": "Forehead guessing party game: hold the reader facing the others, guess the famous name, animal or film from their clues before the time runs out.",
+      "description_i18n": {
+        "fr": "Jeu d'ambiance à deviner : tenez la liseuse tournée vers les autres et devinez la célébrité, l'animal ou le film grâce à leurs indices avant la fin du temps.",
+        "es": "Juego de fiesta para adivinar: sostén el lector mirando a los demás y adivina el famoso, el animal o la película con sus pistas antes de que acabe el tiempo.",
+        "de": "Partyspiel zum Raten: Halte den Reader zu den anderen gewandt und errate die berühmte Person, das Tier oder den Film aus ihren Hinweisen, bevor die Zeit abläuft."
+      },
       "category": "party",
       "version": "1.1.8",
       "files": [
@@ -4668,6 +5200,11 @@
       "dir": "windoku.koplugin",
       "fullname": "Windoku",
       "description": "Sudoku with 4 windowed inner regions",
+      "description_i18n": {
+        "fr": "Sudoku avec 4 régions internes en fenêtres",
+        "es": "Sudoku con 4 regiones internas en ventana",
+        "de": "Sudoku mit 4 fensterförmigen inneren Regionen"
+      },
       "category": "sudoku",
       "version": "1.7.5",
       "files": [
@@ -4703,6 +5240,11 @@
       "dir": "wordladder.koplugin",
       "fullname": "Word Ladder",
       "description": "Change one word into another, one letter at a time.",
+      "description_i18n": {
+        "fr": "Transformez un mot en un autre, une lettre à la fois.",
+        "es": "Transforma una palabra en otra, una letra a la vez.",
+        "de": "Verwandle ein Wort in ein anderes, einen Buchstaben nach dem anderen."
+      },
       "category": "words",
       "version": "1.5.0",
       "files": [
@@ -4744,6 +5286,11 @@
       "dir": "wordle.koplugin",
       "fullname": "Wordle",
       "description": "Guess the hidden word in 6 tries. Letter hints guide each attempt.",
+      "description_i18n": {
+        "fr": "Devinez le mot caché en 6 essais. Les indices de lettres guident chaque tentative.",
+        "es": "Adivina la palabra oculta en 6 intentos. Las pistas de letras guían cada intento.",
+        "de": "Errate das versteckte Wort in 6 Versuchen. Buchstabenhinweise leiten jeden Versuch."
+      },
       "category": "words",
       "version": "1.7.0",
       "files": [
@@ -4789,6 +5336,11 @@
       "dir": "wordpyramid.koplugin",
       "fullname": "Word Pyramid",
       "description": "Word-guessing party game for four, two teams of two, inspired by the classic French TV word game: one-word clues that cost bricks, riddles, ping-pong, against the clock, proper names, then the Great Pyramid final.",
+      "description_i18n": {
+        "fr": "Jeu de mots à faire deviner pour quatre, en deux équipes de deux, inspiré du jeu télévisé français classique : des indices d'un seul mot qui coûtent des briques, les énigmes, le ping-pong, le contre-la-montre, les noms propres, puis la finale de la Grande Pyramide.",
+        "es": "Juego de adivinar palabras para cuatro, dos equipos de dos, inspirado en el clásico concurso francés de televisión: pistas de una sola palabra que cuestan ladrillos, enigmas, ping-pong, contrarreloj, nombres propios y la final de la Gran Pirámide.",
+        "de": "Worträtsel-Partyspiel für vier, zwei Zweierteams, nach dem Vorbild der klassischen französischen TV-Rateshow: Hinweise aus einem Wort, die Steine kosten, Rätsel, Ping-Pong, gegen die Uhr, Eigennamen, dann das Finale der Großen Pyramide."
+      },
       "category": "party",
       "version": "1.2.5",
       "files": [
@@ -4842,6 +5394,11 @@
       "dir": "wordsearch.koplugin",
       "fullname": "Word Search",
       "description": "Find hidden words in a letter grid",
+      "description_i18n": {
+        "fr": "Trouvez des mots cachés dans une grille de lettres",
+        "es": "Encuentra palabras ocultas en una cuadrícula de letras",
+        "de": "Finde versteckte Wörter in einem Buchstabenraster"
+      },
       "category": "words",
       "version": "1.5.10",
       "files": [
@@ -4883,6 +5440,11 @@
       "dir": "yahtzee.koplugin",
       "fullname": "Yahtzee",
       "description": "Classic five-dice game: roll, hold and fill your score sheet. Solo, hotseat or against the computer.",
+      "description_i18n": {
+        "fr": "Le jeu de cinq dés classique : lancez, gardez, remplissez votre feuille de score. En solo, à plusieurs ou contre l'ordinateur.",
+        "es": "El clásico juego de cinco dados: lanza, guarda y rellena tu hoja de puntos. Solo, por turnos o contra el ordenador.",
+        "de": "Das klassische Spiel mit fünf Würfeln: würfeln, behalten, den Block ausfüllen. Allein, zu mehreren oder gegen den Computer."
+      },
       "category": "cards",
       "version": "1.0.10",
       "files": [
